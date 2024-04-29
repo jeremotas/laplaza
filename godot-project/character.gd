@@ -13,7 +13,7 @@ class_name Character
 var move_direction
 var rng
 
-var status = {"moving": false, "attacking": false}
+var status = {"moving": false, "attacking": false, "hurt": false}
 
 
 
@@ -46,6 +46,7 @@ func takeDamage(min_damage, max_damage):
 		communication("HURT (" + str(damage) + ")")
 		life = life - damage 
 		if life < 0: life = 0	
+		status.hurt = true
 
 func CombatCalculation(delta):
 	if $CombatArea:
@@ -57,12 +58,17 @@ func CombatCalculation(delta):
 						unitInArea.takeDamage(min_damage_given, max_damage_given)
 						coolDownTimer.start()
 						communication("ATTACK")
+						status.attacking = true
 				
 
 func AnimationCalculation(delta):
 	
 	if life == 0:
-		animation_selected = "idle"
+		animation_selected = "die"
+	elif status.hurt:
+		animation_selected = "hurt"
+	elif status.attacking:
+		animation_selected = "shoot"
 	elif speed > 0:
 		animation_selected = "walk"
 	else:
@@ -109,7 +115,7 @@ func StatusCalculation(delta):
 		var deathTimer = Timer.new()
 		add_child(deathTimer)
 		deathTimer.autostart = true
-		deathTimer.wait_time = 0.1
+		deathTimer.wait_time = 1.0
 		deathTimer.one_shot = true
 		deathTimer.timeout.connect(destroy_character)
 		deathTimer.start()

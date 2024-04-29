@@ -1,7 +1,47 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0ocwx1dr4jth"]
+[gd_scene load_steps=34 format=3 uid="uid://d0ocwx1dr4jth"]
 
 [ext_resource type="Script" path="res://enemy_soldado.gd" id="1_5wky8"]
 [ext_resource type="Texture2D" uid="uid://0bskmuv3bxjj" path="res://assets/created/ingles.png" id="2_7yrye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc6oq"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bebw8"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrdjl"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vixnd"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvi7c"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m33ro"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3ctp"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgr14"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj5p7"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u21k3"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejnfn"]
 atlas = ExtResource("2_7yrye")
@@ -22,6 +62,26 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjno0"]
 atlas = ExtResource("2_7yrye")
 region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk3tx"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nxgc"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xxjr"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g15il"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd5b4"]
+atlas = ExtResource("2_7yrye")
+region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bn7eq"]
 atlas = ExtResource("2_7yrye")
@@ -63,6 +123,46 @@ region = Rect2(256, 33, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_oc6oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bebw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrdjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vixnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvi7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m33ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3ctp")
+}],
+"loop": true,
+"name": &"die",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgr14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj5p7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u21k3")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ejnfn")
 }, {
 "duration": 1.0,
@@ -79,7 +179,27 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk3tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nxgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xxjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g15il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd5b4")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -137,8 +257,11 @@ offset_bottom = -2.0
 theme_override_font_sizes/font_size = 8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"walk"
+frame_progress = 0.815531
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-7, -14, -7, 16, 3, 16, 6, -15)
