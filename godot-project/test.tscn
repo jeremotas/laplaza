@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://dio1nkk7s46rf"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_37hr0"]
+[ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://unit_spawner.tscn" id="3_1w4lp"]
+[ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://goal.tscn" id="3_sm1us"]
+[ext_resource type="PackedScene" uid="uid://c1w2r6tj8m5b6" path="res://clickable_area.tscn" id="3_wvr3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mqbj"]
+size = Vector2(665, 498)
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_37hr0")
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UnitSpawner" parent="." instance=ExtResource("3_1w4lp")]
+position = Vector2(83, 248)
+probabilitySpawnOnTimer = 60.0
+faction = "patricios"
+
+[node name="UnitSpawner2" parent="." instance=ExtResource("3_1w4lp")]
+position = Vector2(532, 248)
+probabilitySpawnOnTimer = 60.0
+faction = "patricios"
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_1w4lp")]
+position = Vector2(167, 52)
+unitScene = "res://enemy_soldado.tscn"
+faction = "ingleses"
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("3_1w4lp")]
+position = Vector2(399, 52)
+unitScene = "res://enemy_soldado.tscn"
+faction = "ingleses"
+
+[node name="EnemyGoal" parent="." instance=ExtResource("3_sm1us")]
+position = Vector2(299, 426)
+faction = "ingleses"
+
+[node name="ClickableArea" parent="." instance=ExtResource("3_wvr3g")]
+z_as_relative = false
+position = Vector2(-3.05176e-05, -7.62939e-06)
+collision_layer = 2
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
+position = Vector2(322.5, 239)
+shape = SubResource("RectangleShape2D_4mqbj")
+debug_color = Color(0, 0.6, 0.701961, 0.054902)
+metadata/_edit_lock_ = true
+
+[connection signal="clicked_position" from="ClickableArea" to="." method="_on_clickable_area_clicked_position"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://prplx1wymlg5"]
+
+[ext_resource type="Script" path="res://UnitSpawner.gd" id="1_wlqm7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxbwp"]
+radius = 27.6586
+
+[node name="UnitSpawner" type="Marker2D"]
+script = ExtResource("1_wlqm7")
+
+[node name="SpawnArea" type="Area2D" parent="."]
+position = Vector2(-80, -138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
+position = Vector2(80, 138)
+shape = SubResource("CircleShape2D_rxbwp")
+debug_color = Color(0, 0.278431, 0.862745, 0.419608)
+
+[node name="TimerDeSpawnUnidades" type="Timer" parent="."]
+wait_time = 2.502
+autostart = true
+
+[connection signal="timeout" from="TimerDeSpawnUnidades" to="." method="_on_timer_de_spawn_unidades_timeout"]
