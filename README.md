@@ -1,6 +1,6 @@
 # La Plaza
 
-> RTS con unidades especializadas de control y defensa de terrirtorios en el contexto de las invasiones inglesas de 1806.
+> RTS con unidades especializadas de control y defensa de terrirtorios en el contexto de las invasiones inglesas de 1807.
 
 ## Arte
 [Moodboard - weje.io](https://app.weje.io/b/-NwRJsRNeKM5ppUv02SV)
