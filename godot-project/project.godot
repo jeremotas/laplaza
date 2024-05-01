@@ -24,6 +24,10 @@ window/stretch/mode="viewport"
 
 movie_writer/movie_file="/home/jeremias/Videos/Godot/laplaza.avi"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
+
 [input]
 
 Click={

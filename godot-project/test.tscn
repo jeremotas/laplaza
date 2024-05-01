@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dio1nkk7s46rf"]
+[gd_scene load_steps=7 format=3 uid="uid://dio1nkk7s46rf"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_37hr0"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://unit_spawner.tscn" id="3_1w4lp"]
 [ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://goal.tscn" id="3_sm1us"]
 [ext_resource type="PackedScene" uid="uid://c1w2r6tj8m5b6" path="res://clickable_area.tscn" id="3_wvr3g"]
+[ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://player_soldado.tscn" id="4_wsbwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mqbj"]
 size = Vector2(665, 498)
@@ -18,26 +19,42 @@ offset_bottom = 40.0
 [node name="UnitSpawner" parent="." instance=ExtResource("3_1w4lp")]
 position = Vector2(83, 248)
 probabilitySpawnOnTimer = 60.0
+spawnOnReady = false
 faction = "patricios"
+respawn_seconds = 4.0
 
 [node name="UnitSpawner2" parent="." instance=ExtResource("3_1w4lp")]
 position = Vector2(532, 248)
 probabilitySpawnOnTimer = 60.0
+spawnOnReady = false
 faction = "patricios"
+respawn_seconds = 4.0
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_1w4lp")]
 position = Vector2(167, 52)
+probabilitySpawnOnTimer = 35.0
 unitScene = "res://enemy_soldado.tscn"
 faction = "ingleses"
+respawn_seconds = 10.0
 
 [node name="EnemySpawner2" parent="." instance=ExtResource("3_1w4lp")]
 position = Vector2(399, 52)
+probabilitySpawnOnTimer = 35.0
 unitScene = "res://enemy_soldado.tscn"
 faction = "ingleses"
+respawn_seconds = 10.0
 
 [node name="EnemyGoal" parent="." instance=ExtResource("3_sm1us")]
 position = Vector2(299, 426)
 faction = "ingleses"
+
+[node name="General" parent="." instance=ExtResource("4_wsbwa")]
+position = Vector2(317, 231)
+faction = "patricios"
+life = 99999
+unit_type = "general"
+input_accepted = true
+attack_block_movement = false
 
 [node name="ClickableArea" parent="." instance=ExtResource("3_wvr3g")]
 z_as_relative = false
@@ -51,4 +68,9 @@ shape = SubResource("RectangleShape2D_4mqbj")
 debug_color = Color(0, 0.6, 0.701961, 0.054902)
 metadata/_edit_lock_ = true
 
+[node name="SceneTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="clicked_position" from="ClickableArea" to="." method="_on_clickable_area_clicked_position"]
+[connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]

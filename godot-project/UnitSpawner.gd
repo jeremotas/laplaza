@@ -4,15 +4,26 @@ var entity = null
 @export var spawnOnReady = true
 @export var unitScene = "res://player_soldado.tscn"
 @export var faction = ""
+@export var respawn_seconds = 2.5
 
 var rng = RandomNumberGenerator.new()
+var oGoalToAssign = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	entity = load(unitScene)
+	$TimerDeSpawnUnidades.start(respawn_seconds)
 	if spawnOnReady:
 		spawn_new_call(100.0)
 	pass # Replace with function body.
+
+func set_rewspan_seconds(respawn_seconds_new):
+	respawn_seconds = respawn_seconds_new
+	print(self, respawn_seconds)
+	$TimerDeSpawnUnidades.start(respawn_seconds)
+
+func set_goal(oGoal):
+	oGoalToAssign = oGoal
 
 func spawn_new_call(probability_generation):
 	var value_creation = rng.randf_range(0.0, 100.0)
@@ -20,6 +31,8 @@ func spawn_new_call(probability_generation):
 		var soldado = entity.instantiate();
 		soldado.position = Vector2.ZERO
 		soldado.add_to_faction(faction)
+		if soldado.has_method("assign_goal"):
+			soldado.assign_goal(oGoalToAssign)
 		add_child(soldado)
 	
 func _on_timer_de_spawn_unidades_timeout():

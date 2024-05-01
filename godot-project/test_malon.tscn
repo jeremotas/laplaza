@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://buarwecasqe6b"]
+
+[ext_resource type="Script" path="res://test_malon.gd" id="1_31kom"]
+[ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://unit_spawner.tscn" id="1_a8bjd"]
+[ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://player_soldado.tscn" id="1_wmfrd"]
+
+[node name="test_malon" type="Node2D"]
+script = ExtResource("1_31kom")
+
+[node name="General" parent="." instance=ExtResource("1_wmfrd")]
+position = Vector2(317, 231)
+faction = "patricios"
+unit_type = "general"
+input_accepted = true
+
+[node name="UnitSpawner" parent="." instance=ExtResource("1_a8bjd")]
+position = Vector2(61, 85)
+probabilitySpawnOnTimer = 30.0
+spawnOnReady = false
+faction = "patricios"
+
+[node name="UnitSpawner2" parent="." instance=ExtResource("1_a8bjd")]
+position = Vector2(583, 59)
+probabilitySpawnOnTimer = 30.0
+spawnOnReady = false
+faction = "patricios"
+
+[node name="SceneTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
