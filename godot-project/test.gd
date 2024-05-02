@@ -29,5 +29,9 @@ func _on_scene_timer_timeout():
 	iSecondsPassed = 0
 	fDivisor += 1.0
 	print("NEW WAVE", fDivisor)
-	$EnemySpawner.set_rewspan_seconds(10.0 / fDivisor)
-	$EnemySpawner2.set_rewspan_seconds(10.0 / fDivisor)
+	var fMaxTime = 20.0
+	$EnemySpawner.set_rewspan_seconds(fMaxTime / fDivisor)
+	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
+	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
+	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
+	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)

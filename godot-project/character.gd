@@ -79,19 +79,20 @@ func CombatCalculation(delta):
 	if $CombatArea:
 		if $CombatArea.has_overlapping_bodies() and $CombatArea.get_overlapping_bodies().size() > 1:
 			if not inCoolDownAttack:
+				var attacked = false
 				status.attacking = false
 				for unitInArea in $CombatArea.get_overlapping_bodies():
-					if unitInArea.faction != faction:
+					if ("faction" in unitInArea) and unitInArea.faction != faction and not attacked:
 						inCoolDownAttack = true
 						unitInArea.takeDamage(min_damage_given, max_damage_given)
 						coolDownTimer.start()
-						communication("ATTACK")
 						status.attacking = true
+						attacked = true
 				
 			else:
 				var enemiesInArea = 0
 				for unitInArea in $CombatArea.get_overlapping_bodies():
-					if unitInArea.faction != faction:
+					if ("faction" in unitInArea) and unitInArea.faction != faction:
 						enemiesInArea += 1
 				if enemiesInArea == 0:
 					status.attacking = false
@@ -173,7 +174,7 @@ func MovementLoop(delta):
 		if input != Vector2.ZERO: 
 			status.moving = true
 	
-	var can_move = life > 0 and not status.attacking and not status.hurt
+	var can_move = life > 0 and not status.attacking
 	
 	if can_move or input_accepted:
 		move_and_slide()

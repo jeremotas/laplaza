@@ -26,7 +26,7 @@ func _process(delta):
 	if $MalonArea:
 		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 1:
 			for unitInArea in $MalonArea.get_overlapping_bodies():
-				if unitInArea.faction == faction:
+				if (\"faction\" in unitInArea) and unitInArea.faction == faction:
 					bSticked = true
 					
 	input_accepted = false
@@ -538,7 +538,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 2
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
