@@ -32,6 +32,6 @@ func _on_scene_timer_timeout():
 	var fMaxTime = 20.0
 	$EnemySpawner.set_rewspan_seconds(fMaxTime / fDivisor)
 	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
-	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
-	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
-	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
+	$EnemySpawner3.set_rewspan_seconds(fMaxTime / fDivisor)
+	$EnemySpawner4.set_rewspan_seconds(fMaxTime / fDivisor)
+	$EnemySpawner5.set_rewspan_seconds(fMaxTime / fDivisor)
