@@ -5,6 +5,7 @@ var entity = null
 @export var unitScene = "res://player_soldado.tscn"
 @export var faction = ""
 @export var respawn_seconds = 2.5
+@export var max_alive = 0
 
 var rng = RandomNumberGenerator.new()
 var oGoalToAssign = null
@@ -19,7 +20,6 @@ func _ready():
 
 func set_rewspan_seconds(respawn_seconds_new):
 	respawn_seconds = respawn_seconds_new
-	print(self, respawn_seconds)
 	$TimerDeSpawnUnidades.start(respawn_seconds)
 
 func set_goal(oGoal):
@@ -27,7 +27,8 @@ func set_goal(oGoal):
 
 func spawn_new_call(probability_generation):
 	var value_creation = rng.randf_range(0.0, 100.0)
-	if not $SpawnArea.has_overlapping_bodies() and value_creation <= probability_generation:
+	var can_spawn = max_alive == 0 or max_alive >= get_tree().get_nodes_in_group("faccion_" + faction).size()
+	if can_spawn and not $SpawnArea.has_overlapping_bodies() and value_creation <= probability_generation:
 		var soldado = entity.instantiate();
 		soldado.position = Vector2.ZERO
 		soldado.add_to_faction(faction)

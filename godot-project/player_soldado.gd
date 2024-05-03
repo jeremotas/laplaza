@@ -45,7 +45,6 @@ func attack():
 		
 		add_child(b)
 		
-		print(self, "ATAQUE", attack_objective)
 		attack_objective = null
 	pass	
 

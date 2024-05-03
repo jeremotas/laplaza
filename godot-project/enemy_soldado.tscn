@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://d0ocwx1dr4jth"]
+[gd_scene load_steps=58 format=3 uid="uid://d0ocwx1dr4jth"]
 
 [ext_resource type="Script" path="res://enemy_soldado.gd" id="1_5wky8"]
 [ext_resource type="Texture2D" uid="uid://0bskmuv3bxjj" path="res://assets/created/ingles.png" id="2_7yrye"]
+[ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_c4n1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc6oq"]
 atlas = ExtResource("2_7yrye")
@@ -482,7 +483,7 @@ position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 2
+frame = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, -3, 11, 4, 8, 4, -2)
@@ -512,3 +513,7 @@ libraries = {
 
 [node name="WeaponPoint" type="Marker2D" parent="."]
 position = Vector2(13, 1)
+
+[node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c4n1u")
+pitch_scale = 0.71

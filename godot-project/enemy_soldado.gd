@@ -22,7 +22,6 @@ func attack():
 		var b = bullet.instantiate()
 		b.position = $WeaponPoint.position
 		b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
-		print(attack_objective.global_position, $WeaponPoint.global_position, b.direction)
 		b.objective_faction = attack_objective.faction
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
@@ -30,6 +29,7 @@ func attack():
 		
 		add_child(b)
 		
-		print(self, "ATAQUE", attack_objective)
+		$WeaponSound.play()
+		
 		attack_objective = null
 	pass	

@@ -1,8 +1,9 @@
-[gd_scene load_steps=61 format=3 uid="uid://b8baohebq5bsy"]
+[gd_scene load_steps=62 format=3 uid="uid://b8baohebq5bsy"]
 
 [ext_resource type="Shader" path="res://outline_shader.gdshader" id="1_akuyh"]
 [ext_resource type="Texture2D" uid="uid://bs4hlrx3utxbl" path="res://assets/created/correntino.png" id="2_geu6n"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://selection_area.tscn" id="3_plc24"]
+[ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_167lu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uefd"]
 
@@ -55,8 +56,7 @@ func attack():
 		b.set_collision_mask(2)
 		
 		add_child(b)
-		
-		print(self, \"ATAQUE\", attack_objective)
+		$WeaponSound.play()
 		attack_objective = null
 	pass	
 
@@ -561,6 +561,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
+frame = 3
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
@@ -603,5 +604,10 @@ polygon = PackedVector2Array(-6, -7, 7, -7, 6, 12, -6, 12)
 
 [node name="WeaponPoint" type="Marker2D" parent="."]
 position = Vector2(14, 0)
+
+[node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_167lu")
+pitch_scale = 1.87
+attenuation = 2.63902
 
 [connection signal="selection_toggled" from="SelectionArea" to="." method="_on_selection_area_selection_toggled"]
