@@ -13108,6 +13108,7 @@ layer_1/tile_data = PackedInt32Array(131073, 1048576, 5, 131078, 1048576, 5, 131
 position = Vector2(83, 248)
 probabilitySpawnOnTimer = 60.0
 spawnOnReady = false
+unitScene = "res://player_soldado_correntino.tscn"
 faction = "patricios"
 respawn_seconds = 4.0
 

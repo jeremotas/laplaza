@@ -6,8 +6,8 @@ var oGoalAssigned = null
 var bullet = preload("res://bullet.tscn")
 
 func _ready():
-	min_damage_given = 0
-	max_damage_given = 8
+	min_damage_given = 1
+	max_damage_given = 1
 	#$CollisionPolygon2D.set_layer
 	init()
 
@@ -17,7 +17,7 @@ func assign_goal(oGoal):
 func malon_sticked():
 	var bSticked = false
 	if $MalonArea:
-		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 0:
+		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 1:
 			for unitInArea in $MalonArea.get_overlapping_bodies():
 				if ("faction" in unitInArea) and unitInArea.faction == faction:
 					bSticked = true
@@ -37,10 +37,11 @@ func attack():
 	if attack_objective:
 		var b = bullet.instantiate()
 		b.position = $WeaponPoint.position
-		b.direction = (attack_objective.global_position - b.global_position).normalized()
+		b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
 		b.objective_faction = attack_objective.faction
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
+		b.set_collision_mask(2)
 		
 		add_child(b)
 		

@@ -1,13 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://de0d38cwcc5ua"]
 
-[ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://player_soldado.tscn" id="1_pki5x"]
+[ext_resource type="PackedScene" uid="uid://b8baohebq5bsy" path="res://player_soldado_correntino.tscn" id="1_v8mqm"]
 [ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://enemy_soldado.tscn" id="2_qlt1g"]
 
 [node name="test_attack" type="Node2D"]
 
-[node name="Soldado" parent="." instance=ExtResource("1_pki5x")]
-position = Vector2(323, 217)
-faction = "patricio"
+[node name="SoldadoCorrentino" parent="." instance=ExtResource("1_v8mqm")]
 
 [node name="SoldadoEnemigo" parent="." instance=ExtResource("2_qlt1g")]
 position = Vector2(421, 210)
