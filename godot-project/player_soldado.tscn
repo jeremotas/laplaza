@@ -12,16 +12,18 @@ script/source = "extends Character
 @onready var animation = $AnimatedSprite2D
 var oGoalAssigned = null
 
+var bullet = preload(\"res://bullet.tscn\")
+
 func _ready():
-	min_damage_given = 0
-	max_damage_given = 8
+	min_damage_given = 1
+	max_damage_given = 1
 	#$CollisionPolygon2D.set_layer
 	init()
 
 func assign_goal(oGoal):
 	oGoalAssigned = oGoal
 	
-func _process(delta):
+func malon_sticked():
 	var bSticked = false
 	if $MalonArea:
 		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 1:
@@ -34,9 +36,27 @@ func _process(delta):
 		go_to(oGoalAssigned.global_position, true)
 	else:
 		input_accepted = true
-		
-	super(delta)
 	
+func _process(delta):
+	malon_sticked()
+	attack()
+	super(delta)
+
+func attack():
+	if attack_objective:
+		var b = bullet.instantiate()
+		b.position = $WeaponPoint.position
+		b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
+		b.objective_faction = attack_objective.faction
+		b.min_damage = min_damage_given
+		b.max_damage = max_damage_given
+		b.set_collision_mask(2)
+		
+		add_child(b)
+		
+		print(self, \"ATAQUE\", attack_objective)
+		attack_objective = null
+	pass	
 
 # Funciones para poder seleccionarlo.
 func show_selection():
@@ -512,10 +532,11 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(0, 29.6855)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51xer"]
-radius = 54.037
+radius = 152.03
 
 [node name="Soldado" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_3uefd")
+collision_mask = 7
 script = SubResource("GDScript_1m2dc")
 
 [node name="ComLabel" type="Label" parent="."]
@@ -568,7 +589,8 @@ polygon = PackedVector2Array(-5, -11, -7, 17, 6, 16, 9, -9)
 polygon = PackedVector2Array(-3, -4, -5, 12, 3, 13, 4, -5)
 
 [node name="CombatArea" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 0
+collision_mask = 2
 
 [node name="CombatCollisionShape" type="CollisionShape2D" parent="CombatArea"]
 shape = SubResource("CircleShape2D_51xer")
@@ -576,6 +598,9 @@ shape = SubResource("CircleShape2D_51xer")
 [node name="MalonArea" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MalonArea"]
-polygon = PackedVector2Array(-7, -1, 12, -5, 10, 13, -8, 10)
+polygon = PackedVector2Array(-6, -7, 7, -7, 6, 12, -6, 12)
+
+[node name="WeaponPoint" type="Marker2D" parent="."]
+position = Vector2(14, 0)
 
 [connection signal="selection_toggled" from="SelectionArea" to="." method="_on_selection_area_selection_toggled"]

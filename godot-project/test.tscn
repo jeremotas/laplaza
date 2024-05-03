@@ -13164,7 +13164,6 @@ faction = "patricios"
 life = 99999
 unit_type = "general"
 input_accepted = true
-attack_block_movement = false
 
 [node name="Camera2D" type="Camera2D" parent="General"]
 position_smoothing_enabled = true

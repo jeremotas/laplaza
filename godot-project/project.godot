@@ -36,6 +36,12 @@ Click={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemigos"
+2d_physics/layer_3="Elementos"
+
 [rendering]
 
 renderer/rendering_method="mobile"

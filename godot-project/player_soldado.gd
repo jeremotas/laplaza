@@ -1,31 +1,60 @@
 extends Character
 
 @onready var animation = $AnimatedSprite2D
-		
-func go_to(new_destination):
-	if selected:
-		status.moving = true
-		destination = new_destination
-		$SelectionArea.set_selected(false)
+var oGoalAssigned = null
+
+var bullet = preload("res://bullet.tscn")
+
+func _ready():
+	min_damage_given = 0
+	max_damage_given = 8
+	#$CollisionPolygon2D.set_layer
+	init()
+
+func assign_goal(oGoal):
+	oGoalAssigned = oGoal
+	
+func malon_sticked():
+	var bSticked = false
+	if $MalonArea:
+		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 0:
+			for unitInArea in $MalonArea.get_overlapping_bodies():
+				if ("faction" in unitInArea) and unitInArea.faction == faction:
+					bSticked = true
+					
+	input_accepted = false
+	if not bSticked and oGoalAssigned:
+		go_to(oGoalAssigned.global_position, true)
+	else:
+		input_accepted = true
 	
 func _process(delta):
-	AnimationCalculation(delta)
-	if animation_flip:
-		animation.flip_h = true
-	else:
-		animation.flip_h = false
-	animation.play(animation_selected)
-	
+	malon_sticked()
+	attack()
+	super(delta)
+
+func attack():
+	if attack_objective:
+		var b = bullet.instantiate()
+		b.position = $WeaponPoint.position
+		b.direction = (attack_objective.global_position - b.global_position).normalized()
+		b.objective_faction = attack_objective.faction
+		b.min_damage = min_damage_given
+		b.max_damage = max_damage_given
+		
+		add_child(b)
+		
+		print(self, "ATAQUE", attack_objective)
+		attack_objective = null
+	pass	
+
+# Funciones para poder seleccionarlo.
 func show_selection():
 	if selected:
 		$AnimatedSprite2D.material.set_shader_parameter("width", 1.0)
 	else:
 		$AnimatedSprite2D.material.set_shader_parameter("width", 0.0)
 		
-
-func _on_selection_area_selection_toggled(selection):
-	selected = selection
-	show_selection()
-
-func _ready():
-	pass
+#func _on_selection_area_selection_toggled(selection):
+#	selected = selection
+#	show_selection()

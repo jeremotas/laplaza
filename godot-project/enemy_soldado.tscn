@@ -235,7 +235,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hofcb"]
-radius = 63.0714
+radius = 131.004
 
 [sub_resource type="Animation" id="Animation_sedgb"]
 length = 0.5
@@ -457,6 +457,8 @@ states/walk/position = Vector2(556, 60)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_7nslt"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_xgmjv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_w1mak"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_uy6df"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_w6dlf"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_1gnbu"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_5uh1q"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_6nu4m"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_ymea3"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_pwdj1"), "die", "End", SubResource("AnimationNodeStateMachineTransition_ik12o")]
 
 [node name="SoldadoEnemigo" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_5wky8")
 
 [node name="ComLabel" type="Label" parent="."]
@@ -480,13 +482,13 @@ position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 1
+frame = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, -3, 11, 4, 8, 4, -2)
 
 [node name="CombatArea" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 0
 
 [node name="CombatCollisionShape" type="CollisionShape2D" parent="CombatArea"]
 shape = SubResource("CircleShape2D_hofcb")
@@ -507,3 +509,6 @@ parameters/conditions/walking = false
 libraries = {
 "": SubResource("AnimationLibrary_c88t2")
 }
+
+[node name="WeaponPoint" type="Marker2D" parent="."]
+position = Vector2(13, 1)

@@ -6,12 +6,12 @@ class_name Character
 @export var speed = 0
 @export var acceleration = 1200
 @export var life = 10
-@export var coolDownAttackTime = 3.0
+@export var coolDownAttackTime = 1.0
 @export var min_damage_given = 1
 @export var max_damage_given = 1
 @export var unit_type = 'default'
 @export var input_accepted = false
-@export var attack_block_movement = true
+@export var attack_block_movement = false
 
 var input_direction
 var move_direction
@@ -21,7 +21,7 @@ var rng
 var status = {"moving": false, "attacking": false, "hurt": false}
 
 
-
+var attack_objective = null
 var destination = Vector2()
 var movement = Vector2()
 var animation_flip = false
@@ -60,14 +60,14 @@ func get_input():
 		if Input.is_action_pressed("Click"):
 			var vMousePosition = get_global_mouse_position()
 			direction = (vMousePosition - vMouseInitialPosition)
-			if direction.distance_to(Vector2.ZERO) < 10:
+			if direction.distance_to(Vector2.ZERO) < 15:
 				direction = Vector2.ZERO
 			
 			
 		
 	return direction.normalized()
 
-func takeDamage(min_damage, max_damage):
+func TakeDamage(min_damage, max_damage):
 	var damage = rng.randi_range(min_damage, max_damage)
 	if damage > 0:
 		communication("HURT (" + str(damage) + ")")
@@ -77,14 +77,15 @@ func takeDamage(min_damage, max_damage):
 		
 func CombatCalculation(delta):
 	if $CombatArea:
-		if $CombatArea.has_overlapping_bodies() and $CombatArea.get_overlapping_bodies().size() > 1:
+		if $CombatArea.has_overlapping_bodies() and $CombatArea.get_overlapping_bodies().size() > 0:
 			if not inCoolDownAttack:
 				var attacked = false
 				status.attacking = false
 				for unitInArea in $CombatArea.get_overlapping_bodies():
-					if ("faction" in unitInArea) and unitInArea.faction != faction and not attacked:
+					if ("faction" in unitInArea) and unitInArea.faction != faction and not attacked and unitInArea.life > 0:
 						inCoolDownAttack = true
-						unitInArea.takeDamage(min_damage_given, max_damage_given)
+						#unitInArea.takeDamage(min_damage_given, max_damage_given)
+						attack_objective = unitInArea
 						coolDownTimer.start()
 						status.attacking = true
 						attacked = true
@@ -100,7 +101,7 @@ func CombatCalculation(delta):
 			status.attacking = false
 			
 	if status.attacking and attack_block_movement:
-		status.moving = false
+		status.moving = true
 
 func AnimationCalculation(delta):
 	
@@ -174,7 +175,7 @@ func MovementLoop(delta):
 		if input != Vector2.ZERO: 
 			status.moving = true
 	
-	var can_move = life > 0 and not status.attacking
+	var can_move = life > 0 #and not status.attacking
 	
 	if can_move or input_accepted:
 		move_and_slide()
