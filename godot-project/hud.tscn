@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://uk3j7rh2076l"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_84x2r"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_84x2r")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 54.0
+offset_bottom = 23.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Nivel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Nivel"
+
+[node name="IndicadorNivel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Time" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -79.0
+offset_bottom = 23.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="LevelProgress" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0 / 10"
+horizontal_alignment = 2

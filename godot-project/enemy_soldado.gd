@@ -9,7 +9,7 @@ func _ready():
 	life = 5
 	min_damage_given = 1
 	max_damage_given = 1
-	init()
+	super()
 	pass
 
 func _process(delta):

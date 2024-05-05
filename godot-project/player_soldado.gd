@@ -9,7 +9,7 @@ func _ready():
 	min_damage_given = 1
 	max_damage_given = 1
 	#$CollisionPolygon2D.set_layer
-	init()
+	super()
 
 func assign_goal(oGoal):
 	oGoalAssigned = oGoal

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Character
 
+signal death(faction)
 @export var faction = ""
 @export var max_speed = 200
 @export var speed = 0
@@ -184,6 +185,7 @@ func StatusCalculation(delta):
 	if life == 0:
 		status.moving = false
 		status.attacking = false
+		print("Death", faction)
 		var deathTimer = Timer.new()
 		add_child(deathTimer)
 		deathTimer.autostart = true
@@ -193,6 +195,7 @@ func StatusCalculation(delta):
 		deathTimer.start()
 
 func destroy_character():
+	death.emit(faction)
 	queue_free()
 
 func _on_cool_down_timer_timeout():
@@ -233,4 +236,5 @@ func communication(message):
 	comLabelString += message + " " 
 	
 func _ready():
+	death.connect(get_parent()._on_death)
 	init()

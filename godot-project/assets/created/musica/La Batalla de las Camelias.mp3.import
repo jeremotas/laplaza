@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7fvlgndq61nw"
+path="res://.godot/imported/La Batalla de las Camelias.mp3-c4e30c6687a65c563ff25f39affd88bc.mp3str"
+
+[deps]
+
+source_file="res://assets/created/musica/La Batalla de las Camelias.mp3"
+dest_files=["res://.godot/imported/La Batalla de las Camelias.mp3-c4e30c6687a65c563ff25f39affd88bc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
