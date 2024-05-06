@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dbjmv7rcvq2m7"]
+
+[ext_resource type="FontFile" uid="uid://cf5u72p1ycahf" path="res://assets/original/fonts/Pixel Bug.otf" id="1_k0fsb"]
+
+[resource]
+default_font = ExtResource("1_k0fsb")

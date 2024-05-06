@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://uk3j7rh2076l"]
+[gd_scene load_steps=3 format=3 uid="uid://uk3j7rh2076l"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_84x2r"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="2_4eiih"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_84x2r")
@@ -14,10 +15,12 @@ alignment = 1
 
 [node name="Nivel" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4eiih")
 text = "Nivel"
 
 [node name="IndicadorNivel" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4eiih")
 text = "1"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
@@ -30,6 +33,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme = ExtResource("2_4eiih")
 alignment = 1
 
 [node name="Time" type="Label" parent="HBoxContainer2"]
@@ -51,5 +55,6 @@ alignment = 2
 [node name="LevelProgress" type="Label" parent="HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("2_4eiih")
 text = "0 / 10"
 horizontal_alignment = 2

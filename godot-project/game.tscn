@@ -990,6 +990,7 @@ faction = "ingleses"
 [node name="General" parent="." instance=ExtResource("5_pcdfl")]
 z_index = 2
 position = Vector2(289, 573)
+collision_mask = 6
 faction = "patricios"
 life = 99999
 coolDownAttackTime = 0.2

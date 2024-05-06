@@ -20,8 +20,7 @@ var rng
 @onready var animation_tree : AnimationTree = $AnimationTree
 
 var status = {"moving": false, "attacking": false, "hurt": false}
-
-
+var death_emited = false
 var attack_objective = null
 var destination = Vector2()
 var movement = Vector2()
@@ -33,6 +32,7 @@ var coolDownTimer = null
 
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
+		
 
 func add_to_faction(new_faction):
 	faction = new_faction
@@ -77,7 +77,7 @@ func TakeDamage(min_damage, max_damage):
 		status.hurt = true
 		
 func CombatCalculation(delta):
-	if $CombatArea:
+	if $CombatArea and life > 0:
 		if $CombatArea.has_overlapping_bodies() and $CombatArea.get_overlapping_bodies().size() > 0:
 			if not inCoolDownAttack:
 				var attacked = false
@@ -138,9 +138,9 @@ func AnimationCalculation(delta):
 		animation_tree["parameters/conditions/walking"] = false
 	
 	if velocity.x > 0: 
-		animation_flip = false
+		$AnimatedSprite2D.flip_h = false
 	elif velocity.x < 0:
-		animation_flip = true
+		$AnimatedSprite2D.flip_h = true
 		
 	#$AnimatedSprite2D.play(animation_selected)
 	
@@ -185,17 +185,21 @@ func StatusCalculation(delta):
 	if life == 0:
 		status.moving = false
 		status.attacking = false
-		print("Death", faction)
+		if not death_emited:
+			death.emit(faction)
+			death_emited = true
+		#("Death", faction)
+		
 		var deathTimer = Timer.new()
 		add_child(deathTimer)
 		deathTimer.autostart = true
-		deathTimer.wait_time = 1.0
+		deathTimer.wait_time = 0.5
 		deathTimer.one_shot = true
 		deathTimer.timeout.connect(destroy_character)
 		deathTimer.start()
 
 func destroy_character():
-	death.emit(faction)
+	$AnimationPlayer.stop()
 	queue_free()
 
 func _on_cool_down_timer_timeout():
@@ -235,6 +239,15 @@ func ComunicationCalculation(delta):
 func communication(message):
 	comLabelString += message + " " 
 	
+func attack_sound(stream):
+	var SoundPlayer = AudioStreamPlayer2D.new()
+	self.add_child(SoundPlayer)
+	SoundPlayer.stream = stream
+	SoundPlayer.connect("finished", SoundPlayer.queue_free)
+	SoundPlayer.play()
+		
+	
 func _ready():
-	death.connect(get_parent()._on_death)
+	if get_parent().has_method("_on_death"):
+		death.connect(get_parent()._on_death)
 	init()

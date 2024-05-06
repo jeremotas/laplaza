@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdhmiefax7gyv"]
+[gd_scene load_steps=5 format=3 uid="uid://bdhmiefax7gyv"]
 
 [ext_resource type="Script" path="res://Goal.gd" id="1_4ypff"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="2_p2urd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x5fn"]
 size = Vector2(72, 61)
@@ -26,6 +27,7 @@ offset_left = -20.0
 offset_top = 18.0
 offset_right = 20.0
 offset_bottom = 41.0
+theme = ExtResource("2_p2urd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 0)

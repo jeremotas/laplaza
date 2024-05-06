@@ -19,7 +19,6 @@ func _ready():
 func _process(delta):
 	HUD.change(TheGameStats)
 	assign_max_alive()
-	
 	pass
 
 func assign_max_alive():
@@ -35,7 +34,6 @@ func assign_max_alive():
 
 func _on_scene_timer_timeout():
 	fDivisor += 1.0
-	print("NEW WAVE", fDivisor)
 	var fMaxTime = 20.0
 	$EnemySpawner.set_rewspan_seconds(fMaxTime / fDivisor)
 	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)

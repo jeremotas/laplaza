@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b6541ctm8c4dc"]
+[gd_scene load_steps=61 format=3 uid="uid://b6541ctm8c4dc"]
 
 [ext_resource type="Shader" path="res://outline_shader.gdshader" id="1_syo1y"]
 [ext_resource type="Texture2D" uid="uid://salulqvo0yqp" path="res://assets/created/patricio.png" id="3_c1ktl"]
@@ -14,6 +14,7 @@ script/source = "extends Character
 var oGoalAssigned = null
 
 var bullet = preload(\"res://bullet.tscn\")
+const GUNSHOT = preload(\"res://assets/original/sounds/gunshot2.mp3\")
 
 func _ready():
 	min_damage_given = 1
@@ -52,9 +53,10 @@ func attack():
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
 		b.set_collision_mask(2)
-		
 		add_child(b)
-		$WeaponSound.play()
+		
+		attack_sound(GUNSHOT)
+		#$WeaponSound.play()
 		
 		attack_objective = null
 	pass	
@@ -498,9 +500,6 @@ advance_condition = &"die"
 advance_mode = 2
 advance_condition = &"shooting"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h4edj"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h2a58"]
 advance_mode = 2
 advance_condition = &"idle"
@@ -529,7 +528,7 @@ states/shoot/node = SubResource("AnimationNodeAnimation_63s3y")
 states/shoot/position = Vector2(184, 201.279)
 states/walk/node = SubResource("AnimationNodeAnimation_01bom")
 states/walk/position = Vector2(518.667, 74.1481)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gc4nl"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4wu01"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5fi4q"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_r7nas"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_lq86a"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_01o7k"), "die", "End", SubResource("AnimationNodeStateMachineTransition_h4edj"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_h2a58"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_m6io4"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_7xolf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_oaabk")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gc4nl"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4wu01"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5fi4q"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_r7nas"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_lq86a"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_01o7k"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_h2a58"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_m6io4"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_7xolf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_oaabk")]
 graph_offset = Vector2(0, 29.6855)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51xer"]
@@ -560,6 +559,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
+frame = 1
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

@@ -3,6 +3,7 @@ extends Character
 @onready var animation = $AnimatedSprite2D
 
 var bullet = preload("res://bullet.tscn") 
+const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _ready():
 	max_speed = 20
@@ -26,10 +27,11 @@ func attack():
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
 		b.set_collision_mask(1)
-		
 		add_child(b)
 		
-		$WeaponSound.play()
+		#$WeaponSound.play()
+		attack_sound(GUNSHOT)
+		
 		
 		attack_objective = null
 	pass	
