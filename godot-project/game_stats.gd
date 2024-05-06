@@ -11,6 +11,9 @@ func _ready():
 	experience_next_level = experience_to_level(1)
 	pass # Replace with function body.
 
+func get_level():
+	return level
+
 func set_level(level_value):
 	level = level_value
 	experience = experience_to_level(level)

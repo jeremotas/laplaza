@@ -4,6 +4,8 @@ var new_position_order = null
 var fDivisor = 1.0
 var iSecondsPassed = 0
 var TheGameStats : GameStats
+var last_level = 0
+@onready var HUD = $HUD
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +20,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	HUD.change(TheGameStats)
+	if TheGameStats.level != last_level:
+		$ChangeLevel.play()
+		last_level = TheGameStats.level
 	assign_max_alive()
 	pass
 

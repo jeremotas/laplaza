@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dio1nkk7s46rf"]
+[gd_scene load_steps=11 format=3 uid="uid://dio1nkk7s46rf"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_atvg7"]
 [ext_resource type="Texture2D" uid="uid://c3cosnyo5bmom" path="res://assets/original/Tilesets/towerDefense_tilesheet.png" id="2_k2c4e"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://unit_spawner.tscn" id="3_8v5o1"]
 [ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://goal.tscn" id="4_cufdx"]
 [ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://player_soldado.tscn" id="5_pcdfl"]
-[ext_resource type="AudioStream" uid="uid://c7fvlgndq61nw" path="res://assets/created/musica/La Batalla de las Camelias.mp3" id="6_bt4l3"]
+[ext_resource type="AudioStream" uid="uid://dldwe1yiexesi" path="res://assets/created/musica/La Zamba del Pasado.mp3" id="6_lkxmc"]
+[ext_resource type="PackedScene" uid="uid://uk3j7rh2076l" path="res://hud.tscn" id="7_xcrrx"]
+[ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="8_hydvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqsfv"]
 texture = ExtResource("2_k2c4e")
@@ -1008,11 +1010,18 @@ wait_time = 10.0
 autostart = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_bt4l3")
-volume_db = -6.265
+stream = ExtResource("6_lkxmc")
+volume_db = -10.392
+autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("7_xcrrx")]
+
+[node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_hydvv")
+volume_db = 15.682
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
