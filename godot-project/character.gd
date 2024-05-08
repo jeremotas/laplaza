@@ -209,7 +209,8 @@ func _on_cool_down_timer_timeout():
 
 func init():
 	rng = RandomNumberGenerator.new()
-	
+	if $LifeProgress:
+		$LifeProgress.max_value = life
 	coolDownTimer = Timer.new()
 	add_child(coolDownTimer)
 	coolDownTimer.autostart = true
@@ -233,8 +234,11 @@ func ComunicationCalculation(delta):
 	#if (comLabelString != ""):
 		#$ComLabel.text = comLabelString
 		#$ComLabel.show()
-	$LifeLabel.text = str(life)
-	$LifeLabel.show()
+	#$LifeLabel.text = str(life)
+	#$LifeLabel.show()
+	if $LifeProgress:
+		$LifeProgress.value = life
+	
 	
 func communication(message):
 	comLabelString += message + " " 

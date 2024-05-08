@@ -1,5 +1,6 @@
-[gd_scene load_steps=61 format=3 uid="uid://b8baohebq5bsy"]
+[gd_scene load_steps=62 format=3 uid="uid://b8baohebq5bsy"]
 
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="1_aexnd"]
 [ext_resource type="Shader" path="res://outline_shader.gdshader" id="1_akuyh"]
 [ext_resource type="Texture2D" uid="uid://bs4hlrx3utxbl" path="res://assets/created/correntino.png" id="2_geu6n"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://selection_area.tscn" id="3_plc24"]
@@ -552,17 +553,19 @@ grow_vertical = 0
 scale = Vector2(1.01485, 0.970381)
 
 [node name="LifeLabel" type="Label" parent="."]
+visible = false
 offset_left = -15.0
 offset_top = -24.0
 offset_right = 25.0
 offset_bottom = -1.0
+theme = ExtResource("1_aexnd")
 theme_override_font_sizes/font_size = 8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 1
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

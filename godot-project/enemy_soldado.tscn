@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://d0ocwx1dr4jth"]
+[gd_scene load_steps=60 format=3 uid="uid://d0ocwx1dr4jth"]
 
 [ext_resource type="Script" path="res://enemy_soldado.gd" id="1_5wky8"]
 [ext_resource type="Texture2D" uid="uid://0bskmuv3bxjj" path="res://assets/created/ingles.png" id="2_7yrye"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="2_kwfwm"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_c4n1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc6oq"]
@@ -454,6 +455,12 @@ states/walk/node = SubResource("AnimationNodeAnimation_1yw6h")
 states/walk/position = Vector2(556, 60)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_7nslt"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_xgmjv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_w1mak"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_uy6df"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_w6dlf"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_1gnbu"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_5uh1q"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_6nu4m"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_ymea3"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_pwdj1")]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3vuh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6nfb"]
+bg_color = Color(0, 0.917647, 0.27451, 1)
+
 [node name="SoldadoEnemigo" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 7
@@ -473,6 +480,7 @@ offset_left = -16.0
 offset_top = -25.0
 offset_right = 24.0
 offset_bottom = -2.0
+theme = ExtResource("2_kwfwm")
 theme_override_font_sizes/font_size = 8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -480,7 +488,7 @@ position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 4
+frame = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, -3, 11, 4, 8, 4, -2)
@@ -514,3 +522,12 @@ position = Vector2(13, 1)
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_c4n1u")
 pitch_scale = 0.71
+
+[node name="LifeProgress" type="ProgressBar" parent="."]
+offset_left = 5.0
+offset_top = -16.0
+offset_right = 22.0
+offset_bottom = -14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_i3vuh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q6nfb")
+show_percentage = false
