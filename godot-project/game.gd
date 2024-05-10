@@ -43,11 +43,9 @@ func _process(delta):
 	pass
 	
 func zoom(delta):
-	print(zooming)
 	if zooming == "" and Input.is_action_just_pressed("ui_accept"):
 		zooming = "up"
 		original_zoom = $General/Camera2D.zoom
-	print($General/Camera2D.zoom , zoom_high)
 	if zooming == "up":
 		$General/Camera2D.zoom += delta * -zoom_speed
 		if $General/Camera2D.zoom <= zoom_high:
@@ -60,7 +58,6 @@ func zoom(delta):
 			zooming = ""
 			$General/Camera2D.zoom = original_zoom 
 	
-	print("ZOOOOOM")
 	
 	
 func assign_max_alive():

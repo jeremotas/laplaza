@@ -2,6 +2,7 @@ extends Sprite2D
 
 var direction = Vector2.ZERO
 @export var speed = 150
+@export var faction = ""
 var min_damage = 0
 var max_damage = 0
 var objective_faction = null
@@ -19,6 +20,10 @@ func prepare():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	translate(direction * speed * delta)
+		
+func set_color(TheColor):
+	modulate = TheColor
+	pass
 
 func _on_visible_on_screen_enabler_2d_screen_exited():
 	try_destroy()

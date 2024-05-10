@@ -19,7 +19,7 @@ const GUNSHOT = preload(\"res://assets/original/sounds/gunshot2.mp3\")
 
 func _ready():
 	min_damage_given = 1
-	max_damage_given = 1
+	max_damage_given = 3
 	#$CollisionPolygon2D.set_layer
 	init()
 
@@ -54,6 +54,7 @@ func attack():
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
 		b.set_collision_mask(2)
+		b.set_color(Color(1, 1, 1))
 		get_parent().add_child(b)
 		
 		attack_sound(GUNSHOT)
@@ -568,7 +569,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 2
+frame = 3
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

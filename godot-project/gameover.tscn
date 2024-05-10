@@ -9,10 +9,10 @@
 script = ExtResource("1_lkn3k")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0.439216, 0.439216, 0.439216, 1)
+self_modulate = Color(0.709804, 0.709804, 0.709804, 1)
 offset_top = -2.0
-offset_right = 639.0
-offset_bottom = 476.0
+offset_right = 641.0
+offset_bottom = 481.0
 texture = ExtResource("2_7kyfl")
 expand_mode = 2
 stretch_mode = 6

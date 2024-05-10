@@ -22,7 +22,7 @@ offset_right = 1.0
 offset_bottom = 1.0
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-3.57628e-08, -1.19209e-07)
+position = Vector2(0, -5.96046e-08)
 scale = Vector2(0.1, 0.1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

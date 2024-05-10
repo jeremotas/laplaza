@@ -18,9 +18,9 @@ var bullet = preload(\"res://bullet.tscn\")
 const GUNSHOT = preload(\"res://assets/original/sounds/gunshot2.mp3\")
 
 func _ready():
-	min_damage_given = 1
-	max_damage_given = 1
-	coolDownAttackTime = 0.1
+	min_damage_given = 8
+	max_damage_given = 14
+	coolDownAttackTime = 3
 	life = 3
 	#$CollisionPolygon2D.set_layer
 	super()
@@ -56,6 +56,7 @@ func attack():
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
 		b.set_collision_mask(2)
+		b.set_color(Color(1, 1, 1))
 		get_parent().add_child(b)
 		
 		attack_sound(GUNSHOT)
@@ -536,7 +537,7 @@ transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(0, 29.6855)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51xer"]
-radius = 61.0
+radius = 465.672
 
 [node name="SoldadoCorrentino" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_3uefd")
@@ -565,7 +566,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 1
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
