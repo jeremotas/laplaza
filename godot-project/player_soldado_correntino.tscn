@@ -15,7 +15,7 @@ script/source = "extends Character
 var oGoalAssigned = null
 
 var bullet = preload(\"res://bullet.tscn\")
-const GUNSHOT = preload(\"res://assets/original/sounds/gunshot2.mp3\")
+const GUNSHOT = preload(\"res://assets/original/sounds/gunshot3.mp3\")
 
 func _ready():
 	min_damage_given = 8
