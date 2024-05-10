@@ -35,7 +35,7 @@ func _process(delta):
 
 func attack():
 	if attack_objective:
-		var b = bullet.instantiate()
+		var b = bullet.instantiate() 
 		b.position = $WeaponPoint.position
 		b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
 		b.objective_faction = attack_objective.faction
@@ -43,7 +43,7 @@ func attack():
 		b.max_damage = max_damage_given
 		b.set_collision_mask(2)
 		
-		add_child(b)
+		get_parent().get_parent().add_child(b)
 		
 		attack_objective = null
 	pass	

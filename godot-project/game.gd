@@ -6,7 +6,14 @@ var iSecondsPassed = 0
 var TheGameStats : GameStats
 var last_level = 0
 var player_max_life = 10
+var zooming = ""
 @onready var HUD = $HUD
+
+var zoom_high = Vector2(0.6, 0.6)
+var zoom_back = Vector2(1, 1)
+var zoom_speed = Vector2(0.3, 0.3)
+var zoom_acceleration = 0.3
+var original_zoom = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +23,8 @@ func _ready():
 	TheGameStats = GameStats.new()
 	TheGameStats._ready()
 	pass
-
+	
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,12 +37,32 @@ func _process(delta):
 	
 	if TheGameStats.game_over:
 		get_tree().change_scene_to_file("res://gameover.tscn")
-
+	zoom(delta)
+	#print($General/Camera2D.zoom)
 	assign_max_alive()
-	
-	
 	pass
-
+	
+func zoom(delta):
+	print(zooming)
+	if zooming == "" and Input.is_action_just_pressed("ui_accept"):
+		zooming = "up"
+		original_zoom = $General/Camera2D.zoom
+	print($General/Camera2D.zoom , zoom_high)
+	if zooming == "up":
+		$General/Camera2D.zoom += delta * -zoom_speed
+		if $General/Camera2D.zoom <= zoom_high:
+			zooming = "down"
+			$General/Camera2D.zoom = zoom_high
+		
+	if zooming == "down":
+		$General/Camera2D.zoom +=  delta * zoom_speed
+		if $General/Camera2D.zoom >= zoom_back:
+			zooming = ""
+			$General/Camera2D.zoom = original_zoom 
+	
+	print("ZOOOOOM")
+	
+	
 func assign_max_alive():
 	$UnitSpawner.max_alive = TheGameStats.level
 	$UnitSpawner2.max_alive = TheGameStats.level

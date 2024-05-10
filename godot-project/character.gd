@@ -65,6 +65,7 @@ func get_input():
 			if direction.distance_to(Vector2.ZERO) < 15:
 				direction = Vector2.ZERO
 			
+		
 			
 		
 	return direction.normalized()
