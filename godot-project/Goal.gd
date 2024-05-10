@@ -12,7 +12,8 @@ func _process(delta):
 		if not unit.status.moving:
 			unit.go_to($Marker.global_position, true)
 
-
+func completed():
+	return UnitsArrived >= NeededUnits
 
 func _on_area_body_entered(body):
 	if body.faction == faction and NeededUnits > UnitsArrived:

@@ -6,55 +6,58 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_84x2r")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 54.0
-offset_bottom = 23.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-alignment = 1
-
-[node name="Nivel" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_4eiih")
-text = "Nivel"
-
-[node name="IndicadorNivel" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_4eiih")
-text = "1"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.5
-offset_right = 20.5
-offset_bottom = 40.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme = ExtResource("2_4eiih")
-alignment = 1
-
-[node name="Time" type="Label" parent="HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "00:00"
-horizontal_alignment = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -79.0
-offset_bottom = 23.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 alignment = 2
 
-[node name="LevelProgress" type="Label" parent="HBoxContainer3"]
+[node name="LevelProgress" type="Label" parent="MarginContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("2_4eiih")
 text = "0 / 10"
 horizontal_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Nivel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4eiih")
+text = "nivel"
+
+[node name="IndicadorNivel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4eiih")
+text = "1"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_4eiih")
+alignment = 1
+
+[node name="Time" type="Label" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "00:00"
+horizontal_alignment = 1

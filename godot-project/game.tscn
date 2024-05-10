@@ -994,12 +994,12 @@ z_index = 2
 position = Vector2(289, 573)
 collision_mask = 6
 faction = "patricios"
-life = 99999
 coolDownAttackTime = 0.2
 min_damage_given = 3
 max_damage_given = 3
 unit_type = "general"
 input_accepted = true
+show_progress_bar = true
 
 [node name="Camera2D" type="Camera2D" parent="General"]
 position_smoothing_enabled = true

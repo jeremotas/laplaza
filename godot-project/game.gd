@@ -5,6 +5,7 @@ var fDivisor = 1.0
 var iSecondsPassed = 0
 var TheGameStats : GameStats
 var last_level = 0
+var player_max_life = 10
 @onready var HUD = $HUD
 
 # Called when the node enters the scene tree for the first time.
@@ -19,11 +20,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	TheGameStats.game_over = ($General.life == 0 or $EnemyGoal.completed())
 	HUD.change(TheGameStats)
 	if TheGameStats.level != last_level:
 		$ChangeLevel.play()
 		last_level = TheGameStats.level
+		$General.life = player_max_life
+	
+	if TheGameStats.game_over:
+		get_tree().change_scene_to_file("res://gameover.tscn")
+
 	assign_max_alive()
+	
+	
 	pass
 
 func assign_max_alive():

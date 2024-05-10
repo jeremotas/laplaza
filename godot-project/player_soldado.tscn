@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b6541ctm8c4dc"]
+[gd_scene load_steps=64 format=3 uid="uid://b6541ctm8c4dc"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="1_70q75"]
 [ext_resource type="Shader" path="res://outline_shader.gdshader" id="1_syo1y"]
@@ -526,7 +526,7 @@ states/hurt/position = Vector2(390.667, 220.666)
 states/idle/node = SubResource("AnimationNodeAnimation_s8hlw")
 states/idle/position = Vector2(376, 75.2098)
 states/shoot/node = SubResource("AnimationNodeAnimation_63s3y")
-states/shoot/position = Vector2(184, 201.279)
+states/shoot/position = Vector2(184, 200.612)
 states/walk/node = SubResource("AnimationNodeAnimation_01bom")
 states/walk/position = Vector2(518.667, 74.1481)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gc4nl"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4wu01"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5fi4q"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_r7nas"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_lq86a"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_01o7k"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_h2a58"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_m6io4"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_7xolf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_oaabk")]
@@ -534,6 +534,12 @@ graph_offset = Vector2(0, 29.6855)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51xer"]
 radius = 152.03
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wcj8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_872au"]
+bg_color = Color(0, 0.917647, 0.27451, 1)
 
 [node name="Soldado" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_3uefd")
@@ -562,7 +568,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 1
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
@@ -608,5 +614,15 @@ position = Vector2(14, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_up1q2")
+
+[node name="LifeProgress" type="ProgressBar" parent="."]
+visible = false
+offset_left = 5.0
+offset_top = -16.0
+offset_right = 22.0
+offset_bottom = -14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2wcj8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_872au")
+show_percentage = false
 
 [connection signal="selection_toggled" from="SelectionArea" to="." method="_on_selection_area_selection_toggled"]

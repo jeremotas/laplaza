@@ -3,6 +3,8 @@ class_name GameStats
 @export var experience = 0
 @export var level = 0
 @export var experience_next_level = 0
+@export var game_over = false
+@export var game_win = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

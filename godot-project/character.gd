@@ -13,6 +13,7 @@ signal death(faction)
 @export var unit_type = 'default'
 @export var input_accepted = false
 @export var attack_block_movement = false
+@export var show_progress_bar = false
 
 var input_direction
 var move_direction
@@ -122,8 +123,8 @@ func AnimationCalculation(delta):
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = false
-		animation_tree["parameters/conditions/shooting"] = true
-		animation_tree["parameters/conditions/walking"] = false
+		animation_tree["parameters/conditions/shooting"] = false
+		animation_tree["parameters/conditions/walking"] = true
 	elif status.moving:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
@@ -211,6 +212,8 @@ func init():
 	rng = RandomNumberGenerator.new()
 	if $LifeProgress:
 		$LifeProgress.max_value = life
+		if show_progress_bar:
+			$LifeProgress.show()
 	coolDownTimer = Timer.new()
 	add_child(coolDownTimer)
 	coolDownTimer.autostart = true

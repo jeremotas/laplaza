@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var direction = Vector2.ZERO
-var speed = 400
+@export var speed = 400
 var min_damage = 0
 var max_damage = 0
 var objective_faction = null
