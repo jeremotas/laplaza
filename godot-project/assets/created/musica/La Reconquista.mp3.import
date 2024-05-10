@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c315r803a5gxs"
+path="res://.godot/imported/La Reconquista.mp3-8f16d1f6002aa8f4529ba4248bde7815.mp3str"
+
+[deps]
+
+source_file="res://assets/created/musica/La Reconquista.mp3"
+dest_files=["res://.godot/imported/La Reconquista.mp3-8f16d1f6002aa8f4529ba4248bde7815.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
