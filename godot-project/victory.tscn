@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckkcp0mw2ieet"]
+
+[ext_resource type="Script" path="res://gameover.gd" id="1_jcefl"]
+[ext_resource type="Texture2D" uid="uid://be4gobj4ipn2w" path="res://assets/original/backgrounds/Flag-Spain-Arg.webp" id="2_yexfi"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="3_17yh6"]
+
+[node name="Victoria" type="Node"]
+script = ExtResource("1_jcefl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.14902, 0.14902, 0.14902, 1)
+offset_right = 639.0
+offset_bottom = 478.0
+texture = ExtResource("2_yexfi")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 261.5
+offset_top = 412.0
+offset_right = 378.5
+offset_bottom = 468.0
+
+[node name="Reiniciar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_17yh6")
+text = "Volver a jugar"
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_17yh6")
+text = "Salir"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Victoria" type="Label" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_17yh6")
+theme_override_font_sizes/font_size = 68
+text = "¡VICTORIA!"
+horizontal_alignment = 1
+
+[node name="Mensaje" type="Label" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_17yh6")
+theme_override_font_sizes/font_size = 16
+text = "No hay un solo ejemplo en la historia, me atrevo a decir, que pueda igualarse a lo ocurrido en Buenos Aires, donde, sin exageración, todos los habitantes, libres o esclavos, combatieron con una resolución y una pertenencia que no podía esperarse ni del entusiasmo religioso o patriótico, ni del odio más inveterado."
+horizontal_alignment = 3
+autowrap_mode = 3
+
+[node name="Whitelocke" type="Label" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_17yh6")
+text = "J. Whitelocke"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

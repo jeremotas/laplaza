@@ -36,6 +36,7 @@ func spawn_new_call(probability_generation):
 		if soldado.has_method("assign_goal"):
 			soldado.assign_goal(oGoalToAssign)
 		get_parent().add_child(soldado)
+		#add_child(soldado)
 	
 func _on_timer_de_spawn_unidades_timeout():
 	spawn_new_call(probabilitySpawnOnTimer)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="La plaza"
-run/main_scene="res://game.tscn"
+run/main_scene="res://preinicio.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 
 [display]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://deepk7tv618e4"]
 
-[ext_resource type="Texture2D" uid="uid://cey088ya5xbdh" path="res://assets/original/backgrounds/Flag-United-Kingdom.webp" id="1_feja2"]
 [ext_resource type="Script" path="res://gameover.gd" id="1_lkn3k"]
+[ext_resource type="Texture2D" uid="uid://51vme1xju2nx" path="res://assets/original/backgrounds/Flag-United-Kingdom-pixeled.webp" id="2_7kyfl"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="2_pfgda"]
 [ext_resource type="AudioStream" uid="uid://bgqj7x4prl57g" path="res://assets/original/Music/britishsong.mp3" id="3_r3bll"]
 
@@ -9,9 +9,11 @@
 script = ExtResource("1_lkn3k")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.439216, 0.439216, 0.439216, 1)
+offset_top = -2.0
 offset_right = 639.0
-offset_bottom = 478.0
-texture = ExtResource("1_feja2")
+offset_bottom = 476.0
+texture = ExtResource("2_7kyfl")
 expand_mode = 2
 stretch_mode = 6
 
@@ -21,16 +23,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -222.5
-offset_top = -34.5
-offset_right = 228.5
-offset_bottom = 38.5
+offset_left = -234.5
+offset_top = -19.5
+offset_right = 240.5
+offset_bottom = 67.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_pfgda")
 theme_override_font_sizes/font_size = 68
 text = "CONQUERED"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 261.5
