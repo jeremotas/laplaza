@@ -8,5 +8,5 @@ func _on_reiniciar_pressed():
 
 
 func _on_salir_pressed():
-	get_tree().quit() # default behavior
+	get_tree().change_scene_to_file("res://inicio.tscn")
 

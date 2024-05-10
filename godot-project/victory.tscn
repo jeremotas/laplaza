@@ -33,7 +33,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("3_17yh6")
-text = "Salir"
+text = "Menu principal"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

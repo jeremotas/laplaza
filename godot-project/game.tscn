@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dio1nkk7s46rf"]
+[gd_scene load_steps=12 format=3 uid="uid://dio1nkk7s46rf"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_atvg7"]
 [ext_resource type="Texture2D" uid="uid://c3cosnyo5bmom" path="res://assets/original/Tilesets/towerDefense_tilesheet.png" id="2_k2c4e"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dldwe1yiexesi" path="res://assets/created/musica/La Zamba del Pasado.mp3" id="6_lkxmc"]
 [ext_resource type="PackedScene" uid="uid://uk3j7rh2076l" path="res://hud.tscn" id="7_xcrrx"]
 [ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="8_hydvv"]
+[ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://pause_menu.tscn" id="9_dm8n5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqsfv"]
 texture = ExtResource("2_k2c4e")
@@ -1022,6 +1023,9 @@ autostart = true
 [node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_hydvv")
 volume_db = 15.682
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_dm8n5")]
+visible = false
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -55,6 +55,7 @@ func attack():
 		b.objective_faction = attack_objective.faction
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
+		b.speed = 500
 		b.set_collision_mask(2)
 		b.set_color(Color(1, 1, 1))
 		get_parent().add_child(b)
@@ -566,7 +567,6 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

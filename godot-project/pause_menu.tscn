@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://u6pw5bj6d6pt"]
+
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="1_0jpk6"]
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_fhevk"]
+[ext_resource type="Shader" path="res://blur.gdshader" id="2_l5obs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtvlx"]
+shader = ExtResource("2_l5obs")
+shader_parameter/amount = 1.225
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_fhevk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_dtvlx")
+offset_right = 647.0
+offset_bottom = 488.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -69.0
+offset_top = -86.0
+offset_right = 69.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Continuar" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_0jpk6")
+text = "Continuar"
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_0jpk6")
+text = "Menu principal"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

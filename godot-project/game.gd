@@ -8,7 +8,8 @@ var last_level = 0
 var player_max_life = 10
 var zooming = ""
 @onready var HUD = $HUD
-
+@onready var pause_menu = $PauseMenu
+var paused = false
 var zoom_high = Vector2(0.6, 0.6)
 var zoom_back = Vector2(1, 1)
 var zoom_speed = Vector2(0.3, 0.3)
@@ -37,9 +38,21 @@ func _process(delta):
 	
 	if TheGameStats.game_over:
 		get_tree().change_scene_to_file("res://gameover.tscn")
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
 	zoom(delta)
 	#print($General/Camera2D.zoom)
 	assign_max_alive()
+	pass
+	
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	paused = !paused
 	pass
 	
 func zoom(delta):
