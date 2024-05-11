@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://82akg653e7j3"]
 
 [ext_resource type="Texture2D" uid="uid://vbyhoxu0b3y4" path="res://assets/original/images/laromero_arg.png" id="1_wfpr4"]
-[ext_resource type="Script" path="res://preinicio.gd" id="1_x4wjh"]
+[ext_resource type="Script" path="res://scenes/screens/preinicio.gd" id="1_x4wjh"]
 
 [sub_resource type="Animation" id="Animation_eqjhs"]
 resource_name = "La romero"

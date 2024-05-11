@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://prplx1wymlg5"]
 
-[ext_resource type="Script" path="res://UnitSpawner.gd" id="1_wlqm7"]
+[ext_resource type="Script" path="res://scenes/common/UnitSpawner.gd" id="1_wlqm7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxbwp"]
 radius = 27.6586

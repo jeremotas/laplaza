@@ -15,6 +15,7 @@ var zoom_back = Vector2(1, 1)
 var zoom_speed = Vector2(0.3, 0.3)
 var zoom_acceleration = 0.3
 var original_zoom = Vector2()
+var Malon = {"correntinos": 0, "granaderos": 0}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,7 +38,7 @@ func _process(delta):
 		$General.life = player_max_life
 	
 	if TheGameStats.game_over:
-		get_tree().change_scene_to_file("res://gameover.tscn")
+		get_tree().change_scene_to_file("res://scenes/screens/gameover.tscn")
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
 	zoom(delta)

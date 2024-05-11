@@ -1,10 +1,10 @@
 [gd_scene load_steps=64 format=3 uid="uid://b6541ctm8c4dc"]
 
-[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="1_70q75"]
-[ext_resource type="Shader" path="res://outline_shader.gdshader" id="1_syo1y"]
-[ext_resource type="Texture2D" uid="uid://salulqvo0yqp" path="res://assets/created/patricio.png" id="3_c1ktl"]
-[ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://selection_area.tscn" id="3_eh154"]
-[ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_up1q2"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_23mat"]
+[ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="2_rdicc"]
+[ext_resource type="Texture2D" uid="uid://salulqvo0yqp" path="res://assets/created/patricio.png" id="3_glm1r"]
+[ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="4_43sh1"]
+[ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="5_nfucf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uefd"]
 
@@ -14,7 +14,7 @@ script/source = "extends Character
 @onready var animation = $AnimatedSprite2D
 var oGoalAssigned = null
 
-var bullet = preload(\"res://bullet.tscn\")
+var bullet = preload(\"res://scenes/common/bullet.tscn\")
 const GUNSHOT = preload(\"res://assets/original/sounds/gunshot2.mp3\")
 
 func _ready():
@@ -77,7 +77,7 @@ func show_selection():
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_20jic"]
 resource_local_to_scene = true
-shader = ExtResource("1_syo1y")
+shader = ExtResource("2_rdicc")
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/width = 0.0
 shader_parameter/pattern = 0
@@ -85,119 +85,119 @@ shader_parameter/inside = false
 shader_parameter/add_margins = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2dyw"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(0, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17xl3"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(32, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_suwrf"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(64, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r47sd"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(96, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgkfi"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(128, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbkv5"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(160, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2m6r4"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(192, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_or2xn"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pup0l"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1obai"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kujqo"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_525yt"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcko0"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srkfh"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjhmv"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c24o"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hckob"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_il0lc"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uyvht"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ao3rk"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nqfo"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(0, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5n7ca"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(32, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xddru"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(64, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_10n0v"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(96, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dt6xi"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(128, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cia1"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(160, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m27eh"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(192, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60lef"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(224, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wd80u"]
-atlas = ExtResource("3_c1ktl")
+atlas = ExtResource("3_glm1r")
 region = Rect2(256, 33, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vhaxh"]
@@ -562,14 +562,14 @@ offset_left = -15.0
 offset_top = -24.0
 offset_right = 25.0
 offset_bottom = -1.0
-theme = ExtResource("1_70q75")
+theme = ExtResource("1_23mat")
 theme_override_font_sizes/font_size = 8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 3
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
@@ -593,7 +593,7 @@ position = Vector2(-1.00781, 2.09375)
 scale = Vector2(0.507812, 0.46875)
 polygon = PackedVector2Array(-5, -11, -7, 17, 6, 16, 9, -9)
 
-[node name="SelectionArea" parent="." instance=ExtResource("3_eh154")]
+[node name="SelectionArea" parent="." instance=ExtResource("4_43sh1")]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SelectionArea"]
 polygon = PackedVector2Array(-3, -4, -5, 12, 3, 13, 4, -5)
@@ -614,7 +614,7 @@ polygon = PackedVector2Array(-6, -7, 7, -7, 6, 12, -6, 12)
 position = Vector2(14, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_up1q2")
+stream = ExtResource("5_nfucf")
 
 [node name="LifeProgress" type="ProgressBar" parent="."]
 visible = false

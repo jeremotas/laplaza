@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://uk3j7rh2076l"]
 
-[ext_resource type="Script" path="res://hud.gd" id="1_84x2r"]
-[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="2_4eiih"]
+[ext_resource type="Script" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_7ne2n"]
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_84x2r")
+script = ExtResource("1_b1w0e")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -28,7 +28,7 @@ alignment = 2
 [node name="LevelProgress" type="Label" parent="MarginContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme = ExtResource("2_4eiih")
+theme = ExtResource("2_7ne2n")
 text = "0 / 10"
 horizontal_alignment = 2
 
@@ -40,19 +40,19 @@ alignment = 1
 
 [node name="Nivel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_4eiih")
+theme = ExtResource("2_7ne2n")
 text = "nivel"
 
 [node name="IndicadorNivel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_4eiih")
+theme = ExtResource("2_7ne2n")
 text = "1"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = ExtResource("2_4eiih")
+theme = ExtResource("2_7ne2n")
 alignment = 1
 
 [node name="Time" type="Label" parent="MarginContainer/HBoxContainer2"]

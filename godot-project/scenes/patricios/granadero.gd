@@ -3,7 +3,7 @@ extends Character
 @onready var animation = $AnimatedSprite2D
 var oGoalAssigned = null
 
-var bullet = preload("res://bullet.tscn")
+var bullet = preload("res://scenes/common/bullet.tscn")
 
 func _ready():
 	min_damage_given = 1

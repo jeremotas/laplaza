@@ -1,9 +1,9 @@
 [gd_scene load_steps=62 format=3 uid="uid://b8baohebq5bsy"]
 
-[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="1_aexnd"]
-[ext_resource type="Shader" path="res://outline_shader.gdshader" id="1_akuyh"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_aexnd"]
+[ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="1_akuyh"]
 [ext_resource type="Texture2D" uid="uid://bs4hlrx3utxbl" path="res://assets/created/correntino.png" id="2_geu6n"]
-[ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://selection_area.tscn" id="3_plc24"]
+[ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="3_plc24"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_167lu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uefd"]
@@ -14,7 +14,7 @@ script/source = "extends Character
 @onready var animation = $AnimatedSprite2D
 var oGoalAssigned = null
 
-var bullet = preload(\"res://bullet.tscn\")
+var bullet = preload(\"res://scenes/common/bullet.tscn\")
 const GUNSHOT = preload(\"res://assets/original/sounds/gunshot3.mp3\")
 
 func _ready():
@@ -567,6 +567,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
+frame = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

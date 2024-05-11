@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://u6pw5bj6d6pt"]
 
-[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="1_0jpk6"]
-[ext_resource type="Script" path="res://pause_menu.gd" id="1_fhevk"]
-[ext_resource type="Shader" path="res://blur.gdshader" id="2_l5obs"]
+[ext_resource type="Script" path="res://scenes/controls/pause_menu.gd" id="1_wwgda"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_76fdo"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_mqs88"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dtvlx"]
-shader = ExtResource("2_l5obs")
+shader = ExtResource("2_76fdo")
 shader_parameter/amount = 1.225
 
 [node name="PauseMenu" type="CanvasLayer"]
-script = ExtResource("1_fhevk")
+script = ExtResource("1_wwgda")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_dtvlx")
@@ -37,12 +37,12 @@ layout_mode = 2
 
 [node name="Continuar" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_0jpk6")
+theme = ExtResource("3_mqs88")
 text = "Continuar"
 
 [node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_0jpk6")
+theme = ExtResource("3_mqs88")
 text = "Menu principal"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

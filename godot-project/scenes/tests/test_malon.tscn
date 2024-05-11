@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://buarwecasqe6b"]
 
-[ext_resource type="Script" path="res://test_malon.gd" id="1_31kom"]
-[ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://unit_spawner.tscn" id="1_a8bjd"]
-[ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://player_soldado.tscn" id="1_wmfrd"]
+[ext_resource type="Script" path="res://scenes/tests/test_malon.gd" id="1_31kom"]
+[ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="1_a8bjd"]
+[ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://scenes/patricios/granadero.tscn" id="1_wmfrd"]
 
 [node name="test_malon" type="Node2D"]
 script = ExtResource("1_31kom")

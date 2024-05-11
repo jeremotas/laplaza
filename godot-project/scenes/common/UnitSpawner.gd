@@ -2,7 +2,7 @@ extends Marker2D
 var entity = null
 @export var probabilitySpawnOnTimer = 20.0
 @export var spawnOnReady = true
-@export var unitScene = "res://player_soldado.tscn"
+@export var unitScene = "res://scenes/patricios/granadero.tscn"
 @export var faction = ""
 @export var respawn_seconds = 2.5
 @export var max_alive = 0

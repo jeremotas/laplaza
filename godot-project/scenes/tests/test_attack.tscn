@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://de0d38cwcc5ua"]
 
-[ext_resource type="Script" path="res://test_attack.gd" id="1_4fgik"]
-[ext_resource type="PackedScene" uid="uid://b8baohebq5bsy" path="res://player_soldado_correntino.tscn" id="1_v8mqm"]
-[ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://enemy_soldado.tscn" id="2_qlt1g"]
+[ext_resource type="Script" path="res://scenes/tests/test_attack.gd" id="1_4fgik"]
+[ext_resource type="PackedScene" uid="uid://b8baohebq5bsy" path="res://scenes/patricios/correntino.tscn" id="1_v8mqm"]
+[ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://scenes/ingleses/ingles.tscn" id="2_qlt1g"]
 
 [node name="test_attack" type="Node2D"]
 script = ExtResource("1_4fgik")

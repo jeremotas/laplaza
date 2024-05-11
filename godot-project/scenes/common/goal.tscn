@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdhmiefax7gyv"]
 
-[ext_resource type="Script" path="res://Goal.gd" id="1_4ypff"]
-[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://theme_hud.tres" id="2_p2urd"]
+[ext_resource type="Script" path="res://scenes/common/Goal.gd" id="1_4ypff"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_p2urd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x5fn"]
 size = Vector2(72, 61)

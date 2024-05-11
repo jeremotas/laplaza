@@ -2,7 +2,7 @@ extends Character
 
 @onready var animation = $AnimatedSprite2D
 
-var bullet = preload("res://bullet.tscn") 
+var bullet = preload("res://scenes/common/bullet.tscn") 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _ready():
