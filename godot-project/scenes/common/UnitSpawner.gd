@@ -7,17 +7,22 @@ var entity = null
 @export var respawn_seconds = 2.5
 @export var max_alive = 0
 @export var controled_max_alive = false
+var queue = []
 
 var rng = RandomNumberGenerator.new()
 var oGoalToAssign = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	entity = load(unitScene)
 	$TimerDeSpawnUnidades.start(respawn_seconds)
 	if spawnOnReady:
 		spawn_new_call(100.0)
-	pass # Replace with function body.
+
+func spawn_unit(unitSceneAsked):
+	var unitSceneOld = unitScene
+	entity = load(unitSceneAsked)
+	spawn_new_call(100.0)
+	unitScene = unitSceneOld
 
 func set_rewspan_seconds(respawn_seconds_new):
 	respawn_seconds = respawn_seconds_new
@@ -39,4 +44,22 @@ func spawn_new_call(probability_generation):
 		#add_child(soldado)
 	
 func _on_timer_de_spawn_unidades_timeout():
-	spawn_new_call(probabilitySpawnOnTimer)
+	if queue.size() > 0:
+		var unitSceneCalled = queue.pop_front()
+		spawn_unit(unitSceneCalled)
+		print("spawned from queue")
+		print(unitSceneCalled)
+		print(queue)
+	else:
+		spawn_new_call(probabilitySpawnOnTimer)
+
+func in_queue(faction, unit_type_searched):
+	var unitSceneSearched = "res://scenes/" + faction + "/" + unit_type_searched + ".tscn"
+	return queue.count(unitSceneSearched)
+
+func queue_size():
+	return queue.size()
+
+func queue_spawn_unit(faction, unit_type_called):
+	var unitSceneCalled = "res://scenes/" + faction + "/" + unit_type_called + ".tscn"
+	queue.push_back(unitSceneCalled)

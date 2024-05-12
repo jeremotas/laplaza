@@ -17,9 +17,10 @@ var oGoalAssigned = null
 var bullet = preload(\"res://scenes/common/bullet.tscn\")
 const GUNSHOT = preload(\"res://assets/original/sounds/gunshot2.mp3\")
 
-func _ready():
+func _init():
 	min_damage_given = 1
 	max_damage_given = 3
+	unit_type = \"granadero\"
 	#$CollisionPolygon2D.set_layer
 	init()
 
@@ -317,7 +318,6 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_xi7hg"]
 length = 0.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -569,7 +569,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 4
+frame = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

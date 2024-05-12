@@ -15,6 +15,8 @@ signal death(faction)
 @export var attack_block_movement = false
 @export var show_progress_bar = false
 
+var experience_given = 1
+
 var input_direction
 var move_direction
 var rng
@@ -33,11 +35,17 @@ var coolDownTimer = null
 
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
+	
 		
+#func animation_ends(animation):
+#	print(animation)
+#	if animation == 'die':
+#		animation_tree.active = false
 
 func add_to_faction(new_faction):
 	faction = new_faction
 	add_to_group("faccion_" + faction)
+	add_to_group("faccion_" + faction + "_" + unit_type)
 
 func go_to(new_destination, forced = false):
 	if selected or forced:
@@ -142,11 +150,7 @@ func AnimationCalculation(delta):
 	if velocity.x > 0: 
 		$AnimatedSprite2D.flip_h = false
 	elif velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
-		
-	#$AnimatedSprite2D.play(animation_selected)
-	
-	pass
+		$AnimatedSprite2D.flip_h = true	
 	
 func MovementLoop(delta):
 	# Gestionamos velocidad
@@ -187,21 +191,21 @@ func StatusCalculation(delta):
 	if life == 0:
 		status.moving = false
 		status.attacking = false
-		if not death_emited:
-			death.emit(faction)
-			death_emited = true
 		#("Death", faction)
 		
 		var deathTimer = Timer.new()
 		add_child(deathTimer)
 		deathTimer.autostart = true
-		deathTimer.wait_time = 0.5
+		deathTimer.wait_time = 5
 		deathTimer.one_shot = true
 		deathTimer.timeout.connect(destroy_character)
 		deathTimer.start()
+		
+		if not death_emited:
+			death.emit(faction, experience_given)
+			death_emited = true
 
 func destroy_character():
-	$AnimationPlayer.stop()
 	queue_free()
 
 func _on_cool_down_timer_timeout():
@@ -211,7 +215,7 @@ func _on_cool_down_timer_timeout():
 
 func init():
 	rng = RandomNumberGenerator.new()
-	if $LifeProgress:
+	if has_node("LifeProgress"):
 		$LifeProgress.max_value = life
 		if show_progress_bar:
 			$LifeProgress.show()
@@ -237,10 +241,10 @@ func _process(delta):
 func ComunicationCalculation(delta):
 	#if (comLabelString != ""):
 		#$ComLabel.text = comLabelString
-		#$ComLabel.show()
+		#$ComLabel.show()	
 	#$LifeLabel.text = str(life)
 	#$LifeLabel.show()
-	if $LifeProgress:
+	if has_node("LifeProgress"):
 		$LifeProgress.value = life
 	
 	
@@ -258,4 +262,7 @@ func attack_sound(stream):
 func _ready():
 	if get_parent().has_method("_on_death"):
 		death.connect(get_parent()._on_death)
+#	if has_node("AnimationPlayer"):
+#		print($AnimationPlayer.animation_finished)
+#		$AnimationPlayer.animation_finished.connect(animation_ends)
 	init()

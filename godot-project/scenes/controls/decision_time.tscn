@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://duronouk3fu1p"]
+
+[ext_resource type="Script" path="res://scenes/controls/decision_time.gd" id="1_oii2v"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_joe4m"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_ydeda"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]
+shader = ExtResource("2_ydeda")
+shader_parameter/amount = 1.152
+
+[node name="decision_time" type="CanvasLayer"]
+script = ExtResource("1_oii2v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ddyt5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_joe4m")
+
+[node name="GranaderoButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Granadero"
+
+[node name="CorrentinoButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Correntino"
+
+[node name="MoreLifeButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Incrementar vida (10)"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GranaderoButton" to="." method="_on_granadero_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CorrentinoButton" to="." method="_on_correntino_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MoreLifeButton" to="." method="_on_more_life_button_pressed"]

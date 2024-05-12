@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://d0ocwx1dr4jth"]
+[gd_scene load_steps=61 format=3 uid="uid://d0ocwx1dr4jth"]
 
 [ext_resource type="Script" path="res://scenes/ingleses/ingles.gd" id="1_5wky8"]
 [ext_resource type="Texture2D" uid="uid://0bskmuv3bxjj" path="res://assets/created/ingles.png" id="2_7yrye"]
@@ -241,7 +241,6 @@ radius = 131.004
 
 [sub_resource type="Animation" id="Animation_sedgb"]
 length = 0.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -442,9 +441,13 @@ advance_condition = &"die"
 advance_mode = 2
 advance_condition = &"die"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6xyr6"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d1jqw"]
 states/die/node = SubResource("AnimationNodeAnimation_u3nqx")
-states/die/position = Vector2(662, 162.667)
+states/die/position = Vector2(673.333, 129.334)
 states/hurt/node = SubResource("AnimationNodeAnimation_pky4p")
 states/hurt/position = Vector2(544, 208.296)
 states/idle/node = SubResource("AnimationNodeAnimation_n41af")
@@ -453,7 +456,7 @@ states/shoot/node = SubResource("AnimationNodeAnimation_fav6q")
 states/shoot/position = Vector2(320, 187.111)
 states/walk/node = SubResource("AnimationNodeAnimation_1yw6h")
 states/walk/position = Vector2(556, 60)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_7nslt"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_xgmjv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_w1mak"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_uy6df"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_w6dlf"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_1gnbu"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_5uh1q"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_6nu4m"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_ymea3"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_pwdj1")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_7nslt"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_xgmjv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_w1mak"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_uy6df"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_w6dlf"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_1gnbu"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_5uh1q"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_6nu4m"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_ymea3"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_pwdj1"), "die", "End", SubResource("AnimationNodeStateMachineTransition_6xyr6")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3vuh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -488,7 +491,7 @@ position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 1
+frame = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, -3, 11, 4, 8, 4, -2)
