@@ -15,6 +15,8 @@ signal death(faction)
 @export var attack_block_movement = false
 @export var show_progress_bar = false
 
+var experience_given = 1
+
 var input_direction
 var move_direction
 var rng
@@ -38,6 +40,7 @@ var vMouseInitialPosition = Vector2.ZERO
 func add_to_faction(new_faction):
 	faction = new_faction
 	add_to_group("faccion_" + faction)
+	add_to_group("faccion_" + faction + "_" + unit_type)
 
 func go_to(new_destination, forced = false):
 	if selected or forced:
@@ -188,7 +191,7 @@ func StatusCalculation(delta):
 		status.moving = false
 		status.attacking = false
 		if not death_emited:
-			death.emit(faction)
+			death.emit(faction, experience_given)
 			death_emited = true
 		#("Death", faction)
 		

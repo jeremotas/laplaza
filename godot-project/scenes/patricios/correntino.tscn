@@ -17,13 +17,17 @@ var oGoalAssigned = null
 var bullet = preload(\"res://scenes/common/bullet.tscn\")
 const GUNSHOT = preload(\"res://assets/original/sounds/gunshot3.mp3\")
 
-func _ready():
+func _init():
 	min_damage_given = 8
 	max_damage_given = 14
 	coolDownAttackTime = 3
 	life = 3
-	#$CollisionPolygon2D.set_layer
+	unit_type = \"correntino\"
+	
+
+func _ready():
 	super()
+	pass	
 
 func assign_goal(oGoal):
 	oGoalAssigned = oGoal
@@ -567,7 +571,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 2
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

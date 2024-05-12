@@ -5,13 +5,16 @@ extends Character
 var bullet = preload("res://scenes/common/bullet.tscn") 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
-func _ready():
+func _init():
 	max_speed = 15
 	life = 8
 	min_damage_given = 1
 	max_damage_given = 1
+	unit_type = "ingles"
+	experience_given = 2
+	
+func _ready():
 	super()
-	pass
 
 func _process(delta):
 	attack()

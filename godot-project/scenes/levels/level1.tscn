@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dio1nkk7s46rf"]
+[gd_scene load_steps=13 format=3 uid="uid://dio1nkk7s46rf"]
 
 [ext_resource type="Script" path="res://scenes/levels/level1.gd" id="1_6uh2d"]
 [ext_resource type="Texture2D" uid="uid://c3cosnyo5bmom" path="res://assets/original/Tilesets/towerDefense_tilesheet.png" id="2_4jkru"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://uk3j7rh2076l" path="res://scenes/controls/hud.tscn" id="7_4vlew"]
 [ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="8_e45fx"]
 [ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://scenes/controls/pause_menu.tscn" id="9_e3h4x"]
+[ext_resource type="PackedScene" uid="uid://duronouk3fu1p" path="res://scenes/controls/decision_time.tscn" id="10_3r0pu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqsfv"]
 texture = ExtResource("2_4jkru")
@@ -934,20 +935,11 @@ layer_1/tile_data = PackedInt32Array(393220, 524288, 11, 786430, 983040, 5, 7209
 
 [node name="UnitSpawner" parent="." instance=ExtResource("3_51c0a")]
 position = Vector2(-5, 765)
-probabilitySpawnOnTimer = 100.0
+probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
 unitScene = "res://scenes/patricios/correntino.tscn"
 faction = "patricios"
-respawn_seconds = 2.0
-max_alive = 8
-controled_max_alive = true
-
-[node name="UnitSpawner2" parent="." instance=ExtResource("3_51c0a")]
-position = Vector2(569, 757)
-probabilitySpawnOnTimer = 100.0
-spawnOnReady = false
-faction = "patricios"
-respawn_seconds = 2.0
+respawn_seconds = 1.0
 max_alive = 8
 controled_max_alive = true
 
@@ -1025,6 +1017,9 @@ stream = ExtResource("8_e45fx")
 volume_db = 15.682
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_e3h4x")]
+visible = false
+
+[node name="decision_time" parent="." instance=ExtResource("10_3r0pu")]
 visible = false
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
