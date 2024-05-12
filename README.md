@@ -13,3 +13,9 @@ https://docs.google.com/document/d/1AAYK3_oD9D62_4y4W6Lq3UKwHxYz0JgrVtVRB-h1TjQ/
 
 ## UVP
 https://docs.google.com/document/d/1DHJNvjO8sky2a09Tkg50iiAMSfRXTyYXYH-HpPb9LVI/edit?usp=sharing
+
+## Diario de Diseño
+https://docs.google.com/spreadsheets/d/16ahG_s51dMtERX8fvMTzNdzuzXIn38gOs2MOBomutnI/edit?usp=sharing
+
+Unidades:
+https://docs.google.com/spreadsheets/d/1cuNLG7TA7DbmPFf_3JUQCEjdeOHbvHb0PWDaINejGLk/edit#gid=0
