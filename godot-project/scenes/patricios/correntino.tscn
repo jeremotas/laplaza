@@ -325,7 +325,6 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_xi7hg"]
 length = 0.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -571,7 +570,6 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
