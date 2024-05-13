@@ -54,9 +54,10 @@ func prepare_initial_conditions():
 func _process(delta):
 	calculate_stats() # Calculamos resultados
 	HUD.change(TheGameStats) # Envio estadisticas a la interfaz
-	process_pause() # Revisamos si hubo pausa
-	control_malon() # Gestionamos la composicion del malon
-	zoom(delta) # Controlamos el movimiento de camara
+	if not (TheGameStats.game_over or TheGameStats.game_win):
+		control_malon() # Gestionamos la composicion del malon
+		zoom(delta) # Controlamos el movimiento de camara
+		process_pause() # Revisamos si hubo pausa
 
 func control_malon():
 	var faction = "patricios"
@@ -68,7 +69,7 @@ func control_malon():
 		var iQuantityInGame = get_tree().get_nodes_in_group("faccion_" + faction + "_" + unit_type).size() + $UnitSpawner.in_queue(faction, unit_type) 
 		
 		if iQuantityInGame  < subgroup.quantity:
-			print("queue spawn", unit_type)
+			#print("queue spawn", unit_type)
 			$UnitSpawner.queue_spawn_unit(faction, unit_type)
 	$UnitSpawner.max_alive = max_alive
 
@@ -216,26 +217,37 @@ func prepare_enemy_spawns():
 		$EnemySpawner.set_rewspan_seconds(strategy.spawn1.seconds)
 		$EnemySpawner.probabilitySpawnOnTimer = strategy.spawn1.probability
 		$EnemySpawner.set_unit_type(strategy.spawn1.unit_type)
+		$EnemySpawner.controlled_max_alive = true 
+		$EnemySpawner.max_alive = strategy.spawn1.max_alive
 		
 		$EnemySpawner2.set_rewspan_seconds(strategy.spawn2.seconds)
 		$EnemySpawner2.probabilitySpawnOnTimer = strategy.spawn2.probability
 		$EnemySpawner2.set_unit_type(strategy.spawn2.unit_type)
+		$EnemySpawner2.controlled_max_alive = true 
+		$EnemySpawner2.max_alive = strategy.spawn2.max_alive
 		
 		$EnemySpawner3.set_rewspan_seconds(strategy.spawn3.seconds)
 		$EnemySpawner3.probabilitySpawnOnTimer = strategy.spawn3.probability
 		$EnemySpawner3.set_unit_type(strategy.spawn3.unit_type)
+		$EnemySpawner3.controlled_max_alive = true 
+		$EnemySpawner3.max_alive = strategy.spawn3.max_alive
 		
 		$EnemySpawner4.set_rewspan_seconds(strategy.spawn4.seconds)
 		$EnemySpawner4.probabilitySpawnOnTimer = strategy.spawn4.probability
 		$EnemySpawner4.set_unit_type(strategy.spawn4.unit_type)
+		$EnemySpawner4.controlled_max_alive = true 
+		$EnemySpawner4.max_alive = strategy.spawn4.max_alive
 		
 		$EnemySpawner5.set_rewspan_seconds(strategy.spawn5.seconds)
 		$EnemySpawner5.probabilitySpawnOnTimer = strategy.spawn5.probability
 		$EnemySpawner5.set_unit_type(strategy.spawn5.unit_type)
+		$EnemySpawner5.controlled_max_alive = true 
+		$EnemySpawner5.max_alive = strategy.spawn5.max_alive
 
 
 func _on_timer_timeout():
 	# Control para el reloj del juego
+	print(get_tree().get_nodes_in_group("faccion_ingleses").size())
 	iSecondsPassed += 1
 	HUD.change_time(iSecondsPassed)
 

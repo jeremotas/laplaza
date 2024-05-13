@@ -6,7 +6,7 @@ var entity = null
 @export var faction = ""
 @export var respawn_seconds = 2.5
 @export var max_alive = 0
-@export var controled_max_alive = false
+@export var controlled_max_alive = false
 var queue = []
 
 var rng = RandomNumberGenerator.new()
@@ -37,7 +37,7 @@ func set_goal(oGoal):
 
 func spawn_new_call(probability_generation):
 	var value_creation = rng.randf_range(0.0, 100.0)
-	var can_spawn = not controled_max_alive or max_alive >= get_tree().get_nodes_in_group("faccion_" + faction).size() + 1
+	var can_spawn = not controlled_max_alive or max_alive >= get_tree().get_nodes_in_group("faccion_" + faction).size() + 1
 	if can_spawn and not $SpawnArea.has_overlapping_bodies() and value_creation <= probability_generation:
 		var soldado = entity.instantiate();
 		soldado.global_position = global_position

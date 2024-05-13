@@ -5,16 +5,16 @@ var settings = {
 		"enemy_goal": 12,
 		"player_max_life": 10,
 		"min_player_life_after_level_up": 0,
-		"initial_conditions": {
-			"units_arrived": 8,
-			"life": 4,
-			"malon": {
-				"granadero": 2,
-				"correntino": 2
-			},
-			"level": 5,
-			"time": 88
-		}
+		#"initial_conditions": {
+		#	"units_arrived": 8,
+		#	"life": 4,
+		#	"malon": {
+		#		"granadero": 2,
+		#		"correntino": 2
+		#	},
+		#	"level": 5,
+		#	"time": 88
+		#}
 	},
 	"patricios": {
 		"granadero": {
@@ -48,19 +48,43 @@ var settings = {
 	"enemy_spawn_strategy":[
 		{
 			"min_time": 0,
-			"spawn1": {"unit_type": "ingles", "seconds": 10, "probability": 100},
-			"spawn2": {"unit_type": "ingles", "seconds": 7, "probability": 100},
-			"spawn3": {"unit_type": "ingles", "seconds": 10, "probability": 100},
-			"spawn4": {"unit_type": "ingles", "seconds": 7, "probability": 100},
-			"spawn5": {"unit_type": "ingles", "seconds": 10, "probability": 100},
+			"spawn1": {"unit_type": "ingles", "seconds": 10, "probability": 100, "max_alive": 10},
+			"spawn2": {"unit_type": "ingles", "seconds": 7, "probability": 100, "max_alive": 10},
+			"spawn3": {"unit_type": "ingles", "seconds": 10, "probability": 100, "max_alive": 10},
+			"spawn4": {"unit_type": "ingles", "seconds": 7, "probability": 100, "max_alive": 10},
+			"spawn5": {"unit_type": "ingles", "seconds": 10, "probability": 100, "max_alive": 10},
 		},
 		{
 			"min_time": 20,
-			"spawn1": {"unit_type": "ingles", "seconds": 4, "probability": 50},
-			"spawn2": {"unit_type": "ingles", "seconds": 8, "probability": 90},
-			"spawn3": {"unit_type": "ingles", "seconds": 8, "probability": 90},
-			"spawn4": {"unit_type": "ingles", "seconds": 8, "probability": 90},
-			"spawn5": {"unit_type": "ingles", "seconds": 4, "probability": 50},
+			"spawn1": {"unit_type": "ingles", "seconds": 4, "probability": 50, "max_alive": 40},
+			"spawn2": {"unit_type": "ingles", "seconds": 8, "probability": 90, "max_alive": 40},
+			"spawn3": {"unit_type": "ingles", "seconds": 8, "probability": 90, "max_alive": 40},
+			"spawn4": {"unit_type": "ingles", "seconds": 8, "probability": 90, "max_alive": 40},
+			"spawn5": {"unit_type": "ingles", "seconds": 4, "probability": 50, "max_alive": 40},
+		},
+		{
+			"min_time": 60,
+			"spawn1": {"unit_type": "ingles", "seconds": 4, "probability": 80, "max_alive": 60},
+			"spawn2": {"unit_type": "ingles", "seconds": 4, "probability": 90, "max_alive": 60},
+			"spawn3": {"unit_type": "ingles", "seconds": 4, "probability": 90, "max_alive": 60},
+			"spawn4": {"unit_type": "ingles", "seconds": 4, "probability": 90, "max_alive": 60},
+			"spawn5": {"unit_type": "ingles", "seconds": 4, "probability": 80, "max_alive": 60},
+		},
+		{
+			"min_time": 120,
+			"spawn1": {"unit_type": "ingles", "seconds": 3, "probability": 70, "max_alive": 80},
+			"spawn2": {"unit_type": "ingles", "seconds": 3, "probability": 40, "max_alive": 80},
+			"spawn3": {"unit_type": "ingles", "seconds": 4, "probability": 95, "max_alive": 80},
+			"spawn4": {"unit_type": "ingles", "seconds": 3, "probability": 40, "max_alive": 80},
+			"spawn5": {"unit_type": "ingles", "seconds": 3, "probability": 70, "max_alive": 80},
+		},
+		{
+			"min_time": 180,
+			"spawn1": {"unit_type": "ingles", "seconds": 1.5, "probability": 40, "max_alive": 100},
+			"spawn2": {"unit_type": "ingles", "seconds": 2, "probability": 30, "max_alive": 100},
+			"spawn3": {"unit_type": "ingles", "seconds": 2, "probability": 40, "max_alive": 100},
+			"spawn4": {"unit_type": "ingles", "seconds": 2, "probability": 30, "max_alive": 100},
+			"spawn5": {"unit_type": "ingles", "seconds": 1.5, "probability": 40, "max_alive": 100},
 		}
 	]
 }
