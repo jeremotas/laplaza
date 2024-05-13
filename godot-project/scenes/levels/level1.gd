@@ -18,6 +18,7 @@ var zoom_back = Vector2(1, 1)
 var zoom_speed = Vector2(0.3, 0.3)
 var zoom_acceleration = 0.3
 var original_zoom = Vector2()
+var iStrategyCall = 0
 
 # Variable para control del malon.
 var malon = [{"unit_type": "correntino", "quantity": 0}, {"unit_type": "granadero", "quantity": 0}]
@@ -27,6 +28,27 @@ func _ready():
 	$UnitSpawner.set_goal($General) # Todas las unidades patricias siguen al general.
 	TheGameStats = GameStats.new() # Reiniciamos las estadisticas
 	TheGameStats._ready()
+	$EnemyGoal.set_needed_units(Global.settings.game.enemy_goal)
+	player_max_life = Global.settings.game.player_max_life
+	prepare_initial_conditions()
+	prepare_enemy_spawns()
+	
+func prepare_initial_conditions():
+	#print(JSON.stringify(malon))
+	if "initial_conditions" in Global.settings.game:
+		if "units_arrived" in Global.settings.game.initial_conditions: $EnemyGoal.UnitsArrived = Global.settings.game.initial_conditions.units_arrived
+		if "life" in Global.settings.game.initial_conditions: $General.life = Global.settings.game.initial_conditions.life
+		if "level" in Global.settings.game.initial_conditions: TheGameStats.set_level(Global.settings.game.initial_conditions.level)
+		
+		if "malon" in Global.settings.game.initial_conditions: 
+			for index in range(malon.size()):
+				var subgroup = malon[index]
+				if subgroup.unit_type in Global.settings.game.initial_conditions.malon:
+					var iCant = Global.settings.game.initial_conditions.malon.get(subgroup.unit_type)
+					malon[index].quantity = iCant
+		if "time" in Global.settings.game.initial_conditions: iSecondsPassed = Global.settings.game.initial_conditions.time
+	#print(JSON.stringify(malon))	
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,16 +60,29 @@ func _process(delta):
 
 func control_malon():
 	var faction = "patricios"
+	var max_alive = 0
 	for subgroup in malon: # Revisamos para cada grupo si hay que agregar unidades
 		var unit_type = subgroup.unit_type
+		max_alive += subgroup.quantity
 		# calculamos la cantidad en juego (dentro de la escena) y los que estan por venir (queue del spawner)
 		var iQuantityInGame = get_tree().get_nodes_in_group("faccion_" + faction + "_" + unit_type).size() + $UnitSpawner.in_queue(faction, unit_type) 
+		
 		if iQuantityInGame  < subgroup.quantity:
+			print("queue spawn", unit_type)
 			$UnitSpawner.queue_spawn_unit(faction, unit_type)
+	$UnitSpawner.max_alive = max_alive
 
 func calculate_stats():
 	# Condicion de GAME OVER
 	TheGameStats.game_over = ($General.life == 0 or $EnemyGoal.completed())
+	TheGameStats.life = $General.life
+	TheGameStats.max_life = player_max_life
+	
+	TheGameStats.plaza = $EnemyGoal.UnitsArrived
+	TheGameStats.max_plaza = $EnemyGoal.NeededUnits
+	
+	TheGameStats.ingleses = get_tree().get_nodes_in_group("faccion_ingleses").size()
+	TheGameStats.patricios = get_tree().get_nodes_in_group("faccion_patricios").size()
 	
 	# Revision de nivel
 	if TheGameStats.level != last_level:
@@ -58,10 +93,10 @@ func calculate_stats():
 		decision_time_start()
 		
 		# Agrega vida post-subida de nivel
-		$General.life = player_max_life
+		$General.life = max(Global.settings.game.min_player_life_after_level_up, $General.life)
 		
 		# Asigna el maximo posible de unidades en caso de spawneo automatico
-		assign_max_alive() 
+		#assign_max_alive()
 		
 	if TheGameStats.game_over:
 		get_tree().change_scene_to_file("res://scenes/screens/gameover.tscn")
@@ -72,14 +107,14 @@ func decision_time_start():
 	$decision_time.prepare_buttons(TheGameStats.experience)
 	$decision_time.show()
 	
-func increase_max_life(increase):
-	player_max_life += increase
+func increase_life(increase):
+	$General.life += increase
 
 func decision_time_end(decision):
 	# Ejecutar decision
 	if decision == "granadero": add_unit_to_malon("granadero")
 	elif decision == "correntino": add_unit_to_malon("correntino")
-	elif decision == "upgrade_life": increase_max_life(10)
+	elif decision == "upgrade_life": increase_life(10)
 		
 	# Devolver al juego
 	$decision_time.hide()
@@ -133,8 +168,9 @@ func zoom(delta):
 	
 func assign_max_alive():
 	# Determina el maximo cantidad de unidades vivas posibles conrtoladas por el spawn patricio
-	$UnitSpawner.max_alive = TheGameStats.level
+	#$UnitSpawner.max_alive = TheGameStats.level
 	#$UnitSpawner2.max_alive = TheGameStats.level
+	pass
 
 #func _on_clickable_area_clicked_position(position):
 	# Tengo una nueva posicion para ir.
@@ -144,16 +180,58 @@ func assign_max_alive():
 
 
 func _on_scene_timer_timeout():
+	
+	prepare_enemy_spawns()
+	
 	# Disminuye el spawn de los enemigos con el paso del tiempo.
 	# A medida que avanza el divisor crece y el spawn time decrece (1 - 20, 2 - 10, 3 - 7.3, 4 - 5)
 	# Aunque no siempre spawnean porque a veces la probabilidad de spawn no se cumple
-	fDivisor += 1.0
-	var fMaxTime = 20.0
-	$EnemySpawner.set_rewspan_seconds(fMaxTime / fDivisor)
-	$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
-	$EnemySpawner3.set_rewspan_seconds(fMaxTime / fDivisor)
-	$EnemySpawner4.set_rewspan_seconds(fMaxTime / fDivisor)
-	$EnemySpawner5.set_rewspan_seconds(fMaxTime / fDivisor)
+	
+		
+	#var fMaxTime = 10.0
+	#fDivisor = max(min(TheGameStats.get_level(), 10),1)
+
+	#$EnemySpawner.set_rewspan_seconds(fMaxTime / fDivisor)
+	#$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
+	#$EnemySpawner3.set_rewspan_seconds(fMaxTime / fDivisor)
+	#$EnemySpawner4.set_rewspan_seconds(fMaxTime / fDivisor)
+	#$EnemySpawner5.set_rewspan_seconds(fMaxTime / fDivisor)
+	
+	#$EnemySpawner.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
+	#$EnemySpawner2.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
+	#$EnemySpawner3.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
+	#$EnemySpawner4.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
+	#$EnemySpawner5.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
+	
+func prepare_enemy_spawns():
+	if Global.settings.enemy_spawn_strategy.size() > 0:
+		
+		var strategy = Global.settings.enemy_spawn_strategy[0]
+		
+		while Global.settings.enemy_spawn_strategy.size() > 0 and strategy.min_time <= iSecondsPassed + 1:
+			strategy = Global.settings.enemy_spawn_strategy.pop_front()
+		
+		print("NUEVA ESTRATEGIA ENEMIGA")
+		print(JSON.stringify(strategy))
+		$EnemySpawner.set_rewspan_seconds(strategy.spawn1.seconds)
+		$EnemySpawner.probabilitySpawnOnTimer = strategy.spawn1.probability
+		$EnemySpawner.set_unit_type(strategy.spawn1.unit_type)
+		
+		$EnemySpawner2.set_rewspan_seconds(strategy.spawn2.seconds)
+		$EnemySpawner2.probabilitySpawnOnTimer = strategy.spawn2.probability
+		$EnemySpawner2.set_unit_type(strategy.spawn2.unit_type)
+		
+		$EnemySpawner3.set_rewspan_seconds(strategy.spawn3.seconds)
+		$EnemySpawner3.probabilitySpawnOnTimer = strategy.spawn3.probability
+		$EnemySpawner3.set_unit_type(strategy.spawn3.unit_type)
+		
+		$EnemySpawner4.set_rewspan_seconds(strategy.spawn4.seconds)
+		$EnemySpawner4.probabilitySpawnOnTimer = strategy.spawn4.probability
+		$EnemySpawner4.set_unit_type(strategy.spawn4.unit_type)
+		
+		$EnemySpawner5.set_rewspan_seconds(strategy.spawn5.seconds)
+		$EnemySpawner5.probabilitySpawnOnTimer = strategy.spawn5.probability
+		$EnemySpawner5.set_unit_type(strategy.spawn5.unit_type)
 
 
 func _on_timer_timeout():

@@ -17,6 +17,10 @@ func _ready():
 	$TimerDeSpawnUnidades.start(respawn_seconds)
 	if spawnOnReady:
 		spawn_new_call(100.0)
+		
+		
+func set_unit_type(sUnitType):
+	unitScene = "res://scenes/" + faction + "/" + sUnitType + ".tscn"
 
 func spawn_unit(unitSceneAsked):
 	var unitSceneOld = unitScene
@@ -40,16 +44,16 @@ func spawn_new_call(probability_generation):
 		soldado.add_to_faction(faction)
 		if soldado.has_method("assign_goal"):
 			soldado.assign_goal(oGoalToAssign)
-		get_parent().add_child(soldado)
+		get_parent().add_child.call_deferred(soldado)
 		#add_child(soldado)
 	
 func _on_timer_de_spawn_unidades_timeout():
 	if queue.size() > 0:
 		var unitSceneCalled = queue.pop_front()
 		spawn_unit(unitSceneCalled)
-		print("spawned from queue")
-		print(unitSceneCalled)
-		print(queue)
+		#print("spawned from queue")
+		#print(unitSceneCalled)
+		#print(queue)
 	else:
 		spawn_new_call(probabilitySpawnOnTimer)
 

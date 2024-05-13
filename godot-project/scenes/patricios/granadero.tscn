@@ -18,10 +18,14 @@ var bullet = preload(\"res://scenes/common/bullet.tscn\")
 const GUNSHOT = preload(\"res://assets/original/sounds/gunshot2.mp3\")
 
 func _init():
-	min_damage_given = 1
-	max_damage_given = 3
 	unit_type = \"granadero\"
-	#$CollisionPolygon2D.set_layer
+	min_damage_given = Global.settings.patricios.granadero.min_damage_given
+	max_damage_given = Global.settings.patricios.granadero.max_damage_given
+	max_speed = Global.settings.patricios.granadero.max_speed
+	life = Global.settings.patricios.granadero.life
+	bullet_speed = Global.settings.patricios.granadero.bullet_speed
+	coolDownAttackTime = Global.settings.patricios.granadero.cooldown_attack_time
+
 	init()
 
 func assign_goal(oGoal):
@@ -49,16 +53,18 @@ func _process(delta):
 func attack():
 	if attack_objective:
 		var b = bullet.instantiate()
-		b.global_position = $WeaponPoint.global_position
-		b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
-		b.objective_faction = attack_objective.faction
-		b.min_damage = min_damage_given
-		b.max_damage = max_damage_given
-		b.set_collision_mask(2)
-		b.set_color(Color(1, 1, 1))
-		get_parent().add_child(b)
-		
-		attack_sound(GUNSHOT)
+		if has_node(\"WeaponPoint\"):
+			b.global_position = $WeaponPoint.global_position
+			b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
+			b.objective_faction = attack_objective.faction
+			b.min_damage = min_damage_given
+			b.max_damage = max_damage_given
+			b.speed = Global.settings.patricios.granadero.bullet_speed
+			b.set_collision_mask(2)
+			b.set_color(Color(1, 1, 1))
+			get_parent().add_child(b)
+			
+			attack_sound(GUNSHOT)
 		#$WeaponSound.play()
 		
 		attack_objective = null

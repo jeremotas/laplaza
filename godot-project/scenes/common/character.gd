@@ -14,6 +14,7 @@ signal death(faction)
 @export var input_accepted = false
 @export var attack_block_movement = false
 @export var show_progress_bar = false
+@export var bullet_speed = 150
 
 var experience_given = 1
 
@@ -51,7 +52,7 @@ func go_to(new_destination, forced = false):
 	if selected or forced:
 		status.moving = true
 		destination = new_destination
-		if $SelectionArea:
+		if has_node("SelectionArea"):
 			$SelectionArea.set_selected(false)
 			
 			
@@ -154,7 +155,9 @@ func AnimationCalculation(delta):
 	
 func MovementLoop(delta):
 	# Gestionamos velocidad
-	
+	if Engine.time_scale == 0:
+		return 
+		
 	if status.moving == false and not input_accepted:
 		speed = 0
 	else:

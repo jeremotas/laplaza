@@ -940,7 +940,6 @@ spawnOnReady = false
 unitScene = "res://scenes/patricios/correntino.tscn"
 faction = "patricios"
 respawn_seconds = 1.0
-max_alive = 8
 controled_max_alive = true
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_51c0a")]
@@ -992,7 +991,6 @@ min_damage_given = 3
 max_damage_given = 3
 unit_type = "general"
 input_accepted = true
-show_progress_bar = true
 
 [node name="Camera2D" type="Camera2D" parent="General"]
 position_smoothing_enabled = true

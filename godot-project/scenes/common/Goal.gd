@@ -12,6 +12,9 @@ func _process(delta):
 		if not unit.status.moving:
 			unit.go_to($Marker.global_position, true)
 
+func set_needed_units(iValue):
+	NeededUnits = iValue
+
 func completed():
 	return UnitsArrived >= NeededUnits
 

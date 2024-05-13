@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://uk3j7rh2076l"]
+[gd_scene load_steps=5 format=3 uid="uid://uk3j7rh2076l"]
 
 [ext_resource type="Script" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_7ne2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt76d"]
+bg_color = Color(0, 0.717647, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct6x6"]
+bg_color = Color(0.666667, 0.0784314, 0.137255, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_b1w0e")
@@ -61,3 +67,40 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "00:00"
 horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("2_7ne2n")
+text = "Vida"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(150, 10)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_7ne2n")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pt76d")
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer5"]
+layout_mode = 2
+theme = ExtResource("2_7ne2n")
+text = "Plaza"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_ct6x6")
+step = 1.0
+show_percentage = false
