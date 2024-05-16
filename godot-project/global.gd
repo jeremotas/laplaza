@@ -17,11 +17,19 @@ var settings = {
 		#}
 	},
 	"patricios": {
+		"general": {
+			"life": 20,
+			"min_damage_given": 5,
+			"max_damage_given": 5,
+			"max_speed": 250,
+			"bullet_speed": 150,
+			"cooldown_attack_time": 1
+		},
 		"granadero": {
-			"life": 10,
+			"life": 7,
 			"min_damage_given": 4,
 			"max_damage_given": 4,
-			"max_speed": 200,
+			"max_speed": 100,
 			"bullet_speed": 150,
 			"cooldown_attack_time": 1
 		},
