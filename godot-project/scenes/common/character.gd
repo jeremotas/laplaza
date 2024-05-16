@@ -33,6 +33,7 @@ var selected = false
 var last_position = Vector2.ZERO
 var inCoolDownAttack = false
 var coolDownTimer = null
+var deathTimer = null
 
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
@@ -169,7 +170,7 @@ func MovementLoop(delta):
 		# Determinamos hacia donde vamos.
 		velocity = global_position.direction_to(destination) * speed
 		# Calculamos la direccion del movimiento
-		move_direction = rad_to_deg(destination.angle_to_point(global_position))
+		#move_direction = rad_to_deg(destination.angle_to_point(global_position))
 		
 		# Resolvemos el movimiento
 		if global_position.distance_to(destination) < 5: # Estamos lo suficientemente cerca
@@ -196,7 +197,7 @@ func StatusCalculation(delta):
 		status.attacking = false
 		#("Death", faction)
 		
-		var deathTimer = Timer.new()
+		deathTimer = Timer.new()
 		add_child(deathTimer)
 		deathTimer.autostart = true
 		deathTimer.wait_time = 5
@@ -209,12 +210,14 @@ func StatusCalculation(delta):
 			death_emited = true
 
 func destroy_character():
+	print("DESTROY", self)
 	queue_free()
 
 func _on_cool_down_timer_timeout():
 	if inCoolDownAttack:
 		inCoolDownAttack = false
 		status.attacking = false
+		
 
 func init():
 	rng = RandomNumberGenerator.new()
@@ -231,14 +234,16 @@ func init():
 	pass
 
 func _physics_process(delta):
-	MovementLoop(delta)
+	if life > 0:
+		MovementLoop(delta)
 	
 func _process(delta):
 	comLabelString = ""
 	
 	StatusCalculation(delta)
-	CombatCalculation(delta)
-	ComunicationCalculation(delta)
+	if life > 0:
+		CombatCalculation(delta)
+		ComunicationCalculation(delta)
 	AnimationCalculation(delta)
 	
 func ComunicationCalculation(delta):
@@ -247,8 +252,9 @@ func ComunicationCalculation(delta):
 		#$ComLabel.show()	
 	#$LifeLabel.text = str(life)
 	#$LifeLabel.show()
-	if has_node("LifeProgress"):
-		$LifeProgress.value = life
+	#if has_node("LifeProgress"):
+	#	$LifeProgress.value = life
+	pass
 	
 	
 func communication(message):

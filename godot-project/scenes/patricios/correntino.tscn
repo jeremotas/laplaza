@@ -544,7 +544,7 @@ transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(0, 29.6855)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51xer"]
-radius = 465.672
+radius = 400.361
 
 [node name="SoldadoCorrentino" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_3uefd")
@@ -573,6 +573,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
+frame = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

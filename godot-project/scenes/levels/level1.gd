@@ -19,6 +19,7 @@ var zoom_speed = Vector2(0.3, 0.3)
 var zoom_acceleration = 0.3
 var original_zoom = Vector2()
 var iStrategyCall = 0
+var enemy_strategy
 
 # Variable para control del malon.
 var malon = [{"unit_type": "correntino", "quantity": 0}, {"unit_type": "granadero", "quantity": 0}]
@@ -30,8 +31,10 @@ func _ready():
 	TheGameStats._ready()
 	$EnemyGoal.set_needed_units(Global.settings.game.enemy_goal)
 	player_max_life = Global.settings.game.player_max_life
+	enemy_strategy = Global.settings.enemy_spawn_strategy.duplicate()
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
+	
 	
 func prepare_initial_conditions():
 	#print(JSON.stringify(malon))
@@ -205,12 +208,12 @@ func _on_scene_timer_timeout():
 	#$EnemySpawner5.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
 	
 func prepare_enemy_spawns():
-	if Global.settings.enemy_spawn_strategy.size() > 0:
+	if enemy_strategy.size() > 0:
 		
-		var strategy = Global.settings.enemy_spawn_strategy[0]
+		var strategy = enemy_strategy[0]
 		
-		while Global.settings.enemy_spawn_strategy.size() > 0 and strategy.min_time <= iSecondsPassed + 1:
-			strategy = Global.settings.enemy_spawn_strategy.pop_front()
+		while enemy_strategy.size() > 0 and strategy.min_time <= iSecondsPassed + 1:
+			strategy = enemy_strategy.pop_front()
 		
 		print("NUEVA ESTRATEGIA ENEMIGA")
 		print(JSON.stringify(strategy))

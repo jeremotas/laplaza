@@ -35,7 +35,7 @@ func attack():
 		b.speed = bullet_speed
 		b.set_collision_mask(1)
 		b.set_color(Color(1, 1, 0.2))
-		get_parent().add_child(b)
+		get_parent().get_parent().add_child(b)
 		
 		#$WeaponSound.play()
 		attack_sound(GUNSHOT)
