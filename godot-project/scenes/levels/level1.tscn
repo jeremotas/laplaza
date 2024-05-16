@@ -250,6 +250,7 @@ faction = "ingleses"
 [node name="General" parent="." instance=ExtResource("5_gmgpk")]
 z_index = 2
 position = Vector2(307, 577)
+life = 20
 
 [node name="Camera2D" type="Camera2D" parent="General"]
 position_smoothing_enabled = true

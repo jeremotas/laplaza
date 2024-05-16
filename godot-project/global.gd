@@ -46,7 +46,7 @@ var settings = {
 		"soldado": {
 			"life": 8,
 			"min_damage_given": 1,
-			"max_damage_given": 4,
+			"max_damage_given": 2,
 			"max_speed": 15,
 			"bullet_speed": 150,
 			"cooldown_attack_time": 1,
