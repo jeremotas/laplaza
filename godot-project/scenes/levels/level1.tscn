@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dio1nkk7s46rf"]
+[gd_scene load_steps=17 format=3 uid="uid://dio1nkk7s46rf"]
 
 [ext_resource type="Script" path="res://scenes/levels/level1.gd" id="1_6uh2d"]
 [ext_resource type="Texture2D" uid="uid://ck63ae7pp7eib" path="res://assets/created/tilesets/tileset mud.png" id="2_akxlk"]
@@ -174,6 +174,19 @@ texture = ExtResource("2_akxlk")
 [sub_resource type="TileSet" id="TileSet_xskc8"]
 sources/0 = SubResource("TileSetAtlasSource_rxnt1")
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3odkn"]
+a = Vector2(-444, 853)
+b = Vector2(-447, -880)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_scq6p"]
+a = Vector2(-7, 1666)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ysm3x"]
+a = Vector2(-1550, -4)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y0nil"]
+a = Vector2(-1600, 18)
+
 [node name="Game" type="Node2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_6uh2d")
@@ -272,6 +285,39 @@ visible = false
 
 [node name="decision_time" parent="." instance=ExtResource("10_3r0pu")]
 visible = false
+
+[node name="Borders" type="Node" parent="."]
+
+[node name="Borde izquierdo" type="StaticBody2D" parent="Borders"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde izquierdo"]
+shape = SubResource("SegmentShape2D_3odkn")
+
+[node name="Borde derecho" type="StaticBody2D" parent="Borders"]
+position = Vector2(1107, -853)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde derecho"]
+shape = SubResource("SegmentShape2D_scq6p")
+
+[node name="Borde inferior" type="StaticBody2D" parent="Borders"]
+position = Vector2(1109, 821)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde inferior"]
+shape = SubResource("SegmentShape2D_ysm3x")
+
+[node name="Borde superior" type="StaticBody2D" parent="Borders"]
+position = Vector2(1095, -856)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde superior"]
+shape = SubResource("SegmentShape2D_y0nil")
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

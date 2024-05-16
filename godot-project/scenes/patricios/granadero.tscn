@@ -575,7 +575,6 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
