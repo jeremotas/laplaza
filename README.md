@@ -9,6 +9,9 @@
 
 ## Producción
 
+### Pitch Deck
+https://docs.google.com/presentation/d/16FVAqBw-qGi7QSS7T1b7lctqaoAPr9YopfzX4Np7-KU/edit?usp=sharing
+
 ### High Concept Document
 https://docs.google.com/document/d/1AAYK3_oD9D62_4y4W6Lq3UKwHxYz0JgrVtVRB-h1TjQ/edit?usp=sharing
 
