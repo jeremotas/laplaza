@@ -40,6 +40,10 @@ theme = ExtResource("2_joe4m")
 layout_mode = 2
 text = "Granadero"
 
+[node name="MorenoButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Moreno"
+
 [node name="CorrentinoButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Correntino"
@@ -50,5 +54,6 @@ text = "Incrementar vida (10)"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GranaderoButton" to="." method="_on_granadero_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MorenoButton" to="." method="_on_moreno_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CorrentinoButton" to="." method="_on_correntino_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MoreLifeButton" to="." method="_on_more_life_button_pressed"]

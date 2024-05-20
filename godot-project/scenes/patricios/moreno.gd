@@ -6,18 +6,21 @@ var bullet = preload("res://scenes/common/bullet.tscn")
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
-	unit_type = "general"
-	min_damage_given = Global.settings.patricios.general.min_damage_given
-	max_damage_given = Global.settings.patricios.general.max_damage_given
-	max_speed = Global.settings.patricios.general.max_speed
-	life = Global.settings.patricios.general.life
-	bullet_speed = Global.settings.patricios.general.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.general.cooldown_attack_time
+	unit_type = "moreno"
+	min_damage_given = Global.settings.patricios.moreno.min_damage_given
+	max_damage_given = Global.settings.patricios.moreno.max_damage_given
+	max_speed = Global.settings.patricios.moreno.max_speed
+	life = Global.settings.patricios.moreno.life
+	bullet_speed = Global.settings.patricios.moreno.bullet_speed
+	coolDownAttackTime = Global.settings.patricios.moreno.cooldown_attack_time
 
 	init()
+
+func assign_goal(oGoal):
+	oGoalAssigned = oGoal
 	
 func _process(delta):
-	
+	malon_sticked()
 	attack()
 	super(delta)
 
@@ -30,7 +33,7 @@ func attack():
 			b.objective_faction = attack_objective.faction
 			b.min_damage = min_damage_given
 			b.max_damage = max_damage_given
-			b.speed = Global.settings.patricios.general.bullet_speed
+			b.speed = Global.settings.patricios.moreno.bullet_speed
 			b.set_collision_mask(2)
 			b.set_color(Color(1, 1, 1))
 			get_parent().add_child(b)
@@ -40,13 +43,6 @@ func attack():
 		
 		attack_objective = null
 	pass	
-
-func hurt():
-	$HurtSound.play()
-	modulate = Color("ff0000CC")
-	await get_tree().create_timer(0.4).timeout
-	modulate = Color("ffffffff")
-	status.hurt = false
 
 # Funciones para poder seleccionarlo.
 func show_selection():

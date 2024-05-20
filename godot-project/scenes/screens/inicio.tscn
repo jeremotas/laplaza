@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://doo77a1vfcsws"]
 
-[ext_resource type="Texture2D" uid="uid://doixcfu041ijm" path="res://assets/original/backgrounds/lafuriadelastrenzas.webp" id="1_ji0ux"]
 [ext_resource type="Script" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_box0m"]
+[ext_resource type="Texture2D" uid="uid://cucsed5s0x6c0" path="res://assets/original/backgrounds/lafuriadelastrenzas_pix.png" id="2_j4g27"]
 [ext_resource type="AudioStream" uid="uid://8oxyycwu0ncb" path="res://assets/created/musica/La Resistencia Porteña.mp3" id="4_o6f7m"]
 
 [node name="Inicio" type="CanvasLayer"]
@@ -27,9 +27,9 @@ size_flags_horizontal = 4
 color = Color(0, 0, 0, 1)
 
 [node name="Lafuriadelastrenzas" type="Sprite2D" parent="Control"]
-position = Vector2(318, 184)
+position = Vector2(318, 203)
 scale = Vector2(0.376857, 0.376857)
-texture = ExtResource("1_ji0ux")
+texture = ExtResource("2_j4g27")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0

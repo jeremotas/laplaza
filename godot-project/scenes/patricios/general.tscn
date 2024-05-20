@@ -1,9 +1,10 @@
-[gd_scene load_steps=47 format=3 uid="uid://bc8o4p1i67cbn"]
+[gd_scene load_steps=49 format=3 uid="uid://bc8o4p1i67cbn"]
 
 [ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="2_1oyaa"]
 [ext_resource type="Texture2D" uid="uid://cf3266xrs7tum" path="res://assets/created/general.png" id="2_j1s25"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_nklhm"]
+[ext_resource type="AudioStream" uid="uid://cyp28dqo4lc11" path="res://assets/created/sounds/dolor.mp3" id="5_nv6gl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f72y"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -238,6 +239,34 @@ tracks/1/keys = {
 "values": ["idle"]
 }
 
+[sub_resource type="Animation" id="Animation_8jgcr"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["shoot"]
+}
+
 [sub_resource type="Animation" id="Animation_a7nsw"]
 length = 0.6
 loop_mode = 1
@@ -271,6 +300,7 @@ _data = {
 "die": SubResource("Animation_huts5"),
 "hurt": SubResource("Animation_5x7te"),
 "idle": SubResource("Animation_frgsx"),
+"shoot": SubResource("Animation_8jgcr"),
 "walk": SubResource("Animation_a7nsw")
 }
 
@@ -331,15 +361,15 @@ advance_condition = &"die"
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4dt8w"]
 states/Start/position = Vector2(218.667, 72.2222)
 states/die/node = SubResource("AnimationNodeAnimation_7w0me")
-states/die/position = Vector2(531.334, 212.148)
+states/die/position = Vector2(530.667, 214.815)
 states/hurt/node = SubResource("AnimationNodeAnimation_dqfps")
 states/hurt/position = Vector2(390.667, 220.666)
 states/idle/node = SubResource("AnimationNodeAnimation_s8hlw")
-states/idle/position = Vector2(376, 75.2098)
+states/idle/position = Vector2(373.333, 72.02)
 states/shoot/node = SubResource("AnimationNodeAnimation_63s3y")
 states/shoot/position = Vector2(184, 200.612)
 states/walk/node = SubResource("AnimationNodeAnimation_01bom")
-states/walk/position = Vector2(518.667, 74.1481)
+states/walk/position = Vector2(519.334, 72.5203)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gc4nl"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4wu01"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5fi4q"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_r7nas"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_lq86a"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_01o7k"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_h2a58"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_m6io4"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_7xolf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_oaabk")]
 graph_offset = Vector2(0, 29.6855)
 
@@ -348,7 +378,8 @@ radius = 152.03
 
 [node name="General" type="CharacterBody2D"]
 scale = Vector2(0.9, 0.9)
-collision_mask = 6
+collision_layer = 8
+collision_mask = 14
 script = ExtResource("1_utaqx")
 faction = "patricios"
 unit_type = "general"
@@ -403,6 +434,8 @@ polygon = PackedVector2Array(-43.3077, -19.4, -45.277, 23.2667, 11.8308, 27.5333
 [node name="SelectionArea" parent="." instance=ExtResource("2_1oyaa")]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SelectionArea"]
+light_mask = 9
+visibility_layer = 9
 polygon = PackedVector2Array(-9, -17, -23, 9, 6, 13, 14, -17)
 
 [node name="CombatArea" type="Area2D" parent="."]
@@ -410,6 +443,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CombatCollisionShape" type="CollisionShape2D" parent="CombatArea"]
+light_mask = 9
+visibility_layer = 9
 shape = SubResource("CircleShape2D_uv7yh")
 
 [node name="MalonArea" type="Area2D" parent="."]
@@ -423,3 +458,7 @@ position = Vector2(14, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_nklhm")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_nv6gl")
+volume_db = 5.087

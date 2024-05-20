@@ -29,3 +29,7 @@ func _on_more_life_button_pressed():
 
 func _on_visibility_changed():
 	$MarginContainer/VBoxContainer/GranaderoButton.grab_focus()
+
+
+func _on_moreno_button_pressed():
+	get_parent().decision_time_end("moreno")

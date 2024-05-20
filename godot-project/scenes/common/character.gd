@@ -16,6 +16,8 @@ signal death(faction)
 @export var show_progress_bar = false
 @export var bullet_speed = 150
 
+var oGoalAssigned = null
+
 var experience_given = 1
 
 var input_direction
@@ -87,7 +89,12 @@ func TakeDamage(min_damage, max_damage):
 		life = life - damage 
 		if life < 0: life = 0	
 		status.hurt = true
-		
+		hurt()
+
+func hurt():
+	status.hurt = false
+	pass
+
 func CombatCalculation(delta):
 	if $CombatArea and life > 0:
 		if $CombatArea.has_overlapping_bodies() and $CombatArea.get_overlapping_bodies().size() > 0:
@@ -181,6 +188,7 @@ func MovementLoop(delta):
 			last_position = global_position
 	else:
 		var input = get_input();
+		#print(input)
 		velocity = input * speed
 		status.moving = false
 		if input != Vector2.ZERO: 
@@ -210,7 +218,7 @@ func StatusCalculation(delta):
 			death_emited = true
 
 func destroy_character():
-	print("DESTROY", self)
+	#print("DESTROY", self)
 	queue_free()
 
 func _on_cool_down_timer_timeout():
@@ -266,7 +274,21 @@ func attack_sound(stream):
 	SoundPlayer.stream = stream
 	SoundPlayer.connect("finished", SoundPlayer.queue_free)
 	SoundPlayer.play()
-		
+	
+func malon_sticked():
+	var bSticked = false
+	if $MalonArea:
+		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 1:
+			for unitInArea in $MalonArea.get_overlapping_bodies():
+				if ("faction" in unitInArea) and unitInArea.faction == faction:
+					bSticked = true
+					
+	input_accepted = false
+	#print("DISTANCIA",  global_position.distance_to(oGoalAssigned.global_position))
+	if (not bSticked and oGoalAssigned) or (global_position.distance_to(oGoalAssigned.global_position) > 50):
+		go_to(oGoalAssigned.global_position, true)
+	else:
+		input_accepted = true
 	
 func _ready():
 	if get_parent().has_method("_on_death"):

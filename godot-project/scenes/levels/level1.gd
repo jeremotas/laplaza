@@ -4,7 +4,7 @@ var fDivisor = 1.0 # Variable para provocar al disminucion de tiempo de spawn de
 var iSecondsPassed = 0 # Variable para controlar la cantidad de tiempo sucedida
 var TheGameStats : GameStats # Estadisticas del juego (control de experiencia y nivel)
 var last_level = 0 # Marca para control del ultimo nivel accedido
-var player_max_life = 10 # Maxima vida del jugador principal
+var player_max_life = 20 # Maxima vida del jugador principal
 
 # Variables de control de UI
 @onready var HUD = $HUD
@@ -22,7 +22,7 @@ var iStrategyCall = 0
 var enemy_strategy
 
 # Variable para control del malon.
-var malon = [{"unit_type": "correntino", "quantity": 0}, {"unit_type": "granadero", "quantity": 0}]
+var malon = [{"unit_type": "correntino", "quantity": 0}, {"unit_type": "granadero", "quantity": 0}, {"unit_type": "moreno", "quantity": 0}]
 
 func _ready():
 	get_viewport().set_physics_object_picking_sort(true) # 
@@ -103,7 +103,15 @@ func calculate_stats():
 		#assign_max_alive()
 		
 	if TheGameStats.game_over:
-		get_tree().change_scene_to_file("res://scenes/screens/gameover.tscn")
+		game_over()
+		
+func game_over():
+	Engine.time_scale = 0.3
+	$General.modulate = Color("ff0000")
+	await get_tree().create_timer(1).timeout
+	Engine.time_scale = 1
+	$General.modulate = Color("ffffff00")
+	get_tree().change_scene_to_file("res://scenes/screens/gameover.tscn")
 
 func decision_time_start():
 	# Inicio de una decision
@@ -118,6 +126,7 @@ func decision_time_end(decision):
 	# Ejecutar decision
 	if decision == "granadero": add_unit_to_malon("granadero")
 	elif decision == "correntino": add_unit_to_malon("correntino")
+	elif decision == "moreno": add_unit_to_malon("moreno")
 	elif decision == "upgrade_life": increase_life(10)
 		
 	# Devolver al juego

@@ -466,7 +466,7 @@ bg_color = Color(0, 0.917647, 0.27451, 1)
 
 [node name="SoldadoEnemigo" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 15
 script = ExtResource("1_5wky8")
 
 [node name="ComLabel" type="Label" parent="."]
@@ -491,15 +491,18 @@ position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 2
+frame = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, -3, 11, 4, 8, 4, -2)
 
 [node name="CombatArea" type="Area2D" parent="."]
 collision_layer = 0
+collision_mask = 9
 
 [node name="CombatCollisionShape" type="CollisionShape2D" parent="CombatArea"]
+light_mask = 9
+visibility_layer = 9
 shape = SubResource("CircleShape2D_hofcb")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

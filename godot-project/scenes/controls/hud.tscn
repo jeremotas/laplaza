@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://uk3j7rh2076l"]
+[gd_scene load_steps=6 format=3 uid="uid://uk3j7rh2076l"]
 
 [ext_resource type="Script" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_7ne2n"]
+[ext_resource type="Script" path="res://scenes/controls/LifeProgressBar.gd" id="3_qjru7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt76d"]
 bg_color = Color(0, 0.717647, 0.376471, 1)
@@ -75,7 +76,7 @@ size_flags_vertical = 8
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer4"]
 layout_mode = 2
 theme = ExtResource("2_7ne2n")
-text = "Vida"
+text = "Liniers"
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(150, 10)
@@ -86,6 +87,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_pt76d")
 step = 1.0
 rounded = true
 show_percentage = false
+script = ExtResource("3_qjru7")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -95,7 +97,7 @@ size_flags_vertical = 8
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer5"]
 layout_mode = 2
 theme = ExtResource("2_7ne2n")
-text = "Plaza"
+text = "La Plaza"
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer5"]
 custom_minimum_size = Vector2(150, 0)
@@ -103,4 +105,5 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/fill = SubResource("StyleBoxFlat_ct6x6")
 step = 1.0
+rounded = true
 show_percentage = false

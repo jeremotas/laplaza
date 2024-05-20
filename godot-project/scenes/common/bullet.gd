@@ -29,7 +29,7 @@ func _on_visible_on_screen_enabler_2d_screen_exited():
 	try_destroy()
 
 func set_collision_mask(iLayer):
-	$Area2D.set_collision_mask(iLayer)
+	$Area2D.set_collision_mask_value(iLayer, true)
 
 func _on_area_2d_body_entered(body):
 	#print(body, objective_faction)

@@ -3,18 +3,19 @@ extends Node
 var settings = {
 	"game": {
 		"enemy_goal": 12,
-		"player_max_life": 10,
+		"player_max_life": 15,
 		"min_player_life_after_level_up": 0,
-		#"initial_conditions": {
-		#	"units_arrived": 8,
-		#	"life": 4,
-		#	"malon": {
-		#		"granadero": 2,
-		#		"correntino": 2
-		#	},
-		#	"level": 5,
-		#	"time": 88
-		#}
+		"initial_conditions": {
+			"units_arrived": 0,
+			"life": 10,
+			"malon": {
+				"granadero": 0,
+				"correntino": 0,
+				"moreno": 0,
+			},
+			"level": 0,
+			"time": 0
+		}
 	},
 	"patricios": {
 		"general": {
@@ -32,6 +33,14 @@ var settings = {
 			"max_speed": 100,
 			"bullet_speed": 150,
 			"cooldown_attack_time": 1
+		},
+		"moreno": {
+			"life": 14,
+			"min_damage_given": 2,
+			"max_damage_given": 2,
+			"max_speed": 150,
+			"bullet_speed": 150,
+			"cooldown_attack_time": 2
 		},
 		"correntino": {
 			"life": 3,
