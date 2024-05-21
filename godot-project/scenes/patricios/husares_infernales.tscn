@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=3 uid="uid://c1f2p41bh0kpl"]
+[gd_scene load_steps=48 format=3 uid="uid://c1f2p41bh0kpl"]
 
 [ext_resource type="Script" path="res://scenes/patricios/husares_infernales.gd" id="1_alsgu"]
 [ext_resource type="Texture2D" uid="uid://4p3t1fhm06fq" path="res://assets/created/husaresinfernales.png" id="2_2xv7c"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_elmpq"]
+[ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="4_j87wf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kx3wj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -401,6 +402,7 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1orxc")
 animation = &"idle"
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -446,3 +448,8 @@ stream = ExtResource("3_elmpq")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MalonArea"]
 position = Vector2(-5, -14)
 polygon = PackedVector2Array(-6, -7, 7, -7, 6, 19, -7, 17)
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_j87wf")
+volume_db = 1.0
+autoplay = true

@@ -8,19 +8,20 @@ func _ready():
 	
 func startAttack(positionInit, positionEnd):
 	global_position = positionInit
-	create_order($HusarInfernal, positionEnd)
-	create_order($HusarInfernal2, positionEnd)
-	create_order($HusarInfernal3, positionEnd)
-	create_order($HusarInfernal4, positionEnd)
-	create_order($HusarInfernal5, positionEnd)
-	create_order($HusarInfernal6,positionEnd)
-	create_order($HusarInfernal7, positionEnd)
+	create_order($HusarInfernal, positionEnd, 0)
+	create_order($HusarInfernal2, positionEnd, 1)
+	create_order($HusarInfernal3, positionEnd, 2)
+	create_order($HusarInfernal4, positionEnd, 3)
+	create_order($HusarInfernal5, positionEnd, 4)
+	create_order($HusarInfernal6,positionEnd, 5)
+	create_order($HusarInfernal7, positionEnd, 6)
 
-func create_order(oHusar, endPosition):
+func create_order(oHusar, endPosition, seektime):
 	startPosition = oHusar.global_position
 	#endPosition = startPosition
 	#endPosition.x = startPosition.x + 1000
 	oHusar.go_to(endPosition, true)
+	oHusar.set_sound_start(seektime)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

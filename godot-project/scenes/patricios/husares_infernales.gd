@@ -3,9 +3,10 @@ extends Character
 @onready var animation = $AnimatedSprite2D
 
 var bullet = preload("res://scenes/common/bullet.tscn")
-const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
+const GUNSHOT = preload("res://assets/original/sounds/gunshot6.mp3")
 var oGoal
 var entered = false
+var iShoots = 0
 
 func _init():
 	unit_type = "husares_infernales"
@@ -15,8 +16,11 @@ func _init():
 	life = Global.settings.patricios.husares_infernales.life
 	bullet_speed = Global.settings.patricios.husares_infernales.bullet_speed
 	coolDownAttackTime = Global.settings.patricios.husares_infernales.cooldown_attack_time
-
+	rng = RandomNumberGenerator.new()
 	init()
+	
+func set_sound_start(seektime):
+	$WalkSound.seek(seektime)
 
 func create_goal(endPosition):
 	oGoal = Marker2D.new()
@@ -26,10 +30,12 @@ func create_goal(endPosition):
 func assign_goal(oGoal):
 	oGoalAssigned = oGoal
 	
+	
 func _process(delta):
 	#malon_sticked()
 	attack()
 	if speed == 0: queue_free()
+		
 	super(delta)
 
 func attack():
@@ -45,8 +51,8 @@ func attack():
 			b.set_collision_mask(2)
 			b.set_color(Color(1, 0, 0))
 			get_parent().get_parent().add_child(b)
-			
-			#attack_sound(GUNSHOT)
+			var makenoise = rng.randi_range(0, 100)
+			if makenoise > 90: attack_sound(GUNSHOT)
 		#$WeaponSound.play()
 		
 		attack_objective = null

@@ -140,9 +140,9 @@ func ataque_husares_infernales():
 	var initAttack = Vector2.ZERO
 	var endAttack = Vector2.ZERO
 	initAttack.x = -1000
-	initAttack.y = $General.global_position.y + 100
+	initAttack.y = $General.global_position.y - 50
 	endAttack.x = 3000
-	endAttack.y = $General.global_position.y - 100
+	endAttack.y = $General.global_position.y - 150
 	add_child(E)
 	E.startAttack(initAttack, endAttack)	
 	
