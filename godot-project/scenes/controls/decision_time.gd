@@ -33,3 +33,7 @@ func _on_visibility_changed():
 
 func _on_moreno_button_pressed():
 	get_parent().decision_time_end("moreno")
+
+
+func _on_husares_infernales_button_pressed():
+	get_parent().decision_time_end("ataque_husares_infernales")

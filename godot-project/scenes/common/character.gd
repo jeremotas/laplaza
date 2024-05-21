@@ -165,13 +165,14 @@ func MovementLoop(delta):
 	# Gestionamos velocidad
 	if Engine.time_scale == 0:
 		return 
-		
+	
 	if status.moving == false and not input_accepted:
 		speed = 0
 	else:
 		speed += acceleration * delta
 		if speed > max_speed:
 			speed = max_speed
+	
 
 	if not input_accepted:
 		# Determinamos hacia donde vamos.

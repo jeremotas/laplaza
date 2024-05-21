@@ -12,6 +12,7 @@ var settings = {
 				"granadero": 0,
 				"correntino": 0,
 				"moreno": 0,
+				"husares_infernales": 0
 			},
 			"level": 0,
 			"time": 0
@@ -49,6 +50,14 @@ var settings = {
 			"max_speed": 50,
 			"bullet_speed": 500,
 			"cooldown_attack_time": 5
+		},
+		"husares_infernales": {
+			"life": 100,
+			"min_damage_given": 50,
+			"max_damage_given": 50,
+			"max_speed": 300,
+			"bullet_speed": 300,
+			"cooldown_attack_time": 0.1
 		}
 	},
 	"ingleses": {

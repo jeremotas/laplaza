@@ -22,7 +22,8 @@ var iStrategyCall = 0
 var enemy_strategy
 
 # Variable para control del malon.
-var malon = [{"unit_type": "correntino", "quantity": 0}, {"unit_type": "granadero", "quantity": 0}, {"unit_type": "moreno", "quantity": 0}]
+var malon = [{"unit_type": "correntino", "quantity": 0}, {"unit_type": "granadero", "quantity": 0}, {"unit_type": "moreno", "quantity": 0}, {"unit_type": "husares_infernales", "quantity": 0}]
+var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husares_infernales.tscn")
 
 func _ready():
 	get_viewport().set_physics_object_picking_sort(true) # 
@@ -127,11 +128,23 @@ func decision_time_end(decision):
 	if decision == "granadero": add_unit_to_malon("granadero")
 	elif decision == "correntino": add_unit_to_malon("correntino")
 	elif decision == "moreno": add_unit_to_malon("moreno")
+	elif decision == "ataque_husares_infernales": ataque_husares_infernales()
 	elif decision == "upgrade_life": increase_life(10)
 		
 	# Devolver al juego
 	$decision_time.hide()
 	Engine.time_scale = 1
+	
+func ataque_husares_infernales():
+	var E = EscuadronHusaresInfernales.instantiate()
+	var initAttack = Vector2.ZERO
+	var endAttack = Vector2.ZERO
+	initAttack.x = -1000
+	initAttack.y = $General.global_position.y + 100
+	endAttack.x = 3000
+	endAttack.y = $General.global_position.y - 100
+	add_child(E)
+	E.startAttack(initAttack, endAttack)	
 	
 func add_unit_to_malon(unit_type):
 	for i in range(malon.size()):

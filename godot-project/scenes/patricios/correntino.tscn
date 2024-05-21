@@ -557,7 +557,8 @@ theme_override_font_sizes/font_size = 8
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
-animation = &"die"
+animation = &"idle"
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
