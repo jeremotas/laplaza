@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckkcp0mw2ieet"]
+[gd_scene load_steps=6 format=3 uid="uid://ckkcp0mw2ieet"]
 
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
 [ext_resource type="Texture2D" uid="uid://be4gobj4ipn2w" path="res://assets/original/backgrounds/Flag-Spain-Arg.webp" id="2_3x168"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_blw1a"]
+[ext_resource type="AudioStream" uid="uid://bcujs7wklbl32" path="res://assets/created/musica/Victoria - La Reconquista.mp3" id="4_nnfhn"]
+[ext_resource type="AudioStream" uid="uid://cugberv1i8wtf" path="res://assets/original/sounds/crow-cheering.mp3" id="5_5ml8l"]
 
 [node name="Victoria" type="Node"]
 script = ExtResource("1_eouvj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0.14902, 0.14902, 0.14902, 1)
-offset_right = 639.0
-offset_bottom = 478.0
+offset_right = 641.0
+offset_bottom = 481.0
 texture = ExtResource("2_3x168")
 expand_mode = 2
 stretch_mode = 6
@@ -71,6 +73,14 @@ layout_mode = 2
 theme = ExtResource("3_blw1a")
 text = "J. Whitelocke"
 horizontal_alignment = 2
+
+[node name="Victoria" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nnfhn")
+autoplay = true
+
+[node name="Crowd" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5ml8l")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

@@ -3,11 +3,13 @@ extends Sprite2D
 var direction = Vector2.ZERO
 @export var speed = 150
 @export var faction = ""
+@export var bullet_lifetime = 2
 var min_damage = 0
 var max_damage = 0
 var objective_faction = null
 var sound = ""
 var is_playing = false
+var bulletTimer = null
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,7 +28,8 @@ func set_color(TheColor):
 	pass
 
 func _on_visible_on_screen_enabler_2d_screen_exited():
-	try_destroy()
+	#try_destroy()
+	pass
 
 func set_collision_mask(iLayer):
 	$Area2D.set_collision_mask_value(iLayer, true)
@@ -42,3 +45,13 @@ func _on_area_2d_body_entered(body):
 func try_destroy():
 	queue_free()
 	
+
+
+func _on_visible_on_screen_enabler_2d_screen_entered():
+	bulletTimer = Timer.new()
+	add_child(bulletTimer)
+	bulletTimer.autostart = true
+	bulletTimer.wait_time = bullet_lifetime
+	bulletTimer.one_shot = true
+	bulletTimer.timeout.connect(try_destroy)
+	bulletTimer.start()

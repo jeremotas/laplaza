@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dio1nkk7s46rf"]
+[gd_scene load_steps=18 format=3 uid="uid://dio1nkk7s46rf"]
 
 [ext_resource type="Script" path="res://scenes/levels/level1.gd" id="1_6uh2d"]
 [ext_resource type="Texture2D" uid="uid://ck63ae7pp7eib" path="res://assets/created/tilesets/tileset mud.png" id="2_akxlk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://scenes/common/goal.tscn" id="4_whb5j"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="5_gmgpk"]
 [ext_resource type="AudioStream" uid="uid://dldwe1yiexesi" path="res://assets/created/musica/La Zamba del Pasado.mp3" id="6_57fe4"]
+[ext_resource type="Script" path="res://scenes/levels/Camera2D.gd" id="6_jgx8y"]
 [ext_resource type="PackedScene" uid="uid://uk3j7rh2076l" path="res://scenes/controls/hud.tscn" id="7_4vlew"]
 [ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="8_e45fx"]
 [ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://scenes/controls/pause_menu.tscn" id="9_e3h4x"]
@@ -255,6 +256,7 @@ life = 20
 [node name="Camera2D" type="Camera2D" parent="General"]
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+script = ExtResource("6_jgx8y")
 
 [node name="SceneTimer" type="Timer" parent="."]
 wait_time = 10.0

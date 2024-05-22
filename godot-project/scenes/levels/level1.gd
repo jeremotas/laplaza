@@ -80,6 +80,7 @@ func control_malon():
 func calculate_stats():
 	# Condicion de GAME OVER
 	TheGameStats.game_over = ($General.life == 0 or $EnemyGoal.completed())
+	TheGameStats.game_win = (iSecondsPassed >= Global.settings.game.player_goal)
 	TheGameStats.life = $General.life
 	TheGameStats.max_life = player_max_life
 	
@@ -105,6 +106,15 @@ func calculate_stats():
 		
 	if TheGameStats.game_over:
 		game_over()
+		
+	if TheGameStats.game_win:
+		game_win()
+		
+func game_win():
+	Engine.time_scale = 0.3
+	await get_tree().create_timer(1).timeout
+	Engine.time_scale = 1
+	get_tree().change_scene_to_file("res://scenes/screens/victory.tscn")		
 		
 func game_over():
 	Engine.time_scale = 0.3
@@ -144,7 +154,9 @@ func ataque_husares_infernales():
 	endAttack.x = 3000
 	endAttack.y = $General.global_position.y - 150
 	add_child(E)
-	E.startAttack(initAttack, endAttack)	
+	E.startAttack(initAttack, endAttack)
+	
+	$General/Camera2D.apply_shake_seconds(7)
 	
 func add_unit_to_malon(unit_type):
 	for i in range(malon.size()):
@@ -272,9 +284,9 @@ func prepare_enemy_spawns():
 
 func _on_timer_timeout():
 	# Control para el reloj del juego
-	print(get_tree().get_nodes_in_group("faccion_ingleses").size())
+	#print(get_tree().get_nodes_in_group("faccion_ingleses").size())
 	iSecondsPassed += 1
-	HUD.change_time(iSecondsPassed)
+	HUD.change_time(max(Global.settings.game.player_goal - iSecondsPassed, 0))
 
 func _on_death(faction, experience_given):
 	# Sumador de experiencia
