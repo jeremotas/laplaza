@@ -39,6 +39,28 @@ var deathTimer = null
 
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
+
+var aGunshotsSounds = [
+	preload("res://assets/original/sounds/mosquetes/gunshot01.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot02.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot03.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot04.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot05.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot06.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot07.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot08.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot09.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot10.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot11.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot12.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot13.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot14.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot15.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot16.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot17.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot18.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot19.mp3")
+]
 	
 		
 #func animation_ends(animation):
@@ -270,6 +292,8 @@ func communication(message):
 	comLabelString += message + " " 
 	
 func attack_sound(stream):
+	var iGunshotKey = rng.randi_range(0, 18)
+	stream = aGunshotsSounds[iGunshotKey]
 	var SoundPlayer = AudioStreamPlayer2D.new()
 	self.add_child(SoundPlayer)
 	SoundPlayer.stream = stream
