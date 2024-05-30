@@ -116,6 +116,12 @@ func TakeDamage(min_damage, max_damage):
 func hurt():
 	status.hurt = false
 	pass
+	
+func walk():
+	pass
+	
+func idle():
+	pass
 
 func CombatCalculation(delta):
 	if $CombatArea and life > 0:
@@ -171,7 +177,9 @@ func AnimationCalculation(delta):
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = true
+		walk()
 	else:
+		idle()
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = true
 		animation_tree["parameters/conditions/got_hurt"] = false

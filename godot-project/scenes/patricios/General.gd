@@ -40,6 +40,12 @@ func attack():
 		
 		attack_objective = null
 	pass	
+	
+func walk():
+	$WalkSound.volume_db = -1
+	
+func idle():
+	$WalkSound.volume_db = -100
 
 func hurt():
 	$HurtSound.play()

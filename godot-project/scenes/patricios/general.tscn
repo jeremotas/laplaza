@@ -1,10 +1,11 @@
-[gd_scene load_steps=49 format=3 uid="uid://bc8o4p1i67cbn"]
+[gd_scene load_steps=50 format=3 uid="uid://bc8o4p1i67cbn"]
 
 [ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="2_1oyaa"]
 [ext_resource type="Texture2D" uid="uid://cf3266xrs7tum" path="res://assets/created/general.png" id="2_j1s25"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_nklhm"]
 [ext_resource type="AudioStream" uid="uid://cyp28dqo4lc11" path="res://assets/created/sounds/dolor.mp3" id="5_nv6gl"]
+[ext_resource type="AudioStream" uid="uid://3kns6iv7ithe" path="res://assets/original/sounds/horse_general.mp3" id="6_ma0wk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f72y"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -406,7 +407,6 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_clm41")
 animation = &"idle"
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -463,3 +463,7 @@ stream = ExtResource("3_nklhm")
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_nv6gl")
 volume_db = 5.087
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ma0wk")
+autoplay = true
