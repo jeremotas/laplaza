@@ -57,9 +57,14 @@ layout_mode = 2
 theme = ExtResource("2_joe4m")
 text = "Ataque de Husares Infernales"
 
+[node name="BarrileteCosmicoButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Barrilete Cosmico"
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GranaderoButton" to="." method="_on_granadero_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MorenoButton" to="." method="_on_moreno_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CorrentinoButton" to="." method="_on_correntino_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MoreLifeButton" to="." method="_on_more_life_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HusaresInfernalesButton" to="." method="_on_husares_infernales_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BarrileteCosmicoButton" to="." method="_on_barrilete_cosmico_button_pressed"]

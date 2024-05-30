@@ -15,6 +15,7 @@ signal death(faction)
 @export var attack_block_movement = false
 @export var show_progress_bar = false
 @export var bullet_speed = 150
+@export var invincible = false
 
 var oGoalAssigned = null
 
@@ -159,24 +160,40 @@ func AnimationCalculation(delta):
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
+	elif invincible:
+		animation_tree["parameters/conditions/die"] = false
+		animation_tree["parameters/conditions/idle"] = false
+		animation_tree["parameters/conditions/got_hurt"] = false
+		animation_tree["parameters/conditions/shooting"] = false
+		animation_tree["parameters/conditions/walking"] = false
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = true
 	elif status.hurt:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = true
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
 	elif status.attacking:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = true
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
 	elif status.moving:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = true
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
 		walk()
 	else:
 		idle()
@@ -185,6 +202,9 @@ func AnimationCalculation(delta):
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
+		
 	
 	if velocity.x > 0: 
 		$AnimatedSprite2D.flip_h = false

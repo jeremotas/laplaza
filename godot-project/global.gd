@@ -26,7 +26,16 @@ var settings = {
 			"max_damage_given": 5,
 			"max_speed": 250,
 			"bullet_speed": 150,
-			"cooldown_attack_time": 1
+			"cooldown_attack_time": 1,
+			"barrilete_cosmico": {
+				"life": 20000000,
+				"min_damage_given": 100000,
+				"max_damage_given": 100000,
+				"max_speed": 400,
+				"bullet_speed": 800,
+				"cooldown_attack_time": 0.005,
+				"duration": 3
+			}
 		},
 		"granadero": {
 			"life": 7,

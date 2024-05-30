@@ -20,6 +20,7 @@ var zoom_acceleration = 0.3
 var original_zoom = Vector2()
 var iStrategyCall = 0
 var enemy_strategy
+var command = ""
 
 # Variable para control del malon.
 var malon = [{"unit_type": "correntino", "quantity": 0}, {"unit_type": "granadero", "quantity": 0}, {"unit_type": "moreno", "quantity": 0}, {"unit_type": "husares_infernales", "quantity": 0}]
@@ -36,6 +37,13 @@ func _ready():
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
 	
+	#await get_tree().create_timer(4).timeout
+	#barrilete_cosmico()
+
+func _input(event):
+	if event is InputEventKey:
+		if event.is_pressed():
+			command += char(event.unicode)
 	
 func prepare_initial_conditions():
 	#print(JSON.stringify(malon))
@@ -62,6 +70,9 @@ func _process(delta):
 		control_malon() # Gestionamos la composicion del malon
 		zoom(delta) # Controlamos el movimiento de camara
 		process_pause() # Revisamos si hubo pausa
+	if command == "d10s":
+		barrilete_cosmico()
+		command = ""
 
 func control_malon():
 	var faction = "patricios"
@@ -139,11 +150,22 @@ func decision_time_end(decision):
 	elif decision == "correntino": add_unit_to_malon("correntino")
 	elif decision == "moreno": add_unit_to_malon("moreno")
 	elif decision == "ataque_husares_infernales": ataque_husares_infernales()
+	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)
 		
 	# Devolver al juego
 	$decision_time.hide()
 	Engine.time_scale = 1
+	
+func barrilete_cosmico():
+	$General.init_barrilete_cosmico()
+	
+func start_music():
+	$BackgroundMusic.play()
+	
+func stop_music():
+	$BackgroundMusic.stop()
+	
 	
 func ataque_husares_infernales():
 	var E = EscuadronHusaresInfernales.instantiate()
@@ -293,3 +315,8 @@ func _on_death(faction, experience_given):
 	if faction != $General.faction:
 		TheGameStats.add_experience(experience_given)
 		
+
+
+func _on_timer_command_timeout():
+	command = ""
+	pass # Replace with function body.

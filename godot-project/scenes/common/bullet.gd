@@ -36,7 +36,7 @@ func set_collision_mask(iLayer):
 
 func _on_area_2d_body_entered(body):
 	#print(body, objective_faction)
-	if body and ("faction" in body) and body.faction == objective_faction and body.life > 0:
+	if body and ("faction" in body) and body.faction == objective_faction and body.life > 0 and not body.invincible:
 		set_process(false)
 		if body.has_method("TakeDamage"):
 			body.TakeDamage(min_damage, max_damage)
