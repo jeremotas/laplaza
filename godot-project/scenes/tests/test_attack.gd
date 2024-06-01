@@ -3,8 +3,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().create_timer(1).timeout
-	$General.init_barrilete_cosmico()
+	#await get_tree().create_timer(1).timeout
+	#$General.init_barrilete_cosmico()
+	$Moreno.assign_goal($General)
+	$Moreno.add_to_faction('patricios')
 	pass # Replace with function body.
 
 

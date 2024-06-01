@@ -25,12 +25,15 @@ func _process(delta):
 	super(delta)
 
 func attack():
-	if attack_objective:
+	if not inCoolDownAttack:
+		inCoolDownAttack = true
+		coolDownTimer.start()
 		var b = bullet.instantiate()
-		if has_node("WeaponPoint"):
+		print(self, last_general_direction)
+		if has_node("WeaponPoint") and last_general_direction != Vector2.ZERO:
 			b.global_position = $WeaponPoint.global_position
-			b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
-			b.objective_faction = attack_objective.faction
+			b.direction = last_general_direction #(attack_objective.global_position - $WeaponPoint.global_position).normalized()
+			b.objective_faction = 'ingleses' #attack_objective.faction
 			b.min_damage = min_damage_given
 			b.max_damage = max_damage_given
 			b.speed = Global.settings.patricios.moreno.bullet_speed

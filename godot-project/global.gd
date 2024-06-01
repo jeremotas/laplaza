@@ -34,7 +34,7 @@ var settings = {
 				"max_speed": 400,
 				"bullet_speed": 800,
 				"cooldown_attack_time": 0.005,
-				"duration": 3
+				"duration": 5
 			}
 		},
 		"granadero": {
@@ -51,7 +51,7 @@ var settings = {
 			"max_damage_given": 2,
 			"max_speed": 150,
 			"bullet_speed": 150,
-			"cooldown_attack_time": 2
+			"cooldown_attack_time": 0.7
 		},
 		"correntino": {
 			"life": 3,

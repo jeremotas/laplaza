@@ -16,6 +16,8 @@ signal death(faction)
 @export var show_progress_bar = false
 @export var bullet_speed = 150
 @export var invincible = false
+@export var last_input = Vector2.ZERO
+var last_general_direction = Vector2.ZERO
 
 var oGoalAssigned = null
 
@@ -227,6 +229,7 @@ func MovementLoop(delta):
 	if not input_accepted:
 		# Determinamos hacia donde vamos.
 		velocity = global_position.direction_to(destination) * speed
+		#last_input =  global_position.direction_to(destination).normalized()
 		# Calculamos la direccion del movimiento
 		#move_direction = rad_to_deg(destination.angle_to_point(global_position))
 		
@@ -244,6 +247,7 @@ func MovementLoop(delta):
 		status.moving = false
 		if input != Vector2.ZERO: 
 			status.moving = true
+			last_input = input
 	
 	var can_move = life > 0 #and not status.attacking
 	
@@ -318,6 +322,9 @@ func ComunicationCalculation(delta):
 	
 func communication(message):
 	comLabelString += message + " " 
+	
+func set_last_general_direction(oDirection):
+	last_general_direction = oDirection
 	
 func attack_sound(stream):
 	var iGunshotKey = rng.randi_range(0, 18)

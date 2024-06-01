@@ -19,9 +19,12 @@ func _init():
 	init()
 	
 func _process(delta):
-	
+	last_direction_message()
 	attack()
 	super(delta)
+
+func last_direction_message():
+	get_tree().call_group("faccion_patricios", "set_last_general_direction", last_input)
 
 func attack():
 	if attack_objective:
