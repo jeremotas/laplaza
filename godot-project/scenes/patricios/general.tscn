@@ -514,7 +514,7 @@ radius = 152.03
 [node name="General" type="CharacterBody2D"]
 scale = Vector2(0.9, 0.9)
 collision_layer = 8
-collision_mask = 14
+collision_mask = 12
 script = ExtResource("1_utaqx")
 faction = "patricios"
 unit_type = "general"
@@ -541,7 +541,6 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_clm41")
 animation = &"idle"
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -564,6 +563,8 @@ parameters/conditions/shooting = false
 parameters/conditions/walking = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+light_mask = 0
+visibility_layer = 0
 position = Vector2(-1.00781, 2.09375)
 scale = Vector2(0.507812, 0.46875)
 polygon = PackedVector2Array(-43.3077, -19.4, -45.277, 23.2667, 11.8308, 27.5333, 33.4923, -42.8667, -1.95385, -15.1333, 0.0153797, -57.8, -13.7692, -59.9333, -19.6769, -23.6667)

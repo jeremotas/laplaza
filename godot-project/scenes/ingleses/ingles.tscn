@@ -466,7 +466,7 @@ bg_color = Color(0, 0.917647, 0.27451, 1)
 
 [node name="SoldadoEnemigo" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 15
+collision_mask = 6
 script = ExtResource("1_5wky8")
 
 [node name="ComLabel" type="Label" parent="."]
@@ -491,6 +491,7 @@ position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
+frame = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, -3, 11, 4, 8, 4, -2)
