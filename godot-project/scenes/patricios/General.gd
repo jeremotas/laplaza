@@ -57,7 +57,7 @@ func init_barrilete_cosmico():
 	max_speed = Global.settings.patricios.general.barrilete_cosmico.max_speed
 	
 	bullet_speed = Global.settings.patricios.general.barrilete_cosmico.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.general.cooldown
+	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
 	invincible = true
 	
 	
@@ -80,7 +80,7 @@ func end_barrilete_cosmico():
 	min_damage_given = Global.settings.patricios.general.attack.min_damage_given
 	max_damage_given = Global.settings.patricios.general.attack.max_damage_given
 	bullet_speed = Global.settings.patricios.general.attack.bullet.speed
-	bullet_lifetime = Global.settings.patricios.general.attack.bullet.lifetime
+	bullet_lifetime = Global.settings.patricios.general.attack.bullet.duration
 	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
 	
 	invincible = false
