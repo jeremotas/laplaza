@@ -15,8 +15,10 @@ signal death(faction)
 @export var attack_block_movement = false
 @export var show_progress_bar = false
 @export var bullet_speed = 150
+@export var bullet_lifetime = 1
 @export var invincible = false
 @export var last_input = Vector2.ZERO
+@export var flipped = false
 var last_general_direction = Vector2.ZERO
 
 var oGoalAssigned = null
@@ -212,6 +214,8 @@ func AnimationCalculation(delta):
 		$AnimatedSprite2D.flip_h = false
 	elif velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true	
+		
+	flipped = $AnimatedSprite2D.flip_h
 	
 func MovementLoop(delta):
 	# Gestionamos velocidad

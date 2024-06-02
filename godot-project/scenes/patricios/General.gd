@@ -9,12 +9,13 @@ const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
 	unit_type = "general"
-	min_damage_given = Global.settings.patricios.general.min_damage_given
-	max_damage_given = Global.settings.patricios.general.max_damage_given
+	min_damage_given = Global.settings.patricios.general.attack.min_damage_given
+	max_damage_given = Global.settings.patricios.general.attack.max_damage_given
 	max_speed = Global.settings.patricios.general.max_speed
 	life = Global.settings.patricios.general.life
-	bullet_speed = Global.settings.patricios.general.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.general.cooldown_attack_time
+	bullet_speed = Global.settings.patricios.general.attack.bullet.speed
+	bullet_lifetime = Global.settings.patricios.general.attack.bullet.duration
+	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
 	invincible = false
 	init()
 	
@@ -36,6 +37,7 @@ func attack():
 			b.min_damage = min_damage_given
 			b.max_damage = max_damage_given
 			b.speed = bullet_speed
+			b.bullet_lifetime = bullet_lifetime
 			b.set_collision_mask(2)
 			b.set_color(Color(1, 1, 1))
 			if barrilete_cosmico:
@@ -72,12 +74,14 @@ func init_barrilete_cosmico():
 	pass
 	
 func end_barrilete_cosmico():
-	min_damage_given = Global.settings.patricios.general.min_damage_given
-	max_damage_given = Global.settings.patricios.general.max_damage_given
-	max_speed = Global.settings.patricios.general.max_speed
 	life = Global.settings.patricios.general.life
-	bullet_speed = Global.settings.patricios.general.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.general.cooldown_attack_time
+	max_speed = Global.settings.patricios.general.max_speed
+	min_damage_given = Global.settings.patricios.general.attack.min_damage_given
+	max_damage_given = Global.settings.patricios.general.attack.max_damage_given
+	bullet_speed = Global.settings.patricios.general.attack.bullet.speed
+	bullet_lifetime = Global.settings.patricios.general.attack.bullet.lifetime
+	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
+	
 	invincible = false
 	barrilete_cosmico = false
 	$UnStateItalianoMusic.stop()

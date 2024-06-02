@@ -10,11 +10,12 @@ func _init():
 	
 	max_speed = Global.settings.ingleses.soldado.max_speed
 	life = Global.settings.ingleses.soldado.life
-	min_damage_given = Global.settings.ingleses.soldado.min_damage_given
-	max_damage_given = Global.settings.ingleses.soldado.max_damage_given
+	min_damage_given = Global.settings.ingleses.soldado.attack.min_damage_given
+	max_damage_given = Global.settings.ingleses.soldado.attack.max_damage_given
 	experience_given = Global.settings.ingleses.soldado.experience_given
-	bullet_speed = Global.settings.ingleses.soldado.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.granadero.cooldown_attack_time
+	bullet_speed = Global.settings.ingleses.soldado.attack.bullet.speed
+	bullet_lifetime = Global.settings.ingleses.soldado.attack.bullet.duration
+	coolDownAttackTime = Global.settings.ingleses.soldado.attack.cooldown
 	
 func _ready():
 	super()
@@ -33,6 +34,7 @@ func attack():
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
 		b.speed = bullet_speed
+		b.bullet_lifetime = bullet_lifetime
 		b.set_collision_mask(1)
 		b.set_collision_mask(4)
 		b.set_color(Color(1, 1, 0.2))

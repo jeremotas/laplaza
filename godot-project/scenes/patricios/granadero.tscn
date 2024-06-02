@@ -18,12 +18,13 @@ const GUNSHOT = preload(\"res://assets/original/sounds/gunshot2.mp3\")
 
 func _init():
 	unit_type = \"granadero\"
-	min_damage_given = Global.settings.patricios.granadero.min_damage_given
-	max_damage_given = Global.settings.patricios.granadero.max_damage_given
+	min_damage_given = Global.settings.patricios.granadero.attack.min_damage_given
+	max_damage_given = Global.settings.patricios.granadero.attack.max_damage_given
 	max_speed = Global.settings.patricios.granadero.max_speed
 	life = Global.settings.patricios.granadero.life
-	bullet_speed = Global.settings.patricios.granadero.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.granadero.cooldown_attack_time
+	bullet_speed = Global.settings.patricios.granadero.attack.bullet.speed
+	bullet_lifetime = Global.settings.patricios.granadero.attack.bullet.duration
+	coolDownAttackTime = Global.settings.patricios.granadero.attack.cooldown
 
 	init()
 
@@ -45,7 +46,8 @@ func attack():
 			b.objective_faction = attack_objective.faction
 			b.min_damage = min_damage_given
 			b.max_damage = max_damage_given
-			b.speed = Global.settings.patricios.granadero.bullet_speed
+			b.speed = bullet_speed
+			b.bullet_lifetime = bullet_lifetime
 			b.set_collision_mask(2)
 			b.set_color(Color(1, 1, 1))
 			get_parent().add_child(b)
@@ -561,7 +563,6 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

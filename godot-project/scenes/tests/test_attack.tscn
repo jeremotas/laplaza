@@ -14,7 +14,7 @@ position = Vector2(129, 127)
 [node name="SoldadoEnemigo" parent="." instance=ExtResource("2_qlt1g")]
 position = Vector2(421, 210)
 faction = "ingleses"
-life = 100
+life = 4
 
 [node name="Moreno" parent="." instance=ExtResource("4_54lth")]
 faction = "patricios"

@@ -22,11 +22,16 @@ var settings = {
 	"patricios": {
 		"general": {
 			"life": 20,
-			"min_damage_given": 5,
-			"max_damage_given": 5,
 			"max_speed": 250,
-			"bullet_speed": 150,
-			"cooldown_attack_time": 1,
+			"attack":{
+				"bullet": {
+					"speed": 150,
+					"duration": 2.0,
+				},
+				"cooldown": 1,
+				"min_damage_given": 5,
+				"max_damage_given": 5
+			},
 			"barrilete_cosmico": {
 				"life": 20000000,
 				"min_damage_given": 100000,
@@ -39,46 +44,75 @@ var settings = {
 		},
 		"granadero": {
 			"life": 7,
-			"min_damage_given": 4,
-			"max_damage_given": 4,
 			"max_speed": 100,
-			"bullet_speed": 150,
-			"cooldown_attack_time": 1
+			"attack":{
+				"bullet": {
+					"speed": 150,
+					"duration": 2.0,
+				},
+				"cooldown": 1,
+				"min_damage_given": 4,
+				"max_damage_given": 4
+			},
 		},
 		"moreno": {
 			"life": 14,
-			"min_damage_given": 2,
-			"max_damage_given": 2,
 			"max_speed": 150,
-			"bullet_speed": 150,
-			"cooldown_attack_time": 0.7
+			"attack":{
+				"bullet": {
+					"speed": 200,
+					"duration": 0.75,
+					"explotion": {
+						"duration": 1,
+						"scale": 20
+					}
+				},
+				"cooldown": 4,
+				"min_damage_given": 2,
+				"max_damage_given": 2
+			},
 		},
 		"correntino": {
 			"life": 3,
-			"min_damage_given": 8,
-			"max_damage_given": 14,
 			"max_speed": 50,
-			"bullet_speed": 500,
-			"cooldown_attack_time": 5
+			"attack":{
+				"bullet": {
+					"speed": 500,
+					"duration": 2.0,
+				},
+				"cooldown": 5,
+				"min_damage_given": 8,
+				"max_damage_given": 14
+			},
 		},
 		"husares_infernales": {
 			"life": 100,
-			"min_damage_given": 50,
-			"max_damage_given": 50,
 			"max_speed": 300,
-			"bullet_speed": 300,
-			"cooldown_attack_time": 0.1
+			"attack":{
+				"bullet": {
+					"speed": 500,
+					"duration": 2.0,
+				},
+				"cooldown": 0.1,
+				"min_damage_given": 50,
+				"max_damage_given": 50
+			}
 		}
 	},
 	"ingleses": {
 		"soldado": {
 			"life": 8,
-			"min_damage_given": 1,
-			"max_damage_given": 2,
 			"max_speed": 15,
-			"bullet_speed": 150,
-			"cooldown_attack_time": 1,
-			"experience_given": 2
+			"experience_given": 2,
+			"attack":{
+				"bullet": {
+					"speed": 150,
+					"duration": 2.0,
+				},
+				"cooldown": 1,
+				"min_damage_given": 1,
+				"max_damage_given": 2
+			}
 		}
 	},
 	"enemy_spawn_strategy":[
