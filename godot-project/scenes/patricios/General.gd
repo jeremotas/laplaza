@@ -57,8 +57,9 @@ func init_barrilete_cosmico():
 	max_speed = Global.settings.patricios.general.barrilete_cosmico.max_speed
 	
 	bullet_speed = Global.settings.patricios.general.barrilete_cosmico.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.general.cooldown_attack_time
+	coolDownAttackTime = Global.settings.patricios.general.cooldown
 	invincible = true
+	
 	
 	# Determino cuanto dura el barrilete cosmico
 	barrileteTimer = Timer.new()

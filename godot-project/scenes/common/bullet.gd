@@ -16,6 +16,7 @@ var explotionTimer = null
 @export var explotion_layer = 0
 @export var explotion_lifetime = 2
 @export var explotion_scale_radius = 10
+@export var explotion_particle = false
 
 
 
@@ -27,12 +28,13 @@ func _ready():
 func prepare():
 	pass
 	
-func prepare_explotion(layer, lifetime, scale_radius):
+func prepare_explotion(layer, lifetime, scale_radius, particle):
 	explodes = true
 	one_hit = false
 	explotion_layer = layer
 	explotion_lifetime = lifetime
 	explotion_scale_radius = scale_radius
+	explotion_particle = particle
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -74,7 +76,8 @@ func create_explotion():
 		speed = 0
 		$Area2D.scale = Vector2(explotion_scale_radius,explotion_scale_radius)
 		$Area2D.set_collision_mask_value(explotion_layer, true)
-		$Area2D/ExplotionRect.visible = true
+		$ColorRect.visible = false
+		#$Area2D/ExplotionRect.visible = true
 		explotionTimer = Timer.new()
 		add_child(explotionTimer)
 		explotionTimer.autostart = true
@@ -82,7 +85,10 @@ func create_explotion():
 		explotionTimer.one_shot = true
 		explotionTimer.timeout.connect(try_destroy)
 		explotionTimer.start()
-		
+		if explotion_particle:
+			$explosion.visible = true
+			$explosion.scale = Vector2(2,2)
+		texture = null
 	
 	pass
 

@@ -17,4 +17,5 @@ faction = "ingleses"
 life = 4
 
 [node name="Moreno" parent="." instance=ExtResource("4_54lth")]
+position = Vector2(1, 1)
 faction = "patricios"

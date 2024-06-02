@@ -64,7 +64,8 @@ var settings = {
 					"duration": 0.75,
 					"explotion": {
 						"duration": 1,
-						"scale": 20
+						"scale": 20,
+						"particle": true
 					}
 				},
 				"cooldown": 4,
@@ -101,7 +102,7 @@ var settings = {
 	},
 	"ingleses": {
 		"soldado": {
-			"life": 8,
+			"life": 2,
 			"max_speed": 15,
 			"experience_given": 2,
 			"attack":{
