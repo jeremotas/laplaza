@@ -37,6 +37,8 @@ func _ready():
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
 	
+	Engine.time_scale = 1
+	
 	#await get_tree().create_timer(4).timeout
 	#barrilete_cosmico()
 

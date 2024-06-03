@@ -103,9 +103,9 @@ var settings = {
 	},
 	"ingleses": {
 		"soldado": {
-			"life": 2,
+			"life": 1,
 			"max_speed": 15,
-			"experience_given": 12,
+			"experience_given": 2,
 			"attack":{
 				"bullet": {
 					"speed": 150,
