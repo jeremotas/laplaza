@@ -9,7 +9,7 @@ var settings = {
 		"min_player_life_after_level_up": 0,
 		"initial_conditions": {
 			"units_arrived": 0,
-			"life": 10,
+			"life": 15,
 			"malon": {
 				"granadero": 0,
 				"correntino": 0,

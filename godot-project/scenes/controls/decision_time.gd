@@ -20,19 +20,23 @@ func prepare_buttons(experience):
 	$MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard.visible = false
 	
 	# Elijo 3 botones al azar
-	var aButtons = [
+	var aButtonsUnidades = [
 		$MarginContainer/HBoxContainer/GranaderoButtonCard,
 		$MarginContainer/HBoxContainer/MorenoButtonCard,
-		$MarginContainer/HBoxContainer/CorrentinoButtonCard,
+		$MarginContainer/HBoxContainer/CorrentinoButtonCard
+	]
+	var aButtonsEfectos = [
 		$MarginContainer/HBoxContainer/MoreLifeButtonCard,
 		$MarginContainer/HBoxContainer/HusaresInfernalesButtonCard,
 		$MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard
 	]
-	aButtons.shuffle()
-	aButtons[0].visible = true
-	aButtons[1].visible = true
-	aButtons[2].visible = true
-	aButtons[0].grab_focus.call_deferred()
+	
+	aButtonsUnidades.shuffle()
+	aButtonsEfectos.shuffle()
+	aButtonsUnidades[0].visible = true
+	aButtonsUnidades[1].visible = true
+	aButtonsEfectos[0].visible = true
+	aButtonsUnidades[0].grab_focus.call_deferred()
 	
 	pass
 
