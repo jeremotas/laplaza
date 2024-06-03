@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Character
 
-signal death(faction)
 @export var faction = ""
 @export var max_speed = 200
 @export var speed = 0
@@ -20,6 +19,7 @@ signal death(faction)
 @export var last_input = Vector2.ZERO
 @export var flipped = false
 var last_general_direction = Vector2.ZERO
+var drop_reward  = false
 
 var oGoalAssigned = null
 
@@ -70,7 +70,7 @@ var aGunshotsSounds = [
 		
 #func animation_ends(animation):
 #	print(animation)
-#	if animation == 'die':
+#	if animation == 'die'
 #		animation_tree.active = false
 
 func add_to_faction(new_faction):
@@ -272,9 +272,13 @@ func StatusCalculation(delta):
 		deathTimer.timeout.connect(destroy_character)
 		deathTimer.start()
 		
-		if not death_emited:
-			death.emit(faction, experience_given)
-			death_emited = true
+		
+		if drop_reward:
+			drop_the_reward(experience_given)
+			
+
+func drop_the_reward(experience_given):
+	pass
 
 func destroy_character():
 	#print("DESTROY", self)
@@ -355,8 +359,6 @@ func malon_sticked():
 		input_accepted = true
 	
 func _ready():
-	if get_parent().has_method("_on_death"):
-		death.connect(get_parent()._on_death)
 #	if has_node("AnimationPlayer"):
 #		print($AnimationPlayer.animation_finished)
 #		$AnimationPlayer.animation_finished.connect(animation_ends)

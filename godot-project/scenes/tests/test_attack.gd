@@ -10,7 +10,8 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _on_death(faction, xp):	
+func _on_reward(faction, xp):	
+	print('holis REWARD')
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

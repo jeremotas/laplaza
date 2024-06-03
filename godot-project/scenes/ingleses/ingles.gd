@@ -3,6 +3,7 @@ extends Character
 @onready var animation = $AnimatedSprite2D
 
 var bullet = preload("res://scenes/common/bullet.tscn") 
+var lagrima = preload("res://scenes/common/lagrima.tscn") 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
@@ -16,6 +17,8 @@ func _init():
 	bullet_speed = Global.settings.ingleses.soldado.attack.bullet.speed
 	bullet_lifetime = Global.settings.ingleses.soldado.attack.bullet.duration
 	coolDownAttackTime = Global.settings.ingleses.soldado.attack.cooldown
+	drop_reward = true
+	init()
 	
 func _ready():
 	super()
@@ -24,6 +27,13 @@ func _process(delta):
 	attack()
 	super(delta)
 	
+
+func drop_the_reward(experience_given):
+	drop_reward = false
+	var l = lagrima.instantiate()
+	l.experience_given = experience_given
+	l.global_position = global_position
+	get_parent().add_child(l)
 
 func attack():
 	if attack_objective:

@@ -310,7 +310,7 @@ func _on_timer_timeout():
 	iSecondsPassed += 1
 	HUD.change_time(max(Global.settings.game.player_goal - iSecondsPassed, 0))
 
-func _on_death(faction, experience_given):
+func _on_reward(faction, experience_given):
 	# Sumador de experiencia
 	if faction != $General.faction:
 		TheGameStats.add_experience(experience_given)
