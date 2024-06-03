@@ -103,7 +103,8 @@ mouse_filter = 1
 theme = ExtResource("2_joe4m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
-text = "Granadero"
+bbcode_enabled = true
+text = "[center]Patricio[/center]"
 fit_content = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/GranaderoButtonCard/MarginContainer/VBoxContainer"]
@@ -116,7 +117,7 @@ layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("2_joe4m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "El bien ponderado granadero que ataca con precisión al enemigo. 
+text = "El bien ponderado patricio que ataca con precisión al enemigo. 
 
 Tarda en recargar, sino seria un escándalo."
 fit_content = true
@@ -149,7 +150,8 @@ mouse_filter = 1
 theme = ExtResource("2_joe4m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
-text = "Correntino"
+bbcode_enabled = true
+text = "[center]Correntino[/center]"
 fit_content = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CorrentinoButtonCard/MarginContainer/VBoxContainer"]
@@ -196,7 +198,8 @@ mouse_filter = 1
 theme = ExtResource("2_joe4m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
-text = "Moreno"
+bbcode_enabled = true
+text = "[center]Moreno[/center]"
 fit_content = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MorenoButtonCard/MarginContainer/VBoxContainer"]
@@ -243,7 +246,8 @@ mouse_filter = 1
 theme = ExtResource("2_joe4m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
-text = "Matecito"
+bbcode_enabled = true
+text = "[center]Matecito[/center]"
 fit_content = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
@@ -289,7 +293,8 @@ mouse_filter = 1
 theme = ExtResource("2_joe4m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 15
-text = "Barrilete Cósmico"
+bbcode_enabled = true
+text = "[center]Barrilete Cósmico[/center]"
 fit_content = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard/MarginContainer/VBoxContainer"]
@@ -336,7 +341,8 @@ mouse_filter = 1
 theme = ExtResource("2_joe4m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 15
-text = "Husares Infernales"
+bbcode_enabled = true
+text = "[center]Husares Infernales[/center]"
 fit_content = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HusaresInfernalesButtonCard/MarginContainer/VBoxContainer"]
