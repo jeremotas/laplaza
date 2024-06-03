@@ -189,7 +189,7 @@ func add_unit_to_malon(unit_type):
 
 func process_pause():
 	# Controla si se ejecuto la pausa desde el input
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and Engine.time_scale > 0:
 		pauseMenu()	
 	
 	
