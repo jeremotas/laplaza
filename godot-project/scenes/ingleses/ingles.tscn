@@ -491,7 +491,7 @@ position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 2
+frame = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, -3, 11, 4, 8, 4, -2)
@@ -528,6 +528,7 @@ position = Vector2(13, 1)
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_c4n1u")
 pitch_scale = 0.71
+bus = &"Efectos"
 
 [node name="LifeProgress" type="ProgressBar" parent="."]
 visible = false

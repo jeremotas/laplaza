@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://u6pw5bj6d6pt"]
+[gd_scene load_steps=6 format=3 uid="uid://u6pw5bj6d6pt"]
 
 [ext_resource type="Script" path="res://scenes/controls/pause_menu.gd" id="1_wwgda"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_76fdo"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_mqs88"]
+[ext_resource type="PackedScene" uid="uid://ne0jrytbfn5y" path="res://scenes/controls/volume_mixer.tscn" id="4_c50jk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dtvlx"]
 shader = ExtResource("2_76fdo")
@@ -17,16 +18,19 @@ offset_right = 647.0
 offset_bottom = 488.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -69.0
-offset_top = -86.0
+offset_top = -110.5
 offset_right = 69.0
+offset_bottom = 110.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
@@ -35,16 +39,46 @@ theme_override_constants/margin_bottom = 12
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Continuar" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Master" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_mqs88")
-text = "Continuar"
+theme_override_font_sizes/font_size = 16
+text = "General"
+
+[node name="master_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Musica" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_mqs88")
+theme_override_font_sizes/font_size = 16
+text = "Musica"
+
+[node name="music_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
+layout_mode = 2
+bus_name = "Musica"
+
+[node name="Efectos" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_mqs88")
+theme_override_font_sizes/font_size = 16
+text = "Efectos"
+
+[node name="efectos_mixer2" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
+layout_mode = 2
+bus_name = "Efectos"
 
 [node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_mqs88")
 text = "Menu principal"
 
+[node name="Continuar" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_mqs88")
+text = "Continuar"
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]

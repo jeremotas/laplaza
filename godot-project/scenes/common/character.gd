@@ -340,6 +340,7 @@ func attack_sound(stream):
 	var SoundPlayer = AudioStreamPlayer2D.new()
 	self.add_child(SoundPlayer)
 	SoundPlayer.stream = stream
+	SoundPlayer.bus = &"Efectos"
 	SoundPlayer.connect("finished", SoundPlayer.queue_free)
 	SoundPlayer.play()
 	

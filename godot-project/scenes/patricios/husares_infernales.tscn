@@ -402,7 +402,7 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1orxc")
 animation = &"idle"
-frame = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -442,6 +442,7 @@ position = Vector2(14, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_elmpq")
+bus = &"Efectos"
 
 [node name="MalonArea" type="Area2D" parent="."]
 
@@ -453,3 +454,4 @@ polygon = PackedVector2Array(-6, -7, 7, -7, 6, 19, -7, 17)
 stream = ExtResource("4_j87wf")
 volume_db = 1.0
 autoplay = true
+bus = &"Efectos"

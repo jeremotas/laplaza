@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl4b11xl0emiw"]
+
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_01m0e"]
+[ext_resource type="Script" path="res://scenes/controls/opciones.gd" id="1_mqqmh"]
+[ext_resource type="Texture2D" uid="uid://bypr8gwc62kys" path="res://assets/created/images/lafuria_opciones.png" id="1_ooam5"]
+[ext_resource type="PackedScene" uid="uid://ne0jrytbfn5y" path="res://scenes/controls/volume_mixer.tscn" id="2_og7k0"]
+[ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="5_77hf2"]
+[ext_resource type="AudioStream" uid="uid://8oxyycwu0ncb" path="res://assets/created/musica/La Resistencia Porteña.mp3" id="6_rxpfq"]
+
+[node name="Opciones" type="CanvasLayer"]
+script = ExtResource("1_mqqmh")
+
+[node name="Fondo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.231373)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ooam5")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -110.5
+offset_right = 69.0
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_01m0e")
+theme_override_font_sizes/font_size = 16
+text = "General"
+
+[node name="master_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Musica" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_01m0e")
+theme_override_font_sizes/font_size = 16
+text = "Musica"
+
+[node name="music_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
+layout_mode = 2
+bus_name = "Musica"
+
+[node name="Efectos" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_01m0e")
+theme_override_font_sizes/font_size = 16
+text = "Efectos"
+
+[node name="efectos_mixer2" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
+layout_mode = 2
+bus_name = "Efectos"
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_01m0e")
+text = "Menu principal"
+
+[node name="Efectos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_77hf2")
+autoplay = true
+bus = &"Efectos"
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_rxpfq")
+autoplay = true
+bus = &"Musica"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

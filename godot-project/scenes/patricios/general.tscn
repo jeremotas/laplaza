@@ -541,7 +541,7 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_clm41")
 animation = &"idle"
-frame = 1
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -597,15 +597,19 @@ position = Vector2(14, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_nklhm")
+bus = &"Efectos"
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_nv6gl")
 volume_db = 5.087
+bus = &"Efectos"
 
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ma0wk")
 autoplay = true
+bus = &"Efectos"
 
 [node name="UnStateItalianoMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_pqkbd")
 volume_db = -12.381
+bus = &"Efectos"

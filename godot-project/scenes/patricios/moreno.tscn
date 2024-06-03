@@ -542,3 +542,4 @@ position = Vector2(14, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_jupy2")
+bus = &"Efectos"

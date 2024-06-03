@@ -549,6 +549,7 @@ autostart = true
 stream = ExtResource("6_57fe4")
 volume_db = -10.392
 autoplay = true
+bus = &"Musica"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -558,6 +559,7 @@ autostart = true
 [node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_e45fx")
 volume_db = 15.682
+bus = &"Efectos"
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_e3h4x")]
 visible = false
