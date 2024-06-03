@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://prplx1wymlg5"]
+[gd_scene load_steps=4 format=3 uid="uid://prplx1wymlg5"]
 
 [ext_resource type="Script" path="res://scenes/common/UnitSpawner.gd" id="1_wlqm7"]
+[ext_resource type="Texture2D" uid="uid://cp42t80hcco2p" path="res://assets/created/test_edificio1.png" id="2_536h0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxbwp"]
 radius = 27.6586
@@ -19,5 +20,11 @@ debug_color = Color(0, 0.278431, 0.862745, 0.419608)
 [node name="TimerDeSpawnUnidades" type="Timer" parent="."]
 wait_time = 2.502
 autostart = true
+
+[node name="SpawnSpriteEnemigo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -21)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_536h0")
 
 [connection signal="timeout" from="TimerDeSpawnUnidades" to="." method="_on_timer_de_spawn_unidades_timeout"]

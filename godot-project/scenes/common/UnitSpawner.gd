@@ -15,6 +15,8 @@ var oGoalToAssign = null
 func _ready():
 	entity = load(unitScene)
 	$TimerDeSpawnUnidades.start(respawn_seconds)
+	if faction == 'ingleses':
+		$SpawnSpriteEnemigo.visible = true
 	if spawnOnReady:
 		spawn_new_call(100.0)
 		
