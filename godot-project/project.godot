@@ -25,6 +25,10 @@ window/size/viewport_height=480
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
+[dotnet]
+
+project/assembly_name="La plaza"
+
 [editor]
 
 movie_writer/movie_file="/home/jeremias/Videos/Godot/laplaza.avi"
