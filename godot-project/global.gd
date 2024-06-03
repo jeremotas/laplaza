@@ -105,7 +105,7 @@ var settings = {
 		"soldado": {
 			"life": 2,
 			"max_speed": 15,
-			"experience_given": 2,
+			"experience_given": 12,
 			"attack":{
 				"bullet": {
 					"speed": 150,
