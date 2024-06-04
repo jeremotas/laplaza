@@ -128,7 +128,7 @@ func walk():
 func idle():
 	pass
 
-func CombatCalculation(delta):
+func CombatCalculation(_delta):
 	if $CombatArea and life > 0:
 		if $CombatArea.has_overlapping_bodies() and $CombatArea.get_overlapping_bodies().size() > 0:
 			if not inCoolDownAttack:
@@ -156,7 +156,7 @@ func CombatCalculation(delta):
 	if status.attacking and attack_block_movement:
 		status.moving = true
 
-func AnimationCalculation(delta):
+func AnimationCalculation(_delta):
 	
 	if life == 0:
 		animation_tree["parameters/conditions/die"] = true
@@ -258,7 +258,7 @@ func MovementLoop(delta):
 	if can_move or input_accepted:
 		move_and_slide()
 	
-func StatusCalculation(delta):
+func StatusCalculation(_delta):
 	if life == 0:
 		status.moving = false
 		status.attacking = false
@@ -277,7 +277,7 @@ func StatusCalculation(delta):
 			drop_the_reward(experience_given)
 			
 
-func drop_the_reward(experience_given):
+func drop_the_reward(_experience_given):
 	pass
 
 func destroy_character():
@@ -317,7 +317,7 @@ func _process(delta):
 		ComunicationCalculation(delta)
 	AnimationCalculation(delta)
 	
-func ComunicationCalculation(delta):
+func ComunicationCalculation(_delta):
 	#if (comLabelString != ""):
 		#$ComLabel.text = comLabelString
 		#$ComLabel.show()	

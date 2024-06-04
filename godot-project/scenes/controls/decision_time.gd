@@ -8,10 +8,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func prepare_buttons(experience):
+func prepare_buttons(_experience):
 	$MarginContainer/HBoxContainer/GranaderoButtonCard.visible = false
 	$MarginContainer/HBoxContainer/MorenoButtonCard.visible = false
 	$MarginContainer/HBoxContainer/CorrentinoButtonCard.visible = false
@@ -54,7 +54,8 @@ func prepare_buttons(experience):
 
 
 func _on_visibility_changed():
-	$MarginContainer/HBoxContainer/GranaderoButtonCard.grab_focus()
+	if visible:
+		$MarginContainer/HBoxContainer/GranaderoButtonCard.grab_focus()
 
 
 #func _on_moreno_button_pressed():

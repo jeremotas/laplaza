@@ -28,10 +28,10 @@ func _process(delta):
 	super(delta)
 	
 
-func drop_the_reward(experience_given):
+func drop_the_reward(experience_given_value):
 	drop_reward = false
 	var l = lagrima.instantiate()
-	l.experience_given = experience_given
+	l.experience_given = experience_given_value
 	l.global_position = global_position
 	get_parent().add_child(l)
 

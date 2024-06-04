@@ -28,8 +28,8 @@ func create_goal(endPosition):
 	oGoal.global_position = endPosition
 	oGoalAssigned = oGoal
 
-func assign_goal(oGoal):
-	oGoalAssigned = oGoal
+func assign_goal(oGoalParam):
+	oGoalAssigned = oGoalParam
 	
 	
 func _process(delta):

@@ -304,6 +304,18 @@ func prepare_enemy_spawns():
 		$EnemySpawner5.set_unit_type(strategy.spawn5.unit_type)
 		$EnemySpawner5.controlled_max_alive = true 
 		$EnemySpawner5.max_alive = strategy.spawn5.max_alive
+		
+		$EnemySpawner6.set_rewspan_seconds(strategy.spawn6.seconds)
+		$EnemySpawner6.probabilitySpawnOnTimer = strategy.spawn6.probability
+		$EnemySpawner6.set_unit_type(strategy.spawn6.unit_type)
+		$EnemySpawner6.controlled_max_alive = true 
+		$EnemySpawner6.max_alive = strategy.spawn6.max_alive
+		
+		$EnemySpawner7.set_rewspan_seconds(strategy.spawn7.seconds)
+		$EnemySpawner7.probabilitySpawnOnTimer = strategy.spawn7.probability
+		$EnemySpawner7.set_unit_type(strategy.spawn7.unit_type)
+		$EnemySpawner7.controlled_max_alive = true 
+		$EnemySpawner7.max_alive = strategy.spawn7.max_alive
 
 
 func _on_timer_timeout():

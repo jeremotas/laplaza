@@ -125,6 +125,8 @@ var settings = {
 			"spawn3": {"unit_type": "ingles", "seconds": 10, "probability": 100, "max_alive": 10},
 			"spawn4": {"unit_type": "ingles", "seconds": 7, "probability": 100, "max_alive": 10},
 			"spawn5": {"unit_type": "ingles", "seconds": 10, "probability": 100, "max_alive": 10},
+			"spawn6": {"unit_type": "ingles", "seconds": 10, "probability": 100, "max_alive": 10},
+			"spawn7": {"unit_type": "ingles", "seconds": 10, "probability": 100, "max_alive": 10},
 		},
 		{
 			"min_time": 20,
@@ -133,6 +135,8 @@ var settings = {
 			"spawn3": {"unit_type": "ingles", "seconds": 8, "probability": 90, "max_alive": 40},
 			"spawn4": {"unit_type": "ingles", "seconds": 8, "probability": 90, "max_alive": 40},
 			"spawn5": {"unit_type": "ingles", "seconds": 4, "probability": 50, "max_alive": 40},
+			"spawn6": {"unit_type": "ingles", "seconds": 4, "probability": 50, "max_alive": 40},
+			"spawn7": {"unit_type": "ingles", "seconds": 4, "probability": 50, "max_alive": 40},
 		},
 		{
 			"min_time": 60,
@@ -141,6 +145,8 @@ var settings = {
 			"spawn3": {"unit_type": "ingles", "seconds": 4, "probability": 90, "max_alive": 60},
 			"spawn4": {"unit_type": "ingles", "seconds": 4, "probability": 90, "max_alive": 60},
 			"spawn5": {"unit_type": "ingles", "seconds": 4, "probability": 80, "max_alive": 60},
+			"spawn6": {"unit_type": "ingles", "seconds": 4, "probability": 80, "max_alive": 60},
+			"spawn7": {"unit_type": "ingles", "seconds": 4, "probability": 80, "max_alive": 60},
 		},
 		{
 			"min_time": 120,
@@ -149,6 +155,8 @@ var settings = {
 			"spawn3": {"unit_type": "ingles", "seconds": 4, "probability": 95, "max_alive": 80},
 			"spawn4": {"unit_type": "ingles", "seconds": 3, "probability": 40, "max_alive": 80},
 			"spawn5": {"unit_type": "ingles", "seconds": 3, "probability": 70, "max_alive": 80},
+			"spawn6": {"unit_type": "ingles", "seconds": 3, "probability": 70, "max_alive": 80},
+			"spawn7": {"unit_type": "ingles", "seconds": 3, "probability": 70, "max_alive": 80},
 		},
 		{
 			"min_time": 180,
@@ -157,6 +165,8 @@ var settings = {
 			"spawn3": {"unit_type": "ingles", "seconds": 2, "probability": 40, "max_alive": 100},
 			"spawn4": {"unit_type": "ingles", "seconds": 2, "probability": 30, "max_alive": 100},
 			"spawn5": {"unit_type": "ingles", "seconds": 1.5, "probability": 40, "max_alive": 100},
+			"spawn6": {"unit_type": "ingles", "seconds": 1.5, "probability": 40, "max_alive": 100},
+			"spawn7": {"unit_type": "ingles", "seconds": 1.5, "probability": 40, "max_alive": 100},
 		}
 	]
 }
