@@ -77,6 +77,7 @@ func create_explotion():
 		$Area2D.scale = Vector2(explotion_scale_radius,explotion_scale_radius)
 		$Area2D.set_collision_mask_value(explotion_layer, true)
 		$ColorRect.visible = false
+		texture = null
 		#$Area2D/ExplotionRect.visible = true
 		explotionTimer = Timer.new()
 		add_child(explotionTimer)
@@ -93,7 +94,6 @@ func create_explotion():
 			$boleadora.emitting = true
 			$boleadora.rotation = direction.angle()
 			#$boleadora.scale = Vector2(2,2)
-		texture = null
 	
 	pass
 

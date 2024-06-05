@@ -1,6 +1,6 @@
 [gd_scene load_steps=62 format=3 uid="uid://dlnd2el5bqsln"]
 
-[ext_resource type="Script" path="res://scenes/patricios/moreno.gd" id="1_abiov"]
+[ext_resource type="Script" path="res://scenes/patricios/arribeno.gd" id="1_ic4tm"]
 [ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="2_awglo"]
 [ext_resource type="Texture2D" uid="uid://c0xfl8qcvk4hx" path="res://assets/created/arribeno32.png" id="3_vv8b1"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="4_xu00h"]
@@ -473,7 +473,7 @@ graph_offset = Vector2(0, 29.6855)
 radius = 152.03
 
 [node name="Arribeno" type="CharacterBody2D"]
-script = ExtResource("1_abiov")
+script = ExtResource("1_ic4tm")
 
 [node name="LifeLabel" type="Label" parent="."]
 offset_right = 40.0

@@ -11,6 +11,7 @@ var queue = []
 
 var rng = RandomNumberGenerator.new()
 var oGoalToAssign = null
+var aChanceUnitType = []
 
 func _ready():
 	entity = load(unitScene)
@@ -21,8 +22,19 @@ func _ready():
 		spawn_new_call(100.0)
 		
 		
-func set_unit_type(sUnitType):
-	unitScene = "res://scenes/" + faction + "/" + sUnitType + ".tscn"
+func set_unit_type(mUnitType):
+	aChanceUnitType = []
+	if typeof(mUnitType) == TYPE_STRING:
+		unitScene = "res://scenes/" + faction + "/" + mUnitType + ".tscn"
+		entity = load(unitScene)
+	elif typeof(mUnitType) == TYPE_ARRAY:
+		create_chance_unit_type(mUnitType)
+	
+func create_chance_unit_type(aChanceUnitTypeParam):
+	for oChance in aChanceUnitTypeParam:
+		for i in range(oChance.probability):
+			aChanceUnitType.push_back(oChance.unit_type)
+	print(aChanceUnitType.size())
 
 func spawn_unit(unitSceneAsked):
 	var unitSceneOld = unitScene
@@ -37,10 +49,23 @@ func set_rewspan_seconds(respawn_seconds_new):
 func set_goal(oGoal):
 	oGoalToAssign = oGoal
 
+func load_unit_by_chance():
+	var sUnitTypeSelected = ""
+	var iSelectedUnit = rng.randi_range(0, aChanceUnitType.size())
+	sUnitTypeSelected = aChanceUnitType[iSelectedUnit]
+	unitScene = "res://scenes/" + faction + "/" + sUnitTypeSelected + ".tscn"
+	entity = load(unitScene)
+	print("Elegi random: ", sUnitTypeSelected)
+	return sUnitTypeSelected
+
 func spawn_new_call(probability_generation):
 	var value_creation = rng.randf_range(0.0, 100.0)
 	var can_spawn = not controlled_max_alive or max_alive >= get_tree().get_nodes_in_group("faccion_" + faction).size() + 1
 	if can_spawn and not $SpawnArea.has_overlapping_bodies() and value_creation <= probability_generation:
+		
+		if aChanceUnitType.size() > 0:
+			load_unit_by_chance()
+			
 		var soldado = entity.instantiate();
 		soldado.global_position = global_position
 		soldado.add_to_faction(faction)

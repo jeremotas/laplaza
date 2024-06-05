@@ -7,6 +7,9 @@ func _ready():
 	#$General.init_barrilete_cosmico()
 	$Arribeno.assign_goal($General)
 	$Arribeno.add_to_faction('patricios')
+	
+	$Moreno.assign_goal($General)
+	$Moreno.add_to_faction('patricios')
 	pass # Replace with function body.
 
 
