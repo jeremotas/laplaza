@@ -77,10 +77,12 @@ horizontal_alignment = 2
 [node name="Victoria" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_nnfhn")
 autoplay = true
+bus = &"Musica"
 
 [node name="Crowd" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_5ml8l")
 autoplay = true
+bus = &"Efectos"
 
 [connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

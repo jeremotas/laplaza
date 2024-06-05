@@ -497,7 +497,6 @@ show_percentage = false
 material = SubResource("ShaderMaterial_ksat4")
 sprite_frames = SubResource("SpriteFrames_afxcp")
 animation = &"idle"
-frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -543,3 +542,4 @@ position = Vector2(14, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_jupy2")
+bus = &"Efectos"

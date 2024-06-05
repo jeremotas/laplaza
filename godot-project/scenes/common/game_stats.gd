@@ -27,9 +27,9 @@ func set_level(level_value):
 	experience = experience_to_level(level)
 	experience_next_level = experience_to_level(level + 1)
 	
-func experience_to_level(level):
+func experience_to_level(level_param):
 	# Segun la progresion de Ale se parece a exp_req = 10 * level + level^2.5
-	var value = int(floor(10 * (level) + pow(level, 2.5)))
+	var value = int(floor(10 * (level_param) + pow(level_param, 2.5)))
 	value = value - value % 10
 	return value
 

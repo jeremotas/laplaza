@@ -10,12 +10,13 @@ var iShoots = 0
 
 func _init():
 	unit_type = "husares_infernales"
-	min_damage_given = Global.settings.patricios.husares_infernales.min_damage_given
-	max_damage_given = Global.settings.patricios.husares_infernales.max_damage_given
+	min_damage_given = Global.settings.patricios.husares_infernales.attack.min_damage_given
+	max_damage_given = Global.settings.patricios.husares_infernales.attack.max_damage_given
 	max_speed = Global.settings.patricios.husares_infernales.max_speed
 	life = Global.settings.patricios.husares_infernales.life
-	bullet_speed = Global.settings.patricios.husares_infernales.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.husares_infernales.cooldown_attack_time
+	bullet_speed = Global.settings.patricios.husares_infernales.attack.bullet.speed
+	bullet_lifetime = Global.settings.patricios.husares_infernales.attack.bullet.duration
+	coolDownAttackTime = Global.settings.patricios.husares_infernales.attack.cooldown
 	rng = RandomNumberGenerator.new()
 	init()
 	
@@ -27,8 +28,8 @@ func create_goal(endPosition):
 	oGoal.global_position = endPosition
 	oGoalAssigned = oGoal
 
-func assign_goal(oGoal):
-	oGoalAssigned = oGoal
+func assign_goal(oGoalParam):
+	oGoalAssigned = oGoalParam
 	
 	
 func _process(delta):
@@ -47,7 +48,8 @@ func attack():
 			b.objective_faction = attack_objective.faction
 			b.min_damage = min_damage_given
 			b.max_damage = max_damage_given
-			b.speed = Global.settings.patricios.husares_infernales.bullet_speed
+			b.speed = bullet_speed
+			b.bullet_lifetime = bullet_lifetime
 			b.set_collision_mask(2)
 			b.set_color(Color(1, 0, 0))
 			get_parent().get_parent().add_child(b)

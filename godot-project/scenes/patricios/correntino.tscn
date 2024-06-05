@@ -19,12 +19,13 @@ const GUNSHOT = preload(\"res://assets/original/sounds/gunshot3.mp3\")
 func _init():
 	unit_type = \"correntino\"
 	
-	min_damage_given = Global.settings.patricios.correntino.min_damage_given
-	max_damage_given = Global.settings.patricios.correntino.max_damage_given
+	min_damage_given = Global.settings.patricios.correntino.attack.min_damage_given
+	max_damage_given = Global.settings.patricios.correntino.attack.max_damage_given
 	max_speed = Global.settings.patricios.correntino.max_speed
 	life = Global.settings.patricios.correntino.life
-	bullet_speed = Global.settings.patricios.correntino.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.correntino.cooldown_attack_time
+	bullet_speed = Global.settings.patricios.correntino.attack.bullet.speed
+	bullet_lifetime = Global.settings.patricios.correntino.attack.bullet.duration
+	coolDownAttackTime = Global.settings.patricios.correntino.attack.cooldown
 	
 
 func _ready():
@@ -47,6 +48,7 @@ func attack():
 		b.objective_faction = attack_objective.faction
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
+		b.bullet_lifetime = bullet_lifetime
 		b.speed = bullet_speed
 		b.set_collision_mask(2)
 		b.set_color(Color(1, 1, 1))
@@ -558,7 +560,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 4
+frame = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
@@ -604,5 +606,6 @@ position = Vector2(14, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_167lu")
+bus = &"Efectos"
 
 [connection signal="selection_toggled" from="SelectionArea" to="." method="_on_selection_area_selection_toggled"]

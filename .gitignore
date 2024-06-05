@@ -1,1 +1,4 @@
 godot-project/.godot
+godot-project/Build*Win
+godot-project/buil*linux
+godot-project/builds/*

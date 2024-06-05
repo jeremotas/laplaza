@@ -3,7 +3,7 @@ extends Node2D
 @export var UnitsArrived = 0
 @export var faction = ""
 
-func _process(delta):
+func _process(_delta):
 	$Status.text = str(UnitsArrived) + " / " + str(NeededUnits)
 	$Status.show()
 	

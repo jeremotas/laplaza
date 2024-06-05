@@ -15,6 +15,8 @@ var oGoalToAssign = null
 func _ready():
 	entity = load(unitScene)
 	$TimerDeSpawnUnidades.start(respawn_seconds)
+	if faction == 'ingleses':
+		$SpawnSpriteEnemigo.visible = true
 	if spawnOnReady:
 		spawn_new_call(100.0)
 		
@@ -57,13 +59,13 @@ func _on_timer_de_spawn_unidades_timeout():
 	else:
 		spawn_new_call(probabilitySpawnOnTimer)
 
-func in_queue(faction, unit_type_searched):
-	var unitSceneSearched = "res://scenes/" + faction + "/" + unit_type_searched + ".tscn"
+func in_queue(faction_param, unit_type_searched):
+	var unitSceneSearched = "res://scenes/" + faction_param + "/" + unit_type_searched + ".tscn"
 	return queue.count(unitSceneSearched)
 
 func queue_size():
 	return queue.size()
 
-func queue_spawn_unit(faction, unit_type_called):
-	var unitSceneCalled = "res://scenes/" + faction + "/" + unit_type_called + ".tscn"
+func queue_spawn_unit(faction_q, unit_type_called):
+	var unitSceneCalled = "res://scenes/" + faction_q + "/" + unit_type_called + ".tscn"
 	queue.push_back(unitSceneCalled)

@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Character
 
-signal death(faction)
 @export var faction = ""
 @export var max_speed = 200
 @export var speed = 0
@@ -15,6 +14,12 @@ signal death(faction)
 @export var attack_block_movement = false
 @export var show_progress_bar = false
 @export var bullet_speed = 150
+@export var bullet_lifetime = 1
+@export var invincible = false
+@export var last_input = Vector2.ZERO
+@export var flipped = false
+var last_general_direction = Vector2.ZERO
+var drop_reward  = false
 
 var oGoalAssigned = null
 
@@ -39,11 +44,33 @@ var deathTimer = null
 
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
+
+var aGunshotsSounds = [
+	preload("res://assets/original/sounds/mosquetes/gunshot01.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot02.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot03.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot04.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot05.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot06.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot07.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot08.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot09.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot10.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot11.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot12.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot13.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot14.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot15.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot16.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot17.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot18.mp3"),
+	preload("res://assets/original/sounds/mosquetes/gunshot19.mp3")
+]
 	
 		
 #func animation_ends(animation):
 #	print(animation)
-#	if animation == 'die':
+#	if animation == 'die'
 #		animation_tree.active = false
 
 func add_to_faction(new_faction):
@@ -94,8 +121,14 @@ func TakeDamage(min_damage, max_damage):
 func hurt():
 	status.hurt = false
 	pass
+	
+func walk():
+	pass
+	
+func idle():
+	pass
 
-func CombatCalculation(delta):
+func CombatCalculation(_delta):
 	if $CombatArea and life > 0:
 		if $CombatArea.has_overlapping_bodies() and $CombatArea.get_overlapping_bodies().size() > 0:
 			if not inCoolDownAttack:
@@ -123,7 +156,7 @@ func CombatCalculation(delta):
 	if status.attacking and attack_block_movement:
 		status.moving = true
 
-func AnimationCalculation(delta):
+func AnimationCalculation(_delta):
 	
 	if life == 0:
 		animation_tree["parameters/conditions/die"] = true
@@ -131,35 +164,58 @@ func AnimationCalculation(delta):
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
+	elif invincible:
+		animation_tree["parameters/conditions/die"] = false
+		animation_tree["parameters/conditions/idle"] = false
+		animation_tree["parameters/conditions/got_hurt"] = false
+		animation_tree["parameters/conditions/shooting"] = false
+		animation_tree["parameters/conditions/walking"] = false
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = true
 	elif status.hurt:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = true
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
 	elif status.attacking:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = true
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
 	elif status.moving:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = true
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
+		walk()
 	else:
+		idle()
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = true
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
+		if "parameters/conditions/invincible" in animation_tree:
+			animation_tree["parameters/conditions/invincible"] = false
+		
 	
 	if velocity.x > 0: 
 		$AnimatedSprite2D.flip_h = false
 	elif velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true	
+		
+	flipped = $AnimatedSprite2D.flip_h
 	
 func MovementLoop(delta):
 	# Gestionamos velocidad
@@ -177,6 +233,7 @@ func MovementLoop(delta):
 	if not input_accepted:
 		# Determinamos hacia donde vamos.
 		velocity = global_position.direction_to(destination) * speed
+		#last_input =  global_position.direction_to(destination).normalized()
 		# Calculamos la direccion del movimiento
 		#move_direction = rad_to_deg(destination.angle_to_point(global_position))
 		
@@ -194,13 +251,14 @@ func MovementLoop(delta):
 		status.moving = false
 		if input != Vector2.ZERO: 
 			status.moving = true
+			last_input = input
 	
 	var can_move = life > 0 #and not status.attacking
 	
 	if can_move or input_accepted:
 		move_and_slide()
 	
-func StatusCalculation(delta):
+func StatusCalculation(_delta):
 	if life == 0:
 		status.moving = false
 		status.attacking = false
@@ -214,9 +272,13 @@ func StatusCalculation(delta):
 		deathTimer.timeout.connect(destroy_character)
 		deathTimer.start()
 		
-		if not death_emited:
-			death.emit(faction, experience_given)
-			death_emited = true
+		
+		if drop_reward:
+			drop_the_reward(experience_given)
+			
+
+func drop_the_reward(_experience_given):
+	pass
 
 func destroy_character():
 	#print("DESTROY", self)
@@ -255,7 +317,7 @@ func _process(delta):
 		ComunicationCalculation(delta)
 	AnimationCalculation(delta)
 	
-func ComunicationCalculation(delta):
+func ComunicationCalculation(_delta):
 	#if (comLabelString != ""):
 		#$ComLabel.text = comLabelString
 		#$ComLabel.show()	
@@ -269,10 +331,16 @@ func ComunicationCalculation(delta):
 func communication(message):
 	comLabelString += message + " " 
 	
+func set_last_general_direction(oDirection):
+	last_general_direction = oDirection
+	
 func attack_sound(stream):
+	var iGunshotKey = rng.randi_range(0, 18)
+	stream = aGunshotsSounds[iGunshotKey]
 	var SoundPlayer = AudioStreamPlayer2D.new()
 	self.add_child(SoundPlayer)
 	SoundPlayer.stream = stream
+	SoundPlayer.bus = &"Efectos"
 	SoundPlayer.connect("finished", SoundPlayer.queue_free)
 	SoundPlayer.play()
 	
@@ -292,8 +360,6 @@ func malon_sticked():
 		input_accepted = true
 	
 func _ready():
-	if get_parent().has_method("_on_death"):
-		death.connect(get_parent()._on_death)
 #	if has_node("AnimationPlayer"):
 #		print($AnimationPlayer.animation_finished)
 #		$AnimationPlayer.animation_finished.connect(animation_ends)
