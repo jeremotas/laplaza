@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4enxlrlu02te"]
+
+[sub_resource type="Curve" id="Curve_bnk5t"]
+_data = [Vector2(0, 0.202423), 0.0, 0.0, 0, 0, Vector2(0.517685, 0.446268), 0.0, 0.0, 0, 0, Vector2(1, 0.171942), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ly7dy"]
+curve = SubResource("Curve_bnk5t")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4pw50"]
+particle_flag_disable_z = true
+spread = 30.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ly7dy")
+
+[node name="MeleeExplosion" type="GPUParticles2D"]
+modulate = Color(0.854902, 0.890196, 1, 1)
+emitting = false
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_4pw50")
+lifetime = 0.05
+one_shot = true
+explosiveness = 0.8
+trail_lifetime = 0.02
+trail_sections = 2
+trail_section_subdivisions = 1
