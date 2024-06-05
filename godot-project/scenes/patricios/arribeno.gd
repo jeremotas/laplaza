@@ -6,14 +6,14 @@ var bullet = preload("res://scenes/common/bullet.tscn")
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
-	unit_type = "arribeno"
-	min_damage_given = Global.settings.patricios.arribeno.attack.min_damage_given
-	max_damage_given = Global.settings.patricios.arribeno.attack.max_damage_given
-	max_speed = Global.settings.patricios.arribeno.max_speed
-	life = Global.settings.patricios.arribeno.life
-	bullet_speed = Global.settings.patricios.arribeno.attack.bullet.speed
-	bullet_lifetime = Global.settings.patricios.arribeno.attack.bullet.duration
-	coolDownAttackTime = Global.settings.patricios.arribeno.attack.cooldown
+	unit_type = "moreno"
+	min_damage_given = Global.settings.patricios.moreno.attack.min_damage_given
+	max_damage_given = Global.settings.patricios.moreno.attack.max_damage_given
+	max_speed = Global.settings.patricios.moreno.max_speed
+	life = Global.settings.patricios.moreno.life
+	bullet_speed = Global.settings.patricios.moreno.attack.bullet.speed
+	bullet_lifetime = Global.settings.patricios.moreno.attack.bullet.duration
+	coolDownAttackTime = Global.settings.patricios.moreno.attack.cooldown
 
 	init()
 
@@ -42,11 +42,11 @@ func attack():
 			b.speed = bullet_speed
 			b.bullet_lifetime = bullet_lifetime
 			#b.set_collision_mask(2)
-			b.prepare_explotion(2, Global.settings.patricios.arribeno.attack.bullet.explotion.duration, Global.settings.patricios.arribeno.attack.bullet.explotion.scale, Global.settings.patricios.arribeno.attack.bullet.explotion.particle)
+			b.prepare_explotion(2, Global.settings.patricios.moreno.attack.bullet.explotion.duration, Global.settings.patricios.moreno.attack.bullet.explotion.scale, Global.settings.patricios.moreno.attack.bullet.explotion.particle)
 			#b.set_color(Color(1, 1, 1, 0.2))
 			get_parent().add_child(b)
 			
-			#attack_sound(GUNSHOT)
+			attack_sound(GUNSHOT)
 		#$WeaponSound.play()
 		
 		attack_objective = null

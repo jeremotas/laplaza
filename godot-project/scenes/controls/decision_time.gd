@@ -15,6 +15,7 @@ func prepare_buttons(_experience):
 	$MarginContainer/HBoxContainer/GranaderoButtonCard.visible = false
 	$MarginContainer/HBoxContainer/MorenoButtonCard.visible = false
 	$MarginContainer/HBoxContainer/CorrentinoButtonCard.visible = false
+	$MarginContainer/HBoxContainer/ArribenoButtonCard.visible = false
 	$MarginContainer/HBoxContainer/MoreLifeButtonCard.visible = false
 	$MarginContainer/HBoxContainer/HusaresInfernalesButtonCard.visible = false
 	$MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard.visible = false
@@ -23,7 +24,8 @@ func prepare_buttons(_experience):
 	var aButtonsUnidades = [
 		$MarginContainer/HBoxContainer/GranaderoButtonCard,
 		$MarginContainer/HBoxContainer/MorenoButtonCard,
-		$MarginContainer/HBoxContainer/CorrentinoButtonCard
+		$MarginContainer/HBoxContainer/CorrentinoButtonCard,
+		$MarginContainer/HBoxContainer/ArribenoButtonCard
 	]
 	var aButtonsEfectos = [
 		$MarginContainer/HBoxContainer/MoreLifeButtonCard,
@@ -92,3 +94,7 @@ func _on_barrilete_cosmico_button_card_pressed():
 
 func _on_husares_infernales_button_card_pressed():
 	get_parent().decision_time_end("ataque_husares_infernales")
+
+
+func _on_arribeno_button_card_pressed():
+	get_parent().decision_time_end("arribeno")

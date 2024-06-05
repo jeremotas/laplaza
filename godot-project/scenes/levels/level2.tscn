@@ -135,11 +135,11 @@ faction = "ingleses"
 
 [node name="General" parent="." instance=ExtResource("5_5xbxx")]
 z_index = 2
-position = Vector2(299, 704)
+position = Vector2(292, 555)
 life = 20
 
 [node name="Camera2D" type="Camera2D" parent="General"]
-position = Vector2(2.22222, -2.22222)
+position = Vector2(1.11111, -1.11111)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("6_u35ux")

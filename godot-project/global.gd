@@ -30,8 +30,8 @@ var settings = {
 					"duration": 2.0,
 				},
 				"cooldown": 1,
-				"min_damage_given": 5,
-				"max_damage_given": 5
+				"min_damage_given": 1,
+				"max_damage_given": 1
 			},
 			"barrilete_cosmico": {
 				"life": 20000000,
@@ -52,8 +52,8 @@ var settings = {
 					"duration": 2.0,
 				},
 				"cooldown": 1,
-				"min_damage_given": 4,
-				"max_damage_given": 4
+				"min_damage_given": 1,
+				"max_damage_given": 1
 			},
 		},
 		"moreno": {
@@ -66,12 +66,30 @@ var settings = {
 					"explotion": {
 						"duration": 1,
 						"scale": 20,
-						"particle": true
+						"particle": "explosion"
 					}
 				},
 				"cooldown": 4,
-				"min_damage_given": 2,
-				"max_damage_given": 2
+				"min_damage_given": 1,
+				"max_damage_given": 1
+			},
+		},
+		"arribeno": {
+			"life": 14,
+			"max_speed": 150,
+			"attack":{
+				"bullet": {
+					"speed": 200,
+					"duration": 0.01,
+					"explotion": {
+						"duration": 0.75,
+						"scale": 10,
+						"particle": "boleadora"
+					}
+				},
+				"cooldown": 1,
+				"min_damage_given": 1,
+				"max_damage_given": 1
 			},
 		},
 		"correntino": {
@@ -83,8 +101,8 @@ var settings = {
 					"duration": 2.0,
 				},
 				"cooldown": 5,
-				"min_damage_given": 8,
-				"max_damage_given": 14
+				"min_damage_given": 4,
+				"max_damage_given": 4
 			},
 		},
 		"husares_infernales": {
@@ -113,7 +131,7 @@ var settings = {
 				},
 				"cooldown": 1,
 				"min_damage_given": 1,
-				"max_damage_given": 2
+				"max_damage_given": 1
 			}
 		}
 	},

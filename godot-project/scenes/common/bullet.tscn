@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://yucrlea7h6xt"]
+[gd_scene load_steps=6 format=3 uid="uid://yucrlea7h6xt"]
 
 [ext_resource type="Script" path="res://scenes/common/bullet.gd" id="1_7a2v0"]
 [ext_resource type="Texture2D" uid="uid://ck8w0t3sk64g0" path="res://assets/created/bullet.png" id="1_tx47s"]
 [ext_resource type="PackedScene" uid="uid://23j52gwexeqt" path="res://scenes/common/explosion.tscn" id="3_7gdep"]
+[ext_resource type="PackedScene" uid="uid://d4enxlrlu02te" path="res://scenes/common/melee_explosion.tscn" id="4_06rh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3fcm"]
 size = Vector2(2, 2)
@@ -39,6 +40,10 @@ scale = Vector2(0.1, 0.1)
 
 [node name="explosion" parent="." instance=ExtResource("3_7gdep")]
 visible = false
+
+[node name="boleadora" parent="." instance=ExtResource("4_06rh0")]
+visible = false
+scale = Vector2(1.25, 1.25)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]

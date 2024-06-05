@@ -5,8 +5,8 @@ extends Node2D
 func _ready():
 	#await get_tree().create_timer(1).timeout
 	#$General.init_barrilete_cosmico()
-	$Moreno.assign_goal($General)
-	$Moreno.add_to_faction('patricios')
+	$Arribeno.assign_goal($General)
+	$Arribeno.add_to_faction('patricios')
 	pass # Replace with function body.
 
 

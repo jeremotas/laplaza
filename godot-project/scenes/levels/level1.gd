@@ -23,7 +23,13 @@ var enemy_strategy
 var command = ""
 
 # Variable para control del malon.
-var malon = [{"unit_type": "correntino", "quantity": 0}, {"unit_type": "granadero", "quantity": 0}, {"unit_type": "moreno", "quantity": 0}, {"unit_type": "husares_infernales", "quantity": 0}]
+var malon = [
+	{"unit_type": "correntino", "quantity": 0}, 
+	{"unit_type": "granadero", "quantity": 0},
+	{"unit_type": "moreno", "quantity": 0}, 
+	{"unit_type": "arribeno", "quantity": 0}, 
+	{"unit_type": "husares_infernales", "quantity": 0}
+]
 var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husares_infernales.tscn")
 
 func _ready():
@@ -151,6 +157,7 @@ func decision_time_end(decision):
 	if decision == "granadero": add_unit_to_malon("granadero")
 	elif decision == "correntino": add_unit_to_malon("correntino")
 	elif decision == "moreno": add_unit_to_malon("moreno")
+	elif decision == "arribeno": add_unit_to_malon("arribeno")
 	elif decision == "ataque_husares_infernales": ataque_husares_infernales()
 	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)

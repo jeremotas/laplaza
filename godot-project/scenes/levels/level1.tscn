@@ -570,32 +570,32 @@ visible = false
 [node name="Borders" type="Node" parent="."]
 
 [node name="Borde izquierdo" type="StaticBody2D" parent="Borders"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde izquierdo"]
 shape = SubResource("SegmentShape2D_3odkn")
 
 [node name="Borde derecho" type="StaticBody2D" parent="Borders"]
 position = Vector2(1107, -853)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde derecho"]
 shape = SubResource("SegmentShape2D_scq6p")
 
 [node name="Borde inferior" type="StaticBody2D" parent="Borders"]
 position = Vector2(1109, 821)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde inferior"]
 shape = SubResource("SegmentShape2D_ysm3x")
 
 [node name="Borde superior" type="StaticBody2D" parent="Borders"]
 position = Vector2(1095, -856)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde superior"]
 shape = SubResource("SegmentShape2D_y0nil")

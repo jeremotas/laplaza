@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/tests/test_attack.gd" id="1_4fgik"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="2_40ing"]
 [ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://scenes/ingleses/ingles.tscn" id="2_qlt1g"]
-[ext_resource type="PackedScene" uid="uid://qe5x0axdxxo" path="res://scenes/patricios/moreno.tscn" id="4_54lth"]
+[ext_resource type="PackedScene" uid="uid://dlnd2el5bqsln" path="res://scenes/patricios/arribeno.tscn" id="4_jspqt"]
 
 [node name="test_attack" type="Node2D"]
 script = ExtResource("1_4fgik")
@@ -16,6 +16,5 @@ position = Vector2(421, 210)
 faction = "ingleses"
 life = 4
 
-[node name="Moreno" parent="." instance=ExtResource("4_54lth")]
-position = Vector2(1, 1)
+[node name="Arribeno" parent="." instance=ExtResource("4_jspqt")]
 faction = "patricios"

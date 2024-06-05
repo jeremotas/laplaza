@@ -16,7 +16,7 @@ var explotionTimer = null
 @export var explotion_layer = 0
 @export var explotion_lifetime = 2
 @export var explotion_scale_radius = 10
-@export var explotion_particle = false
+@export var explotion_particle = ""
 
 
 
@@ -85,9 +85,14 @@ func create_explotion():
 		explotionTimer.one_shot = true
 		explotionTimer.timeout.connect(try_destroy)
 		explotionTimer.start()
-		if explotion_particle:
+		if explotion_particle == "explosion":
 			$explosion.visible = true
 			$explosion.scale = Vector2(2,2)
+		if explotion_particle == "boleadora":
+			$boleadora.visible = true
+			$boleadora.emitting = true
+			$boleadora.rotation = direction.angle()
+			#$boleadora.scale = Vector2(2,2)
 		texture = null
 	
 	pass

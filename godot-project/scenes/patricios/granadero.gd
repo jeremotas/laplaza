@@ -1,7 +1,6 @@
 extends Character
 
 @onready var animation = $AnimatedSprite2D
-var oGoalAssigned = null
 
 var bullet = preload("res://scenes/common/bullet.tscn")
 
