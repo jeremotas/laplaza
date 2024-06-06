@@ -18,6 +18,7 @@ class_name Character
 @export var invincible = false
 @export var last_input = Vector2.ZERO
 @export var flipped = false
+var barrilete_cosmico = false
 var last_general_direction = Vector2.ZERO
 var drop_reward  = false
 
@@ -164,40 +165,40 @@ func AnimationCalculation(_delta):
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
-		if "parameters/conditions/invincible" in animation_tree:
-			animation_tree["parameters/conditions/invincible"] = false
-	elif invincible:
+		if "parameters/conditions/barrilete_cosmico" in animation_tree:
+			animation_tree["parameters/conditions/barrilete_cosmico"] = false
+	elif barrilete_cosmico:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
-		if "parameters/conditions/invincible" in animation_tree:
-			animation_tree["parameters/conditions/invincible"] = true
+		if "parameters/conditions/barrilete_cosmico" in animation_tree:
+			animation_tree["parameters/conditions/barrilete_cosmico"] = true
 	elif status.hurt:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = true
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
-		if "parameters/conditions/invincible" in animation_tree:
-			animation_tree["parameters/conditions/invincible"] = false
+		if "parameters/conditions/barrilete_cosmico" in animation_tree:
+			animation_tree["parameters/conditions/barrilete_cosmico"] = false
 	elif status.attacking:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = true
-		if "parameters/conditions/invincible" in animation_tree:
-			animation_tree["parameters/conditions/invincible"] = false
+		if "parameters/conditions/barrilete_cosmico" in animation_tree:
+			animation_tree["parameters/conditions/barrilete_cosmico"] = false
 	elif status.moving:
 		animation_tree["parameters/conditions/die"] = false
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = true
-		if "parameters/conditions/invincible" in animation_tree:
-			animation_tree["parameters/conditions/invincible"] = false
+		if "parameters/conditions/barrilete_cosmico" in animation_tree:
+			animation_tree["parameters/conditions/barrilete_cosmico"] = false
 		walk()
 	else:
 		idle()

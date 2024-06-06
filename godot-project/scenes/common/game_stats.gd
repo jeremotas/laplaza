@@ -11,6 +11,7 @@ class_name GameStats
 @export var patricios = 0
 @export var game_over = false
 @export var game_win = false
+@export var invincible = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

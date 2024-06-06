@@ -3,7 +3,7 @@ extends Character
 @onready var animation = $AnimatedSprite2D
 
 var bullet = preload("res://scenes/common/bullet.tscn")
-var barrilete_cosmico = false
+#var barrilete_cosmico = false
 var barrileteTimer = null
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
@@ -22,7 +22,12 @@ func _init():
 func _process(delta):
 	last_direction_message()
 	attack()
+	invincible_effect()
 	super(delta)
+
+func invincible_effect():
+	$InvincibleEffect.visible = invincible
+	
 
 func last_direction_message():
 	get_tree().call_group("faccion_patricios", "set_last_general_direction", last_input)

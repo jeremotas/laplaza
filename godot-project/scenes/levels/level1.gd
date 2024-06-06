@@ -44,9 +44,6 @@ func _ready():
 	prepare_enemy_spawns()
 	
 	Engine.time_scale = 1
-	
-	#await get_tree().create_timer(4).timeout
-	#barrilete_cosmico()
 
 func _input(event):
 	if event is InputEventKey:
@@ -72,6 +69,7 @@ func prepare_initial_conditions():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	calculate_stats() # Calculamos resultados
 	HUD.change(TheGameStats) # Envio estadisticas a la interfaz
 	if not (TheGameStats.game_over or TheGameStats.game_win):
@@ -81,6 +79,16 @@ func _process(delta):
 	if command == "d10s":
 		barrilete_cosmico()
 		command = ""
+	elif command == "iddqd" and not $General.barrilete_cosmico:
+		$General.invincible = not $General.invincible
+		command = ""
+	elif command == "idkfa":
+		malon[0].quantity += 3 # Correntino
+		malon[1].quantity += 2 # Granadero
+		malon[2].quantity += 2 # Moreno
+		malon[3].quantity += 1 # Arribeno
+		command = ""
+	
 
 func control_malon():
 	var faction = "patricios"
@@ -101,6 +109,7 @@ func calculate_stats():
 	TheGameStats.game_over = ($General.life == 0 or $EnemyGoal.completed())
 	TheGameStats.game_win = (iSecondsPassed >= Global.settings.game.player_goal)
 	TheGameStats.life = $General.life
+	TheGameStats.invincible = $General.invincible
 	TheGameStats.max_life = player_max_life
 	
 	TheGameStats.plaza = $EnemyGoal.UnitsArrived
@@ -249,28 +258,7 @@ func assign_max_alive():
 
 
 func _on_scene_timer_timeout():
-	
 	prepare_enemy_spawns()
-	
-	# Disminuye el spawn de los enemigos con el paso del tiempo.
-	# A medida que avanza el divisor crece y el spawn time decrece (1 - 20, 2 - 10, 3 - 7.3, 4 - 5)
-	# Aunque no siempre spawnean porque a veces la probabilidad de spawn no se cumple
-	
-		
-	#var fMaxTime = 10.0
-	#fDivisor = max(min(TheGameStats.get_level(), 10),1)
-
-	#$EnemySpawner.set_rewspan_seconds(fMaxTime / fDivisor)
-	#$EnemySpawner2.set_rewspan_seconds(fMaxTime / fDivisor)
-	#$EnemySpawner3.set_rewspan_seconds(fMaxTime / fDivisor)
-	#$EnemySpawner4.set_rewspan_seconds(fMaxTime / fDivisor)
-	#$EnemySpawner5.set_rewspan_seconds(fMaxTime / fDivisor)
-	
-	#$EnemySpawner.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
-	#$EnemySpawner2.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
-	#$EnemySpawner3.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
-	#$EnemySpawner4.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
-	#$EnemySpawner5.probabilitySpawnOnTimer = 100 - (40 / fDivisor)
 	
 func prepare_enemy_spawns():
 	if enemy_strategy.size() > 0:

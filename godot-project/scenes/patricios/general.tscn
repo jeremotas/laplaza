@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bc8o4p1i67cbn"]
+[gd_scene load_steps=75 format=3 uid="uid://bc8o4p1i67cbn"]
 
 [ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="2_1oyaa"]
@@ -409,6 +409,9 @@ _data = {
 "walk": SubResource("Animation_1igqf")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yc847"]
+animation = &"barrilete_cosmico"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7w0me"]
 animation = &"die"
 
@@ -417,9 +420,6 @@ animation = &"hurt"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s8hlw"]
 animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yc847"]
-animation = &"barrilete_cosmico"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_63s3y"]
 animation = &"shoot"
@@ -468,7 +468,7 @@ advance_condition = &"die"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kltvf"]
 advance_mode = 2
-advance_condition = &"invincible"
+advance_condition = &"barrilete_cosmico"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7v4k4"]
 advance_mode = 2
@@ -493,23 +493,32 @@ advance_condition = &"die"
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4dt8w"]
 states/End/position = Vector2(900.667, 101.333)
 states/Start/position = Vector2(220, 72.0874)
+states/barrilete_cosmico/node = SubResource("AnimationNodeAnimation_yc847")
+states/barrilete_cosmico/position = Vector2(287.333, 305.019)
 states/die/node = SubResource("AnimationNodeAnimation_7w0me")
 states/die/position = Vector2(530.667, 214.815)
 states/hurt/node = SubResource("AnimationNodeAnimation_dqfps")
 states/hurt/position = Vector2(390.667, 220.666)
 states/idle/node = SubResource("AnimationNodeAnimation_s8hlw")
 states/idle/position = Vector2(373.333, 72.02)
-states/invincible/node = SubResource("AnimationNodeAnimation_yc847")
-states/invincible/position = Vector2(287.333, 305.019)
 states/shoot/node = SubResource("AnimationNodeAnimation_63s3y")
 states/shoot/position = Vector2(184, 200.612)
 states/walk/node = SubResource("AnimationNodeAnimation_01bom")
 states/walk/position = Vector2(561.334, 80.5203)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gc4nl"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4wu01"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5fi4q"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_r7nas"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_lq86a"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_01o7k"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_h2a58"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_m6io4"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_7xolf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_oaabk"), "idle", "invincible", SubResource("AnimationNodeStateMachineTransition_kltvf"), "invincible", "idle", SubResource("AnimationNodeStateMachineTransition_7v4k4"), "walk", "invincible", SubResource("AnimationNodeStateMachineTransition_rcjd1"), "invincible", "walk", SubResource("AnimationNodeStateMachineTransition_5j1bg"), "invincible", "hurt", SubResource("AnimationNodeStateMachineTransition_isge3"), "invincible", "die", SubResource("AnimationNodeStateMachineTransition_l6pve")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gc4nl"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4wu01"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5fi4q"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_r7nas"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_lq86a"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_01o7k"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_h2a58"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_m6io4"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_7xolf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_oaabk"), "idle", "barrilete_cosmico", SubResource("AnimationNodeStateMachineTransition_kltvf"), "barrilete_cosmico", "idle", SubResource("AnimationNodeStateMachineTransition_7v4k4"), "walk", "barrilete_cosmico", SubResource("AnimationNodeStateMachineTransition_rcjd1"), "barrilete_cosmico", "walk", SubResource("AnimationNodeStateMachineTransition_5j1bg"), "barrilete_cosmico", "hurt", SubResource("AnimationNodeStateMachineTransition_isge3"), "barrilete_cosmico", "die", SubResource("AnimationNodeStateMachineTransition_l6pve")]
 graph_offset = Vector2(0, 29.6855)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uv7yh"]
 radius = 152.03
+
+[sub_resource type="Gradient" id="Gradient_me0un"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_svlss"]
+gradient = SubResource("Gradient_me0un")
+fill = 1
+fill_from = Vector2(0.444444, 0.492063)
+fill_to = Vector2(0.765873, 0.25)
 
 [node name="General" type="CharacterBody2D"]
 scale = Vector2(0.9, 0.9)
@@ -541,7 +550,7 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_clm41")
 animation = &"idle"
-frame = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -556,6 +565,7 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_4dt8w")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/barrilete_cosmico = false
 parameters/conditions/die = false
 parameters/conditions/got_hurt = false
 parameters/conditions/idle = false
@@ -613,3 +623,8 @@ bus = &"Efectos"
 stream = ExtResource("8_pqkbd")
 volume_db = -12.381
 bus = &"Efectos"
+
+[node name="InvincibleEffect" type="PointLight2D" parent="."]
+color = Color(1, 1, 0, 1)
+energy = 0.67
+texture = SubResource("GradientTexture2D_svlss")
