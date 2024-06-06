@@ -141,7 +141,7 @@ var settings = {
 			"attack":{
 				"bullet": {
 					"speed": 50,
-					"duration": 3.0,
+					"duration": 2.0,
 				},
 				"cooldown": 1,
 				"min_damage_given": 4,
