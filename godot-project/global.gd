@@ -143,7 +143,7 @@ var settings = {
 					"speed": 50,
 					"duration": 2.0,
 				},
-				"cooldown": 1,
+				"cooldown": 2,
 				"min_damage_given": 4,
 				"max_damage_given": 4
 			}
