@@ -51,7 +51,7 @@ func set_goal(oGoal):
 
 func load_unit_by_chance():
 	var sUnitTypeSelected = ""
-	var iSelectedUnit = rng.randi_range(0, aChanceUnitType.size())
+	var iSelectedUnit = rng.randi_range(0, aChanceUnitType.size() - 1)
 	sUnitTypeSelected = aChanceUnitType[iSelectedUnit]
 	unitScene = "res://scenes/" + faction + "/" + sUnitTypeSelected + ".tscn"
 	entity = load(unitScene)

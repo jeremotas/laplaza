@@ -43,7 +43,7 @@ func attack():
 			b.bullet_lifetime = bullet_lifetime
 			#b.set_collision_mask(2)
 			b.prepare_explotion(2, Global.settings.patricios.arribeno.attack.bullet.explotion.duration, Global.settings.patricios.arribeno.attack.bullet.explotion.scale, Global.settings.patricios.arribeno.attack.bullet.explotion.particle)
-			#b.set_color(Color(1, 1, 1, 0.2))
+			b.set_color(Color(1, 1, 1, 0.2))
 			get_parent().add_child(b)
 			
 			#attack_sound(GUNSHOT)

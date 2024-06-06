@@ -41,8 +41,10 @@ func attack():
 			b.max_damage = max_damage_given
 			b.speed = bullet_speed
 			b.bullet_lifetime = bullet_lifetime
+			
 			#b.set_collision_mask(2)
 			b.prepare_explotion(2, Global.settings.patricios.moreno.attack.bullet.explotion.duration, Global.settings.patricios.moreno.attack.bullet.explotion.scale, Global.settings.patricios.moreno.attack.bullet.explotion.particle)
+			b.set_color(Color(0.3,0.3,0.3))
 			#b.set_color(Color(1, 1, 1, 0.2))
 			get_parent().add_child(b)
 			

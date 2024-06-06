@@ -41,7 +41,7 @@ func _process(delta):
 	translate(direction * speed * delta)
 		
 func set_color(TheColor):
-	modulate = TheColor
+	$visual_bullet.modulate = TheColor
 	pass
 
 func _on_visible_on_screen_enabler_2d_screen_exited():
@@ -77,6 +77,7 @@ func create_explotion():
 		$Area2D.scale = Vector2(explotion_scale_radius,explotion_scale_radius)
 		$Area2D.set_collision_mask_value(explotion_layer, true)
 		$ColorRect.visible = false
+		$visual_bullet.visible = false
 		texture = null
 		#$Area2D/ExplotionRect.visible = true
 		explotionTimer = Timer.new()

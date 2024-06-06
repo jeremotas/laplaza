@@ -10,8 +10,10 @@ size = Vector2(2, 2)
 
 [node name="bullet" type="Sprite2D"]
 scale = Vector2(2, 2)
-texture = ExtResource("1_tx47s")
 script = ExtResource("1_7a2v0")
+
+[node name="visual_bullet" type="Sprite2D" parent="."]
+texture = ExtResource("1_tx47s")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -29,6 +31,7 @@ color = Color(0.796078, 0.305882, 0, 1)
 shape = SubResource("RectangleShape2D_l3fcm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -1.0
 offset_top = -1.0
 offset_right = 1.0
