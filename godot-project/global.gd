@@ -17,7 +17,7 @@ var settings = {
 				"husares_infernales": 0
 			},
 			"level": 0,
-			"time": 580
+			"time": 0
 		}
 	},
 	"patricios": {
