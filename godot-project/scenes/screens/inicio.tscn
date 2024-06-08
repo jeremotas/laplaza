@@ -81,7 +81,5 @@ autoplay = true
 bus = &"Musica"
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Mejoras" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Creditos" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
