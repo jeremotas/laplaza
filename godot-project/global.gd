@@ -2,7 +2,7 @@ extends Node
 
 var settings = {
 	"game": {
-		"init_level": "level2",
+		"init_level": "level",
 		"player_goal": 600,
 		"enemy_goal": 12,
 		"player_max_life": 15,
