@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://kuh331lq6pwu"]
+
+[ext_resource type="Script" path="res://scenes/screens/unso.gd" id="1_fc5ik"]
+[ext_resource type="Texture2D" uid="uid://bh0nl4qjpl1w" path="res://assets/created/images/unso.png" id="2_gjy65"]
+
+[sub_resource type="Animation" id="Animation_eqjhs"]
+resource_name = "La romero"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmnwq"]
+_data = {
+"La romero": SubResource("Animation_eqjhs")
+}
+
+[node name="unso" type="CanvasLayer"]
+script = ExtResource("1_fc5ik")
+
+[node name="Fondo" type="ColorRect" parent="."]
+offset_right = 642.0
+offset_bottom = 481.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(318, 230)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_gjy65")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cmnwq")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

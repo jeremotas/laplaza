@@ -411,7 +411,7 @@ visible = false
 [node name="decision_time" parent="." instance=ExtResource("11_oed3o")]
 visible = false
 
-[node name="SpeechBubble" parent="." instance=ExtResource("12_xs82a")]
+[node name="WaveTitle" parent="." instance=ExtResource("12_xs82a")]
 
 [node name="Borders" type="Node" parent="."]
 
