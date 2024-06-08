@@ -17,7 +17,7 @@ var settings = {
 				"husares_infernales": 0
 			},
 			"level": 0,
-			"time": 0
+			"time": 580
 		}
 	},
 	"patricios": {
@@ -65,7 +65,7 @@ var settings = {
 					"duration": 0.75,
 					"explotion": {
 						"duration": 1,
-						"scale": 20,
+						"scale": 30,
 						"particle": "explosion"
 					}
 				},
@@ -80,11 +80,11 @@ var settings = {
 			"attack":{
 				"bullet": {
 					"speed": 200,
-					"duration": 0.01,
+					"duration": 0.1,
 					"explotion": {
 						"duration": 0.75,
-						"scale": 10,
-						"particle": "boleadora"
+						"scale": 22,
+						"particle": "escopetazo"
 					}
 				},
 				"cooldown": 1,

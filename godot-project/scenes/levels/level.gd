@@ -277,7 +277,8 @@ func prepare_enemy_spawns():
 		var strategy = enemy_strategy[0]
 		if strategy.max_time < iSecondsPassed + 1:
 			enemy_strategy.pop_front()
-			strategy = enemy_strategy[0]
+			if enemy_strategy.size() > 0:
+				strategy = enemy_strategy[0]
 		
 		if strategy.name == last_strategy: return 
 		print(iSecondsPassed," segundos ", strategy.name)

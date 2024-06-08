@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4enxlrlu02te"]
+[gd_scene load_steps=5 format=3 uid="uid://p54qxnpvsa4u"]
 
-[ext_resource type="Texture2D" uid="uid://bhl2p3n7kyqff" path="res://assets/created/boleadoras.png" id="1_6sqip"]
+[ext_resource type="Texture2D" uid="uid://bhl2p3n7kyqff" path="res://assets/created/boleadoras.png" id="1_wl376"]
 
 [sub_resource type="Curve" id="Curve_bnk5t"]
 _data = [Vector2(0.0128617, 0.786635), 0.0, 0.0, 0, 0, Vector2(0.504823, 1), 0.0, 0.0, 0, 0, Vector2(0.990354, 0.832356), 0.0, 0.0, 0, 0]
@@ -24,7 +24,7 @@ modulate = Color(0.854902, 0.890196, 1, 1)
 emitting = false
 amount = 3
 process_material = SubResource("ParticleProcessMaterial_4pw50")
-texture = ExtResource("1_6sqip")
+texture = ExtResource("1_wl376")
 lifetime = 0.75
 one_shot = true
 explosiveness = 0.67

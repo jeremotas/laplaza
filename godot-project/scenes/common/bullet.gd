@@ -94,6 +94,10 @@ func create_explotion():
 			$boleadora.visible = true
 			$boleadora.emitting = true
 			$boleadora.rotation = direction.angle()
+		if explotion_particle == "escopetazo":
+			$escopetazo.visible = true
+			$escopetazo.emitting = true
+			$escopetazo.rotation = direction.angle()
 			#$boleadora.scale = Vector2(2,2)
 	
 	pass

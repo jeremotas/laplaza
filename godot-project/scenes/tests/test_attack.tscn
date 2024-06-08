@@ -13,12 +13,11 @@ script = ExtResource("1_4fgik")
 [node name="General" parent="." instance=ExtResource("2_40ing")]
 position = Vector2(129, 127)
 
-[node name="Moreno" parent="." instance=ExtResource("4_7pg8g")]
-faction = "patricios"
-
 [node name="Arribeno" parent="." instance=ExtResource("4_jspqt")]
 position = Vector2(-31, 38)
 faction = "patricios"
+
+[node name="Moreno" parent="." instance=ExtResource("4_7pg8g")]
 
 [node name="UnitSpawner" parent="." instance=ExtResource("5_cjnvb")]
 position = Vector2(522, 312)
