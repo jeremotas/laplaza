@@ -14,7 +14,7 @@ func _ready():
 
 
 func _on_reward(faction, xp):	
-	print('holis REWARD')
+	#print('holis REWARD')
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

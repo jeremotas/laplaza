@@ -23,7 +23,7 @@ autostart = true
 
 [node name="SpawnSpriteEnemigo" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -21)
+position = Vector2(1, -39)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_536h0")
 

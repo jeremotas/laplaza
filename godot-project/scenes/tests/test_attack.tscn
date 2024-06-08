@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://de0d38cwcc5ua"]
+[gd_scene load_steps=7 format=3 uid="uid://de0d38cwcc5ua"]
 
 [ext_resource type="Script" path="res://scenes/tests/test_attack.gd" id="1_4fgik"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="2_40ing"]
 [ext_resource type="PackedScene" uid="uid://qe5x0axdxxo" path="res://scenes/patricios/moreno.tscn" id="4_7pg8g"]
-[ext_resource type="PackedScene" uid="uid://40gi2nr4aews" path="res://scenes/ingleses/highlander.tscn" id="4_38cix"]
 [ext_resource type="PackedScene" uid="uid://dlnd2el5bqsln" path="res://scenes/patricios/arribeno.tscn" id="4_jspqt"]
+[ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="5_cjnvb"]
+[ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://scenes/common/goal.tscn" id="6_vspmo"]
 
 [node name="test_attack" type="Node2D"]
 script = ExtResource("1_4fgik")
@@ -12,12 +13,23 @@ script = ExtResource("1_4fgik")
 [node name="General" parent="." instance=ExtResource("2_40ing")]
 position = Vector2(129, 127)
 
-[node name="Highlander" parent="." instance=ExtResource("4_38cix")]
-position = Vector2(514, 270)
-
 [node name="Moreno" parent="." instance=ExtResource("4_7pg8g")]
 faction = "patricios"
 
 [node name="Arribeno" parent="." instance=ExtResource("4_jspqt")]
 position = Vector2(-31, 38)
 faction = "patricios"
+
+[node name="UnitSpawner" parent="." instance=ExtResource("5_cjnvb")]
+position = Vector2(522, 312)
+zone = "uno"
+probabilitySpawnOnTimer = 100.0
+unitScene = "res://scenes/ingleses/ingles.tscn"
+faction = "ingleses"
+respawn_seconds = 0.5
+max_alive = 4
+controlled_max_alive = true
+
+[node name="EnemyGoal" parent="." instance=ExtResource("6_vspmo")]
+position = Vector2(248, 355)
+faction = "ingleses"

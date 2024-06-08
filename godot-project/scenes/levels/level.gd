@@ -6,6 +6,8 @@ var TheGameStats : GameStats # Estadisticas del juego (control de experiencia y 
 var last_level = 0 # Marca para control del ultimo nivel accedido
 var player_max_life = 20 # Maxima vida del jugador principal
 
+const enemy_strategy_container  = preload("res://scenes/levels/strategy_one.gd")
+var enemy_strategy 
 # Variables de control de UI
 @onready var HUD = $HUD
 @onready var pause_menu = $PauseMenu
@@ -19,8 +21,9 @@ var zoom_speed = Vector2(0.3, 0.3)
 var zoom_acceleration = 0.3
 var original_zoom = Vector2()
 var iStrategyCall = 0
-var enemy_strategy
 var command = ""
+var spawn_zones = []
+var last_strategy = ""
 
 # Variable para control del malon.
 var malon = [
@@ -39,11 +42,17 @@ func _ready():
 	TheGameStats._ready()
 	$EnemyGoal.set_needed_units(Global.settings.game.enemy_goal)
 	player_max_life = Global.settings.game.player_max_life
-	enemy_strategy = Global.settings.enemy_spawn_strategy.duplicate()
+	
+	enemy_strategy = enemy_strategy_container.new().strategy
+	
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
 	
 	Engine.time_scale = 1
+	
+func add_spawn_zone(zone):
+	if not spawn_zones.has(zone):
+		spawn_zones.push_back(zone)
 
 func _input(event):
 	if event is InputEventKey:
@@ -264,60 +273,30 @@ func prepare_enemy_spawns():
 	if enemy_strategy.size() > 0:
 		
 		var strategy = enemy_strategy[0]
-		
-		while enemy_strategy.size() > 0 and strategy.min_time <= iSecondsPassed + 1:
+		while enemy_strategy.size() > 0 and strategy.max_time <= iSecondsPassed + 1:
 			strategy = enemy_strategy.pop_front()
 		
-		print("NUEVA ESTRATEGIA ENEMIGA")
-		print(JSON.stringify(strategy))
-		$EnemySpawner.set_rewspan_seconds(strategy.spawn1.seconds)
-		$EnemySpawner.probabilitySpawnOnTimer = strategy.spawn1.probability
-		$EnemySpawner.set_unit_type(strategy.spawn1.unit_type)
-		$EnemySpawner.controlled_max_alive = true 
-		$EnemySpawner.max_alive = strategy.max_alive
-		
-		$EnemySpawner2.set_rewspan_seconds(strategy.spawn2.seconds)
-		$EnemySpawner2.probabilitySpawnOnTimer = strategy.spawn2.probability
-		$EnemySpawner2.set_unit_type(strategy.spawn2.unit_type)
-		$EnemySpawner2.controlled_max_alive = true 
-		$EnemySpawner2.max_alive = strategy.max_alive
-		
-		$EnemySpawner3.set_rewspan_seconds(strategy.spawn3.seconds)
-		$EnemySpawner3.probabilitySpawnOnTimer = strategy.spawn3.probability
-		$EnemySpawner3.set_unit_type(strategy.spawn3.unit_type)
-		$EnemySpawner3.controlled_max_alive = true 
-		$EnemySpawner3.max_alive = strategy.max_alive
-		
-		$EnemySpawner4.set_rewspan_seconds(strategy.spawn4.seconds)
-		$EnemySpawner4.probabilitySpawnOnTimer = strategy.spawn4.probability
-		$EnemySpawner4.set_unit_type(strategy.spawn4.unit_type)
-		$EnemySpawner4.controlled_max_alive = true 
-		$EnemySpawner4.max_alive = strategy.max_alive
-		
-		$EnemySpawner5.set_rewspan_seconds(strategy.spawn5.seconds)
-		$EnemySpawner5.probabilitySpawnOnTimer = strategy.spawn5.probability
-		$EnemySpawner5.set_unit_type(strategy.spawn5.unit_type)
-		$EnemySpawner5.controlled_max_alive = true 
-		$EnemySpawner5.max_alive = strategy.max_alive
-		
-		$EnemySpawner6.set_rewspan_seconds(strategy.spawn6.seconds)
-		$EnemySpawner6.probabilitySpawnOnTimer = strategy.spawn6.probability
-		$EnemySpawner6.set_unit_type(strategy.spawn6.unit_type)
-		$EnemySpawner6.controlled_max_alive = true 
-		$EnemySpawner6.max_alive = strategy.max_alive
-		
-		$EnemySpawner7.set_rewspan_seconds(strategy.spawn7.seconds)
-		$EnemySpawner7.probabilitySpawnOnTimer = strategy.spawn7.probability
-		$EnemySpawner7.set_unit_type(strategy.spawn7.unit_type)
-		$EnemySpawner7.controlled_max_alive = true 
-		$EnemySpawner7.max_alive = strategy.max_alive
-
+		if strategy.name == last_strategy: return 
+		print(strategy.name)
+		last_strategy = strategy.name
+		for zone in spawn_zones:
+			
+			var unitSpawnArray = get_tree().get_nodes_in_group("spawn_" + zone)
+			for unitSpawn in unitSpawnArray:
+				unitSpawn.set_rewspan_seconds(strategy[zone].seconds)
+				unitSpawn.probabilitySpawnOnTimer = strategy[zone].probability
+				unitSpawn.set_unit_type(strategy[zone].unit_type)
+				unitSpawn.controlled_max_alive = true 
+				unitSpawn.max_alive = strategy.max_alive
 
 func _on_timer_timeout():
 	# Control para el reloj del juego
-	#print(get_tree().get_nodes_in_group("faccion_ingleses").size())
+	print("Ingleses en juego: ", get_tree().get_nodes_in_group("faccion_ingleses").size())
 	iSecondsPassed += 1
 	HUD.change_time(max(Global.settings.game.player_goal - iSecondsPassed, 0))
+	if iSecondsPassed == 1:
+		prepare_enemy_spawns()
+	
 
 func _on_reward(faction, experience_given):
 	# Sumador de experiencia

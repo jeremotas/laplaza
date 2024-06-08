@@ -1,5 +1,6 @@
 extends Marker2D
 var entity = null
+@export var zone = ""
 @export var probabilitySpawnOnTimer = 20.0
 @export var spawnOnReady = true
 @export var unitScene = "res://scenes/patricios/granadero.tscn"
@@ -7,6 +8,8 @@ var entity = null
 @export var respawn_seconds = 2.5
 @export var max_alive = 0
 @export var controlled_max_alive = false
+
+
 var queue = []
 
 var rng = RandomNumberGenerator.new()
@@ -18,8 +21,15 @@ func _ready():
 	$TimerDeSpawnUnidades.start(respawn_seconds)
 	if faction == 'ingleses':
 		$SpawnSpriteEnemigo.visible = true
+		if zone != "":
+			add_to_group("spawn_" + zone)
+			if get_parent().has_method('add_spawn_zone'):
+				get_parent().add_spawn_zone(zone)
+			
 	if spawnOnReady:
-		spawn_new_call(100.0)
+		spawn_new_call(probabilitySpawnOnTimer)
+	
+	
 		
 		
 func set_unit_type(mUnitType):
@@ -34,7 +44,7 @@ func create_chance_unit_type(aChanceUnitTypeParam):
 	for oChance in aChanceUnitTypeParam:
 		for i in range(oChance.probability):
 			aChanceUnitType.push_back(oChance.unit_type)
-	print(aChanceUnitType.size())
+	#print(aChanceUnitType.size())
 
 func spawn_unit(unitSceneAsked):
 	var unitSceneOld = unitScene
@@ -55,24 +65,36 @@ func load_unit_by_chance():
 	sUnitTypeSelected = aChanceUnitType[iSelectedUnit]
 	unitScene = "res://scenes/" + faction + "/" + sUnitTypeSelected + ".tscn"
 	entity = load(unitScene)
-	print("Elegi random: ", sUnitTypeSelected)
+	#("Elegi random: ", sUnitTypeSelected)
 	return sUnitTypeSelected
 
 func spawn_new_call(probability_generation):
 	var value_creation = rng.randf_range(0.0, 100.0)
-	var can_spawn = not controlled_max_alive or max_alive >= get_tree().get_nodes_in_group("faccion_" + faction).size() + 1
+	var can_spawn = not controlled_max_alive or max_alive >= get_tree().get_nodes_in_group("faccion_" + faction).size()
 	if can_spawn and not $SpawnArea.has_overlapping_bodies() and value_creation <= probability_generation:
 		
 		if aChanceUnitType.size() > 0:
 			load_unit_by_chance()
 			
 		var soldado = entity.instantiate();
-		soldado.global_position = global_position
+		var aPossibleSpawns = get_possible_spawns()
+		var iSelected = rng.randi_range(0, aPossibleSpawns.size() - 1)
+		var start_position = aPossibleSpawns[iSelected]
+		
+		soldado.global_position = start_position
 		soldado.add_to_faction(faction)
 		if soldado.has_method("assign_goal"):
 			soldado.assign_goal(oGoalToAssign)
 		get_parent().add_child.call_deferred(soldado)
 		#add_child(soldado)
+		
+func get_possible_spawns():
+	var aPossibleSpawns = []
+	
+	if aPossibleSpawns.size() == 0:
+		aPossibleSpawns.push_back(global_position)
+	
+	return aPossibleSpawns
 	
 func _on_timer_de_spawn_unidades_timeout():
 	if queue.size() > 0:

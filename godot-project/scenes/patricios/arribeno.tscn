@@ -1,7 +1,6 @@
-[gd_scene load_steps=62 format=3 uid="uid://dlnd2el5bqsln"]
+[gd_scene load_steps=60 format=3 uid="uid://dlnd2el5bqsln"]
 
 [ext_resource type="Script" path="res://scenes/patricios/arribeno.gd" id="1_ic4tm"]
-[ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="2_awglo"]
 [ext_resource type="Texture2D" uid="uid://c0xfl8qcvk4hx" path="res://assets/created/arribeno32.png" id="3_vv8b1"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="4_xu00h"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="5_q4ipq"]
@@ -11,15 +10,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1n1c"]
 bg_color = Color(0, 0.917647, 0.27451, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ksat4"]
-resource_local_to_scene = true
-shader = ExtResource("2_awglo")
-shader_parameter/color = Color(1, 0, 0, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 0
-shader_parameter/inside = false
-shader_parameter/add_margins = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rq2vg"]
 atlas = ExtResource("3_vv8b1")
@@ -473,6 +463,8 @@ graph_offset = Vector2(0, 29.6855)
 radius = 152.03
 
 [node name="Arribeno" type="CharacterBody2D"]
+slide_on_ceiling = false
+floor_snap_length = 0.0
 script = ExtResource("1_ic4tm")
 
 [node name="LifeLabel" type="Label" parent="."]
@@ -494,10 +486,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_b1n1c")
 show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_ksat4")
 sprite_frames = SubResource("SpriteFrames_afxcp")
 animation = &"idle"
-frame = 1
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

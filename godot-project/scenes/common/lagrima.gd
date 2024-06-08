@@ -17,7 +17,7 @@ func collected():
 		reward_emited = true
 		reward.emit(faction, experience_given)
 		visible = false
-		print("Suma XP = ", experience_given)
+		#print("Suma XP = ", experience_given)
 		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

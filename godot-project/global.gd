@@ -126,7 +126,7 @@ var settings = {
 			"experience_given": 2,
 			"attack":{
 				"bullet": {
-					"speed": 150,
+					"speed": 100,
 					"duration": 2.0,
 				},
 				"cooldown": 1,
@@ -148,62 +148,5 @@ var settings = {
 				"max_damage_given": 4
 			}
 		}
-	},
-	"enemy_spawn_strategy":[
-		{
-			"min_time": 20,
-			"max_alive": 10,
-			"spawn1": {"unit_type": [{"unit_type":"highlander", "probability": 20}, {"unit_type":"ingles", "probability": 80}], "seconds": 10, "probability": 100},
-			"spawn2": {"unit_type": "ingles", "seconds": 7, "probability": 100},
-			"spawn3": {"unit_type": "ingles", "seconds": 10, "probability": 100},
-			"spawn4": {"unit_type": "ingles", "seconds": 7, "probability": 100},
-			"spawn5": {"unit_type": "ingles", "seconds": 10, "probability": 100},
-			"spawn6": {"unit_type": "ingles", "seconds": 10, "probability": 100},
-			"spawn7": {"unit_type": [{"unit_type":"highlander", "probability": 20}, {"unit_type":"ingles", "probability": 80}], "seconds": 10, "probability": 100},
-		},
-		{
-			"min_time": 60,
-			"max_alive": 40,
-			"spawn1": {"unit_type": [{"unit_type":"highlander", "probability": 40}, {"unit_type":"ingles", "probability": 60}], "seconds": 8, "probability": 100},
-			"spawn2": {"unit_type": "ingles", "seconds": 8, "probability": 90},
-			"spawn3": {"unit_type": "ingles", "seconds": 8, "probability": 90},
-			"spawn4": {"unit_type": "highlander", "seconds": 8, "probability": 50},
-			"spawn5": {"unit_type": "ingles", "seconds": 4, "probability": 50},
-			"spawn6": {"unit_type": "ingles", "seconds": 4, "probability": 50},
-			"spawn7": {"unit_type": [{"unit_type":"highlander", "probability": 40}, {"unit_type":"ingles", "probability": 60}], "seconds": 8, "probability": 100},
-		},
-		{
-			"min_time": 180,
-			"max_alive": 60,
-			"spawn1": {"unit_type": [{"unit_type":"highlander", "probability": 30}, {"unit_type":"ingles", "probability": 70}], "seconds": 4, "probability": 100},
-			"spawn2": {"unit_type": "ingles", "seconds": 4, "probability": 90},
-			"spawn3": {"unit_type": "ingles", "seconds": 4, "probability": 90},
-			"spawn4": {"unit_type": "highlander", "seconds": 8, "probability": 70},
-			"spawn5": {"unit_type": "ingles", "seconds": 4, "probability": 80},
-			"spawn6": {"unit_type": "ingles", "seconds": 4, "probability": 80},
-			"spawn7": {"unit_type": "ingles", "seconds": 4, "probability": 80},
-		},
-		{
-			"min_time": 300,
-			"max_alive": 80,
-			"spawn1": {"unit_type": "highlander", "seconds": 3, "probability": 70},
-			"spawn2": {"unit_type": "ingles", "seconds": 3, "probability": 40},
-			"spawn3": {"unit_type": "ingles", "seconds": 4, "probability": 95},
-			"spawn4": {"unit_type": "ingles", "seconds": 3, "probability": 40},
-			"spawn5": {"unit_type": "ingles", "seconds": 3, "probability": 70},
-			"spawn6": {"unit_type": "ingles", "seconds": 3, "probability": 70},
-			"spawn7": {"unit_type": "highlander", "seconds": 3, "probability": 70},
-		},
-		{
-			"min_time": 540,
-			"max_alive": 100,
-			"spawn1": {"unit_type": "ingles", "seconds": 1.5, "probability": 40},
-			"spawn2": {"unit_type": "highlander", "seconds": 2, "probability": 30},
-			"spawn3": {"unit_type": "ingles", "seconds": 2, "probability": 40},
-			"spawn4": {"unit_type": "highlander", "seconds": 2, "probability": 30},
-			"spawn5": {"unit_type": "highlander", "seconds": 1.5, "probability": 40},
-			"spawn6": {"unit_type": "ingles", "seconds": 1.5, "probability": 40},
-			"spawn7": {"unit_type": "highlander", "seconds": 1.5, "probability": 40},
-		}
-	]
+	}
 }
