@@ -27,8 +27,8 @@ size_flags_horizontal = 4
 color = Color(0, 0, 0, 1)
 
 [node name="Lafuriadelastrenzas" type="Sprite2D" parent="Control"]
-position = Vector2(320.56, 170.749)
-scale = Vector2(0.317132, 0.317132)
+position = Vector2(320.56, 151.749)
+scale = Vector2(0.28, 0.28)
 texture = ExtResource("2_j4g27")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
@@ -52,10 +52,20 @@ layout_mode = 2
 theme = ExtResource("2_box0m")
 text = "Comenzar"
 
+[node name="Mejoras" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_box0m")
+text = "Mejoras"
+
 [node name="Opciones" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
 text = "Opciones"
+
+[node name="Creditos" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_box0m")
+text = "Creditos"
 
 [node name="Salir" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,5 +78,7 @@ autoplay = true
 bus = &"Musica"
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Mejoras" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Creditos" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
