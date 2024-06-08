@@ -30,15 +30,12 @@ texture = ExtResource("1_ooam5")
 expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -69.0
-offset_top = -110.5
-offset_right = 69.0
-offset_bottom = 110.5
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_right = 137.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -48,8 +45,22 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("1_01m0e")
+theme_override_font_sizes/font_size = 32
+text = "Opciones"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Master" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -81,9 +92,15 @@ text = "Efectos"
 layout_mode = 2
 bus_name = "Efectos"
 
-[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("1_01m0e")
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 24
 text = "Menu principal"
 
 [node name="Efectos" type="AudioStreamPlayer2D" parent="."]
@@ -96,4 +113,4 @@ stream = ExtResource("6_rxpfq")
 autoplay = true
 bus = &"Musica"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Menu" to="." method="_on_menu_pressed"]

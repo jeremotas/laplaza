@@ -14,5 +14,7 @@ func _process(delta):
 func speech(sMessage):
 	$MarginContainer/RichTextLabel.text = "[center]" + sMessage + "[/center]"
 	visible = true
-	await get_tree().create_timer(4).timeout
+	$AnimationPlayer.play("title")
+	await get_tree().create_timer(3).timeout
+	
 	visible = false
