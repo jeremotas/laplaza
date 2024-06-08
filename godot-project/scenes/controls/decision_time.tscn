@@ -360,8 +360,7 @@ theme = ExtResource("2_joe4m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "El general es poseído temporalmente por Pelusa.
 Si hay ingleses, él los gambetea y ellos caen al piso. 
-
-(Solo un ratito...)"
+(La enfedrina queda en la sangre del general)"
 fit_content = true
 
 [node name="HusaresInfernalesButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]

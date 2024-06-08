@@ -24,6 +24,7 @@ var iStrategyCall = 0
 var command = ""
 var spawn_zones = []
 var last_strategy = ""
+var ActualTimeScale
 
 # Variable para control del malon.
 var malon = [
@@ -163,6 +164,7 @@ func game_over():
 
 func decision_time_start():
 	# Inicio de una decision
+	ActualTimeScale = Engine.time_scale
 	Engine.time_scale = 0
 	$decision_time.prepare_buttons(TheGameStats.experience)
 	$decision_time.show()
@@ -182,7 +184,7 @@ func decision_time_end(decision):
 		
 	# Devolver al juego
 	$decision_time.hide()
-	Engine.time_scale = 1
+	Engine.time_scale = ActualTimeScale
 	
 func barrilete_cosmico():
 	$General.init_barrilete_cosmico()
@@ -279,7 +281,7 @@ func prepare_enemy_spawns():
 		
 		if strategy.name == last_strategy: return 
 		print(iSecondsPassed," segundos ", strategy.name)
-		$SpeechBubble.speech(strategy.name)
+		$WaveTitle.speech(strategy.name)
 		last_strategy = strategy.name
 		for zone in spawn_zones:
 			
