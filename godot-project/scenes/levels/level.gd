@@ -273,11 +273,13 @@ func prepare_enemy_spawns():
 	if enemy_strategy.size() > 0:
 		
 		var strategy = enemy_strategy[0]
-		while enemy_strategy.size() > 0 and strategy.max_time <= iSecondsPassed + 1:
-			strategy = enemy_strategy.pop_front()
+		if strategy.max_time < iSecondsPassed + 1:
+			enemy_strategy.pop_front()
+			strategy = enemy_strategy[0]
 		
 		if strategy.name == last_strategy: return 
-		print(strategy.name)
+		print(iSecondsPassed," segundos ", strategy.name)
+		$SpeechBubble.speech(strategy.name)
 		last_strategy = strategy.name
 		for zone in spawn_zones:
 			

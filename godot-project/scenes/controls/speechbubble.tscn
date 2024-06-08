@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://er2xr7bd3ipm"]
+
+[ext_resource type="Script" path="res://scenes/controls/speechbubble.gd" id="1_8yntv"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_jmcpf"]
+
+[node name="SpeechBubble" type="CanvasLayer"]
+script = ExtResource("1_8yntv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -21.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_jmcpf")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]TEST[/center]"
+fit_content = true

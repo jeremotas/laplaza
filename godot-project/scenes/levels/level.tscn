@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://doeqrttpttyvl"]
+[gd_scene load_steps=19 format=3 uid="uid://doeqrttpttyvl"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_4e1oj"]
 [ext_resource type="Texture2D" uid="uid://divu38pun5cej" path="res://assets/created/tilesets/tilesetmud64exp.png" id="2_udve2"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="9_2qses"]
 [ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://scenes/controls/pause_menu.tscn" id="10_3l2by"]
 [ext_resource type="PackedScene" uid="uid://duronouk3fu1p" path="res://scenes/controls/decision_time.tscn" id="11_oed3o"]
+[ext_resource type="PackedScene" uid="uid://er2xr7bd3ipm" path="res://scenes/controls/speechbubble.tscn" id="12_xs82a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgl40"]
 resource_name = "terreno"
@@ -409,6 +410,8 @@ visible = false
 
 [node name="decision_time" parent="." instance=ExtResource("11_oed3o")]
 visible = false
+
+[node name="SpeechBubble" parent="." instance=ExtResource("12_xs82a")]
 
 [node name="Borders" type="Node" parent="."]
 

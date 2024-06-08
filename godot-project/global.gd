@@ -129,6 +129,7 @@ var settings = {
 					"speed": 100,
 					"duration": 2.0,
 				},
+				"probability": 50,
 				"cooldown": 1,
 				"min_damage_given": 1,
 				"max_damage_given": 1
@@ -144,6 +145,7 @@ var settings = {
 					"duration": 2.0,
 				},
 				"cooldown": 2,
+				"probability": 80,
 				"min_damage_given": 4,
 				"max_damage_given": 4
 			}

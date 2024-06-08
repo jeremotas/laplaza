@@ -18,6 +18,7 @@ class_name Character
 @export var invincible = false
 @export var last_input = Vector2.ZERO
 @export var flipped = false
+@export var iAttackProbability = 100
 var barrilete_cosmico = false
 var last_general_direction = Vector2.ZERO
 var drop_reward  = false
@@ -138,11 +139,18 @@ func CombatCalculation(_delta):
 				for unitInArea in $CombatArea.get_overlapping_bodies():
 					if ("faction" in unitInArea) and unitInArea.faction != faction and not attacked and unitInArea.life > 0:
 						inCoolDownAttack = true
-						#unitInArea.takeDamage(min_damage_given, max_damage_given)
-						attack_objective = unitInArea
-						coolDownTimer.start()
-						status.attacking = true
-						attacked = true
+						var startAttack = true
+						if iAttackProbability < 100:
+							var iAttackValue = rng.randi_range(0, 99)
+							startAttack = iAttackValue < iAttackProbability
+							
+						if startAttack:
+							
+							#unitInArea.takeDamage(min_damage_given, max_damage_given)
+							attack_objective = unitInArea
+							coolDownTimer.start()
+							status.attacking = true
+							attacked = true
 				
 			else:
 				var enemiesInArea = 0

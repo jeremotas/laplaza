@@ -17,6 +17,7 @@ func _init():
 	bullet_speed = Global.settings.ingleses.soldado.attack.bullet.speed
 	bullet_lifetime = Global.settings.ingleses.soldado.attack.bullet.duration
 	coolDownAttackTime = Global.settings.ingleses.soldado.attack.cooldown
+	iAttackProbability = Global.settings.ingleses.highlander.attack.probability
 	drop_reward = true
 	init()
 	
