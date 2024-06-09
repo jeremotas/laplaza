@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://82akg653e7j3"]
 
-[ext_resource type="Texture2D" uid="uid://vbyhoxu0b3y4" path="res://assets/original/images/laromero_arg.png" id="1_wfpr4"]
 [ext_resource type="Script" path="res://scenes/screens/preinicio.gd" id="1_x4wjh"]
+[ext_resource type="Texture2D" uid="uid://c7phnsphmbrga" path="res://assets/created/images/la_romero_transparente.png" id="2_f82w2"]
 
 [sub_resource type="Animation" id="Animation_eqjhs"]
 resource_name = "La romero"
@@ -36,7 +36,7 @@ color = Color(0, 0, 0, 1)
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(318, 230)
 scale = Vector2(0.268555, 0.268555)
-texture = ExtResource("1_wfpr4")
+texture = ExtResource("2_f82w2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -151,6 +151,7 @@ func calculate_stats():
 func game_win():
 	Engine.time_scale = 0.3
 	await get_tree().create_timer(1).timeout
+	save_lagrimas(TheGameStats.experience)
 	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/screens/victory.tscn")		
 		
