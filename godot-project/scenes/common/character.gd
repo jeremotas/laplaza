@@ -215,10 +215,9 @@ func AnimationCalculation(_delta):
 		animation_tree["parameters/conditions/got_hurt"] = false
 		animation_tree["parameters/conditions/shooting"] = false
 		animation_tree["parameters/conditions/walking"] = false
-		if "parameters/conditions/invincible" in animation_tree:
-			animation_tree["parameters/conditions/invincible"] = false
+		if "parameters/conditions/barrilete_cosmico" in animation_tree:
+			animation_tree["parameters/conditions/barrilete_cosmico"] = false
 		
-	
 	if velocity.x > 0: 
 		$AnimatedSprite2D.flip_h = false
 	elif velocity.x < 0:

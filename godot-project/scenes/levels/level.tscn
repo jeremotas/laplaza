@@ -375,7 +375,6 @@ position = Vector2(285, 606)
 faction = "ingleses"
 
 [node name="General" parent="." instance=ExtResource("5_cfpx1")]
-z_index = 2
 position = Vector2(292, 555)
 life = 20
 

@@ -38,8 +38,16 @@ var settings = {
 				"min_damage_given": 100000,
 				"max_damage_given": 100000,
 				"max_speed": 400,
-				"bullet_speed": 800,
-				"cooldown_attack_time": 0.005,
+				"bullet": {
+					"speed":800,
+					"duration": 0.01,
+					"explotion": {
+						"duration": 0.01,
+						"scale": 30,
+						"particle": "explosion"
+					}
+				},
+				"cooldown": 0.01,
 				"duration": 5
 			}
 		},

@@ -45,11 +45,14 @@ func attack():
 			b.bullet_lifetime = bullet_lifetime
 			b.set_collision_mask(2)
 			b.set_color(Color(1, 1, 1))
-			if barrilete_cosmico:
-				b.set_color(Color(1,1,1,0.01))
+			#if barrilete_cosmico:
+				#b.prepare_explotion(2, Global.settings.patricios.general.barrilete_cosmico.bullet.explotion.duration, Global.settings.patricios.general.barrilete_cosmico.bullet.explotion.scale, Global.settings.patricios.general.barrilete_cosmico.bullet.explotion.particle)
+				#b.set_color(Color(1,1,1,0.01))
 			
-			get_parent().add_child(b)
-			attack_sound(GUNSHOT)
+			
+			if not barrilete_cosmico:
+				get_parent().add_child(b)
+				attack_sound(GUNSHOT)
 		
 		attack_objective = null
 	pass	
@@ -58,12 +61,14 @@ func init_barrilete_cosmico():
 	barrilete_cosmico = true
 	get_parent().ActualTimeScale = 0.2
 	Engine.time_scale = 0.2
-	min_damage_given = Global.settings.patricios.general.barrilete_cosmico.min_damage_given
-	max_damage_given = Global.settings.patricios.general.barrilete_cosmico.max_damage_given
-	max_speed = Global.settings.patricios.general.barrilete_cosmico.max_speed
-	
-	bullet_speed = Global.settings.patricios.general.barrilete_cosmico.bullet_speed
-	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
+	#min_damage_given = Global.settings.patricios.general.barrilete_cosmico.min_damage_given
+	#max_damage_given = Global.settings.patricios.general.barrilete_cosmico.max_damage_given
+	#max_speed = Global.settings.patricios.general.barrilete_cosmico.max_speed
+	#bullet_lifetime = Global.settings.patricios.general.barrilete_cosmico.bullet.duration
+	#bullet_speed = Global.settings.patricios.general.barrilete_cosmico.bullet.speed
+	#coolDownAttackTime = Global.settings.patricios.general.barrilete_cosmico.cooldown
+	$BarrileteCosmico.set_collision_mask_value(2, true)
+	status.attacking = true
 	invincible = true
 	
 	
@@ -88,12 +93,13 @@ func end_barrilete_cosmico():
 	bullet_speed = Global.settings.patricios.general.attack.bullet.speed
 	bullet_lifetime = Global.settings.patricios.general.attack.bullet.duration
 	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
-	
+	$BarrileteCosmico.set_collision_mask_value(2, false)
 	invincible = false
 	barrilete_cosmico = false
 	$UnStateItalianoMusic.stop()
 	get_parent().start_music()
 	Engine.time_scale = 1
+	AnimationCalculation(0)
 	pass
 	
 func walk():
@@ -122,3 +128,9 @@ func show_selection():
 #func _on_selection_area_selection_toggled(selection):
 #	selected = selection
 #	show_selection()
+
+
+func _on_barrilete_cosmico_body_entered(body):
+	if body and ("faction" in body) and body.faction == 'ingleses' and body.life > 0 and not body.invincible:
+		if body.has_method("TakeDamage"):
+			body.TakeDamage(10000, 10000)
