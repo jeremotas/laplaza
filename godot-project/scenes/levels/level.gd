@@ -25,6 +25,7 @@ var command = ""
 var spawn_zones = []
 var last_strategy = ""
 var ActualTimeScale
+var highscore = 0
 
 # Variable para control del malon.
 var malon = [
@@ -48,7 +49,6 @@ func _ready():
 	
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
-	
 	Engine.time_scale = 1
 	
 func add_spawn_zone(zone):
@@ -160,6 +160,10 @@ func game_over():
 	await get_tree().create_timer(1).timeout
 	Engine.time_scale = 1
 	$General.modulate = Color("ffffff00")
+	
+	save_lagrimas(TheGameStats.experience)
+	
+	
 	get_tree().change_scene_to_file("res://scenes/screens/gameover.tscn")
 
 func decision_time_start():
@@ -313,3 +317,10 @@ func _on_reward(faction, experience_given):
 func _on_timer_command_timeout():
 	command = ""
 	pass # Replace with function body.
+
+
+func save_lagrimas(lagrimas):
+	Global.save_data.lagrimas_acumuladas += lagrimas
+	Global.save_data.save()
+	pass
+	

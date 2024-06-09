@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://doo77a1vfcsws"]
+[gd_scene load_steps=6 format=3 uid="uid://doo77a1vfcsws"]
 
 [ext_resource type="Script" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_box0m"]
 [ext_resource type="Texture2D" uid="uid://cucsed5s0x6c0" path="res://assets/original/backgrounds/lafuriadelastrenzas_pix.png" id="2_j4g27"]
 [ext_resource type="AudioStream" uid="uid://8oxyycwu0ncb" path="res://assets/created/musica/La Resistencia Porteña.mp3" id="4_o6f7m"]
+[ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="4_pq347"]
 
 [node name="Inicio" type="CanvasLayer"]
 script = ExtResource("1_w0xhw")
@@ -74,6 +75,22 @@ text = "Creditos"
 layout_mode = 2
 theme = ExtResource("2_box0m")
 text = "Salir"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="CantidadLagrimas" type="Label" parent="Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("2_box0m")
+theme_override_font_sizes/font_size = 16
+
+[node name="Lagrima" type="TextureRect" parent="Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_pq347")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_o6f7m")

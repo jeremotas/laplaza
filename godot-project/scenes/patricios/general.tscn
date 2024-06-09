@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_nklhm"]
 [ext_resource type="AudioStream" uid="uid://cyp28dqo4lc11" path="res://assets/created/sounds/dolor.mp3" id="5_nv6gl"]
 [ext_resource type="AudioStream" uid="uid://3kns6iv7ithe" path="res://assets/original/sounds/horse_general.mp3" id="6_ma0wk"]
-[ext_resource type="AudioStream" uid="uid://dagthpcmtghlb" path="res://assets/original/Music/un_state_italiano.mp3" id="8_pqkbd"]
+[ext_resource type="AudioStream" uid="uid://c3hry3gid365a" path="res://assets/original/sounds/relato_victorhugo.mp3" id="8_bclty"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f72y"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -558,7 +558,7 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_clm41")
 animation = &"barrilete_cosmico"
-frame = 2
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -626,8 +626,8 @@ stream = ExtResource("6_ma0wk")
 autoplay = true
 bus = &"Efectos"
 
-[node name="UnStateItalianoMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_pqkbd")
+[node name="RelatoVictorHugo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_bclty")
 volume_db = -12.381
 bus = &"Efectos"
 

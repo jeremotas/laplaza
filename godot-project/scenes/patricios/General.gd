@@ -80,9 +80,9 @@ func init_barrilete_cosmico():
 	barrileteTimer.one_shot = true
 	barrileteTimer.timeout.connect(end_barrilete_cosmico)
 	barrileteTimer.start()
-	get_parent().stop_music()
+	#get_parent().stop_music()
 	
-	$UnStateItalianoMusic.play(83.4)
+	$RelatoVictorHugo.play()
 	pass
 	
 func end_barrilete_cosmico():
@@ -96,8 +96,8 @@ func end_barrilete_cosmico():
 	$BarrileteCosmico.set_collision_mask_value(2, false)
 	invincible = false
 	barrilete_cosmico = false
-	$UnStateItalianoMusic.stop()
-	get_parent().start_music()
+	$RelatoVictorHugo.stop()
+	#get_parent().start_music()
 	Engine.time_scale = 1
 	AnimationCalculation(0)
 	pass

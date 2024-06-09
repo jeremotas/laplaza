@@ -28,7 +28,7 @@ var strategy = [
 				{
 			"max_time": 30,
 			"max_alive": 10,
-			"name": "Ataque por los Flancos",
+			"name": "El flanqueo",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 2, "probability": 40},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 2, "probability": 40},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 10, "probability": 0},
@@ -52,7 +52,7 @@ var strategy = [
 		{
 			"max_time": 120,
 			"max_alive": 20,
-			"name": "Primera oleada",
+			"name": "El ataque",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 40},
@@ -76,7 +76,7 @@ var strategy = [
 		{
 			"max_time": 180,
 			"max_alive": 40,
-			"name": "Segunda oleada",
+			"name": "El segundo ataque",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 4, "probability": 100},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 50},
@@ -100,7 +100,7 @@ var strategy = [
 		{
 			"max_time": 240,
 			"max_alive": 60,
-			"name": "Huele a oleada fea",
+			"name": "Todos al ataque",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 40},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 40},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 40},
@@ -124,7 +124,7 @@ var strategy = [
 		{
 			"max_time": 300,
 			"max_alive": 20,
-			"name": "Las olas y el viento",
+			"name": "¡Aun hay más!",
 			"izquierda_inferior": {"unit_type": "highlander", "seconds": 3, "probability": 70},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 3, "probability": 40},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 4, "probability": 95},
@@ -136,7 +136,7 @@ var strategy = [
 		{
 			"max_time": 540,
 			"max_alive": 100,
-			"name": "Ola John Romero",
+			"name": "El infierno desatado",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1.5, "probability": 40},
 			"izquierda_superior": {"unit_type": "highlander", "seconds": 2, "probability": 30},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 40},

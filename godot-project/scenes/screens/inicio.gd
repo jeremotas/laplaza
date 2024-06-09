@@ -4,7 +4,16 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Control/MarginContainer/VBoxContainer/Comenzar.grab_focus()
-	pass # Replace with function body.
+	$Control/MarginContainer/HBoxContainer/CantidadLagrimas.text = str(Global.save_data.lagrimas_acumuladas)
+	load_volumes()
+	
+func load_volumes():
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(Global.save_data.master_mixer))
+	bus_index = AudioServer.get_bus_index("Musica")
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(Global.save_data.music_mixer))
+	bus_index = AudioServer.get_bus_index("Efectos")
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(Global.save_data.efectos_mixer))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

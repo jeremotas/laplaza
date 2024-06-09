@@ -1,5 +1,7 @@
 extends Node
 
+var save_data:SaveData
+
 var settings = {
 	"game": {
 		"init_level": "level",
@@ -160,3 +162,6 @@ var settings = {
 		}
 	}
 }
+
+func _ready():
+	save_data = SaveData.load_or_create()

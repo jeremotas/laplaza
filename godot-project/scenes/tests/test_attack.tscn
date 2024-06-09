@@ -11,7 +11,6 @@
 script = ExtResource("1_4fgik")
 
 [node name="General" parent="." instance=ExtResource("2_40ing")]
-z_index = 2
 position = Vector2(129, 127)
 
 [node name="Arribeno" parent="." instance=ExtResource("4_jspqt")]
