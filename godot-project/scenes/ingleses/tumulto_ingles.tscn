@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://cia4npwrfvdbk"]
+
+[ext_resource type="Script" path="res://scenes/ingleses/tumulto_ingles.gd" id="1_4cvg6"]
+[ext_resource type="Texture2D" uid="uid://0bskmuv3bxjj" path="res://assets/created/ingles.png" id="1_plr3c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14oel"]
+atlas = ExtResource("1_plr3c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siq56"]
+atlas = ExtResource("1_plr3c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al1q4"]
+atlas = ExtResource("1_plr3c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2njyt"]
+atlas = ExtResource("1_plr3c")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a68sl"]
+atlas = ExtResource("1_plr3c")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_56nid"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14oel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siq56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al1q4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2njyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a68sl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="TumultoIngles" type="Node2D"]
+modulate = Color(0, 0, 0, 1)
+script = ExtResource("1_4cvg6")
+
+[node name="Ingles" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_56nid")
+frame_progress = 0.937723
+
+[node name="Ingles2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, 0)
+sprite_frames = SubResource("SpriteFrames_56nid")
+frame_progress = 0.434949
+
+[node name="Ingles3" type="AnimatedSprite2D" parent="."]
+position = Vector2(-19, 0)
+sprite_frames = SubResource("SpriteFrames_56nid")
+frame_progress = 0.385512
+
+[node name="Ingles4" type="AnimatedSprite2D" parent="."]
+position = Vector2(-15, 3)
+sprite_frames = SubResource("SpriteFrames_56nid")
+frame_progress = 0.355443
+
+[node name="Ingles5" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, 3)
+sprite_frames = SubResource("SpriteFrames_56nid")
+frame_progress = 0.347885
+
+[node name="Ingles7" type="AnimatedSprite2D" parent="."]
+position = Vector2(-29, 0)
+sprite_frames = SubResource("SpriteFrames_56nid")
+frame_progress = 0.106637
+
+[node name="Ingles8" type="AnimatedSprite2D" parent="."]
+position = Vector2(-28, 3)
+sprite_frames = SubResource("SpriteFrames_56nid")
+frame_progress = 0.093717
