@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://scenes/common/goal.tscn" id="4_nncdj"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="5_cfpx1"]
 [ext_resource type="Script" path="res://scenes/levels/Camera2D.gd" id="6_jsjt0"]
-[ext_resource type="AudioStream" uid="uid://ccduokd1lv6xu" path="res://assets/created/musica/Chacarera de las Trenzas 0.2.mp3" id="7_snemt"]
+[ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="7_sexjv"]
 [ext_resource type="PackedScene" uid="uid://uk3j7rh2076l" path="res://scenes/controls/hud.tscn" id="8_fyc0u"]
 [ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="9_2qses"]
 [ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://scenes/controls/pause_menu.tscn" id="10_3l2by"]
@@ -389,7 +389,7 @@ wait_time = 10.0
 autostart = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_snemt")
+stream = ExtResource("7_sexjv")
 volume_db = -10.392
 autoplay = true
 bus = &"Musica"

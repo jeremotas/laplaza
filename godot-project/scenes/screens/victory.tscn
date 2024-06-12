@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
 [ext_resource type="Texture2D" uid="uid://be4gobj4ipn2w" path="res://assets/original/backgrounds/Flag-Spain-Arg.webp" id="2_3x168"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_blw1a"]
-[ext_resource type="AudioStream" uid="uid://bcujs7wklbl32" path="res://assets/created/musica/Victoria - La Reconquista.mp3" id="4_nnfhn"]
+[ext_resource type="AudioStream" uid="uid://0p4to6x8jlkw" path="res://assets/original/Music/Himno Full Final.mp3" id="4_ican8"]
 [ext_resource type="AudioStream" uid="uid://cugberv1i8wtf" path="res://assets/original/sounds/crow-cheering.mp3" id="5_5ml8l"]
 
 [node name="Victoria" type="Node"]
@@ -83,7 +83,7 @@ text = "J. Whitelocke"
 horizontal_alignment = 2
 
 [node name="Victoria" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_nnfhn")
+stream = ExtResource("4_ican8")
 autoplay = true
 bus = &"Musica"
 

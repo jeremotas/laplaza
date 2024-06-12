@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bypr8gwc62kys" path="res://assets/created/images/lafuria_opciones.png" id="1_ooam5"]
 [ext_resource type="PackedScene" uid="uid://ne0jrytbfn5y" path="res://scenes/controls/volume_mixer.tscn" id="2_og7k0"]
 [ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="5_77hf2"]
-[ext_resource type="AudioStream" uid="uid://8oxyycwu0ncb" path="res://assets/created/musica/La Resistencia Porteña.mp3" id="6_rxpfq"]
+[ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="6_1v8t6"]
 
 [node name="Opciones" type="CanvasLayer"]
 script = ExtResource("1_mqqmh")
@@ -109,7 +109,7 @@ autoplay = true
 bus = &"Efectos"
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_rxpfq")
+stream = ExtResource("6_1v8t6")
 autoplay = true
 bus = &"Musica"
 

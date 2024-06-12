@@ -490,8 +490,8 @@ theme_override_font_sizes/font_size = 8
 position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
-animation = &"die"
-frame = 6
+animation = &"idle"
+frame = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, -3, 11, 4, 8, 4, -2)

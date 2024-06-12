@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://xeo5ov334ujl"]
+
+[ext_resource type="PackedScene" uid="uid://ntsr3jgmnno3" path="res://scenes/patricios/carpincho.tscn" id="1_4n71w"]
+[ext_resource type="Script" path="res://scenes/patricios/escuadron_carpinchos.gd" id="1_u0doy"]
+
+[node name="EscuadronCarpinchos" type="Node2D"]
+script = ExtResource("1_u0doy")
+
+[node name="Carpincho" parent="." instance=ExtResource("1_4n71w")]
+
+[node name="Carpincho2" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-7, 4)
+
+[node name="Carpincho3" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-63, -1)
+
+[node name="Carpincho4" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-21, 2)
+
+[node name="Carpincho5" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-34, 0)
+
+[node name="Carpincho6" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-47, 1)
+
+[node name="Carpincho7" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-55, 2)
+
+[node name="Carpincho8" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-72, -1)
+
+[node name="Carpincho9" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-83, 3)
+
+[node name="Carpincho10" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-66, 5)
+
+[node name="Carpincho11" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-53, 5)
+
+[node name="Carpincho12" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-37, 5)
+
+[node name="Carpincho13" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-89, 5)
+
+[node name="Carpincho14" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-20, 5)
+
+[node name="Carpincho15" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-76, 0)
+
+[node name="Carpincho16" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-83, 4)
+
+[node name="Carpincho17" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-139, -1)
+
+[node name="Carpincho18" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-97, 2)
+
+[node name="Carpincho19" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-110, 0)
+
+[node name="Carpincho20" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-123, 1)
+
+[node name="Carpincho21" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-131, 2)
+
+[node name="Carpincho22" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-148, -1)
+
+[node name="Carpincho23" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-159, 3)
+
+[node name="Carpincho24" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-142, 5)
+
+[node name="Carpincho25" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-129, 5)
+
+[node name="Carpincho26" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-113, 5)
+
+[node name="Carpincho27" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-165, 5)
+
+[node name="Carpincho28" parent="." instance=ExtResource("1_4n71w")]
+position = Vector2(-96, 5)

@@ -36,6 +36,7 @@ var malon = [
 	{"unit_type": "husares_infernales", "quantity": 0}
 ]
 var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husares_infernales.tscn")
+var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.tscn")
 
 func _ready():
 	get_viewport().set_physics_object_picking_sort(true) # 
@@ -200,6 +201,17 @@ func start_music():
 func stop_music():
 	$BackgroundMusic.stop()
 	
+func carpinchos_run_call():	
+	var E = EscuadronCarpinchos.instantiate()
+	
+	var initAttack = Vector2.ZERO
+	var endAttack = Vector2.ZERO
+	initAttack.x = -1000
+	initAttack.y = $General.global_position.y
+	endAttack.x = 3000
+	endAttack.y = $General.global_position.y 
+	add_child(E)
+	E.startAttack(initAttack, endAttack)
 	
 func ataque_husares_infernales():
 	var E = EscuadronHusaresInfernales.instantiate()
@@ -306,7 +318,11 @@ func _on_timer_timeout():
 	HUD.change_time(max(Global.settings.game.player_goal - iSecondsPassed, 0))
 	if iSecondsPassed == 1:
 		prepare_enemy_spawns()
-	
+		
+	if iSecondsPassed == 120:
+		carpinchos_run_call()
+	elif iSecondsPassed == 480:
+		carpinchos_run_call()
 
 func _on_reward(faction, experience_given):
 	# Sumador de experiencia
