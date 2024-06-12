@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_box0m"]
 [ext_resource type="Texture2D" uid="uid://cucsed5s0x6c0" path="res://assets/original/backgrounds/lafuriadelastrenzas_pix.png" id="2_j4g27"]
 [ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="4_pq347"]
-[ext_resource type="AudioStream" uid="uid://ogugkou7rhiq" path="res://assets/created/musica/Chacarera de las Trenzas - piano.mp3" id="5_8jhwt"]
+[ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="5_eyd00"]
 
 [node name="Inicio" type="CanvasLayer"]
 script = ExtResource("1_w0xhw")
@@ -93,7 +93,7 @@ layout_mode = 2
 texture = ExtResource("4_pq347")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_8jhwt")
+stream = ExtResource("5_eyd00")
 autoplay = true
 bus = &"Musica"
 
