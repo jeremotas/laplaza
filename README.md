@@ -21,6 +21,9 @@ https://docs.google.com/document/d/1DHJNvjO8sky2a09Tkg50iiAMSfRXTyYXYH-HpPb9LVI/
 ### High Level Plan
 https://docs.google.com/document/d/1VxnV74PrxtdxQPMAxXReQHbhj6_f5Ns5oTP8fJX_eQI/edit?usp=sharing
 
+### Trello
+https://trello.com/b/eeUwRcOF/la-furia-de-las-trenzas
+
 ## Desarrollo
 https://docs.google.com/document/d/1YScHGkaaHlG7dx-InYCq1ESi02-PI0YL5laCt9vOIn4/edit?usp=sharing
 
