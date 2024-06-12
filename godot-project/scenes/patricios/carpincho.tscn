@@ -144,7 +144,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 24.0
+"speed": 36.0
 }]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7w0me"]
@@ -241,7 +241,7 @@ offset_right = 40.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_torbl")
 animation = &"walk"
-frame_progress = 0.821729
+frame_progress = 0.0407411
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_an7r0")

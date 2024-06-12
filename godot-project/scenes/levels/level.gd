@@ -201,7 +201,7 @@ func start_music():
 func stop_music():
 	$BackgroundMusic.stop()
 	
-func carpinchos_minute_call():	
+func carpinchos_run_call():	
 	var E = EscuadronCarpinchos.instantiate()
 	
 	var initAttack = Vector2.ZERO
@@ -319,9 +319,10 @@ func _on_timer_timeout():
 	if iSecondsPassed == 1:
 		prepare_enemy_spawns()
 		
-	if iSecondsPassed % 60 == 0:
-		carpinchos_minute_call()
-	
+	if iSecondsPassed == 120:
+		carpinchos_run_call()
+	elif iSecondsPassed == 480:
+		carpinchos_run_call()
 
 func _on_reward(faction, experience_given):
 	# Sumador de experiencia
