@@ -84,6 +84,7 @@ horizontal_alignment = 2
 
 [node name="Victoria" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ican8")
+volume_db = 14.0
 autoplay = true
 bus = &"Musica"
 

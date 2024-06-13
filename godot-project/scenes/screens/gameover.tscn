@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_lkn3k"]
 [ext_resource type="Texture2D" uid="uid://51vme1xju2nx" path="res://assets/original/backgrounds/Flag-United-Kingdom-pixeled.webp" id="2_7kyfl"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_pfgda"]
-[ext_resource type="AudioStream" uid="uid://bgqj7x4prl57g" path="res://assets/original/Music/britishsong.mp3" id="3_r3bll"]
+[ext_resource type="AudioStream" uid="uid://ogugkou7rhiq" path="res://assets/created/musica/Chacarera de las Trenzas - piano.mp3" id="4_u3p5w"]
 
 [node name="Gameover" type="Node"]
 script = ExtResource("1_lkn3k")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.541176, 0.541176, 0.541176, 1)
 self_modulate = Color(0.709804, 0.709804, 0.709804, 1)
 offset_top = -2.0
 offset_right = 641.0
@@ -24,9 +25,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -234.5
-offset_top = -19.5
+offset_top = -15.5
 offset_right = 240.5
-offset_bottom = 67.5
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -63,7 +64,7 @@ theme = ExtResource("2_pfgda")
 text = "Menu principal"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_r3bll")
+stream = ExtResource("4_u3p5w")
 autoplay = true
 bus = &"Musica"
 

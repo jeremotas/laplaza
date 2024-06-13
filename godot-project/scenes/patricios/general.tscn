@@ -557,8 +557,8 @@ show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_clm41")
-animation = &"barrilete_cosmico"
-frame = 8
+animation = &"idle"
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -628,7 +628,6 @@ bus = &"Efectos"
 
 [node name="RelatoVictorHugo" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_bclty")
-volume_db = -12.381
 bus = &"Efectos"
 
 [node name="InvincibleEffect" type="PointLight2D" parent="."]
