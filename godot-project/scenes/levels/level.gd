@@ -40,6 +40,7 @@ var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.t
 
 func _ready():
 	get_viewport().set_physics_object_picking_sort(true) # 
+	$BackgroundMusic.play(152.0)
 	$UnitSpawner.set_goal($General) # Todas las unidades patricias siguen al general.
 	TheGameStats = GameStats.new() # Reiniciamos las estadisticas
 	TheGameStats._ready()
@@ -51,6 +52,7 @@ func _ready():
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
 	Engine.time_scale = 1
+	
 	
 func add_spawn_zone(zone):
 	if not spawn_zones.has(zone):
