@@ -50,7 +50,7 @@ var settings = {
 					}
 				},
 				"cooldown": 0.01,
-				"duration": 5
+				"duration": 8
 			}
 		},
 		"granadero": {
