@@ -16,7 +16,7 @@ var strategy = [
 		{
 			"max_time": 15,
 			"max_alive": 0,
-			"name": "Descanso",
+			"name": "",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 10, "probability": 0},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 0},
@@ -40,7 +40,7 @@ var strategy = [
 		{
 			"max_time": 50,
 			"max_alive": 0,
-			"name": "Descanso",
+			"name": "",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 10, "probability": 0},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 0},
@@ -64,7 +64,7 @@ var strategy = [
 		{
 			"max_time": 150,
 			"max_alive": 0,
-			"name": "Descanso",
+			"name": "",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 10, "probability": 0},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 0},
@@ -88,7 +88,7 @@ var strategy = [
 		{
 			"max_time": 220,
 			"max_alive": 0,
-			"name": "Descanso",
+			"name": "",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 10, "probability": 0},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 0},
@@ -112,7 +112,7 @@ var strategy = [
 		{
 			"max_time": 270,
 			"max_alive": 0,
-			"name": "Descanso",
+			"name": "",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 10, "probability": 0},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 0},
