@@ -101,6 +101,9 @@ func _process(delta):
 		malon[2].quantity += 2 # Moreno
 		malon[3].quantity += 1 # Arribeno
 		command = ""
+	elif command == "carp":
+		carpinchos_run_call()
+		command = ""
 	
 
 func control_malon():
