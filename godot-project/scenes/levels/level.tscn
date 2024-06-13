@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://doeqrttpttyvl"]
+[gd_scene load_steps=20 format=3 uid="uid://doeqrttpttyvl"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_4e1oj"]
 [ext_resource type="Texture2D" uid="uid://divu38pun5cej" path="res://assets/created/tilesets/tilesetmud64exp.png" id="2_udve2"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="3_dnsku"]
+[ext_resource type="Texture2D" uid="uid://drgglcsbtf24q" path="res://assets/created/Cabildo.png" id="3_dv022"]
 [ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://scenes/common/goal.tscn" id="4_nncdj"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="5_cfpx1"]
 [ext_resource type="Script" path="res://scenes/levels/Camera2D.gd" id="6_jsjt0"]
@@ -60,8 +61,8 @@ a = Vector2(-7, 1666)
 a = Vector2(-1550, -4)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_y0nil"]
-a = Vector2(-50, -1007)
-b = Vector2(1399, -995)
+a = Vector2(-40, -925)
+b = Vector2(1394, -929)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4e1oj")
@@ -161,7 +162,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT1" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(-220, -159)
+position = Vector2(-220, -100)
 zone = "arriba_izquierda"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -171,7 +172,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT2" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(-126, -159)
+position = Vector2(-126, -100)
 zone = "arriba_izquierda"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -181,7 +182,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT3" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(-39, -161)
+position = Vector2(-39, -102)
 zone = "arriba_izquierda"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -191,7 +192,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT4" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(43, -161)
+position = Vector2(43, -102)
 zone = "arriba_izquierda"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -201,7 +202,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT5" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(129, -162)
+position = Vector2(129, -103)
 zone = "arriba_centro"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -211,7 +212,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT6" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(213, -163)
+position = Vector2(213, -104)
 zone = "arriba_centro"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -221,7 +222,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT7" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(296, -163)
+position = Vector2(296, -104)
 zone = "arriba_centro"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -231,7 +232,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT8" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(380, -164)
+position = Vector2(380, -105)
 zone = "arriba_centro"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -241,7 +242,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT9" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(459, -162)
+position = Vector2(459, -103)
 zone = "arriba_derecha"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -251,7 +252,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT10" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(540, -162)
+position = Vector2(540, -103)
 zone = "arriba_derecha"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -261,7 +262,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT11" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(613, -161)
+position = Vector2(613, -102)
 zone = "arriba_derecha"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -271,7 +272,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT12" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(694, -162)
+position = Vector2(694, -103)
 zone = "arriba_derecha"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -281,7 +282,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemySpawnerT13" parent="." instance=ExtResource("3_dnsku")]
-position = Vector2(779, -161)
+position = Vector2(779, -102)
 zone = "arriba_derecha"
 probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
@@ -391,7 +392,6 @@ autostart = true
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_sexjv")
 volume_db = -10.392
-autoplay = true
 bus = &"Musica"
 
 [node name="Timer" type="Timer" parent="."]
@@ -446,12 +446,18 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Borde superior"]
-position = Vector2(-274, 934)
+position = Vector2(-274, 924)
 shape = SubResource("SegmentShape2D_y0nil")
 
 [node name="TimerCommand" type="Timer" parent="."]
 wait_time = 4.057
 autostart = true
+
+[node name="Edificios" type="Node" parent="."]
+
+[node name="Cabildo" type="Sprite2D" parent="Edificios"]
+position = Vector2(42, -370)
+texture = ExtResource("3_dv022")
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

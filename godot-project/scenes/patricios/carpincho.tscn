@@ -221,6 +221,8 @@ radius = 115.07
 
 [node name="Carpincho" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_df1n8")
 
 [node name="ComLabel" type="Label" parent="."]

@@ -100,7 +100,7 @@ var strategy = [
 		{
 			"max_time": 240,
 			"max_alive": 60,
-			"name": "Todos al ataque",
+			"name": "El ataque feroz",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 40},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 40},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 40},
@@ -124,7 +124,7 @@ var strategy = [
 		{
 			"max_time": 300,
 			"max_alive": 20,
-			"name": "¡Aun hay más!",
+			"name": "La estampida mortal",
 			"izquierda_inferior": {"unit_type": "highlander", "seconds": 3, "probability": 70},
 			"izquierda_superior": {"unit_type": "ingles", "seconds": 3, "probability": 40},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 4, "probability": 95},
@@ -136,7 +136,7 @@ var strategy = [
 		{
 			"max_time": 540,
 			"max_alive": 100,
-			"name": "El infierno desatado",
+			"name": "La última ola",
 			"izquierda_inferior": {"unit_type": "ingles", "seconds": 1.5, "probability": 40},
 			"izquierda_superior": {"unit_type": "highlander", "seconds": 2, "probability": 30},
 			"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 40},
