@@ -59,6 +59,7 @@ text = "Comenzar"
 layout_mode = 2
 theme = ExtResource("2_box0m")
 theme_override_font_sizes/font_size = 20
+disabled = true
 text = "Mejoras"
 
 [node name="Opciones" type="Button" parent="Control/MarginContainer/VBoxContainer"]
@@ -69,6 +70,7 @@ text = "Opciones"
 [node name="Creditos" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
+disabled = true
 text = "Creditos"
 
 [node name="Salir" type="Button" parent="Control/MarginContainer/VBoxContainer"]
