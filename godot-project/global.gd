@@ -94,7 +94,7 @@ var settings = {
 					"duration": 0.3,
 					"explotion": {
 						"duration": 0.75,
-						"scale": 30,
+						"scale": 15,
 						"particle": "escopetazo"
 					}
 				},
