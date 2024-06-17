@@ -1,29 +1,36 @@
 extends CanvasLayer
 
 
+@onready var time_control = $MarginContainer/HBoxContainer2/Time
+@onready var level_control = $MarginContainer/HBoxContainer/IndicadorNivel
+@onready var level_progress_control = $MarginContainer/HBoxContainer3/LevelProgress
+@onready var life_progress = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer4/LifeProgressBar
+@onready var plaza_progress = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer5/PlazaProgressBar
+
+
 func change_time(iSecondsTotal):
 	var iMinutes = iSecondsTotal / 60
 	var iSeconds = iSecondsTotal % 60
-	$MarginContainer/HBoxContainer2/Time.text = str(iMinutes).lpad(2, "0") + ":" + str(iSeconds).lpad(2, "0")
+	time_control.text = str(iMinutes).lpad(2, "0") + ":" + str(iSeconds).lpad(2, "0")
 	
 func change_level(iLevel):
-	$MarginContainer/HBoxContainer/IndicadorNivel.text = str(iLevel)
+	level_control.text = str(iLevel)
 	
 func change_level_progress(iCount, iTotal):
-	$MarginContainer/HBoxContainer3/LevelProgress.text = str(iCount) + " / " + str(iTotal)
+	level_progress_control.text = str(iCount) + " / " + str(iTotal)
 	
 func change_life_indicator(value, max_value, invincible):
-	$MarginContainer/HBoxContainer4/LifeProgressBar.value = value
-	$MarginContainer/HBoxContainer4/LifeProgressBar.max_value = max_value
+	life_progress.value = value
+	life_progress.max_value = max_value
 	
 	if invincible:
-		$MarginContainer/HBoxContainer4/LifeProgressBar.modulate = Color('#b7b700')
+		life_progress.modulate = Color('#b7b700')
 	else:
-		$MarginContainer/HBoxContainer4/LifeProgressBar.modulate = Color('#00b760')
+		life_progress.modulate = Color('#00b760')
 	
 func change_plaza_indicator(value, max_value):
-	$MarginContainer/HBoxContainer5/PlazaProgressBar.value = value
-	$MarginContainer/HBoxContainer5/PlazaProgressBar.max_value = max_value
+	plaza_progress.value = value
+	plaza_progress.max_value = max_value
 	
 
 func change(TheGameStats):
