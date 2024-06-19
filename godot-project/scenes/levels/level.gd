@@ -143,7 +143,7 @@ func calculate_stats():
 	TheGameStats.patricios = get_tree().get_nodes_in_group("faccion_patricios").size()
 	
 	# Revision de nivel
-	if TheGameStats.level != last_level:
+	if TheGameStats.level != last_level and not $General.barrilete_cosmico:
 		$ChangeLevel.play()
 		last_level = TheGameStats.level
 		
