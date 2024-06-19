@@ -3,6 +3,7 @@ class_name GameStats
 @export var experience = 0
 @export var level = 0
 @export var experience_next_level = 0
+@export var experience_prev_level = 0
 @export var life = 0
 @export var max_life = 0
 @export var plaza = 0
@@ -17,6 +18,7 @@ class_name GameStats
 func _ready():
 	level = 0
 	experience = experience_to_level(0)
+	experience_prev_level = experience_to_level(0)
 	experience_next_level = experience_to_level(1)
 	pass # Replace with function body.
 
@@ -26,6 +28,7 @@ func get_level():
 func set_level(level_value):
 	level = level_value
 	experience = experience_to_level(level)
+	experience_prev_level = experience_to_level(level)
 	experience_next_level = experience_to_level(level + 1)
 	
 func experience_to_level(level_param):
@@ -43,6 +46,7 @@ func add_experience(experience_gain):
 	calculate_level_growth()
 
 func calculate_level_growth():
-	if experience > experience_to_level(level+1):
+	if experience >= experience_to_level(level+1):
 		level +=1
+		experience_prev_level = experience_to_level(level)
 		experience_next_level = experience_to_level(level + 1)
