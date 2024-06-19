@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_lkn3k"]
 [ext_resource type="Texture2D" uid="uid://51vme1xju2nx" path="res://assets/original/backgrounds/Flag-United-Kingdom-pixeled.webp" id="2_7kyfl"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_pfgda"]
-[ext_resource type="AudioStream" uid="uid://ogugkou7rhiq" path="res://assets/created/musica/Chacarera de las Trenzas - piano.mp3" id="4_u3p5w"]
+[ext_resource type="AudioStream" uid="uid://cjqwptvlo1ktt" path="res://assets/created/musica/Chacarera de las Trenzas 0.4 PIANO LENTO.mp3" id="4_67jdo"]
 
 [node name="Gameover" type="Node"]
 script = ExtResource("1_lkn3k")
@@ -64,7 +64,7 @@ theme = ExtResource("2_pfgda")
 text = "Menu principal"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_u3p5w")
+stream = ExtResource("4_67jdo")
 autoplay = true
 bus = &"Musica"
 
