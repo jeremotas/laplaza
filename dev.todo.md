@@ -6,14 +6,15 @@
 8. Terminar HUD 
 5. WASD 
 1. Botones en menues con joystick 
+6. Implementar VERDE
+10. Revisar como aplica arrancar adelantado.
+9. Rareza de cartas
 
 ## Todo
 3. Cantidad de vidas.
-6. Implementar VERDE
-10. Revisar como aplica arrancar adelantado.
 4. Siendo el Diego y los Husares infernales.
 7. Implementar mejoras
-9. Rareza de cartas
+
 11. Carpinchos recuperan vida?
 12. Gente cerca de la plaza con CAMPANA
 

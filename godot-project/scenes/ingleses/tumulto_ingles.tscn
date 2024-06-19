@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [node name="TumultoIngles" type="Node2D"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.193154, 0.193154, 0.193154, 1)
 script = ExtResource("1_4cvg6")
 
 [node name="Ingles" type="AnimatedSprite2D" parent="."]

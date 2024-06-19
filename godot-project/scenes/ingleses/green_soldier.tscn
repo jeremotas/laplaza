@@ -460,6 +460,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0, 0.917647, 0.27451, 1)
 
 [node name="GreenSoldier" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 6
 script = ExtResource("1_kc348")
 
 [node name="ComLabel" type="Label" parent="."]
@@ -484,6 +486,7 @@ position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_rrf3s")
 animation = &"idle"
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -7,7 +7,7 @@ var lagrima = preload("res://scenes/common/lagrima.tscn")
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
-	unit_type = "ingles"
+	unit_type = "green_soldier"
 	
 	max_speed = Global.settings.ingleses.green_soldier.max_speed
 	life = Global.settings.ingleses.green_soldier.life
