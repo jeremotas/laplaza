@@ -23,7 +23,7 @@ var original_zoom = Vector2()
 var iStrategyCall = 0
 var command = ""
 var spawn_zones = []
-var last_strategy = "-"
+var last_strategy = "-" # Toma este valor inicial para que cuando hacemos las pruebas no se rompa en caso de empezar en un descanso.
 var ActualTimeScale
 var highscore = 0
 
