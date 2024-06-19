@@ -23,7 +23,7 @@ var original_zoom = Vector2()
 var iStrategyCall = 0
 var command = ""
 var spawn_zones = []
-var last_strategy = ""
+var last_strategy = "-"
 var ActualTimeScale
 var highscore = 0
 
@@ -51,6 +51,7 @@ func _ready():
 	
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
+	
 	Engine.time_scale = 1
 	
 	
@@ -78,7 +79,14 @@ func prepare_initial_conditions():
 					malon[index].quantity = iCant
 		if "time" in Global.settings.game.initial_conditions: iSecondsPassed = Global.settings.game.initial_conditions.time
 	#print(JSON.stringify(malon))	
-		
+	consume_enemy_strategies()
+	
+func consume_enemy_strategies():
+	if enemy_strategy.size() > 0:	
+		var strategy = enemy_strategy[0]
+		while strategy.max_time < iSecondsPassed + 1:
+			enemy_strategy.pop_front()
+			strategy = enemy_strategy[0]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -297,6 +305,7 @@ func prepare_enemy_spawns():
 	if enemy_strategy.size() > 0:
 		
 		var strategy = enemy_strategy[0]
+		
 		if strategy.max_time < iSecondsPassed + 1:
 			enemy_strategy.pop_front()
 			if enemy_strategy.size() > 0:
@@ -321,7 +330,7 @@ func _on_timer_timeout():
 	print("Ingleses en juego: ", get_tree().get_nodes_in_group("faccion_ingleses").size())
 	iSecondsPassed += 1
 	HUD.change_time(max(Global.settings.game.player_goal - iSecondsPassed, 0))
-	if iSecondsPassed == 1:
+	if iSecondsPassed - Global.settings.game.initial_conditions.time == 1:
 		prepare_enemy_spawns()
 		
 	if iSecondsPassed == 120:
