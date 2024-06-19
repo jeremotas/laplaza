@@ -9,15 +9,15 @@ const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 func _init():
 	unit_type = "ingles"
 	
-	max_speed = Global.settings.ingleses.soldado.max_speed
-	life = Global.settings.ingleses.soldado.life
-	min_damage_given = Global.settings.ingleses.soldado.attack.min_damage_given
-	max_damage_given = Global.settings.ingleses.soldado.attack.max_damage_given
-	experience_given = Global.settings.ingleses.soldado.experience_given
-	bullet_speed = Global.settings.ingleses.soldado.attack.bullet.speed
-	bullet_lifetime = Global.settings.ingleses.soldado.attack.bullet.duration
-	coolDownAttackTime = Global.settings.ingleses.soldado.attack.cooldown
-	iAttackProbability = Global.settings.ingleses.soldado.attack.probability
+	max_speed = Global.settings.ingleses.green_soldier.max_speed
+	life = Global.settings.ingleses.green_soldier.life
+	min_damage_given = Global.settings.ingleses.green_soldier.attack.min_damage_given
+	max_damage_given = Global.settings.ingleses.green_soldier.attack.max_damage_given
+	experience_given = Global.settings.ingleses.green_soldier.experience_given
+	bullet_speed = Global.settings.ingleses.green_soldier.attack.bullet.speed
+	bullet_lifetime = Global.settings.ingleses.green_soldier.attack.bullet.duration
+	coolDownAttackTime = Global.settings.ingleses.green_soldier.attack.cooldown
+	iAttackProbability = Global.settings.ingleses.green_soldier.attack.probability
 	drop_reward = true
 	init()
 	
@@ -32,6 +32,8 @@ func _process(delta):
 func drop_the_reward(experience_given_value):
 	drop_reward = false
 	var l = lagrima.instantiate()
+	l.modulate = Color(1,1,0,1)
+	l.scale = Vector2(1.5,1.5)
 	l.experience_given = experience_given_value
 	l.global_position = global_position
 	get_parent().add_child(l)

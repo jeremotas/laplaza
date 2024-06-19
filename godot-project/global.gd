@@ -160,6 +160,21 @@ var settings = {
 				"min_damage_given": 4,
 				"max_damage_given": 4
 			}
+		},
+		"green_soldier": {
+			"life": 5,
+			"max_speed": 30,
+			"experience_given": 8,
+			"attack":{
+				"bullet": {
+					"speed": 50,
+					"duration": 1,
+				},
+				"cooldown": 1,
+				"probability": 80,
+				"min_damage_given": 1,
+				"max_damage_given": 1
+			}
 		}
 	}
 }

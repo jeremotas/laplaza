@@ -14,7 +14,7 @@ func _ready():
 	$Moreno.add_to_faction('patricios')
 	$Moreno.max_speed = 0
 	
-	$General.init_barrilete_cosmico()
+	#$General.init_barrilete_cosmico()
 	
 	pass # Replace with function body.
 
