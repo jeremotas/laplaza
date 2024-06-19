@@ -21,6 +21,15 @@ var settings = {
 			},
 			"level": 0,
 			"time": 0
+		},
+		"cards": {
+			"granadero": 1,
+			"moreno": 1,
+			"arribeno": 1,
+			"correntino": 1,
+			"husares_infernales": 1,
+			"matecito": 1,
+			"barrilete_cosmico": 1
 		}
 	},
 	"patricios": {

@@ -20,26 +20,33 @@ func prepare_buttons(_experience):
 	$MarginContainer/HBoxContainer/HusaresInfernalesButtonCard.visible = false
 	$MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard.visible = false
 	
-	# Elijo 3 botones al azar
-	var aButtonsUnidades = [
-		$MarginContainer/HBoxContainer/GranaderoButtonCard,
-		$MarginContainer/HBoxContainer/MorenoButtonCard,
-		$MarginContainer/HBoxContainer/CorrentinoButtonCard,
-		$MarginContainer/HBoxContainer/ArribenoButtonCard
-	]
-	var aButtonsEfectos = [
-		$MarginContainer/HBoxContainer/MoreLifeButtonCard,
-		$MarginContainer/HBoxContainer/HusaresInfernalesButtonCard,
-		$MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard
-	]
+	# Preparo arreglo con distribucion (unidades y efectos)
+	# "granadero", "correntino", "moreno", "arribeno"
+	# "upgrade_life", "barrilete_cosmico", "ataque_husares_infernales"
+	var aButtonsUnidades = []
+	for i in range(Global.settings.game.cards.granadero): aButtonsUnidades.push_back($MarginContainer/HBoxContainer/GranaderoButtonCard)
+	for i in range(Global.settings.game.cards.correntino): aButtonsUnidades.push_back($MarginContainer/HBoxContainer/CorrentinoButtonCard)
+	for i in range(Global.settings.game.cards.moreno): aButtonsUnidades.push_back($MarginContainer/HBoxContainer/MorenoButtonCard)
+	for i in range(Global.settings.game.cards.arribeno): aButtonsUnidades.push_back($MarginContainer/HBoxContainer/ArribenoButtonCard)
+	
+	var aButtonsEfectos = []
+	for i in range(Global.settings.game.cards.matecito): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/MoreLifeButtonCard)
+	for i in range(Global.settings.game.cards.husares_infernales): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/HusaresInfernalesButtonCard)
+	for i in range(Global.settings.game.cards.barrilete_cosmico): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard)
 	
 	aButtonsUnidades.shuffle()
 	aButtonsEfectos.shuffle()
-	aButtonsUnidades[0].visible = true
-	aButtonsUnidades[1].visible = true
+	var oCard1 = aButtonsUnidades[0]
+	oCard1.visible = true
+	var aNewButtons = []
+	for i in range (aButtonsUnidades.size()):
+		if aButtonsUnidades[i] != oCard1:
+			aNewButtons.push_back(aButtonsUnidades[i])
+
+	aNewButtons[0].visible = true
 	aButtonsEfectos[0].visible = true
-	aButtonsUnidades[0].grab_focus.call_deferred()
 	
+	oCard1.grab_focus.call_deferred()
 	pass
 
 
@@ -58,19 +65,6 @@ func prepare_buttons(_experience):
 func _on_visibility_changed():
 	if visible:
 		$MarginContainer/HBoxContainer/GranaderoButtonCard.grab_focus()
-
-
-#func _on_moreno_button_pressed():
-#	get_parent().decision_time_end("moreno")
-
-
-#func _on_husares_infernales_button_pressed():
-#	get_parent().decision_time_end("ataque_husares_infernales")
-
-
-#func _on_barrilete_cosmico_button_pressed():
-#	get_parent().decision_time_end("barrilete_cosmico")	
-
 
 func _on_granadero_button_card_pressed():
 	get_parent().decision_time_end("granadero")
