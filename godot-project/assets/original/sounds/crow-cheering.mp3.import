@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/crow-cheering.mp3-16738e6ee9d259365fbe7b675a5
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0
