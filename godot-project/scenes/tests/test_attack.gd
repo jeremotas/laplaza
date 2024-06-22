@@ -8,11 +8,11 @@ func _ready():
 	#$General.init_barrilete_cosmico()
 	$Arribeno.assign_goal($General)
 	$Arribeno.add_to_faction('patricios')
-	$Arribeno.max_speed = 0
+	#$Arribeno.max_speed = 0
 	
 	$Moreno.assign_goal($General)
 	$Moreno.add_to_faction('patricios')
-	$Moreno.max_speed = 0
+	#$Moreno.max_speed = 0
 	
 	#$General.init_barrilete_cosmico()
 	

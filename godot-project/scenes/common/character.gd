@@ -19,6 +19,8 @@ class_name Character
 @export var last_input = Vector2.ZERO
 @export var flipped = false
 @export var iAttackProbability = 100
+@export var gunsound_type = 'mosquete'
+
 var barrilete_cosmico = false
 var last_general_direction = Vector2.ZERO
 var drop_reward  = false
@@ -68,6 +70,16 @@ var aGunshotsSounds = [
 	preload("res://assets/original/sounds/mosquetes/gunshot17.mp3"),
 	preload("res://assets/original/sounds/mosquetes/gunshot18.mp3"),
 	preload("res://assets/original/sounds/mosquetes/gunshot19.mp3")
+]
+
+
+var aEscopetaSounds = [
+	preload("res://assets/original/sounds/escopeta/escopeta_01.mp3"),
+	preload("res://assets/original/sounds/escopeta/escopeta_02.mp3"),
+	preload("res://assets/original/sounds/escopeta/escopeta_03.mp3"),
+	preload("res://assets/original/sounds/escopeta/escopeta_04.mp3"),
+	preload("res://assets/original/sounds/escopeta/escopeta_05.mp3"),
+	preload("res://assets/original/sounds/escopeta/escopeta_06.mp3")
 ]
 	
 		
@@ -344,8 +356,12 @@ func set_last_general_direction(oDirection):
 	last_general_direction = oDirection
 	
 func attack_sound(stream):
-	var iGunshotKey = rng.randi_range(0, 18)
-	stream = aGunshotsSounds[iGunshotKey]
+	var aGunSounds = aGunshotsSounds
+	if gunsound_type == "escopeta": 
+		aGunSounds = aEscopetaSounds
+	var iGunshotKey = rng.randi_range(0, aGunSounds.size()-1)
+	stream = aGunSounds[iGunshotKey]
+	
 	var SoundPlayer = AudioStreamPlayer2D.new()
 	self.add_child(SoundPlayer)
 	SoundPlayer.stream = stream

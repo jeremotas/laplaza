@@ -46,7 +46,7 @@ func attack():
 			b.set_color(Color(1, 1, 1, 0.2))
 			get_parent().add_child(b)
 			
-			#attack_sound(GUNSHOT)
+			attack_sound(GUNSHOT)
 		#$WeaponSound.play()
 		
 		attack_objective = null
