@@ -39,7 +39,7 @@ var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husar
 var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.tscn")
 
 func _ready():
-	get_viewport().set_physics_object_picking_sort(true) # 
+	#get_viewport().set_physics_object_picking_sort(true) # 
 	$BackgroundMusic.play(152.0)
 	$UnitSpawner.set_goal($General) # Todas las unidades patricias siguen al general.
 	TheGameStats = GameStats.new() # Reiniciamos las estadisticas
@@ -71,6 +71,7 @@ func prepare_initial_conditions():
 		if "life" in Global.settings.game.initial_conditions: $General.life = Global.settings.game.initial_conditions.life
 		if "level" in Global.settings.game.initial_conditions: TheGameStats.set_level(Global.settings.game.initial_conditions.level)
 		
+		
 		if "malon" in Global.settings.game.initial_conditions: 
 			for index in range(malon.size()):
 				var subgroup = malon[index]
@@ -99,6 +100,9 @@ func _process(delta):
 		process_pause() # Revisamos si hubo pausa
 	if command == "d10s":
 		barrilete_cosmico()
+		command = ""
+	elif command == "roger":
+		$General.activate_agua_hirviendo_level_up()
 		command = ""
 	elif command == "iddqd" and not $General.barrilete_cosmico:
 		$General.invincible = not $General.invincible

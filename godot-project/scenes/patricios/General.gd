@@ -5,6 +5,8 @@ extends Character
 var bullet = preload("res://scenes/common/bullet.tscn")
 #var barrilete_cosmico = false
 var barrileteTimer = null
+@export var agua_hirviendo_power = 0
+
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
@@ -17,6 +19,7 @@ func _init():
 	bullet_lifetime = Global.settings.patricios.general.attack.bullet.duration
 	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
 	invincible = false
+	agua_hirviendo_power = 0
 	init()
 	
 func _process(delta):
@@ -28,6 +31,8 @@ func _process(delta):
 func invincible_effect():
 	$InvincibleEffect.visible = invincible
 	
+func activate_agua_hirviendo_level_up():
+	agua_hirviendo_power += 1
 
 func last_direction_message():
 	get_tree().call_group("faccion_patricios", "set_last_general_direction", last_input)
@@ -134,3 +139,27 @@ func _on_barrilete_cosmico_body_entered(body):
 	if body and ("faction" in body) and body.faction == 'ingleses' and body.life > 0 and not body.invincible:
 		if body.has_method("TakeDamage"):
 			body.TakeDamage(10000, 10000)
+
+
+func _on_agua_hirviendo_timer_timeout():
+	if agua_hirviendo_power > 0:
+		var b = bullet.instantiate()
+		b.global_position = $WeaponPoint.global_position
+		var yRandom = rng.randi_range(0,1)
+		var xRandom = rng.randi_range(0,1)
+		if yRandom == 0: yRandom = -1
+		if xRandom == 0: xRandom = -1
+		b.global_position.y = b.global_position.y + 240 * yRandom
+		b.global_position.x = b.global_position.x + 300 * xRandom
+		
+		b.direction = b.global_position.direction_to($WeaponPoint.global_position + last_input * 150)
+		b.objective_faction = 'ingleses'
+		b.min_damage = Global.settings.patricios.general.agua_hirviendo.min_damage_given
+		b.max_damage = Global.settings.patricios.general.agua_hirviendo.max_damage_given
+		b.speed = Global.settings.patricios.general.agua_hirviendo.bullet.speed
+		b.bullet_lifetime = Global.settings.patricios.general.agua_hirviendo.bullet.duration
+		b.prepare_explotion(2, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.duration, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.scale, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.particle, false)
+		b.set_collision_mask(2)
+		b.set_sprite("res://assets/created/ollami_32.png", 0.99)
+		b.set_color(Color(1, 1, 1))
+		get_parent().add_child(b)

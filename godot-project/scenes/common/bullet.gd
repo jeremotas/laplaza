@@ -11,12 +11,14 @@ var sound = ""
 var is_playing = false
 var bulletTimer = null
 var explotionTimer = null
+var bullet_scale_factor = 1
 @export var one_hit = true
 @export var explodes = false
 @export var explotion_layer = 0
 @export var explotion_lifetime = 2
 @export var explotion_scale_radius = 10
 @export var explotion_particle = ""
+@export var explotion_sound = true
 
 var aExplosionSounds = [
 	preload("res://assets/original/sounds/granadas/granada_01.mp3"),
@@ -34,21 +36,28 @@ func _ready():
 func prepare():
 	pass
 	
-func prepare_explotion(layer, lifetime, scale_radius, particle):
+func prepare_explotion(layer, lifetime, scale_radius, particle, sound = true):
 	explodes = true
 	one_hit = false
 	explotion_layer = layer
 	explotion_lifetime = lifetime
 	explotion_scale_radius = scale_radius
 	explotion_particle = particle
+	explotion_sound = sound
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	translate(direction * speed * delta)
+	if $visual_bullet and bullet_scale_factor != 1:
+		$visual_bullet.scale = $visual_bullet.scale * bullet_scale_factor
 		
 func set_color(TheColor):
 	$visual_bullet.modulate = TheColor
 	pass
+
+func set_sprite(sSprite, fScaleFactor = 1):
+	$visual_bullet.texture = load(sSprite)
+	bullet_scale_factor = fScaleFactor
 
 func _on_visible_on_screen_enabler_2d_screen_exited():
 	#stopped()
@@ -97,7 +106,8 @@ func create_explotion():
 		if explotion_particle == "explosion":
 			$explosion.visible = true
 			$explosion.scale = Vector2(2,2)
-			create_sound_explotion()
+			if explotion_sound:
+				create_sound_explotion()
 		if explotion_particle == "boleadora":
 			$boleadora.visible = true
 			$boleadora.emitting = true

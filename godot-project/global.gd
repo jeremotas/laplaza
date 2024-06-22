@@ -45,6 +45,19 @@ var settings = {
 				"min_damage_given": 1,
 				"max_damage_given": 1
 			},
+			"agua_hirviendo": {
+				"min_damage_given": 100000,
+				"max_damage_given": 100000,
+				"bullet": {
+					"speed":200,
+					"duration": 1.5,
+					"explotion": {
+						"duration": 1,
+						"scale": 30,
+						"particle": "explosion"
+					}
+				}
+			},
 			"barrilete_cosmico": {
 				"life": 20000000,
 				"min_damage_given": 100000,

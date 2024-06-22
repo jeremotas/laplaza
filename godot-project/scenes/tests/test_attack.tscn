@@ -12,6 +12,7 @@ script = ExtResource("1_4fgik")
 
 [node name="General" parent="." instance=ExtResource("2_40ing")]
 position = Vector2(129, 127)
+agua_hirviendo_power = 1
 
 [node name="Arribeno" parent="." instance=ExtResource("4_jspqt")]
 position = Vector2(-31, 38)
