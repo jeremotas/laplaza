@@ -13,7 +13,7 @@ func startAttack(positionInit, positionEnd):
 	create_order($HusarInfernal3, positionEnd, 2)
 	create_order($HusarInfernal4, positionEnd, 3)
 	create_order($HusarInfernal5, positionEnd, 4)
-	create_order($HusarInfernal6,positionEnd, 5)
+	create_order($HusarInfernal6, positionEnd, 5)
 	create_order($HusarInfernal7, positionEnd, 6)
 
 func create_order(oHusar, endPositionParam, seektime):
@@ -25,5 +25,5 @@ func create_order(oHusar, endPositionParam, seektime):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if  $HusarInfernal == null and $HusarInfernal2 == null and $HusarInfernal3 == null and $HusarInfernal4 == null and $HusarInfernal5 == null and $HusarInfernal6 == null and $HusarInfernal7 == null:
+	if $HusarInfernal == null and $HusarInfernal2 == null and $HusarInfernal3 == null and $HusarInfernal4 == null and $HusarInfernal5 == null and $HusarInfernal6 == null and $HusarInfernal7 == null:
 		queue_free()
