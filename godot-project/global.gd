@@ -20,15 +20,15 @@ var settings = {
 				"arribeno": 0,
 			},
 			"level": 0,
-			"time": 0
+			"time": 0,
 		},
 		"cards": {
 			"granadero": 1,
 			"moreno": 1,
 			"arribeno": 1,
 			"correntino": 1,
-			"husares_infernales": 1,
-			"matecito": 1,
+			"husares_infernales": 2,
+			"matecito": 10,
 			"barrilete_cosmico": 1
 		}
 	},
@@ -155,8 +155,8 @@ var settings = {
 	"ingleses": {
 		"soldado": {
 			"life": 1,
-			"max_speed": 15,
-			"experience_given": 2,
+			"max_speed": 20,
+			"experience_given": 1,
 			"attack":{
 				"bullet": {
 					"speed": 100,
@@ -170,8 +170,8 @@ var settings = {
 		},
 		"highlander": {
 			"life": 5,
-			"max_speed": 8,
-			"experience_given": 8,
+			"max_speed": 12,
+			"experience_given": 4,
 			"attack":{
 				"bullet": {
 					"speed": 50,
@@ -185,8 +185,8 @@ var settings = {
 		},
 		"green_soldier": {
 			"life": 5,
-			"max_speed": 30,
-			"experience_given": 8,
+			"max_speed": 40,
+			"experience_given": 4,
 			"attack":{
 				"bullet": {
 					"speed": 50,
