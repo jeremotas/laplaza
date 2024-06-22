@@ -18,6 +18,12 @@ var explotionTimer = null
 @export var explotion_scale_radius = 10
 @export var explotion_particle = ""
 
+var aExplosionSounds = [
+	preload("res://assets/original/sounds/granadas/granada_01.mp3"),
+	preload("res://assets/original/sounds/granadas/granada_02.mp3"),
+	preload("res://assets/original/sounds/granadas/granada_03.mp3")
+]
+
 
 
 
@@ -87,9 +93,11 @@ func create_explotion():
 		explotionTimer.one_shot = true
 		explotionTimer.timeout.connect(try_destroy)
 		explotionTimer.start()
+		
 		if explotion_particle == "explosion":
 			$explosion.visible = true
 			$explosion.scale = Vector2(2,2)
+			create_sound_explotion()
 		if explotion_particle == "boleadora":
 			$boleadora.visible = true
 			$boleadora.emitting = true
@@ -101,6 +109,17 @@ func create_explotion():
 			#$boleadora.scale = Vector2(2,2)
 	
 	pass
+	
+func create_sound_explotion():
+	var rng = RandomNumberGenerator.new()
+	var iGunshotKey = rng.randi_range(0, aExplosionSounds.size()-1)
+	var stream = aExplosionSounds[iGunshotKey]
+	var SoundPlayer = AudioStreamPlayer2D.new()
+	self.add_child(SoundPlayer)
+	SoundPlayer.stream = stream
+	SoundPlayer.bus = &"Efectos"
+	SoundPlayer.connect("finished", SoundPlayer.queue_free)
+	SoundPlayer.play()
 
 func _on_visible_on_screen_enabler_2d_screen_entered():
 	# tiempo que esta la bala o proyectil antes de desaparecer

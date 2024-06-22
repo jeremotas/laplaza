@@ -466,6 +466,7 @@ radius = 152.03
 slide_on_ceiling = false
 floor_snap_length = 0.0
 script = ExtResource("1_ic4tm")
+gunsound_type = "escopeta"
 
 [node name="LifeLabel" type="Label" parent="."]
 offset_right = 40.0
