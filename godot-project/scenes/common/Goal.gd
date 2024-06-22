@@ -19,6 +19,16 @@ func completed():
 	return UnitsArrived >= NeededUnits
 
 func _on_area_body_entered(body):
-	if body.faction == faction and NeededUnits > UnitsArrived:
+	if "faction" in body and body.faction == faction and NeededUnits > UnitsArrived:
 		UnitsArrived += 1
 		body.destroy_character()
+
+
+func _on_area_2d_body_entered(body):
+	body.original_z_index = body.z_index
+	body.z_index = 12
+	
+
+
+func _on_area_2d_body_exited(body):
+	body.z_index = body.original_z_index

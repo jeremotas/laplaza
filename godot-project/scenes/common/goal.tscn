@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdhmiefax7gyv"]
+[gd_scene load_steps=7 format=3 uid="uid://bdhmiefax7gyv"]
 
 [ext_resource type="Script" path="res://scenes/common/Goal.gd" id="1_4ypff"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_p2urd"]
+[ext_resource type="Texture2D" uid="uid://dj8uwfx6rhayk" path="res://assets/created/mastiloutline.png" id="3_fhbaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x5fn"]
 size = Vector2(72, 61)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fsywk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dom6c"]
+size = Vector2(157, 79)
 
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_4ypff")
@@ -24,9 +28,9 @@ shape = SubResource("RectangleShape2D_5x5fn")
 [node name="Status" type="Label" parent="."]
 z_index = 2
 offset_left = -20.0
-offset_top = 18.0
+offset_top = 23.0
 offset_right = 20.0
-offset_bottom = 41.0
+offset_bottom = 54.0
 theme = ExtResource("2_p2urd")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
@@ -38,4 +42,19 @@ offset_right = 37.0
 offset_bottom = 31.0
 texture = SubResource("CanvasTexture_fsywk")
 
+[node name="AreaMastil" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 15
+
+[node name="Position" type="CollisionShape2D" parent="AreaMastil"]
+position = Vector2(3, 52)
+shape = SubResource("RectangleShape2D_dom6c")
+
+[node name="MastilSprite" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(16, -19)
+texture = ExtResource("3_fhbaq")
+
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_entered" from="AreaMastil" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AreaMastil" to="." method="_on_area_2d_body_exited"]

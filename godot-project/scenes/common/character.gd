@@ -22,6 +22,7 @@ class_name Character
 var barrilete_cosmico = false
 var last_general_direction = Vector2.ZERO
 var drop_reward  = false
+var original_z_index = 0
 
 var oGoalAssigned = null
 
