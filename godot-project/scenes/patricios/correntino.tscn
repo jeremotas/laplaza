@@ -50,8 +50,9 @@ func attack():
 		b.max_damage = max_damage_given
 		b.bullet_lifetime = bullet_lifetime
 		b.speed = bullet_speed
+		b.one_hit = false
 		b.set_collision_mask(2)
-		b.set_color(Color(1, 1, 1))
+		b.set_color(Color(1, 0.2, 1))
 		get_parent().add_child(b)
 		
 		attack_sound(GUNSHOT)
@@ -560,7 +561,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 1
+frame = 3
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
