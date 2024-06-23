@@ -31,6 +31,24 @@ var settings = {
 			"matecito": 10,
 			"barrilete_cosmico": 1,
 			"ollas_del_pueblo": 1
+		},
+		"mejoras": {
+			"granadero": {
+				"valor": 4000,
+				"maxima_cantidad": 3
+			},
+			"correntino": {
+				"valor": 5000,
+				"maxima_cantidad": 3
+			},
+			"moreno": {
+				"valor": 10000,
+				"maxima_cantidad": 3
+			},
+			"arribeno": {
+				"valor": 2000,
+				"maxima_cantidad": 3
+			}
 		}
 	},
 	"patricios": {

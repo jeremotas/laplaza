@@ -70,8 +70,7 @@ func prepare_initial_conditions():
 		if "units_arrived" in Global.settings.game.initial_conditions: $EnemyGoal.UnitsArrived = Global.settings.game.initial_conditions.units_arrived
 		if "life" in Global.settings.game.initial_conditions: $General.life = Global.settings.game.initial_conditions.life
 		if "level" in Global.settings.game.initial_conditions: TheGameStats.set_level(Global.settings.game.initial_conditions.level)
-		
-		
+			
 		if "malon" in Global.settings.game.initial_conditions: 
 			for index in range(malon.size()):
 				var subgroup = malon[index]
@@ -79,6 +78,12 @@ func prepare_initial_conditions():
 					var iCant = Global.settings.game.initial_conditions.malon.get(subgroup.unit_type)
 					malon[index].quantity = iCant
 		if "time" in Global.settings.game.initial_conditions: iSecondsPassed = Global.settings.game.initial_conditions.time
+		
+		if Global.save_data.mejoras.arribenos > 0: malon[3].quantity += Global.save_data.mejoras.arribenos
+		if Global.save_data.mejoras.correntinos > 0: malon[0].quantity += Global.save_data.mejoras.correntinos
+		if Global.save_data.mejoras.granaderos > 0: malon[1].quantity += Global.save_data.mejoras.granaderos
+		if Global.save_data.mejoras.morenos > 0: malon[2].quantity += Global.save_data.mejoras.morenos
+			
 	#print(JSON.stringify(malon))	
 	consume_enemy_strategies()
 	

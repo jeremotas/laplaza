@@ -32,3 +32,7 @@ func _on_salir_pressed():
 
 func _on_opciones_pressed():
 	get_tree().change_scene_to_file("res://scenes/controls/opciones.tscn")
+
+
+func _on_mejoras_pressed():
+	get_tree().change_scene_to_file("res://scenes/controls/mejoras.tscn")

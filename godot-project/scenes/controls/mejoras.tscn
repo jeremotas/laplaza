@@ -1,0 +1,207 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxafnr67768aq"]
+
+[ext_resource type="Script" path="res://scenes/controls/mejoras.gd" id="1_ukoyr"]
+[ext_resource type="Texture2D" uid="uid://bypr8gwc62kys" path="res://assets/created/images/lafuria_opciones.png" id="2_knba5"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_3fudx"]
+[ext_resource type="Texture2D" uid="uid://bdsq3d4gp8hmk" path="res://assets/created/patricio_idle.png" id="3_skt3c"]
+[ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="4_341yq"]
+[ext_resource type="Texture2D" uid="uid://43gisgq1pdeu" path="res://assets/created/correntino_idle.png" id="5_kxqpi"]
+[ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="5_ulq4h"]
+[ext_resource type="Texture2D" uid="uid://bcejdeyfvpck8" path="res://assets/created/card_moreno.png" id="6_lv6ow"]
+[ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="6_or8fn"]
+[ext_resource type="Texture2D" uid="uid://vic1yusywd0r" path="res://assets/created/arribeno.png" id="7_4adcf"]
+
+[node name="Mejoras" type="CanvasLayer"]
+script = ExtResource("1_ukoyr")
+
+[node name="Fondo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.231373)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_knba5")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_right = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+theme_override_font_sizes/font_size = 32
+text = "Mejoras"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Lagrimas" type="TextureRect" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_341yq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SaldoLagrimas" type="Label" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "0"
+
+[node name="Mejoras" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+
+[node name="GranaderoEtiqueta" type="Label" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "Patricios"
+
+[node name="GranaderoSprite" type="TextureRect" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+texture = ExtResource("3_skt3c")
+
+[node name="GranaderoCantidad" type="SpinBox" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+max_value = 0.0
+update_on_text_changed = true
+select_all_on_focus = true
+
+[node name="GranaderoLagrima" type="TextureRect" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+texture = ExtResource("4_341yq")
+stretch_mode = 3
+
+[node name="GranaderoValor" type="Label" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "0"
+
+[node name="CorrentinoEtiqueta" type="Label" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "Correntinos"
+
+[node name="CorrentinoSprite" type="TextureRect" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+texture = ExtResource("5_kxqpi")
+
+[node name="CorrentinoCantidad" type="SpinBox" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+max_value = 0.0
+update_on_text_changed = true
+
+[node name="CorrentinoLagrima" type="TextureRect" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+texture = ExtResource("4_341yq")
+stretch_mode = 3
+
+[node name="CorrentinoValor" type="Label" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "0"
+
+[node name="MorenoEtiqueta" type="Label" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "Morenos"
+
+[node name="MorenoSprite" type="TextureRect" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+texture = ExtResource("6_lv6ow")
+
+[node name="MorenoCantidad" type="SpinBox" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+max_value = 0.0
+update_on_text_changed = true
+
+[node name="MorenoLagrima" type="TextureRect" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+texture = ExtResource("4_341yq")
+stretch_mode = 3
+
+[node name="MorenoValor" type="Label" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "0"
+
+[node name="ArribenoEtiqueta" type="Label" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "Arribeños"
+
+[node name="ArribenoSprite" type="TextureRect" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+texture = ExtResource("7_4adcf")
+
+[node name="ArribenoCantidad" type="SpinBox" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+max_value = 0.0
+update_on_text_changed = true
+
+[node name="ArribenoLagrima" type="TextureRect" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+texture = ExtResource("4_341yq")
+stretch_mode = 3
+
+[node name="ArribenoValor" type="Label" parent="MarginContainer/Mejoras"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+text = "0"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_3fudx")
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 24
+text = "Menu principal"
+
+[node name="Efectos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ulq4h")
+autoplay = true
+bus = &"Efectos"
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_or8fn")
+autoplay = true
+bus = &"Musica"
+
+[connection signal="value_changed" from="MarginContainer/Mejoras/GranaderoCantidad" to="." method="_on_granadero_cantidad_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Menu" to="." method="_on_menu_pressed"]

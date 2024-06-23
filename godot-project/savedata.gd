@@ -5,6 +5,13 @@ class_name SaveData extends Resource
 @export var music_mixer:float = 1.0
 @export var efectos_mixer:float = 1.0
 
+@export var mejoras = {
+	"correntinos":0,
+	"arribenos":0,
+	"granaderos":0,
+	"morenos":0
+}
+
 const SAVE_PATH:String = "user://la_furia_de_las_trenzas.tres"
 
 func save() -> void:
