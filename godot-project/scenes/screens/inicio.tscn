@@ -82,16 +82,17 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
+[node name="Lagrima" type="TextureRect" parent="Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_pq347")
+stretch_mode = 5
+
 [node name="CantidadLagrimas" type="Label" parent="Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource("2_box0m")
 theme_override_font_sizes/font_size = 16
-
-[node name="Lagrima" type="TextureRect" parent="Control/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("4_pq347")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_eyd00")
