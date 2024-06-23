@@ -33,6 +33,9 @@ func invincible_effect():
 	
 func activate_agua_hirviendo_level_up():
 	agua_hirviendo_power += 1
+	$AguaHirviendoTimer.stop()
+	$AguaHirviendoTimer.wait_time = Global.settings.patricios.general.agua_hirviendo.cooldown - Global.settings.patricios.general.agua_hirviendo.time_reduce_step * agua_hirviendo_power
+	$AguaHirviendoTimer.start()
 
 func last_direction_message():
 	get_tree().call_group("faccion_patricios", "set_last_general_direction", last_input)

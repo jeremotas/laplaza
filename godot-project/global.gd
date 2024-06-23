@@ -49,6 +49,8 @@ var settings = {
 			"agua_hirviendo": {
 				"min_damage_given": 2,
 				"max_damage_given": 2,
+				"cooldown": 10,
+				"time_reduce_step": 2,
 				"bullet": {
 					"speed":200,
 					"duration": 2,
