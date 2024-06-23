@@ -187,13 +187,13 @@ var settings = {
 			}
 		},
 		"green_soldier": {
-			"life": 5,
+			"life": 2,
 			"max_speed": 40,
 			"experience_given": 4,
 			"attack":{
 				"bullet": {
-					"speed": 50,
-					"duration": 1,
+					"speed": 100,
+					"duration": 0.5,
 				},
 				"cooldown": 1,
 				"probability": 80,
