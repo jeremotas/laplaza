@@ -148,7 +148,7 @@ func _on_agua_hirviendo_timer_timeout():
 	if agua_hirviendo_power > 0:
 		var b = bullet.instantiate()
 		b.global_position = $WeaponPoint.global_position
-		var yRandom = 1
+		var yRandom = 0
 		var xRandom = rng.randi_range(0,1)
 		if yRandom == 0: yRandom = -1
 		if xRandom == 0: xRandom = -1

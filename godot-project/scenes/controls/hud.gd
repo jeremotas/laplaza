@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var level_progress_control = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer6/VBoxContainer/LevelProgressBar
 @onready var life_progress = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer4/VBoxContainer/LifeProgressBar
 @onready var plaza_progress = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer5/VBoxContainer/PlazaProgressBar
+@onready var lagrimas_obtenidas = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/VBoxContainer/HBoxContainer/Lagrimas
+
 
 
 func change_time(iSecondsTotal):
@@ -20,6 +22,7 @@ func change_level_progress(iMinValue, iCount, iMaxValue):
 	level_progress_control.min_value = iMinValue
 	level_progress_control.max_value = iMaxValue
 	level_progress_control.value = iCount
+	lagrimas_obtenidas.text = str(iCount)
 	#level_progress_control.text = str(iCount) + " / " + str(iTotal)
 	
 func change_life_indicator(value, max_value, invincible):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxafnr67768aq"]
+[gd_scene load_steps=10 format=3 uid="uid://bxafnr67768aq"]
 
 [ext_resource type="Script" path="res://scenes/controls/mejoras.gd" id="1_ukoyr"]
 [ext_resource type="Texture2D" uid="uid://bypr8gwc62kys" path="res://assets/created/images/lafuria_opciones.png" id="2_knba5"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bdsq3d4gp8hmk" path="res://assets/created/patricio_idle.png" id="3_skt3c"]
 [ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="4_341yq"]
 [ext_resource type="Texture2D" uid="uid://43gisgq1pdeu" path="res://assets/created/correntino_idle.png" id="5_kxqpi"]
-[ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="5_ulq4h"]
 [ext_resource type="Texture2D" uid="uid://bcejdeyfvpck8" path="res://assets/created/card_moreno.png" id="6_lv6ow"]
 [ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="6_or8fn"]
 [ext_resource type="Texture2D" uid="uid://vic1yusywd0r" path="res://assets/created/arribeno.png" id="7_4adcf"]
@@ -192,11 +191,6 @@ theme = ExtResource("3_3fudx")
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 24
 text = "Menu principal"
-
-[node name="Efectos" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_ulq4h")
-autoplay = true
-bus = &"Efectos"
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_or8fn")

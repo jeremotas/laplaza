@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://uk3j7rh2076l"]
+[gd_scene load_steps=10 format=3 uid="uid://uk3j7rh2076l"]
 
 [ext_resource type="Script" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_7ne2n"]
 [ext_resource type="Texture2D" uid="uid://d4cg7c4prtfmj" path="res://assets/created/papiro_hud_bottom.png" id="2_bh0ei"]
 [ext_resource type="Texture2D" uid="uid://b72l7qbptiye7" path="res://assets/created/escarapela.png" id="3_3ntie"]
 [ext_resource type="Script" path="res://scenes/controls/LifeProgressBar.gd" id="3_qjru7"]
+[ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="6_ffx0y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt76d"]
 bg_color = Color(0.301961, 0.611765, 0.305882, 1)
@@ -162,3 +163,26 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_ct6x6")
 step = 1.0
 rounded = true
 show_percentage = false
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_ffx0y")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Lagrimas" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_7ne2n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
