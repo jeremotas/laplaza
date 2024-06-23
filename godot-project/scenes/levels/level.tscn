@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://doeqrttpttyvl"]
+[gd_scene load_steps=21 format=3 uid="uid://doeqrttpttyvl"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_4e1oj"]
 [ext_resource type="Texture2D" uid="uid://divu38pun5cej" path="res://assets/created/tilesets/tilesetmud64exp.png" id="2_udve2"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://scenes/controls/pause_menu.tscn" id="10_3l2by"]
 [ext_resource type="PackedScene" uid="uid://duronouk3fu1p" path="res://scenes/controls/decision_time.tscn" id="11_oed3o"]
 [ext_resource type="PackedScene" uid="uid://er2xr7bd3ipm" path="res://scenes/controls/speechbubble.tscn" id="12_xs82a"]
+[ext_resource type="Texture2D" uid="uid://dm7ws7daw7ylv" path="res://assets/created/Casa vecina del cabildo.png" id="14_vm1g7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgl40"]
 resource_name = "terreno"
@@ -456,8 +457,12 @@ autostart = true
 [node name="Edificios" type="Node" parent="."]
 
 [node name="Cabildo" type="Sprite2D" parent="Edificios"]
-position = Vector2(42, -370)
+position = Vector2(48, -384)
 texture = ExtResource("3_dv022")
+
+[node name="CasaVecina" type="Sprite2D" parent="Edificios"]
+position = Vector2(713, -291)
+texture = ExtResource("14_vm1g7")
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
