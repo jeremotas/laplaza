@@ -46,15 +46,15 @@ var settings = {
 				"max_damage_given": 1
 			},
 			"agua_hirviendo": {
-				"min_damage_given": 100000,
-				"max_damage_given": 100000,
+				"min_damage_given": 2,
+				"max_damage_given": 2,
 				"bullet": {
 					"speed":200,
-					"duration": 1.5,
+					"duration": 2,
 					"explotion": {
-						"duration": 1,
+						"duration": 0.65,
 						"scale": 30,
-						"particle": "explosion"
+						"particle": "explosion_agua"
 					}
 				}
 			},

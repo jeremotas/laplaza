@@ -145,7 +145,7 @@ func _on_agua_hirviendo_timer_timeout():
 	if agua_hirviendo_power > 0:
 		var b = bullet.instantiate()
 		b.global_position = $WeaponPoint.global_position
-		var yRandom = rng.randi_range(0,1)
+		var yRandom = 1
 		var xRandom = rng.randi_range(0,1)
 		if yRandom == 0: yRandom = -1
 		if xRandom == 0: xRandom = -1
@@ -160,6 +160,6 @@ func _on_agua_hirviendo_timer_timeout():
 		b.bullet_lifetime = Global.settings.patricios.general.agua_hirviendo.bullet.duration
 		b.prepare_explotion(2, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.duration, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.scale, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.particle, false)
 		b.set_collision_mask(2)
-		b.set_sprite("res://assets/created/ollami_32.png", 0.99)
+		b.set_sprite("res://assets/created/ollami_32.png", 0.99, 4)
 		b.set_color(Color(1, 1, 1))
 		get_parent().add_child(b)

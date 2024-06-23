@@ -12,6 +12,7 @@ var is_playing = false
 var bulletTimer = null
 var explotionTimer = null
 var bullet_scale_factor = 1
+var bullet_rotation_factor = 0
 @export var one_hit = true
 @export var explodes = false
 @export var explotion_layer = 0
@@ -50,14 +51,17 @@ func _process(delta):
 	translate(direction * speed * delta)
 	if $visual_bullet and bullet_scale_factor != 1:
 		$visual_bullet.scale = $visual_bullet.scale * bullet_scale_factor
+	if $visual_bullet and bullet_rotation_factor != 0:
+		$visual_bullet.set_rotation_degrees($visual_bullet.get_rotation_degrees() + bullet_rotation_factor)
 		
 func set_color(TheColor):
 	$visual_bullet.modulate = TheColor
 	pass
 
-func set_sprite(sSprite, fScaleFactor = 1):
+func set_sprite(sSprite, fScaleFactor = 1, fRotationFactor = 0):
 	$visual_bullet.texture = load(sSprite)
 	bullet_scale_factor = fScaleFactor
+	bullet_rotation_factor = fRotationFactor
 
 func _on_visible_on_screen_enabler_2d_screen_exited():
 	#stopped()
@@ -106,6 +110,11 @@ func create_explotion():
 		if explotion_particle == "explosion":
 			$explosion.visible = true
 			$explosion.scale = Vector2(2,2)
+			if explotion_sound:
+				create_sound_explotion()
+		elif explotion_particle == "explosion_agua":
+			$explosion_agua.visible = true
+			$explosion_agua.scale = Vector2(2,2)
 			if explotion_sound:
 				create_sound_explotion()
 		if explotion_particle == "boleadora":

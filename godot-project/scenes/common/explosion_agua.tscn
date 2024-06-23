@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://jllq05xmctpn"]
+
+[sub_resource type="Gradient" id="Gradient_fuhep"]
+colors = PackedColorArray(0.137734, 0.863993, 0.918314, 1, 0.143839, 0.147906, 0.663736, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b0vr1"]
+gradient = SubResource("Gradient_fuhep")
+
+[sub_resource type="Curve" id="Curve_uej83"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.476749), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kdbm7"]
+curve = SubResource("Curve_uej83")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kmpdq"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+damping_min = 40.0
+damping_max = 40.0
+scale_min = 8.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_kdbm7")
+color_ramp = SubResource("GradientTexture1D_b0vr1")
+hue_variation_min = -0.05
+hue_variation_max = 0.02
+
+[node name="explosion_agua" type="GPUParticles2D"]
+self_modulate = Color(1, 1, 1, 0.309804)
+amount = 80
+process_material = SubResource("ParticleProcessMaterial_kmpdq")
+lifetime = 0.75
+speed_scale = 1.17
+explosiveness = 1.0
+randomness = 0.39
+trail_lifetime = 0.01
+trail_sections = 16
+trail_section_subdivisions = 13
