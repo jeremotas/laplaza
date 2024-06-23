@@ -36,6 +36,6 @@ lifetime = 0.75
 speed_scale = 1.17
 explosiveness = 1.0
 randomness = 0.39
-trail_lifetime = 0.01
+trail_lifetime = 0.29
 trail_sections = 16
 trail_section_subdivisions = 13

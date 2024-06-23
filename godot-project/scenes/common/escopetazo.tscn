@@ -18,6 +18,6 @@ lifetime = 0.1
 one_shot = true
 explosiveness = 1.0
 collision_base_size = 0.0
-trail_lifetime = 0.01
+trail_lifetime = 0.73
 trail_sections = 2
 trail_section_subdivisions = 1

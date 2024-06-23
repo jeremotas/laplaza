@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://yucrlea7h6xt"]
+[gd_scene load_steps=7 format=3 uid="uid://yucrlea7h6xt"]
 
 [ext_resource type="Script" path="res://scenes/common/bullet.gd" id="1_7a2v0"]
 [ext_resource type="Texture2D" uid="uid://ck8w0t3sk64g0" path="res://assets/created/bullet.png" id="1_tx47s"]
 [ext_resource type="PackedScene" uid="uid://23j52gwexeqt" path="res://scenes/common/explosion.tscn" id="3_7gdep"]
 [ext_resource type="PackedScene" uid="uid://d4enxlrlu02te" path="res://scenes/common/escopetazo.tscn" id="4_cthx8"]
-[ext_resource type="PackedScene" uid="uid://p54qxnpvsa4u" path="res://scenes/common/boleadoras.tscn" id="5_nbbnt"]
 [ext_resource type="PackedScene" uid="uid://jllq05xmctpn" path="res://scenes/common/explosion_agua.tscn" id="6_per7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3fcm"]
@@ -48,13 +47,11 @@ visible = false
 
 [node name="escopetazo" parent="." instance=ExtResource("4_cthx8")]
 visible = false
-
-[node name="boleadora" parent="." instance=ExtResource("5_nbbnt")]
-visible = false
-scale = Vector2(1.25, 1.25)
+trail_lifetime = 0.17
 
 [node name="explosion_agua" parent="." instance=ExtResource("6_per7n")]
 visible = false
+trail_lifetime = 0.12
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
