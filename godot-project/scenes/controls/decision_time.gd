@@ -19,6 +19,7 @@ func prepare_buttons(_experience):
 	$MarginContainer/HBoxContainer/MoreLifeButtonCard.visible = false
 	$MarginContainer/HBoxContainer/HusaresInfernalesButtonCard.visible = false
 	$MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard.visible = false
+	$MarginContainer/HBoxContainer/LasOllasButtonCard.visible = false
 	
 	# Preparo arreglo con distribucion (unidades y efectos)
 	# "granadero", "correntino", "moreno", "arribeno"
@@ -33,6 +34,7 @@ func prepare_buttons(_experience):
 	for i in range(Global.settings.game.cards.matecito): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/MoreLifeButtonCard)
 	for i in range(Global.settings.game.cards.husares_infernales): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/HusaresInfernalesButtonCard)
 	for i in range(Global.settings.game.cards.barrilete_cosmico): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard)
+	for i in range(Global.settings.game.cards.ollas_del_pueblo): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/LasOllasButtonCard)
 	
 	aButtonsUnidades.shuffle()
 	aButtonsEfectos.shuffle()
@@ -92,3 +94,8 @@ func _on_husares_infernales_button_card_pressed():
 
 func _on_arribeno_button_card_pressed():
 	get_parent().decision_time_end("arribeno")
+
+
+func _on_las_ollas_button_card_pressed():
+	get_parent().decision_time_end("ollas_del_pueblo")
+	

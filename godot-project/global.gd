@@ -23,13 +23,14 @@ var settings = {
 			"time": 0,
 		},
 		"cards": {
-			"granadero": 1,
+			"granadero": 10,
 			"moreno": 1,
 			"arribeno": 1,
 			"correntino": 1,
 			"husares_infernales": 2,
 			"matecito": 10,
-			"barrilete_cosmico": 1
+			"barrilete_cosmico": 1,
+			"ollas_del_pueblo": 1
 		}
 	},
 	"patricios": {
