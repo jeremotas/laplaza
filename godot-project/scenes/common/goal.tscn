@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdhmiefax7gyv"]
+[gd_scene load_steps=16 format=3 uid="uid://bdhmiefax7gyv"]
 
 [ext_resource type="Script" path="res://scenes/common/Goal.gd" id="1_4ypff"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_p2urd"]
-[ext_resource type="Texture2D" uid="uid://dj8uwfx6rhayk" path="res://assets/created/mastiloutline.png" id="3_fhbaq"]
+[ext_resource type="Texture2D" uid="uid://bb0h4rpnfg8wu" path="res://assets/created/mastialanimadooutline.png" id="4_g1rit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x5fn"]
 size = Vector2(72, 61)
@@ -11,6 +11,70 @@ size = Vector2(72, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dom6c"]
 size = Vector2(157, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmhoh"]
+atlas = ExtResource("4_g1rit")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x2i7"]
+atlas = ExtResource("4_g1rit")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbvik"]
+atlas = ExtResource("4_g1rit")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdbdj"]
+atlas = ExtResource("4_g1rit")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krasi"]
+atlas = ExtResource("4_g1rit")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yada3"]
+atlas = ExtResource("4_g1rit")
+region = Rect2(320, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksdkv"]
+atlas = ExtResource("4_g1rit")
+region = Rect2(384, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6syh"]
+atlas = ExtResource("4_g1rit")
+region = Rect2(448, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_haq36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmhoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x2i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbvik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdbdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krasi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yada3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksdkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6syh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
 
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_4ypff")
@@ -35,6 +99,7 @@ theme = ExtResource("2_p2urd")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0)
 offset_left = -34.0
 offset_top = -30.0
@@ -50,10 +115,10 @@ collision_mask = 15
 position = Vector2(3, 52)
 shape = SubResource("RectangleShape2D_dom6c")
 
-[node name="MastilSprite" type="Sprite2D" parent="."]
+[node name="MastilSprite" type="AnimatedSprite2D" parent="."]
 z_index = 10
-position = Vector2(16, -19)
-texture = ExtResource("3_fhbaq")
+sprite_frames = SubResource("SpriteFrames_haq36")
+frame_progress = 0.0264956
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
 [connection signal="body_entered" from="AreaMastil" to="." method="_on_area_2d_body_entered"]

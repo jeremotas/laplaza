@@ -3,7 +3,11 @@ extends Node2D
 @export var UnitsArrived = 0
 @export var faction = ""
 
+func _ready():
+	pass
+
 func _process(_delta):
+	$MastilSprite.play("default")
 	$Status.text = str(UnitsArrived) + " / " + str(NeededUnits)
 	$Status.show()
 	

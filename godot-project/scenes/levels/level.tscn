@@ -373,11 +373,11 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemyGoal" parent="." instance=ExtResource("4_nncdj")]
-position = Vector2(285, 624)
+position = Vector2(284, 626)
 faction = "ingleses"
 
 [node name="General" parent="." instance=ExtResource("5_cfpx1")]
-position = Vector2(286, 540)
+position = Vector2(291, 561)
 life = 20
 
 [node name="Camera2D" type="Camera2D" parent="General"]
@@ -401,6 +401,7 @@ autostart = true
 [node name="HUD" parent="." instance=ExtResource("8_fyc0u")]
 
 [node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -8)
 stream = ExtResource("9_2qses")
 volume_db = 15.682
 bus = &"Efectos"
