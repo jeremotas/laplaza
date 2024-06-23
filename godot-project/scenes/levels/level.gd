@@ -39,7 +39,7 @@ var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husar
 var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.tscn")
 
 func _ready():
-	#get_viewport().set_physics_object_picking_sort(true) # 
+	get_viewport().set_physics_object_picking_sort(true) # 
 	$BackgroundMusic.play(152.0)
 	$UnitSpawner.set_goal($General) # Todas las unidades patricias siguen al general.
 	TheGameStats = GameStats.new() # Reiniciamos las estadisticas
