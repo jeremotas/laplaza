@@ -36,28 +36,33 @@ theme_override_font_sizes/font_size = 68
 text = "CONQUERED"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(250, 0)
+[node name="MarginContainer2" type="MarginContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -125.0
-offset_top = -62.0
+offset_top = -72.0
 offset_right = 125.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
+theme_override_constants/margin_bottom = 20
 
-[node name="Reiniciar" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_pfgda")
 theme_override_font_sizes/font_size = 24
 text = "Reintentar"
 
-[node name="Salir" type="Button" parent="VBoxContainer"]
+[node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_pfgda")
@@ -68,5 +73,5 @@ stream = ExtResource("4_67jdo")
 autoplay = true
 bus = &"Musica"
 
-[connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
-[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
