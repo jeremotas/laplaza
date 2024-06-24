@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var level_progress_control = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer6/VBoxContainer/LevelProgressBar
 @onready var life_progress = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer4/VBoxContainer/LifeProgressBar
 @onready var plaza_progress = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer5/VBoxContainer/PlazaProgressBar
-@onready var lagrimas_obtenidas = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/VBoxContainer/HBoxContainer/Lagrimas
+@onready var lagrimas_obtenidas = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/Lagrimas
 
 
 

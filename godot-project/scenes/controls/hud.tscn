@@ -65,6 +65,15 @@ theme_override_font_sizes/font_size = 44
 text = "00:00"
 horizontal_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 351.0
+offset_top = 447.0
+offset_right = 367.0
+offset_bottom = 464.0
+texture = ExtResource("6_ffx0y")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -169,20 +178,11 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("6_ffx0y")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="Lagrimas" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7/VBoxContainer/HBoxContainer"]
+[node name="Lagrimas" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7"]
 layout_mode = 2
 theme = ExtResource("2_7ne2n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
