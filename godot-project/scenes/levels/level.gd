@@ -109,6 +109,9 @@ func _process(delta):
 	elif command == "dudu":
 		decision_time_start()
 		command = ""
+	elif command == "matienzo":
+		increase_life(30)
+		command = ""
 	elif command == "roger":
 		$General.activate_agua_hirviendo_level_up()
 		command = ""
@@ -202,6 +205,7 @@ func decision_time_start():
 	
 func increase_life(increase):
 	$General.life += increase
+	$General.life = mini($General.life, Global.settings.game.player_max_life)
 
 func decision_time_end(decision):
 	# Ejecutar decision
