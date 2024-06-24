@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct4dek63v5j5j"]
+[gd_scene load_steps=6 format=3 uid="uid://ct4dek63v5j5j"]
 
 [ext_resource type="Script" path="res://scenes/screens/credits.gd" id="1_3jpn6"]
-[ext_resource type="Texture2D" uid="uid://c7phnsphmbrga" path="res://assets/created/images/la_romero_transparente.png" id="2_xutvm"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_cimw1"]
+[ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="4_snkym"]
+[ext_resource type="Texture2D" uid="uid://cp7wkcbvm3eiu" path="res://assets/original/backgrounds/lafuriadelastrenzas_credits.png" id="5_2lfd0"]
+[ext_resource type="PackedScene" uid="uid://doo77a1vfcsws" path="res://scenes/screens/inicio.tscn" id="5_h3cep"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -10,9 +13,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_cimw1")
 script = ExtResource("1_3jpn6")
-creditsFile = "res://scenes/screens/example-CREDITS"
-titleImage = ExtResource("2_xutvm")
+creditsFile = "res://scenes/screens/lafuriadelastrenzas-CREDITS"
+titleImage = ExtResource("5_2lfd0")
+titlesColor = Color(0.921569, 0.678431, 0.427451, 1)
+musicPlaylist = Array[AudioStream]([ExtResource("4_snkym")])
+loopPlaylist = true
+nextScene = ExtResource("5_h3cep")
 destroyOnEnd = true
 
 [node name="background" type="ColorRect" parent="."]

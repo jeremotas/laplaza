@@ -36,3 +36,7 @@ func _on_opciones_pressed():
 
 func _on_mejoras_pressed():
 	get_tree().change_scene_to_file("res://scenes/controls/mejoras.tscn")
+
+
+func _on_creditos_pressed():
+	get_tree().change_scene_to_file("res://scenes/screens/credits.tscn")

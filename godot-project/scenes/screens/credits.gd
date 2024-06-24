@@ -72,6 +72,7 @@ func _ready():
 	viewSize = get_viewport().size
 	scrollingContainer.position.y = viewSize.y*2 # it's multiplied by two as a workaround. Look at _process function
 	regularSpeed = speed
+	is_first_frame = true
 	
 	# Set title image if there is one, otherwise delete the useless node
 	if titleImage != null:
