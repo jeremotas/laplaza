@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct4dek63v5j5j"]
+
+[ext_resource type="Script" path="res://scenes/screens/credits.gd" id="1_3jpn6"]
+[ext_resource type="Texture2D" uid="uid://c7phnsphmbrga" path="res://assets/created/images/la_romero_transparente.png" id="2_xutvm"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jpn6")
+creditsFile = "res://scenes/screens/example-CREDITS"
+titleImage = ExtResource("2_xutvm")
+destroyOnEnd = true
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="backgroundVideo" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+
+[node name="musicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="scrollingContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="titleImg" type="TextureRect" parent="scrollingContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+stretch_mode = 5
+
+[connection signal="finished" from="backgroundVideo" to="." method="_on_backgroundVideo_finished"]
+[connection signal="finished" from="musicPlayer" to="." method="_on_musicPlayer_finished"]
