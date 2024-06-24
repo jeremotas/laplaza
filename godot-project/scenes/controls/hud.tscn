@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://d4cg7c4prtfmj" path="res://assets/created/papiro_hud_bottom.png" id="2_bh0ei"]
 [ext_resource type="Texture2D" uid="uid://b72l7qbptiye7" path="res://assets/created/escarapela.png" id="3_3ntie"]
 [ext_resource type="Script" path="res://scenes/controls/LifeProgressBar.gd" id="3_qjru7"]
-[ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="6_ffx0y"]
+[ext_resource type="Texture2D" uid="uid://dxcqv1wfeymdw" path="res://assets/created/lagrima_scaled_3x.png" id="5_npi66"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt76d"]
 bg_color = Color(0.301961, 0.611765, 0.305882, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3evv7"]
 bg_color = Color(0.301961, 0.611765, 0.305882, 1)
@@ -61,18 +62,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("2_7ne2n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 44
+theme_override_font_sizes/font_size = 40
 text = "00:00"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 351.0
-offset_top = 447.0
+offset_left = 340.0
+offset_top = 440.0
 offset_right = 367.0
-offset_bottom = 464.0
-texture = ExtResource("6_ffx0y")
-expand_mode = 3
-stretch_mode = 5
+offset_bottom = 470.0
+texture = ExtResource("5_npi66")
+stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -186,3 +186,5 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_7ne2n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "5000"
