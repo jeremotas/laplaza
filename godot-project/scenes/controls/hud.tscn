@@ -1,11 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://uk3j7rh2076l"]
+[gd_scene load_steps=9 format=3 uid="uid://uk3j7rh2076l"]
 
 [ext_resource type="Script" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_7ne2n"]
 [ext_resource type="Texture2D" uid="uid://d4cg7c4prtfmj" path="res://assets/created/papiro_hud_bottom.png" id="2_bh0ei"]
-[ext_resource type="Texture2D" uid="uid://b72l7qbptiye7" path="res://assets/created/escarapela.png" id="3_3ntie"]
 [ext_resource type="Script" path="res://scenes/controls/LifeProgressBar.gd" id="3_qjru7"]
-[ext_resource type="Texture2D" uid="uid://dxcqv1wfeymdw" path="res://assets/created/lagrima_scaled_3x.png" id="5_npi66"]
+[ext_resource type="Texture2D" uid="uid://cuhp07010skgo" path="res://assets/created/lagrima_scaled_2x.png" id="5_uk0ha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct6x6"]
+bg_color = Color(0.164706, 0.760784, 0.890196, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt76d"]
 bg_color = Color(0.301961, 0.611765, 0.305882, 1)
@@ -21,58 +27,70 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct6x6"]
-bg_color = Color(0.164706, 0.760784, 0.890196, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_b1w0e")
 
 [node name="PapiroDown" type="TextureRect" parent="."]
-offset_left = -5.0
-offset_top = 425.0
-offset_right = 646.0
-offset_bottom = 486.0
+offset_left = 1.0
+offset_top = 418.0
+offset_right = 652.0
+offset_bottom = 479.0
 texture = ExtResource("2_bh0ei")
-
-[node name="Escarapela" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -174.0
-offset_top = -108.0
-offset_right = 55.0
-offset_bottom = 121.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("3_3ntie")
+stretch_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Time" type="Label" parent="."]
-offset_left = 523.0
-offset_top = 425.0
-offset_right = 622.0
-offset_bottom = 481.0
+offset_left = 4.0
+offset_top = 422.0
+offset_right = 636.0
+offset_bottom = 476.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("2_7ne2n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 34
 text = "00:00"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 340.0
-offset_top = 440.0
-offset_right = 367.0
-offset_bottom = 470.0
-texture = ExtResource("5_npi66")
-stretch_mode = 4
+offset_left = 402.0
+offset_top = 439.0
+offset_right = 417.0
+offset_bottom = 458.0
+texture = ExtResource("5_uk0ha")
+stretch_mode = 2
+
+[node name="Lagrimas" type="Label" parent="."]
+offset_left = 424.0
+offset_top = 424.0
+offset_right = 512.0
+offset_bottom = 463.0
+theme = ExtResource("2_7ne2n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "5000"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 515.0
+offset_top = 433.0
+offset_right = 615.0
+offset_bottom = 462.0
+
+[node name="Nivel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_7ne2n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Nivel "
+
+[node name="LevelProgressBar" type="ProgressBar" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_ct6x6")
+step = 1.0
+rounded = true
+show_percentage = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -86,18 +104,20 @@ theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 0
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+theme_override_constants/margin_bottom = 18
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+theme_override_constants/separation = 21
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6"]
 layout_mode = 2
@@ -153,38 +173,3 @@ show_percentage = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer6"]
-layout_mode = 2
-
-[node name="Nivel" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer6/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_7ne2n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "Nivel "
-
-[node name="LevelProgressBar" type="ProgressBar" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer6/VBoxContainer"]
-custom_minimum_size = Vector2(100, 5)
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/fill = SubResource("StyleBoxFlat_ct6x6")
-step = 1.0
-rounded = true
-show_percentage = false
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-
-[node name="Lagrimas" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer7"]
-layout_mode = 2
-theme = ExtResource("2_7ne2n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "5000"
