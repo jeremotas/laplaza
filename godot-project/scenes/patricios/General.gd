@@ -6,6 +6,7 @@ var bullet = preload("res://scenes/common/bullet.tscn")
 #var barrilete_cosmico = false
 var barrileteTimer = null
 @export var agua_hirviendo_power = 0
+var max_life = 0
 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
@@ -15,6 +16,7 @@ func _init():
 	max_damage_given = Global.settings.patricios.general.attack.max_damage_given
 	max_speed = Global.settings.patricios.general.max_speed
 	life = Global.settings.patricios.general.life
+	max_life = life
 	bullet_speed = Global.settings.patricios.general.attack.bullet.speed
 	bullet_lifetime = Global.settings.patricios.general.attack.bullet.duration
 	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
@@ -26,7 +28,17 @@ func _process(delta):
 	last_direction_message()
 	attack()
 	invincible_effect()
+	life_status()
 	super(delta)
+	
+	
+func life_status():
+	
+	if not status.hurt:
+		if life < 3:
+			modulate = Color("ff0000ff")
+		else:
+			modulate = Color("ffffffff")
 
 func invincible_effect():
 	$InvincibleEffect.visible = invincible
@@ -121,7 +133,7 @@ func idle():
 
 func hurt():
 	$HurtSound.play()
-	modulate = Color("ff0000CC")
+	modulate = Color("ff0000ff")
 	await get_tree().create_timer(0.4).timeout
 	modulate = Color("ffffffff")
 	status.hurt = false

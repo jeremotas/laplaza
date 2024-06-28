@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 var MejorasData = null
 var lagrimas_acumuladas = 0

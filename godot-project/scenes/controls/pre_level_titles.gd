@@ -2,7 +2,7 @@ extends Node2D
 @onready var oSpeech = $SpeechBubble
 @onready var oAnimationPlayer = $AnimationPlayer
 @onready var oRichLabel = $RichTextLabel
-
+@onready var oSpeechTimer = $SpeechTimer
 var aMessages = [
 	{"message": "Buenos Aires\nAño 1807", "time": 1, "next_trigger": 1},
 	{"message": "Liniers y los patricios\ndefienden la plaza.", "time": 3, "next_trigger": 1},
@@ -16,8 +16,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("ui_accept"):
 		gotolevel()
-	pass
-	
+
 func show_message(oMsg):
 	oRichLabel.text = oMsg.message
 	#oRichLabel.modulate = oColor
@@ -28,14 +27,15 @@ func show_message(oMsg):
 	await get_tree().create_timer(0.5).timeout
 	oRichLabel.visible = false
 	if (aMessages.size() > 0):
-		$SpeechTimer.wait_time = oMsg.next_trigger
-		$SpeechTimer.one_shot = true
-		$SpeechTimer.start()
+		oSpeechTimer.wait_time = oMsg.next_trigger
+		oSpeechTimer.one_shot = true
+		oSpeechTimer.start()
 	else:
 		gotolevel()
 		
 func gotolevel():
-	get_tree().change_scene_to_file("res://scenes/levels/level.tscn")
+	SceneTransition.load_scene("res://scenes/levels/level.tscn")
+	#get_tree().change_scene_to_file("res://scenes/levels/level.tscn")
 
 func consume_message():
 	var oMsg = aMessages.pop_front()

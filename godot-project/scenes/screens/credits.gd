@@ -70,7 +70,7 @@ var playlistIndex = 0
 
 func _ready():
 	viewSize = get_viewport().size
-	viewSize.y = 640
+	viewSize.y = 480
 	scrollingContainer.position.y = viewSize.y # it's multiplied by two as a workaround. Look at _process function
 	regularSpeed = speed
 	is_first_frame = true
@@ -183,7 +183,7 @@ func _process(delta):
 	# This workaround fix it
 	if is_first_frame:
 		viewSize = get_viewport().size
-		viewSize.y = 640
+		viewSize.y = 480
 		scrollingContainer.position.y = viewSize.y
 		is_first_frame = false
 	
