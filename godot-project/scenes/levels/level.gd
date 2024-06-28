@@ -106,7 +106,7 @@ func _process(delta):
 	if command == "d10s":
 		barrilete_cosmico()
 		command = ""
-	elif command == "dudu":
+	elif command == "jaime":
 		decision_time_start()
 		command = ""
 	elif command == "matienzo":

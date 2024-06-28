@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctc76bsrsjp8d"]
+
+[ext_resource type="Script" path="res://scenes/controls/pre_level_titles.gd" id="1_cmgtq"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_8xxh0"]
+[ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="3_5rxsg"]
+
+[sub_resource type="Animation" id="Animation_qgxmb"]
+resource_name = "title_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("RichTextLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 95), Vector2(6, 105)]
+}
+
+[sub_resource type="Animation" id="Animation_1u1u0"]
+resource_name = "title_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("RichTextLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 105), Vector2(6, 115)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cs5f5"]
+_data = {
+"title_in": SubResource("Animation_qgxmb"),
+"title_out": SubResource("Animation_1u1u0")
+}
+
+[node name="PreLevelTitles" type="Node2D"]
+script = ExtResource("1_cmgtq")
+
+[node name="SpeechTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(10, 10)
+offset_right = 641.0
+offset_bottom = 483.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = 105.0
+offset_right = 631.0
+offset_bottom = 406.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8xxh0")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cs5f5")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5rxsg")
+autoplay = true
+
+[connection signal="timeout" from="SpeechTimer" to="." method="_on_speech_timer_timeout"]
