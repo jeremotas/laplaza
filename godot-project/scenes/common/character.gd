@@ -380,9 +380,10 @@ func malon_sticked():
 	input_accepted = false
 	#print("DISTANCIA",  global_position.distance_to(oGoalAssigned.global_position))
 	if (not bSticked and oGoalAssigned) or (global_position.distance_to(oGoalAssigned.global_position) > 50):
-		go_to(oGoalAssigned.global_position, true)
-	else:
-		input_accepted = true
+		if global_position.distance_to(oGoalAssigned.global_position) > 50:
+			go_to(oGoalAssigned.global_position, true)
+	#else:
+		#input_accepted = true
 	
 func _ready():
 #	if has_node("AnimationPlayer"):

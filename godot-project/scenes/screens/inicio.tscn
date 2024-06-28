@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://doo77a1vfcsws"]
+[gd_scene load_steps=8 format=3 uid="uid://doo77a1vfcsws"]
 
 [ext_resource type="Script" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_box0m"]
 [ext_resource type="Texture2D" uid="uid://cucsed5s0x6c0" path="res://assets/original/backgrounds/lafuriadelastrenzas_pix.png" id="2_j4g27"]
 [ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="4_pq347"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="5_eyd00"]
+[ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="6_nliy4"]
+[ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="7_pjvl7"]
 
 [node name="Inicio" type="CanvasLayer"]
 script = ExtResource("1_w0xhw")
@@ -97,6 +99,18 @@ theme_override_font_sizes/font_size = 16
 stream = ExtResource("5_eyd00")
 autoplay = true
 bus = &"Musica"
+
+[node name="General" parent="." instance=ExtResource("6_nliy4")]
+position = Vector2(90, 446)
+input_accepted = false
+
+[node name="UnitSpawner" parent="." instance=ExtResource("7_pjvl7")]
+position = Vector2(-42, 445)
+probabilitySpawnOnTimer = 0.0
+faction = "patricios"
+
+[node name="PosicionGeneral" type="Marker2D" parent="."]
+position = Vector2(47, 450)
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Mejoras" to="." method="_on_mejoras_pressed"]
