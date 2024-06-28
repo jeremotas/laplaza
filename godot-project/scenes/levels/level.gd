@@ -359,8 +359,6 @@ func _on_reward(faction, experience_given):
 	# Sumador de experiencia
 	if faction != $General.faction:
 		TheGameStats.add_experience(experience_given)
-		
-
 
 func _on_timer_command_timeout():
 	command = ""

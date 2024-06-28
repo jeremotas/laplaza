@@ -35,7 +35,7 @@ func _process(delta):
 func life_status():
 	
 	if not status.hurt:
-		if life < 3:
+		if life <= Global.settings.game.player_warning_life:
 			modulate = Color("ff0000ff")
 		else:
 			modulate = Color("ffffffff")

@@ -29,6 +29,11 @@ func change_life_indicator(value, max_value, invincible):
 	life_progress.value = value
 	life_progress.max_value = max_value
 	
+	
+	life_progress.modulate = '4d9c4e'
+	if life_progress.value <= Global.settings.game.player_warning_life:
+		life_progress.modulate = 'ff0000'
+	
 	#if invincible:
 	#	life_progress.modulate = Color('#b7b700')
 	#else:

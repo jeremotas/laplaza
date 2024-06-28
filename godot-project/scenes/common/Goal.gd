@@ -3,6 +3,8 @@ extends Node2D
 @export var UnitsArrived = 0
 @export var faction = ""
 
+var rigning = false
+
 func _ready():
 	pass
 
@@ -36,3 +38,18 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	body.z_index = body.original_z_index
+
+
+func ring_bell():
+	if not rigning:
+		rigning = true
+		$Bell.play()
+		await $Bell.finished
+		rigning = false
+	
+
+func _on_warning_zone_body_entered(body):
+	print("Ingleses entrando...")
+	if not $VisibleOnScreenNotifier2D.is_on_screen():
+		ring_bell()
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdhmiefax7gyv"]
+[gd_scene load_steps=18 format=3 uid="uid://bdhmiefax7gyv"]
 
 [ext_resource type="Script" path="res://scenes/common/Goal.gd" id="1_4ypff"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_p2urd"]
+[ext_resource type="AudioStream" uid="uid://bse5kecsj8lrn" path="res://assets/original/sounds/bell.mp3" id="4_c60x3"]
 [ext_resource type="Texture2D" uid="uid://bb0h4rpnfg8wu" path="res://assets/created/mastialanimadooutline.png" id="4_g1rit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x5fn"]
@@ -76,6 +77,9 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cff21"]
+radius = 247.008
+
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_4ypff")
 
@@ -122,6 +126,22 @@ z_index = 10
 sprite_frames = SubResource("SpriteFrames_haq36")
 frame_progress = 0.0264956
 
+[node name="WarningZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarningZone"]
+shape = SubResource("CircleShape2D_cff21")
+debug_color = Color(0.826462, 0.325708, 0.588368, 0.42)
+
+[node name="Bell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_c60x3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-5, -6.5)
+scale = Vector2(3.4, 4.45)
+
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
 [connection signal="body_entered" from="AreaMastil" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AreaMastil" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="WarningZone" to="." method="_on_warning_zone_body_entered"]
