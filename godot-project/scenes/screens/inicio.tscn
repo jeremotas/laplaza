@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_box0m"]
 [ext_resource type="Texture2D" uid="uid://cucsed5s0x6c0" path="res://assets/original/backgrounds/lafuriadelastrenzas_pix.png" id="2_j4g27"]
-[ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="4_pq347"]
+[ext_resource type="Texture2D" uid="uid://cuhp07010skgo" path="res://assets/created/lagrima_scaled_2x.png" id="4_5k0ma"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="5_eyd00"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="6_nliy4"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="7_pjvl7"]
@@ -85,7 +85,7 @@ size_flags_vertical = 8
 
 [node name="Lagrima" type="TextureRect" parent="Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_pq347")
+texture = ExtResource("4_5k0ma")
 stretch_mode = 5
 
 [node name="CantidadLagrimas" type="Label" parent="Control/MarginContainer/HBoxContainer"]
@@ -108,6 +108,7 @@ input_accepted = false
 position = Vector2(-42, 445)
 probabilitySpawnOnTimer = 0.0
 faction = "patricios"
+respawn_seconds = 1.0
 
 [node name="PosicionGeneral" type="Marker2D" parent="."]
 position = Vector2(47, 450)

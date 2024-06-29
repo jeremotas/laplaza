@@ -36,6 +36,7 @@ anchor_bottom = 1.0
 expand = true
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Musica"
 
 [node name="scrollingContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
