@@ -106,8 +106,14 @@ func _process(delta):
 	if command == "d10s":
 		barrilete_cosmico()
 		command = ""
+	elif command == "hoodie":
+		$HUD.visible = not $HUD.visible
+		command = ""
 	elif command == "jaime":
 		decision_time_start()
+		command = ""
+	elif command == "eaea":
+		ataque_husares_infernales()
 		command = ""
 	elif command == "matienzo":
 		increase_life(30)

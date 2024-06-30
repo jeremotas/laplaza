@@ -10,9 +10,4 @@ func _ready():
 	$Ingles5.play()
 	$Ingles7.play()
 	$Ingles8.play()
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

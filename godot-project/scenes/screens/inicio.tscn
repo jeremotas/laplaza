@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_box0m"]
-[ext_resource type="Texture2D" uid="uid://cucsed5s0x6c0" path="res://assets/original/backgrounds/lafuriadelastrenzas_pix.png" id="2_j4g27"]
+[ext_resource type="Texture2D" uid="uid://qj4f60651beo" path="res://assets/original/backgrounds/lafuriadelastrenzas.png" id="2_mog17"]
 [ext_resource type="Texture2D" uid="uid://cuhp07010skgo" path="res://assets/created/lagrima_scaled_2x.png" id="4_5k0ma"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="5_eyd00"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="6_nliy4"]
@@ -27,12 +27,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(0, 0, 0.0470588, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Lafuriadelastrenzas" type="Sprite2D" parent="Control"]
 position = Vector2(320.56, 136.749)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_j4g27")
+texture = ExtResource("2_mog17")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0
