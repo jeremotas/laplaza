@@ -55,20 +55,20 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_fgl40")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3odkn"]
-a = Vector2(-367, 824)
-b = Vector2(-371, -432)
+a = Vector2(-426, 739)
+b = Vector2(-411, -422)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_scq6p"]
-a = Vector2(-79, 1284)
-b = Vector2(-90, 205)
+a = Vector2(-34, 1294)
+b = Vector2(-39, 210)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ysm3x"]
-a = Vector2(-1508, -6)
-b = Vector2(-150, -5)
+a = Vector2(-1510, -2)
+b = Vector2(-151, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_y0nil"]
-a = Vector2(-40, -925)
-b = Vector2(1394, -929)
+a = Vector2(-40, -980)
+b = Vector2(1387, -975)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4e1oj")
