@@ -107,4 +107,14 @@ libraries = {
 stream = ExtResource("3_5rxsg")
 autoplay = true
 
+[node name="Leyenda" type="Label" parent="."]
+offset_left = 466.0
+offset_top = 446.0
+offset_right = 620.0
+offset_bottom = 470.0
+theme = ExtResource("2_8xxh0")
+theme_override_colors/font_color = Color(0.313726, 0.313726, 0.313726, 1)
+theme_override_font_sizes/font_size = 18
+text = "(Enter para saltear)"
+
 [connection signal="timeout" from="SpeechTimer" to="." method="_on_speech_timer_timeout"]

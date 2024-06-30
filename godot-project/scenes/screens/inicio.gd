@@ -7,6 +7,7 @@ func _ready():
 	$Control/MarginContainer/HBoxContainer/CantidadLagrimas.text = str(Global.save_data.lagrimas_acumuladas)
 	load_volumes()
 	load_malon()
+	Engine.time_scale = 1
 	
 func load_malon():
 	$UnitSpawner.set_goal($PosicionGeneral)

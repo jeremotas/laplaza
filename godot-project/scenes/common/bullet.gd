@@ -37,14 +37,14 @@ func _ready():
 func prepare():
 	pass
 	
-func prepare_explotion(layer, lifetime, scale_radius, particle, sound = true):
+func prepare_explotion(layer, lifetime, scale_radius, particle, sound_active = true):
 	explodes = true
 	one_hit = false
 	explotion_layer = layer
 	explotion_lifetime = lifetime
 	explotion_scale_radius = scale_radius
 	explotion_particle = particle
-	explotion_sound = sound
+	explotion_sound = sound_active
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
