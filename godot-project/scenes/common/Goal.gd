@@ -28,6 +28,7 @@ func _on_area_body_entered(body):
 	if "faction" in body and body.faction == faction and NeededUnits > UnitsArrived:
 		UnitsArrived += 1
 		body.destroy_character()
+		$Entra.play()
 
 
 func _on_area_2d_body_entered(body):
