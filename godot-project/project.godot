@@ -21,6 +21,7 @@ boot_splash/use_filter=false
 
 Global="*res://global.gd"
 SceneTransition="*res://scenes/controls/scene_transition.tscn"
+CreditsData="*res://credits_data.gd"
 
 [display]
 

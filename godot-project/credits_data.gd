@@ -1,3 +1,6 @@
+extends Node
+
+var credits = "
 
 
 
@@ -26,6 +29,9 @@ Mauro Nigro
 Ezequiel García
 Tomás García
 Dakota Mogilewski
+Gabriela D'Addario
+Julia
+Santiago Yatzky
 
 
 
@@ -66,3 +72,5 @@ Godot Engine
 
 [Realizado por]
 Estudio - La Romero
+
+"

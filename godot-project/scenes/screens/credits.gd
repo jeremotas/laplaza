@@ -95,18 +95,24 @@ func _ready():
 		playlist_track(playlistIndex)
 	
 	# Verify if a credits file has been provided
-	if creditsFile == null or creditsFile == "":
-		push_error("At least one credits file must be provided.")
-		assert(false)
+	#if creditsFile == null or creditsFile == "":
+	#	push_error("At least one credits file must be provided.")
+	#	assert(false)
 	
 	# Verify if credits file exists
-	if not FileAccess.file_exists(creditsFile):
-		push_error("Credits file does not exist.")
-		assert(false)
+	#if not FileAccess.file_exists(creditsFile):
+	#	push_error("Credits file does not exist.")
+	#	assert(false)
 	# Well, open the credits file and read it
-	file = FileAccess.open(creditsFile, FileAccess.READ)
-	credits = file.get_as_text()
-	file.close()
+	#file = FileAccess.open(creditsFile, FileAccess.READ)
+	#credits = file.get_as_text()
+	#file.close()
+	
+	
+	
+	credits = CreditsData.credits
+	
+	
 	
 	# Parse the credits file
 	var scrollingText = null
@@ -118,6 +124,7 @@ func _ready():
 	for i in lines.size():
 		lines[i] = lines[i].strip_edges()
 		line = lines[i]
+		print(line)
 		if line.begins_with("{") and line.ends_with("}"):
 			scrollingText = null
 			centeredText = Label.new()
