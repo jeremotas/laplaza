@@ -66,7 +66,7 @@ text = "Reintentar"
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_pfgda")
-text = "Menu principal"
+text = "Menú principal"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_67jdo")

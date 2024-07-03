@@ -190,7 +190,7 @@ layout_mode = 2
 theme = ExtResource("3_3fudx")
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 24
-text = "Menu principal"
+text = "Menú principal"
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_or8fn")

@@ -95,7 +95,7 @@ text = "Volver a jugar"
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
-text = "Menu principal"
+text = "Menú principal"
 
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

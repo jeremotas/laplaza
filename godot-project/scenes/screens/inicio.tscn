@@ -71,7 +71,7 @@ text = "Opciones"
 [node name="Creditos" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
-text = "Creditos"
+text = "Créditos"
 
 [node name="Salir" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
