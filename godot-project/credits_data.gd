@@ -8,7 +8,7 @@ var credits = "
 Esteban Sandoval
 
 [Director de arte]
-Facundo Tupac Martínez
+Facundo Túpac Martínez
 
 [Ayudantes de arte]
 Esteban Sandoval
@@ -22,8 +22,8 @@ Gastón Ariel Loza
 Jeremías Cavallero
 Alejandra Soledad Zarate
 
-[Casual testers]
-Joaquin Cavallero
+[Testers casuales]
+Joaquín Cavallero
 Facundo Cavallero
 Mauro Nigro
 Ezequiel García
@@ -35,9 +35,9 @@ Santiago Yatzky
 
 
 
-{MUSICA}
+{MÚSICA}
 
-{FACUNDO TUPAC MARTÍNEZ}
+{FACUNDO TÚPAC MARTÍNEZ}
 { - }
 {Chacarera de las trenzas}
 {Chacarera de las trenzas (piano)}
@@ -61,7 +61,7 @@ Santiago Yatzky
 {Universidad Nacional Scalabrini Ortiz}
 
 
-{Victor Hugo Morales}
+{Víctor Hugo Morales}
 {Suno.ai}
 
 
