@@ -51,7 +51,7 @@ func attack():
 		b.set_collision_mask(1)
 		b.set_collision_mask(4)
 		b.set_color(Color(1, 1, 0.2))
-		get_parent().get_parent().add_child(b)
+		get_parent().add_child(b)
 		
 		#$WeaponSound.play()
 		attack_sound(GUNSHOT)
