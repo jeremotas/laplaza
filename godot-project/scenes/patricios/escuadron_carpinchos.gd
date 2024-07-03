@@ -38,9 +38,11 @@ func startAttack(positionInit, positionEnd):
 	create_order($Carpincho26, positionEnd, 25)
 	create_order($Carpincho27, positionEnd, 26)
 	create_order($Carpincho28, positionEnd, 27)
+	$Carpincho.play_sound_walk()
 	bReady = true
 
 func create_order(oCarpincho, endPositionParam, seektime):
+	
 	startPosition = oCarpincho.global_position
 	#endPosition = startPosition
 	#endPosition.x = startPosition.x + 1000
@@ -48,6 +50,7 @@ func create_order(oCarpincho, endPositionParam, seektime):
 	oCarpincho.set_sound_start(seektime)
 	
 	oCarpincho.add_to_group("carpinchos")
+	oCarpincho.status.moving = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

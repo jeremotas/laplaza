@@ -22,6 +22,10 @@ func _init():
 	
 func set_sound_start(seektime):
 	$WalkSound.seek(seektime)
+	pass
+	
+func play_sound_walk():
+	$WalkSound.play()
 
 func create_goal(endPosition):
 	oGoal = Marker2D.new()
@@ -33,12 +37,16 @@ func assign_goal(oGoalParam):
 	
 	
 func _process(delta):
+	status.moving = true
 	#malon_sticked()
 	#attack()
 	if speed == 0: queue_free()
-		
 	super(delta)
 
 func attack():
 	
 	pass	
+
+
+func _on_timer_timeout():
+	queue_free()

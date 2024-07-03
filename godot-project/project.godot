@@ -10,12 +10,13 @@ config_version=5
 
 [application]
 
-config/name="La plaza"
+config/name="La furia de las trenzas"
 run/main_scene="res://scenes/screens/splash-godot.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+config/windows_native_icon="res://assets/icon.ico"
 
 [autoload]
 
