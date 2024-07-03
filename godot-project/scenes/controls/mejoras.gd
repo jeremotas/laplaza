@@ -69,7 +69,7 @@ func calculate_gastado():
 	return gastado
 
 func _on_menu_pressed():
-	if calculate_saldo_lagrimas() > 0:
+	if calculate_saldo_lagrimas() >= 0:
 		save_mejoras()
 		get_tree().change_scene_to_file("res://scenes/screens/inicio.tscn")
 		
