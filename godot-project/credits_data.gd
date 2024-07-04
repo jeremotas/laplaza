@@ -22,47 +22,60 @@ Gastón Ariel Loza
 Jeremías Cavallero
 Alejandra Soledad Zarate
 
+[Arte de referencia]
+Masalimov Ilnur
+
+[Música original]
+Facundo Túpac Martínez
+
+Chacarera de las trenzas
+Chacarera de las trenzas (piano)
+Intro de bombo legüero
+Himno nacional Argentino
+
+[Música]
+J. Thomson - T. A. Arne
+
+Rule Britannia
+
+[Música de referencia]
+Suno.AI
+
 [Testers casuales]
 Joaquín Cavallero
 Facundo Cavallero
+Gabriela D'Addario
 Mauro Nigro
 Ezequiel García
 Tomás García
+Sebastián García
+Leandro Casal Vitale
 Dakota Mogilewski
-Gabriela D'Addario
-Julia
+Julia Malena Fernández
 Santiago Yatzky
-
-
-
-{MÚSICA}
-
-{FACUNDO TÚPAC MARTÍNEZ}
-{ - }
-{Chacarera de las trenzas}
-{Chacarera de las trenzas (piano)}
-{Intro de bombo legüero}
-{Himno nacional argentino}
-
-{J. THOMSON - T. A. ARNE} 
-{ - }
-{Rule Britannia}
+Lautaro Martínez
+Catriel Martínez
+Nicolás Benavides Elsner
 
 
 
 
-{AGRADECIMIENTO ESPECIAL PARA:}
-
-{Emanuel Berdichevsky}
-{Gonzalo Borzino}
-{Guillermo Crespi}
 
 
-{Universidad Nacional Scalabrini Ortiz}
+
+[Agradecimiento]
+Emanuel Berdichevsky
+[especial]
+Gonzalo Borzino
+Guillermo Crespi
+
+Universidad Nacional Scalabrini Ortiz
+
+Víctor Hugo Morales
 
 
-{Víctor Hugo Morales}
-{Suno.ai}
+
+
 
 
 
@@ -73,4 +86,14 @@ Godot Engine
 [Realizado por]
 Estudio - La Romero
 
+
+
+
+
+
+
+
+
+{LA FURIA DE LAS TRENZAS}
+{estudio - la romero}
 "
