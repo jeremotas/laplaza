@@ -18,9 +18,9 @@ var aMessages = [
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("READY")
+	#print("READY")
 	aMessagesInstance = aMessages
-	print(aMessagesInstance.size())
+	#print(aMessagesInstance.size())
 	Engine.time_scale = 1
 	#oSpeechTimer.autostart = true
 	#oSpeechTimer.wait_time = 0.5
@@ -33,7 +33,7 @@ func _process(_delta):
 		gotolevel()
 
 func show_message(oMsg):
-	print(oMsg.message)
+	#print(oMsg.message)
 	oRichLabel.text = oMsg.message
 	oRichLabel.visible = true
 	oAnimationPlayer.play("title_in")
@@ -59,6 +59,6 @@ func consume_message():
 	
 
 func _on_speech_timer_timeout():
-	print("TIMER!")
+	#print("TIMER!")
 	consume_message()
 	pass # Replace with function body.

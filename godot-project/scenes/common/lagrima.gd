@@ -29,14 +29,14 @@ func _physics_process(delta):
 	move_and_slide()
 
 func move_to(delta):
-	print("move")
+#	print("move")
 	speed += 100.0
 	direction = (followUnit.global_position - global_position).normalized()
 	velocity = direction * speed * delta
 	#translate(direction * speed * delta)
 
 func follow(oWho):
-	print('Debo seguir a', oWho)
+	#print('Debo seguir a', oWho)
 	followUnit = oWho
 
 func _on_area_2d_body_entered(body):

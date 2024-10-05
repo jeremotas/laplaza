@@ -124,7 +124,7 @@ func _ready():
 	for i in lines.size():
 		lines[i] = lines[i].strip_edges()
 		line = lines[i]
-		print(line)
+		#print(line)
 		if line.begins_with("{") and line.ends_with("}"):
 			scrollingText = null
 			centeredText = Label.new()

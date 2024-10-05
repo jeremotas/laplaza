@@ -50,7 +50,7 @@ func ring_bell():
 	
 
 func _on_warning_zone_body_entered(body):
-	print("Ingleses entrando...")
+	#print("Ingleses entrando...")
 	if not $VisibleOnScreenNotifier2D.is_on_screen() and "faction" in body and body.faction == "ingleses":
 		ring_bell()
 	

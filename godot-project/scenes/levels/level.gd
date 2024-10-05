@@ -331,7 +331,7 @@ func zoom_general(delta):
 			$General/Camera2D.zoom += delta * -zoom_general_speed
 		else:
 			$General/Camera2D.zoom = zoom_back
-	print($General/Camera2D.zoom)
+	#print($General/Camera2D.zoom)
 	
 func assign_max_alive():
 	# Determina el maximo cantidad de unidades vivas posibles conrtoladas por el spawn patricio
@@ -360,7 +360,7 @@ func prepare_enemy_spawns():
 				strategy = enemy_strategy[0]
 		
 		if strategy.name == last_strategy: return 
-		print(iSecondsPassed," segundos ", strategy.name)
+		#print(iSecondsPassed," segundos ", strategy.name)
 		$WaveTitle.speech(strategy.name)
 		last_strategy = strategy.name
 		for zone in spawn_zones:
