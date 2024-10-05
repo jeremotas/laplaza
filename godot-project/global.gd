@@ -84,7 +84,7 @@ var settings = {
 				"life": 20000000,
 				"min_damage_given": 100000,
 				"max_damage_given": 100000,
-				"max_speed": 400,
+				"max_speed": 500,
 				"bullet": {
 					"speed":800,
 					"duration": 0.01,

@@ -27,8 +27,8 @@ func malon_sticked():
 	input_accepted = false
 	if not bSticked and oGoalAssigned:
 		go_to(oGoalAssigned.global_position, true)
-	else:
-		input_accepted = true
+	#else:
+	#	input_accepted = true
 	
 func _process(delta):
 	malon_sticked()

@@ -686,7 +686,7 @@ states/walk/position = Vector2(561.334, 80.5203)
 states/win/node = SubResource("AnimationNodeAnimation_4auvn")
 states/win/position = Vector2(786.444, -31.839)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gc4nl"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4wu01"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5fi4q"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_r7nas"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_lq86a"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_01o7k"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_h2a58"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_m6io4"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_7xolf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_oaabk"), "idle", "barrilete_cosmico", SubResource("AnimationNodeStateMachineTransition_kltvf"), "barrilete_cosmico", "idle", SubResource("AnimationNodeStateMachineTransition_7v4k4"), "walk", "barrilete_cosmico", SubResource("AnimationNodeStateMachineTransition_rcjd1"), "barrilete_cosmico", "walk", SubResource("AnimationNodeStateMachineTransition_5j1bg"), "barrilete_cosmico", "hurt", SubResource("AnimationNodeStateMachineTransition_isge3"), "barrilete_cosmico", "die", SubResource("AnimationNodeStateMachineTransition_l6pve"), "hurt", "barrilete_cosmico", SubResource("AnimationNodeStateMachineTransition_nqke3"), "idle", "win", SubResource("AnimationNodeStateMachineTransition_sgmpj"), "walk", "win", SubResource("AnimationNodeStateMachineTransition_kus84"), "hurt", "win", SubResource("AnimationNodeStateMachineTransition_w18ix"), "barrilete_cosmico", "win", SubResource("AnimationNodeStateMachineTransition_7xhug")]
-graph_offset = Vector2(0, -146.074)
+graph_offset = Vector2(0, 128.468)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uv7yh"]
 radius = 152.03
@@ -704,7 +704,7 @@ fill_to = Vector2(0.765873, 0.25)
 radius = 30.7318
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_at6hm"]
-radius = 64.454
+radius = 47.7907
 
 [node name="General" type="CharacterBody2D"]
 z_index = 2
@@ -737,8 +737,7 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11.1111)
 sprite_frames = SubResource("SpriteFrames_clm41")
-animation = &"idle"
-frame = 4
+animation = &"barrilete_cosmico"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -812,6 +811,7 @@ stream = ExtResource("8_bclty")
 bus = &"Efectos"
 
 [node name="InvincibleEffect" type="PointLight2D" parent="."]
+position = Vector2(4.44444, -12.2222)
 color = Color(1, 1, 0, 1)
 energy = 0.67
 texture = SubResource("GradientTexture2D_svlss")

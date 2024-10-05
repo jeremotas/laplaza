@@ -385,6 +385,7 @@ faction = "ingleses"
 [node name="General" parent="." instance=ExtResource("5_cfpx1")]
 position = Vector2(294, 892)
 life = 20
+input_accepted = false
 
 [node name="Camera2D" type="Camera2D" parent="General"]
 position = Vector2(1.11111, -1.11111)
@@ -409,7 +410,7 @@ autostart = true
 [node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, -8)
 stream = ExtResource("9_2qses")
-volume_db = 15.682
+volume_db = 10.0
 bus = &"Efectos"
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_3l2by")]

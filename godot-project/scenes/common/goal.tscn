@@ -140,6 +140,8 @@ stream = ExtResource("4_sam4w")
 
 [node name="Entra" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ma033")
+volume_db = 10.0
+bus = &"Efectos"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-5, -6.5)

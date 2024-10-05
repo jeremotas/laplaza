@@ -31,6 +31,7 @@ var spawn_zones = []
 var last_strategy = "-" # Toma este valor inicial para que cuando hacemos las pruebas no se rompa en caso de empezar en un descanso.
 var ActualTimeScale
 var highscore = 0
+var rng = RandomNumberGenerator.new()
 
 # Variable para control del malon.
 var malon = [
@@ -42,6 +43,7 @@ var malon = [
 ]
 var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husares_infernales.tscn")
 var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.tscn")
+var SonidoGota = preload('res://assets/created/sounds/gota.mp3')
 
 func _ready():
 	get_viewport().set_physics_object_picking_sort(true) # 
@@ -56,8 +58,21 @@ func _ready():
 	
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
+	first_move_general()
 	
 	Engine.time_scale = 1
+
+func first_move_general():
+	$General.input_accepted = false
+	var go_position = $EnemyGoal.global_position
+	go_position.y -= 450
+	$General.go_to(go_position, true)
+	await get_tree().create_timer(2.5).timeout
+	zooming = "up"
+	await get_tree().create_timer(1).timeout
+	$General.input_accepted = true
+	
+	
 	
 	
 func add_spawn_zone(zone):
@@ -390,6 +405,18 @@ func _on_reward(faction, experience_given):
 	# Sumador de experiencia
 	if faction != $General.faction:
 		TheGameStats.add_experience(experience_given)
+		create_sound_experience()
+	
+func create_sound_experience():
+	var SoundPlayer = AudioStreamPlayer2D.new()
+	self.add_child(SoundPlayer)
+	var stream = SonidoGota
+	SoundPlayer.stream = stream
+	SoundPlayer.bus = &"Efectos"
+	SoundPlayer.volume_db = 10.0
+	SoundPlayer.pitch_scale = 1 + rng.randf_range(-0.2, 0.2)
+	SoundPlayer.connect("finished", SoundPlayer.queue_free)
+	SoundPlayer.play()
 
 func _on_timer_command_timeout():
 	command = ""

@@ -22,7 +22,11 @@ func _init():
 	coolDownAttackTime = Global.settings.patricios.general.attack.cooldown
 	invincible = false
 	agua_hirviendo_power = 0
+	
 	init()
+
+func ready():
+	input_accepted = false	
 	
 func _process(delta):
 	last_direction_message()
@@ -92,7 +96,7 @@ func init_barrilete_cosmico():
 	Engine.time_scale = 0.2
 	#min_damage_given = Global.settings.patricios.general.barrilete_cosmico.min_damage_given
 	#max_damage_given = Global.settings.patricios.general.barrilete_cosmico.max_damage_given
-	#max_speed = Global.settings.patricios.general.barrilete_cosmico.max_speed
+	max_speed = Global.settings.patricios.general.barrilete_cosmico.max_speed
 	#bullet_lifetime = Global.settings.patricios.general.barrilete_cosmico.bullet.duration
 	#bullet_speed = Global.settings.patricios.general.barrilete_cosmico.bullet.speed
 	#coolDownAttackTime = Global.settings.patricios.general.barrilete_cosmico.cooldown

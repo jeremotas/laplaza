@@ -31,13 +31,12 @@ corner_radius_bottom_left = 8
 script = ExtResource("1_b1w0e")
 
 [node name="PapiroDown" type="TextureRect" parent="."]
-offset_left = 1.0
+offset_left = -6.0
 offset_top = 418.0
-offset_right = 652.0
+offset_right = 645.0
 offset_bottom = 479.0
 texture = ExtResource("2_bh0ei")
-stretch_mode = 2
-metadata/_edit_lock_ = true
+stretch_mode = 3
 
 [node name="Time" type="Label" parent="."]
 offset_left = 4.0
@@ -104,7 +103,6 @@ theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 0
-metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
