@@ -160,7 +160,7 @@ func CombatCalculation(_delta):
 						if startAttack:
 							
 							#unitInArea.takeDamage(min_damage_given, max_damage_given)
-							attack_objective = {"global_position": unitInArea.global_position, "faction": unitInArea.faction}
+							attack_objective = {"global_position": unitInArea.global_position, "faction": unitInArea.faction, "velocity": unitInArea.velocity}
 							coolDownTimer.start()
 							status.attacking = true
 							attacked = true

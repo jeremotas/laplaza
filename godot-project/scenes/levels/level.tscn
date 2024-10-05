@@ -1,7 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://doeqrttpttyvl"]
+[gd_scene load_steps=28 format=3 uid="uid://doeqrttpttyvl"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_4e1oj"]
-[ext_resource type="Shader" path="res://shaders/test.gdshader" id="1_hs2ka"]
 [ext_resource type="Texture2D" uid="uid://divu38pun5cej" path="res://assets/created/tilesets/tilesetmud64exp.png" id="2_udve2"]
 [ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="2_xolry"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="3_dnsku"]
@@ -81,24 +80,6 @@ b = Vector2(1387, -975)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ku17g"]
 shader = ExtResource("2_xolry")
 shader_parameter/amount = null
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_arnvs"]
-shader = ExtResource("1_hs2ka")
-shader_parameter/screen_size = Vector2(320, 180)
-shader_parameter/show_curvature = true
-shader_parameter/curvature_x_amount = 10.8
-shader_parameter/curvature_y_amount = 11.12
-shader_parameter/corner_color = Color(0, 0, 0, 1)
-shader_parameter/show_vignette = true
-shader_parameter/vignette_opacity = 0.2
-shader_parameter/show_horizontal_scan_lines = true
-shader_parameter/horizontal_scan_lines_amount = 180.0
-shader_parameter/horizontal_scan_lines_opacity = 1.0
-shader_parameter/show_vertical_scan_lines = false
-shader_parameter/vertical_scan_lines_amount = 320.0
-shader_parameter/vertical_scan_lines_opacity = 1.0
-shader_parameter/boost = 1.68
-shader_parameter/aberration_amount = 0.0
 
 [node name="Game" type="Node2D"]
 material = SubResource("ShaderMaterial_vt5ru")
@@ -615,16 +596,6 @@ material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(289, 791)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_82wvu")
-
-[node name="VisualEffect" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="VisualEffect"]
-material = SubResource("ShaderMaterial_arnvs")
-offset_left = -180.0
-offset_top = -186.0
-offset_right = 853.0
-offset_bottom = 693.0
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

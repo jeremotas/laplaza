@@ -58,8 +58,8 @@ var settings = {
 			"max_speed": 250,
 			"attack":{
 				"bullet": {
-					"speed": 150,
-					"duration": 2.0,
+					"speed": 250,
+					"duration": 1.2,
 				},
 				"cooldown": 1,
 				"min_damage_given": 1,
