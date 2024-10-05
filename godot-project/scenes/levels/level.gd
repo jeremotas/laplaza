@@ -19,6 +19,11 @@ var zoom_high = Vector2(0.6, 0.6)
 var zoom_back = Vector2(1, 1)
 var zoom_speed = Vector2(0.3, 0.3)
 var zoom_acceleration = 0.3
+
+var zoom_general_status = false
+var zoom_general_max = Vector2(6,6)
+var zoom_general_speed = Vector2(2, 2)
+
 var original_zoom = Vector2()
 var iStrategyCall = 0
 var command = ""
@@ -103,6 +108,8 @@ func _process(delta):
 		control_malon() # Gestionamos la composicion del malon
 		zoom(delta) # Controlamos el movimiento de camara
 		process_pause() # Revisamos si hubo pausa
+	else:
+		zoom_general(delta)
 	if command == "d10s":
 		barrilete_cosmico()
 		command = ""
@@ -184,16 +191,20 @@ func calculate_stats():
 		game_win()
 		
 func game_win():
+	zoom_general_status = true
+	$General.celebration()
 	Engine.time_scale = 0.3
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2).timeout
 	save_lagrimas(TheGameStats.experience)
 	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/screens/victory.tscn")		
 		
 func game_over():
+	zoom_general_status = true
 	Engine.time_scale = 0.3
 	$General.modulate = Color("ff0000")
-	await get_tree().create_timer(1).timeout
+	
+	await get_tree().create_timer(2).timeout
 	Engine.time_scale = 1
 	$General.modulate = Color("ffffff00")
 	
@@ -306,7 +317,18 @@ func zoom(delta):
 			zooming = ""
 			$General/Camera2D.zoom = original_zoom 
 	
-	
+func zoom_general(delta):
+	if zoom_general_status == true:
+		if $General/Camera2D.zoom < zoom_general_max:
+			$General/Camera2D.zoom += delta * +zoom_general_speed
+		else:
+			$General/Camera2D.zoom = zoom_general_max
+	else:
+		if $General/Camera2D.zoom > zoom_back:
+			$General/Camera2D.zoom += delta * -zoom_general_speed
+		else:
+			$General/Camera2D.zoom = zoom_back
+	print($General/Camera2D.zoom)
 	
 func assign_max_alive():
 	# Determina el maximo cantidad de unidades vivas posibles conrtoladas por el spawn patricio

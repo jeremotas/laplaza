@@ -1,0 +1,55 @@
+/* @theme lafuria */
+
+@import 'default';
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+section {
+    font-family: 'IM Fell English SC', serif;
+    color: white;
+    font-weight: 100;
+    background-image: url(https://www.quae.com.ar/themes/marp/polaris_logo_white.png);
+    background-color: #222;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1em) 1em;
+    background-size: 10vw;
+}
+section[data-marpit-pagination="1"] {
+    background-position: 0 0;
+    background-size: cover;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.3)
+    ), url(https://polaris.quae.com.ar/polaris-quae/src/images/background_login.gif);
+}
+section::after {
+content: '' attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+}
+h1 {color: #FFF; text-transform: uppercase; font-size: 3em;}
+h2 {color: #FFF; font-weight: 100;}
+h3 {color: #F72A0C; text-transform: uppercase; font-size:1.9em;}
+
+li[data-bespoke-marp-fragment="inactive"] {
+    opacity: 0;
+}
+
+li[data-bespoke-marp-fragment="active"] {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+@keyframes marp-outgoing-transition-slide-up {
+    from { 
+        transform: translateY(0%); 
+        animation-timing-function: ease-in;
+    }
+    to { transform: translateY(calc(var(--marp-transition-direction, 1) * -100%)); }
+}
+@keyframes marp-incoming-transition-slide-up {
+    from { transform: translateY(calc(var(--marp-transition-direction, 1) * 100%)); }
+    to { transform: translateY(0%); }
+}
+
+div[data-marpit-advanced-background-container]>figure {
+  background-color: #fff4 !important;
+}

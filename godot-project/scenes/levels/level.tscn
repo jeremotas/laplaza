@@ -1,7 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://doeqrttpttyvl"]
+[gd_scene load_steps=30 format=3 uid="uid://doeqrttpttyvl"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_4e1oj"]
+[ext_resource type="Shader" path="res://shaders/test.gdshader" id="1_hs2ka"]
 [ext_resource type="Texture2D" uid="uid://divu38pun5cej" path="res://assets/created/tilesets/tilesetmud64exp.png" id="2_udve2"]
+[ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="2_xolry"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="3_dnsku"]
 [ext_resource type="Texture2D" uid="uid://drgglcsbtf24q" path="res://assets/created/Cabildo.png" id="3_dv022"]
 [ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://scenes/common/goal.tscn" id="4_nncdj"]
@@ -17,6 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://dumwecyqycd6n" path="res://assets/created/Altos abajo.png" id="15_nqi45"]
 [ext_resource type="Texture2D" uid="uid://ui641fbylwgm" path="res://assets/created/Altos arriba.png" id="16_1bp38"]
 [ext_resource type="Texture2D" uid="uid://dfx6iu5kl57m0" path="res://assets/created/Recova x2.png" id="17_82wvu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vt5ru"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vgyq5"]
+shader = ExtResource("2_xolry")
+shader_parameter/amount = null
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgl40"]
 resource_name = "terreno"
@@ -70,10 +78,34 @@ b = Vector2(-151, 0)
 a = Vector2(-40, -980)
 b = Vector2(1387, -975)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ku17g"]
+shader = ExtResource("2_xolry")
+shader_parameter/amount = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_arnvs"]
+shader = ExtResource("1_hs2ka")
+shader_parameter/screen_size = Vector2(320, 180)
+shader_parameter/show_curvature = true
+shader_parameter/curvature_x_amount = 10.8
+shader_parameter/curvature_y_amount = 11.12
+shader_parameter/corner_color = Color(0, 0, 0, 1)
+shader_parameter/show_vignette = true
+shader_parameter/vignette_opacity = 0.2
+shader_parameter/show_horizontal_scan_lines = true
+shader_parameter/horizontal_scan_lines_amount = 180.0
+shader_parameter/horizontal_scan_lines_opacity = 1.0
+shader_parameter/show_vertical_scan_lines = false
+shader_parameter/vertical_scan_lines_amount = 320.0
+shader_parameter/vertical_scan_lines_opacity = 1.0
+shader_parameter/boost = 1.68
+shader_parameter/aberration_amount = 0.0
+
 [node name="Game" type="Node2D"]
+material = SubResource("ShaderMaterial_vt5ru")
 script = ExtResource("1_4e1oj")
 
 [node name="TileMap" type="TileMap" parent="."]
+material = SubResource("ShaderMaterial_vgyq5")
 position = Vector2(1, 0)
 tile_set = SubResource("TileSet_vruv3")
 format = 2
@@ -464,102 +496,135 @@ autostart = true
 [node name="Edificios" type="Node" parent="."]
 
 [node name="Cabildo" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(48, -384)
 texture = ExtResource("3_dv022")
 
 [node name="CasaVecina" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(726, -300)
 texture = ExtResource("14_vm1g7")
 
 [node name="Laterales4" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(1719, 355)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales3" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(1429, 362)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales2" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(1131, 356)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales5" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-811, 357)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales6" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-1097, 353)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales7" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-125, 1412)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales12" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-754, 1414)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales16" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-485, 1417)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales14" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-1063, 1409)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales8" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(123, 1412)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales9" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(410, 1417)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales10" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(683, 1418)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales11" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(1143, 1416)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales13" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(1448, 1420)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales15" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(1736, 1423)
 texture = ExtResource("15_nqi45")
 
 [node name="Laterales" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-520, 357)
 texture = ExtResource("15_nqi45")
 
 [node name="Altos Aguirre Arriba" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-484.75, -266.177)
 scale = Vector2(1.24093, 1.24093)
 texture = ExtResource("16_1bp38")
 
 [node name="Altos Aguirre Arriba2" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(-762, -271)
 scale = Vector2(1.24093, 1.24093)
 texture = ExtResource("16_1bp38")
 
 [node name="Altos Aguirre Arriba3" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(1150.2, -262.48)
 scale = Vector2(1.24093, 1.24093)
 texture = ExtResource("16_1bp38")
 
 [node name="Altos Aguirre Arriba4" type="Sprite2D" parent="Edificios"]
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(1440, -262)
 scale = Vector2(1.24093, 1.24093)
 texture = ExtResource("16_1bp38")
 
 [node name="Recova" type="Sprite2D" parent="Edificios"]
 z_index = 20
+material = SubResource("ShaderMaterial_ku17g")
 position = Vector2(289, 791)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_82wvu")
+
+[node name="VisualEffect" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="VisualEffect"]
+material = SubResource("ShaderMaterial_arnvs")
+offset_left = -180.0
+offset_top = -186.0
+offset_right = 853.0
+offset_bottom = 693.0
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

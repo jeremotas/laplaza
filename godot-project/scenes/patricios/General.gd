@@ -30,12 +30,21 @@ func _process(delta):
 	invincible_effect()
 	life_status()
 	super(delta)
-	
+
+func celebration():
+	animation_tree["parameters/conditions/die"] = false
+	animation_tree["parameters/conditions/idle"] = false
+	animation_tree["parameters/conditions/got_hurt"] = false
+	animation_tree["parameters/conditions/shooting"] = false
+	animation_tree["parameters/conditions/walking"] = false
+	animation_tree["parameters/conditions/barrilete_cosmico"] = false	
+	animation_tree["parameters/conditions/win"] = true	
 	
 func life_status():
 	
 	if not status.hurt:
-		if life <= Global.settings.game.player_warning_life:
+		
+		if life <= Global.settings.game.player_warning_life and life > 0:
 			modulate = Color("ff0000ff")
 		else:
 			modulate = Color("ffffffff")

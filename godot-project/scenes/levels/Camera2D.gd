@@ -34,6 +34,8 @@ func random_offset() -> Vector2:
 func _ready():
 	pass
 
+func make_zoom():
+	zoom = zoom * 1.1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
