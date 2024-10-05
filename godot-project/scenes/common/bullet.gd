@@ -94,6 +94,8 @@ func create_explotion():
 	if explotion_layer > 0:
 		one_hit = false
 		speed = 0
+		if explotion_particle == "explosion":
+			get_parent().mini_shake()
 		$Area2D.scale = Vector2(explotion_scale_radius,explotion_scale_radius)
 		$Area2D.set_collision_mask_value(explotion_layer, true)
 		$ColorRect.visible = false

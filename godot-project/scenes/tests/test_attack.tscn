@@ -24,10 +24,10 @@ faction = "patricios"
 position = Vector2(522, 312)
 zone = "uno"
 probabilitySpawnOnTimer = 100.0
-unitScene = "res://scenes/ingleses/green_soldier.tscn"
+unitScene = "res://scenes/ingleses/ingles.tscn"
 faction = "ingleses"
-respawn_seconds = 0.5
-max_alive = 4
+respawn_seconds = 2.0
+max_alive = 2
 controlled_max_alive = true
 
 [node name="EnemyGoal" parent="." instance=ExtResource("6_vspmo")]

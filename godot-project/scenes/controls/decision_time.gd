@@ -31,22 +31,27 @@ func prepare_buttons(_experience):
 	for i in range(Global.settings.game.cards.arribeno): aButtonsUnidades.push_back($MarginContainer/HBoxContainer/ArribenoButtonCard)
 	
 	var aButtonsEfectos = []
-	for i in range(Global.settings.game.cards.matecito): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/MoreLifeButtonCard)
+	#for i in range(Global.settings.game.cards.matecito): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/MoreLifeButtonCard)
 	for i in range(Global.settings.game.cards.husares_infernales): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/HusaresInfernalesButtonCard)
 	for i in range(Global.settings.game.cards.barrilete_cosmico): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard)
 	for i in range(Global.settings.game.cards.ollas_del_pueblo): aButtonsEfectos.push_back($MarginContainer/HBoxContainer/LasOllasButtonCard)
 	
+	
+	
 	aButtonsUnidades.shuffle()
 	aButtonsEfectos.shuffle()
+	
 	var oCard1 = aButtonsUnidades[0]
 	oCard1.visible = true
 	var aNewButtons = []
 	for i in range (aButtonsUnidades.size()):
 		if aButtonsUnidades[i] != oCard1:
 			aNewButtons.push_back(aButtonsUnidades[i])
-
+	
 	aNewButtons[0].visible = true
 	aButtonsEfectos[0].visible = true
+	$MarginContainer/HBoxContainer/MoreLifeButtonCard.visible = true
+	
 	
 	oCard1.grab_focus.call_deferred()
 	pass

@@ -292,53 +292,6 @@ Agarrate fuerte que los de Arriba van con perdigones de plomo.
 "
 fit_content = true
 
-[node name="MoreLifeButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "[center]Matecito[/center]"
-fit_content = true
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("8_uq326")
-stretch_mode = 5
-
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "El general se toma unos verdes y recupera la vida.
-
-Eso si, me dijeron que lo toma amargo."
-fit_content = true
-
 [node name="BarrileteCosmicoButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_1s56n")
@@ -480,6 +433,53 @@ text = "Y un buen dia las cacerolas del pueblo entraron en vigor sobre Buenos Ai
 (¿Dónde lo vi?)"
 fit_content = true
 
+[node name="MoreLifeButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_1s56n")
+texture_hover = ExtResource("5_xgbix")
+texture_focused = ExtResource("5_xgbix")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_joe4m")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]Matecito[/center]"
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_uq326")
+stretch_mode = 5
+
+[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_joe4m")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "El general se toma unos verdes y recupera la vida.
+
+Eso si, me dijeron que lo toma amargo."
+fit_content = true
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GranaderoButton" to="." method="_on_granadero_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MorenoButton" to="." method="_on_moreno_button_pressed"]
@@ -491,7 +491,7 @@ fit_content = true
 [connection signal="pressed" from="MarginContainer/HBoxContainer/CorrentinoButtonCard" to="." method="_on_correntino_button_card_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MorenoButtonCard" to="." method="_on_moreno_button_card_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ArribenoButtonCard" to="." method="_on_arribeno_button_card_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/MoreLifeButtonCard" to="." method="_on_more_life_button_card_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard" to="." method="_on_barrilete_cosmico_button_card_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/HusaresInfernalesButtonCard" to="." method="_on_husares_infernales_button_card_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LasOllasButtonCard" to="." method="_on_las_ollas_button_card_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MoreLifeButtonCard" to="." method="_on_more_life_button_card_pressed"]

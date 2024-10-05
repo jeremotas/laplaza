@@ -9,23 +9,29 @@ var shakeTimer = null
 var applied_shake = 0
 var max_applied_shake = 0
 
-func apply_shake_seconds(iTime):
-	applied_shake = 0
-	max_applied_shake = iTime * 2
-	shakeTimer = Timer.new()
-	add_child(shakeTimer)
-	shakeTimer.autostart = true
-	shakeTimer.wait_time = 0.5
-	shakeTimer.one_shot = false
-	shakeTimer.timeout.connect(apply_shake)
-	shakeTimer.start()
+
+
+func apply_shake_seconds(iTime, fStrength):
+	if not shakeTimer:
+		applied_shake = 0
+		max_applied_shake = iTime * 2.0
+		shakeTimer = Timer.new()
+		randomStrength = fStrength
+		add_child(shakeTimer)
+		shakeTimer.autostart = true
+		shakeTimer.wait_time = 0.1
+		shakeTimer.one_shot = false
+		shakeTimer.timeout.connect(apply_shake)
+		shakeTimer.start()
 
 func apply_shake():
-	applied_shake += 1
+	applied_shake += 0.1
 	shake_strength = randomStrength
-	if applied_shake == max_applied_shake:
-		shakeTimer.stop()
-		shakeTimer.queue_free()
+	if applied_shake >= max_applied_shake:
+		if shakeTimer:
+			shakeTimer.stop()
+			shakeTimer.queue_free()
+			shake_strength = 0.0
 	
 func random_offset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))

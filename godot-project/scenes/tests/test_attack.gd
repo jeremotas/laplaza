@@ -18,6 +18,8 @@ func _ready():
 	
 	pass # Replace with function body.
 
+func mini_shake():
+	pass
 
 func _on_reward(faction, xp):	
 	#print('holis REWARD')

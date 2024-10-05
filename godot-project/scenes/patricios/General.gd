@@ -187,3 +187,9 @@ func _on_agua_hirviendo_timer_timeout():
 		b.set_sprite("res://assets/created/ollami_32.png", 0.99, 4)
 		b.set_color(Color(1, 1, 1))
 		get_parent().add_child(b)
+
+
+func _on_aspiradora_de_lagrimas_body_entered(body):
+	
+	if "unit_type" in body and body.unit_type == 'lagrima':
+		body.follow(self)

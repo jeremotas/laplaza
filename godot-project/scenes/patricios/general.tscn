@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://bc8o4p1i67cbn"]
+[gd_scene load_steps=99 format=3 uid="uid://bc8o4p1i67cbn"]
 
 [ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="2_1oyaa"]
@@ -703,6 +703,9 @@ fill_to = Vector2(0.765873, 0.25)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6cjoy"]
 radius = 30.7318
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_at6hm"]
+radius = 64.454
+
 [node name="General" type="CharacterBody2D"]
 z_index = 2
 scale = Vector2(0.9, 0.9)
@@ -735,7 +738,7 @@ show_percentage = false
 position = Vector2(0, -11.1111)
 sprite_frames = SubResource("SpriteFrames_clm41")
 animation = &"idle"
-frame = 1
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -825,5 +828,17 @@ debug_color = Color(0.980392, 0, 0.376471, 0.419608)
 wait_time = 5.0
 autostart = true
 
+[node name="AspiradoraDeLagrimas" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AspiradoraDeLagrimas"]
+light_mask = 0
+visibility_layer = 12
+shape = SubResource("CircleShape2D_at6hm")
+debug_color = Color(0, 0.541176, 0.956863, 0.419608)
+
 [connection signal="body_entered" from="BarrileteCosmico" to="." method="_on_barrilete_cosmico_body_entered"]
 [connection signal="timeout" from="AguaHirviendoTimer" to="." method="_on_agua_hirviendo_timer_timeout"]
+[connection signal="area_shape_entered" from="AspiradoraDeLagrimas" to="." method="_on_aspiradora_de_lagrimas_area_shape_entered"]
+[connection signal="body_entered" from="AspiradoraDeLagrimas" to="." method="_on_aspiradora_de_lagrimas_body_entered"]
