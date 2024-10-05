@@ -26,12 +26,12 @@ var settings = {
 		"cards": {
 			"granadero": 10,
 			"moreno": 1,
-			"arribeno": 1,
+			"arribeno": 3,
 			"correntino": 1,
-			"husares_infernales": 2,
+			"husares_infernales": 10,
 			"matecito": 10,
 			"barrilete_cosmico": 1,
-			"ollas_del_pueblo": 1
+			"ollas_del_pueblo": 4
 		},
 		"mejoras": {
 			"granadero": {

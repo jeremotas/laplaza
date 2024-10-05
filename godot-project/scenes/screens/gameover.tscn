@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://deepk7tv618e4"]
+[gd_scene load_steps=6 format=3 uid="uid://deepk7tv618e4"]
 
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_lkn3k"]
 [ext_resource type="Texture2D" uid="uid://51vme1xju2nx" path="res://assets/original/backgrounds/Flag-United-Kingdom-pixeled.webp" id="2_7kyfl"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_pfgda"]
 [ext_resource type="AudioStream" uid="uid://cjqwptvlo1ktt" path="res://assets/created/musica/Chacarera de las Trenzas 0.4 PIANO LENTO.mp3" id="4_67jdo"]
+[ext_resource type="Texture2D" uid="uid://dacwfwetgnwh8" path="res://assets/mkt/wishlist.png" id="5_cii70"]
 
 [node name="Gameover" type="Node"]
 script = ExtResource("1_lkn3k")
@@ -55,6 +56,12 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_vertical = 8
 
+[node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_pfgda")
+theme_override_font_sizes/font_size = 24
+text = "Seguinos en Steam"
+
 [node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -73,5 +80,42 @@ stream = ExtResource("4_67jdo")
 autoplay = true
 bus = &"Musica"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_top = -13.0
+offset_right = 642.0
+offset_bottom = 123.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="Wishlist_text" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -236.0
+offset_right = 195.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_pfgda")
+theme_override_font_sizes/font_size = 18
+text = "¿Vas a dejar que esto quede así? Agregá La Furia de Las Trenzas a tu lista de deseos en Steam para vengarte de los ingleses. 
+El Diego lo haría.
+Buscanos en Steam o scanneá este QR con tu celular."
+autowrap_mode = 2
+
+[node name="Wishlist" type="TextureButton" parent="."]
+offset_left = 527.0
+offset_top = 11.0
+offset_right = 630.0
+offset_bottom = 107.0
+texture_normal = ExtResource("5_cii70")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Wishlist" to="." method="_on_wishlist_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

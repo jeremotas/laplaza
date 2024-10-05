@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckkcp0mw2ieet"]
+[gd_scene load_steps=7 format=3 uid="uid://ckkcp0mw2ieet"]
 
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
 [ext_resource type="Texture2D" uid="uid://be4gobj4ipn2w" path="res://assets/original/backgrounds/Flag-Spain-Arg.webp" id="2_3x168"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_blw1a"]
 [ext_resource type="AudioStream" uid="uid://0p4to6x8jlkw" path="res://assets/original/Music/Himno Full Final.mp3" id="4_ican8"]
 [ext_resource type="AudioStream" uid="uid://cugberv1i8wtf" path="res://assets/original/sounds/crow-cheering.mp3" id="5_5ml8l"]
+[ext_resource type="Texture2D" uid="uid://dacwfwetgnwh8" path="res://assets/mkt/wishlist.png" id="6_ywyuj"]
 
 [node name="Victoria" type="Node"]
 script = ExtResource("1_eouvj")
@@ -40,20 +41,6 @@ theme_override_font_sizes/font_size = 68
 text = "¡VICTORIA!"
 horizontal_alignment = 1
 
-[node name="Mensaje" type="Label" parent="MarginContainer/VBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("3_blw1a")
-theme_override_font_sizes/font_size = 16
-text = "No hay un solo ejemplo en la historia, me atrevo a decir, que pueda igualarse a lo ocurrido en Buenos Aires, donde, sin exageración, todos los habitantes, libres o esclavos, combatieron con una resolución y una pertenencia que no podía esperarse ni del entusiasmo religioso o patriótico, ni del odio más inveterado."
-horizontal_alignment = 3
-autowrap_mode = 3
-
-[node name="Whitelocke" type="Label" parent="MarginContainer/VBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("3_blw1a")
-text = "J. Whitelocke"
-horizontal_alignment = 2
-
 [node name="Victoria" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ican8")
 volume_db = 14.0
@@ -84,6 +71,13 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 10
 
+[node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("3_blw1a")
+theme_override_font_sizes/font_size = 24
+text = "Seguinos en Steam"
+
 [node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -97,5 +91,41 @@ size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 text = "Menú principal"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -13.0
+offset_right = 640.0
+offset_bottom = 123.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="Wishlist_text" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -236.0
+offset_right = 195.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_blw1a")
+theme_override_font_sizes/font_size = 18
+text = "Sos el defensor que la patria necesita.  Agregá La Furia de Las Trenzas a tu lista de deseos en Steam para seguir masacrando ingleses. El Diego lo haría.
+Buscanos en Steam o scanneá este QR con tu celular."
+autowrap_mode = 2
+
+[node name="Wishlist" type="TextureButton" parent="."]
+offset_left = 527.0
+offset_top = 11.0
+offset_right = 630.0
+offset_bottom = 107.0
+texture_normal = ExtResource("6_ywyuj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Wishlist" to="." method="_on_steam_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

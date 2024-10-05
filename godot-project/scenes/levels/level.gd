@@ -206,6 +206,7 @@ func calculate_stats():
 		game_win()
 		
 func game_win():
+	$General.input_accepted = false
 	zoom_general_status = true
 	$General.celebration()
 	Engine.time_scale = 0.3
@@ -215,6 +216,7 @@ func game_win():
 	get_tree().change_scene_to_file("res://scenes/screens/victory.tscn")		
 		
 func game_over():
+	$General.input_accepted = false
 	zoom_general_status = true
 	Engine.time_scale = 0.3
 	$General.modulate = Color("ff0000")
