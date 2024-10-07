@@ -1,19 +1,22 @@
 extends CanvasLayer
 
 
-@onready var time_control = $Time
-@onready var level_control = $VBoxContainer/Nivel
-@onready var level_progress_control = $VBoxContainer/LevelProgressBar
-@onready var life_progress = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer4/VBoxContainer/LifeProgressBar
-@onready var plaza_progress = $MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer5/VBoxContainer/PlazaProgressBar
-@onready var lagrimas_obtenidas = $Lagrimas
+@onready var time_control = $Control/MarginContainer/VBoxContainer/Top/Time
+@onready var level_control = $Control/MarginContainer/VBoxContainer/Bottom/Nivel
+@onready var level_progress_control = $Control/MarginContainer/VBoxContainer/Bottom/LevelProgressBar
+@onready var life_progress = $Control/MarginContainer/VBoxContainer/Middle/VBoxLife/LifeProgressBar
+@onready var plaza_progress = $Control/MarginContainer/VBoxContainer/Middle/VBoxPlaza/PlazaProgressBar
+@onready var lagrimas_obtenidas = $Control/MarginContainer/VBoxContainer/Bottom/Lagrimas
 
-
+func ready():
+	plaza_progress.modulate = 'ffffffCC'
+	life_progress.modulate = '4d9c4eCC'
 
 func change_time(iSecondsTotal):
 	var iMinutes = iSecondsTotal / 60
 	var iSeconds = iSecondsTotal % 60
 	time_control.text = str(iMinutes).lpad(2, "0") + ":" + str(iSeconds).lpad(2, "0")
+	
 	
 func change_level(iLevel):
 	level_control.text = "Nivel " + str(iLevel + 1)
@@ -30,11 +33,11 @@ func change_life_indicator(value, max_value, invincible):
 	life_progress.max_value = max_value
 	
 	
-	life_progress.modulate = '4d9c4e'
+	life_progress.modulate = '4d9c4eCC'
 	if invincible:
-		life_progress.modulate = 'ffff00'
+		life_progress.modulate = 'ffff00CC'
 	if life_progress.value <= Global.settings.game.player_warning_life:
-		life_progress.modulate = 'ff0000'
+		life_progress.modulate = 'ff0000CC'
 	
 	#if invincible:
 	#	life_progress.modulate = Color('#b7b700')
@@ -44,6 +47,7 @@ func change_life_indicator(value, max_value, invincible):
 func change_plaza_indicator(value, max_value):
 	plaza_progress.value = max_value - value
 	plaza_progress.max_value = max_value
+	plaza_progress.modulate = 'ffffffCC'
 	
 
 func change(TheGameStats):

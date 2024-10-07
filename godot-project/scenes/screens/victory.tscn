@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckkcp0mw2ieet"]
+[gd_scene load_steps=8 format=3 uid="uid://ckkcp0mw2ieet"]
 
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
 [ext_resource type="Texture2D" uid="uid://be4gobj4ipn2w" path="res://assets/original/backgrounds/Flag-Spain-Arg.webp" id="2_3x168"]
@@ -7,13 +7,19 @@
 [ext_resource type="AudioStream" uid="uid://cugberv1i8wtf" path="res://assets/original/sounds/crow-cheering.mp3" id="5_5ml8l"]
 [ext_resource type="Texture2D" uid="uid://dacwfwetgnwh8" path="res://assets/mkt/wishlist.png" id="6_ywyuj"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aojef"]
+bg_color = Color(0, 0, 0, 0.533333)
+
 [node name="Victoria" type="Node"]
 script = ExtResource("1_eouvj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0.14902, 0.14902, 0.14902, 1)
-offset_right = 641.0
-offset_bottom = 481.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_3x168")
 expand_mode = 2
 stretch_mode = 6
@@ -91,25 +97,33 @@ size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 text = "Menú principal"
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1.0
-offset_top = -13.0
-offset_right = 640.0
-offset_bottom = 123.0
-color = Color(0, 0, 0, 0.8)
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 160)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aojef")
 
-[node name="Wishlist_text" type="Label" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -309.0
-offset_top = -236.0
-offset_right = 195.0
-offset_bottom = -127.0
+offset_left = -292.0
+offset_top = -66.0
+offset_right = 292.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+
+[node name="Wishlist_text" type="Label" parent="Panel/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 18
@@ -117,11 +131,9 @@ text = "Sos el defensor que la patria necesita.  Agregá La Furia de Las Trenzas
 Buscanos en Steam o scanneá este QR con tu celular."
 autowrap_mode = 2
 
-[node name="Wishlist" type="TextureButton" parent="."]
-offset_left = 527.0
-offset_top = 11.0
-offset_right = 630.0
-offset_bottom = 107.0
+[node name="Wishlist" type="TextureButton" parent="Panel/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
 texture_normal = ExtResource("6_ywyuj")
 ignore_texture_size = true
 stretch_mode = 5
