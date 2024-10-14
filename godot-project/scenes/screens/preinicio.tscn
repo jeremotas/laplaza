@@ -32,6 +32,7 @@ size_flags_vertical = 3
 script = ExtResource("1_x4wjh")
 
 [node name="Fondo" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 642.0
 offset_bottom = 481.0
 color = Color(0, 0, 0, 1)
