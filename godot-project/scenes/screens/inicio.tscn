@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://doo77a1vfcsws"]
+[gd_scene load_steps=16 format=3 uid="uid://doo77a1vfcsws"]
 
 [ext_resource type="Script" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="2_77qr6"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_box0m"]
 [ext_resource type="Texture2D" uid="uid://c3jyoqgbacjik" path="res://assets/ui/inicio_logo.png" id="2_k1aqo"]
 [ext_resource type="Texture2D" uid="uid://ddqla1qdya8rf" path="res://assets/ui/nube_2.png" id="3_23lxc"]
+[ext_resource type="Script" path="res://scenes/screens/Nubes.gd" id="3_lfl5s"]
 [ext_resource type="Texture2D" uid="uid://w7loke78ivvm" path="res://assets/ui/nube_3.png" id="4_2lfbs"]
 [ext_resource type="Texture2D" uid="uid://cuhp07010skgo" path="res://assets/created/lagrima_scaled_2x.png" id="4_5k0ma"]
 [ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="4_o01gl"]
@@ -33,6 +34,7 @@ scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_k1aqo")
 
 [node name="Nubes" type="Node2D" parent="."]
+script = ExtResource("3_lfl5s")
 
 [node name="Nube1" type="Sprite2D" parent="Nubes"]
 z_index = 1
@@ -77,6 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
+z_index = 2
 layout_mode = 0
 offset_right = 641.0
 offset_bottom = 480.0
