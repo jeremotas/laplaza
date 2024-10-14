@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-@onready var time_control = $Control/MarginContainer/VBoxContainer/Top/Time
+@onready var time_control = $Control/MarginContainer/VBoxContainer/Top/Panel/Time
 @onready var level_control = $Control/MarginContainer/VBoxContainer/Bottom/Nivel
 @onready var level_progress_control = $Control/MarginContainer/VBoxContainer/Bottom/LevelProgressBar
 @onready var life_progress = $Control/MarginContainer/VBoxContainer/Middle/VBoxLife/LifeProgressBar

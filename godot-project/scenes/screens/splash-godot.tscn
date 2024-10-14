@@ -24,7 +24,9 @@ _data = {
 "La romero": SubResource("Animation_eqjhs")
 }
 
-[node name="splash-godot" type="CanvasLayer"]
+[node name="splash-godot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_ynmaj")
 
 [node name="Fondo" type="ColorRect" parent="."]

@@ -1,38 +1,80 @@
-[gd_scene load_steps=8 format=3 uid="uid://doo77a1vfcsws"]
+[gd_scene load_steps=15 format=3 uid="uid://doo77a1vfcsws"]
 
 [ext_resource type="Script" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
+[ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="2_77qr6"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_box0m"]
-[ext_resource type="Texture2D" uid="uid://qj4f60651beo" path="res://assets/original/backgrounds/lafuriadelastrenzas.png" id="2_mog17"]
+[ext_resource type="Texture2D" uid="uid://c3jyoqgbacjik" path="res://assets/ui/inicio_logo.png" id="2_k1aqo"]
+[ext_resource type="Texture2D" uid="uid://ddqla1qdya8rf" path="res://assets/ui/nube_2.png" id="3_23lxc"]
+[ext_resource type="Texture2D" uid="uid://w7loke78ivvm" path="res://assets/ui/nube_3.png" id="4_2lfbs"]
 [ext_resource type="Texture2D" uid="uid://cuhp07010skgo" path="res://assets/created/lagrima_scaled_2x.png" id="4_5k0ma"]
+[ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="4_o01gl"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="5_eyd00"]
+[ext_resource type="Texture2D" uid="uid://dpoutmpujiroj" path="res://assets/ui/nube_4.png" id="5_fcnuv"]
+[ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="6_ajg8l"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="6_nliy4"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="7_pjvl7"]
 
-[node name="Inicio" type="CanvasLayer"]
-script = ExtResource("1_w0xhw")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a13kk"]
+texture = ExtResource("6_ajg8l")
 
-[node name="Control" type="Control" parent="."]
+[node name="Inicio" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w0xhw")
 
-[node name="Fondo" type="ColorRect" parent="Control"]
+[node name="Logo" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(207, 129)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_k1aqo")
+
+[node name="Nubes" type="Node2D" parent="."]
+
+[node name="Nube1" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(98, 96)
+texture = ExtResource("2_77qr6")
+
+[node name="Nube2" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(67, 276)
+texture = ExtResource("3_23lxc")
+
+[node name="Nube3" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(403, 136)
+texture = ExtResource("4_2lfbs")
+
+[node name="Nube4" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(348, 80)
+texture = ExtResource("5_fcnuv")
+
+[node name="Nube5" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(230, 192)
+texture = ExtResource("4_2lfbs")
+
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(0, 0, 0, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_a13kk")
 
-[node name="Lafuriadelastrenzas" type="Sprite2D" parent="Control"]
-position = Vector2(320.56, 136.749)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_mog17")
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0
@@ -46,37 +88,82 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
 
 [node name="Comenzar" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
+theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 24
 text = "Comenzar"
+icon = ExtResource("4_o01gl")
+flat = true
+alignment = 0
 
 [node name="Mejoras" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
+theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "Mejoras"
+icon = ExtResource("4_o01gl")
+flat = true
+alignment = 0
 
 [node name="Opciones" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
+theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 text = "Opciones"
+icon = ExtResource("4_o01gl")
+flat = true
+alignment = 0
 
 [node name="Creditos" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
+theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 text = "Créditos"
+icon = ExtResource("4_o01gl")
+flat = true
+alignment = 0
 
 [node name="Salir" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
+theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 text = "Salir"
+icon = ExtResource("4_o01gl")
+flat = true
+alignment = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
@@ -101,17 +188,17 @@ autoplay = true
 bus = &"Musica"
 
 [node name="General" parent="." instance=ExtResource("6_nliy4")]
-position = Vector2(90, 446)
+position = Vector2(122, 459)
 input_accepted = false
 
 [node name="UnitSpawner" parent="." instance=ExtResource("7_pjvl7")]
-position = Vector2(-42, 445)
+position = Vector2(-38, 474)
 probabilitySpawnOnTimer = 0.0
 faction = "patricios"
 respawn_seconds = 1.0
 
 [node name="PosicionGeneral" type="Marker2D" parent="."]
-position = Vector2(47, 450)
+position = Vector2(66, 475)
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Mejoras" to="." method="_on_mejoras_pressed"]

@@ -14,7 +14,7 @@ var settings = {
 			"units_arrived": 0,
 			"life": 15,
 			"malon": {
-				"granadero": 0,
+				"granadero": 5,
 				"correntino": 0,
 				"moreno": 0,
 				"husares_infernales": 0,
