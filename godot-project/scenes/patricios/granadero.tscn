@@ -1,12 +1,9 @@
-[gd_scene load_steps=64 format=3 uid="uid://b6541ctm8c4dc"]
+[gd_scene load_steps=62 format=3 uid="uid://b6541ctm8c4dc"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_23mat"]
-[ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="2_rdicc"]
 [ext_resource type="Texture2D" uid="uid://salulqvo0yqp" path="res://assets/created/patricio.png" id="3_glm1r"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="4_43sh1"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="5_nfucf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3uefd"]
 
 [sub_resource type="GDScript" id="GDScript_1m2dc"]
 script/source = "extends Character
@@ -72,12 +69,6 @@ func show_selection():
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_20jic"]
 resource_local_to_scene = true
-shader = ExtResource("2_rdicc")
-shader_parameter/color = Color(1, 0, 0, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 0
-shader_parameter/inside = false
-shader_parameter/add_margins = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2dyw"]
 atlas = ExtResource("3_glm1r")
@@ -537,11 +528,11 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0, 0.917647, 0.27451, 1)
 
 [node name="Soldado" type="CharacterBody2D"]
-material = SubResource("ShaderMaterial_3uefd")
 collision_mask = 7
 script = SubResource("GDScript_1m2dc")
 
 [node name="ComLabel" type="Label" parent="."]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -563,7 +554,7 @@ theme_override_font_sizes/font_size = 8
 material = SubResource("ShaderMaterial_20jic")
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 4
+frame = 1
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fkns3")
