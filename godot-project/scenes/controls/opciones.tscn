@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bl4b11xl0emiw"]
+[gd_scene load_steps=8 format=3 uid="uid://bl4b11xl0emiw"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_01m0e"]
 [ext_resource type="Script" path="res://scenes/controls/opciones.gd" id="1_mqqmh"]
-[ext_resource type="Texture2D" uid="uid://bypr8gwc62kys" path="res://assets/created/images/lafuria_opciones.png" id="1_ooam5"]
+[ext_resource type="Texture2D" uid="uid://bdmjw4ifbeh8o" path="res://assets/ui/cielo_1.png" id="2_741y0"]
 [ext_resource type="PackedScene" uid="uid://ne0jrytbfn5y" path="res://scenes/controls/volume_mixer.tscn" id="2_og7k0"]
+[ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="5_2klqf"]
 [ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="5_77hf2"]
 [ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="6_1v8t6"]
 
@@ -26,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ooam5")
+texture = ExtResource("2_741y0")
 expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -102,6 +103,9 @@ theme = ExtResource("1_01m0e")
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 24
 text = "Menu principal"
+icon = ExtResource("5_2klqf")
+flat = true
+alignment = 0
 
 [node name="Efectos" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_77hf2")

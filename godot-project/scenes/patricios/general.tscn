@@ -737,8 +737,8 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11.1111)
 sprite_frames = SubResource("SpriteFrames_clm41")
-animation = &"barrilete_cosmico"
-frame = 7
+animation = &"idle"
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -748,9 +748,6 @@ libraries = {
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
-libraries = {
-"": SubResource("AnimationLibrary_7logj")
-}
 tree_root = SubResource("AnimationNodeStateMachine_4dt8w")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/barrilete_cosmico = false

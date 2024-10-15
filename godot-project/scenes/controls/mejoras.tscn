@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxafnr67768aq"]
+[gd_scene load_steps=11 format=3 uid="uid://bxafnr67768aq"]
 
 [ext_resource type="Script" path="res://scenes/controls/mejoras.gd" id="1_ukoyr"]
-[ext_resource type="Texture2D" uid="uid://bypr8gwc62kys" path="res://assets/created/images/lafuria_opciones.png" id="2_knba5"]
+[ext_resource type="Texture2D" uid="uid://bdmjw4ifbeh8o" path="res://assets/ui/cielo_1.png" id="2_w06u8"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_3fudx"]
 [ext_resource type="Texture2D" uid="uid://bdsq3d4gp8hmk" path="res://assets/created/patricio_idle.png" id="3_skt3c"]
 [ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="4_341yq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bcejdeyfvpck8" path="res://assets/created/card_moreno.png" id="6_lv6ow"]
 [ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="6_or8fn"]
 [ext_resource type="Texture2D" uid="uid://vic1yusywd0r" path="res://assets/created/arribeno.png" id="7_4adcf"]
+[ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="9_yuhey"]
 
 [node name="Mejoras" type="CanvasLayer"]
 script = ExtResource("1_ukoyr")
@@ -29,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_knba5")
+texture = ExtResource("2_w06u8")
 expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -191,6 +192,9 @@ theme = ExtResource("3_3fudx")
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 24
 text = "Menú principal"
+icon = ExtResource("9_yuhey")
+flat = true
+alignment = 0
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_or8fn")

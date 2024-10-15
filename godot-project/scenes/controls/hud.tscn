@@ -1,31 +1,34 @@
-[gd_scene load_steps=9 format=3 uid="uid://uk3j7rh2076l"]
+[gd_scene load_steps=15 format=3 uid="uid://uk3j7rh2076l"]
 
 [ext_resource type="Script" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_7ne2n"]
-[ext_resource type="Texture2D" uid="uid://d4cg7c4prtfmj" path="res://assets/created/papiro_hud_bottom.png" id="2_bh0ei"]
+[ext_resource type="Texture2D" uid="uid://dimlmmai7rie" path="res://assets/ui/fondoreloj.png" id="2_pl8iw"]
 [ext_resource type="Script" path="res://scenes/controls/LifeProgressBar.gd" id="3_qjru7"]
+[ext_resource type="Texture2D" uid="uid://c4t0453rxg3mt" path="res://assets/created/patcabeza.png" id="4_alfnt"]
+[ext_resource type="Texture2D" uid="uid://busf656rvl4u2" path="res://assets/created/bandera_hud.png" id="5_mkyrq"]
 [ext_resource type="Texture2D" uid="uid://cuhp07010skgo" path="res://assets/created/lagrima_scaled_2x.png" id="5_uk0ha"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thx56"]
+texture = ExtResource("2_pl8iw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxyo0"]
+bg_color = Color(0, 0, 0, 0.266667)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt76d"]
 bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00u64"]
+bg_color = Color(0, 0, 0, 0.266667)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3evv7"]
 bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ba1"]
+bg_color = Color(0, 0, 0, 0.266667)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct6x6"]
 bg_color = Color(0.164706, 0.760784, 0.890196, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_detail = 1
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_b1w0e")
@@ -57,16 +60,23 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Time" type="Label" parent="Control/MarginContainer/VBoxContainer/Top"]
+[node name="Panel" type="Panel" parent="Control/MarginContainer/VBoxContainer/Top"]
+custom_minimum_size = Vector2(100, 48)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_thx56")
+
+[node name="Time" type="Label" parent="Control/MarginContainer/VBoxContainer/Top/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("2_7ne2n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.266667)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 34
 text = "00:00"
 horizontal_alignment = 1
@@ -79,11 +89,12 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="LifeProgressBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer/Middle/VBoxLife"]
-custom_minimum_size = Vector2(8, 0)
+custom_minimum_size = Vector2(6, 0)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 3
 theme = ExtResource("2_7ne2n")
+theme_override_styles/background = SubResource("StyleBoxFlat_kxyo0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_pt76d")
 step = 1.0
 rounded = true
@@ -99,6 +110,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "Liniers"
 
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/Middle/VBoxLife"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_alfnt")
+
 [node name="VSeparator" type="VSeparator" parent="Control/MarginContainer/VBoxContainer/Middle"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
@@ -108,10 +124,11 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="PlazaProgressBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer/Middle/VBoxPlaza"]
-custom_minimum_size = Vector2(8, 0)
+custom_minimum_size = Vector2(6, 0)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_00u64")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3evv7")
 step = 1.0
 rounded = true
@@ -125,6 +142,12 @@ theme = ExtResource("2_7ne2n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "La Plaza"
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/Middle/VBoxPlaza"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("5_mkyrq")
+expand_mode = 1
 
 [node name="Bottom" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -146,91 +169,22 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "5000"
 
-[node name="Nivel" type="Label" parent="Control/MarginContainer/VBoxContainer/Bottom"]
-visible = false
-layout_mode = 2
-theme = ExtResource("2_7ne2n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "Nivel "
-
 [node name="LevelProgressBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer/Bottom"]
-custom_minimum_size = Vector2(0, 8)
+custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_x2ba1")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ct6x6")
 step = 1.0
 rounded = true
 show_percentage = false
 
-[node name="PapiroDown" type="TextureRect" parent="."]
-visible = false
-offset_left = -6.0
-offset_top = 418.0
-offset_right = 645.0
-offset_bottom = 479.0
-texture = ExtResource("2_bh0ei")
-stretch_mode = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-offset_left = 515.0
-offset_top = 433.0
-offset_right = 615.0
-offset_bottom = 462.0
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
-visible = false
+[node name="Nivel" type="Label" parent="Control/MarginContainer/VBoxContainer/Bottom"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 18
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_constants/separation = 21
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer4"]
-visible = false
-layout_mode = 2
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6/HBoxContainer5"]
-visible = false
-layout_mode = 2
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer6"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
+theme = ExtResource("2_7ne2n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Nivel "
+horizontal_alignment = 2
