@@ -1,11 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckkcp0mw2ieet"]
+[gd_scene load_steps=21 format=3 uid="uid://ckkcp0mw2ieet"]
 
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
-[ext_resource type="Texture2D" uid="uid://be4gobj4ipn2w" path="res://assets/original/backgrounds/Flag-Spain-Arg.webp" id="2_3x168"]
+[ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="2_uluud"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_blw1a"]
 [ext_resource type="AudioStream" uid="uid://0p4to6x8jlkw" path="res://assets/original/Music/Himno Full Final.mp3" id="4_ican8"]
 [ext_resource type="AudioStream" uid="uid://cugberv1i8wtf" path="res://assets/original/sounds/crow-cheering.mp3" id="5_5ml8l"]
+[ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="6_g4nh7"]
 [ext_resource type="Texture2D" uid="uid://dacwfwetgnwh8" path="res://assets/mkt/wishlist.png" id="6_ywyuj"]
+[ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="8_v20am"]
+[ext_resource type="PackedScene" uid="uid://dlnd2el5bqsln" path="res://scenes/patricios/arribeno.tscn" id="9_57pto"]
+[ext_resource type="PackedScene" uid="uid://b8baohebq5bsy" path="res://scenes/patricios/correntino.tscn" id="10_judta"]
+[ext_resource type="PackedScene" uid="uid://c1f2p41bh0kpl" path="res://scenes/patricios/husares_infernales.tscn" id="11_ejd8u"]
+[ext_resource type="PackedScene" uid="uid://qe5x0axdxxo" path="res://scenes/patricios/moreno.tscn" id="12_osj31"]
+[ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://scenes/patricios/granadero.tscn" id="13_xvm5x"]
+[ext_resource type="Script" path="res://scenes/screens/Nubes.gd" id="14_am84f"]
+[ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="15_px7ib"]
+[ext_resource type="Texture2D" uid="uid://ddqla1qdya8rf" path="res://assets/ui/nube_2.png" id="16_tir3l"]
+[ext_resource type="Texture2D" uid="uid://w7loke78ivvm" path="res://assets/ui/nube_3.png" id="17_j1rm0"]
+[ext_resource type="Texture2D" uid="uid://dpoutmpujiroj" path="res://assets/ui/nube_4.png" id="18_bmvel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7m47"]
+bg_color = Color(0, 0, 0, 0.533333)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aojef"]
 bg_color = Color(0, 0, 0, 0.533333)
@@ -14,17 +30,17 @@ bg_color = Color(0, 0, 0, 0.533333)
 script = ExtResource("1_eouvj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0.14902, 0.14902, 0.14902, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_3x168")
+texture = ExtResource("2_uluud")
 expand_mode = 2
 stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -59,17 +75,13 @@ autoplay = true
 bus = &"Efectos"
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
+z_index = 10
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -125.0
-offset_top = -72.0
-offset_right = 125.0
-grow_horizontal = 2
+offset_top = -150.0
+offset_right = 250.0
 grow_vertical = 0
-theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
 custom_minimum_size = Vector2(250, 0)
@@ -77,27 +89,51 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 10
 
-[node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y7m47")
+
+[node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 250.0
+offset_bottom = 43.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 24
 text = "Seguinos en Steam"
+icon = ExtResource("6_g4nh7")
+flat = true
+alignment = 0
 
-[node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer"]
+[node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
 layout_mode = 2
+offset_top = 47.0
+offset_right = 250.0
+offset_bottom = 86.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 24
 text = "Volver a jugar"
+icon = ExtResource("6_g4nh7")
+flat = true
+alignment = 0
 
-[node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer"]
+[node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
 layout_mode = 2
+offset_top = 90.0
+offset_right = 250.0
+offset_bottom = 119.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 text = "Menú principal"
+icon = ExtResource("6_g4nh7")
+flat = true
+alignment = 0
 
 [node name="Panel" type="Panel" parent="."]
+z_index = 10
 custom_minimum_size = Vector2(0, 160)
 anchors_preset = 10
 anchor_right = 1.0
@@ -138,6 +174,154 @@ texture_normal = ExtResource("6_ywyuj")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Wishlist" to="." method="_on_steam_pressed"]
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[node name="Personajes" type="Node2D" parent="."]
+
+[node name="General" parent="Personajes" instance=ExtResource("8_v20am")]
+position = Vector2(324, 454)
+input_accepted = false
+
+[node name="Arribeno" parent="Personajes" instance=ExtResource("9_57pto")]
+position = Vector2(356, 462)
+faction = "patricios"
+flipped = true
+just_idle = true
+
+[node name="Arribeno2" parent="Personajes" instance=ExtResource("9_57pto")]
+position = Vector2(557, 462)
+faction = "patricios"
+flipped = true
+just_idle = true
+
+[node name="Arribeno3" parent="Personajes" instance=ExtResource("9_57pto")]
+position = Vector2(485, 462)
+faction = "patricios"
+flipped = true
+just_idle = true
+
+[node name="Arribeno4" parent="Personajes" instance=ExtResource("9_57pto")]
+position = Vector2(621, 462)
+faction = "patricios"
+flipped = true
+just_idle = true
+
+[node name="SoldadoCorrentino" parent="Personajes" instance=ExtResource("10_judta")]
+position = Vector2(383, 461)
+flipped = true
+just_idle = true
+
+[node name="SoldadoCorrentino2" parent="Personajes" instance=ExtResource("10_judta")]
+position = Vector2(415, 461)
+flipped = true
+just_idle = true
+
+[node name="SoldadoCorrentino3" parent="Personajes" instance=ExtResource("10_judta")]
+position = Vector2(455, 461)
+flipped = true
+just_idle = true
+
+[node name="SoldadoCorrentino4" parent="Personajes" instance=ExtResource("10_judta")]
+position = Vector2(519, 461)
+flipped = true
+just_idle = true
+
+[node name="SoldadoCorrentino5" parent="Personajes" instance=ExtResource("10_judta")]
+position = Vector2(583, 461)
+flipped = true
+just_idle = true
+
+[node name="SoldadoCorrentino6" parent="Personajes" instance=ExtResource("10_judta")]
+position = Vector2(623, 461)
+flipped = true
+just_idle = true
+
+[node name="HusarInfernal" parent="Personajes" instance=ExtResource("11_ejd8u")]
+position = Vector2(606, 450)
+flipped = true
+just_idle = true
+
+[node name="HusarInfernal2" parent="Personajes" instance=ExtResource("11_ejd8u")]
+position = Vector2(566, 450)
+flipped = true
+just_idle = true
+
+[node name="Moreno" parent="Personajes" instance=ExtResource("12_osj31")]
+position = Vector2(594, 462)
+flipped = true
+just_idle = true
+
+[node name="Moreno2" parent="Personajes" instance=ExtResource("12_osj31")]
+position = Vector2(562, 462)
+flipped = true
+just_idle = true
+
+[node name="Moreno3" parent="Personajes" instance=ExtResource("12_osj31")]
+position = Vector2(522, 462)
+flipped = true
+just_idle = true
+
+[node name="Moreno4" parent="Personajes" instance=ExtResource("12_osj31")]
+position = Vector2(490, 462)
+flipped = true
+just_idle = true
+
+[node name="Soldado" parent="Personajes" instance=ExtResource("13_xvm5x")]
+position = Vector2(363, 462)
+flipped = true
+just_idle = true
+
+[node name="Soldado2" parent="Personajes" instance=ExtResource("13_xvm5x")]
+position = Vector2(395, 462)
+flipped = true
+just_idle = true
+
+[node name="Soldado3" parent="Personajes" instance=ExtResource("13_xvm5x")]
+position = Vector2(419, 462)
+flipped = true
+just_idle = true
+
+[node name="Soldado4" parent="Personajes" instance=ExtResource("13_xvm5x")]
+position = Vector2(451, 462)
+flipped = true
+just_idle = true
+
+[node name="Soldado5" parent="Personajes" instance=ExtResource("13_xvm5x")]
+position = Vector2(475, 462)
+flipped = true
+just_idle = true
+
+[node name="Soldado6" parent="Personajes" instance=ExtResource("13_xvm5x")]
+position = Vector2(507, 462)
+flipped = true
+just_idle = true
+
+[node name="Nubes" type="Node2D" parent="."]
+script = ExtResource("14_am84f")
+
+[node name="Nube1" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(98, 96)
+texture = ExtResource("15_px7ib")
+
+[node name="Nube2" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(67, 276)
+texture = ExtResource("16_tir3l")
+
+[node name="Nube3" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(403, 136)
+texture = ExtResource("17_j1rm0")
+
+[node name="Nube4" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(348, 80)
+texture = ExtResource("18_bmvel")
+
+[node name="Nube5" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(230, 192)
+texture = ExtResource("17_j1rm0")
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Wishlist" to="." method="_on_steam_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Salir" to="." method="_on_salir_pressed"]

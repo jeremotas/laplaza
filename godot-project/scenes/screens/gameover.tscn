@@ -1,13 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://deepk7tv618e4"]
+[gd_scene load_steps=14 format=3 uid="uid://deepk7tv618e4"]
 
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_lkn3k"]
-[ext_resource type="Texture2D" uid="uid://51vme1xju2nx" path="res://assets/original/backgrounds/Flag-United-Kingdom-pixeled.webp" id="2_7kyfl"]
+[ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="2_8jogy"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_pfgda"]
+[ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="3_7n7i6"]
 [ext_resource type="AudioStream" uid="uid://cjqwptvlo1ktt" path="res://assets/created/musica/Chacarera de las Trenzas 0.4 PIANO LENTO.mp3" id="4_67jdo"]
 [ext_resource type="Texture2D" uid="uid://dacwfwetgnwh8" path="res://assets/mkt/wishlist.png" id="5_cii70"]
+[ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="7_8vk33"]
+[ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://scenes/ingleses/ingles.tscn" id="8_m7d0r"]
+[ext_resource type="PackedScene" uid="uid://40gi2nr4aews" path="res://scenes/ingleses/highlander.tscn" id="9_lfc5b"]
+[ext_resource type="PackedScene" uid="uid://wej5y4wn1st" path="res://scenes/ingleses/green_soldier.tscn" id="10_pcl43"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sheef"]
+shader = ExtResource("2_8jogy")
+shader_parameter/amount = 4.945
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awsvn"]
 bg_color = Color(0, 0, 0, 0.533333)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jq1t"]
+bg_color = Color(0, 0, 0, 0.533333)
+corner_detail = 1
 
 [node name="Gameover" type="Node"]
 script = ExtResource("1_lkn3k")
@@ -15,12 +28,13 @@ script = ExtResource("1_lkn3k")
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.541176, 0.541176, 0.541176, 1)
 self_modulate = Color(0.709804, 0.709804, 0.709804, 1)
+material = SubResource("ShaderMaterial_sheef")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7kyfl")
+texture = ExtResource("3_7n7i6")
 expand_mode = 2
 stretch_mode = 6
 
@@ -41,44 +55,6 @@ theme = ExtResource("2_pfgda")
 theme_override_font_sizes/font_size = 68
 text = "CONQUERED"
 horizontal_alignment = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -125.0
-offset_top = -72.0
-offset_right = 125.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_pfgda")
-theme_override_font_sizes/font_size = 24
-text = "Seguinos en Steam"
-
-[node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-theme = ExtResource("2_pfgda")
-theme_override_font_sizes/font_size = 24
-text = "Reintentar"
-
-[node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-theme = ExtResource("2_pfgda")
-text = "Menú principal"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_67jdo")
@@ -127,6 +103,118 @@ texture_normal = ExtResource("5_cii70")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Wishlist" to="." method="_on_wishlist_pressed"]
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_right = 250.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2jq1t")
+
+[node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 250.0
+offset_bottom = 43.0
+size_flags_vertical = 8
+theme = ExtResource("2_pfgda")
+theme_override_font_sizes/font_size = 24
+text = "Seguinos en Steam"
+icon = ExtResource("7_8vk33")
+flat = true
+alignment = 0
+
+[node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
+layout_mode = 2
+offset_top = 47.0
+offset_right = 250.0
+offset_bottom = 86.0
+size_flags_vertical = 8
+theme = ExtResource("2_pfgda")
+theme_override_font_sizes/font_size = 24
+text = "Reintentar"
+icon = ExtResource("7_8vk33")
+flat = true
+alignment = 0
+
+[node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
+layout_mode = 2
+offset_top = 90.0
+offset_right = 250.0
+offset_bottom = 119.0
+size_flags_vertical = 8
+theme = ExtResource("2_pfgda")
+text = "Menú principal"
+icon = ExtResource("7_8vk33")
+flat = true
+alignment = 0
+
+[node name="Personajes" type="Node2D" parent="."]
+
+[node name="SoldadoEnemigo" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(314, 457)
+
+[node name="SoldadoEnemigo2" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(330, 457)
+
+[node name="SoldadoEnemigo3" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(354, 457)
+
+[node name="SoldadoEnemigo4" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(386, 457)
+
+[node name="SoldadoEnemigo5" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(418, 457)
+
+[node name="SoldadoEnemigo6" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(450, 457)
+
+[node name="SoldadoEnemigo7" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(482, 457)
+
+[node name="SoldadoEnemigo8" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(507, 457)
+
+[node name="SoldadoEnemigo9" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(524, 457)
+
+[node name="SoldadoEnemigo10" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(541, 457)
+
+[node name="SoldadoEnemigo11" parent="Personajes" instance=ExtResource("8_m7d0r")]
+position = Vector2(565, 457)
+
+[node name="Highlander" parent="Personajes" instance=ExtResource("9_lfc5b")]
+position = Vector2(368, 459)
+
+[node name="Highlander2" parent="Personajes" instance=ExtResource("9_lfc5b")]
+position = Vector2(332, 458)
+
+[node name="Highlander3" parent="Personajes" instance=ExtResource("9_lfc5b")]
+position = Vector2(413, 457)
+
+[node name="Highlander4" parent="Personajes" instance=ExtResource("9_lfc5b")]
+position = Vector2(533, 462)
+
+[node name="GreenSoldier" parent="Personajes" instance=ExtResource("10_pcl43")]
+position = Vector2(296, 458)
+
+[node name="GreenSoldier2" parent="Personajes" instance=ExtResource("10_pcl43")]
+position = Vector2(362, 460)
+
+[node name="GreenSoldier3" parent="Personajes" instance=ExtResource("10_pcl43")]
+position = Vector2(435, 459)
+
+[node name="GreenSoldier4" parent="Personajes" instance=ExtResource("10_pcl43")]
+position = Vector2(495, 460)

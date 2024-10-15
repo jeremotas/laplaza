@@ -1,7 +1,9 @@
 extends Node
 
 func _ready():
-	$MarginContainer2/VBoxContainer/Wishlist.grab_focus()
+	$MarginContainer2/VBoxContainer/Panel/Wishlist.grab_focus()
+	if $Personajes/General:
+		$Personajes/General.celebration()
 
 func _on_reiniciar_pressed():
 	get_tree().change_scene_to_file("res://scenes/levels/" + Global.settings.game.init_level + ".tscn")

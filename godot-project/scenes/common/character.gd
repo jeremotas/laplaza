@@ -20,6 +20,7 @@ class_name Character
 @export var flipped = false
 @export var iAttackProbability = 100
 @export var gunsound_type = 'mosquete'
+@export var just_idle = false
 
 var barrilete_cosmico = false
 var last_general_direction = Vector2.ZERO
@@ -235,8 +236,12 @@ func AnimationCalculation(_delta):
 		$AnimatedSprite2D.flip_h = false
 	elif velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true	
+	
+	#flipped = $AnimatedSprite2D.flip_h
+	if just_idle and flipped:
+		$AnimatedSprite2D.flip_h = flipped
 		
-	flipped = $AnimatedSprite2D.flip_h
+	
 	
 func MovementLoop(delta):
 	# Gestionamos velocidad
@@ -370,6 +375,7 @@ func attack_sound(stream):
 	SoundPlayer.play()
 	
 func malon_sticked():
+	if just_idle: return 
 	var bSticked = false
 	if $MalonArea:
 		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 1:
