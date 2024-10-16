@@ -10,6 +10,7 @@
 
 [resource]
 default_font = ExtResource("1_t1uo6")
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0)
 Button/colors/icon_hover_color = Color(1, 1, 1, 0)
 Button/colors/icon_normal_color = Color(1, 1, 1, 0)
 Button/styles/focus = SubResource("StyleBoxEmpty_6o0g0")

@@ -8,7 +8,7 @@ uniform bool add_margins = true; // only useful when inside is false
 
 void vertex() {
 	if (add_margins) {
-		VERTEX += (UV * 2.0 - 1.0) * width;
+		VERTEX += (UV * 2.0 - 1.0) * (width * 4.0);
 	}
 }
 

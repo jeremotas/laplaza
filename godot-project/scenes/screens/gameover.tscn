@@ -218,3 +218,7 @@ position = Vector2(435, 459)
 
 [node name="GreenSoldier4" parent="Personajes" instance=ExtResource("10_pcl43")]
 position = Vector2(495, 460)
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Wishlist" to="." method="_on_wishlist_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Salir" to="." method="_on_salir_pressed"]
