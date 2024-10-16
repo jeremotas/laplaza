@@ -116,7 +116,16 @@ func init_barrilete_cosmico():
 	#get_parent().stop_music()
 	
 	$RelatoVictorHugo.play()
-	pass
+
+func pause():
+	if barrilete_cosmico:
+		$RelatoVictorHugo.stream_paused = true
+	
+func unpause():
+	if barrilete_cosmico:
+		$RelatoVictorHugo.stream_paused = false
+		get_parent().ActualTimeScale = 0.2
+		Engine.time_scale = 0.2
 	
 func end_barrilete_cosmico():
 	life = Global.settings.patricios.general.life

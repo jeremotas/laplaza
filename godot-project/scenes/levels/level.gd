@@ -232,6 +232,7 @@ func game_over():
 
 func decision_time_start():
 	# Inicio de una decision
+	$General.pause()
 	ActualTimeScale = Engine.time_scale
 	Engine.time_scale = 0
 	$decision_time.prepare_buttons(TheGameStats.experience)
@@ -255,6 +256,7 @@ func decision_time_end(decision):
 	# Devolver al juego
 	$decision_time.hide()
 	Engine.time_scale = ActualTimeScale
+	$General.unpause()
 	
 func barrilete_cosmico():
 	$General.init_barrilete_cosmico()
@@ -309,12 +311,12 @@ func pauseMenu():
 	if paused:
 		pause_menu.hide()
 		Engine.time_scale = 1
+		$General.unpause()
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
+		$General.pause()
 	paused = !paused
-	pass
-	
 	
 func zoom(delta):
 	# Efecto que permite ver el area desde UN POCO mas arrriba.

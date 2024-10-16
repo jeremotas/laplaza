@@ -18,5 +18,4 @@ func _process(delta):
 		modulate = "ffffffff"
 	else:
 		modulate = "00000000"
-	print(last_input)
-	pass
+	#print(last_input)

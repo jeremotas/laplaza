@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bc8o4p1i67cbn"]
+[gd_scene load_steps=102 format=3 uid="uid://bc8o4p1i67cbn"]
 
 [ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="2_1oyaa"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cyp28dqo4lc11" path="res://assets/created/sounds/dolor.mp3" id="5_nv6gl"]
 [ext_resource type="AudioStream" uid="uid://3kns6iv7ithe" path="res://assets/original/sounds/horse_general.mp3" id="6_ma0wk"]
 [ext_resource type="AudioStream" uid="uid://c3hry3gid365a" path="res://assets/original/sounds/relato_victorhugo.mp3" id="8_bclty"]
+[ext_resource type="Script" path="res://scenes/patricios/RelatoVictorHugo.gd" id="9_77b6d"]
 [ext_resource type="Script" path="res://scenes/patricios/AimPoint.gd" id="9_fawym"]
 [ext_resource type="Texture2D" uid="uid://b7aq2y4jsk31f" path="res://assets/created/aimer.png" id="10_3juy2"]
 
@@ -811,6 +812,7 @@ bus = &"Efectos"
 [node name="RelatoVictorHugo" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_bclty")
 bus = &"Efectos"
+script = ExtResource("9_77b6d")
 
 [node name="InvincibleEffect" type="PointLight2D" parent="."]
 position = Vector2(4.44444, -12.2222)
