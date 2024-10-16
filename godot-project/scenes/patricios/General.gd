@@ -49,7 +49,7 @@ func life_status():
 	if not status.hurt:
 		
 		if life <= Global.settings.game.player_warning_life and life > 0:
-			$AnimatedSprite2D.material.set_shader_parameter("width",0.5)
+			$AnimatedSprite2D.material.set_shader_parameter("width",1.0)
 		else:
 			$AnimatedSprite2D.material.set_shader_parameter("width",0.0)
 
@@ -155,9 +155,9 @@ func idle():
 
 func hurt():
 	$HurtSound.play()
-	$AnimatedSprite2D.material.set_shader_parameter("width",0.5)
+	$AnimatedSprite2D.material.set_shader_parameter("width",1.0)
 	await get_tree().create_timer(0.4).timeout
-	$AnimatedSprite2D.material.set_shader_parameter("width",0)
+	$AnimatedSprite2D.material.set_shader_parameter("width",0.0)
 	status.hurt = false
 
 # Funciones para poder seleccionarlo.

@@ -21,11 +21,11 @@ bg_color = Color(0, 0.917647, 0.27451, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o3k6s"]
 shader = ExtResource("2_4uwal")
-shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/color = Color(1, 0, 0, 0.733333)
 shader_parameter/width = 0.0
 shader_parameter/pattern = 0
-shader_parameter/inside = false
-shader_parameter/add_margins = true
+shader_parameter/inside = true
+shader_parameter/add_margins = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8xi3y"]
 atlas = ExtResource("2_7xuv0")
