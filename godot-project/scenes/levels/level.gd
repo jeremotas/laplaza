@@ -288,7 +288,7 @@ func ataque_husares_infernales():
 	add_child(E)
 	E.startAttack(initAttack, endAttack)
 	
-	$General/Camera2D.apply_shake_seconds(5.0, 10.0)
+	$General/Camera2D.apply_shake_seconds(5.0, 2.0)
 	
 func mini_shake():
 	$General/Camera2D.apply_shake_seconds(0.2, 1.0)
