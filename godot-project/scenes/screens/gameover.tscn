@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://deepk7tv618e4"]
+[gd_scene load_steps=19 format=3 uid="uid://deepk7tv618e4"]
 
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_lkn3k"]
 [ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="2_8jogy"]
@@ -10,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://scenes/ingleses/ingles.tscn" id="8_m7d0r"]
 [ext_resource type="PackedScene" uid="uid://40gi2nr4aews" path="res://scenes/ingleses/highlander.tscn" id="9_lfc5b"]
 [ext_resource type="PackedScene" uid="uid://wej5y4wn1st" path="res://scenes/ingleses/green_soldier.tscn" id="10_pcl43"]
+[ext_resource type="Script" path="res://scenes/screens/Nubes.gd" id="11_86jt7"]
+[ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="12_hlc0i"]
+[ext_resource type="Texture2D" uid="uid://ddqla1qdya8rf" path="res://assets/ui/nube_2.png" id="13_4l08v"]
+[ext_resource type="Texture2D" uid="uid://w7loke78ivvm" path="res://assets/ui/nube_3.png" id="14_im5ep"]
+[ext_resource type="Texture2D" uid="uid://dpoutmpujiroj" path="res://assets/ui/nube_4.png" id="15_en154"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sheef"]
 shader = ExtResource("2_8jogy")
@@ -39,6 +44,7 @@ expand_mode = 2
 stretch_mode = 6
 
 [node name="Conquered message" type="Label" parent="."]
+z_index = 10
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -62,6 +68,7 @@ autoplay = true
 bus = &"Musica"
 
 [node name="Panel" type="Panel" parent="."]
+z_index = 10
 custom_minimum_size = Vector2(0, 160)
 anchors_preset = 10
 anchor_right = 1.0
@@ -218,6 +225,34 @@ position = Vector2(435, 459)
 
 [node name="GreenSoldier4" parent="Personajes" instance=ExtResource("10_pcl43")]
 position = Vector2(495, 460)
+
+[node name="Nubes" type="Node2D" parent="."]
+script = ExtResource("11_86jt7")
+
+[node name="Nube1" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(98, 96)
+texture = ExtResource("12_hlc0i")
+
+[node name="Nube2" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(67, 276)
+texture = ExtResource("13_4l08v")
+
+[node name="Nube3" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(403, 136)
+texture = ExtResource("14_im5ep")
+
+[node name="Nube4" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(348, 80)
+texture = ExtResource("15_en154")
+
+[node name="Nube5" type="Sprite2D" parent="Nubes"]
+z_index = 1
+position = Vector2(230, 192)
+texture = ExtResource("14_im5ep")
 
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Wishlist" to="." method="_on_wishlist_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Reiniciar" to="." method="_on_reiniciar_pressed"]
