@@ -49,9 +49,9 @@ func life_status():
 	if not status.hurt:
 		
 		if life <= Global.settings.game.player_warning_life and life > 0:
-			modulate = Color("ff0000ff")
+			$AnimatedSprite2D.material.set_shader_parameter("width",1.0)
 		else:
-			modulate = Color("ffffffff")
+			$AnimatedSprite2D.material.set_shader_parameter("width",0.0)
 
 func invincible_effect():
 	$InvincibleEffect.visible = invincible
@@ -155,9 +155,9 @@ func idle():
 
 func hurt():
 	$HurtSound.play()
-	modulate = Color("ff0000ff")
+	$AnimatedSprite2D.material.set_shader_parameter("width",1.0)
 	await get_tree().create_timer(0.4).timeout
-	modulate = Color("ffffffff")
+	$AnimatedSprite2D.material.set_shader_parameter("width",0.0)
 	status.hurt = false
 
 # Funciones para poder seleccionarlo.

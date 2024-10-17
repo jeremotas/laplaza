@@ -8,11 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Nube1.position.x += 0.05
-	$Nube2.position.x -= 0.005
-	$Nube3.position.x += 0.05
-	$Nube4.position.x += 0.005
-	$Nube5.position.x -= 0.05
+	$Nube1.position.x += 0.1
+	$Nube2.position.x -= 0.01
+	$Nube3.position.x += 0.1
+	$Nube4.position.x += 0.01
+	$Nube5.position.x -= 0.1
 	
 	if $Nube1.position.x > 780: $Nube1.position.x = -200
 	if $Nube2.position.x < -180: $Nube2.position.x = 780

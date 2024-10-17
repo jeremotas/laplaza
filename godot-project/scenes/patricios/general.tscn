@@ -1,7 +1,8 @@
-[gd_scene load_steps=102 format=3 uid="uid://bc8o4p1i67cbn"]
+[gd_scene load_steps=104 format=3 uid="uid://bc8o4p1i67cbn"]
 
 [ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="2_1oyaa"]
+[ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="2_4uwal"]
 [ext_resource type="Texture2D" uid="uid://jisqmeehvii8" path="res://assets/created/barrilete32ol.png" id="2_7xuv0"]
 [ext_resource type="Texture2D" uid="uid://cf3266xrs7tum" path="res://assets/created/general.png" id="2_j1s25"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_nklhm"]
@@ -17,6 +18,14 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmhrc"]
 bg_color = Color(0, 0.917647, 0.27451, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3k6s"]
+shader = ExtResource("2_4uwal")
+shader_parameter/color = Color(1, 0, 0, 0.733333)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 0
+shader_parameter/inside = true
+shader_parameter/add_margins = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8xi3y"]
 atlas = ExtResource("2_7xuv0")
@@ -738,9 +747,11 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vmhrc")
 show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_o3k6s")
 position = Vector2(0, -11.1111)
 sprite_frames = SubResource("SpriteFrames_clm41")
-animation = &"idle"
+animation = &"walk"
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -760,7 +771,7 @@ parameters/conditions/die = false
 parameters/conditions/got_hurt = false
 parameters/conditions/idle = false
 parameters/conditions/shooting = false
-parameters/conditions/walking = false
+parameters/conditions/walking = true
 parameters/conditions/win = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
