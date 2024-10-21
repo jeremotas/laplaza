@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Nube1.position.x += 0.1
 	$Nube2.position.x -= 0.01
 	$Nube3.position.x += 0.1

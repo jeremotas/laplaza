@@ -1,6 +1,7 @@
-[gd_scene load_steps=60 format=3 uid="uid://dlnd2el5bqsln"]
+[gd_scene load_steps=61 format=3 uid="uid://dlnd2el5bqsln"]
 
 [ext_resource type="Script" path="res://scenes/patricios/arribeno.gd" id="1_ic4tm"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_4f2wp"]
 [ext_resource type="Texture2D" uid="uid://c0xfl8qcvk4hx" path="res://assets/created/arribeno32.png" id="3_vv8b1"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="4_xu00h"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="5_q4ipq"]
@@ -473,8 +474,14 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="ComLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 4.0
+offset_top = -23.0
+offset_right = 44.0
+theme = ExtResource("2_4f2wp")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
 
 [node name="LifeProgress" type="ProgressBar" parent="."]
 visible = false
@@ -489,7 +496,6 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_afxcp")
 animation = &"idle"
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg5auaekhaeo2"]
+[gd_scene load_steps=16 format=3 uid="uid://cg5auaekhaeo2"]
 
 [ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="1_8n0u8"]
 [ext_resource type="Script" path="res://scenes/common/lagrima.gd" id="2_bi0if"]
 [ext_resource type="Texture2D" uid="uid://lnaduafwvsmv" path="res://assets/created/lagrima_spritesheet.png" id="2_yjn8p"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="4_edgp1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_erp2m"]
 atlas = ExtResource("2_yjn8p")
@@ -107,5 +108,16 @@ shape = SubResource("CapsuleShape2D_2oues")
 light_mask = 0
 visibility_layer = 0
 shape = SubResource("CapsuleShape2D_2oues")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 28.0
+offset_bottom = 27.0
+theme = ExtResource("4_edgp1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "2"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
