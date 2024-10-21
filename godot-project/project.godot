@@ -24,6 +24,7 @@ config/windows_native_icon="res://assets/icon.ico"
 Global="*res://global.gd"
 SceneTransition="*res://scenes/controls/scene_transition.tscn"
 CreditsData="*res://credits_data.gd"
+AudioStreamManager="*res://audio_stream_manager.gd"
 
 [display]
 

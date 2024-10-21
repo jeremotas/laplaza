@@ -379,12 +379,14 @@ func attack_sound(stream):
 	var iGunshotKey = rng.randi_range(0, aGunSounds.size()-1)
 	stream = aGunSounds[iGunshotKey]
 	
-	var SoundPlayer = AudioStreamPlayer2D.new()
-	self.add_child(SoundPlayer)
-	SoundPlayer.stream = stream
-	SoundPlayer.bus = &"Efectos"
-	SoundPlayer.connect("finished", SoundPlayer.queue_free)
-	SoundPlayer.play()
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	
+	#var SoundPlayer = AudioStreamPlayer2D.new()
+	#self.add_child(SoundPlayer)
+	#SoundPlayer.stream = stream
+	#SoundPlayer.bus = &"Efectos"
+	#SoundPlayer.connect("finished", SoundPlayer.queue_free)
+	#SoundPlayer.play()
 	
 func malon_sticked():
 	if just_idle: return 

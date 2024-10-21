@@ -760,7 +760,7 @@ material = SubResource("ShaderMaterial_o3k6s")
 position = Vector2(0, -11.1111)
 sprite_frames = SubResource("SpriteFrames_clm41")
 animation = &"walk"
-frame = 1
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -770,6 +770,9 @@ libraries = {
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_7logj")
+}
 tree_root = SubResource("AnimationNodeStateMachine_4dt8w")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/barrilete_cosmico = false
@@ -863,7 +866,7 @@ debug_color = Color(0, 0.541176, 0.956863, 0.419608)
 script = ExtResource("9_fawym")
 
 [node name="Aimer" type="Sprite2D" parent="AimPoint"]
-self_modulate = Color(1, 1, 1, 0.8)
+self_modulate = Color(1, 1, 1, 0.466667)
 texture = ExtResource("10_3juy2")
 
 [connection signal="body_entered" from="BarrileteCosmico" to="." method="_on_barrilete_cosmico_body_entered"]
