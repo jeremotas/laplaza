@@ -8,7 +8,6 @@ const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
 	unit_type = "ingles"
-	
 	max_speed = Global.settings.ingleses.highlander.max_speed
 	life = Global.settings.ingleses.highlander.life
 	min_damage_given = Global.settings.ingleses.highlander.attack.min_damage_given
@@ -20,6 +19,16 @@ func _init():
 	iAttackProbability = Global.settings.ingleses.highlander.attack.probability
 	drop_reward = true
 	init()
+	random_scale()
+	
+func random_scale():
+	if (Global.settings.ingleses.highlander.scale_probability > 0):
+		var iProb = rng.randi_range(0, 100)
+		if (iProb < Global.settings.ingleses.highlander.scale_probability):
+			var fScale = rng.randf_range(1.1, 2.0)
+			scale = Vector2(fScale, fScale)
+			life = life * fScale
+			experience_given = ceil(experience_given * fScale)
 	
 func _ready():
 	super()

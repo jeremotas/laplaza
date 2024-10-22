@@ -24,7 +24,7 @@ var zoom_general_status = false
 var zoom_general_max = Vector2(6,6)
 var zoom_general_speed = Vector2(2, 2)
 
-var original_zoom = Vector2()
+var original_zoom = Vector2(1.0, 1.0)
 var iStrategyCall = 0
 var command = ""
 var spawn_zones = []
@@ -412,15 +412,16 @@ func _on_reward(faction, experience_given):
 		create_sound_experience()
 	
 func create_sound_experience():
-	var SoundPlayer = AudioStreamPlayer2D.new()
-	self.add_child(SoundPlayer)
+	#var SoundPlayer = AudioStreamPlayer2D.new()
+	#self.add_child(SoundPlayer)
 	var stream = SonidoGota
-	SoundPlayer.stream = stream
-	SoundPlayer.bus = &"Efectos"
-	SoundPlayer.volume_db = 10.0
-	SoundPlayer.pitch_scale = 1 + rng.randf_range(-0.2, 0.2)
-	SoundPlayer.connect("finished", SoundPlayer.queue_free)
-	SoundPlayer.play()
+	#SoundPlayer.stream = stream
+	#SoundPlayer.bus = &"Efectos"
+	#SoundPlayer.volume_db = 10.0
+	#SoundPlayer.pitch_scale = 1 + rng.randf_range(-0.2, 0.2)
+	#SoundPlayer.connect("finished", SoundPlayer.queue_free)
+	#SoundPlayer.play()
+	AudioStreamManager.play({"stream": stream, "volume": 10.0, "pitch": 0.2})
 
 func _on_timer_command_timeout():
 	command = ""

@@ -194,6 +194,7 @@ var settings = {
 			"life": 5,
 			"max_speed": 12,
 			"experience_given": 4,
+			"scale_probability": 30,
 			"attack":{
 				"bullet": {
 					"speed": 50,

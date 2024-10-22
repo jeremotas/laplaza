@@ -136,12 +136,13 @@ func create_sound_explotion():
 	var rng = RandomNumberGenerator.new()
 	var iGunshotKey = rng.randi_range(0, aExplosionSounds.size()-1)
 	var stream = aExplosionSounds[iGunshotKey]
-	var SoundPlayer = AudioStreamPlayer2D.new()
-	self.add_child(SoundPlayer)
-	SoundPlayer.stream = stream
-	SoundPlayer.bus = &"Efectos"
-	SoundPlayer.connect("finished", SoundPlayer.queue_free)
-	SoundPlayer.play()
+	#var SoundPlayer = AudioStreamPlayer2D.new()
+	#self.add_child(SoundPlayer)
+	#SoundPlayer.stream = stream
+	#SoundPlayer.bus = &"Efectos"
+	#SoundPlayer.connect("finished", SoundPlayer.queue_free)
+	#SoundPlayer.play()
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
 
 func _on_visible_on_screen_enabler_2d_screen_entered():
 	# tiempo que esta la bala o proyectil antes de desaparecer

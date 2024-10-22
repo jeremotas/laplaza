@@ -128,7 +128,7 @@ func get_input():
 func TakeDamage(min_damage, max_damage):
 	var damage = rng.randi_range(min_damage, max_damage)
 	if damage > 0:
-		communication("HURT (" + str(damage) + ")")
+		communication("-" + str(damage) + "")
 		life = life - damage 
 		if life < 0: life = 0	
 		status.hurt = true
@@ -356,6 +356,18 @@ func ComunicationCalculation(_delta):
 	
 func communication(message):
 	comLabelString += message + " " 
+	$ComLabel.modulate.a = 1
+	$ComLabel.text = comLabelString
+	
+	#var tween := create_tween()
+	#tween.tween_property($ComLabel, "modulate:a", 1, 0.25)
+	await get_tree().create_timer(0.25).timeout
+	$ComLabel.modulate.a = 0
+	#tween.tween_property($ComLabel, "modulate:a", 0, 0.25)
+	#await tween.finished
+	
+	$ComLabel.text = ""
+	
 	
 func set_last_general_direction(oDirection):
 	last_general_direction = oDirection
@@ -367,12 +379,14 @@ func attack_sound(stream):
 	var iGunshotKey = rng.randi_range(0, aGunSounds.size()-1)
 	stream = aGunSounds[iGunshotKey]
 	
-	var SoundPlayer = AudioStreamPlayer2D.new()
-	self.add_child(SoundPlayer)
-	SoundPlayer.stream = stream
-	SoundPlayer.bus = &"Efectos"
-	SoundPlayer.connect("finished", SoundPlayer.queue_free)
-	SoundPlayer.play()
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	
+	#var SoundPlayer = AudioStreamPlayer2D.new()
+	#self.add_child(SoundPlayer)
+	#SoundPlayer.stream = stream
+	#SoundPlayer.bus = &"Efectos"
+	#SoundPlayer.connect("finished", SoundPlayer.queue_free)
+	#SoundPlayer.play()
 	
 func malon_sticked():
 	if just_idle: return 

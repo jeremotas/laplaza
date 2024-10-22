@@ -10,6 +10,9 @@ Esteban Sandoval
 [Director de arte]
 Facundo Túpac Martínez
 
+[Diseñador gráfico]
+Reiban Jose Zapata
+
 [Ayudantes de arte]
 Esteban Sandoval
 Gastón Ariel Loza
@@ -33,11 +36,6 @@ Chacarera de las trenzas (piano)
 Intro de bombo legüero
 Himno nacional Argentino
 
-[Música]
-J. Thomson - T. A. Arne
-
-Rule Britannia
-
 [Música de referencia]
 Suno.AI
 
@@ -60,6 +58,18 @@ Nicolás Benavides Elsner
 
 
 
+[Asesoramiento] 
+Diego Ballestero
+[comercial] 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,7 +82,6 @@ Guillermo Crespi
 Universidad Nacional Scalabrini Ortiz
 
 Víctor Hugo Morales
-
 
 
 

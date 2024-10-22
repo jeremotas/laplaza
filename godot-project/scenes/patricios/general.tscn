@@ -1,9 +1,10 @@
-[gd_scene load_steps=104 format=3 uid="uid://bc8o4p1i67cbn"]
+[gd_scene load_steps=105 format=3 uid="uid://bc8o4p1i67cbn"]
 
 [ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
 [ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="2_1oyaa"]
 [ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="2_4uwal"]
 [ext_resource type="Texture2D" uid="uid://jisqmeehvii8" path="res://assets/created/barrilete32ol.png" id="2_7xuv0"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_i00nh"]
 [ext_resource type="Texture2D" uid="uid://cf3266xrs7tum" path="res://assets/created/general.png" id="2_j1s25"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_nklhm"]
 [ext_resource type="AudioStream" uid="uid://cyp28dqo4lc11" path="res://assets/created/sounds/dolor.mp3" id="5_nv6gl"]
@@ -729,8 +730,16 @@ unit_type = "general"
 input_accepted = true
 
 [node name="ComLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+z_index = 3
+offset_left = 12.2222
+offset_top = -35.5555
+offset_right = 52.2222
+offset_bottom = -12.5555
+theme = ExtResource("2_i00nh")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
 
 [node name="LifeLabel" type="Label" parent="."]
 offset_right = 40.0
@@ -857,7 +866,7 @@ debug_color = Color(0, 0.541176, 0.956863, 0.419608)
 script = ExtResource("9_fawym")
 
 [node name="Aimer" type="Sprite2D" parent="AimPoint"]
-self_modulate = Color(1, 1, 1, 0.8)
+self_modulate = Color(1, 1, 1, 0.466667)
 texture = ExtResource("10_3juy2")
 
 [connection signal="body_entered" from="BarrileteCosmico" to="." method="_on_barrilete_cosmico_body_entered"]
