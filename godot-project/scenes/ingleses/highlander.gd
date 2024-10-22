@@ -25,7 +25,7 @@ func random_scale():
 	if (Global.settings.ingleses.highlander.scale_probability > 0):
 		var iProb = rng.randi_range(0, 100)
 		if (iProb < Global.settings.ingleses.highlander.scale_probability):
-			var fScale = rng.randf_range(1.1, 2.5)
+			var fScale = rng.randf_range(1.1, 2)
 			scale = Vector2(fScale, fScale)
 			life = life * fScale
 			experience_given = ceil(experience_given * fScale)
