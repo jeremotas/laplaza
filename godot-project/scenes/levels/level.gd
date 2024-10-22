@@ -24,7 +24,7 @@ var zoom_general_status = false
 var zoom_general_max = Vector2(6,6)
 var zoom_general_speed = Vector2(2, 2)
 
-var original_zoom = Vector2()
+var original_zoom = Vector2(1.0, 1.0)
 var iStrategyCall = 0
 var command = ""
 var spawn_zones = []

@@ -29,7 +29,7 @@ func play(sound_stream_object):
 		queue.append(sound_stream_object)
 
 
-func _process(delta):
+func _process(_delta):
 	# Play a queued sound if any players are available.
 	if not queue.size() == 0 and not available.size() == 0:
 		var oStream = queue.pop_front()

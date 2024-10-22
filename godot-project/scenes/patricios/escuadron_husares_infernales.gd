@@ -25,5 +25,13 @@ func create_order(oHusar, endPositionParam, seektime):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if $HusarInfernal == null and $HusarInfernal2 == null and $HusarInfernal3 == null and $HusarInfernal4 == null and $HusarInfernal5 == null and $HusarInfernal6 == null and $HusarInfernal7 == null:
+	var iCant = 0
+	if has_node('HusarInfernal'): iCant +=1 
+	if has_node('HusarInfernal2'): iCant +=1 
+	if has_node('HusarInfernal3'): iCant +=1 
+	if has_node('HusarInfernal4'): iCant +=1 
+	if has_node('HusarInfernal5'): iCant +=1 
+	if has_node('HusarInfernal6'): iCant +=1 
+	if has_node('HusarInfernal7'): iCant +=1 
+	if iCant == 0:	
 		queue_free()

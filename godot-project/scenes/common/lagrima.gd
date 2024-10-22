@@ -14,7 +14,7 @@ func _ready():
 	if get_parent().has_method("_on_reward"):
 		reward.connect(get_parent()._on_reward)
 	if experience_given > 1:
-		scale = scale * ( 1 + experience_given / 8)
+		scale = scale * ( 1.0 + experience_given / 8.0)
 
 
 func collected():

@@ -8,7 +8,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var last_input = get_parent().last_input
 	position = last_input * 50
 	if last_input != Vector2.ZERO:
