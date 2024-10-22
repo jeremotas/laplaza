@@ -10,8 +10,10 @@ Esteban Sandoval
 [Director de arte]
 Facundo Túpac Martínez
 
-[Ayudantes de arte]
+[Diseñador gráfico]
 Reiban Jose Zapata
+
+[Ayudantes de arte]
 Esteban Sandoval
 Gastón Ariel Loza
 
