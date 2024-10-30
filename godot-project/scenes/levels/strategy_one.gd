@@ -25,7 +25,7 @@ var strategy = [
 			"derecha_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 			"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 		},
-				{
+		{
 			"max_time": 30,
 			"max_alive": 10,
 			"name": "El flanqueo",
@@ -171,3 +171,9 @@ var strategy = [
 			"derecha_inferior": {"unit_type": "highlander", "seconds": 1.5, "probability": 40},
 		}
 	]
+
+
+func create_strategy():
+	
+	
+	return strategy

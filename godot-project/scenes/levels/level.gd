@@ -6,7 +6,7 @@ var TheGameStats : GameStats # Estadisticas del juego (control de experiencia y 
 var last_level = 0 # Marca para control del ultimo nivel accedido
 var player_max_life = 20 # Maxima vida del jugador principal
 
-const enemy_strategy_container  = preload("res://scenes/levels/strategy_one.gd")
+const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
 var enemy_strategy 
 # Variables de control de UI
 @onready var HUD = $HUD
@@ -54,7 +54,7 @@ func _ready():
 	$EnemyGoal.set_needed_units(Global.settings.game.enemy_goal)
 	player_max_life = Global.settings.game.player_max_life
 	
-	enemy_strategy = enemy_strategy_container.new().strategy
+	enemy_strategy = enemy_strategy_container.new().create_strategy()
 	
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
