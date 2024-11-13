@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctc76bsrsjp8d"]
+[gd_scene load_steps=8 format=3 uid="uid://ctc76bsrsjp8d"]
 
 [ext_resource type="Script" path="res://scenes/controls/pre_level_titles.gd" id="1_cmgtq"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_8xxh0"]
+[ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="2_74axt"]
 [ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="3_5rxsg"]
 
 [sub_resource type="Animation" id="Animation_qgxmb"]
@@ -71,7 +72,18 @@ script = ExtResource("1_cmgtq")
 one_shot = true
 autostart = true
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_top = 5.0
+offset_right = 640.0
+offset_bottom = 477.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_74axt")
+expand_mode = 3
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(10, 10)
 offset_right = 641.0
 offset_bottom = 483.0
@@ -113,7 +125,7 @@ offset_top = 446.0
 offset_right = 620.0
 offset_bottom = 470.0
 theme = ExtResource("2_8xxh0")
-theme_override_colors/font_color = Color(0.313726, 0.313726, 0.313726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.8)
 theme_override_font_sizes/font_size = 18
 text = "(Enter para saltear)"
 
