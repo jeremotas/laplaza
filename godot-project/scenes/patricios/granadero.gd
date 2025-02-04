@@ -9,6 +9,7 @@ func _init():
 	max_damage_given = Global.settings.patricios.granadero.max_damage_given
 	max_speed = Global.settings.patricios.granadero.max_speed
 	#print(min_damage_given, max_damage_given, max_speed)
+	init()
 	
 func _ready():
 	super()
