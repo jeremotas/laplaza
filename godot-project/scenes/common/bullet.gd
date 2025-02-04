@@ -59,7 +59,9 @@ func set_color(TheColor):
 	pass
 
 func set_sprite(sSprite, fScaleFactor = 1, fRotationFactor = 0):
-	$visual_bullet.texture = load(sSprite)
+	if sSprite != "":
+		$visual_bullet.texture = load(sSprite)
+		
 	bullet_scale_factor = fScaleFactor
 	bullet_rotation_factor = fRotationFactor
 

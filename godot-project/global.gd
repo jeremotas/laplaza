@@ -220,6 +220,27 @@ var settings = {
 				"min_damage_given": 1,
 				"max_damage_given": 1
 			}
+		},
+		"cannon": {
+			"life": 30,
+			"max_speed": 8,
+			"experience_given": 22,
+			"scale_probability": 0,
+			"attack":{
+				"bullet": {
+					"speed": 150,
+					"duration": 2.0,
+					"explotion": {
+						"duration": 1,
+						"scale": 30,
+						"particle": "explosion"
+					}
+				},
+				"cooldown": 10,
+				"probability": 10,
+				"min_damage_given": 20,
+				"max_damage_given": 20
+			}
 		}
 	}
 }
