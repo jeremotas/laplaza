@@ -21,18 +21,21 @@ class_name Character
 @export var iAttackProbability = 100
 @export var gunsound_type = 'mosquete'
 @export var just_idle = false
+@export var aim_calculated = true
 
 var barrilete_cosmico = false
 var last_general_direction = Vector2.ZERO
 var drop_reward  = false
 var original_z_index = 0
-
+var bCalculoDireccion = true
 var oGoalAssigned = null
+var hasToAttack = false
 
 var experience_given = 1
 
 var input_direction
 var move_direction
+var calculated_direction
 var rng
 @onready var animation_tree : AnimationTree = $AnimationTree
 
@@ -47,6 +50,8 @@ var last_position = Vector2.ZERO
 var inCoolDownAttack = false
 var coolDownTimer = null
 var deathTimer = null
+
+var pulseDirectionTimer = null
 
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
@@ -82,7 +87,6 @@ var aEscopetaSounds = [
 	preload("res://assets/original/sounds/escopeta/escopeta_05.mp3"),
 	preload("res://assets/original/sounds/escopeta/escopeta_06.mp3")
 ]
-	
 		
 #func animation_ends(animation):
 #	print(animation)
@@ -145,39 +149,52 @@ func idle():
 	pass
 
 func CombatCalculation(_delta):
-	if $CombatArea and life > 0:
-		if $CombatArea.has_overlapping_bodies() and $CombatArea.get_overlapping_bodies().size() > 0:
-			if not inCoolDownAttack:
-				var attacked = false
-				status.attacking = false
-				for unitInArea in $CombatArea.get_overlapping_bodies():
-					if ("faction" in unitInArea) and unitInArea.faction != faction and not attacked and unitInArea.life > 0:
-						inCoolDownAttack = true
-						var startAttack = true
-						if iAttackProbability < 100:
-							var iAttackValue = rng.randi_range(0, 99)
-							startAttack = iAttackValue < iAttackProbability
-							
-						if startAttack:
-							
-							#unitInArea.takeDamage(min_damage_given, max_damage_given)
-							attack_objective = {"global_position": unitInArea.global_position, "faction": unitInArea.faction, "velocity": unitInArea.velocity}
-							coolDownTimer.start()
-							status.attacking = true
-							attacked = true
-				
-			else:
-				var enemiesInArea = 0
-				for unitInArea in $CombatArea.get_overlapping_bodies():
-					if ("faction" in unitInArea) and unitInArea.faction != faction:
-						enemiesInArea += 1
-				if enemiesInArea == 0:
+	if life > 0:
+		if aim_calculated and not inCoolDownAttack and $CombatArea.has_overlapping_bodies():
+			var aBodies = $CombatArea.get_overlapping_bodies()
+			if aBodies.size() > 0:
+				if not inCoolDownAttack:
+					var attacked = false
 					status.attacking = false
-		else: 
-			status.attacking = false
-			
-	if status.attacking and attack_block_movement:
-		status.moving = true
+					for unitInArea in aBodies:
+						if ("faction" in unitInArea) and unitInArea.faction != faction and not attacked and unitInArea.life > 0:
+							inCoolDownAttack = true
+							var startAttack = true
+							if iAttackProbability < 100:
+								var iAttackValue = rng.randi_range(0, 99)
+								startAttack = iAttackValue < iAttackProbability
+								
+							if startAttack:
+								
+								#unitInArea.takeDamage(min_damage_given, max_damage_given)
+								attack_objective = {"global_position": unitInArea.global_position, "faction": unitInArea.faction, "velocity": unitInArea.velocity}
+								coolDownTimer.start()
+								status.attacking = true
+								attacked = true
+								continue
+					
+				else:
+					var enemiesInArea = 0
+					for unitInArea in aBodies:
+						if ("faction" in unitInArea) and unitInArea.faction != faction:
+							enemiesInArea += 1
+							continue
+					if enemiesInArea == 0:
+						status.attacking = false
+		elif not aim_calculated and not inCoolDownAttack:
+			var startAttack = true
+			if iAttackProbability < 100:
+				var iAttackValue = rng.randi_range(0, 99)
+				startAttack = iAttackValue < iAttackProbability
+								
+			if startAttack:
+				inCoolDownAttack = true
+				coolDownTimer.start()
+				status.attacking = true
+				hasToAttack = true
+		
+		if status.attacking and attack_block_movement:
+			status.moving = true
 
 func AnimationCalculation(_delta):
 	
@@ -258,18 +275,18 @@ func MovementLoop(delta):
 
 	if not input_accepted:
 		# Determinamos hacia donde vamos.
-		velocity = global_position.direction_to(destination) * speed
-		#last_input =  global_position.direction_to(destination).normalized()
-		# Calculamos la direccion del movimiento
-		#move_direction = rad_to_deg(destination.angle_to_point(global_position))
-		
 		# Resolvemos el movimiento
-		if global_position.distance_to(destination) < 5: # Estamos lo suficientemente cerca
-			status.moving = false
-		if global_position.distance_to(last_position) < 0.2 and status.moving:
-			status.moving = false
-		elif status.moving:
-			last_position = global_position
+		if bCalculoDireccion:
+			calculated_direction = global_position.direction_to(destination)
+			if global_position.distance_to(destination) < 5: # Estamos lo suficientemente cerca
+				status.moving = false
+			if global_position.distance_to(last_position) < 0.2 and status.moving:
+				status.moving = false
+			elif status.moving:
+				last_position = global_position
+			bCalculoDireccion = false
+		velocity = calculated_direction * speed	
+		
 	else:
 		var input = get_input();
 		#print(input)
@@ -314,7 +331,9 @@ func _on_cool_down_timer_timeout():
 	if inCoolDownAttack:
 		inCoolDownAttack = false
 		status.attacking = false
-		
+
+func _on_pulse_direction_timer_timeout():
+	bCalculoDireccion = true		
 
 func init():
 	rng = RandomNumberGenerator.new()
@@ -328,6 +347,15 @@ func init():
 	coolDownTimer.wait_time = coolDownAttackTime
 	coolDownTimer.one_shot = true
 	coolDownTimer.timeout.connect(_on_cool_down_timer_timeout)
+	
+	pulseDirectionTimer = Timer.new()
+	add_child(pulseDirectionTimer)
+	pulseDirectionTimer.autostart = true
+	pulseDirectionTimer.wait_time = 0.1
+	if faction == 'ingleses':
+		pulseDirectionTimer.wait_time = 3
+	pulseDirectionTimer.one_shot = false
+	pulseDirectionTimer.timeout.connect(_on_pulse_direction_timer_timeout)
 	pass
 
 func _physics_process(delta):
@@ -339,8 +367,9 @@ func _process(delta):
 	
 	StatusCalculation(delta)
 	if life > 0:
+		#if faction != "ingleses": 
 		CombatCalculation(delta)
-		ComunicationCalculation(delta)
+		#ComunicationCalculation(delta)
 	AnimationCalculation(delta)
 	
 func ComunicationCalculation(_delta):
@@ -381,21 +410,17 @@ func attack_sound(stream):
 	
 	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
 	
-	#var SoundPlayer = AudioStreamPlayer2D.new()
-	#self.add_child(SoundPlayer)
-	#SoundPlayer.stream = stream
-	#SoundPlayer.bus = &"Efectos"
-	#SoundPlayer.connect("finished", SoundPlayer.queue_free)
-	#SoundPlayer.play()
-	
 func malon_sticked():
 	if just_idle: return 
 	var bSticked = false
-	if $MalonArea:
-		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 1:
-			for unitInArea in $MalonArea.get_overlapping_bodies():
+	
+	if $MalonArea and $MalonArea.has_overlapping_bodies():
+		var aBodies = $MalonArea.get_overlapping_bodies()
+		if aBodies.size() > 1:
+			for unitInArea in aBodies:
 				if ("faction" in unitInArea) and unitInArea.faction == faction:
 					bSticked = true
+					continue
 					
 	input_accepted = false
 	#print("DISTANCIA",  global_position.distance_to(oGoalAssigned.global_position))

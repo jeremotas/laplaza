@@ -1,10 +1,9 @@
-[gd_scene load_steps=63 format=3 uid="uid://qe5x0axdxxo"]
+[gd_scene load_steps=62 format=3 uid="uid://qe5x0axdxxo"]
 
 [ext_resource type="Script" path="res://scenes/patricios/moreno.gd" id="1_gg8ih"]
 [ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="1_m7ff2"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_liip5"]
 [ext_resource type="Texture2D" uid="uid://8q6t2lbrbyit" path="res://assets/created/moreno.png" id="2_xuf6l"]
-[ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="3_prwyo"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_jupy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fmak"]
@@ -506,6 +505,7 @@ show_percentage = false
 material = SubResource("ShaderMaterial_ksat4")
 sprite_frames = SubResource("SpriteFrames_afxcp")
 animation = &"idle"
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -513,6 +513,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mqshh")
+}
 tree_root = SubResource("AnimationNodeStateMachine_ougdn")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/die = false
@@ -525,11 +528,6 @@ parameters/conditions/walking = false
 position = Vector2(-1.00781, 2.09375)
 scale = Vector2(0.507812, 0.46875)
 polygon = PackedVector2Array(-5, -11, -7, 17, 6, 16, 9, -9)
-
-[node name="SelectionArea" parent="." instance=ExtResource("3_prwyo")]
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SelectionArea"]
-polygon = PackedVector2Array(-3, -4, -5, 12, 3, 13, 4, -5)
 
 [node name="CombatArea" type="Area2D" parent="."]
 collision_layer = 0

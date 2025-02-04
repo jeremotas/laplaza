@@ -76,7 +76,7 @@ func attack():
 			b.max_damage = max_damage_given
 			b.speed = bullet_speed
 			b.bullet_lifetime = bullet_lifetime
-			b.set_collision_mask(2)
+			b.set_collision_mask_bullet(2)
 			b.set_color(Color(1, 1, 1))
 			#if barrilete_cosmico:
 				#b.prepare_explotion(2, Global.settings.patricios.general.barrilete_cosmico.bullet.explotion.duration, Global.settings.patricios.general.barrilete_cosmico.bullet.explotion.scale, Global.settings.patricios.general.barrilete_cosmico.bullet.explotion.particle)
@@ -196,7 +196,7 @@ func _on_agua_hirviendo_timer_timeout():
 		b.speed = Global.settings.patricios.general.agua_hirviendo.bullet.speed
 		b.bullet_lifetime = Global.settings.patricios.general.agua_hirviendo.bullet.duration
 		b.prepare_explotion(2, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.duration, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.scale, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.particle, false)
-		b.set_collision_mask(2)
+		b.set_collision_mask_bullet(2)
 		b.set_sprite("res://assets/created/ollami_32.png", 0.99, 4)
 		b.set_color(Color(1, 1, 1))
 		get_parent().add_child(b)

@@ -179,13 +179,18 @@ func create_one_strategy_attack(iLevel):
 		{"iBottomSpawnSeconds": 2, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 30, "iTopSpawnProbability": 60, "iBottomAlive": 60, "iTopAlive": 80},
 		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 40, "iTopSpawnProbability": 60, "iBottomAlive": 70, "iTopAlive": 90},
 		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 50, "iTopSpawnProbability": 70, "iBottomAlive": 80, "iTopAlive": 100},
-		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 60, "iTopSpawnProbability": 70, "iBottomAlive": 90, "iTopAlive": 120},
-		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 100, "iTopAlive": 150},
-		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 150, "iTopAlive": 200},
-		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 200, "iTopAlive": 250},
-		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 200, "iTopAlive": 250},
-		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 200, "iTopAlive": 250},
-		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 200, "iTopAlive": 250},
+		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 50, "iTopSpawnProbability": 70, "iBottomAlive": 80, "iTopAlive": 100},
+		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 50, "iTopSpawnProbability": 70, "iBottomAlive": 80, "iTopAlive": 100},
+		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 50, "iTopSpawnProbability": 70, "iBottomAlive": 80, "iTopAlive": 100},
+		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 50, "iTopSpawnProbability": 70, "iBottomAlive": 80, "iTopAlive": 100},
+		{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 50, "iTopSpawnProbability": 70, "iBottomAlive": 80, "iTopAlive": 100},
+		#{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 60, "iTopSpawnProbability": 70, "iBottomAlive": 90, "iTopAlive": 120},
+		#{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 100, "iTopAlive": 150},
+		#{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 150, "iTopAlive": 200},
+		#{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 200, "iTopAlive": 250},
+		#{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 200, "iTopAlive": 250},
+		#{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 200, "iTopAlive": 250},
+		#{"iBottomSpawnSeconds": 1, "iTopSpawnSeconds": 3, "iBottomSpawnProbability": 70, "iTopSpawnProbability": 80, "iBottomAlive": 200, "iTopAlive": 250},
 	]
 	
 	var MS = aMS[iLevel]
@@ -280,7 +285,7 @@ func create_strategy():
 		
 		if bDescanso:
 			var oDescanso = descanso.duplicate()
-			var iDurationDescanso = rng.randi_range(iMin, iMax)
+			var iDurationDescanso = rng.randi_range(iDescansoMin, iDescansoMax)
 			iTime += iDurationDescanso
 			oDescanso.max_time = iTime
 			created_strategy.push_back(oDescanso)

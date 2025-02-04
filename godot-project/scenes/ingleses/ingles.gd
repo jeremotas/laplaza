@@ -2,9 +2,10 @@ extends Character
 
 @onready var animation = $AnimatedSprite2D
 
-var bullet = preload("res://scenes/common/bullet.tscn") 
+
 var lagrima = preload("res://scenes/common/lagrima.tscn") 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
+var bullet = preload("res://scenes/common/bullet.tscn") 	
 
 func _init():
 	unit_type = "ingles"
@@ -37,23 +38,25 @@ func drop_the_reward(experience_given_value):
 	get_parent().add_child(l)
 
 func attack():
-	if attack_objective:
+	attack_objective = {"global_position": destination, "faction": "patricios", "velocity": 0}
+	if hasToAttack and attack_objective.global_position != Vector2.ZERO and $VisibleOnScreenNotifier2D.is_on_screen():
+		
 		var b = bullet.instantiate()
 		b.global_position = $WeaponPoint.global_position
 		b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
+		var fDistortion = rng.randf_range(-0.1, 0.1) #minima distorsion de disparo
+		b.direction.x += fDistortion
 		b.objective_faction = attack_objective.faction
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
 		b.speed = bullet_speed
 		b.bullet_lifetime = bullet_lifetime
-		b.set_collision_mask(1)
-		b.set_collision_mask(4)
+		b.set_collision_mask_bullet(1)
+		b.set_collision_mask_bullet(4)
 		b.set_color(Color(1, 1, 0.2))
 		get_parent().add_child(b)
-		
-		#$WeaponSound.play()
+
 		attack_sound(GUNSHOT)
-		
-		
-		attack_objective = null
+			
+	hasToAttack = false
 	pass	

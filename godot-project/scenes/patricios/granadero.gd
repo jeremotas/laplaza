@@ -16,17 +16,17 @@ func _ready():
 func assign_goal(oGoal):
 	oGoalAssigned = oGoal
 	
-func malon_sticked():
-	var bSticked = false
-	if $MalonArea:
-		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 1:
-			for unitInArea in $MalonArea.get_overlapping_bodies():
-				if ("faction" in unitInArea) and unitInArea.faction == faction:
-					bSticked = true
-					
-	input_accepted = false
-	if not bSticked and oGoalAssigned:
-		go_to(oGoalAssigned.global_position, true)
+#func malon_sticked():
+#	var bSticked = false
+#	if $MalonArea:
+#		if $MalonArea.has_overlapping_bodies() and $MalonArea.get_overlapping_bodies().size() > 1:
+#			for unitInArea in $MalonArea.get_overlapping_bodies():
+#				if ("faction" in unitInArea) and unitInArea.faction == faction:
+#					bSticked = true
+#					
+#	input_accepted = false
+#	if not bSticked and oGoalAssigned:
+#		go_to(oGoalAssigned.global_position, true)
 	#else:
 	#	input_accepted = true
 	
@@ -43,7 +43,7 @@ func attack():
 		b.objective_faction = attack_objective.faction
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
-		b.set_collision_mask(2)
+		b.set_collision_mask_bullet(2)
 		
 		get_parent().get_parent().add_child(b)
 		

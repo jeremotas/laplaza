@@ -7,19 +7,28 @@ var lagrima = preload("res://scenes/common/lagrima.tscn")
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
-	unit_type = "green_soldier"
-	
-	max_speed = Global.settings.ingleses.green_soldier.max_speed
-	life = Global.settings.ingleses.green_soldier.life
-	min_damage_given = Global.settings.ingleses.green_soldier.attack.min_damage_given
-	max_damage_given = Global.settings.ingleses.green_soldier.attack.max_damage_given
-	experience_given = Global.settings.ingleses.green_soldier.experience_given
-	bullet_speed = Global.settings.ingleses.green_soldier.attack.bullet.speed
-	bullet_lifetime = Global.settings.ingleses.green_soldier.attack.bullet.duration
-	coolDownAttackTime = Global.settings.ingleses.green_soldier.attack.cooldown
-	iAttackProbability = Global.settings.ingleses.green_soldier.attack.probability
+	unit_type = "ingles"
+	max_speed = Global.settings.ingleses.cannon.max_speed
+	life = Global.settings.ingleses.cannon.life
+	min_damage_given = Global.settings.ingleses.cannon.attack.min_damage_given
+	max_damage_given = Global.settings.ingleses.cannon.attack.max_damage_given
+	experience_given = Global.settings.ingleses.cannon.experience_given
+	bullet_speed = Global.settings.ingleses.cannon.attack.bullet.speed
+	bullet_lifetime = Global.settings.ingleses.cannon.attack.bullet.duration
+	coolDownAttackTime = Global.settings.ingleses.cannon.attack.cooldown
+	iAttackProbability = Global.settings.ingleses.cannon.attack.probability
 	drop_reward = true
 	init()
+	random_scale()
+	
+func random_scale():
+	if (Global.settings.ingleses.cannon.scale_probability > 0):
+		var iProb = rng.randi_range(0, 100)
+		if (iProb < Global.settings.ingleses.cannon.scale_probability):
+			var fScale = rng.randf_range(1.1, 2.0)
+			scale = Vector2(fScale, fScale)
+			life = life * fScale
+			experience_given = ceil(experience_given * fScale)
 	
 func _ready():
 	super()
@@ -32,7 +41,7 @@ func _process(delta):
 func drop_the_reward(experience_given_value):
 	drop_reward = false
 	var l = lagrima.instantiate()
-	l.modulate = Color(1,1,0,1)
+	l.modulate = Color(1,0,0,1)
 	l.scale = Vector2(1.5,1.5)
 	l.experience_given = experience_given_value
 	l.global_position = global_position
@@ -51,9 +60,14 @@ func attack():
 		b.max_damage = max_damage_given
 		b.speed = bullet_speed
 		b.bullet_lifetime = bullet_lifetime
+		#b.set_sprite("", 1.1, 0)
 		b.set_collision_mask_bullet(1)
 		b.set_collision_mask_bullet(4)
-		b.set_color(Color(1, 1, 0.2))
+		b.set_color(Color(1, 0.1, 0.1))
+		b.set_scale(Vector2(3.0, 3.0))
+		
+		b.prepare_explotion(2, Global.settings.ingleses.cannon.attack.bullet.explotion.duration, Global.settings.ingleses.cannon.attack.bullet.explotion.scale, Global.settings.ingleses.cannon.attack.bullet.explotion.particle)
+		
 		get_parent().add_child(b)
 		
 		#$WeaponSound.play()

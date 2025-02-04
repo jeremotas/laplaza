@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://doo77a1vfcsws"]
+[gd_scene load_steps=16 format=3 uid="uid://doo77a1vfcsws"]
 
 [ext_resource type="Script" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="2_77qr6"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="6_ajg8l"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="6_nliy4"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="7_pjvl7"]
-[ext_resource type="Texture2D" uid="uid://blt6ic4solt8p" path="res://assets/mkt/logo_eva_2024.png" id="15_lmuoe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a13kk"]
 texture = ExtResource("6_ajg8l")
@@ -205,12 +204,6 @@ respawn_seconds = 1.0
 
 [node name="PosicionGeneral" type="Marker2D" parent="."]
 position = Vector2(66, 475)
-
-[node name="LogoEva" type="Sprite2D" parent="."]
-z_index = 10
-position = Vector2(574, 454)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("15_lmuoe")
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Mejoras" to="." method="_on_mejoras_pressed"]

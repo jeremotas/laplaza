@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends StaticBody2D
 
 signal reward(faction)
 var reward_emited = false
@@ -28,14 +28,14 @@ func collected():
 func _physics_process(delta):	
 	if not followUnit == null:
 		move_to(delta)
-	move_and_slide()
+	#move_and_slide()
 
 func move_to(delta):
 #	print("move")
-	speed += 100.0
+	speed += 500.0
 	direction = (followUnit.global_position - global_position).normalized()
-	velocity = direction * speed * delta
-	#translate(direction * speed * delta)
+	#velocity = direction * speed * delta
+	translate(direction * speed * delta)
 
 func follow(oWho):
 	#print('Debo seguir a', oWho)
@@ -44,3 +44,7 @@ func follow(oWho):
 func _on_area_2d_body_entered(body):
 	if "unit_type" in body and body.unit_type == 'general':
 		collected()
+
+
+func _on_timer_timeout():
+	queue_free()

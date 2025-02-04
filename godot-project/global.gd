@@ -181,11 +181,11 @@ var settings = {
 			"experience_given": 1,
 			"attack":{
 				"bullet": {
-					"speed": 100,
+					"speed": 150,
 					"duration": 2.0,
 				},
-				"probability": 50,
-				"cooldown": 1,
+				"probability": 20,
+				"cooldown": 2,
 				"min_damage_given": 1,
 				"max_damage_given": 1
 			}
@@ -197,11 +197,11 @@ var settings = {
 			"scale_probability": 30,
 			"attack":{
 				"bullet": {
-					"speed": 50,
+					"speed": 150,
 					"duration": 2.0,
 				},
-				"cooldown": 2,
-				"probability": 80,
+				"cooldown": 4,
+				"probability": 10,
 				"min_damage_given": 4,
 				"max_damage_given": 4
 			}
@@ -212,13 +212,34 @@ var settings = {
 			"experience_given": 4,
 			"attack":{
 				"bullet": {
-					"speed": 100,
+					"speed": 150,
 					"duration": 0.5,
 				},
-				"cooldown": 1,
-				"probability": 80,
+				"cooldown": 4,
+				"probability": 20,
 				"min_damage_given": 1,
 				"max_damage_given": 1
+			}
+		},
+		"cannon": {
+			"life": 30,
+			"max_speed": 8,
+			"experience_given": 22,
+			"scale_probability": 0,
+			"attack":{
+				"bullet": {
+					"speed": 150,
+					"duration": 2.0,
+					"explotion": {
+						"duration": 1,
+						"scale": 30,
+						"particle": "explosion"
+					}
+				},
+				"cooldown": 10,
+				"probability": 10,
+				"min_damage_given": 20,
+				"max_damage_given": 20
 			}
 		}
 	}

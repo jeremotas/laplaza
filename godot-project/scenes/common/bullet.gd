@@ -59,7 +59,9 @@ func set_color(TheColor):
 	pass
 
 func set_sprite(sSprite, fScaleFactor = 1, fRotationFactor = 0):
-	$visual_bullet.texture = load(sSprite)
+	if sSprite != "":
+		$visual_bullet.texture = load(sSprite)
+		
 	bullet_scale_factor = fScaleFactor
 	bullet_rotation_factor = fRotationFactor
 
@@ -67,7 +69,7 @@ func _on_visible_on_screen_enabler_2d_screen_exited():
 	#stopped()
 	pass
 
-func set_collision_mask(iLayer):
+func set_collision_mask_bullet(iLayer):
 	if iLayer > 0:
 		$Area2D.set_collision_mask_value(iLayer, true)
 
