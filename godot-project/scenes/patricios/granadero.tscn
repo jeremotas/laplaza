@@ -1,8 +1,7 @@
-[gd_scene load_steps=61 format=3 uid="uid://b6541ctm8c4dc"]
+[gd_scene load_steps=60 format=3 uid="uid://b6541ctm8c4dc"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_23mat"]
 [ext_resource type="Texture2D" uid="uid://salulqvo0yqp" path="res://assets/created/patricio.png" id="3_glm1r"]
-[ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="4_43sh1"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="5_nfucf"]
 
 [sub_resource type="GDScript" id="GDScript_1m2dc"]
@@ -45,7 +44,7 @@ func attack():
 			b.max_damage = max_damage_given
 			b.speed = bullet_speed
 			b.bullet_lifetime = bullet_lifetime
-			b.set_collision_mask(2)
+			b.set_collision_mask_bullet(2)
 			b.set_color(Color(1, 1, 1))
 			get_parent().add_child(b)
 			
@@ -555,7 +554,6 @@ theme_override_font_sizes/font_size = 8
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 1
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
@@ -578,11 +576,6 @@ libraries = {
 position = Vector2(-1.00781, 2.09375)
 scale = Vector2(0.507812, 0.46875)
 polygon = PackedVector2Array(-5, -11, -7, 17, 6, 16, 9, -9)
-
-[node name="SelectionArea" parent="." instance=ExtResource("4_43sh1")]
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SelectionArea"]
-polygon = PackedVector2Array(-3, -4, -5, 12, 3, 13, 4, -5)
 
 [node name="CombatArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -612,5 +605,3 @@ offset_bottom = -14.0
 theme_override_styles/background = SubResource("StyleBoxFlat_2wcj8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_872au")
 show_percentage = false
-
-[connection signal="selection_toggled" from="SelectionArea" to="." method="_on_selection_area_selection_toggled"]

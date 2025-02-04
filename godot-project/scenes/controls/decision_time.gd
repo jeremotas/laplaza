@@ -75,6 +75,7 @@ func _on_visibility_changed():
 
 func _on_granadero_button_card_pressed():
 	get_parent().decision_time_end("granadero")
+	
 
 
 func _on_correntino_button_card_pressed():

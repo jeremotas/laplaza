@@ -375,8 +375,7 @@ offset_right = 40.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_torbl")
-animation = &"walk"
-frame_progress = 0.777648
+animation = &"idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {

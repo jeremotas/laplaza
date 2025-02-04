@@ -6,7 +6,7 @@ var TheGameStats : GameStats # Estadisticas del juego (control de experiencia y 
 var last_level = 0 # Marca para control del ultimo nivel accedido
 var player_max_life = 20 # Maxima vida del jugador principal
 
-const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
+const enemy_strategy_container  = preload("res://scenes/levels/strategy_one.gd")
 var enemy_strategy 
 # Variables de control de UI
 @onready var HUD = $HUD
@@ -46,7 +46,7 @@ var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.t
 var SonidoGota = preload('res://assets/created/sounds/gota.mp3')
 
 func _ready():
-	get_viewport().set_physics_object_picking_sort(true) # 
+	#get_viewport().set_physics_object_picking_sort(false) # 
 	$BackgroundMusic.play(152.0)
 	$UnitSpawner.set_goal($General) # Todas las unidades patricias siguen al general.
 	TheGameStats = GameStats.new() # Reiniciamos las estadisticas

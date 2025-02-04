@@ -1,7 +1,6 @@
-[gd_scene load_steps=105 format=3 uid="uid://bc8o4p1i67cbn"]
+[gd_scene load_steps=104 format=3 uid="uid://bc8o4p1i67cbn"]
 
 [ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
-[ext_resource type="PackedScene" uid="uid://b6mb0wdo345t4" path="res://scenes/controls/selection_area.tscn" id="2_1oyaa"]
 [ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="2_4uwal"]
 [ext_resource type="Texture2D" uid="uid://jisqmeehvii8" path="res://assets/created/barrilete32ol.png" id="2_7xuv0"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_i00nh"]
@@ -789,13 +788,6 @@ visibility_layer = 0
 position = Vector2(-1.00781, 2.09375)
 scale = Vector2(0.507812, 0.46875)
 polygon = PackedVector2Array(-43.3077, -19.4, -45.277, 23.2667, 11.8308, 27.5333, 33.4923, -42.8667, -1.95385, -15.1333, 0.0153797, -57.8, -13.7692, -59.9333, -19.6769, -23.6667)
-
-[node name="SelectionArea" parent="." instance=ExtResource("2_1oyaa")]
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SelectionArea"]
-light_mask = 9
-visibility_layer = 9
-polygon = PackedVector2Array(-9, -17, -23, 9, 6, 13, 14, -17)
 
 [node name="CombatArea" type="Area2D" parent="."]
 collision_layer = 0

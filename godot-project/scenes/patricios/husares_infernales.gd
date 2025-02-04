@@ -50,7 +50,7 @@ func attack():
 			b.max_damage = max_damage_given
 			b.speed = bullet_speed
 			b.bullet_lifetime = bullet_lifetime
-			b.set_collision_mask(2)
+			b.set_collision_mask_bullet(2)
 			b.set_color(Color(1, 0, 0))
 			get_parent().get_parent().add_child(b)
 			var makenoise = rng.randi_range(0, 100)

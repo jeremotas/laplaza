@@ -13,10 +13,7 @@ func _process(_delta):
 	$Status.text = str(UnitsArrived) + " / " + str(NeededUnits)
 	$Status.show()
 	
-	var unitsForGoal = get_tree().get_nodes_in_group("faccion_" + faction)
-	for unit in unitsForGoal:
-		if not unit.status.moving:
-			unit.go_to($Marker.global_position, true)
+	
 
 func set_needed_units(iValue):
 	NeededUnits = iValue
@@ -54,3 +51,10 @@ func _on_warning_zone_body_entered(body):
 	if not $VisibleOnScreenNotifier2D.is_on_screen() and "faction" in body and body.faction == "ingleses":
 		ring_bell()
 	
+
+
+func _on_beacon_timer_timeout():
+	var unitsForGoal = get_tree().get_nodes_in_group("faccion_" + faction)
+	for unit in unitsForGoal:
+		if not unit.status.moving:
+			unit.go_to($Marker.global_position, true)

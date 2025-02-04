@@ -147,7 +147,11 @@ bus = &"Efectos"
 position = Vector2(-5, -6.5)
 scale = Vector2(3.4, 4.45)
 
+[node name="BeaconTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
 [connection signal="body_entered" from="AreaMastil" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AreaMastil" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="WarningZone" to="." method="_on_warning_zone_body_entered"]
+[connection signal="timeout" from="BeaconTimer" to="." method="_on_beacon_timer_timeout"]
