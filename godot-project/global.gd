@@ -15,7 +15,7 @@ var settings = {
 			"life": 15,
 			"malon": {
 				"granadero": 0,
-				"correntino": 1,
+				"correntino": 0,
 				"moreno": 0,
 				"husares_infernales": 0,
 				"arribeno": 0,
