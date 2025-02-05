@@ -251,12 +251,16 @@ func AnimationCalculation(_delta):
 		
 	if velocity.x > 0: 
 		$AnimatedSprite2D.flip_h = false
+		#scale = Vector2(1.0, 1.0)
 	elif velocity.x < 0:
+		#scale = Vector2(-1.0, 1.0)
 		$AnimatedSprite2D.flip_h = true	
 	
 	#flipped = $AnimatedSprite2D.flip_h
 	if just_idle and flipped:
 		$AnimatedSprite2D.flip_h = flipped
+		#scale = Vector2(-1.0, 1.0)
+		
 		
 	
 	

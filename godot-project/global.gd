@@ -231,7 +231,7 @@ var settings = {
 					"speed": 150,
 					"duration": 2.0,
 					"explotion": {
-						"duration": 1,
+						"duration": 1.0,
 						"scale": 30,
 						"particle": "explosion"
 					}
