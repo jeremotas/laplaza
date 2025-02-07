@@ -3,30 +3,35 @@ extends Node2D
 @onready var oAnimationPlayer = $AnimationPlayer
 @onready var oRichLabel = $RichTextLabel
 @onready var oSpeechTimer = $SpeechTimer
+
+const oTexts = preload("res://texts/pre_level_titles_txt.gd")
+
 var aMessagesInstance = []
-var aMessages = [
-	{"message": "Hace mucho mucho tiempo...", "time": 0.5, "next_trigger": 0.3},
-	{"message": "En una galaxia muy muy lejana...", "time": 0.5, "next_trigger": 0.3},
-#	{"message": "", "time": 0.1, "next_trigger": 0.5},
-	{"message": "¡Ah no!", "time": 0.5, "next_trigger": 0.3},
-	{"message": "¡Pará!", "time": 0.5, "next_trigger": 0.3},
-	{"message": "Ese es otro imperio malvado...", "time": 1, "next_trigger": 0.3},
-	{"message": "", "time": 0.2, "next_trigger": 0.3},
-	{"message": "Buenos Aires\nAño 1807", "time": 1, "next_trigger": 0.3},
-	{"message": "Los ingleses atacan por última vez.", "time": 1.5, "next_trigger": 0.3},
-	{"message": "Liniers y los patricios\ndefienden la plaza.", "time": 1.5, "next_trigger": 0.3},
-]
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#print("READY")
-	aMessagesInstance = aMessages
-	#print(aMessagesInstance.size())
+	var rng = RandomNumberGenerator.new()
+	var iSelectedMessage = 1
+	var aMessages = oTexts.new().get_messages()
+	if Global.save_data.lagrimas_acumuladas >= 1000:
+		iSelectedMessage = rng.randi_range(0, aMessages.size() - 1)
+	var sSelectedMessage = aMessages[iSelectedMessage]
+	prepare_titles(sSelectedMessage)
 	Engine.time_scale = 1
-	#oSpeechTimer.autostart = true
-	#oSpeechTimer.wait_time = 0.5
-	#oSpeechTimer.one_shot = true
-	#oSpeechTimer.start()
-	
+
+func prepare_titles(sMessage):
+	var aLines = sMessage.split("\n", true)
+	for iLine in aLines.size():
+		var fTime = aLines[iLine].length() / 5.0 * 0.25
+		var fNextTrigger = 0.3
+		if aLines[iLine].strip_edges(true, true) == "":
+			fTime = 0.25
+			fNextTrigger = 0.1
+		aMessagesInstance.push_back({"message": aLines[iLine], "time": fTime, "next_trigger": fNextTrigger})
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("ui_accept"):
