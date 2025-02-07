@@ -70,38 +70,6 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("2_joe4m")
-
-[node name="GranaderoButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Granadero"
-
-[node name="MorenoButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Moreno"
-
-[node name="CorrentinoButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Correntino"
-
-[node name="MoreLifeButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Incrementar vida (10)"
-
-[node name="HusaresInfernalesButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_joe4m")
-text = "Ataque de Husares Infernales"
-
-[node name="BarrileteCosmicoButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Barrilete Cosmico"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -488,13 +456,13 @@ text = "El general se toma unos verdes y recupera la vida.
 Eso si, me dijeron que lo toma amargo."
 fit_content = true
 
+[node name="PosicionMaso" type="Marker2D" parent="."]
+position = Vector2(536, 580)
+
+[node name="PosicionMano" type="Marker2D" parent="."]
+position = Vector2(320, 174)
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/GranaderoButton" to="." method="_on_granadero_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MorenoButton" to="." method="_on_moreno_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/CorrentinoButton" to="." method="_on_correntino_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MoreLifeButton" to="." method="_on_more_life_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HusaresInfernalesButton" to="." method="_on_husares_infernales_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BarrileteCosmicoButton" to="." method="_on_barrilete_cosmico_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/GranaderoButtonCard" to="." method="_on_granadero_button_card_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/CorrentinoButtonCard" to="." method="_on_correntino_button_card_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MorenoButtonCard" to="." method="_on_moreno_button_card_pressed"]
