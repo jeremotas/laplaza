@@ -59,7 +59,7 @@ func _ready():
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
 	first_move_general()
-	
+	get_tree().paused = false
 	Engine.time_scale = 1
 
 func first_move_general():

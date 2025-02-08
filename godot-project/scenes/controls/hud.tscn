@@ -12,22 +12,37 @@
 texture = ExtResource("2_pl8iw")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxyo0"]
-bg_color = Color(0, 0, 0, 0.266667)
+bg_color = Color(0, 0, 0, 0.133333)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt76d"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00u64"]
-bg_color = Color(0, 0, 0, 0.266667)
+bg_color = Color(0, 0, 0, 0.133333)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3evv7"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ba1"]
-bg_color = Color(0, 0, 0, 0.266667)
+bg_color = Color(0, 0, 0, 0.133333)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct6x6"]
 bg_color = Color(0.164706, 0.760784, 0.890196, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 corner_detail = 1
 
 [node name="HUD" type="CanvasLayer"]

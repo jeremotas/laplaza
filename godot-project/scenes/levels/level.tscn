@@ -401,6 +401,7 @@ wait_time = 10.0
 autostart = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("7_sexjv")
 volume_db = -10.392
 bus = &"Musica"

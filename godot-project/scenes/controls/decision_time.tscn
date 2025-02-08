@@ -30,6 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 51.0
 offset_right = 636.0
@@ -43,6 +44,7 @@ text = "¡Subiste de nivel!"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 68.0
 offset_right = 638.0
@@ -57,6 +59,7 @@ text = "Elegi tu recompensa"
 horizontal_alignment = 1
 
 [node name="Leyenda" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 360.0
 offset_right = 638.0
