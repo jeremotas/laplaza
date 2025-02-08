@@ -1,56 +1,54 @@
-[gd_scene load_steps=15 format=3 uid="uid://duronouk3fu1p"]
+[gd_scene load_steps=5 format=3 uid="uid://duronouk3fu1p"]
 
 [ext_resource type="Script" path="res://scenes/controls/decision_time.gd" id="1_oii2v"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_joe4m"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_ydeda"]
-[ext_resource type="Texture2D" uid="uid://bg32c0f6pxt8v" path="res://assets/created/carta_frente.png" id="4_1s56n"]
-[ext_resource type="Texture2D" uid="uid://bdsq3d4gp8hmk" path="res://assets/created/patricio_idle.png" id="5_csajg"]
-[ext_resource type="Texture2D" uid="uid://ce8r1c17x8cnr" path="res://assets/created/carta_frente_focus.png" id="5_xgbix"]
-[ext_resource type="Texture2D" uid="uid://43gisgq1pdeu" path="res://assets/created/correntino_idle.png" id="6_ux25i"]
-[ext_resource type="Texture2D" uid="uid://bcejdeyfvpck8" path="res://assets/created/card_moreno.png" id="7_7vkab"]
-[ext_resource type="Texture2D" uid="uid://bekk1k5vhocxo" path="res://assets/created/card_diego.png" id="8_26tv6"]
-[ext_resource type="Texture2D" uid="uid://dquln6ysfup6d" path="res://assets/created/mate.png" id="8_uq326"]
-[ext_resource type="Texture2D" uid="uid://ofgj4cbval1b" path="res://assets/created/husaresinfernales_run.png" id="9_pow7x"]
-[ext_resource type="Texture2D" uid="uid://vic1yusywd0r" path="res://assets/created/arribeno.png" id="9_ukr3d"]
-[ext_resource type="Texture2D" uid="uid://dsi348i781osn" path="res://assets/created/ollami_32.png" id="13_qqpdc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]
 shader = ExtResource("2_ydeda")
-shader_parameter/amount = 1.152
+shader_parameter/amount = 1.229
 
 [node name="decision_time" type="CanvasLayer"]
+process_mode = 2
 script = ExtResource("1_oii2v")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_ddyt5")
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_ddyt5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
 offset_left = 4.0
-offset_top = 12.0
+offset_top = 51.0
 offset_right = 636.0
-offset_bottom = 43.0
+offset_bottom = 82.0
 theme = ExtResource("2_joe4m")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.266667)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 10
 text = "¡Subiste de nivel!"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="Control"]
 offset_left = 1.0
-offset_top = 52.0
+offset_top = 68.0
 offset_right = 638.0
-offset_bottom = 129.0
+offset_bottom = 145.0
 theme = ExtResource("2_joe4m")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.266667)
+theme_override_colors/font_color = Color(1, 0.878431, 0.0941176, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 10
@@ -58,416 +56,19 @@ theme_override_font_sizes/font_size = 50
 text = "Elegi tu recompensa"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-metadata/_edit_lock_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="GranaderoButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/GranaderoButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/GranaderoButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/GranaderoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
+[node name="Leyenda" type="Label" parent="Control"]
+offset_left = 6.0
+offset_top = 360.0
+offset_right = 638.0
+offset_bottom = 459.0
 theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "[center]Patricio[/center]"
-fit_content = true
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/GranaderoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_csajg")
-stretch_mode = 5
+[node name="PosicionMazo" type="Marker2D" parent="Control"]
+position = Vector2(597, 529)
 
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/GranaderoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "El bien ponderado patricio que ataca con precisión al enemigo. 
-
-Tarda en recargar, sino seria un escándalo."
-fit_content = true
-
-[node name="CorrentinoButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/CorrentinoButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CorrentinoButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CorrentinoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "[center]Correntino[/center]"
-fit_content = true
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CorrentinoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("6_ux25i")
-stretch_mode = 5
-
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CorrentinoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Tira de lejos cual cazador de ñandú.
-Camina lento, pero si pega... pega.
-
-Eso si, le pegan una y adiós."
-fit_content = true
-
-[node name="MorenoButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MorenoButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MorenoButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MorenoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "[center]Moreno[/center]"
-fit_content = true
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MorenoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_7vkab")
-stretch_mode = 5
-
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MorenoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Fiel y aguantador como pocos.
-Lanza granadas hacia donde diga el general.
-
-Era eso o quedar como esclavo."
-fit_content = true
-
-[node name="ArribenoButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ArribenoButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ArribenoButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/ArribenoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "[center]Arribeño[/center]"
-fit_content = true
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/ArribenoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_ukr3d")
-stretch_mode = 5
-
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/ArribenoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "¿Tenés escopeta?
-Tengo escopeta.
-
-Agarrate fuerte que los de Arriba van con perdigones de plomo.
-
-"
-fit_content = true
-
-[node name="BarrileteCosmicoButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 15
-bbcode_enabled = true
-text = "[center]Barrilete Cósmico[/center]"
-fit_content = true
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("8_26tv6")
-stretch_mode = 5
-
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "El general es poseído temporalmente por Pelusa.
-Si hay ingleses, él los gambetea y ellos caen al piso. 
-(La enfedrina queda en la sangre del general)"
-fit_content = true
-
-[node name="HusaresInfernalesButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/HusaresInfernalesButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HusaresInfernalesButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/HusaresInfernalesButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 15
-bbcode_enabled = true
-text = "[center]Husares Infernales[/center]"
-fit_content = true
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HusaresInfernalesButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_pow7x")
-stretch_mode = 5
-
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/HusaresInfernalesButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Estos jinetes desataran un infierno de balas sobre los ingleses.
-
-(¡Ojo! Pasan una vez y chau pinola)"
-fit_content = true
-
-[node name="LasOllasButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/LasOllasButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LasOllasButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/LasOllasButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 15
-bbcode_enabled = true
-text = "[center]El pueblo en armas[/center]"
-fit_content = true
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/LasOllasButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("13_qqpdc")
-stretch_mode = 5
-
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/LasOllasButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Y un buen dia las cacerolas del pueblo entraron en vigor sobre Buenos Aires...
-
-(¿Dónde lo vi?)"
-fit_content = true
-
-[node name="MoreLifeButtonCard" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1s56n")
-texture_hover = ExtResource("5_xgbix")
-texture_focused = ExtResource("5_xgbix")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Titulo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "[center]Matecito[/center]"
-fit_content = true
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("8_uq326")
-stretch_mode = 5
-
-[node name="Descripcion" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MoreLifeButtonCard/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("2_joe4m")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "El general se toma unos verdes y recupera la vida.
-
-Eso si, me dijeron que lo toma amargo."
-fit_content = true
-
-[node name="PosicionMaso" type="Marker2D" parent="."]
-position = Vector2(536, 580)
-
-[node name="PosicionMano" type="Marker2D" parent="."]
-position = Vector2(320, 174)
+[node name="PosicionMano" type="Marker2D" parent="Control"]
+position = Vector2(320, 151)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/GranaderoButtonCard" to="." method="_on_granadero_button_card_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CorrentinoButtonCard" to="." method="_on_correntino_button_card_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/MorenoButtonCard" to="." method="_on_moreno_button_card_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ArribenoButtonCard" to="." method="_on_arribeno_button_card_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/BarrileteCosmicoButtonCard" to="." method="_on_barrilete_cosmico_button_card_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/HusaresInfernalesButtonCard" to="." method="_on_husares_infernales_button_card_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/LasOllasButtonCard" to="." method="_on_las_ollas_button_card_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/MoreLifeButtonCard" to="." method="_on_more_life_button_card_pressed"]

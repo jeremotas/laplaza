@@ -1,6 +1,7 @@
 extends Node
 
 var save_data:SaveData
+var mazo:Mazo
 
 var settings = {
 	"game": {
@@ -247,3 +248,4 @@ var settings = {
 
 func _ready():
 	save_data = SaveData.load_or_create()
+	mazo = Mazo.crear()

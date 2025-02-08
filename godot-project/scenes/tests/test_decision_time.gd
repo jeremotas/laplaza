@@ -3,7 +3,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$decision_time.prepare_hand(5)
+	get_tree().paused = true
+	#$decision_time.prepare_hand()
 	pass # Replace with function body.
 
 

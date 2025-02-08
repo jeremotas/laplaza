@@ -9,7 +9,11 @@ void vertex() {
 
 void fragment() {
 	vec4 color = textureLod(screen_texture, SCREEN_UV, amount);// Called for every pixel the material 	is visible on.
+	
 	COLOR = color;
+	
+	COLOR.rgb = mix(vec3((COLOR.r + COLOR.g + COLOR.b) / 3.0),  vec3(0.299 * COLOR.r + 0.587 * COLOR.g + 0.114 * COLOR.b), 1.0);
+	COLOR.rgb = mix(COLOR.rgb, vec3(0.25, 0.25, 1.0), 0.5);
 }
 
 //void light() {
