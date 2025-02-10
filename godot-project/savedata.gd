@@ -9,7 +9,8 @@ class_name SaveData extends Resource
 	"correntinos":0,
 	"arribenos":0,
 	"granaderos":0,
-	"morenos":0
+	"morenos":0,
+	"cartas_por_mano": 3
 }
 
 const SAVE_PATH:String = "user://la_furia_de_las_trenzas.tres"

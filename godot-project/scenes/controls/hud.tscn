@@ -12,22 +12,52 @@
 texture = ExtResource("2_pl8iw")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxyo0"]
-bg_color = Color(0, 0, 0, 0.266667)
+bg_color = Color(0, 0, 0, 0.133333)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt76d"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00u64"]
-bg_color = Color(0, 0, 0, 0.266667)
+bg_color = Color(0, 0, 0, 0.133333)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3evv7"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ba1"]
-bg_color = Color(0, 0, 0, 0.266667)
+bg_color = Color(0, 0, 0, 0.133333)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct6x6"]
 bg_color = Color(0.164706, 0.760784, 0.890196, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 corner_detail = 1
 
 [node name="HUD" type="CanvasLayer"]
@@ -89,15 +119,13 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="LifeProgressBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer/Middle/VBoxLife"]
-custom_minimum_size = Vector2(6, 0)
+custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 theme = ExtResource("2_7ne2n")
 theme_override_styles/background = SubResource("StyleBoxFlat_kxyo0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_pt76d")
-step = 1.0
-rounded = true
 fill_mode = 3
 show_percentage = false
 script = ExtResource("3_qjru7")
@@ -124,14 +152,12 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="PlazaProgressBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer/Middle/VBoxPlaza"]
-custom_minimum_size = Vector2(6, 0)
+custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_00u64")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3evv7")
-step = 1.0
-rounded = true
 fill_mode = 3
 show_percentage = false
 
@@ -170,14 +196,12 @@ theme_override_font_sizes/font_size = 30
 text = "5000"
 
 [node name="LevelProgressBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer/Bottom"]
-custom_minimum_size = Vector2(0, 6)
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_x2ba1")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ct6x6")
-step = 1.0
-rounded = true
 show_percentage = false
 
 [node name="Nivel" type="Label" parent="Control/MarginContainer/VBoxContainer/Bottom"]

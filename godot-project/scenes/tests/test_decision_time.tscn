@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwefw3dvi0vu8"]
+
+[ext_resource type="PackedScene" uid="uid://duronouk3fu1p" path="res://scenes/controls/decision_time.tscn" id="1_bt0hf"]
+[ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="1_hhuq6"]
+[ext_resource type="Script" path="res://scenes/tests/test_decision_time.gd" id="1_u0xeq"]
+
+[node name="TestDecisionTime" type="Node2D"]
+script = ExtResource("1_u0xeq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -351.0
+offset_top = -215.0
+offset_right = 1087.0
+offset_bottom = 595.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hhuq6")
+
+[node name="decision_time" parent="." instance=ExtResource("1_bt0hf")]

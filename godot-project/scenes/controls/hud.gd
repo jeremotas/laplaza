@@ -8,9 +8,17 @@ extends CanvasLayer
 @onready var plaza_progress = $Control/MarginContainer/VBoxContainer/Middle/VBoxPlaza/PlazaProgressBar
 @onready var lagrimas_obtenidas = $Control/MarginContainer/VBoxContainer/Bottom/Lagrimas
 
+var tween:Tween
+var tweenLife:Tween
+var tweenPlaza:Tween
+var iLevelProgressValueTo = null
+var iLevelLifeValueTo = null
+var iLevelPlazaValueTo = null
+
 func ready():
 	plaza_progress.modulate = 'ffffffCC'
 	life_progress.modulate = '4d9c4eCC'
+	
 
 func change_time(iSecondsTotal):
 	var iMinutes = iSecondsTotal / 60
@@ -24,12 +32,29 @@ func change_level(iLevel):
 func change_level_progress(iMinValue, iCount, iMaxValue):
 	level_progress_control.min_value = iMinValue
 	level_progress_control.max_value = iMaxValue
-	level_progress_control.value = iCount
+	
+	if iLevelProgressValueTo != iCount:
+		iLevelProgressValueTo = iCount
+		#level_progress_control.value = iCount
+		if tween:
+			tween.kill()
+		tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(level_progress_control, "value", iLevelProgressValueTo, 0.5)
+		
 	lagrimas_obtenidas.text = str(iCount)
 	#level_progress_control.text = str(iCount) + " / " + str(iTotal)
 	
 func change_life_indicator(value, max_value, invincible):
-	life_progress.value = value
+	
+	if iLevelLifeValueTo != value:
+		iLevelLifeValueTo = value
+		#level_progress_control.value = iCount
+		if tweenLife:
+			tweenLife.kill()
+		tweenLife = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+		tweenLife.tween_property(life_progress, "value", iLevelLifeValueTo, 0.5)
+	else:
+		life_progress.value = value	
 	life_progress.max_value = max_value
 	
 	
@@ -45,7 +70,16 @@ func change_life_indicator(value, max_value, invincible):
 	#	life_progress.modulate = Color('#00b760')
 	
 func change_plaza_indicator(value, max_value):
-	plaza_progress.value = max_value - value
+	
+	if iLevelPlazaValueTo != max_value - value:
+		iLevelPlazaValueTo = max_value - value
+		#level_progress_control.value = iCount
+		if tweenPlaza:
+			tweenPlaza.kill()
+		tweenPlaza = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+		tweenPlaza.tween_property(plaza_progress, "value", iLevelPlazaValueTo, 0.5)
+	else: 
+		plaza_progress.value = max_value - value
 	plaza_progress.max_value = max_value
 	plaza_progress.modulate = 'ffffffCC'
 	
@@ -58,6 +92,7 @@ func change(TheGameStats):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 	

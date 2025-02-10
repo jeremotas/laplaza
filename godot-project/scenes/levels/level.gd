@@ -59,7 +59,7 @@ func _ready():
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
 	first_move_general()
-	
+	get_tree().paused = false
 	Engine.time_scale = 1
 
 func first_move_general():
@@ -234,9 +234,10 @@ func decision_time_start():
 	# Inicio de una decision
 	$General.pause()
 	ActualTimeScale = Engine.time_scale
-	Engine.time_scale = 0
-	$decision_time.prepare_buttons(TheGameStats.experience)
+	get_tree().paused = true
+	#Engine.time_scale = 0
 	$decision_time.show()
+	#$decision_time.draw_hand()
 	
 func increase_life(increase):
 	$General.life += increase
@@ -255,6 +256,7 @@ func decision_time_end(decision):
 		
 	# Devolver al juego
 	$decision_time.hide()
+	get_tree().paused = false
 	Engine.time_scale = ActualTimeScale
 	$General.unpause()
 	
@@ -310,11 +312,12 @@ func pauseMenu():
 	# Funcion que determina que sucede durante la pausa (Engine stop y visual de control)
 	if paused:
 		pause_menu.hide()
-		Engine.time_scale = 1
+		#Engine.time_scale = 1
 		$General.unpause()
+		get_tree().paused = false
 	else:
+		get_tree().paused = true
 		pause_menu.show()
-		Engine.time_scale = 0
 		$General.pause()
 	paused = !paused
 	

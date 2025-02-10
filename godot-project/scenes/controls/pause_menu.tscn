@@ -11,6 +11,7 @@ shader = ExtResource("2_76fdo")
 shader_parameter/amount = 1.225
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
 script = ExtResource("1_wwgda")
 
 [node name="Blur" type="ColorRect" parent="."]
