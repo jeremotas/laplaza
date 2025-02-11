@@ -159,6 +159,7 @@ func _on_visibility_changed():
 		
 func decision_elegida(sDecisionTomada, iSelectedCard):
 	ready_for_input = false
+	$ChangeLevel.play()
 	await undraw_cards(iSelectedCard)
 	get_parent().decision_time_end(sDecisionTomada)
 	

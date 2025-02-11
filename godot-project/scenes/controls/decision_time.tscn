@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://duronouk3fu1p"]
+[gd_scene load_steps=6 format=3 uid="uid://duronouk3fu1p"]
 
 [ext_resource type="Script" path="res://scenes/controls/decision_time.gd" id="1_oii2v"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_joe4m"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_ydeda"]
+[ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="4_o6mhc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]
 shader = ExtResource("2_ydeda")
@@ -55,7 +56,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 50
-text = "¿Cual jugas?"
+text = "¿Qué carta jugas?"
 horizontal_alignment = 1
 
 [node name="Leyenda" type="Label" parent="Control"]
@@ -73,5 +74,11 @@ position = Vector2(597, 529)
 
 [node name="PosicionMano" type="Marker2D" parent="Control"]
 position = Vector2(320, 161)
+
+[node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -8)
+stream = ExtResource("4_o6mhc")
+volume_db = 10.0
+bus = &"Efectos"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

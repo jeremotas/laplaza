@@ -187,7 +187,6 @@ func calculate_stats():
 	
 	# Revision de nivel
 	if TheGameStats.level != last_level and not $General.barrilete_cosmico:
-		$ChangeLevel.play()
 		last_level = TheGameStats.level
 		
 		# Decision
