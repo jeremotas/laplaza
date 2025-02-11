@@ -86,6 +86,8 @@ func _on_mouse_exited():
 	card_down()
 
 func card_up():
+	if not get_parent().ready_for_input:
+		return
 	if original_position == null:
 		original_position = global_position
 	if tween and tween.is_running():
@@ -93,11 +95,13 @@ func card_up():
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	var final_pos = original_position
 	final_pos.y += -iMoveOnSelection
-	tween.parallel().tween_property(self, "position", final_pos, 0.1)
+	tween.parallel().tween_property(self, "global_position", final_pos, 0.1)
 	#global_position.y = original_position.y - iMoveOnSelection
 	
 	
 func card_down():
+	if not get_parent().ready_for_input:
+		return
 	if original_position == null:
 		original_position = global_position
 	if tween and tween.is_running():
@@ -105,6 +109,6 @@ func card_down():
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	var final_pos = original_position
 	final_pos.y += iMoveOnSelection
-	tween.parallel().tween_property(self, "position", final_pos, 0.1)
+	tween.parallel().tween_property(self, "global_position", final_pos, 0.1)
 	#global_position.y = original_position.y
 	

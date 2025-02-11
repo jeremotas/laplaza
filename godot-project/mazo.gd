@@ -8,8 +8,6 @@ static func crear(aOriginalCards = []):
 	oMazo.aCards = aOriginalCards
 	if oMazo.aCards.size() == 0:
 		oMazo.rellenar_mazo_test()
-		
-	oMazo.mezclar()
 	
 	return oMazo
 

@@ -21,3 +21,4 @@ grow_vertical = 2
 texture = ExtResource("1_hhuq6")
 
 [node name="decision_time" parent="." instance=ExtResource("1_bt0hf")]
+visible = false
