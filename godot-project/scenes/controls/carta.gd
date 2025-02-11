@@ -11,17 +11,21 @@ var iMoveOnSelection = 15
 @onready var oTitulo = $Titulo
 var original_position = null
 
-const rsNormalTextureUnidad = preload("res://assets/created/carta_unidad_frente.png")
-const rsNormalTextureEvento = preload("res://assets/created/carta_evento_frente.png")
-const rsNormalTextureTruco = preload("res://assets/created/carta_truco_frente.png")
+const rsNormalTextureUnidad = preload("res://assets/created/cartas/carta_unidad.png")
+const rsNormalTextureEvento = preload("res://assets/created/cartas/carta_evento.png")
+const rsNormalTextureTruco = preload("res://assets/created/cartas/carta_truco.png")
 
 #const rsSelectedTextureEvento = preload("res://assets/created/carta_evento_frente_focus.png")
 #const rsSelectedTextureUnidad = preload("res://assets/created/carta_unidad_frente_focus.png")
 #const rsSelectedTextureTruco = preload("res://assets/created/carta_truco_frente_focus.png")
 
-const rsSelectedTextureEvento = preload("res://assets/created/carta_evento_frente.png")
-const rsSelectedTextureUnidad = preload("res://assets/created/carta_unidad_frente.png")
-const rsSelectedTextureTruco = preload("res://assets/created/carta_truco_frente.png")
+const rsSelectedTextureUnidad = preload("res://assets/created/cartas/carta_unidad.png")
+const rsSelectedTextureEvento = preload("res://assets/created/cartas/carta_evento.png")
+const rsSelectedTextureTruco = preload("res://assets/created/cartas/carta_truco.png")
+
+const aImagenes = {
+	"granadero": preload("res://assets/created/cartas/imagen/granadero.png")
+}
 
 var tween: Tween
 #res://assets/created/carta_frente.png
@@ -63,7 +67,14 @@ func prepare_textures():
 		texture_normal = rsNormalTextureTruco
 		texture_hover = rsSelectedTextureTruco
 		texture_focused = rsSelectedTextureTruco
+		
+		
+	if sDecisionTimeMessage == "granadero":
+		$Imagen.texture = aImagenes["granadero"]
 	pass
+
+func set_move_on_selection(iValue):
+	iMoveOnSelection = iValue
 
 func _on_pressed():
 	print("Mensaje", iPosicionEnMano, sDecisionTimeMessage)
@@ -80,10 +91,12 @@ func _on_focus_exited():
 	card_down()
 
 func _on_mouse_entered():
-	card_up()
+	#card_up()
+	pass
 
 func _on_mouse_exited():
-	card_down()
+	#card_down()
+	pass
 
 func card_up():
 	if not get_parent().ready_for_input:
@@ -95,7 +108,7 @@ func card_up():
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	var final_pos = original_position
 	final_pos.y += -iMoveOnSelection
-	tween.parallel().tween_property(self, "global_position", final_pos, 0.1)
+	tween.parallel().tween_property(self, "global_position", final_pos, 0.25)
 	#global_position.y = original_position.y - iMoveOnSelection
 	
 	
@@ -108,7 +121,6 @@ func card_down():
 		tween.kill()
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	var final_pos = original_position
-	final_pos.y += iMoveOnSelection
-	tween.parallel().tween_property(self, "global_position", final_pos, 0.1)
+	tween.parallel().tween_property(self, "global_position", final_pos, 0.25)
 	#global_position.y = original_position.y
 	

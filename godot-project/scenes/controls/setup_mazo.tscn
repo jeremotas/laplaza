@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3ng3h0ajxdxg"]
+[gd_scene load_steps=6 format=3 uid="uid://lep73vn75eel"]
 
 [ext_resource type="Script" path="res://scenes/controls/setup_mazo.gd" id="1_urv0u"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_58l31"]
@@ -33,9 +33,9 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 51.0
+offset_top = 1.0
 offset_right = 636.0
-offset_bottom = 82.0
+offset_bottom = 32.0
 theme = ExtResource("3_8xf3q")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -47,9 +47,9 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 75.0
+offset_top = 18.0
 offset_right = 638.0
-offset_bottom = 152.0
+offset_bottom = 95.0
 theme = ExtResource("3_8xf3q")
 theme_override_colors/font_color = Color(1, 0.878431, 0.0941176, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -62,9 +62,9 @@ horizontal_alignment = 1
 [node name="Leyenda" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 360.0
+offset_top = 395.0
 offset_right = 638.0
-offset_bottom = 459.0
+offset_bottom = 476.0
 theme = ExtResource("3_8xf3q")
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
@@ -73,7 +73,7 @@ horizontal_alignment = 1
 position = Vector2(597, 529)
 
 [node name="PosicionMano" type="Marker2D" parent="Control"]
-position = Vector2(320, 161)
+position = Vector2(320, 228)
 
 [node name="CartasContainer" type="Control" parent="."]
 layout_mode = 3
@@ -84,4 +84,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_knssc")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.1
+autostart = true
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

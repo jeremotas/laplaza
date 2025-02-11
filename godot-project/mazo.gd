@@ -29,7 +29,7 @@ func crear_cartas(sDecisionMessage, iCantidad):
 func crear_carta(sDecisionMessage):
 	var oCard = null
 	if sDecisionMessage == "granadero":
-		oCard = {"tipo": "unidad", "titulo": "Patricio", "decision_time_message": "granadero", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El bien ponderado patricio que ataca con precisión al enemigo. __ Tarda en recargar, sino seria un escándalo."}
+		oCard = {"tipo": "unidad", "titulo": "Granadero", "decision_time_message": "granadero", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El bien ponderado patricio que ataca con precisión al enemigo. __ Tarda en recargar, sino seria un escándalo."}
 	elif sDecisionMessage == "correntino":
 		oCard = {"tipo": "unidad", "titulo": "Correntino", "decision_time_message": "correntino", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Tira de lejos cual cazador de ñandú. __ Camina lento, pero si pega... pega. __ Eso si, le pegan una y adiós."}
 	elif sDecisionMessage == "arribeno":
