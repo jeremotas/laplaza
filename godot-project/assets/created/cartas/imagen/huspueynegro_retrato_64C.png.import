@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bij2jnqci081m"
-path="res://.godot/imported/granadero.png-9495dece06ee90a57a92440da0b9768e.ctex"
+uid="uid://cxqrymc0a81y6"
+path="res://.godot/imported/huspueynegro_retrato_64C.png-d496cf662becb64f05fe8efd1d15573a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/created/cartas/imagen/granadero.png"
-dest_files=["res://.godot/imported/granadero.png-9495dece06ee90a57a92440da0b9768e.ctex"]
+source_file="res://assets/created/cartas/imagen/huspueynegro_retrato_64C.png"
+dest_files=["res://.godot/imported/huspueynegro_retrato_64C.png-d496cf662becb64f05fe8efd1d15573a.ctex"]
 
 [params]
 

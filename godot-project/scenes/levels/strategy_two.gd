@@ -217,7 +217,7 @@ var aFinale = [
 		"derecha_inferior": {"unit_type": "highlander", "seconds": 2, "probability": 0},
 	},
 	{
-		"max_time": 30,
+		"duration": 30,
 		"max_alive": 60,
 		"name": "La ola fuerte",
 		"add_descanso": true,
@@ -245,7 +245,7 @@ var aDescansos = [
 	}
 ]
 
-func init():
+func _init():
 	iMaxStarters = iMaxTime / 3
 	iMaxMids = iMaxTime * 2 / 3
 
@@ -277,6 +277,7 @@ func create_strategy():
 		var oCard = get_strategy_card(iTime)
 		var iDuration = oCard.duration
 		iTime += iDuration
+		
 		var oEnglishStrategy = oCard
 		oEnglishStrategy.max_time = iTime
 		created_strategy.push_back(oEnglishStrategy)
