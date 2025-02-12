@@ -24,7 +24,14 @@ const rsSelectedTextureEvento = preload("res://assets/created/cartas/carta_event
 const rsSelectedTextureTruco = preload("res://assets/created/cartas/carta_truco.png")
 
 const aImagenes = {
-	"granadero": preload("res://assets/created/cartas/imagen/granadero.png")
+	"granadero": preload("res://assets/created/cartas/imagen/patricio_retrato_32.png"),
+	"moreno": preload("res://assets/created/cartas/imagen/moreno_retrato_32.png"),
+	"correntino": preload("res://assets/created/cartas/imagen/correntino_retrato_32.png"),
+	"arribeno": preload("res://assets/created/cartas/imagen/arribeno_retrato_32.png"),
+	"barrilete_cosmico": preload("res://assets/created/cartas/imagen/barrilete_retrato_32.png"),
+	"ataque_husares_infernales": preload("res://assets/created/cartas/imagen/huspueynegro_retrato_64A.png"),
+	"upgrade_life": preload("res://assets/created/cartas/imagen/mate_retrato_32.png"),
+	"ollas_del_pueblo": preload("res://assets/created/cartas/imagen/olla_retrato_32.png")
 }
 
 var tween: Tween
@@ -69,8 +76,8 @@ func prepare_textures():
 		texture_focused = rsSelectedTextureTruco
 		
 		
-	if sDecisionTimeMessage == "granadero":
-		$Imagen.texture = aImagenes["granadero"]
+	if aImagenes[sDecisionTimeMessage]:
+		$Imagen.texture = aImagenes[sDecisionTimeMessage]
 	pass
 
 func set_move_on_selection(iValue):

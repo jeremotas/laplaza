@@ -19,7 +19,7 @@ func rellenar_mazo_test():
 	crear_cartas("upgrade_life", 10)
 	crear_cartas("ollas_del_pueblo", 4)
 	crear_cartas("barrilete_cosmico", 1)
-	crear_cartas("ataque_husares_infernales", 10)
+	crear_cartas("ataque_husares_infernales", 2)
 	
 func crear_cartas(sDecisionMessage, iCantidad):
 	for i in range(iCantidad):
