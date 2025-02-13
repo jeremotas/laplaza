@@ -8,8 +8,6 @@ static func crear(aOriginalCards = []):
 	oMazo.aCards = aOriginalCards
 	if oMazo.aCards.size() == 0:
 		oMazo.rellenar_mazo_test()
-		
-	oMazo.mezclar()
 	
 	return oMazo
 
@@ -21,7 +19,7 @@ func rellenar_mazo_test():
 	crear_cartas("upgrade_life", 10)
 	crear_cartas("ollas_del_pueblo", 4)
 	crear_cartas("barrilete_cosmico", 1)
-	crear_cartas("ataque_husares_infernales", 10)
+	crear_cartas("ataque_husares_infernales", 2)
 	
 func crear_cartas(sDecisionMessage, iCantidad):
 	for i in range(iCantidad):
@@ -31,7 +29,7 @@ func crear_cartas(sDecisionMessage, iCantidad):
 func crear_carta(sDecisionMessage):
 	var oCard = null
 	if sDecisionMessage == "granadero":
-		oCard = {"tipo": "unidad", "titulo": "Patricio", "decision_time_message": "granadero", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El bien ponderado patricio que ataca con precisión al enemigo. __ Tarda en recargar, sino seria un escándalo."}
+		oCard = {"tipo": "unidad", "titulo": "Granadero", "decision_time_message": "granadero", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El bien ponderado patricio que ataca con precisión al enemigo. __ Tarda en recargar, sino seria un escándalo."}
 	elif sDecisionMessage == "correntino":
 		oCard = {"tipo": "unidad", "titulo": "Correntino", "decision_time_message": "correntino", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Tira de lejos cual cazador de ñandú. __ Camina lento, pero si pega... pega. __ Eso si, le pegan una y adiós."}
 	elif sDecisionMessage == "arribeno":

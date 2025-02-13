@@ -217,7 +217,7 @@ var aFinale = [
 		"derecha_inferior": {"unit_type": "highlander", "seconds": 2, "probability": 0},
 	},
 	{
-		"max_time": 30,
+		"duration": 30,
 		"max_alive": 60,
 		"name": "La ola fuerte",
 		"add_descanso": true,
@@ -234,6 +234,7 @@ var aDescansos = [
 	{
 		"duration": 10,
 		"max_alive": 0,
+		"add_descanso": false,
 		"name": "",
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 		"izquierda_superior": {"unit_type": "ingles", "seconds": 10, "probability": 0},
@@ -245,7 +246,7 @@ var aDescansos = [
 	}
 ]
 
-func init():
+func _init():
 	iMaxStarters = iMaxTime / 3
 	iMaxMids = iMaxTime * 2 / 3
 
@@ -274,16 +275,32 @@ func create_strategy():
 	var created_strategy = []
 	var iTime = 0
 	while iTime < iMaxTime: 
+		print("INICIO ITERACION ", iTime)
 		var oCard = get_strategy_card(iTime)
 		var iDuration = oCard.duration
 		iTime += iDuration
-		var oEnglishStrategy = oCard
+		print("NOMBRE ", oCard.name)
+		print("DURACION ", iDuration)
+		print("MAX_TIME ", iTime)
+		
+		var oEnglishStrategy = duplicate_card(oCard)
 		oEnglishStrategy.max_time = iTime
 		created_strategy.push_back(oEnglishStrategy)
 		
 		if oCard.add_descanso and iTime < iMaxTime - 120:
-			var oEnglishStrategyDescanso = get_strategy_card_descanso(iTime)
+			
+			var oCardDescanso = get_strategy_card_descanso(iTime)
+			iDuration = oCardDescanso.duration
+			iTime += iDuration
+			print("DESCANSO ", iTime)
+			print("DURACION ", iDuration)
+			print("MAX_TIME ", iTime)
+			var oEnglishStrategyDescanso = duplicate_card(oCardDescanso)
+			oEnglishStrategyDescanso.max_time = iTime
 			created_strategy.push_back(oEnglishStrategyDescanso)
 		
 	print(created_strategy)
 	return created_strategy	
+
+func duplicate_card(oCard):
+	return str_to_var(var_to_str(oCard))

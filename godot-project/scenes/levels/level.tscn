@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://doeqrttpttyvl"]
+[gd_scene load_steps=23 format=3 uid="uid://doeqrttpttyvl"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_4e1oj"]
 [ext_resource type="Texture2D" uid="uid://divu38pun5cej" path="res://assets/created/tilesets/tilesetmud64exp.png" id="2_udve2"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://scenes/levels/Camera2D.gd" id="6_jsjt0"]
 [ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="7_sexjv"]
 [ext_resource type="PackedScene" uid="uid://uk3j7rh2076l" path="res://scenes/controls/hud.tscn" id="8_fyc0u"]
-[ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="9_2qses"]
 [ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://scenes/controls/pause_menu.tscn" id="10_3l2by"]
 [ext_resource type="PackedScene" uid="uid://duronouk3fu1p" path="res://scenes/controls/decision_time.tscn" id="11_oed3o"]
 [ext_resource type="PackedScene" uid="uid://er2xr7bd3ipm" path="res://scenes/controls/speechbubble.tscn" id="12_xs82a"]
@@ -410,12 +409,6 @@ bus = &"Musica"
 autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("8_fyc0u")]
-
-[node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-1, -8)
-stream = ExtResource("9_2qses")
-volume_db = 10.0
-bus = &"Efectos"
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_3l2by")]
 visible = false
