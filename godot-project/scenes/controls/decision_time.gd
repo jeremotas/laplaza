@@ -10,6 +10,8 @@ var rng = RandomNumberGenerator.new()
 @export var fWaitHandTime : float = 0.25
 @export var fScaleSelected : float = 1.25
 
+@export var nivel = 1
+
 var aCards : Array
 var tween: Tween
 var tween_animate: Tween
@@ -19,6 +21,27 @@ var time: float = 0.0
 var drawn: bool = false
 var iActualPosition = 0
 var ready_for_input: bool = false
+
+const aPreDecisionSounds = {
+	"primera": [
+		preload("res://assets/created/sounds/primera.mp3"),
+		preload("res://assets/created/sounds/primera_2.mp3"),
+	],
+	"segunda": [
+		preload("res://assets/created/sounds/segunda.mp3"),
+		preload("res://assets/created/sounds/segunda_2.mp3"),
+	],
+	"otra": [
+		preload("res://assets/created/sounds/otra_1.mp3"),
+		preload("res://assets/created/sounds/otra_2.mp3"),
+		preload("res://assets/created/sounds/otra_3.mp3"),
+		preload("res://assets/created/sounds/otra_4.mp3"),
+		preload("res://assets/created/sounds/otra_5.mp3"),
+		preload("res://assets/created/sounds/otra_6.mp3"),
+		preload("res://assets/created/sounds/otra_7.mp3"),
+		preload("res://assets/created/sounds/otra_8.mp3"),
+	]
+}
 
 func init():
 	#tween.custom_step(0.1)
@@ -151,6 +174,9 @@ func change_leyenda(sLeyenda):
 
 func _on_visibility_changed():
 	if visible:
+		var stream = get_init_audio()
+		AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+		
 		ready_for_input = false
 		tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 		tween.tween_property($Control, "modulate:a", 1, 0.5)
@@ -163,3 +189,15 @@ func decision_elegida(sDecisionTomada, iSelectedCard):
 	await undraw_cards(iSelectedCard)
 	get_parent().decision_time_end(sDecisionTomada)
 	
+
+func get_init_audio():
+	print("NIVEL ", nivel)
+	var aSonidos = aPreDecisionSounds.otra
+	if nivel == 1:
+		aSonidos = aPreDecisionSounds.primera
+	if nivel == 2:
+		aSonidos = aPreDecisionSounds.segunda
+		
+	var iSonidoRandom = rng.randi_range(0,aSonidos.size() - 1)
+	var stream = aSonidos[iSonidoRandom]
+	return stream 

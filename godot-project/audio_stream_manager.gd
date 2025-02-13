@@ -10,6 +10,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	# Create the pool of AudioStreamPlayer nodes.
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	queue = []
 	for i in num_players:
 		var player = AudioStreamPlayer.new()

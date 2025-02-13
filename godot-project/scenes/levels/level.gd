@@ -235,6 +235,7 @@ func decision_time_start():
 	ActualTimeScale = Engine.time_scale
 	get_tree().paused = true
 	#Engine.time_scale = 0
+	$decision_time.nivel = TheGameStats.level
 	$decision_time.show()
 	#$decision_time.draw_hand()
 	
