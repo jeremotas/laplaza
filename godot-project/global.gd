@@ -24,15 +24,15 @@ var settings = {
 			"level": 0,
 			"time": 0,
 		},
-		"cards": {
-			"granadero": 10,
-			"moreno": 1,
-			"arribeno": 3,
-			"correntino": 1,
-			"husares_infernales": 10,
-			"matecito": 10,
-			"barrilete_cosmico": 1,
-			"ollas_del_pueblo": 4
+		"initial_cards": {
+			"granadero": 5,
+			"moreno": 0,
+			"arribeno": 2,
+			"correntino": 0,
+			"husares_infernales": 0,
+			"matecito": 5,
+			"barrilete_cosmico": 0,
+			"ollas_del_pueblo": 0
 		},
 		"mejoras": {
 			"granadero": {

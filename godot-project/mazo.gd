@@ -1,15 +1,20 @@
 class_name Mazo extends Resource
 var iMinCards = 10
 var aCards = []
+var aCardsDescarte = []
 
 static func crear(aOriginalCards = []):
 	var oMazo = Mazo.new()
-	
-	oMazo.aCards = aOriginalCards
-	if oMazo.aCards.size() == 0:
+	if aOriginalCards.size() > 0:
+		oMazo.generar_mazo(aOriginalCards)
+	elif oMazo.aCards.size() == 0:
 		oMazo.rellenar_mazo_test()
 	
 	return oMazo
+
+func generar_mazo(aOriginalCards):
+	for oCard in aOriginalCards:
+		crear_cartas(oCard.name, oCard.quantity)
 
 func rellenar_mazo_test():
 	crear_cartas("granadero", 10)
@@ -55,6 +60,12 @@ func mezclar():
 
 func tomar_carta():
 	var oCard = null
+	if aCards.size() == 0:
+		aCardsDescarte.shuffle()
+		aCards = aCardsDescarte
+		
 	if aCards.size() > 0:
 		oCard = aCards.pop_front()
+		var oNewCard = str_to_var(var_to_str(oCard))
+		aCardsDescarte.push_back(oNewCard)
 	return oCard
