@@ -99,8 +99,8 @@ func draw_hand() -> void:
 		var rot_radians: float = lerp_angle(-rot_max, rot_max, float(i)/float(number-1))
 	
 		# Animate pos
-		tween.parallel().tween_property(oCardInstance, "position", final_pos, 0.5 + (i * 0.075))
-		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.075))
+		tween.parallel().tween_property(oCardInstance, "position", final_pos, 0.5 + (i * 0.05))
+		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
 	
 	
 		
@@ -115,7 +115,7 @@ func draw_hand() -> void:
 	#await tween.finished
 	
 	for i in range(number):
-		aCards[i].card_flip(float(i) * 0.75)
+		aCards[i].card_flip(float(i) * 0.25)
 		
 	await get_tree().create_timer(1.75).timeout	
 	ready_for_input = true
