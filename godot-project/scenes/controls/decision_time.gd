@@ -102,7 +102,8 @@ func draw_hand() -> void:
 		tween.parallel().tween_property(oCardInstance, "position", final_pos, 0.5 + (i * 0.05))
 		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
 	
-	
+	for i in range(number):
+		aCards[i].card_flip(float(i) * 0.01)
 		
 	await tween.finished
 	
@@ -114,10 +115,9 @@ func draw_hand() -> void:
 	animate_cards()
 	#await tween.finished
 	
-	for i in range(number):
-		aCards[i].card_flip(float(i) * 0.25)
+	
 		
-	await get_tree().create_timer(1.75).timeout	
+	await get_tree().create_timer(0.25).timeout	
 	ready_for_input = true
 	aCards[0].grab_focus()
 	

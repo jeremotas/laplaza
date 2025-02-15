@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://x8ydwjnmo01u"]
+
+[ext_resource type="Texture2D" uid="uid://cnk21rpfd3kh8" path="res://assets/created/cartas/sobre_azul.png" id="1_886cg"]
+[ext_resource type="Texture2D" uid="uid://boiye53xudslt" path="res://assets/created/cartas/dash_sobre.png" id="2_b3chx"]
+[ext_resource type="Script" path="res://scenes/controls/sobre.gd" id="2_m4hd2"]
+
+[sub_resource type="Gradient" id="Gradient_3q15o"]
+offsets = PackedFloat32Array(0, 0.0892857, 0.842857, 0.910714, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.266667, 1, 1, 1, 0.8, 0.8, 0.8, 0.8, 0.133333, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_23ioi"]
+gradient = SubResource("Gradient_3q15o")
+width = 100
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ufxm"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 60.0
+emission_ring_inner_radius = 50.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+scale_min = 4.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_23ioi")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="Sobre" type="TextureButton"]
+z_index = 2
+anchors_preset = -1
+anchor_right = 0.156
+anchor_bottom = 0.333
+offset_right = 0.159996
+offset_bottom = 0.160004
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_886cg")
+script = ExtResource("2_m4hd2")
+
+[node name="Implosion" type="GPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(54, 78)
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_2ufxm")
+texture = ExtResource("2_b3chx")
+lifetime = 1.5
+preprocess = 0.5

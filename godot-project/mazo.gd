@@ -17,14 +17,17 @@ func generar_mazo(aOriginalCards):
 		crear_cartas(oCard.name, oCard.quantity)
 
 func rellenar_mazo_test():
-	crear_cartas("granadero", 10)
-	crear_cartas("correntino", 1)
+	#crear_cartas("granadero", 10)
+	#crear_cartas("correntino", 1)
+	#crear_cartas("arribeno", 3)
+	#crear_cartas("moreno", 1)
+	#crear_cartas("upgrade_life", 10)
+	#crear_cartas("ollas_del_pueblo", 4)
+	#crear_cartas("barrilete_cosmico", 1)
+	#crear_cartas("ataque_husares_infernales", 2)
+	crear_cartas("granadero", 5)
 	crear_cartas("arribeno", 3)
-	crear_cartas("moreno", 1)
-	crear_cartas("upgrade_life", 10)
-	crear_cartas("ollas_del_pueblo", 4)
-	crear_cartas("barrilete_cosmico", 1)
-	crear_cartas("ataque_husares_infernales", 2)
+	crear_cartas("upgrade_life", 3)
 	
 func crear_cartas(sDecisionMessage, iCantidad):
 	for i in range(iCantidad):
