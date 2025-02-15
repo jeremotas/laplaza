@@ -248,4 +248,4 @@ var settings = {
 
 func _ready():
 	save_data = SaveData.load_or_create()
-	mazo = Mazo.crear()
+	mazo = Mazo.crear(save_data.original_cards)

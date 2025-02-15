@@ -54,8 +54,8 @@ func _ready():
 	$Titulo.text = sTitulo
 	$Letra.text = sLetra
 	$LetraInvertida.text = sLetraInvertida
-	$Letra.modulate = sLetraColor
-	$LetraInvertida.modulate = sLetraColor
+	#$Letra.modulate = sLetraColor
+	#$LetraInvertida.modulate = sLetraColor
 
 func _process(_delta):
 	#print(global_position)

@@ -62,8 +62,8 @@ grow_vertical = 2
 [node name="Sobre" parent="." instance=ExtResource("2_fstwy")]
 offset_left = 269.0
 offset_top = 513.0
-offset_right = 375.0
-offset_bottom = 673.001
+offset_right = 574.68
+offset_bottom = 992.681
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

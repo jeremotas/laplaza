@@ -52,7 +52,14 @@ func _input(event):
 		elif Input.is_action_pressed('ui_right'):
 			handle_input('right', false)
 	
-	
+	if Input.is_action_just_pressed("pause"):
+		volver_al_menu()
+
+func volver_al_menu():
+	Global.mazo.rearmar()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/screens/inicio.tscn")
+
 func handle_input(direction_pressed, set_can_get_input):
 	if visible == true:
 		can_get_input = set_can_get_input
