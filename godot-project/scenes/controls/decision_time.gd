@@ -88,6 +88,7 @@ func draw_hand() -> void:
 	
 	for i in range(number):
 		var oCardInstance: TextureButton = oCarta.instantiate()
+		oCardInstance.set_move_on_selection(40)
 		oCardInstance.prepare(aMano[i])
 		add_child(oCardInstance)
 		oCardInstance.global_position = $Control/PosicionMazo.global_position
@@ -96,15 +97,27 @@ func draw_hand() -> void:
 		var ancho_total = (oCardInstance.size.x - card_offset_x) * number
 		final_pos.x += -ancho_total / 2 + (i * (oCardInstance.size.x + card_offset_x))
 		var rot_radians: float = lerp_angle(-rot_max, rot_max, float(i)/float(number-1))
-		
-		# Animate pos
-		tween.parallel().tween_property(oCardInstance, "position", final_pos, 0.5 + (i * 0.075))
-		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.075))
 	
+		# Animate pos
+		tween.parallel().tween_property(oCardInstance, "position", final_pos, 0.5 + (i * 0.05))
+		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
+	
+	
+		
+	await tween.finished
+	
+	if tween and tween.is_running():
+		tween.kill()
+	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_callback(set_process.bind(true))
 	tween.tween_property(self, "sine_offset_mult", anim_offset_y, 1.5).from(0.0)
 	animate_cards()
-	await get_tree().create_timer(1.0).timeout
+	#await tween.finished
+	
+	for i in range(number):
+		aCards[i].card_flip(float(i) * 0.25)
+		
+	await get_tree().create_timer(1.75).timeout	
 	ready_for_input = true
 	aCards[0].grab_focus()
 	

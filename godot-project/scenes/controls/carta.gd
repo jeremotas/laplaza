@@ -6,10 +6,17 @@ var iCantidad = 0
 var sImagenPrincipal = ""
 var iPosicionEnMano = 0
 var sTitulo = ""
+var sLetra = ""
+var sLetraInvertida = ""
+var sLetraColor = ""
 var sLeyenda = ""
 var iMoveOnSelection = 15
 @onready var oTitulo = $Titulo
+@onready var letra = $Letra
+@onready var letra_invertida = $LetraInvertida
 var original_position = null
+
+const rsSonidoCarta = preload("res://assets/created/cartas/resaltarcarta.wav")
 
 const rsNormalTextureUnidad = preload("res://assets/created/cartas/carta_unidad.png")
 const rsNormalTextureEvento = preload("res://assets/created/cartas/carta_evento.png")
@@ -45,6 +52,10 @@ func _ready():
 	global_position.x = 640 - 84
 	global_position.y = 480
 	$Titulo.text = sTitulo
+	$Letra.text = sLetra
+	$LetraInvertida.text = sLetraInvertida
+	$Letra.modulate = sLetraColor
+	$LetraInvertida.modulate = sLetraColor
 
 func _process(_delta):
 	#print(global_position)
@@ -60,24 +71,32 @@ func prepare(oCartaValues):
 	# Preparo texturas del boton
 	prepare_textures()
 	# Preparo los textos
+	sLetra = oCartaValues.numero
+	sLetraInvertida = oCartaValues.numero
 
 func prepare_textures():
 	if sTipo == "unidad":
 		texture_normal = rsNormalTextureUnidad
 		texture_hover = rsSelectedTextureUnidad
 		texture_focused = rsSelectedTextureUnidad
+		sLetra = "1"
+		sLetraInvertida = "1"
+		#sLetraColor = "#298DF8"
 	elif sTipo == "evento":
 		texture_normal = rsNormalTextureEvento
 		texture_hover = rsSelectedTextureEvento
 		texture_focused = rsSelectedTextureEvento	
+		sLetra = "1"
+		sLetraInvertida = "1"
 	elif sTipo == "truco":
 		texture_normal = rsNormalTextureTruco
 		texture_hover = rsSelectedTextureTruco
 		texture_focused = rsSelectedTextureTruco
-		
+		sLetra = "1"
+		sLetraInvertida = "1"
 		
 	if aImagenes[sDecisionTimeMessage]:
-		$Imagen.texture = aImagenes[sDecisionTimeMessage]
+		$Frente.texture = aImagenes[sDecisionTimeMessage]
 	pass
 
 func set_move_on_selection(iValue):
@@ -116,6 +135,7 @@ func card_up():
 	var final_pos = original_position
 	final_pos.y += -iMoveOnSelection
 	tween.parallel().tween_property(self, "global_position", final_pos, 0.25)
+	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": null, "pitch": null})
 	#global_position.y = original_position.y - iMoveOnSelection
 	
 	
@@ -131,3 +151,11 @@ func card_down():
 	tween.parallel().tween_property(self, "global_position", final_pos, 0.25)
 	#global_position.y = original_position.y
 	
+func card_flip(fSec = 0.0):
+	if fSec > 0.0:
+		await get_tree().create_timer(fSec).timeout
+	if $Back.visible:
+		$AnimationPlayer.play("card_flip")
+	else:
+		$AnimationPlayer.play_backwards("card_flip")
+	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": null, "pitch": null})

@@ -115,7 +115,7 @@ icon = ExtResource("4_o01gl")
 flat = true
 alignment = 0
 
-[node name="Mejoras" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="ElMazo" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
 theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
@@ -124,8 +124,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
-disabled = true
-text = "Mejoras"
+text = "El mazo"
 icon = ExtResource("4_o01gl")
 flat = true
 alignment = 0
@@ -206,7 +205,7 @@ respawn_seconds = 1.0
 position = Vector2(66, 475)
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Mejoras" to="." method="_on_mejoras_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ElMazo" to="." method="_on_mejoras_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

@@ -107,15 +107,15 @@ func draw_hand() -> void:
 		#print(final_pos.x,  ' ', ancho_total)
 		var rot_radians: float = lerp_angle(-rot_max, rot_max, float(i)/float(number-1))
 		#var rot_radians = 0.0
-		
 		# Animate pos
-		tween.parallel().tween_property(oCardInstance, "global_position", final_pos, 0.5 + (i * 0.075))
-		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.075))
-	
+		tween.parallel().tween_property(oCardInstance, "global_position", final_pos, 0.5 + (i * 0.05))
+		#tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
+		
 	
 	
 	tween.tween_callback(set_process.bind(true))
 	tween.tween_property(self, "sine_offset_mult", anim_offset_y, 1.5).from(0.0)
+	
 	#animate_cards()
 	#await get_tree().create_timer(1.0).timeout
 	
@@ -125,8 +125,11 @@ func draw_hand() -> void:
 			aCards[i].focus_neighbor_left = get_path_to(aCards[i-1])
 		if i < number - 1:
 			aCards[i].focus_neighbor_right = get_path_to(aCards[i+1])
-	
+		
 	contenedor_cartas.ready_for_input = true
+	
+	for i in range(number):
+		aCards[i].card_flip(i*0.03 + 1.9)
 	await tween.finished
 	aCards[0].grab_focus()
 	
