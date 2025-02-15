@@ -73,7 +73,7 @@ horizontal_alignment = 1
 position = Vector2(597, 529)
 
 [node name="PosicionMano" type="Marker2D" parent="Control"]
-position = Vector2(320, 161)
+position = Vector2(320, 185)
 
 [node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, -8)

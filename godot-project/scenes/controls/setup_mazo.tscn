@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://lep73vn75eel"]
+[gd_scene load_steps=8 format=3 uid="uid://lep73vn75eel"]
 
 [ext_resource type="Script" path="res://scenes/controls/setup_mazo.gd" id="1_urv0u"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_58l31"]
+[ext_resource type="Texture2D" uid="uid://cemwt7jvyjpqh" path="res://assets/created/ui/setup_mazo_fondo.jpg" id="2_bbc0u"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_8xf3q"]
 [ext_resource type="Script" path="res://scenes/controls/CartasContainer.gd" id="4_knssc"]
+[ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="6_7o5w4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]
 shader = ExtResource("2_58l31")
@@ -20,6 +22,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bbc0u")
+expand_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 material = SubResource("ShaderMaterial_ddyt5")
@@ -87,6 +99,11 @@ script = ExtResource("4_knssc")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.1
 autostart = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7o5w4")
+autoplay = true
+bus = &"Musica"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
