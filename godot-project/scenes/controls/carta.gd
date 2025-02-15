@@ -16,6 +16,8 @@ var iMoveOnSelection = 15
 @onready var letra_invertida = $LetraInvertida
 var original_position = null
 
+const rsSonidoCarta = preload("res://assets/created/cartas/resaltarcarta.wav")
+
 const rsNormalTextureUnidad = preload("res://assets/created/cartas/carta_unidad.png")
 const rsNormalTextureEvento = preload("res://assets/created/cartas/carta_evento.png")
 const rsNormalTextureTruco = preload("res://assets/created/cartas/carta_truco.png")
@@ -133,6 +135,7 @@ func card_up():
 	var final_pos = original_position
 	final_pos.y += -iMoveOnSelection
 	tween.parallel().tween_property(self, "global_position", final_pos, 0.25)
+	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": null, "pitch": null})
 	#global_position.y = original_position.y - iMoveOnSelection
 	
 	
@@ -155,4 +158,4 @@ func card_flip(fSec = 0.0):
 		$AnimationPlayer.play("card_flip")
 	else:
 		$AnimationPlayer.play_backwards("card_flip")
-	pass
+	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": null, "pitch": null})

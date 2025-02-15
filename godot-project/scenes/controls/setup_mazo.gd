@@ -110,7 +110,7 @@ func draw_hand() -> void:
 		# Animate pos
 		tween.parallel().tween_property(oCardInstance, "global_position", final_pos, 0.5 + (i * 0.05))
 		#tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
-	
+		
 	
 	
 	tween.tween_callback(set_process.bind(true))

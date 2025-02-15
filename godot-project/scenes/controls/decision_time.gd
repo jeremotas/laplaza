@@ -97,7 +97,7 @@ func draw_hand() -> void:
 		var ancho_total = (oCardInstance.size.x - card_offset_x) * number
 		final_pos.x += -ancho_total / 2 + (i * (oCardInstance.size.x + card_offset_x))
 		var rot_radians: float = lerp_angle(-rot_max, rot_max, float(i)/float(number-1))
-		
+	
 		# Animate pos
 		tween.parallel().tween_property(oCardInstance, "position", final_pos, 0.5 + (i * 0.075))
 		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.075))
