@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7osrhbmwkajq"]
+[gd_scene load_steps=9 format=3 uid="uid://7osrhbmwkajq"]
 
 [ext_resource type="Script" path="res://scenes/controls/nuevo_sobre.gd" id="1_mncm1"]
 [ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="1_noa8o"]
@@ -28,15 +28,47 @@ tracks/0/path = NodePath("Sobre:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(269, 513), Vector2(264, 178), Vector2(264, 178)]
+}
+
+[sub_resource type="Animation" id="Animation_ge54v"]
+resource_name = "to_white"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(269, 513), Vector2(264, 178)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vjevy"]
+resource_name = "to_transparent"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l188i"]
 _data = {
 "RESET": SubResource("Animation_4l402"),
+"to_transparent": SubResource("Animation_vjevy"),
+"to_white": SubResource("Animation_ge54v"),
 "up": SubResource("Animation_l7x0c")
 }
 
@@ -63,11 +95,18 @@ grow_vertical = 2
 offset_left = 269.0
 offset_top = 513.0
 offset_right = 574.68
-offset_bottom = 992.681
+offset_bottom = 992.68
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_l188i")
 }
 
+[node name="flash" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+offset_right = 640.0
+offset_bottom = 482.0
+
+[connection signal="pressed" from="Sobre" to="." method="_on_sobre_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
