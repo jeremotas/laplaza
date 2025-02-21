@@ -5,6 +5,13 @@ extends Control
 func _ready():
 	$Control/MarginContainer/VBoxContainer/Comenzar.grab_focus()
 	$Control/MarginContainer/HBoxContainer/CantidadLagrimas.text = str(Global.save_data.lagrimas_acumuladas)
+	if Global.save_data.cantidad_sobres_pendientes() > 0:
+		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = "Abrir sobres (" +  str(Global.save_data.cantidad_sobres_pendientes()) + ")"
+		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = false
+	else:
+		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = "Sin sobres"
+		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = true
+	
 	load_volumes()
 	load_malon()
 	Engine.time_scale = 1

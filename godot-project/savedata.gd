@@ -1,6 +1,7 @@
 class_name SaveData extends Resource
 
 @export var lagrimas_acumuladas:int = 0
+@export var lagrimas_ultima_run: int = 0
 @export var master_mixer:float = 1.0
 @export var music_mixer:float = 1.0
 @export var efectos_mixer:float = 1.0
@@ -19,9 +20,12 @@ class_name SaveData extends Resource
 	{"name": "upgrade_life", "quantity": 5} 	
 ]
 
-
+@export var sobres_pendientes = {"azul": 0, "rojo": 0, "verde": 0}
 
 const SAVE_PATH:String = "user://la_furia_de_las_trenzas.tres"
+
+func cantidad_sobres_pendientes():
+	return sobres_pendientes.azul + sobres_pendientes.verde + sobres_pendientes.rojo
 
 func save() -> void:
 	ResourceSaver.save(self, SAVE_PATH)

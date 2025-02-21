@@ -99,10 +99,10 @@ func prepare_initial_conditions():
 					malon[index].quantity = iCant
 		if "time" in Global.settings.game.initial_conditions: iSecondsPassed = Global.settings.game.initial_conditions.time
 		
-		if Global.save_data.mejoras.arribenos > 0: malon[3].quantity += Global.save_data.mejoras.arribenos
-		if Global.save_data.mejoras.correntinos > 0: malon[0].quantity += Global.save_data.mejoras.correntinos
-		if Global.save_data.mejoras.granaderos > 0: malon[1].quantity += Global.save_data.mejoras.granaderos
-		if Global.save_data.mejoras.morenos > 0: malon[2].quantity += Global.save_data.mejoras.morenos
+		#if Global.save_data.mejoras.arribenos > 0: malon[3].quantity += Global.save_data.mejoras.arribenos
+		#if Global.save_data.mejoras.correntinos > 0: malon[0].quantity += Global.save_data.mejoras.correntinos
+		#if Global.save_data.mejoras.granaderos > 0: malon[1].quantity += Global.save_data.mejoras.granaderos
+		#if Global.save_data.mejoras.morenos > 0: malon[2].quantity += Global.save_data.mejoras.morenos
 			
 	#print(JSON.stringify(malon))	
 	consume_enemy_strategies()
@@ -432,6 +432,7 @@ func _on_timer_command_timeout():
 
 
 func save_lagrimas(lagrimas):
+	Global.save_data.lagrimas_ultima_run = lagrimas
 	Global.save_data.lagrimas_acumuladas += lagrimas
 	Global.save_data.save()
 	pass

@@ -169,7 +169,7 @@ stream = ExtResource("5_3sa32")
 
 [node name="Selector" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(326, 312)
+position = Vector2(326, 243)
 texture = ExtResource("6_7v8l5")
 
 [node name="Opciones" type="HBoxContainer" parent="."]

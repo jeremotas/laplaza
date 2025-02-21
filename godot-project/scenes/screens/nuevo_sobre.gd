@@ -10,11 +10,21 @@ var oLastCardSelected
 var sSobreType = "azul"
 
 func _init():
-	sSobreType = "verde"
+	pass
 	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Global.save_data.sobres_pendientes.azul > 0:
+		Global.save_data.sobres_pendientes.azul = Global.save_data.sobres_pendientes.azul - 1
+		sSobreType = "azul"
+	elif Global.save_data.sobres_pendientes.verde > 0:
+		Global.save_data.sobres_pendientes.verde = Global.save_data.sobres_pendientes.verde - 1
+		sSobreType = "verde"
+	elif Global.save_data.sobres_pendientes.rojo > 0:
+		Global.save_data.sobres_pendientes.rojo = Global.save_data.sobres_pendientes.rojo - 1
+		sSobreType = "rojo"
+	Global.save_data.save()	
 	$Sobre.type(sSobreType)
 	pass
 	

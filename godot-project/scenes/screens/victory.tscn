@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ckkcp0mw2ieet"]
+[gd_scene load_steps=23 format=3 uid="uid://ckkcp0mw2ieet"]
 
 [ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
 [ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="2_uluud"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://ddqla1qdya8rf" path="res://assets/ui/nube_2.png" id="16_tir3l"]
 [ext_resource type="Texture2D" uid="uid://w7loke78ivvm" path="res://assets/ui/nube_3.png" id="17_j1rm0"]
 [ext_resource type="Texture2D" uid="uid://dpoutmpujiroj" path="res://assets/ui/nube_4.png" id="18_bmvel"]
+[ext_resource type="Texture2D" uid="uid://d4cg7c4prtfmj" path="res://assets/created/papiro_hud_bottom.png" id="19_7ohv1"]
+[ext_resource type="PackedScene" uid="uid://cw6herwyo4jk7" path="res://scenes/controls/sobre.tscn" id="20_4ntel"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7m47"]
 bg_color = Color(0, 0, 0, 0.533333)
@@ -90,11 +92,12 @@ size_flags_horizontal = 6
 size_flags_vertical = 10
 
 [node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 130)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_y7m47")
 
 [node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
+visible = false
 layout_mode = 2
 offset_top = 4.0
 offset_right = 250.0
@@ -109,9 +112,9 @@ alignment = 0
 
 [node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
 layout_mode = 2
-offset_top = 47.0
+offset_top = 5.0
 offset_right = 250.0
-offset_bottom = 86.0
+offset_bottom = 44.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 24
@@ -122,9 +125,10 @@ alignment = 0
 
 [node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
 layout_mode = 2
-offset_top = 90.0
-offset_right = 250.0
-offset_bottom = 119.0
+offset_left = 1.0
+offset_top = 53.0
+offset_right = 251.0
+offset_bottom = 82.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 text = "Menú principal"
@@ -133,6 +137,7 @@ flat = true
 alignment = 0
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 z_index = 10
 custom_minimum_size = Vector2(0, 160)
 anchors_preset = 10
@@ -321,6 +326,43 @@ texture = ExtResource("18_bmvel")
 z_index = 1
 position = Vector2(230, 192)
 texture = ExtResource("17_j1rm0")
+
+[node name="ContenedorSobre" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 640.0
+offset_right = 882.0
+offset_bottom = 79.0
+
+[node name="Fondo" type="TextureRect" parent="ContenedorSobre"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("19_7ohv1")
+
+[node name="Sobre" parent="ContenedorSobre" instance=ExtResource("20_4ntel")]
+layout_mode = 1
+anchor_right = 0.12
+anchor_bottom = 0.0
+offset_left = 24.0
+offset_top = -3.0
+offset_right = 132.472
+offset_bottom = 169.987
+scale = Vector2(0.4, 0.4)
+
+[node name="Aviso" type="Label" parent="ContenedorSobre"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 13.0
+offset_right = 167.0
+offset_bottom = 58.0
+theme = ExtResource("3_blw1a")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_font_sizes/font_size = 16
+text = "¡!!Ganaste un 
+sobrecito!!"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Wishlist" to="." method="_on_steam_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Reiniciar" to="." method="_on_reiniciar_pressed"]

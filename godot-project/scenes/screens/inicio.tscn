@@ -98,7 +98,7 @@ size_flags_vertical = 0
 
 [node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(150, 75)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 
 [node name="Comenzar" type="Button" parent="Control/MarginContainer/VBoxContainer"]
