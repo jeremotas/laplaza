@@ -12,22 +12,22 @@ func _ready():
 func load_malon():
 	$UnitSpawner.set_goal($PosicionGeneral)
 	
-	var MejorasData = Global.save_data.mejoras
-	if MejorasData.arribenos > 0:
-		for i in range(MejorasData.arribenos):
-			$UnitSpawner.queue_spawn_unit('patricios', 'arribeno')
+	#var MejorasData = Global.save_data.mejoras
+	#if MejorasData.arribenos > 0:
+	#	for i in range(MejorasData.arribenos):
+	#		$UnitSpawner.queue_spawn_unit('patricios', 'arribeno')
 			
-	if MejorasData.correntinos > 0:
-		for i in range(MejorasData.correntinos):
-			$UnitSpawner.queue_spawn_unit('patricios', 'correntino')		
+	#if MejorasData.correntinos > 0:
+	#	for i in range(MejorasData.correntinos):
+	#		$UnitSpawner.queue_spawn_unit('patricios', 'correntino')		
 			
-	if MejorasData.granaderos > 0:
-		for i in range(MejorasData.granaderos):
-			$UnitSpawner.queue_spawn_unit('patricios', 'granadero')		
+	#if MejorasData.granaderos > 0:
+	#	for i in range(MejorasData.granaderos):
+	#		$UnitSpawner.queue_spawn_unit('patricios', 'granadero')		
 			
-	if MejorasData.morenos > 0:
-		for i in range(MejorasData.morenos):
-			$UnitSpawner.queue_spawn_unit('patricios', 'moreno')		
+	#if MejorasData.morenos > 0:
+	#	for i in range(MejorasData.morenos):
+	#		$UnitSpawner.queue_spawn_unit('patricios', 'moreno')		
 	
 func load_volumes():
 	var bus_index = AudioServer.get_bus_index("Master")

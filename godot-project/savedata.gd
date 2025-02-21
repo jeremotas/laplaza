@@ -5,13 +5,21 @@ class_name SaveData extends Resource
 @export var music_mixer:float = 1.0
 @export var efectos_mixer:float = 1.0
 
-@export var mejoras = {
-	"correntinos":0,
-	"arribenos":0,
-	"granaderos":0,
-	"morenos":0,
-	"cartas_por_mano": 3
-}
+@export var original_cards = [
+	# Unidades
+	{"name": "granadero", "quantity": 5},
+	{"name": "correntino", "quantity": 0},
+	{"name": "arribeno", "quantity": 3},
+	{"name": "moreno", "quantity": 0},
+	# Eventos
+	{"name": "ataque_husares_infernales", "quantity": 0},
+	{"name": "barrilete_cosmico", "quantity": 0}, 
+	# Trucos
+	{"name": "ollas_del_pueblo", "quantity": 0},
+	{"name": "upgrade_life", "quantity": 5} 	
+]
+
+
 
 const SAVE_PATH:String = "user://la_furia_de_las_trenzas.tres"
 
