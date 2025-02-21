@@ -10,8 +10,7 @@ var oLastCardSelected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var aOriginalCards = []
-	oMazo = Mazo.crear(aOriginalCards)
+	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,14 +24,18 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "to_white":
 		$Sobre.hide()
 		$AnimationPlayer.play("to_transparent")
-		cards_roulette()
+		cards_roulette("azul")
 		
-func create_mano():
+func create_mano(sSobreType):
+	var aOriginalCards = []
+	if sSobreType == 'azul':
+		aOriginalCards = Global.settings.sobres.azul
+	oMazo = Mazo.crear(aOriginalCards)
 	oMazo.mezclar()
 	return oMazo.aCards
 		
-func cards_roulette():
-	var aMano = create_mano()
+func cards_roulette(sSobreType):
+	var aMano = create_mano(sSobreType)
 	var number = aMano.size()
 	
 	if tween and tween.is_running():
@@ -55,14 +58,16 @@ func cards_roulette():
 	$Selector.hide()
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	for oCard in contenedor_cartas.get_children():
-		print(oCard, ' ', oLastCardSelected, oCard != oLastCardSelected)
+		#print(oCard, ' ', oLastCardSelected, oCard != oLastCardSelected)
 		if oCard != oLastCardSelected:
 			tween.parallel().tween_property(oCard, "modulate", Color("ffffff", 0.0), 0.5)
 		else:
 			var fScale = 2
 			tween.parallel().tween_property(oCard, "global_position", Vector2(640 / 2 - 100 / 2, 480 / 2 - 136 / 2 - 60), 0.5)
 			tween.parallel().tween_property(oCard, "scale", Vector2(fScale, fScale), 0.5)
-	
+	await tween.finished
+	$Opciones.show()
+	$Opciones/Agregar.grab_focus()
 
 
 func _on_sobre_pressed():
@@ -76,4 +81,3 @@ func _on_init_timeout():
 func _on_area_2d_body_entered(body):
 	oLastCardSelected = body.get_parent()
 	$Tick.play()
-	#print(body.get_parent().sDecisionTimeMessage)

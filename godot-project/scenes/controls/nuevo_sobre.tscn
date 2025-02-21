@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ceqwcbehglm8u"]
+[gd_scene load_steps=14 format=3 uid="uid://ceqwcbehglm8u"]
 
 [ext_resource type="Script" path="res://scenes/controls/nuevo_sobre.gd" id="1_mncm1"]
 [ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="1_noa8o"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_3h7yh"]
 [ext_resource type="AudioStream" uid="uid://bf8yam0vtx3ld" path="res://assets/created/cartas/tick.mp3" id="5_3sa32"]
 [ext_resource type="Texture2D" uid="uid://b7aq2y4jsk31f" path="res://assets/created/aimer.png" id="6_f2we1"]
+[ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="7_iplhm"]
 
 [sub_resource type="Animation" id="Animation_4l402"]
 length = 0.001
@@ -172,6 +173,49 @@ position = Vector2(326, 334)
 rotation = 4.71239
 scale = Vector2(4.625, 0.653846)
 texture = ExtResource("6_f2we1")
+
+[node name="Opciones" type="HBoxContainer" parent="."]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Agregar" type="Button" parent="Opciones"]
+layout_mode = 2
+theme = ExtResource("3_3h7yh")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.878431, 0.0941176, 1)
+theme_override_colors/font_focus_color = Color(1, 0.878431, 0.0941176, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Agregar al mazo"
+icon = ExtResource("7_iplhm")
+flat = true
+alignment = 0
+
+[node name="VSeparator" type="VSeparator" parent="Opciones"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Descartar" type="Button" parent="Opciones"]
+layout_mode = 2
+theme = ExtResource("3_3h7yh")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.878431, 0.0941176, 1)
+theme_override_colors/font_focus_color = Color(1, 0.878431, 0.0941176, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Descartar"
+icon = ExtResource("7_iplhm")
+flat = true
+alignment = 0
 
 [connection signal="pressed" from="Sobre" to="." method="_on_sobre_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

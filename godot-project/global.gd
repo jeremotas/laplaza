@@ -243,6 +243,13 @@ var settings = {
 				"max_damage_given": 20
 			}
 		}
+	},
+	"sobres": {
+		"azul": [
+			{"name": "granadero", "quantity": 100},
+			{"name": "arribeno", "quantity": 100},
+			{"name": "ataque_husares_infernales", "quantity": 2}
+		]
 	}
 }
 
