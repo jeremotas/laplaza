@@ -76,7 +76,7 @@ func animate_cards_calculation(delta):
 		
 func draw_hand() -> void:
 	iActualPosition = 0
-	var number = Global.save_data.mejoras.cartas_por_mano
+	var number = 3 #Global.save_data.mejoras.cartas_por_mano
 	#await get_tree().create_timer(fWaitHandTime).timeout
 	drawn = true
 	if tween and tween.is_running():

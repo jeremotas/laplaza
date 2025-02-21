@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://x8ydwjnmo01u"]
+[gd_scene load_steps=6 format=3 uid="uid://cw6herwyo4jk7"]
 
 [ext_resource type="Texture2D" uid="uid://cnk21rpfd3kh8" path="res://assets/created/cartas/sobre_azul.png" id="1_886cg"]
-[ext_resource type="Texture2D" uid="uid://boiye53xudslt" path="res://assets/created/cartas/dash_sobre.png" id="2_b3chx"]
 [ext_resource type="Script" path="res://scenes/controls/sobre.gd" id="2_m4hd2"]
 
 [sub_resource type="Gradient" id="Gradient_3q15o"]
@@ -18,15 +17,15 @@ particle_flag_disable_z = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 0.0
-emission_ring_radius = 60.0
-emission_ring_inner_radius = 50.0
+emission_ring_radius = 40.0
+emission_ring_inner_radius = 60.0
 gravity = Vector3(0, 0, 0)
 radial_accel_min = 100.0
 radial_accel_max = 100.0
 scale_min = 4.0
 scale_max = 4.0
 color_ramp = SubResource("GradientTexture1D_23ioi")
-hue_variation_min = 1.0
+hue_variation_min = -1.0
 hue_variation_max = 1.0
 
 [node name="Sobre" type="TextureButton"]
@@ -42,11 +41,14 @@ texture_normal = ExtResource("1_886cg")
 script = ExtResource("2_m4hd2")
 
 [node name="Implosion" type="GPUParticles2D" parent="."]
+modulate = Color(0.933333, 0.639216, 0.360784, 1)
 z_index = -1
 position = Vector2(54, 78)
 emitting = false
-amount = 200
+amount = 100
 process_material = SubResource("ParticleProcessMaterial_2ufxm")
-texture = ExtResource("2_b3chx")
-lifetime = 1.5
-preprocess = 0.5
+speed_scale = 2.0
+explosiveness = 0.18
+randomness = 0.2
+trail_enabled = true
+trail_lifetime = 0.23

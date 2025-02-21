@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://qfpsaxqgfluh"]
+[gd_scene load_steps=8 format=3 uid="uid://qfpsaxqgfluh"]
 
 [ext_resource type="Texture2D" uid="uid://cpqo2gqlh8dsp" path="res://assets/created/cartas/carta_unidad.png" id="1_6k1a8"]
 [ext_resource type="Script" path="res://scenes/controls/carta.gd" id="1_n1qsv"]
@@ -37,6 +37,9 @@ tracks/1/keys = {
 _data = {
 "card_flip": SubResource("Animation_6cqwh")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ke4j"]
+size = Vector2(99, 133)
 
 [node name="Carta" type="TextureButton"]
 custom_minimum_size = Vector2(100, 136)
@@ -137,6 +140,14 @@ texture = ExtResource("4_o28r5")
 libraries = {
 "": SubResource("AnimationLibrary_j5475")
 }
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(50.5, 67.5)
+shape = SubResource("RectangleShape2D_1ke4j")
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

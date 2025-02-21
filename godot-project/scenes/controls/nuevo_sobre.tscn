@@ -1,37 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://7osrhbmwkajq"]
+[gd_scene load_steps=13 format=3 uid="uid://ceqwcbehglm8u"]
 
 [ext_resource type="Script" path="res://scenes/controls/nuevo_sobre.gd" id="1_mncm1"]
 [ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="1_noa8o"]
-[ext_resource type="PackedScene" uid="uid://x8ydwjnmo01u" path="res://scenes/controls/sobre.tscn" id="2_fstwy"]
+[ext_resource type="PackedScene" uid="uid://cw6herwyo4jk7" path="res://scenes/controls/sobre.tscn" id="2_fstwy"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_3h7yh"]
+[ext_resource type="AudioStream" uid="uid://bf8yam0vtx3ld" path="res://assets/created/cartas/tick.mp3" id="5_3sa32"]
+[ext_resource type="Texture2D" uid="uid://b7aq2y4jsk31f" path="res://assets/created/aimer.png" id="6_f2we1"]
 
 [sub_resource type="Animation" id="Animation_4l402"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_vjevy"]
+resource_name = "to_transparent"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sobre:position")
+tracks/0/path = NodePath("flash:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(269, 513)]
-}
-
-[sub_resource type="Animation" id="Animation_l7x0c"]
-resource_name = "up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sobre:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(269, 513), Vector2(264, 178), Vector2(264, 178)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ge54v"]
@@ -49,19 +40,19 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_vjevy"]
-resource_name = "to_transparent"
+[sub_resource type="Animation" id="Animation_l7x0c"]
+resource_name = "up"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("flash:modulate")
+tracks/0/path = NodePath("Sobre:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l188i"]
@@ -72,16 +63,48 @@ _data = {
 "up": SubResource("Animation_l7x0c")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alb3m"]
+size = Vector2(23, 253)
+
 [node name="NuevoSobre" type="CanvasLayer"]
 script = ExtResource("1_mncm1")
+metadata/_edit_horizontal_guides_ = [170.0]
 
 [node name="Fondo" type="TextureRect" parent="."]
+self_modulate = Color(0.117647, 0.117647, 0.117647, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_noa8o")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 636.0
+offset_bottom = 32.0
+theme = ExtResource("3_3h7yh")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 10
+text = "Abriendo"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 18.0
+offset_right = 638.0
+offset_bottom = 95.0
+theme = ExtResource("3_3h7yh")
+theme_override_colors/font_color = Color(1, 0.878431, 0.0941176, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "El sobrecito"
+horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -92,10 +115,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sobre" parent="." instance=ExtResource("2_fstwy")]
-offset_left = 269.0
-offset_top = 513.0
-offset_right = 574.68
-offset_bottom = 992.68
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -80.0
+offset_right = 53.0
+offset_bottom = 80.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(50, 80)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -108,5 +138,43 @@ z_index = 3
 offset_right = 640.0
 offset_bottom = 482.0
 
+[node name="init" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[node name="OrigenCartas" type="Marker2D" parent="."]
+position = Vector2(745, 171)
+
+[node name="DestinoCartas" type="Marker2D" parent="."]
+position = Vector2(-104, 170)
+
+[node name="ContenedorCartas" type="HBoxContainer" parent="."]
+offset_left = 458.0
+offset_top = 165.0
+offset_right = 1103.0
+offset_bottom = 328.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(326.5, 223.5)
+shape = SubResource("RectangleShape2D_alb3m")
+
+[node name="Tick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3sa32")
+
+[node name="Selector" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(326, 334)
+rotation = 4.71239
+scale = Vector2(4.625, 0.653846)
+texture = ExtResource("6_f2we1")
+
 [connection signal="pressed" from="Sobre" to="." method="_on_sobre_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="init" to="." method="_on_init_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
