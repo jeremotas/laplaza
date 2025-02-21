@@ -246,9 +246,31 @@ var settings = {
 	},
 	"sobres": {
 		"azul": [
-			{"name": "granadero", "quantity": 100},
-			{"name": "arribeno", "quantity": 100},
-			{"name": "ataque_husares_infernales", "quantity": 2}
+			{"name": "granadero", "quantity": 80},
+			{"name": "arribeno", "quantity": 80},
+			{"name": "moreno", "quantity": 10},
+			{"name": "correntino", "quantity": 20},
+			{"name": "ollas_del_pueblo", "quantity": 10},
+			{"name": "ataque_husares_infernales", "quantity": 2},
+			{"name": "barrilete_cosmico", "quantity": 2}
+		],
+		"verde": [
+			{"name": "granadero", "quantity": 50},
+			{"name": "arribeno", "quantity": 50},
+			{"name": "moreno", "quantity": 4},
+			{"name": "ollas_del_pueblo", "quantity": 30},
+			{"name": "correntino", "quantity": 30},
+			{"name": "ataque_husares_infernales", "quantity": 4},
+			{"name": "barrilete_cosmico", "quantity": 4}
+		],
+		"rojo": [
+			{"name": "granadero", "quantity": 0},
+			{"name": "arribeno", "quantity": 0},
+			{"name": "moreno", "quantity": 20},
+			{"name": "correntino", "quantity": 20},
+			{"name": "ollas_del_pueblo", "quantity": 20},
+			{"name": "ataque_husares_infernales", "quantity": 20},
+			{"name": "barrilete_cosmico", "quantity": 20}
 		]
 	}
 }

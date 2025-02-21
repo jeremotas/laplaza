@@ -129,6 +129,20 @@ icon = ExtResource("4_o01gl")
 flat = true
 alignment = 0
 
+[node name="AbrirSobre" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_box0m")
+theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 20
+text = "Abrir sobre (?)"
+icon = ExtResource("4_o01gl")
+flat = true
+alignment = 0
+
 [node name="Opciones" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
@@ -206,6 +220,7 @@ position = Vector2(66, 475)
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ElMazo" to="." method="_on_mejoras_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/AbrirSobre" to="." method="_on_abrir_sobre_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

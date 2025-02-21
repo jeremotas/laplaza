@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://ceqwcbehglm8u"]
 
-[ext_resource type="Script" path="res://scenes/controls/nuevo_sobre.gd" id="1_mncm1"]
+[ext_resource type="Script" path="res://scenes/screens/nuevo_sobre.gd" id="1_mncm1"]
 [ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="1_noa8o"]
 [ext_resource type="PackedScene" uid="uid://cw6herwyo4jk7" path="res://scenes/controls/sobre.tscn" id="2_fstwy"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_3h7yh"]
 [ext_resource type="AudioStream" uid="uid://bf8yam0vtx3ld" path="res://assets/created/cartas/tick.mp3" id="5_3sa32"]
-[ext_resource type="Texture2D" uid="uid://b7aq2y4jsk31f" path="res://assets/created/aimer.png" id="6_f2we1"]
+[ext_resource type="Texture2D" uid="uid://buggmkyyr31vk" path="res://assets/created/cartas/flecha.png" id="6_7v8l5"]
 [ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="7_iplhm"]
 
 [sub_resource type="Animation" id="Animation_4l402"]
@@ -169,10 +169,8 @@ stream = ExtResource("5_3sa32")
 
 [node name="Selector" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(326, 334)
-rotation = 4.71239
-scale = Vector2(4.625, 0.653846)
-texture = ExtResource("6_f2we1")
+position = Vector2(326, 312)
+texture = ExtResource("6_7v8l5")
 
 [node name="Opciones" type="HBoxContainer" parent="."]
 visible = false
@@ -222,3 +220,5 @@ alignment = 0
 [connection signal="timeout" from="init" to="." method="_on_init_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="Opciones/Agregar" to="." method="_on_agregar_pressed"]
+[connection signal="pressed" from="Opciones/Descartar" to="." method="_on_descartar_pressed"]

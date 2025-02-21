@@ -63,3 +63,7 @@ func _on_mejoras_pressed():
 
 func _on_creditos_pressed():
 	get_tree().change_scene_to_file("res://scenes/screens/credits.tscn")
+
+
+func _on_abrir_sobre_pressed():
+	get_tree().change_scene_to_file("res://scenes/screens/nuevo_sobre.tscn")
