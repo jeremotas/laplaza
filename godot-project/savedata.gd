@@ -20,6 +20,21 @@ class_name SaveData extends Resource
 	{"name": "upgrade_life", "quantity": 5} 	
 ]
 
+@export var reboot_cards = [
+	# Unidades
+	{"name": "granadero", "quantity": 5},
+	{"name": "correntino", "quantity": 0},
+	{"name": "arribeno", "quantity": 3},
+	{"name": "moreno", "quantity": 0},
+	# Eventos
+	{"name": "ataque_husares_infernales", "quantity": 0},
+	{"name": "barrilete_cosmico", "quantity": 0}, 
+	# Trucos
+	{"name": "ollas_del_pueblo", "quantity": 0},
+	{"name": "upgrade_life", "quantity": 5} 	
+]
+
+
 @export var sobres_pendientes = {"azul": 0, "rojo": 0, "verde": 0}
 
 const SAVE_PATH:String = "user://la_furia_de_las_trenzas.tres"

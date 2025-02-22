@@ -93,6 +93,21 @@ text = "Efectos"
 layout_mode = 2
 bus_name = "Efectos"
 
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ReiniciarMazo" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_01m0e")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 18
+text = "Destruir Mazo"
+icon = ExtResource("5_2klqf")
+flat = true
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -105,7 +120,6 @@ theme_override_font_sizes/font_size = 24
 text = "Menu principal"
 icon = ExtResource("5_2klqf")
 flat = true
-alignment = 0
 
 [node name="Efectos" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_77hf2")
@@ -117,4 +131,24 @@ stream = ExtResource("6_1v8t6")
 autoplay = true
 bus = &"Musica"
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "Destruir Mazo"
+initial_position = 2
+size = Vector2i(360, 154)
+unresizable = true
+borderless = true
+always_on_top = true
+transparent = true
+max_size = Vector2i(400, 400)
+content_scale_stretch = 1
+theme = ExtResource("1_01m0e")
+ok_button_text = "Destruir"
+dialog_text = "¿Seguro querés destruir 
+el mazo completo y 
+reiniciar el progreso?"
+dialog_autowrap = true
+cancel_button_text = "Cancelar"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReiniciarMazo" to="." method="_on_reiniciar_mazo_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Menu" to="." method="_on_menu_pressed"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

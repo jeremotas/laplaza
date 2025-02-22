@@ -10,6 +10,9 @@ var rng = RandomNumberGenerator.new()
 @export var fWaitHandTime : float = 0.25
 @export var fScaleSelected : float = 1.25
 
+var sDecisionTomada
+var iDecisionTomadaPosicion 
+
 var aCards : Array
 var tween: Tween
 var tween_animate: Tween
@@ -35,6 +38,7 @@ func _ready():
 	contenedor_cartas.global_position = $Control/PosicionMano.global_position
 	card_offset_x = (100 - 500 / Global.mazo.size()) * -1
 	draw_hand()
+	$Control/Label.text = str(aCards.size()) + " cartas"
 
 func _process(delta):
 	pass
@@ -115,13 +119,13 @@ func draw_hand() -> void:
 		var rot_radians: float = lerp_angle(-rot_max, rot_max, float(i)/float(number-1))
 		#var rot_radians = 0.0
 		# Animate pos
-		tween.parallel().tween_property(oCardInstance, "global_position", final_pos, 0.5 + (i * 0.05))
+		tween.parallel().tween_property(oCardInstance, "global_position", final_pos, 0.15 + (i * 0.05))
 		#tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
 		
 	
 	
 	tween.tween_callback(set_process.bind(true))
-	tween.tween_property(self, "sine_offset_mult", anim_offset_y, 1.5).from(0.0)
+	tween.tween_property(self, "sine_offset_mult", anim_offset_y, 0.15).from(0.0)
 	
 	#animate_cards()
 	#await get_tree().create_timer(1.0).timeout
@@ -136,7 +140,7 @@ func draw_hand() -> void:
 	contenedor_cartas.ready_for_input = true
 	
 	for i in range(number):
-		aCards[i].card_flip(i*0.03 + 1.9)
+		aCards[i].card_flip(i*0.03 + 0.25)
 	await tween.finished
 	aCards[0].grab_focus()
 	
@@ -144,38 +148,33 @@ func undraw_cards(iSelectedCard) -> void:
 	var child_count = aCards.size()
 	var cSelected = aCards[iSelectedCard]
 	var to_pos = $Control/PosicionMazo.global_position
-	var to_pos_center = $Control/PosicionMano.global_position - Vector2((cSelected.size.x * fScaleSelected - card_offset_x) / 2, 0) 
+	var to_pos_center = $Control/PosicionMano.global_position + Vector2(cSelected.size.x + 320, 0) 
 	drawn = false
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "sine_offset_mult", 0.0, 0.9)
+	tween.tween_property(self, "sine_offset_mult", 0.0, 0.1)
 	
 	for i in range(child_count-1, -1, -1):
 		var c: TextureButton = aCards[i]
+		aCards[i].card_flip(0.25)
 		if iSelectedCard != i:
 			# Animate pos
-			tween.parallel().tween_property(c, "global_position", to_pos, 0.3 + ((child_count - i) * 0.075))
-			tween.parallel().tween_property(c, "rotation", 0.0, 0.3 + ((child_count - i) * 0.075))
+			tween.parallel().tween_property(c, "global_position", to_pos, 0.15 + ((child_count - i) * 0.075)).set_delay(0.75)
+			tween.parallel().tween_property(c, "rotation", 0.0, 0.15 + ((child_count - i) * 0.075)).set_delay(0.75)
 		else:
 			tween.parallel().tween_property(cSelected, "global_position", to_pos_center, 0.3)
 			tween.parallel().tween_property(cSelected, "rotation", 0.0, 0.3)
-			tween.parallel().tween_property(cSelected, "scale", Vector2(fScaleSelected, fScaleSelected), 0.3)
 			$Control/Leyenda.text = ""
 	
 	await tween.finished
-	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-	tween.parallel().tween_property(cSelected, "global_position", to_pos, 0.3)
-	tween.parallel().tween_property(cSelected, "rotation", 0.0, 0.3)
-	tween.parallel().tween_property(cSelected, "scale", Vector2(1, 1), 0.3)
+	#tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	#tween.parallel().tween_property(cSelected, "global_position", to_pos, 0.3)
+	#tween.parallel().tween_property(cSelected, "rotation", 0.0, 0.3)
+	#tween.parallel().tween_property(cSelected, "scale", Vector2(1, 1), 0.3)
 	
-	await tween.finished
-	
-	
-	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property($Control, "modulate:a", 0, 0.5)
-	await tween.finished
-	
+	#await tween.finished
+		
 	for i in range(child_count-1, -1, -1):
 		var c: TextureButton = aCards[i]
 		c.queue_free()
@@ -211,13 +210,43 @@ func _on_visibility_changed():
 		tween.tween_property($Control, "modulate:a", 1, 0.5)
 		await tween.finished
 		draw_hand()
+		$Control/Label.text = str(aCards.size()) + " cartas"
 		
-func decision_elegida(sDecisionTomada, iSelectedCard):
-	contenedor_cartas.ready_for_input = false
-	await undraw_cards(iSelectedCard)
-	get_parent().decision_time_end(sDecisionTomada)
+func decision_elegida(sDecisionTomadaCarta, iPosicion):
+	if aCards.size() < 20:
+		$AcceptDialog.popup_centered()
+		$AcceptDialog.show()
+		$AcceptDialog.grab_focus() 
+	else:
+		sDecisionTomada = sDecisionTomadaCarta
+		iDecisionTomadaPosicion = iPosicion
+		$ConfirmationDialog.popup_centered()
+		$ConfirmationDialog.show()
+		$ConfirmationDialog.grab_focus() 
 	
-
-
 func _on_timer_timeout():
 	can_get_input = true
+
+func _on_confirmation_dialog_canceled():
+	pass # Replace with function body.
+
+func _on_confirmation_dialog_confirmed():
+	
+	#contenedor_cartas.ready_for_input = false
+	destroy_selected_card()
+	
+func destroy_selected_card():
+	var aCardsMazo = Global.save_data.original_cards
+	for i in range(aCardsMazo.size()):
+		if aCardsMazo[i].name == sDecisionTomada:
+			aCardsMazo[i].quantity -= 1
+			
+	Global.save_data.original_cards = aCardsMazo
+	Global.save_data.save()	
+	await undraw_cards(iDecisionTomadaPosicion)
+	Global.mazo = Mazo.crear(aCardsMazo)
+	draw_hand()
+	$Control/Label.text = str(aCards.size()) + " cartas"
+	
+	
+	
