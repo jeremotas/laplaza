@@ -1,6 +1,6 @@
 [gd_scene load_steps=48 format=3 uid="uid://c1f2p41bh0kpl"]
 
-[ext_resource type="Script" path="res://scenes/patricios/husares_infernales.gd" id="1_alsgu"]
+[ext_resource type="Script" uid="uid://dwoihh6l6egbb" path="res://scenes/patricios/husares_infernales.gd" id="1_alsgu"]
 [ext_resource type="Texture2D" uid="uid://4p3t1fhm06fq" path="res://assets/created/husaresinfernales.png" id="2_2xv7c"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_elmpq"]
 [ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="4_j87wf"]
@@ -296,11 +296,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ys8q6"]
 _data = {
-"die": SubResource("Animation_huts5"),
-"hurt": SubResource("Animation_5x7te"),
-"idle": SubResource("Animation_frgsx"),
-"shoot": SubResource("Animation_8jgcr"),
-"walk": SubResource("Animation_a7nsw")
+&"die": SubResource("Animation_huts5"),
+&"hurt": SubResource("Animation_5x7te"),
+&"idle": SubResource("Animation_frgsx"),
+&"shoot": SubResource("Animation_8jgcr"),
+&"walk": SubResource("Animation_a7nsw")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7w0me"]

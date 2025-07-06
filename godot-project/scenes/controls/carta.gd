@@ -38,7 +38,8 @@ const aImagenes = {
 	"barrilete_cosmico": preload("res://assets/created/cartas/imagen/barrilete_retrato_32.png"),
 	"ataque_husares_infernales": preload("res://assets/created/cartas/imagen/huspueynegro_retrato_64A.png"),
 	"upgrade_life": preload("res://assets/created/cartas/imagen/mate_retrato_32.png"),
-	"ollas_del_pueblo": preload("res://assets/created/cartas/imagen/olla_retrato_32.png")
+	"ollas_del_pueblo": preload("res://assets/created/cartas/imagen/olla_retrato_32.png"),
+	"cebador": preload("res://assets/created/cartas/imagen/cebador_retrato_32.png"),
 }
 
 var tween: Tween

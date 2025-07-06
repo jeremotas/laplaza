@@ -14,4 +14,3 @@ func type(sType):
 		texture_normal = textura_rojo
 	if sType == "verde":
 		texture_normal = textura_verde
-

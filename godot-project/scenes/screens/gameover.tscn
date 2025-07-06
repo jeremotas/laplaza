@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://deepk7tv618e4"]
 
-[ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_lkn3k"]
-[ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="2_8jogy"]
+[ext_resource type="Script" uid="uid://cvkm7v5wqpn07" path="res://scenes/screens/gameover.gd" id="1_lkn3k"]
+[ext_resource type="Shader" uid="uid://h45y2oh2ufx8" path="res://shaders/grayscale.gdshader" id="2_8jogy"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_pfgda"]
 [ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="3_7n7i6"]
 [ext_resource type="AudioStream" uid="uid://cjqwptvlo1ktt" path="res://assets/created/musica/Chacarera de las Trenzas 0.4 PIANO LENTO.mp3" id="4_67jdo"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://scenes/ingleses/ingles.tscn" id="8_m7d0r"]
 [ext_resource type="PackedScene" uid="uid://40gi2nr4aews" path="res://scenes/ingleses/highlander.tscn" id="9_lfc5b"]
 [ext_resource type="PackedScene" uid="uid://wej5y4wn1st" path="res://scenes/ingleses/green_soldier.tscn" id="10_pcl43"]
-[ext_resource type="Script" path="res://scenes/screens/Nubes.gd" id="11_86jt7"]
+[ext_resource type="Script" uid="uid://b1mivimj08d8a" path="res://scenes/screens/Nubes.gd" id="11_86jt7"]
 [ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="12_hlc0i"]
 [ext_resource type="Texture2D" uid="uid://ddqla1qdya8rf" path="res://assets/ui/nube_2.png" id="13_4l08v"]
 [ext_resource type="Texture2D" uid="uid://w7loke78ivvm" path="res://assets/ui/nube_3.png" id="14_im5ep"]

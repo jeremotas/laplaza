@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dslxm03ruea1b"]
 
-[ext_resource type="Script" path="res://scenes/controls/scene_transition.gd" id="1_fykh7"]
+[ext_resource type="Script" uid="uid://bva0fufscel0" path="res://scenes/controls/scene_transition.gd" id="1_fykh7"]
 
 [sub_resource type="Animation" id="Animation_l7vxc"]
 resource_name = "fade"
@@ -32,7 +32,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvs0q"]
 _data = {
-"fade": SubResource("Animation_l7vxc")
+&"fade": SubResource("Animation_l7vxc")
 }
 
 [node name="SceneTransition" type="CanvasLayer"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cw6herwyo4jk7"]
 
 [ext_resource type="Texture2D" uid="uid://cnk21rpfd3kh8" path="res://assets/created/cartas/sobre_azul.png" id="1_886cg"]
-[ext_resource type="Script" path="res://scenes/controls/sobre.gd" id="2_m4hd2"]
+[ext_resource type="Script" uid="uid://lqwm6uc0uvwk" path="res://scenes/controls/sobre.gd" id="2_m4hd2"]
 
 [sub_resource type="Gradient" id="Gradient_3q15o"]
 offsets = PackedFloat32Array(0, 0.0892857, 0.842857, 0.910714, 1)
@@ -19,6 +19,7 @@ emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 0.0
 emission_ring_radius = 40.0
 emission_ring_inner_radius = 60.0
+emission_ring_cone_angle = 90.0
 gravity = Vector3(0, 0, 0)
 radial_accel_min = 100.0
 radial_accel_max = 100.0

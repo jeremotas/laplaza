@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ceqwcbehglm8u"]
 
-[ext_resource type="Script" path="res://scenes/screens/nuevo_sobre.gd" id="1_mncm1"]
+[ext_resource type="Script" uid="uid://b6nxyqe5w85pp" path="res://scenes/screens/nuevo_sobre.gd" id="1_mncm1"]
 [ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="1_noa8o"]
 [ext_resource type="PackedScene" uid="uid://cw6herwyo4jk7" path="res://scenes/controls/sobre.tscn" id="2_fstwy"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_3h7yh"]
@@ -58,10 +58,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l188i"]
 _data = {
-"RESET": SubResource("Animation_4l402"),
-"to_transparent": SubResource("Animation_vjevy"),
-"to_white": SubResource("Animation_ge54v"),
-"up": SubResource("Animation_l7x0c")
+&"RESET": SubResource("Animation_4l402"),
+&"to_transparent": SubResource("Animation_vjevy"),
+&"to_white": SubResource("Animation_ge54v"),
+&"up": SubResource("Animation_l7x0c")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alb3m"]

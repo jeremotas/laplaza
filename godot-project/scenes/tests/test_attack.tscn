@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://de0d38cwcc5ua"]
 
-[ext_resource type="Script" path="res://scenes/tests/test_attack.gd" id="1_4fgik"]
+[ext_resource type="Script" uid="uid://gtk72t3o62pk" path="res://scenes/tests/test_attack.gd" id="1_4fgik"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="2_40ing"]
 [ext_resource type="PackedScene" uid="uid://qe5x0axdxxo" path="res://scenes/patricios/moreno.tscn" id="4_7pg8g"]
 [ext_resource type="PackedScene" uid="uid://dlnd2el5bqsln" path="res://scenes/patricios/arribeno.tscn" id="4_jspqt"]

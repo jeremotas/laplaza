@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+var bMazoTest = false
 func _ready():
 	$MarginContainer/VBoxContainer2/Menu.grab_focus()
 
@@ -15,11 +15,20 @@ func save_options():
 
 
 func _on_confirmation_dialog_confirmed():
-	Global.save_data.original_cards = Global.save_data.reboot_cards
+	if not bMazoTest:
+		Global.save_data.original_cards = Global.save_data.reboot_cards
+	else:
+		Global.save_data.original_cards = []
 	Global.save_data.save()
 	Global.mazo = Mazo.crear(Global.save_data.original_cards)
 	
 
 
 func _on_reiniciar_mazo_pressed():
+	bMazoTest = false
+	$ConfirmationDialog.show()
+
+
+func _on_reiniciar_mazo_a_test_pressed() -> void:
+	bMazoTest = true
 	$ConfirmationDialog.show()

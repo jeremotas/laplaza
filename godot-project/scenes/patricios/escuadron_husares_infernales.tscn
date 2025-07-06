@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dufixgg0qli34"]
 
 [ext_resource type="PackedScene" uid="uid://c1f2p41bh0kpl" path="res://scenes/patricios/husares_infernales.tscn" id="1_fqc2w"]
-[ext_resource type="Script" path="res://scenes/patricios/escuadron_husares_infernales.gd" id="1_tm1yh"]
+[ext_resource type="Script" uid="uid://bt3wlm56y4yo3" path="res://scenes/patricios/escuadron_husares_infernales.gd" id="1_tm1yh"]
 
 [node name="EscuadronHusaresInfernales" type="Node2D"]
 script = ExtResource("1_tm1yh")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0ijomif7a1fl"]
 
-[ext_resource type="Script" path="res://scenes/tests/test_escuadron_carpinchos.gd" id="1_qsdhr"]
+[ext_resource type="Script" uid="uid://d4ntxj3jq8f3p" path="res://scenes/tests/test_escuadron_carpinchos.gd" id="1_qsdhr"]
 [ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://scenes/ingleses/ingles.tscn" id="2_h7wmh"]
 
 [node name="test_escuadron_carpinchos" type="Node2D"]

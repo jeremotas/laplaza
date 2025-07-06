@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ctc76bsrsjp8d"]
 
-[ext_resource type="Script" path="res://scenes/controls/pre_level_titles.gd" id="1_cmgtq"]
+[ext_resource type="Script" uid="uid://bio7j522xk0o5" path="res://scenes/controls/pre_level_titles.gd" id="1_cmgtq"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_8xxh0"]
 [ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="2_74axt"]
 [ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="3_5rxsg"]
@@ -61,8 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cs5f5"]
 _data = {
-"title_in": SubResource("Animation_qgxmb"),
-"title_out": SubResource("Animation_1u1u0")
+&"title_in": SubResource("Animation_qgxmb"),
+&"title_out": SubResource("Animation_1u1u0")
 }
 
 [node name="PreLevelTitles" type="Node2D"]

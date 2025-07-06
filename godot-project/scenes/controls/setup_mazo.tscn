@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://lep73vn75eel"]
 
-[ext_resource type="Script" path="res://scenes/controls/setup_mazo.gd" id="1_urv0u"]
-[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_58l31"]
+[ext_resource type="Script" uid="uid://c4qu0yyek2rsm" path="res://scenes/controls/setup_mazo.gd" id="1_urv0u"]
+[ext_resource type="Shader" uid="uid://56yjmw2atlid" path="res://shaders/blur.gdshader" id="2_58l31"]
 [ext_resource type="Texture2D" uid="uid://cemwt7jvyjpqh" path="res://assets/created/ui/setup_mazo_fondo.jpg" id="2_bbc0u"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_8xf3q"]
-[ext_resource type="Script" path="res://scenes/controls/CartasContainer.gd" id="4_knssc"]
+[ext_resource type="Script" uid="uid://c5uvnpo05a5xy" path="res://scenes/controls/CartasContainer.gd" id="4_knssc"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="6_7o5w4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]

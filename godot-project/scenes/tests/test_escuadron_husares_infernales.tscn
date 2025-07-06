@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2k47s51pt0it"]
 
-[ext_resource type="Script" path="res://scenes/tests/test_escuadron_husares_infernales.gd" id="1_xy5sb"]
+[ext_resource type="Script" uid="uid://fxgr3byx3xff" path="res://scenes/tests/test_escuadron_husares_infernales.gd" id="1_xy5sb"]
 [ext_resource type="PackedScene" uid="uid://d0ocwx1dr4jth" path="res://scenes/ingleses/ingles.tscn" id="2_1rx0r"]
 
 [node name="test_escuadron_husares_infernales" type="Node2D"]

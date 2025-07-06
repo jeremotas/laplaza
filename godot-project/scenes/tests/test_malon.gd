@@ -2,13 +2,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$UnitSpawner.set_goal($General)
-	$UnitSpawner2.set_goal($General)
-	pass # Replace with function body.
+	#$UnitSpawner.set_goal($General)
+	#$UnitSpawner2.set_goal($General)
+	$Cebador.assign_goal($General)
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	
+	print($General.life)
 	pass

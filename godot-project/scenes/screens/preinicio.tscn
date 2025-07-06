@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://82akg653e7j3"]
 
-[ext_resource type="Script" path="res://scenes/screens/preinicio.gd" id="1_x4wjh"]
+[ext_resource type="Script" uid="uid://cbxxchtd6w66g" path="res://scenes/screens/preinicio.gd" id="1_x4wjh"]
 [ext_resource type="Texture2D" uid="uid://c7phnsphmbrga" path="res://assets/created/images/la_romero_transparente.png" id="2_f82w2"]
 
 [sub_resource type="Animation" id="Animation_eqjhs"]
@@ -21,7 +21,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cmnwq"]
 _data = {
-"La romero": SubResource("Animation_eqjhs")
+&"La romero": SubResource("Animation_eqjhs")
 }
 
 [node name="preinicio" type="Control"]

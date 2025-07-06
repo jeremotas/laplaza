@@ -1,6 +1,6 @@
 [gd_scene load_steps=59 format=3 uid="uid://wej5y4wn1st"]
 
-[ext_resource type="Script" path="res://scenes/ingleses/green_soldier.gd" id="1_kc348"]
+[ext_resource type="Script" uid="uid://dkbo6gy0a6t5c" path="res://scenes/ingleses/green_soldier.gd" id="1_kc348"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_lyvir"]
 [ext_resource type="Texture2D" uid="uid://b87aipukpegdq" path="res://assets/created/brigadarifle32.png" id="3_xbxuo"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_v4akp"]
@@ -375,11 +375,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ge3yl"]
 _data = {
-"die": SubResource("Animation_vgsr0"),
-"hurt": SubResource("Animation_omtes"),
-"idle": SubResource("Animation_g6unq"),
-"shoot": SubResource("Animation_biie8"),
-"walk": SubResource("Animation_u58dt")
+&"die": SubResource("Animation_vgsr0"),
+&"hurt": SubResource("Animation_omtes"),
+&"idle": SubResource("Animation_g6unq"),
+&"shoot": SubResource("Animation_biie8"),
+&"walk": SubResource("Animation_u58dt")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u3nqx"]

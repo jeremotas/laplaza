@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://duronouk3fu1p" path="res://scenes/controls/decision_time.tscn" id="1_bt0hf"]
 [ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="1_hhuq6"]
-[ext_resource type="Script" path="res://scenes/tests/test_decision_time.gd" id="1_u0xeq"]
+[ext_resource type="Script" uid="uid://c5wwvqg21vkma" path="res://scenes/tests/test_decision_time.gd" id="1_u0xeq"]
 
 [node name="TestDecisionTime" type="Node2D"]
 script = ExtResource("1_u0xeq")

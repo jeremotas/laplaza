@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://ckkcp0mw2ieet"]
 
-[ext_resource type="Script" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
+[ext_resource type="Script" uid="uid://cvkm7v5wqpn07" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
 [ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="2_uluud"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_blw1a"]
 [ext_resource type="AudioStream" uid="uid://0p4to6x8jlkw" path="res://assets/original/Music/Himno Full Final.mp3" id="4_ican8"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c1f2p41bh0kpl" path="res://scenes/patricios/husares_infernales.tscn" id="11_ejd8u"]
 [ext_resource type="PackedScene" uid="uid://qe5x0axdxxo" path="res://scenes/patricios/moreno.tscn" id="12_osj31"]
 [ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://scenes/patricios/granadero.tscn" id="13_xvm5x"]
-[ext_resource type="Script" path="res://scenes/screens/Nubes.gd" id="14_am84f"]
+[ext_resource type="Script" uid="uid://b1mivimj08d8a" path="res://scenes/screens/Nubes.gd" id="14_am84f"]
 [ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="15_px7ib"]
 [ext_resource type="Texture2D" uid="uid://ddqla1qdya8rf" path="res://assets/ui/nube_2.png" id="16_tir3l"]
 [ext_resource type="Texture2D" uid="uid://w7loke78ivvm" path="res://assets/ui/nube_3.png" id="17_j1rm0"]

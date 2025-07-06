@@ -1,7 +1,7 @@
 [gd_scene load_steps=104 format=3 uid="uid://bc8o4p1i67cbn"]
 
-[ext_resource type="Script" path="res://scenes/patricios/General.gd" id="1_utaqx"]
-[ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="2_4uwal"]
+[ext_resource type="Script" uid="uid://bbjye3qwndcy7" path="res://scenes/patricios/General.gd" id="1_utaqx"]
+[ext_resource type="Shader" uid="uid://d32eaae2wmxke" path="res://shaders/outline_shader.gdshader" id="2_4uwal"]
 [ext_resource type="Texture2D" uid="uid://jisqmeehvii8" path="res://assets/created/barrilete32ol.png" id="2_7xuv0"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_i00nh"]
 [ext_resource type="Texture2D" uid="uid://cf3266xrs7tum" path="res://assets/created/general.png" id="2_j1s25"]
@@ -9,15 +9,15 @@
 [ext_resource type="AudioStream" uid="uid://cyp28dqo4lc11" path="res://assets/created/sounds/dolor.mp3" id="5_nv6gl"]
 [ext_resource type="AudioStream" uid="uid://3kns6iv7ithe" path="res://assets/original/sounds/horse_general.mp3" id="6_ma0wk"]
 [ext_resource type="AudioStream" uid="uid://c3hry3gid365a" path="res://assets/original/sounds/relato_victorhugo.mp3" id="8_bclty"]
-[ext_resource type="Script" path="res://scenes/patricios/RelatoVictorHugo.gd" id="9_77b6d"]
-[ext_resource type="Script" path="res://scenes/patricios/AimPoint.gd" id="9_fawym"]
+[ext_resource type="Script" uid="uid://c27lia7mqdinw" path="res://scenes/patricios/RelatoVictorHugo.gd" id="9_77b6d"]
+[ext_resource type="Script" uid="uid://4o1mmvt8akm5" path="res://scenes/patricios/AimPoint.gd" id="9_fawym"]
 [ext_resource type="Texture2D" uid="uid://b7aq2y4jsk31f" path="res://assets/created/aimer.png" id="10_3juy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f72y"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmhrc"]
-bg_color = Color(0, 0.917647, 0.27451, 1)
+bg_color = Color(8.20629e-06, 0.640698, 0.180686, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o3k6s"]
 shader = ExtResource("2_4uwal")
@@ -568,12 +568,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7logj"]
 _data = {
-"barrilete_cosmico": SubResource("Animation_yx4et"),
-"die": SubResource("Animation_va5b2"),
-"hurt": SubResource("Animation_yieif"),
-"idle": SubResource("Animation_82rwv"),
-"walk": SubResource("Animation_1igqf"),
-"win": SubResource("Animation_dm088")
+&"barrilete_cosmico": SubResource("Animation_yx4et"),
+&"die": SubResource("Animation_va5b2"),
+&"hurt": SubResource("Animation_yieif"),
+&"idle": SubResource("Animation_82rwv"),
+&"walk": SubResource("Animation_1igqf"),
+&"win": SubResource("Animation_dm088")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yc847"]
@@ -745,13 +745,13 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="LifeProgress" type="ProgressBar" parent="."]
-visible = false
-offset_left = 5.0
-offset_top = -16.0
-offset_right = 22.0
-offset_bottom = -14.0
+offset_left = -16.0
+offset_top = 22.0
+offset_right = 16.0
+offset_bottom = 26.0
 theme_override_styles/background = SubResource("StyleBoxFlat_6f72y")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vmhrc")
+rounded = true
 show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -764,14 +764,11 @@ frame = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_7logj")
+&"": SubResource("AnimationLibrary_7logj")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
-libraries = {
-"": SubResource("AnimationLibrary_7logj")
-}
 tree_root = SubResource("AnimationNodeStateMachine_4dt8w")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/barrilete_cosmico = false

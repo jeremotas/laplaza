@@ -12,6 +12,7 @@ class_name SaveData extends Resource
 	{"name": "correntino", "quantity": 0},
 	{"name": "arribeno", "quantity": 3},
 	{"name": "moreno", "quantity": 0},
+	{"name": "cebador", "quantity": 0},
 	# Eventos
 	{"name": "ataque_husares_infernales", "quantity": 0},
 	{"name": "barrilete_cosmico", "quantity": 0}, 
@@ -26,6 +27,7 @@ class_name SaveData extends Resource
 	{"name": "correntino", "quantity": 0},
 	{"name": "arribeno", "quantity": 3},
 	{"name": "moreno", "quantity": 0},
+	{"name": "cebador", "quantity": 2},
 	# Eventos
 	{"name": "ataque_husares_infernales", "quantity": 0},
 	{"name": "barrilete_cosmico", "quantity": 0}, 
@@ -52,4 +54,3 @@ static func load_or_create() -> SaveData:
 	else: 
 		res = SaveData.new()
 	return res
-

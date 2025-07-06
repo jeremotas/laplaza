@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ct4dek63v5j5j"]
 
-[ext_resource type="Script" path="res://scenes/screens/credits.gd" id="1_3jpn6"]
+[ext_resource type="Script" uid="uid://d0xadi7h20eop" path="res://scenes/screens/credits.gd" id="1_3jpn6"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_cimw1"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="4_snkym"]
 [ext_resource type="Texture2D" uid="uid://cp7wkcbvm3eiu" path="res://assets/original/backgrounds/lafuriadelastrenzas_credits.png" id="5_2lfd0"]

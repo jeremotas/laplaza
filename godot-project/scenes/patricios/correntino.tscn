@@ -1,7 +1,7 @@
 [gd_scene load_steps=61 format=3 uid="uid://b8baohebq5bsy"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_aexnd"]
-[ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="1_akuyh"]
+[ext_resource type="Shader" uid="uid://d32eaae2wmxke" path="res://shaders/outline_shader.gdshader" id="1_akuyh"]
 [ext_resource type="Texture2D" uid="uid://bs4hlrx3utxbl" path="res://assets/created/correntino.png" id="2_geu6n"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_167lu"]
 
@@ -454,11 +454,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mqshh"]
 _data = {
-"die": SubResource("Animation_xi7hg"),
-"hurt": SubResource("Animation_adco2"),
-"idle": SubResource("Animation_ric7q"),
-"shoot": SubResource("Animation_dwvuq"),
-"walk": SubResource("Animation_i1erd")
+&"die": SubResource("Animation_xi7hg"),
+&"hurt": SubResource("Animation_adco2"),
+&"idle": SubResource("Animation_ric7q"),
+&"shoot": SubResource("Animation_dwvuq"),
+&"walk": SubResource("Animation_i1erd")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qq1xy"]

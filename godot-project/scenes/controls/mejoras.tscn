@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bxafnr67768aq"]
 
-[ext_resource type="Script" path="res://scenes/controls/mejoras.gd" id="1_ukoyr"]
+[ext_resource type="Script" uid="uid://cbj8d7172ntto" path="res://scenes/controls/mejoras.gd" id="1_ukoyr"]
 [ext_resource type="Texture2D" uid="uid://bdmjw4ifbeh8o" path="res://assets/ui/cielo_1.png" id="2_w06u8"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_3fudx"]
 [ext_resource type="Texture2D" uid="uid://bdsq3d4gp8hmk" path="res://assets/created/patricio_idle.png" id="3_skt3c"]

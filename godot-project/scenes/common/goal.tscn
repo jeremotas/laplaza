@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bdhmiefax7gyv"]
 
-[ext_resource type="Script" path="res://scenes/common/Goal.gd" id="1_4ypff"]
+[ext_resource type="Script" uid="uid://jw37403bdybc" path="res://scenes/common/Goal.gd" id="1_4ypff"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_p2urd"]
 [ext_resource type="Texture2D" uid="uid://bb0h4rpnfg8wu" path="res://assets/created/mastialanimadooutline.png" id="4_g1rit"]
 [ext_resource type="AudioStream" uid="uid://fcsmj61hrpvk" path="res://assets/original/sounds/trompeta_plaza.mp3" id="4_sam4w"]

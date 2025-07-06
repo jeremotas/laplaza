@@ -52,6 +52,12 @@ func life_status():
 			$AnimatedSprite2D.material.set_shader_parameter("width",1.0)
 		else:
 			$AnimatedSprite2D.material.set_shader_parameter("width",0.0)
+			
+	$LifeProgress.min_value = 0
+	$LifeProgress.max_value = max_life
+	$LifeProgress.step = 1
+	$LifeProgress.value = life
+	
 
 func invincible_effect():
 	$InvincibleEffect.visible = invincible

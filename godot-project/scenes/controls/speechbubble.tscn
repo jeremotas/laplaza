@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://er2xr7bd3ipm"]
 
-[ext_resource type="Script" path="res://scenes/controls/speechbubble.gd" id="1_8yntv"]
+[ext_resource type="Script" uid="uid://bnbgb23fg3wg0" path="res://scenes/controls/speechbubble.gd" id="1_8yntv"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_jmcpf"]
 
 [sub_resource type="Animation" id="Animation_wirv3"]
@@ -33,7 +33,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6yfht"]
 _data = {
-"title": SubResource("Animation_wirv3")
+&"title": SubResource("Animation_wirv3")
 }
 
 [node name="SpeechBubble" type="CanvasLayer"]

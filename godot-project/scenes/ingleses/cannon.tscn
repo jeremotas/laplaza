@@ -1,6 +1,6 @@
 [gd_scene load_steps=60 format=3 uid="uid://dhtutnvi8r3jb"]
 
-[ext_resource type="Script" path="res://scenes/ingleses/cannon.gd" id="1_qbvg6"]
+[ext_resource type="Script" uid="uid://bo2124mrf28uh" path="res://scenes/ingleses/cannon.gd" id="1_qbvg6"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_tjq80"]
 [ext_resource type="Texture2D" uid="uid://bm6nkrdwaecrx" path="res://assets/created/Cannon lateral.png" id="3_cr3dw"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_gkkas"]
@@ -393,11 +393,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ge3yl"]
 _data = {
-"die": SubResource("Animation_vgsr0"),
-"hurt": SubResource("Animation_omtes"),
-"idle": SubResource("Animation_g6unq"),
-"shoot": SubResource("Animation_biie8"),
-"walk": SubResource("Animation_u58dt")
+&"die": SubResource("Animation_vgsr0"),
+&"hurt": SubResource("Animation_omtes"),
+&"idle": SubResource("Animation_g6unq"),
+&"shoot": SubResource("Animation_biie8"),
+&"walk": SubResource("Animation_u58dt")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u3nqx"]

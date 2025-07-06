@@ -428,7 +428,7 @@ func malon_sticked():
 					
 	input_accepted = false
 	#print("DISTANCIA",  global_position.distance_to(oGoalAssigned.global_position))
-	if (not bSticked and oGoalAssigned) or (global_position.distance_to(oGoalAssigned.global_position) > 50):
+	if (not bSticked and oGoalAssigned) or (oGoalAssigned and global_position.distance_to(oGoalAssigned.global_position) > 50):
 		if global_position.distance_to(oGoalAssigned.global_position) > 50:
 			go_to(oGoalAssigned.global_position, true)
 	#else:

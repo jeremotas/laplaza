@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://qfpsaxqgfluh"]
 
 [ext_resource type="Texture2D" uid="uid://cpqo2gqlh8dsp" path="res://assets/created/cartas/carta_unidad.png" id="1_6k1a8"]
-[ext_resource type="Script" path="res://scenes/controls/carta.gd" id="1_n1qsv"]
+[ext_resource type="Script" uid="uid://466uc7o43p5r" path="res://scenes/controls/carta.gd" id="1_n1qsv"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_aamn2"]
 [ext_resource type="Texture2D" uid="uid://wvkptnk55txa" path="res://assets/created/cartas/carta_back_azul.png" id="4_o28r5"]
 
@@ -35,7 +35,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j5475"]
 _data = {
-"card_flip": SubResource("Animation_6cqwh")
+&"card_flip": SubResource("Animation_6cqwh")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ke4j"]
@@ -67,11 +67,11 @@ offset_bottom = 113.0
 grow_horizontal = 2
 theme = ExtResource("3_aamn2")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -8
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 0
-theme_override_constants/line_spacing = -8
 theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -140,7 +140,7 @@ texture = ExtResource("4_o28r5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_j5475")
+&"": SubResource("AnimationLibrary_j5475")
 }
 
 [node name="StaticBody2D" type="CharacterBody2D" parent="."]

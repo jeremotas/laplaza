@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cia4npwrfvdbk"]
 
-[ext_resource type="Script" path="res://scenes/ingleses/tumulto_ingles.gd" id="1_4cvg6"]
+[ext_resource type="Script" uid="uid://dphkb4ll1ckwr" path="res://scenes/ingleses/tumulto_ingles.gd" id="1_4cvg6"]
 [ext_resource type="Texture2D" uid="uid://0bskmuv3bxjj" path="res://assets/created/ingles.png" id="1_plr3c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14oel"]

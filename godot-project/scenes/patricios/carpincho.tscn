@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://ntsr3jgmnno3"]
 
-[ext_resource type="Script" path="res://scenes/patricios/carpincho.gd" id="1_df1n8"]
+[ext_resource type="Script" uid="uid://db6xuu7vrxoo4" path="res://scenes/patricios/carpincho.gd" id="1_df1n8"]
 [ext_resource type="Texture2D" uid="uid://bxsyphj5854m5" path="res://assets/created/carpincho.png" id="2_bqhqp"]
 [ext_resource type="AudioStream" uid="uid://cpdwcp3wmrrpe" path="res://assets/original/sounds/carpinchos_walk_muchos.mp3" id="3_yfdv1"]
 
@@ -274,10 +274,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w211s"]
 _data = {
-"die": SubResource("Animation_7p4so"),
-"hurt": SubResource("Animation_wie57"),
-"idle": SubResource("Animation_ooawy"),
-"walk": SubResource("Animation_hsx6x")
+&"die": SubResource("Animation_7p4so"),
+&"hurt": SubResource("Animation_wie57"),
+&"idle": SubResource("Animation_ooawy"),
+&"walk": SubResource("Animation_hsx6x")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7w0me"]

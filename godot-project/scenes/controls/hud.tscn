@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://uk3j7rh2076l"]
 
-[ext_resource type="Script" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
+[ext_resource type="Script" uid="uid://b81eqko65w61p" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_7ne2n"]
 [ext_resource type="Texture2D" uid="uid://dimlmmai7rie" path="res://assets/ui/fondoreloj.png" id="2_pl8iw"]
-[ext_resource type="Script" path="res://scenes/controls/LifeProgressBar.gd" id="3_qjru7"]
+[ext_resource type="Script" uid="uid://cw1x2r5xcqrk5" path="res://scenes/controls/LifeProgressBar.gd" id="3_qjru7"]
 [ext_resource type="Texture2D" uid="uid://c4t0453rxg3mt" path="res://assets/created/patcabeza.png" id="4_alfnt"]
 [ext_resource type="Texture2D" uid="uid://busf656rvl4u2" path="res://assets/created/bandera_hud.png" id="5_mkyrq"]
 [ext_resource type="Texture2D" uid="uid://cuhp07010skgo" path="res://assets/created/lagrima_scaled_2x.png" id="5_uk0ha"]

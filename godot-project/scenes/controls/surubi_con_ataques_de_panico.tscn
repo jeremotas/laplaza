@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dsetxn36ecr8n"]
 
-[ext_resource type="Script" path="res://scenes/controls/surubi_con_ataques_de_panico.gd" id="1_nwj23"]
+[ext_resource type="Script" uid="uid://bbhgja8blu6o4" path="res://scenes/controls/surubi_con_ataques_de_panico.gd" id="1_nwj23"]
 [ext_resource type="Texture2D" uid="uid://dfuxpg388i6fh" path="res://assets/created/surubi.png" id="1_y270i"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_ca5bl"]
 
@@ -110,8 +110,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_73bcv"]
 _data = {
-"attack": SubResource("Animation_sjuq2"),
-"idle": SubResource("Animation_o76sw")
+&"attack": SubResource("Animation_sjuq2"),
+&"idle": SubResource("Animation_o76sw")
 }
 
 [node name="SurubiConAtaquesDePanico" type="Node2D"]

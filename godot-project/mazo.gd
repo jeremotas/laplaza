@@ -26,6 +26,7 @@ func rellenar_mazo_test():
 	crear_cartas("ollas_del_pueblo", 4)
 	crear_cartas("barrilete_cosmico", 1)
 	crear_cartas("ataque_husares_infernales", 2)
+	crear_cartas("cebador", 2)
 	
 	#crear_cartas("granadero", 5)
 	#crear_cartas("arribeno", 3)
@@ -46,6 +47,8 @@ func crear_carta(sDecisionMessage):
 		oCard = {"tipo": "unidad", "titulo": "Arribeño", "numero": "3", "decision_time_message": "arribeno", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "¿Tenés escopeta? __ Tengo escopeta. __ Agarrate fuerte que los de Arriba van con perdigones de plomo."}
 	elif sDecisionMessage == "moreno":
 		oCard = {"tipo": "unidad", "titulo": "Moreno", "numero": "4", "decision_time_message": "moreno", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Fiel y aguantador como pocos. __ Lanza granadas hacia donde diga el general. __ Era eso o quedar como esclavo."}	
+	elif sDecisionMessage == "cebador":
+		oCard = {"tipo": "unidad", "titulo": "Cebador", "numero": "5", "decision_time_message": "cebador", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "No es el aguatero, es el cebador de mates. __ Te mantiene con vida en esos momentos. __ Amargo, el mate. Bueno, el tambien."}	
 	elif sDecisionMessage == "upgrade_life":
 		oCard = {"tipo": "truco", "titulo": "Matecito", "numero": "1", "decision_time_message": "upgrade_life", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El general se toma unos verdes y recupera la vida. __ Eso si, me dijeron que lo toma amargo."}
 	elif sDecisionMessage == "ollas_del_pueblo":

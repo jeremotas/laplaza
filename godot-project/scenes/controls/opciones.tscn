@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bl4b11xl0emiw"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_01m0e"]
-[ext_resource type="Script" path="res://scenes/controls/opciones.gd" id="1_mqqmh"]
+[ext_resource type="Script" uid="uid://i0ufj85xgr51" path="res://scenes/controls/opciones.gd" id="1_mqqmh"]
 [ext_resource type="Texture2D" uid="uid://bdmjw4ifbeh8o" path="res://assets/ui/cielo_1.png" id="2_741y0"]
 [ext_resource type="PackedScene" uid="uid://ne0jrytbfn5y" path="res://scenes/controls/volume_mixer.tscn" id="2_og7k0"]
 [ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="5_2klqf"]
@@ -108,6 +108,16 @@ text = "Destruir Mazo"
 icon = ExtResource("5_2klqf")
 flat = true
 
+[node name="ReiniciarMazoATest" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_01m0e")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 18
+text = "Mazo de testing"
+icon = ExtResource("5_2klqf")
+flat = true
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -132,6 +142,7 @@ autoplay = true
 bus = &"Musica"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+transparent_bg = true
 title = "Destruir Mazo"
 initial_position = 2
 size = Vector2i(360, 154)
@@ -150,5 +161,6 @@ dialog_autowrap = true
 cancel_button_text = "Cancelar"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ReiniciarMazo" to="." method="_on_reiniciar_mazo_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReiniciarMazoATest" to="." method="_on_reiniciar_mazo_a_test_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Menu" to="." method="_on_menu_pressed"]
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

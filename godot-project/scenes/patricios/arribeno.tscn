@@ -1,6 +1,6 @@
 [gd_scene load_steps=60 format=3 uid="uid://dlnd2el5bqsln"]
 
-[ext_resource type="Script" path="res://scenes/patricios/arribeno.gd" id="1_ic4tm"]
+[ext_resource type="Script" uid="uid://clxqkxpi25sis" path="res://scenes/patricios/arribeno.gd" id="1_ic4tm"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_4f2wp"]
 [ext_resource type="Texture2D" uid="uid://c0xfl8qcvk4hx" path="res://assets/created/arribeno32.png" id="3_vv8b1"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="5_q4ipq"]
@@ -383,11 +383,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a0bmf"]
 _data = {
-"die": SubResource("Animation_2nrkv"),
-"hurt": SubResource("Animation_vhgsq"),
-"idle": SubResource("Animation_s202u"),
-"shoot": SubResource("Animation_kn3d7"),
-"walk": SubResource("Animation_60254")
+&"die": SubResource("Animation_2nrkv"),
+&"hurt": SubResource("Animation_vhgsq"),
+&"idle": SubResource("Animation_s202u"),
+&"shoot": SubResource("Animation_kn3d7"),
+&"walk": SubResource("Animation_60254")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7w0me"]

@@ -1,29 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://buarwecasqe6b"]
 
-[ext_resource type="Script" path="res://scenes/tests/test_malon.gd" id="1_31kom"]
-[ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="1_a8bjd"]
-[ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://scenes/patricios/granadero.tscn" id="1_wmfrd"]
+[ext_resource type="Script" uid="uid://b4fyf1a0oeqey" path="res://scenes/tests/test_malon.gd" id="1_31kom"]
+[ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="2_w50ti"]
+[ext_resource type="PackedScene" uid="uid://ds201qgjbrx7m" path="res://scenes/patricios/cebador.tscn" id="3_w50ti"]
 
 [node name="test_malon" type="Node2D"]
 script = ExtResource("1_31kom")
 
-[node name="General" parent="." instance=ExtResource("1_wmfrd")]
-position = Vector2(317, 231)
-faction = "patricios"
-unit_type = "general"
-input_accepted = true
+[node name="General" parent="." instance=ExtResource("2_w50ti")]
+life = 1
 
-[node name="UnitSpawner" parent="." instance=ExtResource("1_a8bjd")]
-position = Vector2(61, 85)
-probabilitySpawnOnTimer = 30.0
-spawnOnReady = false
-faction = "patricios"
-
-[node name="UnitSpawner2" parent="." instance=ExtResource("1_a8bjd")]
-position = Vector2(583, 59)
-probabilitySpawnOnTimer = 30.0
-spawnOnReady = false
-faction = "patricios"
+[node name="Cebador" parent="." instance=ExtResource("3_w50ti")]
+position = Vector2(612, 457)
 
 [node name="SceneTimer" type="Timer" parent="."]
 autostart = true

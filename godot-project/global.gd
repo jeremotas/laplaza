@@ -20,6 +20,7 @@ var settings = {
 				"moreno": 0,
 				"husares_infernales": 0,
 				"arribeno": 0,
+				"cebador": 0,
 			},
 			"level": 0,
 			"time": 0,
@@ -32,7 +33,8 @@ var settings = {
 			"husares_infernales": 0,
 			"matecito": 5,
 			"barrilete_cosmico": 0,
-			"ollas_del_pueblo": 0
+			"ollas_del_pueblo": 0,
+			"cebador": 1
 		},
 		"mejoras": {
 			"granadero": {
@@ -128,6 +130,16 @@ var settings = {
 				"cooldown": 4,
 				"min_damage_given": 1,
 				"max_damage_given": 1
+			},
+		},
+		"cebador": {
+			"life": 6,
+			"max_speed": 80,
+			"attack":{
+				"cooldown": 4,
+				"life_given": 1,
+				"min_damage_given": 0,
+				"max_damage_given": 0
 			},
 		},
 		"arribeno": {
@@ -250,14 +262,16 @@ var settings = {
 			{"name": "arribeno", "quantity": 80},
 			{"name": "moreno", "quantity": 10},
 			{"name": "correntino", "quantity": 20},
+			{"name": "cebador", "quantity": 2},
 			{"name": "ollas_del_pueblo", "quantity": 10},
 			{"name": "ataque_husares_infernales", "quantity": 2},
-			{"name": "barrilete_cosmico", "quantity": 2}
+			{"name": "barrilete_cosmico", "quantity": 2},
 		],
 		"verde": [
 			{"name": "granadero", "quantity": 50},
 			{"name": "arribeno", "quantity": 50},
 			{"name": "moreno", "quantity": 4},
+			{"name": "cebador", "quantity": 4},
 			{"name": "ollas_del_pueblo", "quantity": 30},
 			{"name": "correntino", "quantity": 30},
 			{"name": "ataque_husares_infernales", "quantity": 4},
@@ -268,6 +282,7 @@ var settings = {
 			{"name": "arribeno", "quantity": 0},
 			{"name": "moreno", "quantity": 20},
 			{"name": "correntino", "quantity": 20},
+			{"name": "cebador", "quantity": 20},
 			{"name": "ollas_del_pueblo", "quantity": 20},
 			{"name": "ataque_husares_infernales", "quantity": 20},
 			{"name": "barrilete_cosmico", "quantity": 20}

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://duronouk3fu1p"]
 
-[ext_resource type="Script" path="res://scenes/controls/decision_time.gd" id="1_oii2v"]
+[ext_resource type="Script" uid="uid://bktjtkmolrwng" path="res://scenes/controls/decision_time.gd" id="1_oii2v"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_joe4m"]
-[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_ydeda"]
+[ext_resource type="Shader" uid="uid://56yjmw2atlid" path="res://shaders/blur.gdshader" id="2_ydeda"]
 [ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="4_o6mhc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]

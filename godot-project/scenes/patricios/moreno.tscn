@@ -1,7 +1,7 @@
 [gd_scene load_steps=62 format=3 uid="uid://qe5x0axdxxo"]
 
-[ext_resource type="Script" path="res://scenes/patricios/moreno.gd" id="1_gg8ih"]
-[ext_resource type="Shader" path="res://shaders/outline_shader.gdshader" id="1_m7ff2"]
+[ext_resource type="Script" uid="uid://dfmcogpkx6in" path="res://scenes/patricios/moreno.gd" id="1_gg8ih"]
+[ext_resource type="Shader" uid="uid://d32eaae2wmxke" path="res://shaders/outline_shader.gdshader" id="1_m7ff2"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_liip5"]
 [ext_resource type="Texture2D" uid="uid://8q6t2lbrbyit" path="res://assets/created/moreno.png" id="2_xuf6l"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_jupy2"]
@@ -393,11 +393,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mqshh"]
 _data = {
-"die": SubResource("Animation_xi7hg"),
-"hurt": SubResource("Animation_adco2"),
-"idle": SubResource("Animation_ric7q"),
-"shoot": SubResource("Animation_dwvuq"),
-"walk": SubResource("Animation_i1erd")
+&"die": SubResource("Animation_xi7hg"),
+&"hurt": SubResource("Animation_adco2"),
+&"idle": SubResource("Animation_ric7q"),
+&"shoot": SubResource("Animation_dwvuq"),
+&"walk": SubResource("Animation_i1erd")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7w0me"]

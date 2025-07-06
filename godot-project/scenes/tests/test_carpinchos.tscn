@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://de32htao22hky"]
 
 [ext_resource type="PackedScene" uid="uid://xeo5ov334ujl" path="res://scenes/patricios/escuadron_carpinchos.tscn" id="1_bcabd"]
-[ext_resource type="Script" path="res://scenes/tests/test_carpinchos.gd" id="1_raj8n"]
+[ext_resource type="Script" uid="uid://cg36yhgx30m7v" path="res://scenes/tests/test_carpinchos.gd" id="1_raj8n"]
 
 [node name="Escena" type="Node2D"]
 script = ExtResource("1_raj8n")

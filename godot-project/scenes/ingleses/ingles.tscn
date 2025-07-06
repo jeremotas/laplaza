@@ -1,6 +1,6 @@
 [gd_scene load_steps=60 format=3 uid="uid://d0ocwx1dr4jth"]
 
-[ext_resource type="Script" path="res://scenes/ingleses/ingles.gd" id="1_5wky8"]
+[ext_resource type="Script" uid="uid://c6ti6jwf8dpw" path="res://scenes/ingleses/ingles.gd" id="1_5wky8"]
 [ext_resource type="Texture2D" uid="uid://0bskmuv3bxjj" path="res://assets/created/ingles.png" id="2_7yrye"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_kwfwm"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_c4n1u"]
@@ -377,11 +377,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c88t2"]
 _data = {
-"die": SubResource("Animation_sedgb"),
-"hurt": SubResource("Animation_6mr32"),
-"idle": SubResource("Animation_46p0d"),
-"shoot": SubResource("Animation_nqbab"),
-"walk": SubResource("Animation_vgw74")
+&"die": SubResource("Animation_sedgb"),
+&"hurt": SubResource("Animation_6mr32"),
+&"idle": SubResource("Animation_46p0d"),
+&"shoot": SubResource("Animation_nqbab"),
+&"walk": SubResource("Animation_vgw74")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u3nqx"]
