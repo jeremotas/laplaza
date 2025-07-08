@@ -15,6 +15,7 @@ func _ready():
 	load_volumes()
 	load_malon()
 	Engine.time_scale = 1
+	get_tree().paused = false
 	
 func load_malon():
 	$UnitSpawner.set_goal($PosicionGeneral)
