@@ -39,7 +39,8 @@ var malon = [
 	{"unit_type": "granadero", "quantity": 0},
 	{"unit_type": "moreno", "quantity": 0}, 
 	{"unit_type": "arribeno", "quantity": 0}, 
-	{"unit_type": "husares_infernales", "quantity": 0}
+	{"unit_type": "husares_infernales", "quantity": 0},
+	{"unit_type": "cebador", "quantity": 0}
 ]
 var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husares_infernales.tscn")
 var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.tscn")
@@ -249,6 +250,7 @@ func decision_time_end(decision):
 	elif decision == "correntino": add_unit_to_malon("correntino")
 	elif decision == "moreno": add_unit_to_malon("moreno")
 	elif decision == "arribeno": add_unit_to_malon("arribeno")
+	elif decision == "cebador": add_unit_to_malon("cebador")
 	elif decision == "ataque_husares_infernales": ataque_husares_infernales()
 	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)
