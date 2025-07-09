@@ -39,10 +39,10 @@ func cebar_mate():
 
 
 func _on_mate_area_body_entered(body: Node2D) -> void:
-	if body.unit_type == 'general':
+	if "unit_type" in body and body.unit_type == 'general':
 		general_in_mate_area = true
 
 
 func _on_mate_area_body_exited(body: Node2D) -> void:
-	if body.unit_type == 'general':
+	if "unit_type" in body and body.unit_type == 'general':
 		general_in_mate_area = false
