@@ -9,6 +9,7 @@ var barrileteTimer = null
 var max_life = 0
 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
+var manuela_caller = preload("res://scenes/patricios/manuela_pedraza.tscn")
 
 func _init():
 	unit_type = "general"
@@ -212,3 +213,8 @@ func _on_aspiradora_de_lagrimas_body_entered(body):
 	
 	if "unit_type" in body and body.unit_type == 'lagrima':
 		body.follow(self)
+
+func call_manuela_pedraza():
+	var manuela = manuela_caller.instantiate()
+	manuela.global_position = global_position
+	get_parent().add_child(manuela)

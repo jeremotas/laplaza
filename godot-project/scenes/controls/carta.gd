@@ -40,6 +40,7 @@ const aImagenes = {
 	"upgrade_life": preload("res://assets/created/cartas/imagen/mate_retrato_32.png"),
 	"ollas_del_pueblo": preload("res://assets/created/cartas/imagen/olla_retrato_32.png"),
 	"cebador": preload("res://assets/created/cartas/imagen/cebador_retrato_32.png"),
+	"manuela_pedraza": preload("res://assets/created/cartas/imagen/manuela_pedraza_retrato_32.png"),
 }
 
 var tween: Tween

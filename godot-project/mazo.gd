@@ -27,6 +27,7 @@ func rellenar_mazo_test():
 	crear_cartas("barrilete_cosmico", 1)
 	crear_cartas("ataque_husares_infernales", 2)
 	crear_cartas("cebador", 2)
+	crear_cartas("manuela_pedraza", 2)
 	
 	#crear_cartas("granadero", 5)
 	#crear_cartas("arribeno", 3)
@@ -57,7 +58,9 @@ func crear_carta(sDecisionMessage):
 		oCard = {"tipo": "evento", "titulo": "Barrilete cosmico", "numero": "1", "decision_time_message": "barrilete_cosmico", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El general es poseído temporalmente por Pelusa. __ Si hay ingleses, él los gambetea y ellos caen al piso. __ (La enfedrina queda en la sangre del general)"}
 	elif sDecisionMessage == "ataque_husares_infernales":
 		oCard = {"tipo": "evento", "titulo": "Husares infernales", "numero": "2", "decision_time_message": "ataque_husares_infernales", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Estos jinetes desataran un infierno de balas sobre los ingleses. __ (¡Ojo! Pasan una vez y chau pinola)"}
-	
+	elif sDecisionMessage == "manuela_pedraza":
+		oCard = {"tipo": "evento", "titulo": "Manuela", "numero": "3", "decision_time_message": "manuela_pedraza", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "A sablazos moriran los ingleses __ Lo que pueden las mujeres despechadas!"}
+		
 	return oCard
 
 func size():

@@ -144,6 +144,9 @@ func _process(delta):
 	elif command == "roger":
 		$General.activate_agua_hirviendo_level_up()
 		command = ""
+	elif command == "lacalle":
+		$General.call_manuela_pedraza()
+		command = ""
 	elif command == "iddqd" and not $General.barrilete_cosmico:
 		$General.invincible = not $General.invincible
 		command = ""
@@ -255,6 +258,7 @@ func decision_time_end(decision):
 	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)
 	elif decision == "ollas_del_pueblo": $General.activate_agua_hirviendo_level_up()
+	elif decision == "manuela_pedraza": $General.call_manuela_pedraza()
 		
 	# Devolver al juego
 	$decision_time.hide()

@@ -295,7 +295,8 @@ var settings = {
 			{"name": "cebador", "quantity": 20},
 			{"name": "ollas_del_pueblo", "quantity": 20},
 			{"name": "ataque_husares_infernales", "quantity": 20},
-			{"name": "barrilete_cosmico", "quantity": 20}
+			{"name": "barrilete_cosmico", "quantity": 20},
+			{"name": "manuela_pedraza", "quantity": 20}
 		]
 	}
 }

@@ -264,34 +264,6 @@ states/walk/position = Vector2(518.667, 74.1481)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_gc4nl"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4wu01"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5fi4q"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_r7nas"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_lq86a"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_01o7k"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_h2a58"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_m6io4"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_7xolf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_oaabk")]
 graph_offset = Vector2(0, 29.6855)
 
-[sub_resource type="Animation" id="Animation_dwvuq"]
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["shoot"]
-}
-
 [sub_resource type="Animation" id="Animation_xi7hg"]
 length = 0.5
 tracks/0/type = "value"
@@ -373,6 +345,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["idle"]
+}
+
+[sub_resource type="Animation" id="Animation_dwvuq"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["shoot"]
 }
 
 [sub_resource type="Animation" id="Animation_i1erd"]
@@ -457,8 +457,8 @@ theme_override_font_sizes/font_size = 8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhaxh")
-animation = &"walk"
-frame = 6
+animation = &"idle"
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fkns3")
