@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://de0d38cwcc5ua"]
+[gd_scene load_steps=6 format=3 uid="uid://de0d38cwcc5ua"]
 
 [ext_resource type="Script" uid="uid://gtk72t3o62pk" path="res://scenes/tests/test_attack.gd" id="1_4fgik"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="2_40ing"]
-[ext_resource type="PackedScene" uid="uid://qe5x0axdxxo" path="res://scenes/patricios/moreno.tscn" id="4_7pg8g"]
-[ext_resource type="PackedScene" uid="uid://dlnd2el5bqsln" path="res://scenes/patricios/arribeno.tscn" id="4_jspqt"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="5_cjnvb"]
+[ext_resource type="PackedScene" uid="uid://bht71k7yx1kcv" path="res://scenes/patricios/manuela_pedraza.tscn" id="5_scxle"]
 [ext_resource type="PackedScene" uid="uid://bdhmiefax7gyv" path="res://scenes/common/goal.tscn" id="6_vspmo"]
 
 [node name="test_attack" type="Node2D"]
@@ -14,21 +13,29 @@ script = ExtResource("1_4fgik")
 position = Vector2(129, 127)
 agua_hirviendo_power = 1
 
-[node name="Arribeno" parent="." instance=ExtResource("4_jspqt")]
-position = Vector2(-31, 38)
-faction = "patricios"
-
-[node name="Moreno" parent="." instance=ExtResource("4_7pg8g")]
-
 [node name="UnitSpawner" parent="." instance=ExtResource("5_cjnvb")]
-position = Vector2(522, 312)
+position = Vector2(588, 204)
 zone = "uno"
 probabilitySpawnOnTimer = 100.0
-unitScene = "res://scenes/ingleses/cannon.tscn"
+unitScene = "res://scenes/ingleses/highlander.tscn"
 faction = "ingleses"
-respawn_seconds = 2.0
+respawn_seconds = 1.0
+max_alive = 10
+controlled_max_alive = true
+
+[node name="UnitSpawner2" parent="." instance=ExtResource("5_cjnvb")]
+position = Vector2(503, 57)
+zone = "uno"
+probabilitySpawnOnTimer = 100.0
+unitScene = "res://scenes/ingleses/highlander.tscn"
+faction = "ingleses"
+respawn_seconds = 1.0
+max_alive = 10
 controlled_max_alive = true
 
 [node name="EnemyGoal" parent="." instance=ExtResource("6_vspmo")]
 position = Vector2(248, 355)
 faction = "ingleses"
+
+[node name="ManuelaPedraza" parent="." instance=ExtResource("5_scxle")]
+position = Vector2(310, 264)

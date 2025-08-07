@@ -42,7 +42,7 @@ project/assembly_name="La plaza"
 
 [editor]
 
-movie_writer/movie_file="/home/jeremias/Videos/Godot/laplaza.avi"
+movie_writer/movie_file="C:/Users/LENOVO/Videos/laplaza.avi"
 
 [editor_plugins]
 

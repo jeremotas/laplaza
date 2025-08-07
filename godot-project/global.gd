@@ -173,6 +173,16 @@ var settings = {
 				"max_damage_given": 4
 			},
 		},
+		"manuela_pedraza": {
+			"life": 999999,
+			"max_speed": 120,
+			"death_time": 15.0, 
+			"attack":{
+				"cooldown": 0.15,
+				"min_damage_given": 100,
+				"max_damage_given": 100
+			},
+		},
 		"husares_infernales": {
 			"life": 100,
 			"max_speed": 300,
