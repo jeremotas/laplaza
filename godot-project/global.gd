@@ -221,6 +221,21 @@ var settings = {
 				"max_damage_given": 1
 			}
 		},
+		"royal_marine": {
+			"life": 4,
+			"max_speed": 30,
+			"experience_given": 6,
+			"attack":{
+				"bullet": {
+					"speed": 280,
+					"duration": 1.5,
+				},
+				"cooldown": 1.5,
+				"probability": 80,
+				"min_damage_given": 3,
+				"max_damage_given": 4
+			}
+		},
 		"highlander": {
 			"life": 5,
 			"max_speed": 12,
