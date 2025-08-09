@@ -450,5 +450,4 @@ func calculate_booster():
 		fBoosterCalc = 1.0 + Global.settings.boosters.ingleses
 	elif faction == 'patricios':
 		fBoosterCalc = 1.0 + Global.settings.boosters.patricios
-	print(fBoosterCalc)
 	return fBoosterCalc

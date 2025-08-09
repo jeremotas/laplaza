@@ -106,7 +106,7 @@ func set_move_on_selection(iValue):
 	iMoveOnSelection = iValue
 
 func _on_pressed():
-	print("Mensaje", iPosicionEnMano, sDecisionTimeMessage)
+	#print("Mensaje", iPosicionEnMano, sDecisionTimeMessage)
 	get_parent().decision_elegida(sDecisionTimeMessage, iPosicionEnMano)
 
 
