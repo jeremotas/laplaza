@@ -455,11 +455,14 @@ func init_sudestada():
 	eventTimer.one_shot = true
 	eventTimer.timeout.connect(end_sudestada)
 	eventTimer.start()
+	$SudestadaEffect.start()
 	$SudestadaEffect.show()
+	
 	
 func end_sudestada():
 	affect_all_faction_booster_factor('ingleses', 0.0)
 	$SudestadaEffect.hide()
+	$SudestadaEffect.stop()
 	
 func affect_all_faction_booster_factor(sFaction, fFactor):
 	#var aBodies =get_tree().get_nodes_in_group("todos_" + sFaction)

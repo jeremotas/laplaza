@@ -1,4 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://0m43jl0bno4f"]
+[gd_scene load_steps=14 format=3 uid="uid://0m43jl0bno4f"]
+
+[ext_resource type="Script" uid="uid://cd7d0aubae2sv" path="res://scenes/patricios/sudestada_effect.gd" id="1_t6w5b"]
+[ext_resource type="AudioStream" uid="uid://bquxo7bvc5tt3" path="res://assets/original/sounds/lluvia.mp3" id="2_vijj2"]
+[ext_resource type="AudioStream" uid="uid://wgn3qurqciia" path="res://assets/original/sounds/trueno.mp3" id="3_hgywb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8721g"]
 blend_mode = 1
@@ -51,8 +55,9 @@ color_initial_ramp = SubResource("GradientTexture1D_hgywb")
 alpha_curve = SubResource("CurveTexture_rqanq")
 
 [node name="SudestadaEffect" type="CanvasLayer"]
+script = ExtResource("1_t6w5b")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Oscuridad" type="ColorRect" parent="."]
 offset_right = 800.0
 offset_bottom = 600.0
 color = Color(0.133333, 0.133333, 0.133333, 0.321569)
@@ -65,3 +70,19 @@ preprocess = 0.5
 speed_scale = 0.6
 visibility_rect = Rect2(0, 0, 640, 480)
 process_material = SubResource("ParticleProcessMaterial_8721g")
+
+[node name="Rayo" type="ColorRect" parent="."]
+visible = false
+offset_right = 800.0
+offset_bottom = 600.0
+
+[node name="TimerRayo" type="Timer" parent="."]
+wait_time = 3.2
+
+[node name="SonidoLluvia" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vijj2")
+
+[node name="SonidoTrueno" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hgywb")
+
+[connection signal="timeout" from="TimerRayo" to="." method="_on_timer_rayo_timeout"]
