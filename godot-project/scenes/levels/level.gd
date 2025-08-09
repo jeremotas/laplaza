@@ -54,7 +54,7 @@ func _ready():
 	TheGameStats._ready()
 	$EnemyGoal.set_needed_units(Global.settings.game.enemy_goal)
 	player_max_life = Global.settings.game.player_max_life
-	
+	$General.add_to_group('general_group')
 	enemy_strategy = enemy_strategy_container.new().create_strategy()
 	prepare_initial_conditions()
 	prepare_enemy_spawns()

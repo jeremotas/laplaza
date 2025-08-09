@@ -131,7 +131,7 @@ func get_input():
 
 func TakeDamage(min_damage, max_damage):
 	var damage = rng.randi_range(min_damage, max_damage)
-	if damage > 0:
+	if damage > 0 and not status.hurt:
 		communication("-" + str(damage) + "")
 		life = life - damage 
 		if life < 0: life = 0	

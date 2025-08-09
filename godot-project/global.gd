@@ -244,6 +244,20 @@ var settings = {
 				"max_damage_given": 1
 			}
 		},
+		"english_cavalry": {
+			"life": 5,
+			"max_speed": 80,
+			"experience_given": 8,
+			"attack":{
+				"trample": {
+					"speed": 180,
+					"duration": 3.0,
+				},
+				"cooldown": 5.0,
+				"min_damage_given": 2,
+				"max_damage_given": 2
+			}
+		},
 		"cannon": {
 			"life": 30,
 			"max_speed": 8,
