@@ -28,6 +28,7 @@ func rellenar_mazo_test():
 	crear_cartas("ataque_husares_infernales", 2)
 	crear_cartas("cebador", 2)
 	crear_cartas("manuela_pedraza", 2)
+	crear_cartas("sudestada", 2)
 	
 	#crear_cartas("granadero", 5)
 	#crear_cartas("arribeno", 3)
@@ -60,6 +61,8 @@ func crear_carta(sDecisionMessage):
 		oCard = {"tipo": "evento", "titulo": "Husares infernales", "numero": "2", "decision_time_message": "ataque_husares_infernales", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Estos jinetes desataran un infierno de balas sobre los ingleses. __ (¡Ojo! Pasan una vez y chau pinola)"}
 	elif sDecisionMessage == "manuela_pedraza":
 		oCard = {"tipo": "evento", "titulo": "Manuela", "numero": "3", "decision_time_message": "manuela_pedraza", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "A sablazos moriran los ingleses __ Lo que pueden las mujeres despechadas!"}
+	elif sDecisionMessage == "sudestada":
+		oCard = {"tipo": "evento", "titulo": "Sudestada", "numero": "4", "decision_time_message": "sudestada", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El viento trae una copla __ Lentitos los ingleses..."}
 		
 	return oCard
 

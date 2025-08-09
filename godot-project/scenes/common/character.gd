@@ -55,6 +55,7 @@ var pulseDirectionTimer = null
 
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
+var fBooster = 1.0
 
 var aGunshotsSounds = [
 	preload("res://assets/original/sounds/mosquetes/gunshot01.mp3"),
@@ -268,13 +269,15 @@ func MovementLoop(delta):
 	# Gestionamos velocidad
 	if Engine.time_scale == 0:
 		return 
+		
+	fBooster = calculate_booster()
 	
 	if status.moving == false and not input_accepted:
 		speed = 0
 	else:
 		speed += acceleration * delta
-		if speed > max_speed:
-			speed = max_speed
+		if speed > (max_speed * fBooster):
+			speed = max_speed * fBooster
 	
 
 	if not input_accepted:
@@ -438,4 +441,14 @@ func _ready():
 #	if has_node("AnimationPlayer"):
 #		print($AnimationPlayer.animation_finished)
 #		$AnimationPlayer.animation_finished.connect(animation_ends)
+	add_to_group("todos_" + faction)
 	init()
+
+func calculate_booster():
+	var fBoosterCalc = 1.0
+	if faction == 'ingleses':
+		fBoosterCalc = 1.0 + Global.settings.boosters.ingleses
+	elif faction == 'patricios':
+		fBoosterCalc = 1.0 + Global.settings.boosters.patricios
+	print(fBoosterCalc)
+	return fBoosterCalc

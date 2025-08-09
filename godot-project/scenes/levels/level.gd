@@ -8,6 +8,7 @@ var player_max_life = 20 # Maxima vida del jugador principal
 
 const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
 var enemy_strategy 
+var eventTimer = null
 # Variables de control de UI
 @onready var HUD = $HUD
 @onready var pause_menu = $PauseMenu
@@ -159,7 +160,9 @@ func _process(delta):
 	elif command == "carp":
 		carpinchos_run_call()
 		command = ""
-	
+	elif command == "elviento":
+		init_sudestada()
+		command = ""
 
 func control_malon():
 	var faction = "patricios"
@@ -257,6 +260,7 @@ func decision_time_end(decision):
 	elif decision == "ataque_husares_infernales": ataque_husares_infernales()
 	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)
+	elif decision == "sudestada": init_sudestada()
 	elif decision == "ollas_del_pueblo": $General.activate_agua_hirviendo_level_up()
 	elif decision == "manuela_pedraza": $General.call_manuela_pedraza()
 		
@@ -441,5 +445,28 @@ func save_lagrimas(lagrimas):
 	Global.save_data.lagrimas_ultima_run = lagrimas
 	Global.save_data.lagrimas_acumuladas += lagrimas
 	Global.save_data.save()
-	pass
 	
+func init_sudestada():
+	affect_all_faction_booster_factor('ingleses', Global.settings.patricios.sudestada.speed_booster)
+	eventTimer = Timer.new()
+	add_child(eventTimer)
+	eventTimer.autostart = true
+	eventTimer.wait_time = Global.settings.patricios.sudestada.duration
+	eventTimer.one_shot = true
+	eventTimer.timeout.connect(end_sudestada)
+	eventTimer.start()
+	$SudestadaEffect.show()
+	
+func end_sudestada():
+	affect_all_faction_booster_factor('ingleses', 0.0)
+	$SudestadaEffect.hide()
+	
+func affect_all_faction_booster_factor(sFaction, fFactor):
+	#var aBodies =get_tree().get_nodes_in_group("todos_" + sFaction)
+	#for unit in aBodies:
+	#	unit.apply_booster(fFactor)
+	
+	if sFaction == 'ingleses':
+		Global.settings.boosters.ingleses = fFactor
+	elif sFaction == 'patricios':
+		Global.settings.boosters.patricios = fFactor

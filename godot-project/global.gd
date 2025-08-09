@@ -55,6 +55,10 @@ var settings = {
 			}
 		}
 	},
+	"boosters": {
+		"ingleses": 0.0,
+		"patricios": 0.0	
+	},
 	"patricios": {
 		"general": {
 			"life": 20,
@@ -195,6 +199,10 @@ var settings = {
 				"min_damage_given": 50,
 				"max_damage_given": 50
 			}
+		},
+		"sudestada": {
+			"duration": 15.0,
+			"speed_booster": -0.7
 		}
 	},
 	"ingleses": {
