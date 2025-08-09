@@ -8,5 +8,5 @@ func _ready():
 	pass
 
 func _process(delta):
-	print($General.life)
+	#print($General.life)
 	pass

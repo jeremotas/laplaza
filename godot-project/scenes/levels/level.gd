@@ -118,7 +118,6 @@ func consume_enemy_strategies():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	calculate_stats() # Calculamos resultados
 	HUD.change(TheGameStats) # Envio estadisticas a la interfaz
 	if not (TheGameStats.game_over or TheGameStats.game_win):
@@ -127,6 +126,7 @@ func _process(delta):
 		process_pause() # Revisamos si hubo pausa
 	else:
 		zoom_general(delta)
+	#print(command)
 	if command == "d10s":
 		barrilete_cosmico()
 		command = ""
