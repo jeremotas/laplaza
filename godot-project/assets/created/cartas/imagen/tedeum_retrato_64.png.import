@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c38oecf0w74gm"
-path="res://.godot/imported/sudestada_retrato_32.png-33198df6b73c0c86d075684fe21b68fa.ctex"
+uid="uid://oivsooawhaf6"
+path="res://.godot/imported/tedeum_retrato_64.png-7867339e288581e356b60d52aa522948.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/created/cartas/imagen/sudestada_retrato_32.png"
-dest_files=["res://.godot/imported/sudestada_retrato_32.png-33198df6b73c0c86d075684fe21b68fa.ctex"]
+source_file="res://assets/created/cartas/imagen/tedeum_retrato_64.png"
+dest_files=["res://.godot/imported/tedeum_retrato_64.png-7867339e288581e356b60d52aa522948.ctex"]
 
 [params]
 

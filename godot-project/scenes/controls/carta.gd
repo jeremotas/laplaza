@@ -41,7 +41,9 @@ const aImagenes = {
 	"ollas_del_pueblo": preload("res://assets/created/cartas/imagen/olla_retrato_32.png"),
 	"cebador": preload("res://assets/created/cartas/imagen/cebador_retrato_32.png"),
 	"manuela_pedraza": preload("res://assets/created/cartas/imagen/manuela_pedraza_retrato_32.png"),
-	"sudestada": preload("res://assets/created/cartas/imagen/sudestada_retrato_32.png"),
+	"sudestada": preload("res://assets/created/cartas/imagen/sudestada_retrato_64.png"),
+	"tedeum": preload("res://assets/created/cartas/imagen/tedeum_retrato_64.png"),
+	"defensa_de_obligado": preload("res://assets/created/cartas/imagen/defensa_de_obligado_retrato_64.png"),
 }
 
 var tween: Tween

@@ -56,6 +56,7 @@ func _ready():
 	$EnemyGoal.set_needed_units(Global.settings.game.enemy_goal)
 	player_max_life = Global.settings.game.player_max_life
 	$General.add_to_group('general_group')
+	$General.add_to_group('todos_patricios')
 	enemy_strategy = enemy_strategy_container.new().create_strategy()
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
@@ -162,6 +163,9 @@ func _process(delta):
 		command = ""
 	elif command == "elviento":
 		init_sudestada()
+		command = ""
+	elif command == "homenum":
+		init_tedeum()
 		command = ""
 
 func control_malon():
@@ -446,6 +450,29 @@ func save_lagrimas(lagrimas):
 	Global.save_data.lagrimas_acumuladas += lagrimas
 	Global.save_data.save()
 	
+func init_tedeum():
+	print("inicia tedeum")
+	var aPatricios = get_tree().get_nodes_in_group('todos_patricios')
+	for oPatricio in aPatricios:
+		oPatricio.invincible = true
+	eventTimer = Timer.new()
+	add_child(eventTimer)
+	eventTimer.autostart = true
+	eventTimer.wait_time = Global.settings.patricios.tedeum.duration
+	eventTimer.one_shot = true
+	eventTimer.timeout.connect(end_tedeum)
+	eventTimer.start()
+	$TedeumEffect.start()
+	$TedeumEffect.show()
+	
+func end_tedeum():
+	print("fin tedeum")
+	var aPatricios = get_tree().get_nodes_in_group('todos_patricios')
+	for oPatricio in aPatricios:
+		oPatricio.invincible = false
+	$TedeumEffect.hide()
+	$TedeumEffect.stop()
+	
 func init_sudestada():
 	affect_all_faction_booster_factor('ingleses', Global.settings.patricios.sudestada.speed_booster)
 	eventTimer = Timer.new()
@@ -464,11 +491,7 @@ func end_sudestada():
 	$SudestadaEffect.hide()
 	$SudestadaEffect.stop()
 	
-func affect_all_faction_booster_factor(sFaction, fFactor):
-	#var aBodies =get_tree().get_nodes_in_group("todos_" + sFaction)
-	#for unit in aBodies:
-	#	unit.apply_booster(fFactor)
-	
+func affect_all_faction_booster_factor(sFaction, fFactor):	
 	if sFaction == 'ingleses':
 		Global.settings.boosters.ingleses = fFactor
 	elif sFaction == 'patricios':

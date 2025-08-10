@@ -203,6 +203,9 @@ var settings = {
 		"sudestada": {
 			"duration": 15.0,
 			"speed_booster": -0.7
+		},
+		"tedeum": {
+			"duration": 22.0
 		}
 	},
 	"ingleses": {

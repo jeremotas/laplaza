@@ -106,6 +106,7 @@ autoplay = true
 bus = &"Musica"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+transparent_bg = true
 title = "Destruir carta"
 initial_position = 1
 size = Vector2i(360, 100)
@@ -120,6 +121,7 @@ dialog_text = "¿Seguro querés destruir la carta?"
 cancel_button_text = "Cancelar"
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
+transparent_bg = true
 title = "Pocas cartas"
 initial_position = 1
 size = Vector2i(309, 120)

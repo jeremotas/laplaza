@@ -371,7 +371,7 @@ func _physics_process(delta):
 	
 func _process(delta):
 	comLabelString = ""
-	
+	invincible_effect()
 	StatusCalculation(delta)
 	if life > 0:
 		#if faction != "ingleses": 
@@ -451,3 +451,7 @@ func calculate_booster():
 	elif faction == 'patricios':
 		fBoosterCalc = 1.0 + Global.settings.boosters.patricios
 	return fBoosterCalc
+
+func invincible_effect():
+	if has_node('InvincibleEffect'):
+		$InvincibleEffect.visible = invincible

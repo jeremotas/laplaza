@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bht71k7yx1kcv"]
+[gd_scene load_steps=57 format=3 uid="uid://bht71k7yx1kcv"]
 
 [ext_resource type="Script" uid="uid://clrjp7greklas" path="res://scenes/patricios/manuela_pedraza.gd" id="1_4iijq"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_nssfo"]
@@ -424,6 +424,15 @@ bg_color = Color(0, 0.917647, 0.27451, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nssfo"]
 radius = 366.001
 
+[sub_resource type="Gradient" id="Gradient_nssfo"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4iijq"]
+gradient = SubResource("Gradient_nssfo")
+fill = 1
+fill_from = Vector2(0.444444, 0.492063)
+fill_to = Vector2(0.765873, 0.25)
+
 [node name="ManuelaPedraza" type="CharacterBody2D"]
 z_index = 2
 collision_mask = 0
@@ -509,6 +518,12 @@ collision_mask = 2
 [node name="ObjetivosCollisionShape" type="CollisionShape2D" parent="ObjetivosAtacablesArea"]
 shape = SubResource("CircleShape2D_nssfo")
 debug_color = Color(0.977088, 0.0962243, 0.298863, 0.42)
+
+[node name="InvincibleEffect" type="PointLight2D" parent="."]
+position = Vector2(4.44444, -12.2222)
+color = Color(1, 1, 0, 1)
+energy = 0.67
+texture = SubResource("GradientTexture2D_4iijq")
 
 [connection signal="body_entered" from="CombatArea" to="." method="_on_combat_area_body_entered"]
 [connection signal="body_exited" from="CombatArea" to="." method="_on_combat_area_body_exited"]

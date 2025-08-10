@@ -22,13 +22,15 @@ func rellenar_mazo_test():
 	crear_cartas("correntino", 1)
 	crear_cartas("arribeno", 3)
 	crear_cartas("moreno", 1)
+	crear_cartas("cebador", 2)
 	crear_cartas("upgrade_life", 10)
 	crear_cartas("ollas_del_pueblo", 4)
 	crear_cartas("barrilete_cosmico", 1)
 	crear_cartas("ataque_husares_infernales", 2)
-	crear_cartas("cebador", 2)
 	crear_cartas("manuela_pedraza", 2)
 	crear_cartas("sudestada", 2)
+	crear_cartas("tedeum", 2)
+	crear_cartas("defensa_de_obligado", 2)
 	
 	#crear_cartas("granadero", 5)
 	#crear_cartas("arribeno", 3)
@@ -62,8 +64,11 @@ func crear_carta(sDecisionMessage):
 	elif sDecisionMessage == "manuela_pedraza":
 		oCard = {"tipo": "evento", "titulo": "Manuela", "numero": "3", "decision_time_message": "manuela_pedraza", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "A sablazos moriran los ingleses __ Lo que pueden las mujeres despechadas!"}
 	elif sDecisionMessage == "sudestada":
-		oCard = {"tipo": "evento", "titulo": "Sudestada", "numero": "4", "decision_time_message": "sudestada", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El viento trae una copla __ Lentitos los ingleses..."}
-		
+		oCard = {"tipo": "evento", "titulo": "Sudestada", "numero": "4", "decision_time_message": "sudestada", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El viento trae una copla __ Lentitos los ingleses en el barro..."}
+	elif sDecisionMessage == "tedeum":
+		oCard = {"tipo": "evento", "titulo": "Tedeum catedral", "numero": "5", "decision_time_message": "tedeum", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Vamos a decir que la iglesia nos dio una mano... __ Ah no! Eso era pelusa."}
+	elif sDecisionMessage == "defensa_de_obligado":
+		oCard = {"tipo": "evento", "titulo": "Defensa de obligado", "numero": "6", "decision_time_message": "defensa_de_obligado", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Sin cadenas sobre los pies... __ Pero si protegiendo la plaza!"}
 	return oCard
 
 func size():

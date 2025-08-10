@@ -32,7 +32,6 @@ func ready():
 func _process(delta):
 	last_direction_message()
 	attack()
-	invincible_effect()
 	life_status()
 	super(delta)
 
@@ -59,9 +58,6 @@ func life_status():
 	$LifeProgress.step = 1
 	$LifeProgress.value = life
 	
-
-func invincible_effect():
-	$InvincibleEffect.visible = invincible
 	
 func activate_agua_hirviendo_level_up():
 	agua_hirviendo_power += 1
