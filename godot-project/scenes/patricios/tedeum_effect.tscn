@@ -27,24 +27,24 @@ region = Rect2(896, 0, 224, 224)
 [sub_resource type="SpriteFrames" id="SpriteFrames_yhs3q"]
 animations = [{
 "frames": [{
-"duration": 0.25,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_lrnbe")
 }, {
-"duration": 0.25,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_m7syn")
 }, {
-"duration": 0.25,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0a0lj")
 }, {
-"duration": 0.25,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_aeyby")
 }, {
-"duration": 0.25,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_btr3l")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 25.0
 }]
 
 [node name="TedeumEffect" type="CanvasLayer"]
@@ -57,6 +57,6 @@ volume_db = -2.745
 [node name="Tedeum" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_yhs3q")
-frame_progress = 0.223184
+frame_progress = 0.559831
 centered = false
 offset = Vector2(320, 60)
