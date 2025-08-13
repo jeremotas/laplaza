@@ -206,6 +206,9 @@ var settings = {
 		},
 		"tedeum": {
 			"duration": 22.0
+		},
+		"defensa_de_obligado": {
+			"life": 30
 		}
 	},
 	"ingleses": {

@@ -167,6 +167,9 @@ func _process(delta):
 	elif command == "homenum":
 		init_tedeum()
 		command = ""
+	elif command == "sobrelospies":
+		init_defensa_de_obligado()
+		command = ""
 
 func control_malon():
 	var faction = "patricios"
@@ -267,6 +270,7 @@ func decision_time_end(decision):
 	elif decision == "sudestada": init_sudestada()
 	elif decision == "ollas_del_pueblo": $General.activate_agua_hirviendo_level_up()
 	elif decision == "manuela_pedraza": $General.call_manuela_pedraza()
+	elif decision == "defensa_de_obligado": init_defensa_de_obligado()
 		
 	# Devolver al juego
 	$decision_time.hide()
@@ -496,3 +500,6 @@ func affect_all_faction_booster_factor(sFaction, fFactor):
 		Global.settings.boosters.ingleses = fFactor
 	elif sFaction == 'patricios':
 		Global.settings.boosters.patricios = fFactor
+
+func init_defensa_de_obligado():
+	$EnemyGoal.defensa_de_obligado()

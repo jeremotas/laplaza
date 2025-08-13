@@ -5,6 +5,9 @@ var ActualTimeScale = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$General.add_to_group('general_group')
+	$EnemyGoal.faction = 'ingleses'
+	await get_tree().create_timer(2.0).timeout
+	$EnemyGoal.defensa_de_obligado()
 
 func mini_shake():
 	pass
