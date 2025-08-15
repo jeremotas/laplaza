@@ -467,7 +467,7 @@ theme_override_font_sizes/font_size = 8
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 4
+frame = 3
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fkns3")
@@ -520,7 +520,7 @@ shape = SubResource("CircleShape2D_nssfo")
 debug_color = Color(0.977088, 0.0962243, 0.298863, 0.42)
 
 [node name="InvincibleEffect" type="PointLight2D" parent="."]
-position = Vector2(4.44444, -12.2222)
+position = Vector2(2, 1)
 color = Color(1, 1, 0, 1)
 energy = 0.67
 texture = SubResource("GradientTexture2D_4iijq")

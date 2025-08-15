@@ -504,7 +504,7 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_afxcp")
 animation = &"idle"
-frame = 3
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -545,7 +545,7 @@ stream = ExtResource("5_q4ipq")
 bus = &"Efectos"
 
 [node name="InvincibleEffect" type="PointLight2D" parent="."]
-position = Vector2(4.44444, -12.2222)
+position = Vector2(3, 0)
 color = Color(1, 1, 0, 1)
 energy = 0.67
 texture = SubResource("GradientTexture2D_t7hdi")
