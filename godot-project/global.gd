@@ -21,6 +21,7 @@ var settings = {
 				"husares_infernales": 0,
 				"arribeno": 0,
 				"cebador": 0,
+				"mignon": 0,
 			},
 			"level": 0,
 			"time": 0,
@@ -199,6 +200,19 @@ var settings = {
 				"min_damage_given": 50,
 				"max_damage_given": 50
 			}
+		},
+		"mignon": {
+			"life": 3,
+			"max_speed": 100,
+			"attack":{
+				"bullet": {
+					"speed": 150,
+					"duration": 2.0,
+				},
+				"cooldown": 3.0,
+				"min_damage_given": 1,
+				"max_damage_given": 1
+			},
 		},
 		"sudestada": {
 			"duration": 15.0,
