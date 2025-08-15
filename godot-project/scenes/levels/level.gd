@@ -42,7 +42,8 @@ var malon = [
 	{"unit_type": "arribeno", "quantity": 0}, 
 	{"unit_type": "husares_infernales", "quantity": 0},
 	{"unit_type": "cebador", "quantity": 0},
-	{"unit_type": "mignon", "quantity": 0}
+	{"unit_type": "mignon", "quantity": 0},
+	{"unit_type": "pardo", "quantity": 0}
 ]
 var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husares_infernales.tscn")
 var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.tscn")
@@ -265,9 +266,8 @@ func decision_time_end(decision):
 	elif decision == "moreno": add_unit_to_malon("moreno")
 	elif decision == "arribeno": add_unit_to_malon("arribeno")
 	elif decision == "cebador": add_unit_to_malon("cebador")
-	elif decision == "mignon": 
-		add_unit_to_malon("mignon")
-		add_unit_to_malon("mignon")
+	elif decision == "pardo": add_unit_to_malon("pardo")
+	elif decision == "mignon": add_unit_to_malon("mignon", 2)
 	elif decision == "ataque_husares_infernales": ataque_husares_infernales()
 	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)
@@ -319,10 +319,10 @@ func ataque_husares_infernales():
 func mini_shake():
 	$General/Camera2D.apply_shake_seconds(0.2, 1.0)
 	
-func add_unit_to_malon(unit_type):
+func add_unit_to_malon(unit_type, quantity = 1):
 	for i in range(malon.size()):
 		if malon[i].unit_type == unit_type:
-			malon[i].quantity += 1
+			malon[i].quantity += quantity
 
 func process_pause():
 	# Controla si se ejecuto la pausa desde el input

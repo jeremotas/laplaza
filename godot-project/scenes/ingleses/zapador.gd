@@ -66,7 +66,7 @@ func prepare_explotion():
 	$ExplodeTimer.start()
 
 func _on_enemy_detection_body_entered(body: Node2D) -> void:
-	if body.life > 0:
+	if "life" in body and body.life > 0:
 		prepare_explotion()
 
 

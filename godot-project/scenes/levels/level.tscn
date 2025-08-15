@@ -89,7 +89,7 @@ probabilitySpawnOnTimer = 0.0
 spawnOnReady = false
 unitScene = "res://scenes/patricios/correntino.tscn"
 faction = "patricios"
-respawn_seconds = 1.0
+respawn_seconds = 0.5
 controlled_max_alive = true
 
 [node name="EnemySpawnerL1" parent="." instance=ExtResource("3_dnsku")]

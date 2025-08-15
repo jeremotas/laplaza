@@ -22,6 +22,7 @@ var settings = {
 				"arribeno": 0,
 				"cebador": 0,
 				"mignon": 0,
+				"pardo": 1,
 			},
 			"level": 0,
 			"time": 0,
@@ -58,7 +59,8 @@ var settings = {
 	},
 	"boosters": {
 		"ingleses": 0.0,
-		"patricios": 0.0	
+		"patricios": 0.0	,
+		"tamboreo": 0.0
 	},
 	"patricios": {
 		"general": {
@@ -146,6 +148,11 @@ var settings = {
 				"min_damage_given": 0,
 				"max_damage_given": 0
 			},
+		},
+		"pardo": {
+			"life": 2,
+			"max_speed": 150,
+			"speed_increase": 40,
 		},
 		"arribeno": {
 			"life": 14,
@@ -333,7 +340,7 @@ var settings = {
 					"explotion": {
 						"duration": 1.0,
 						"scale": 30,
-						"particle": "explosion"
+						"particle": "explosion_big"
 					}
 				},
 				"min_damage_given": 10,

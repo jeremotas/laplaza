@@ -56,6 +56,7 @@ var pulseDirectionTimer = null
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
 var fBooster = 1.0
+var fAddedBooster = 0.0
 
 var aGunshotsSounds = [
 	preload("res://assets/original/sounds/mosquetes/gunshot01.mp3"),
@@ -271,13 +272,14 @@ func MovementLoop(delta):
 		return 
 		
 	fBooster = calculate_booster()
+	fAddedBooster = calculate_added_booster()
 	
 	if status.moving == false and not input_accepted:
 		speed = 0
 	else:
 		speed += acceleration * delta
-		if speed > (max_speed * fBooster):
-			speed = max_speed * fBooster
+		if speed > (max_speed * fBooster + fAddedBooster):
+			speed = max_speed * fBooster + fAddedBooster
 	
 
 	if not input_accepted:
@@ -436,6 +438,7 @@ func malon_sticked():
 			go_to(oGoalAssigned.global_position, true)
 	#else:
 		#input_accepted = true
+	return bSticked
 	
 func _ready():
 #	if has_node("AnimationPlayer"):
@@ -450,6 +453,12 @@ func calculate_booster():
 		fBoosterCalc = 1.0 + Global.settings.boosters.ingleses
 	elif faction == 'patricios':
 		fBoosterCalc = 1.0 + Global.settings.boosters.patricios
+	return fBoosterCalc
+	
+func calculate_added_booster():
+	var fBoosterCalc = 0.0
+	if faction == 'patricios':
+		fBoosterCalc = Global.settings.boosters.tamboreo
 	return fBoosterCalc
 
 func invincible_effect():
