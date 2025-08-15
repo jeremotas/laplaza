@@ -321,7 +321,25 @@ var settings = {
 				"min_damage_given": 20,
 				"max_damage_given": 20
 			}
-		}
+		},
+		"zapador": {
+			"life": 3,
+			"max_speed": 35,
+			"experience_given": 4,
+			"attack":{
+				"bullet": {
+					"speed": 10,
+					"duration": 0.5,
+					"explotion": {
+						"duration": 1.0,
+						"scale": 30,
+						"particle": "explosion"
+					}
+				},
+				"min_damage_given": 10,
+				"max_damage_given": 10
+			}
+		},
 	},
 	"sobres": {
 		"azul": [
