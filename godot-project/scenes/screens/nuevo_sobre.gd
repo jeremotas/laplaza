@@ -84,7 +84,7 @@ func cards_roulette(sSobreType):
 			tween.parallel().tween_property(oCard, "modulate", Color("ffffff", 0.0), 0.5)
 		else:
 			var fScale = 2
-			tween.parallel().tween_property(oCard, "global_position", Vector2(640 / 2 - 100 / 2, 480 / 2 - 136 / 2 - 60), 0.5)
+			tween.parallel().tween_property(oCard, "global_position", Vector2(850 / 2 - 100 / 2, 480 / 2 - 136 / 2 - 60), 0.5)
 			tween.parallel().tween_property(oCard, "scale", Vector2(fScale, fScale), 0.5)
 	await tween.finished
 	

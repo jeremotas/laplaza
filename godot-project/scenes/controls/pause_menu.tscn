@@ -18,8 +18,8 @@ script = ExtResource("1_wwgda")
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_dtvlx")
-offset_right = 647.0
-offset_bottom = 488.0
+offset_right = 850.0
+offset_bottom = 480.0
 
 [node name="Dark" type="ColorRect" parent="."]
 modulate = Color(0, 0, 0, 0.498039)

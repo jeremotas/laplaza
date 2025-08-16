@@ -121,12 +121,11 @@ script = ExtResource("1_nwj23")
 visible = false
 sprite_frames = SubResource("SpriteFrames_pgyrx")
 animation = &"attack"
-frame_progress = 0.190073
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Surubi")
 libraries = {
-"": SubResource("AnimationLibrary_73bcv")
+&"": SubResource("AnimationLibrary_73bcv")
 }
 
 [node name="Mensaje" type="Label" parent="."]

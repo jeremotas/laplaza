@@ -330,14 +330,14 @@ texture = ExtResource("17_j1rm0")
 [node name="ContenedorSobre" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 640.0
-offset_right = 882.0
+offset_left = 850.0
+offset_right = 1092.0
 offset_bottom = 79.0
 
 [node name="Fondo" type="TextureRect" parent="ContenedorSobre"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 60.0
 texture = ExtResource("19_7ohv1")
 
 [node name="Sobre" parent="ContenedorSobre" instance=ExtResource("20_4ntel")]
