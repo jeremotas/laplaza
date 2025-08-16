@@ -24,7 +24,7 @@ var settings = {
 				"arribeno": 0,
 				"cebador": 0,
 				"mignon": 0,
-				"pardo": 1,
+				"pardo": 0,
 			},
 			"level": 0,
 			"time": 0,
@@ -78,13 +78,13 @@ var settings = {
 				"max_damage_given": 1
 			},
 			"agua_hirviendo": {
-				"min_damage_given": 2,
-				"max_damage_given": 2,
+				"min_damage_given": 8,
+				"max_damage_given": 8,
 				"cooldown": 10,
 				"time_reduce_step": 2,
 				"bullet": {
-					"speed":200,
-					"duration": 2,
+					"speed":400,
+					"duration": 0.75,
 					"explotion": {
 						"duration": 0.65,
 						"scale": 30,

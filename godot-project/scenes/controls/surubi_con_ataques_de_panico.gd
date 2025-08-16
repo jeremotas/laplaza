@@ -30,7 +30,7 @@ func message_show(sMessage):
 	var bPanic = false 
 	sMessage = sMessage.strip_edges()
 	if sMessage.contains("PANIC"):
-		sMessage.replace("PANIC","")
+		sMessage = sMessage.replace("PANIC","")
 		bPanic = true
 	
 	$Mensaje.text = sMessage

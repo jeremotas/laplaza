@@ -6,7 +6,7 @@ var bullet = preload("res://scenes/common/bullet.tscn")
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
-	unit_type = "granadero"
+	unit_type = "mignon"
 	min_damage_given = Global.settings.patricios.mignon.attack.min_damage_given
 	max_damage_given = Global.settings.patricios.mignon.attack.max_damage_given
 	max_speed = Global.settings.patricios.mignon.max_speed

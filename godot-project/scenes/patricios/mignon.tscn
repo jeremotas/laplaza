@@ -502,7 +502,7 @@ theme_override_font_sizes/font_size = 8
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 3
+frame = 1
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fkns3")

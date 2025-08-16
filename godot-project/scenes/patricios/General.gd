@@ -190,9 +190,9 @@ func _on_agua_hirviendo_timer_timeout():
 		if yRandom == 0: yRandom = -1
 		if xRandom == 0: xRandom = -1
 		b.global_position.y = b.global_position.y + 240 * yRandom
-		b.global_position.x = b.global_position.x + 300 * xRandom
+		b.global_position.x = b.global_position.x + 370 * xRandom
 		
-		b.direction = b.global_position.direction_to($WeaponPoint.global_position + last_input * 150)
+		b.direction = b.global_position.direction_to($WeaponPoint.global_position + Vector2(last_input.x * 150, last_input.y * 150))
 		b.objective_faction = 'ingleses'
 		b.min_damage = Global.settings.patricios.general.agua_hirviendo.min_damage_given
 		b.max_damage = Global.settings.patricios.general.agua_hirviendo.max_damage_given
