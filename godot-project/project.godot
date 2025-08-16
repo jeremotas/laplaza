@@ -32,6 +32,7 @@ window/size/viewport_width=850
 window/size/viewport_height=480
 window/size/always_on_top=true
 window/stretch/mode="viewport"
+window/stretch/scale=0.5
 window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=2
 
