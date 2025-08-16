@@ -6,6 +6,7 @@ func start():
 	change_rayo_timer()
 	$TimerRayo.start()
 	$SonidoLluvia.play()
+	Global.emit_signal("surubi_message", "sudestada")
 	
 func stop():
 	$TimerRayo.stop()

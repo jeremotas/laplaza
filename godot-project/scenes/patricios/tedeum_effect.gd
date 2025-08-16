@@ -5,9 +5,8 @@ var rng = RandomNumberGenerator.new()
 func start():
 	$SonidoTedeum.play()
 	$Tedeum.play()
-	pass
+	Global.emit_signal("surubi_message", "tedeum")
 	
 func stop():
 	$SonidoTedeum.stop()
 	$Tedeum.stop()
-	pass

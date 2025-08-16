@@ -90,16 +90,14 @@ func change(TheGameStats):
 	change_life_indicator(TheGameStats.life, TheGameStats.max_life, TheGameStats.invincible)
 	change_plaza_indicator(TheGameStats.plaza, TheGameStats.max_plaza)
 	
-func surubi_message(sMessage, bPanic):
-	$Control/SurubiConAtaquesDePanico.message(sMessage, bPanic)
+func surubi_message_call(sMessageType):
+	$Control/SurubiConAtaquesDePanico.message(sMessageType)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#await get_tree().create_timer(1.0).timeout
-	#surubi_message("HOLA!", false)
-	#await get_tree().create_timer(2.0).timeout
-	#surubi_message("AHI VIENEN!!!", true)
-	pass # Replace with function body.
+	Global.surubi_message.connect(surubi_message_call)
+	pass
+	
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

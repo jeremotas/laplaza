@@ -74,6 +74,7 @@ func first_move_general():
 	$General.go_to(go_position, true)
 	await get_tree().create_timer(2.5).timeout
 	zooming = "up"
+	Global.emit_signal("surubi_message", "mensaje_inicial")
 	await get_tree().create_timer(1).timeout
 	$General.input_accepted = true
 	

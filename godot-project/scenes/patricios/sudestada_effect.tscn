@@ -44,9 +44,9 @@ curve_z = SubResource("Curve_brqpn")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8721g"]
 particle_flag_disable_z = true
-emission_shape_offset = Vector3(400, -200, 0)
+emission_shape_offset = Vector3(440, -200, 0)
 emission_shape = 3
-emission_box_extents = Vector3(400, 1, 1)
+emission_box_extents = Vector3(440, 1, 1)
 gravity = Vector3(0, 3000, 0)
 scale_min = 0.1
 scale_max = 0.3
@@ -56,9 +56,10 @@ alpha_curve = SubResource("CurveTexture_rqanq")
 
 [node name="SudestadaEffect" type="CanvasLayer"]
 script = ExtResource("1_t6w5b")
+metadata/_edit_vertical_guides_ = [-718.0]
 
 [node name="Oscuridad" type="ColorRect" parent="."]
-offset_right = 800.0
+offset_right = 1000.0
 offset_bottom = 600.0
 color = Color(0.101961, 0.117647, 0.435294, 0.321569)
 
@@ -68,13 +69,14 @@ amount = 2000
 lifetime = 0.68
 preprocess = 1.85
 speed_scale = 0.6
-visibility_rect = Rect2(0, 0, 640, 480)
+visibility_rect = Rect2(0, 0, 850, 480)
 process_material = SubResource("ParticleProcessMaterial_8721g")
 
 [node name="Rayo" type="ColorRect" parent="."]
 visible = false
-offset_right = 800.0
+offset_right = 1000.0
 offset_bottom = 600.0
+scale = Vector2(0.996812, 1.00432)
 
 [node name="TimerRayo" type="Timer" parent="."]
 wait_time = 3.2

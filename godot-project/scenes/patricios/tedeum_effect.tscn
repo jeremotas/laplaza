@@ -59,4 +59,4 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_yhs3q")
 frame_progress = 0.559831
 centered = false
-offset = Vector2(320, 60)
+offset = Vector2(425, 60)

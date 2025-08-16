@@ -1,5 +1,7 @@
 extends Node
 
+signal surubi_message(label)
+
 var save_data:SaveData
 var mazo:Mazo
 
@@ -381,6 +383,24 @@ var settings = {
 			{"name": "manuela_pedraza", "quantity": 20}
 		]
 	}
+}
+
+var aSurubiTalks = {
+	"mensaje_inicial": [
+		"Ahi vienen!! __ Corran por sus vidas!!! PANIC",
+		"Estos vienen por el te? __ TE voy a dar!!!",
+		"Invasion? __ Inversion? __ FMI... todo lo mismo __ Seguimos resistiendo."
+	],
+	"tedeum": [
+		"Ya lo dijo Francis... __ HAGAN LIO! PANIC",
+		"Ay diosito santo... __ bajamela del cielo.",
+		"Arranca el genio... __ Ah no... ese era otro. __ Ehm... Si, DIOS AYUDAAAA!"
+	],
+	"sudestada": [
+		"Miau miau miau... __ Miau miaaaaaauuu __ Llueve sobre mojado! PANIC",
+		"MABEEEEELLL PANIC __ Hay que entrar la ropa!!",
+		"Que llueva... Que llueva... __ La vieja esta en la cueva..."
+	]
 }
 
 func _ready():
