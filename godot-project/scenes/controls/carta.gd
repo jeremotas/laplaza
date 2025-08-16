@@ -56,7 +56,7 @@ func init():
 	pass
 
 func _ready():
-	global_position.x = 640 - 84
+	global_position.x = 850 - 84
 	global_position.y = 480
 	$Titulo.text = sTitulo
 	$Letra.text = sLetra

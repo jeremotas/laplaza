@@ -34,7 +34,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 4.0
 offset_top = 51.0
-offset_right = 636.0
+offset_right = 854.0
 offset_bottom = 82.0
 theme = ExtResource("2_joe4m")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -48,7 +48,7 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 1.0
 offset_top = 75.0
-offset_right = 638.0
+offset_right = 851.0
 offset_bottom = 152.0
 theme = ExtResource("2_joe4m")
 theme_override_colors/font_color = Color(1, 0.878431, 0.0941176, 1)
@@ -63,17 +63,17 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 6.0
 offset_top = 360.0
-offset_right = 638.0
+offset_right = 856.0
 offset_bottom = 459.0
 theme = ExtResource("2_joe4m")
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 
 [node name="PosicionMazo" type="Marker2D" parent="Control"]
-position = Vector2(597, 529)
+position = Vector2(800, 529)
 
 [node name="PosicionMano" type="Marker2D" parent="Control"]
-position = Vector2(320, 185)
+position = Vector2(425, 185)
 
 [node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, -8)

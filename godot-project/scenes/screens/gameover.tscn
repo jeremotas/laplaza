@@ -264,8 +264,8 @@ texture = ExtResource("14_im5ep")
 [node name="ContenedorSobre" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 640.0
-offset_right = 882.0
+offset_left = 850.0
+offset_right = 1092.0
 offset_bottom = 79.0
 
 [node name="Fondo" type="TextureRect" parent="ContenedorSobre"]

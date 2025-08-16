@@ -60,8 +60,8 @@ layout_mode = 2
 theme = ExtResource("2_jmcpf")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.266667)
-theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
@@ -70,5 +70,5 @@ fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_6yfht")
+&"": SubResource("AnimationLibrary_6yfht")
 }
