@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://yucrlea7h6xt"]
+[gd_scene load_steps=8 format=3 uid="uid://yucrlea7h6xt"]
 
 [ext_resource type="Script" uid="uid://bnvy2ahh3hykl" path="res://scenes/common/bullet.gd" id="1_7a2v0"]
 [ext_resource type="Texture2D" uid="uid://ck8w0t3sk64g0" path="res://assets/created/bullet.png" id="1_tx47s"]
 [ext_resource type="PackedScene" uid="uid://23j52gwexeqt" path="res://scenes/common/explosion.tscn" id="3_7gdep"]
 [ext_resource type="PackedScene" uid="uid://d4enxlrlu02te" path="res://scenes/common/escopetazo.tscn" id="4_cthx8"]
+[ext_resource type="PackedScene" uid="uid://d05vvqnsiag8g" path="res://scenes/common/explosion_big.tscn" id="4_n2oft"]
 [ext_resource type="PackedScene" uid="uid://jllq05xmctpn" path="res://scenes/common/explosion_agua.tscn" id="6_per7n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sk705"]
-radius = 2.0
+radius = 1.0
 
 [node name="bullet" type="Sprite2D"]
 scale = Vector2(2, 2)
@@ -26,7 +27,7 @@ offset_left = -1.0
 offset_top = -1.0
 offset_right = 1.0
 offset_bottom = 1.0
-color = Color(0.796078, 0.305882, 0, 1)
+color = Color(0.81082, 0.39768, 7.70092e-07, 0.760784)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_sk705")
@@ -46,10 +47,8 @@ scale = Vector2(0.1, 0.1)
 visible = false
 amount = 60
 
-[node name="explosion_big" parent="." instance=ExtResource("3_7gdep")]
+[node name="explosion_big" parent="." instance=ExtResource("4_n2oft")]
 visible = false
-scale = Vector2(2, 2)
-amount = 200
 
 [node name="escopetazo" parent="." instance=ExtResource("4_cthx8")]
 visible = false

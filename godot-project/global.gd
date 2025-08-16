@@ -341,7 +341,7 @@ var settings = {
 					"duration": 0.5,
 					"explotion": {
 						"duration": 1.0,
-						"scale": 30,
+						"scale": 60,
 						"particle": "explosion_big"
 					}
 				},

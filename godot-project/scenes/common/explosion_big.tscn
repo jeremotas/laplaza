@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://23j52gwexeqt"]
+[gd_scene load_steps=6 format=3 uid="uid://d05vvqnsiag8g"]
 
 [sub_resource type="Gradient" id="Gradient_fuhep"]
 colors = PackedColorArray(1, 0.701961, 0, 1, 0.505075, 4.2716e-07, 1.92523e-07, 1)
@@ -18,6 +18,8 @@ particle_flag_disable_z = true
 spread = 180.0
 initial_velocity_min = 30.0
 initial_velocity_max = 30.0
+radial_velocity_min = -20.0
+radial_velocity_max = 200.0
 gravity = Vector3(0, 0, 0)
 damping_min = 40.0
 damping_max = 40.0
@@ -26,9 +28,11 @@ scale_max = 8.0
 scale_curve = SubResource("CurveTexture_kdbm7")
 color_ramp = SubResource("GradientTexture1D_b0vr1")
 
-[node name="explosion" type="GPUParticles2D"]
+[node name="explosion_big" type="GPUParticles2D"]
 emitting = false
-amount = 20
+amount = 600
+lifetime = 0.6
 one_shot = true
+preprocess = 0.2
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_kmpdq")
