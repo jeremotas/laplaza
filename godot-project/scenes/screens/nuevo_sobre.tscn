@@ -81,9 +81,8 @@ grow_vertical = 2
 texture = ExtResource("1_noa8o")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 4.0
 offset_top = 1.0
-offset_right = 636.0
+offset_right = 850.0
 offset_bottom = 32.0
 theme = ExtResource("3_3h7yh")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -94,9 +93,8 @@ text = "Abriendo"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 1.0
 offset_top = 18.0
-offset_right = 638.0
+offset_right = 850.0
 offset_bottom = 95.0
 theme = ExtResource("3_3h7yh")
 theme_override_colors/font_color = Color(1, 0.878431, 0.0941176, 1)
@@ -130,13 +128,13 @@ pivot_offset = Vector2(50, 80)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_l188i")
+&"": SubResource("AnimationLibrary_l188i")
 }
 
 [node name="flash" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 3
-offset_right = 640.0
+offset_right = 850.0
 offset_bottom = 482.0
 
 [node name="init" type="Timer" parent="."]
@@ -145,15 +143,15 @@ one_shot = true
 autostart = true
 
 [node name="OrigenCartas" type="Marker2D" parent="."]
-position = Vector2(745, 171)
+position = Vector2(955, 171)
 
 [node name="DestinoCartas" type="Marker2D" parent="."]
 position = Vector2(-104, 170)
 
 [node name="ContenedorCartas" type="HBoxContainer" parent="."]
-offset_left = 458.0
+offset_left = 640.0
 offset_top = 165.0
-offset_right = 1103.0
+offset_right = 1495.0
 offset_bottom = 328.0
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -161,7 +159,7 @@ collision_layer = 0
 collision_mask = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(326.5, 223.5)
+position = Vector2(433, 223.5)
 shape = SubResource("RectangleShape2D_alb3m")
 
 [node name="Tick" type="AudioStreamPlayer2D" parent="."]
@@ -169,7 +167,7 @@ stream = ExtResource("5_3sa32")
 
 [node name="Selector" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(326, 243)
+position = Vector2(432, 243)
 texture = ExtResource("6_7v8l5")
 
 [node name="Opciones" type="HBoxContainer" parent="."]
@@ -185,10 +183,10 @@ alignment = 1
 [node name="Agregar" type="Button" parent="Opciones"]
 layout_mode = 2
 theme = ExtResource("3_3h7yh")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.878431, 0.0941176, 1)
-theme_override_colors/font_focus_color = Color(1, 0.878431, 0.0941176, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 0.878431, 0.0941176, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 24
 text = "Agregar al mazo"
@@ -204,10 +202,10 @@ layout_mode = 2
 [node name="Descartar" type="Button" parent="Opciones"]
 layout_mode = 2
 theme = ExtResource("3_3h7yh")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.878431, 0.0941176, 1)
-theme_override_colors/font_focus_color = Color(1, 0.878431, 0.0941176, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 0.878431, 0.0941176, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 24
 text = "Descartar"

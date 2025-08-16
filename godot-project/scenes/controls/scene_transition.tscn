@@ -41,11 +41,12 @@ script = ExtResource("1_fykh7")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
 libraries = {
-"": SubResource("AnimationLibrary_yvs0q")
+&"": SubResource("AnimationLibrary_yvs0q")
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(0, 0, 0, 1)
-offset_right = 640.0
+visible = false
+modulate = Color(0, 0, 0, 0)
+offset_right = 850.0
 offset_bottom = 476.0
 color = Color(0, 0, 0, 1)
