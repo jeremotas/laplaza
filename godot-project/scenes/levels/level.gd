@@ -170,6 +170,9 @@ func _process(delta):
 	elif command == "homenum":
 		init_tedeum()
 		command = ""
+	elif command == "ricota":
+		init_jijiji()
+		command = ""
 	elif command == "sobrelospies":
 		init_defensa_de_obligado()
 		command = ""
@@ -276,6 +279,7 @@ func decision_time_end(decision):
 	elif decision == "ollas_del_pueblo": $General.activate_agua_hirviendo_level_up()
 	elif decision == "manuela_pedraza": $General.call_manuela_pedraza()
 	elif decision == "defensa_de_obligado": init_defensa_de_obligado()
+	elif decision == "patricio_solari": init_jijiji()
 		
 	# Devolver al juego
 	$decision_time.hide()
@@ -508,3 +512,56 @@ func affect_all_faction_booster_factor(sFaction, fFactor):
 
 func init_defensa_de_obligado():
 	$EnemyGoal.defensa_de_obligado()
+
+
+func init_jijiji():
+	$BackgroundMusic.stop()
+	$General.input_accepted = false
+	$General.life = $General.max_life
+	$General.hide()
+	$Crowd.show()
+	$Crowd.start()
+	block_spawners_value(true)	
+	var aUnidades = get_tree().get_nodes_in_group("faccion_ingleses")
+	for oUnidad in aUnidades:
+		oUnidad.life = 0
+	await get_tree().create_timer(12.0).timeout
+	$Crowd.hide()
+	$General.input_accepted = true
+	$BackgroundMusic.play()
+	$General.show()
+	block_spawners_value(false)
+	
+func block_spawners_value(bValue):
+	$EnemySpawnerD1.blocked = bValue
+	$EnemySpawnerD2.blocked = bValue
+	$EnemySpawnerD3.blocked = bValue
+	$EnemySpawnerD4.blocked = bValue
+	$EnemySpawnerD5.blocked = bValue
+	$EnemySpawnerD6.blocked = bValue
+	$EnemySpawnerD7.blocked = bValue
+	$EnemySpawnerD8.blocked = bValue
+	
+	$EnemySpawnerL1.blocked = bValue
+	$EnemySpawnerL2.blocked = bValue
+	$EnemySpawnerL3.blocked = bValue
+	$EnemySpawnerL4.blocked = bValue
+	$EnemySpawnerL5.blocked = bValue
+	$EnemySpawnerL6.blocked = bValue
+	$EnemySpawnerL7.blocked = bValue
+	$EnemySpawnerL8.blocked = bValue
+	
+	$EnemySpawnerT1.blocked = bValue
+	$EnemySpawnerT2.blocked = bValue
+	$EnemySpawnerT3.blocked = bValue
+	$EnemySpawnerT4.blocked = bValue
+	$EnemySpawnerT5.blocked = bValue
+	$EnemySpawnerT6.blocked = bValue
+	$EnemySpawnerT7.blocked = bValue
+	$EnemySpawnerT8.blocked = bValue
+	$EnemySpawnerT9.blocked = bValue
+	$EnemySpawnerT10.blocked = bValue
+	$EnemySpawnerT11.blocked = bValue
+	$EnemySpawnerT12.blocked = bValue
+	$EnemySpawnerT13.blocked = bValue
+	

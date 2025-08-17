@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://doeqrttpttyvl"]
+[gd_scene load_steps=26 format=3 uid="uid://doeqrttpttyvl"]
 
 [ext_resource type="Script" uid="uid://dhqlnijvhr2yc" path="res://scenes/levels/level.gd" id="1_4e1oj"]
 [ext_resource type="Texture2D" uid="uid://divu38pun5cej" path="res://assets/created/tilesets/tilesetmud64exp.png" id="2_udve2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="5_cfpx1"]
 [ext_resource type="Script" uid="uid://cxi663wickcjf" path="res://scenes/levels/Camera2D.gd" id="6_jsjt0"]
 [ext_resource type="PackedScene" uid="uid://0m43jl0bno4f" path="res://scenes/patricios/sudestada_effect.tscn" id="7_b8j7q"]
+[ext_resource type="PackedScene" uid="uid://cmwawnb5jnpxw" path="res://scenes/patricios/crowd.tscn" id="7_jyre1"]
 [ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="7_sexjv"]
 [ext_resource type="PackedScene" uid="uid://uk3j7rh2076l" path="res://scenes/controls/hud.tscn" id="8_fyc0u"]
 [ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://scenes/controls/pause_menu.tscn" id="10_3l2by"]
@@ -396,6 +397,9 @@ position = Vector2(1.11111, -1.11111)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("6_jsjt0")
+
+[node name="Crowd" parent="." instance=ExtResource("7_jyre1")]
+visible = false
 
 [node name="SudestadaEffect" parent="." instance=ExtResource("7_b8j7q")]
 visible = false

@@ -33,6 +33,7 @@ func rellenar_mazo_test():
 	crear_cartas("sudestada", 2)
 	crear_cartas("tedeum", 2)
 	crear_cartas("defensa_de_obligado", 2)
+	crear_cartas("patricio_solari", 2)
 	
 	#crear_cartas("granadero", 5)
 	#crear_cartas("arribeno", 3)
@@ -75,6 +76,8 @@ func crear_carta(sDecisionMessage):
 		oCard = {"tipo": "evento", "titulo": "Tedeum catedral", "numero": "5", "decision_time_message": "tedeum", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Vamos a decir que la iglesia nos dio una mano... __ Ah no! Eso era pelusa."}
 	elif sDecisionMessage == "defensa_de_obligado":
 		oCard = {"tipo": "evento", "titulo": "Defensa de obligado", "numero": "6", "decision_time_message": "defensa_de_obligado", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Sin cadenas sobre los pies... __ Pero si protegiendo la plaza!"}
+	elif sDecisionMessage == "patricio_solari":
+		oCard = {"tipo": "evento", "titulo": "Patricio Solari", "numero": "7", "decision_time_message": "patricio_solari", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Se viene el pogo mas grande del mundo! __ Y los ingleses no van a entender que les paso."}
 	return oCard
 
 func size():

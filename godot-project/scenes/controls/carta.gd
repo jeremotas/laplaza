@@ -46,6 +46,7 @@ const aImagenes = {
 	"sudestada": preload("res://assets/created/cartas/imagen/sudestada_retrato_64.png"),
 	"tedeum": preload("res://assets/created/cartas/imagen/tedeum_retrato_64.png"),
 	"defensa_de_obligado": preload("res://assets/created/cartas/imagen/defensa_de_obligado_retrato_64.png"),
+	"patricio_solari": preload("res://assets/created/cartas/imagen/patricio_solari_retrato_32.png"),
 }
 
 var tween: Tween

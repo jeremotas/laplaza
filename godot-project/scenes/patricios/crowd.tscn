@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmwawnb5jnpxw"]
+
+[ext_resource type="Script" uid="uid://catbkynjjletc" path="res://crowd.gd" id="1_vod0q"]
+[ext_resource type="Texture2D" uid="uid://c5p8tpduququo" path="res://assets/created/rockers/patricio_solari.png" id="2_vod0q"]
+[ext_resource type="AudioStream" uid="uid://wgn3qurqciia" path="res://assets/original/sounds/trueno.mp3" id="3_6v4nl"]
+[ext_resource type="AudioStream" uid="uid://5vcotke3apes" path="res://assets/original/Music/intro_jijiji.mp3" id="4_xn1wg"]
+
+[node name="Crowd" type="CanvasLayer"]
+script = ExtResource("1_vod0q")
+
+[node name="Rayo" type="ColorRect" parent="."]
+visible = false
+z_index = 10
+offset_right = 1000.0
+offset_bottom = 600.0
+scale = Vector2(0.996812, 1.00432)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="PatricioSolari" type="TextureRect" parent="."]
+visible = false
+offset_left = 380.0
+offset_top = 210.0
+offset_right = 420.0
+offset_bottom = 250.0
+texture = ExtResource("2_vod0q")
+
+[node name="SonidoTrueno" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6v4nl")
+
+[node name="Crowd" type="Node2D" parent="."]
+
+[node name="Cancion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xn1wg")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
