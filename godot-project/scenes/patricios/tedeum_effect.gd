@@ -6,11 +6,16 @@ var rng = RandomNumberGenerator.new()
 @onready var sfx = $SonidoTedeum              # Audio
 @onready var anim = $AnimationPlayer                   # AnimationPlayer (si lo tenés)
 
-func _ready():
-	await get_tree().create_timer(1.0).timeout
-	start()
+#func _ready():
+#	await get_tree().create_timer(1.0).timeout
+	#start()
 
 func start():
+	# Reinicio tedeum
+	tedeum_node.global_position = Vector2(425, -72)
+	tedeum_node.scale = Vector2(1.0, 1.0)
+	tedeum_node.modulate.a = 1.0
+	
 	sfx.play()
 	if anim and anim.has_method("play"):
 		anim.play("default")

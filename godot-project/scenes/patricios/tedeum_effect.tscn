@@ -88,7 +88,7 @@ stream = ExtResource("2_e0swx")
 volume_db = -2.745
 
 [node name="Tedeum" type="AnimatedSprite2D" parent="."]
-position = Vector2(403, -72)
+position = Vector2(425, -72)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_yhs3q")
 centered = false
