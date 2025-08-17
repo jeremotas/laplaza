@@ -7,22 +7,22 @@
 script = ExtResource("1_tm1yh")
 
 [node name="HusarInfernal5" parent="." instance=ExtResource("1_fqc2w")]
-position = Vector2(-72, -30)
+position = Vector2(-78, -76)
 
 [node name="HusarInfernal7" parent="." instance=ExtResource("1_fqc2w")]
-position = Vector2(-89, -13)
+position = Vector2(-108, -115)
 
 [node name="HusarInfernal" parent="." instance=ExtResource("1_fqc2w")]
-position = Vector2(-43, -19)
+position = Vector2(-47, -41)
 
 [node name="HusarInfernal2" parent="." instance=ExtResource("1_fqc2w")]
 position = Vector2(-23, 0)
 
 [node name="HusarInfernal4" parent="." instance=ExtResource("1_fqc2w")]
-position = Vector2(-66, -2)
+position = Vector2(-86, 82)
 
 [node name="HusarInfernal3" parent="." instance=ExtResource("1_fqc2w")]
-position = Vector2(-43, 22)
+position = Vector2(-51, 40)
 
 [node name="HusarInfernal6" parent="." instance=ExtResource("1_fqc2w")]
-position = Vector2(-78, 24)
+position = Vector2(-125, 119)

@@ -162,16 +162,11 @@ var settings = {
 			"attack":{
 				"bullet": {
 					"speed": 200,
-					"duration": 0.3,
-					"explotion": {
-						"duration": 0.75,
-						"scale": 15,
-						"particle": "escopetazo"
-					}
+					"duration": 1.0,
 				},
 				"cooldown": 2,
 				"min_damage_given": 1,
-				"max_damage_given": 1
+				"max_damage_given": 3
 			},
 		},
 		"correntino": {

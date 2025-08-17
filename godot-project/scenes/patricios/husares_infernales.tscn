@@ -373,13 +373,14 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(0, 29.6855)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q8mlr"]
-radius = 115.07
+radius = 28.0
 
 [node name="HusarInfernal" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_alsgu")
 faction = "patricios"
+invincible = true
 
 [node name="ComLabel" type="Label" parent="."]
 offset_right = 40.0
@@ -402,19 +403,15 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1orxc")
 animation = &"idle"
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_ys8q6")
+&"": SubResource("AnimationLibrary_ys8q6")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
-libraries = {
-"": SubResource("AnimationLibrary_ys8q6")
-}
 tree_root = SubResource("AnimationNodeStateMachine_p0npc")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/die = false
@@ -435,6 +432,7 @@ collision_mask = 2
 [node name="CombatCollisionShape" type="CollisionShape2D" parent="CombatArea"]
 light_mask = 9
 visibility_layer = 9
+position = Vector2(-6, 0)
 shape = SubResource("CircleShape2D_q8mlr")
 
 [node name="WeaponPoint" type="Marker2D" parent="."]
@@ -455,3 +453,5 @@ stream = ExtResource("4_j87wf")
 volume_db = 1.0
 autoplay = true
 bus = &"Efectos"
+
+[connection signal="body_entered" from="CombatArea" to="." method="_on_combat_area_body_entered"]
