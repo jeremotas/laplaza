@@ -1,7 +1,9 @@
 extends Node;
 var iMaxTime = 600
-var iMaxMids = 0
-var iMaxStarters = 0
+var iMaxStarters = 30
+var iMaxFirstWave = 180
+var iMaxSecondWave = 360
+var iMaxThirdWave = 540
 
 var aStarters = [
 	{
@@ -109,7 +111,7 @@ var aStarters = [
 		"derecha_inferior": {"unit_type": "highlander", "seconds": 2, "probability": 40},
 	},
 ]
-var aMids = [
+var aFirstWaves = [
 	{
 		"duration": 60,
 		"max_alive": 20,
@@ -176,6 +178,141 @@ var aMids = [
 		"derecha_inferior": {"unit_type": "green_soldier", "seconds": 6, "probability": 10},
 	}
 ]
+var aSecondWaves = [
+	{
+		"duration": 60,
+		"max_alive": 20,
+		"name": "El ataque",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 40},
+		"arriba_centro": {"unit_type": "highlander", "seconds": 10, "probability": 10},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 40},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 8, "probability": 0},
+		"derecha_inferior": {"unit_type":"ingles", "seconds": 12, "probability": 0},
+	},
+	{
+		"duration": 60,
+		"max_alive": 20,
+		"name": "El ataque veloz",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"arriba_izquierda": {"unit_type": "green_soldier", "seconds": 1, "probability": 40},
+		"arriba_centro": {"unit_type": "ingles", "seconds": 10, "probability": 10},
+		"arriba_derecha": {"unit_type": "green_soldier", "seconds": 1, "probability": 40},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 8, "probability": 0},
+		"derecha_inferior": {"unit_type":"ingles", "seconds": 12, "probability": 0},
+	},
+	{
+		"duration": 60,
+		"max_alive": 20,
+		"name": "El ataque duro",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"arriba_izquierda": {"unit_type": "highlander", "seconds": 1, "probability": 40},
+		"arriba_centro": {"unit_type": "green_soldier", "seconds": 10, "probability": 10},
+		"arriba_derecha": {"unit_type": "highlander", "seconds": 1, "probability": 40},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 8, "probability": 0},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
+	},
+	{
+		"duration": 60,
+		"max_alive": 40,
+		"name": "El ataque pesado",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 4, "probability": 100},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"arriba_centro": {"unit_type": "highlander", "seconds": 6, "probability": 10},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+	},
+	{
+		"duration": 60,
+		"max_alive": 40,
+		"name": "El ataque pesadamente veloz",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "green_soldier", "seconds": 6, "probability": 10},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"arriba_centro": {"unit_type": "green_soldier", "seconds": 6, "probability": 10},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"derecha_inferior": {"unit_type": "green_soldier", "seconds": 6, "probability": 10},
+	}
+]
+var aThirdWaves = [
+	{
+		"duration": 60,
+		"max_alive": 20,
+		"name": "El ataque",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 40},
+		"arriba_centro": {"unit_type": "highlander", "seconds": 10, "probability": 10},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 40},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 8, "probability": 0},
+		"derecha_inferior": {"unit_type":"ingles", "seconds": 12, "probability": 0},
+	},
+	{
+		"duration": 60,
+		"max_alive": 20,
+		"name": "El ataque veloz",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"arriba_izquierda": {"unit_type": "green_soldier", "seconds": 1, "probability": 40},
+		"arriba_centro": {"unit_type": "ingles", "seconds": 10, "probability": 10},
+		"arriba_derecha": {"unit_type": "green_soldier", "seconds": 1, "probability": 40},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 8, "probability": 0},
+		"derecha_inferior": {"unit_type":"ingles", "seconds": 12, "probability": 0},
+	},
+	{
+		"duration": 60,
+		"max_alive": 20,
+		"name": "El ataque duro",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"arriba_izquierda": {"unit_type": "highlander", "seconds": 1, "probability": 40},
+		"arriba_centro": {"unit_type": "green_soldier", "seconds": 10, "probability": 10},
+		"arriba_derecha": {"unit_type": "highlander", "seconds": 1, "probability": 40},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 8, "probability": 0},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
+	},
+	{
+		"duration": 60,
+		"max_alive": 40,
+		"name": "El ataque pesado",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 4, "probability": 100},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"arriba_centro": {"unit_type": "highlander", "seconds": 6, "probability": 10},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+	},
+	{
+		"duration": 60,
+		"max_alive": 40,
+		"name": "El ataque pesadamente veloz",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "green_soldier", "seconds": 6, "probability": 10},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"arriba_centro": {"unit_type": "green_soldier", "seconds": 6, "probability": 10},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 1, "probability": 50},
+		"derecha_inferior": {"unit_type": "green_soldier", "seconds": 6, "probability": 10},
+	}
+]
+
 var aFinale = [
 	{
 		"duration": 30,
@@ -364,8 +501,10 @@ var aDescansos = [
 ]
 
 func _init():
-	iMaxStarters = iMaxTime / 3
-	iMaxMids = iMaxTime * 2 / 3
+	iMaxStarters = 30
+	iMaxFirstWave = 180
+	iMaxSecondWave = 360
+	iMaxThirdWave = 540
 
 func get_strategy_card_descanso(iTime):
 	var oDescanso = get_one_from(aDescansos)
@@ -375,8 +514,12 @@ func get_strategy_card(iTime):
 	var oCard = null
 	if iTime < iMaxStarters:
 		oCard = get_one_from(aStarters)
-	elif iTime < iMaxMids:
-		oCard = get_one_from(aMids)
+	elif iTime < iMaxFirstWave:
+		oCard = get_one_from(aFirstWaves)
+	elif iTime < iMaxSecondWave:
+		oCard = get_one_from(aSecondWaves)
+	elif iTime < iMaxThirdWave:
+		oCard = get_one_from(aThirdWaves)
 	else:
 		oCard = get_one_from(aFinale)
 	
