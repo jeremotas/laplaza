@@ -246,7 +246,7 @@ var settings = {
 			}
 		},
 		"royal_marine": {
-			"life": 6,
+			"life": 4,
 			"max_speed": 60,
 			"experience_given": 6,
 			"attack":{
@@ -277,7 +277,7 @@ var settings = {
 			}
 		},
 		"green_soldier": {
-			"life": 3,
+			"life": 2,
 			"max_speed": 90,
 			"experience_given": 4,
 			"attack":{
@@ -292,7 +292,7 @@ var settings = {
 			}
 		},
 		"english_cavalry": {
-			"life": 5,
+			"life": 3,
 			"max_speed": 120,
 			"experience_given": 8,
 			"attack":{
