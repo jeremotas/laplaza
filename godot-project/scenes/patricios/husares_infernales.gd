@@ -7,6 +7,7 @@ const GUNSHOT = preload("res://assets/original/sounds/gunshot6.mp3")
 var oGoal
 var entered = false
 var iShoots = 0
+var hasRun = false
 
 func _init():
 	unit_type = "husares_infernales"
@@ -35,10 +36,12 @@ func assign_goal(oGoalParam):
 func _process(delta):
 	#malon_sticked()
 	attack()
-	if speed == 0: queue_free()
-		
+	
+	if speed > 0: hasRun = true
+	if speed == 0 and hasRun: queue_free()
+	if oGoalAssigned and abs(global_position.x - oGoalAssigned.x) < 200: queue_free()
 	super(delta)
-
+	
 func attack():
 	pass
 

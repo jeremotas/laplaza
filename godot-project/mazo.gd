@@ -18,22 +18,22 @@ func generar_mazo(aOriginalCards):
 		crear_cartas(oCard.name, oCard.quantity)
 
 func rellenar_mazo_test():
-	crear_cartas("granadero", 10)
-	crear_cartas("correntino", 1)
-	crear_cartas("arribeno", 3)
-	crear_cartas("moreno", 1)
-	crear_cartas("cebador", 2)
-	crear_cartas("mignon", 4)
+	crear_cartas("granadero", 4)
+	crear_cartas("correntino", 2)
+	crear_cartas("arribeno", 2)
+	crear_cartas("moreno", 2)
+	crear_cartas("cebador", 1)
+	crear_cartas("mignon", 2)
 	crear_cartas("pardo", 2)
-	crear_cartas("upgrade_life", 10)
-	crear_cartas("ollas_del_pueblo", 4)
+	crear_cartas("upgrade_life", 3)
+	crear_cartas("ollas_del_pueblo", 2)
 	crear_cartas("barrilete_cosmico", 1)
-	crear_cartas("ataque_husares_infernales", 2)
-	crear_cartas("manuela_pedraza", 2)
-	crear_cartas("sudestada", 2)
-	crear_cartas("tedeum", 2)
-	crear_cartas("defensa_de_obligado", 2)
-	crear_cartas("patricio_solari", 2)
+	crear_cartas("ataque_husares_infernales", 1)
+	crear_cartas("manuela_pedraza", 1)
+	crear_cartas("sudestada", 1)
+	crear_cartas("tedeum", 1)
+	crear_cartas("defensa_de_obligado", 1)
+	crear_cartas("patricio_solari", 1)
 	
 	#crear_cartas("granadero", 5)
 	#crear_cartas("arribeno", 3)
@@ -47,7 +47,7 @@ func crear_cartas(sDecisionMessage, iCantidad):
 func crear_carta(sDecisionMessage):
 	var oCard = null
 	if sDecisionMessage == "granadero":
-		oCard = {"tipo": "unidad", "titulo": "Granadero", "numero": "1", "decision_time_message": "granadero", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El bien ponderado patricio que ataca con precisión al enemigo. __ Tarda en recargar, sino seria un escándalo."}
+		oCard = {"tipo": "unidad", "titulo": "Patricio", "numero": "1", "decision_time_message": "granadero", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El bien ponderado patricio que ataca con precisión al enemigo. __ Tarda en recargar, sino seria un escándalo."}
 	elif sDecisionMessage == "correntino":
 		oCard = {"tipo": "unidad", "titulo": "Correntino", "numero": "2", "decision_time_message": "correntino", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Tira de lejos cual cazador de ñandú. __ Camina lento, pero si pega... pega. __ Eso si, le pegan una y adiós."}
 	elif sDecisionMessage == "arribeno":

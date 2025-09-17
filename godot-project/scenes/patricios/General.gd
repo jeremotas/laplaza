@@ -58,6 +58,9 @@ func life_status():
 	$LifeProgress.step = 1
 	$LifeProgress.value = life
 	
+	if life > max_life:
+		life = max_life
+	
 	
 func activate_agua_hirviendo_level_up():
 	agua_hirviendo_power += 1

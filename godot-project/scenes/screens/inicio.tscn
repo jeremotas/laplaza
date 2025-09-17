@@ -119,6 +119,7 @@ flat = true
 alignment = 0
 
 [node name="ElMazo" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -133,6 +134,7 @@ flat = true
 alignment = 0
 
 [node name="AbrirSobre" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)

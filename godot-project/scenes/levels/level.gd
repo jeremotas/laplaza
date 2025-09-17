@@ -310,13 +310,16 @@ func carpinchos_run_call():
 	
 func ataque_husares_infernales():
 	var E = EscuadronHusaresInfernales.instantiate()
+	#print("HIJOS DEL ESCUADRON", E.get_children().size(), E.get_children())
 	var initAttack = Vector2.ZERO
 	var endAttack = Vector2.ZERO
 	initAttack.x = -1000
-	initAttack.y = $General.global_position.y - 50
+	initAttack.y = $General.global_position.y 
 	endAttack.x = 3000
-	endAttack.y = $General.global_position.y - 150
+	endAttack.y = $General.global_position.y 
 	add_child(E)
+	#print("HUSARES INFERNALES", initAttack)
+	#print("HUSARES INFERNALES", endAttack)
 	E.startAttack(initAttack, endAttack)
 	
 	$General/Camera2D.apply_shake_seconds(5.0, 2.0)
