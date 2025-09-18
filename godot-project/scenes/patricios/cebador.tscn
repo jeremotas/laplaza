@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://ds201qgjbrx7m"]
+[gd_scene load_steps=65 format=3 uid="uid://ds201qgjbrx7m"]
 
 [ext_resource type="Script" uid="uid://cm8luxa8q3835" path="res://scenes/patricios/cebador.gd" id="1_datw2"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_u0mka"]
@@ -479,6 +479,15 @@ graph_offset = Vector2(0, 29.6855)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4c0p6"]
 radius = 68.1836
 
+[sub_resource type="Gradient" id="Gradient_me0un"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_datw2"]
+gradient = SubResource("Gradient_me0un")
+fill = 1
+fill_from = Vector2(0.444444, 0.492063)
+fill_to = Vector2(0.765873, 0.25)
+
 [node name="Cebador" type="CharacterBody2D"]
 script = ExtResource("1_datw2")
 
@@ -512,7 +521,7 @@ show_percentage = false
 material = SubResource("ShaderMaterial_ksat4")
 sprite_frames = SubResource("SpriteFrames_afxcp")
 animation = &"idle"
-frame = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -548,6 +557,12 @@ polygon = PackedVector2Array(-6, -7, 7, -7, 6, 12, -6, 12)
 [node name="MateSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_hwjiv")
 bus = &"Efectos"
+
+[node name="InvincibleEffect" type="PointLight2D" parent="."]
+position = Vector2(2, 1)
+color = Color(1, 1, 0, 1)
+energy = 0.67
+texture = SubResource("GradientTexture2D_datw2")
 
 [connection signal="body_entered" from="MateArea" to="." method="_on_mate_area_body_entered"]
 [connection signal="body_exited" from="MateArea" to="." method="_on_mate_area_body_exited"]

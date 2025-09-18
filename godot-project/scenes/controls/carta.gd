@@ -40,6 +40,13 @@ const aImagenes = {
 	"upgrade_life": preload("res://assets/created/cartas/imagen/mate_retrato_32.png"),
 	"ollas_del_pueblo": preload("res://assets/created/cartas/imagen/olla_retrato_32.png"),
 	"cebador": preload("res://assets/created/cartas/imagen/cebador_retrato_32.png"),
+	"mignon": preload("res://assets/created/cartas/imagen/mignon_retrato_32.png"),
+	"pardo": preload("res://assets/created/cartas/imagen/pardo_retrato_32.png"),
+	"manuela_pedraza": preload("res://assets/created/cartas/imagen/manuela_pedraza_retrato_32.png"),
+	"sudestada": preload("res://assets/created/cartas/imagen/sudestada_retrato_64.png"),
+	"tedeum": preload("res://assets/created/cartas/imagen/tedeum_retrato_64.png"),
+	"defensa_de_obligado": preload("res://assets/created/cartas/imagen/defensa_de_obligado_retrato_64.png"),
+	"patricio_solari": preload("res://assets/created/cartas/imagen/patricio_solari_retrato_32.png"),
 }
 
 var tween: Tween
@@ -50,7 +57,7 @@ func init():
 	pass
 
 func _ready():
-	global_position.x = 640 - 84
+	global_position.x = 850 - 84
 	global_position.y = 480
 	$Titulo.text = sTitulo
 	$Letra.text = sLetra
@@ -104,7 +111,7 @@ func set_move_on_selection(iValue):
 	iMoveOnSelection = iValue
 
 func _on_pressed():
-	print("Mensaje", iPosicionEnMano, sDecisionTimeMessage)
+	#print("Mensaje", iPosicionEnMano, sDecisionTimeMessage)
 	get_parent().decision_elegida(sDecisionTimeMessage, iPosicionEnMano)
 
 

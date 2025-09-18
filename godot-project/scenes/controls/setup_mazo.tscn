@@ -28,6 +28,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 2.14813
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_bbc0u")
@@ -44,9 +45,8 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 4.0
 offset_top = 49.0
-offset_right = 636.0
+offset_right = 850.0
 offset_bottom = 80.0
 theme = ExtResource("3_8xf3q")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -58,9 +58,8 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 1.0
 offset_top = -6.0
-offset_right = 638.0
+offset_right = 850.0
 offset_bottom = 71.0
 theme = ExtResource("3_8xf3q")
 theme_override_colors/font_color = Color(1, 0.878431, 0.0941176, 1)
@@ -73,19 +72,18 @@ horizontal_alignment = 1
 
 [node name="Leyenda" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 6.0
 offset_top = 395.0
-offset_right = 638.0
+offset_right = 850.0
 offset_bottom = 476.0
 theme = ExtResource("3_8xf3q")
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 
 [node name="PosicionMazo" type="Marker2D" parent="Control"]
-position = Vector2(90, 220)
+position = Vector2(-33, 220)
 
 [node name="PosicionMano" type="Marker2D" parent="Control"]
-position = Vector2(320, 228)
+position = Vector2(425, 228)
 
 [node name="CartasContainer" type="Control" parent="."]
 layout_mode = 3
@@ -106,6 +104,7 @@ autoplay = true
 bus = &"Musica"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+transparent_bg = true
 title = "Destruir carta"
 initial_position = 1
 size = Vector2i(360, 100)
@@ -120,6 +119,7 @@ dialog_text = "¿Seguro querés destruir la carta?"
 cancel_button_text = "Cancelar"
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
+transparent_bg = true
 title = "Pocas cartas"
 initial_position = 1
 size = Vector2i(309, 120)

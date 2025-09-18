@@ -29,8 +29,9 @@ func _on_area_body_entered(body):
 
 
 func _on_area_2d_body_entered(body):
-	body.original_z_index = body.z_index
-	body.z_index = 12
+	if body != $DefensaDeObligado:
+		body.original_z_index = body.z_index
+		body.z_index = 12
 	
 
 
@@ -58,3 +59,9 @@ func _on_beacon_timer_timeout():
 	for unit in unitsForGoal:
 		if not unit.status.moving:
 			unit.go_to($Marker.global_position, true)
+
+func defensa_de_obligado():
+	$DefensaDeObligado.armar()
+
+func defensa_de_obligado_end():
+	$DefensaDeObligado.desarmar()

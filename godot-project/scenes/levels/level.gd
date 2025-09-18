@@ -8,6 +8,7 @@ var player_max_life = 20 # Maxima vida del jugador principal
 
 const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
 var enemy_strategy 
+var eventTimer = null
 # Variables de control de UI
 @onready var HUD = $HUD
 @onready var pause_menu = $PauseMenu
@@ -40,7 +41,9 @@ var malon = [
 	{"unit_type": "moreno", "quantity": 0}, 
 	{"unit_type": "arribeno", "quantity": 0}, 
 	{"unit_type": "husares_infernales", "quantity": 0},
-	{"unit_type": "cebador", "quantity": 0}
+	{"unit_type": "cebador", "quantity": 0},
+	{"unit_type": "mignon", "quantity": 0},
+	{"unit_type": "pardo", "quantity": 0}
 ]
 var EscuadronHusaresInfernales = preload("res://scenes/patricios/escuadron_husares_infernales.tscn")
 var EscuadronCarpinchos = preload("res://scenes/patricios/escuadron_carpinchos.tscn")
@@ -54,7 +57,8 @@ func _ready():
 	TheGameStats._ready()
 	$EnemyGoal.set_needed_units(Global.settings.game.enemy_goal)
 	player_max_life = Global.settings.game.player_max_life
-	
+	$General.add_to_group('general_group')
+	$General.add_to_group('todos_patricios')
 	enemy_strategy = enemy_strategy_container.new().create_strategy()
 	prepare_initial_conditions()
 	prepare_enemy_spawns()
@@ -70,6 +74,7 @@ func first_move_general():
 	$General.go_to(go_position, true)
 	await get_tree().create_timer(2.5).timeout
 	zooming = "up"
+	Global.emit_signal("surubi_message", "mensaje_inicial")
 	await get_tree().create_timer(1).timeout
 	$General.input_accepted = true
 	
@@ -117,7 +122,6 @@ func consume_enemy_strategies():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	calculate_stats() # Calculamos resultados
 	HUD.change(TheGameStats) # Envio estadisticas a la interfaz
 	if not (TheGameStats.game_over or TheGameStats.game_win):
@@ -126,6 +130,7 @@ func _process(delta):
 		process_pause() # Revisamos si hubo pausa
 	else:
 		zoom_general(delta)
+	#print(command)
 	if command == "d10s":
 		barrilete_cosmico()
 		command = ""
@@ -144,6 +149,9 @@ func _process(delta):
 	elif command == "roger":
 		$General.activate_agua_hirviendo_level_up()
 		command = ""
+	elif command == "lacalle":
+		$General.call_manuela_pedraza()
+		command = ""
 	elif command == "iddqd" and not $General.barrilete_cosmico:
 		$General.invincible = not $General.invincible
 		command = ""
@@ -156,7 +164,18 @@ func _process(delta):
 	elif command == "carp":
 		carpinchos_run_call()
 		command = ""
-	
+	elif command == "elviento":
+		init_sudestada()
+		command = ""
+	elif command == "homenum":
+		init_tedeum()
+		command = ""
+	elif command == "ricota":
+		init_jijiji()
+		command = ""
+	elif command == "sobrelospies":
+		init_defensa_de_obligado()
+		command = ""
 
 func control_malon():
 	var faction = "patricios"
@@ -251,10 +270,16 @@ func decision_time_end(decision):
 	elif decision == "moreno": add_unit_to_malon("moreno")
 	elif decision == "arribeno": add_unit_to_malon("arribeno")
 	elif decision == "cebador": add_unit_to_malon("cebador")
+	elif decision == "pardo": add_unit_to_malon("pardo")
+	elif decision == "mignon": add_unit_to_malon("mignon", 2)
 	elif decision == "ataque_husares_infernales": ataque_husares_infernales()
 	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)
+	elif decision == "sudestada": init_sudestada()
 	elif decision == "ollas_del_pueblo": $General.activate_agua_hirviendo_level_up()
+	elif decision == "manuela_pedraza": $General.call_manuela_pedraza()
+	elif decision == "defensa_de_obligado": init_defensa_de_obligado()
+	elif decision == "patricio_solari": init_jijiji()
 		
 	# Devolver al juego
 	$decision_time.hide()
@@ -285,13 +310,16 @@ func carpinchos_run_call():
 	
 func ataque_husares_infernales():
 	var E = EscuadronHusaresInfernales.instantiate()
+	#print("HIJOS DEL ESCUADRON", E.get_children().size(), E.get_children())
 	var initAttack = Vector2.ZERO
 	var endAttack = Vector2.ZERO
 	initAttack.x = -1000
-	initAttack.y = $General.global_position.y - 50
+	initAttack.y = $General.global_position.y 
 	endAttack.x = 3000
-	endAttack.y = $General.global_position.y - 150
+	endAttack.y = $General.global_position.y 
 	add_child(E)
+	#print("HUSARES INFERNALES", initAttack)
+	#print("HUSARES INFERNALES", endAttack)
 	E.startAttack(initAttack, endAttack)
 	
 	$General/Camera2D.apply_shake_seconds(5.0, 2.0)
@@ -299,10 +327,10 @@ func ataque_husares_infernales():
 func mini_shake():
 	$General/Camera2D.apply_shake_seconds(0.2, 1.0)
 	
-func add_unit_to_malon(unit_type):
+func add_unit_to_malon(unit_type, quantity = 1):
 	for i in range(malon.size()):
 		if malon[i].unit_type == unit_type:
-			malon[i].quantity += 1
+			malon[i].quantity += quantity
 
 func process_pause():
 	# Controla si se ejecuto la pausa desde el input
@@ -437,5 +465,106 @@ func save_lagrimas(lagrimas):
 	Global.save_data.lagrimas_ultima_run = lagrimas
 	Global.save_data.lagrimas_acumuladas += lagrimas
 	Global.save_data.save()
-	pass
+	
+func init_tedeum():
+	print("inicia tedeum")
+	var aPatricios = get_tree().get_nodes_in_group('todos_patricios')
+	for oPatricio in aPatricios:
+		oPatricio.invincible = true
+	eventTimer = Timer.new()
+	add_child(eventTimer)
+	eventTimer.autostart = true
+	eventTimer.wait_time = Global.settings.patricios.tedeum.duration
+	eventTimer.one_shot = true
+	eventTimer.timeout.connect(end_tedeum)
+	eventTimer.start()
+	$TedeumEffect.start()
+	$TedeumEffect.show()
+	
+func end_tedeum():
+	print("fin tedeum")
+	var aPatricios = get_tree().get_nodes_in_group('todos_patricios')
+	for oPatricio in aPatricios:
+		oPatricio.invincible = false
+	$TedeumEffect.hide()
+	$TedeumEffect.stop()
+	
+func init_sudestada():
+	affect_all_faction_booster_factor('ingleses', Global.settings.patricios.sudestada.speed_booster)
+	eventTimer = Timer.new()
+	add_child(eventTimer)
+	eventTimer.autostart = true
+	eventTimer.wait_time = Global.settings.patricios.sudestada.duration
+	eventTimer.one_shot = true
+	eventTimer.timeout.connect(end_sudestada)
+	eventTimer.start()
+	$SudestadaEffect.start()
+	$SudestadaEffect.show()
+	
+	
+func end_sudestada():
+	affect_all_faction_booster_factor('ingleses', 0.0)
+	$SudestadaEffect.hide()
+	$SudestadaEffect.stop()
+	
+func affect_all_faction_booster_factor(sFaction, fFactor):	
+	if sFaction == 'ingleses':
+		Global.settings.boosters.ingleses = fFactor
+	elif sFaction == 'patricios':
+		Global.settings.boosters.patricios = fFactor
+
+func init_defensa_de_obligado():
+	$EnemyGoal.defensa_de_obligado()
+
+
+func init_jijiji():
+	$BackgroundMusic.stop()
+	$General.input_accepted = false
+	$General.life = $General.max_life
+	$General.hide()
+	$Crowd.show()
+	$Crowd.start()
+	block_spawners_value(true)	
+	var aUnidades = get_tree().get_nodes_in_group("faccion_ingleses")
+	for oUnidad in aUnidades:
+		oUnidad.life = 0
+	await get_tree().create_timer(12.0).timeout
+	$Crowd.hide()
+	$General.input_accepted = true
+	$BackgroundMusic.play()
+	$General.show()
+	block_spawners_value(false)
+	
+func block_spawners_value(bValue):
+	$EnemySpawnerD1.blocked = bValue
+	$EnemySpawnerD2.blocked = bValue
+	$EnemySpawnerD3.blocked = bValue
+	$EnemySpawnerD4.blocked = bValue
+	$EnemySpawnerD5.blocked = bValue
+	$EnemySpawnerD6.blocked = bValue
+	$EnemySpawnerD7.blocked = bValue
+	$EnemySpawnerD8.blocked = bValue
+	
+	$EnemySpawnerL1.blocked = bValue
+	$EnemySpawnerL2.blocked = bValue
+	$EnemySpawnerL3.blocked = bValue
+	$EnemySpawnerL4.blocked = bValue
+	$EnemySpawnerL5.blocked = bValue
+	$EnemySpawnerL6.blocked = bValue
+	$EnemySpawnerL7.blocked = bValue
+	$EnemySpawnerL8.blocked = bValue
+	
+	$EnemySpawnerT1.blocked = bValue
+	$EnemySpawnerT2.blocked = bValue
+	$EnemySpawnerT3.blocked = bValue
+	$EnemySpawnerT4.blocked = bValue
+	$EnemySpawnerT5.blocked = bValue
+	$EnemySpawnerT6.blocked = bValue
+	$EnemySpawnerT7.blocked = bValue
+	$EnemySpawnerT8.blocked = bValue
+	$EnemySpawnerT9.blocked = bValue
+	$EnemySpawnerT10.blocked = bValue
+	$EnemySpawnerT11.blocked = bValue
+	$EnemySpawnerT12.blocked = bValue
+	$EnemySpawnerT13.blocked = bValue
 	

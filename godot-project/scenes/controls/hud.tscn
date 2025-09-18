@@ -215,4 +215,5 @@ text = "Nivel "
 horizontal_alignment = 2
 
 [node name="SurubiConAtaquesDePanico" parent="Control" instance=ExtResource("8_wnlbb")]
-position = Vector2(569, 419)
+position = Vector2(760, 419)
+scale = Vector2(0.992393, 1.0071)

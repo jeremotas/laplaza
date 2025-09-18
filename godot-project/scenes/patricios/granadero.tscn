@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b6541ctm8c4dc"]
+[gd_scene load_steps=62 format=3 uid="uid://b6541ctm8c4dc"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_23mat"]
 [ext_resource type="Texture2D" uid="uid://salulqvo0yqp" path="res://assets/created/patricio.png" id="3_glm1r"]
@@ -523,6 +523,15 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_872au"]
 bg_color = Color(0, 0.917647, 0.27451, 1)
 
+[sub_resource type="Gradient" id="Gradient_me0un"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pp4ie"]
+gradient = SubResource("Gradient_me0un")
+fill = 1
+fill_from = Vector2(0.444444, 0.492063)
+fill_to = Vector2(0.765873, 0.25)
+
 [node name="Soldado" type="CharacterBody2D"]
 collision_mask = 7
 script = SubResource("GDScript_1m2dc")
@@ -554,7 +563,7 @@ theme_override_font_sizes/font_size = 8
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 3
+frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fkns3")
@@ -603,3 +612,9 @@ offset_bottom = -14.0
 theme_override_styles/background = SubResource("StyleBoxFlat_2wcj8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_872au")
 show_percentage = false
+
+[node name="InvincibleEffect" type="PointLight2D" parent="."]
+position = Vector2(3, 1)
+color = Color(1, 1, 0, 1)
+energy = 0.67
+texture = SubResource("GradientTexture2D_pp4ie")

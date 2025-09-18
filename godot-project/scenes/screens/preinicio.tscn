@@ -33,19 +33,21 @@ script = ExtResource("1_x4wjh")
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 642.0
-offset_bottom = 481.0
+offset_left = -18.0
+offset_top = -22.0
+offset_right = 888.0
+offset_bottom = 512.0
 color = Color(0, 0, 0, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(318, 230)
+position = Vector2(422, 230)
 scale = Vector2(0.268555, 0.268555)
 texture = ExtResource("2_f82w2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_cmnwq")
+&"": SubResource("AnimationLibrary_cmnwq")
 }
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -96,7 +96,8 @@ func create_explotion():
 	if explotion_layer > 0:
 		one_hit = false
 		speed = 0
-		if explotion_particle == "explosion":
+		if explotion_particle == "explosion" or explotion_particle == "explosion_big":
+			
 			get_parent().mini_shake()
 		$Area2D.scale = Vector2(explotion_scale_radius,explotion_scale_radius)
 		$Area2D.set_collision_mask_value(explotion_layer, true)
@@ -114,11 +115,18 @@ func create_explotion():
 		
 		if explotion_particle == "explosion":
 			$explosion.visible = true
+			$explosion.emitting = true
 			$explosion.scale = Vector2(2,2)
+			if explotion_sound:
+				create_sound_explotion()
+		if explotion_particle == "explosion_big":
+			$explosion_big.visible = true
+			$explosion_big.emitting = true
 			if explotion_sound:
 				create_sound_explotion()
 		elif explotion_particle == "explosion_agua":
 			$explosion_agua.visible = true
+			$explosion_agua.emitting = true
 			$explosion_agua.scale = Vector2(2,2)
 			if explotion_sound:
 				create_sound_explotion()

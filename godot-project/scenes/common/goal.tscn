@@ -1,13 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://bdhmiefax7gyv"]
+[gd_scene load_steps=20 format=3 uid="uid://bdhmiefax7gyv"]
 
 [ext_resource type="Script" uid="uid://jw37403bdybc" path="res://scenes/common/Goal.gd" id="1_4ypff"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_p2urd"]
 [ext_resource type="Texture2D" uid="uid://bb0h4rpnfg8wu" path="res://assets/created/mastialanimadooutline.png" id="4_g1rit"]
 [ext_resource type="AudioStream" uid="uid://fcsmj61hrpvk" path="res://assets/original/sounds/trompeta_plaza.mp3" id="4_sam4w"]
 [ext_resource type="AudioStream" uid="uid://btvvjc2g10ntp" path="res://assets/original/sounds/ingles_entra.mp3" id="5_ma033"]
+[ext_resource type="PackedScene" uid="uid://dsvvwy167xolm" path="res://scenes/patricios/defensa_de_obligado.tscn" id="6_47j7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x5fn"]
-size = Vector2(62, 44)
+size = Vector2(38, 26)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fsywk"]
 
@@ -89,10 +90,11 @@ collision_layer = 0
 collision_mask = 3
 
 [node name="Collision" type="CollisionShape2D" parent="Area"]
-position = Vector2(-15, 24)
+position = Vector2(-16, 33)
 shape = SubResource("RectangleShape2D_5x5fn")
 
 [node name="Marker" type="Marker2D" parent="."]
+position = Vector2(-16, 33)
 
 [node name="Status" type="Label" parent="."]
 z_index = 2
@@ -149,6 +151,9 @@ scale = Vector2(3.4, 4.45)
 
 [node name="BeaconTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="DefensaDeObligado" parent="." instance=ExtResource("6_47j7t")]
+position = Vector2(-16, 34)
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
 [connection signal="body_entered" from="AreaMastil" to="." method="_on_area_2d_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dlnd2el5bqsln"]
+[gd_scene load_steps=62 format=3 uid="uid://dlnd2el5bqsln"]
 
 [ext_resource type="Script" uid="uid://clxqkxpi25sis" path="res://scenes/patricios/arribeno.gd" id="1_ic4tm"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_4f2wp"]
@@ -462,6 +462,15 @@ graph_offset = Vector2(0, 29.6855)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4c0p6"]
 radius = 152.03
 
+[sub_resource type="Gradient" id="Gradient_bpig0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t7hdi"]
+gradient = SubResource("Gradient_bpig0")
+fill = 1
+fill_from = Vector2(0.444444, 0.492063)
+fill_to = Vector2(0.765873, 0.25)
+
 [node name="Arribeno" type="CharacterBody2D"]
 slide_on_ceiling = false
 floor_snap_length = 0.0
@@ -495,17 +504,14 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_afxcp")
 animation = &"idle"
-frame = 1
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_a0bmf")
+&"": SubResource("AnimationLibrary_a0bmf")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_a0bmf")
-}
 tree_root = SubResource("AnimationNodeStateMachine_ougdn")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/die = false
@@ -537,3 +543,9 @@ position = Vector2(14, 0)
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_q4ipq")
 bus = &"Efectos"
+
+[node name="InvincibleEffect" type="PointLight2D" parent="."]
+position = Vector2(3, 0)
+color = Color(1, 1, 0, 1)
+energy = 0.67
+texture = SubResource("GradientTexture2D_t7hdi")

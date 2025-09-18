@@ -18,15 +18,22 @@ func generar_mazo(aOriginalCards):
 		crear_cartas(oCard.name, oCard.quantity)
 
 func rellenar_mazo_test():
-	crear_cartas("granadero", 10)
-	crear_cartas("correntino", 1)
-	crear_cartas("arribeno", 3)
-	crear_cartas("moreno", 1)
-	crear_cartas("upgrade_life", 10)
-	crear_cartas("ollas_del_pueblo", 4)
+	crear_cartas("granadero", 4)
+	crear_cartas("correntino", 2)
+	crear_cartas("arribeno", 2)
+	crear_cartas("moreno", 2)
+	crear_cartas("cebador", 1)
+	crear_cartas("mignon", 2)
+	crear_cartas("pardo", 2)
+	crear_cartas("upgrade_life", 3)
+	crear_cartas("ollas_del_pueblo", 2)
 	crear_cartas("barrilete_cosmico", 1)
-	crear_cartas("ataque_husares_infernales", 2)
-	crear_cartas("cebador", 2)
+	crear_cartas("ataque_husares_infernales", 1)
+	crear_cartas("manuela_pedraza", 1)
+	crear_cartas("sudestada", 1)
+	crear_cartas("tedeum", 1)
+	crear_cartas("defensa_de_obligado", 1)
+	crear_cartas("patricio_solari", 1)
 	
 	#crear_cartas("granadero", 5)
 	#crear_cartas("arribeno", 3)
@@ -40,7 +47,7 @@ func crear_cartas(sDecisionMessage, iCantidad):
 func crear_carta(sDecisionMessage):
 	var oCard = null
 	if sDecisionMessage == "granadero":
-		oCard = {"tipo": "unidad", "titulo": "Granadero", "numero": "1", "decision_time_message": "granadero", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El bien ponderado patricio que ataca con precisión al enemigo. __ Tarda en recargar, sino seria un escándalo."}
+		oCard = {"tipo": "unidad", "titulo": "Patricio", "numero": "1", "decision_time_message": "granadero", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El bien ponderado patricio que ataca con precisión al enemigo. __ Tarda en recargar, sino seria un escándalo."}
 	elif sDecisionMessage == "correntino":
 		oCard = {"tipo": "unidad", "titulo": "Correntino", "numero": "2", "decision_time_message": "correntino", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Tira de lejos cual cazador de ñandú. __ Camina lento, pero si pega... pega. __ Eso si, le pegan una y adiós."}
 	elif sDecisionMessage == "arribeno":
@@ -49,6 +56,10 @@ func crear_carta(sDecisionMessage):
 		oCard = {"tipo": "unidad", "titulo": "Moreno", "numero": "4", "decision_time_message": "moreno", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Fiel y aguantador como pocos. __ Lanza granadas hacia donde diga el general. __ Era eso o quedar como esclavo."}	
 	elif sDecisionMessage == "cebador":
 		oCard = {"tipo": "unidad", "titulo": "Cebador", "numero": "5", "decision_time_message": "cebador", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "No es el aguatero, es el cebador de mates. __ Te mantiene con vida en esos momentos. __ Amargo, el mate. Bueno, el tambien."}	
+	elif sDecisionMessage == "mignon":
+		oCard = {"tipo": "unidad", "titulo": "Miñon", "numero": "6", "decision_time_message": "mignon", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "No es la palomita de Ginobili, pero... __ Con este doblete les pasamos factura!"}	
+	elif sDecisionMessage == "pardo":
+		oCard = {"tipo": "unidad", "titulo": "Pardo", "numero": "7", "decision_time_message": "pardo", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Al ritmo del tambor, del tamboril! __ Una dosis de adrenalina permanente a los huesos."}			
 	elif sDecisionMessage == "upgrade_life":
 		oCard = {"tipo": "truco", "titulo": "Matecito", "numero": "1", "decision_time_message": "upgrade_life", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El general se toma unos verdes y recupera la vida. __ Eso si, me dijeron que lo toma amargo."}
 	elif sDecisionMessage == "ollas_del_pueblo":
@@ -57,7 +68,16 @@ func crear_carta(sDecisionMessage):
 		oCard = {"tipo": "evento", "titulo": "Barrilete cosmico", "numero": "1", "decision_time_message": "barrilete_cosmico", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El general es poseído temporalmente por Pelusa. __ Si hay ingleses, él los gambetea y ellos caen al piso. __ (La enfedrina queda en la sangre del general)"}
 	elif sDecisionMessage == "ataque_husares_infernales":
 		oCard = {"tipo": "evento", "titulo": "Husares infernales", "numero": "2", "decision_time_message": "ataque_husares_infernales", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Estos jinetes desataran un infierno de balas sobre los ingleses. __ (¡Ojo! Pasan una vez y chau pinola)"}
-	
+	elif sDecisionMessage == "manuela_pedraza":
+		oCard = {"tipo": "evento", "titulo": "Manuela", "numero": "3", "decision_time_message": "manuela_pedraza", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "A sablazos moriran los ingleses __ Lo que pueden las mujeres despechadas!"}
+	elif sDecisionMessage == "sudestada":
+		oCard = {"tipo": "evento", "titulo": "Sudestada", "numero": "4", "decision_time_message": "sudestada", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El viento trae una copla __ Lentitos los ingleses en el barro..."}
+	elif sDecisionMessage == "tedeum":
+		oCard = {"tipo": "evento", "titulo": "Tedeum catedral", "numero": "5", "decision_time_message": "tedeum", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Vamos a decir que la iglesia nos dio una mano... __ Ah no! Eso era pelusa."}
+	elif sDecisionMessage == "defensa_de_obligado":
+		oCard = {"tipo": "evento", "titulo": "Defensa de obligado", "numero": "6", "decision_time_message": "defensa_de_obligado", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Sin cadenas sobre los pies... __ Pero si protegiendo la plaza!"}
+	elif sDecisionMessage == "patricio_solari":
+		oCard = {"tipo": "evento", "titulo": "Patricio Solari", "numero": "7", "decision_time_message": "patricio_solari", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Se viene el pogo mas grande del mundo! __ Y los ingleses no van a entender que les paso."}
 	return oCard
 
 func size():

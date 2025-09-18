@@ -55,6 +55,8 @@ var pulseDirectionTimer = null
 
 var comLabelString = ""
 var vMouseInitialPosition = Vector2.ZERO
+var fBooster = 1.0
+var fAddedBooster = 0.0
 
 var aGunshotsSounds = [
 	preload("res://assets/original/sounds/mosquetes/gunshot01.mp3"),
@@ -131,7 +133,7 @@ func get_input():
 
 func TakeDamage(min_damage, max_damage):
 	var damage = rng.randi_range(min_damage, max_damage)
-	if damage > 0:
+	if damage > 0 and not status.hurt:
 		communication("-" + str(damage) + "")
 		life = life - damage 
 		if life < 0: life = 0	
@@ -268,13 +270,16 @@ func MovementLoop(delta):
 	# Gestionamos velocidad
 	if Engine.time_scale == 0:
 		return 
+		
+	fBooster = calculate_booster()
+	fAddedBooster = calculate_added_booster()
 	
 	if status.moving == false and not input_accepted:
 		speed = 0
 	else:
 		speed += acceleration * delta
-		if speed > max_speed:
-			speed = max_speed
+		if speed > (max_speed * fBooster + fAddedBooster):
+			speed = max_speed * fBooster + fAddedBooster
 	
 
 	if not input_accepted:
@@ -368,7 +373,7 @@ func _physics_process(delta):
 	
 func _process(delta):
 	comLabelString = ""
-	
+	invincible_effect()
 	StatusCalculation(delta)
 	if life > 0:
 		#if faction != "ingleses": 
@@ -433,9 +438,29 @@ func malon_sticked():
 			go_to(oGoalAssigned.global_position, true)
 	#else:
 		#input_accepted = true
+	return bSticked
 	
 func _ready():
 #	if has_node("AnimationPlayer"):
 #		print($AnimationPlayer.animation_finished)
 #		$AnimationPlayer.animation_finished.connect(animation_ends)
+	add_to_group("todos_" + faction)
 	init()
+
+func calculate_booster():
+	var fBoosterCalc = 1.0
+	if faction == 'ingleses':
+		fBoosterCalc = 1.0 + Global.settings.boosters.ingleses
+	elif faction == 'patricios':
+		fBoosterCalc = 1.0 + Global.settings.boosters.patricios
+	return fBoosterCalc
+	
+func calculate_added_booster():
+	var fBoosterCalc = 0.0
+	if faction == 'patricios':
+		fBoosterCalc = Global.settings.boosters.tamboreo
+	return fBoosterCalc
+
+func invincible_effect():
+	if has_node('InvincibleEffect'):
+		$InvincibleEffect.visible = invincible

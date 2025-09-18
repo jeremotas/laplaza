@@ -9,6 +9,7 @@ var barrileteTimer = null
 var max_life = 0
 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
+var manuela_caller = preload("res://scenes/patricios/manuela_pedraza.tscn")
 
 func _init():
 	unit_type = "general"
@@ -31,7 +32,6 @@ func ready():
 func _process(delta):
 	last_direction_message()
 	attack()
-	invincible_effect()
 	life_status()
 	super(delta)
 
@@ -58,9 +58,9 @@ func life_status():
 	$LifeProgress.step = 1
 	$LifeProgress.value = life
 	
-
-func invincible_effect():
-	$InvincibleEffect.visible = invincible
+	if life > max_life:
+		life = max_life
+	
 	
 func activate_agua_hirviendo_level_up():
 	agua_hirviendo_power += 1
@@ -193,9 +193,9 @@ func _on_agua_hirviendo_timer_timeout():
 		if yRandom == 0: yRandom = -1
 		if xRandom == 0: xRandom = -1
 		b.global_position.y = b.global_position.y + 240 * yRandom
-		b.global_position.x = b.global_position.x + 300 * xRandom
+		b.global_position.x = b.global_position.x + 350 * xRandom
 		
-		b.direction = b.global_position.direction_to($WeaponPoint.global_position + last_input * 150)
+		b.direction = b.global_position.direction_to($WeaponPoint.global_position + Vector2(last_input.x * 150, last_input.y * 150))
 		b.objective_faction = 'ingleses'
 		b.min_damage = Global.settings.patricios.general.agua_hirviendo.min_damage_given
 		b.max_damage = Global.settings.patricios.general.agua_hirviendo.max_damage_given
@@ -212,3 +212,8 @@ func _on_aspiradora_de_lagrimas_body_entered(body):
 	
 	if "unit_type" in body and body.unit_type == 'lagrima':
 		body.follow(self)
+
+func call_manuela_pedraza():
+	var manuela = manuela_caller.instantiate()
+	manuela.global_position = global_position
+	get_parent().add_child(manuela)

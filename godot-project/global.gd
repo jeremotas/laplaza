@@ -1,13 +1,16 @@
 extends Node
 
+signal surubi_message(label)
+
 var save_data:SaveData
 var mazo:Mazo
 
 var settings = {
+	"demo": true,
 	"game": {
 		"init_level": "level",
 		"player_goal": 600,
-		"enemy_goal": 12,
+		"enemy_goal": 30,
 		"player_max_life": 15,
 		"player_warning_life": 3,
 		"min_player_life_after_level_up": 0,
@@ -21,20 +24,22 @@ var settings = {
 				"husares_infernales": 0,
 				"arribeno": 0,
 				"cebador": 0,
+				"mignon": 0,
+				"pardo": 0,
 			},
 			"level": 0,
 			"time": 0,
 		},
 		"initial_cards": {
 			"granadero": 5,
-			"moreno": 0,
-			"arribeno": 2,
-			"correntino": 0,
-			"husares_infernales": 0,
-			"matecito": 5,
+			"moreno": 1,
+			"arribeno": 1,
+			"correntino": 1,
+			"husares_infernales": 1,
+			"matecito": 3,
 			"barrilete_cosmico": 0,
 			"ollas_del_pueblo": 0,
-			"cebador": 1
+			"cebador": 0
 		},
 		"mejoras": {
 			"granadero": {
@@ -55,27 +60,32 @@ var settings = {
 			}
 		}
 	},
+	"boosters": {
+		"ingleses": 0.0,
+		"patricios": 0.0	,
+		"tamboreo": 0.0
+	},
 	"patricios": {
 		"general": {
-			"life": 20,
-			"max_speed": 250,
+			"life": 15,
+			"max_speed": 150,
 			"attack":{
 				"bullet": {
-					"speed": 250,
-					"duration": 1.2,
+					"speed": 400,
+					"duration": 1,
 				},
 				"cooldown": 1,
-				"min_damage_given": 1,
-				"max_damage_given": 1
+				"min_damage_given": 2,
+				"max_damage_given": 2
 			},
 			"agua_hirviendo": {
 				"min_damage_given": 2,
 				"max_damage_given": 2,
-				"cooldown": 10,
+				"cooldown": 5,
 				"time_reduce_step": 2,
 				"bullet": {
-					"speed":200,
-					"duration": 2,
+					"speed":400,
+					"duration": 0.75,
 					"explotion": {
 						"duration": 0.65,
 						"scale": 30,
@@ -98,25 +108,25 @@ var settings = {
 					}
 				},
 				"cooldown": 0.01,
-				"duration": 8
+				"duration": 5
 			}
 		},
 		"granadero": {
-			"life": 7,
-			"max_speed": 100,
+			"life": 5,
+			"max_speed": 140,
 			"attack":{
 				"bullet": {
-					"speed": 150,
-					"duration": 2.0,
+					"speed": 400,
+					"duration": 1.0,
 				},
 				"cooldown": 1,
-				"min_damage_given": 1,
-				"max_damage_given": 1
+				"min_damage_given": 2,
+				"max_damage_given": 2
 			},
 		},
 		"moreno": {
-			"life": 14,
-			"max_speed": 150,
+			"life": 8,
+			"max_speed": 140,
 			"attack":{
 				"bullet": {
 					"speed": 200,
@@ -128,49 +138,59 @@ var settings = {
 					}
 				},
 				"cooldown": 4,
-				"min_damage_given": 1,
-				"max_damage_given": 1
+				"min_damage_given": 2,
+				"max_damage_given": 2
 			},
 		},
 		"cebador": {
-			"life": 6,
-			"max_speed": 80,
+			"life": 1,
+			"max_speed": 140,
 			"attack":{
-				"cooldown": 4,
+				"cooldown": 10,
 				"life_given": 1,
 				"min_damage_given": 0,
 				"max_damage_given": 0
 			},
 		},
+		"pardo": {
+			"life": 2,
+			"max_speed": 140,
+			"speed_increase": 60,
+		},
 		"arribeno": {
-			"life": 14,
-			"max_speed": 150,
+			"life": 8,
+			"max_speed": 140,
 			"attack":{
 				"bullet": {
 					"speed": 200,
-					"duration": 0.3,
-					"explotion": {
-						"duration": 0.75,
-						"scale": 15,
-						"particle": "escopetazo"
-					}
+					"duration": 2.0,
 				},
-				"cooldown": 2,
-				"min_damage_given": 1,
-				"max_damage_given": 1
+				"cooldown": 3,
+				"min_damage_given": 2,
+				"max_damage_given": 2
 			},
 		},
 		"correntino": {
-			"life": 3,
-			"max_speed": 50,
+			"life": 5,
+			"max_speed": 140,
 			"attack":{
 				"bullet": {
-					"speed": 500,
+					"speed": 600,
 					"duration": 2.0,
 				},
-				"cooldown": 5,
+				"cooldown": 3,
 				"min_damage_given": 4,
 				"max_damage_given": 4
+			},
+		},
+		"manuela_pedraza": {
+			"life": 999999,
+			"max_speed": 150,
+			"death_time": 15.0, 
+			"attack":{
+				"cooldown": 0.15,
+				"min_damage_given": 100,
+				"max_damage_given": 100
 			},
 		},
 		"husares_infernales": {
@@ -185,17 +205,40 @@ var settings = {
 				"min_damage_given": 50,
 				"max_damage_given": 50
 			}
+		},
+		"mignon": {
+			"life": 2,
+			"max_speed": 140,
+			"attack":{
+				"bullet": {
+					"speed": 400,
+					"duration": 1.5,
+				},
+				"cooldown": 2.0,
+				"min_damage_given": 1,
+				"max_damage_given": 1
+			},
+		},
+		"sudestada": {
+			"duration": 15.0,
+			"speed_booster": -0.7
+		},
+		"tedeum": {
+			"duration": 15.0
+		},
+		"defensa_de_obligado": {
+			"life": 30
 		}
 	},
 	"ingleses": {
 		"soldado": {
-			"life": 1,
-			"max_speed": 20,
+			"life": 2,
+			"max_speed": 50,
 			"experience_given": 1,
 			"attack":{
 				"bullet": {
-					"speed": 150,
-					"duration": 2.0,
+					"speed": 200,
+					"duration": 1.0,
 				},
 				"probability": 20,
 				"cooldown": 2,
@@ -203,11 +246,26 @@ var settings = {
 				"max_damage_given": 1
 			}
 		},
+		"royal_marine": {
+			"life": 4,
+			"max_speed": 60,
+			"experience_given": 6,
+			"attack":{
+				"bullet": {
+					"speed": 300,
+					"duration": 1.0,
+				},
+				"cooldown": 2.0,
+				"probability": 80,
+				"min_damage_given": 3,
+				"max_damage_given": 3
+			}
+		},
 		"highlander": {
 			"life": 5,
-			"max_speed": 12,
+			"max_speed": 30,
 			"experience_given": 4,
-			"scale_probability": 30,
+			"scale_probability": 100,
 			"attack":{
 				"bullet": {
 					"speed": 150,
@@ -215,17 +273,17 @@ var settings = {
 				},
 				"cooldown": 4,
 				"probability": 10,
-				"min_damage_given": 4,
-				"max_damage_given": 4
+				"min_damage_given": 1,
+				"max_damage_given": 1
 			}
 		},
 		"green_soldier": {
 			"life": 2,
-			"max_speed": 40,
+			"max_speed": 90,
 			"experience_given": 4,
 			"attack":{
 				"bullet": {
-					"speed": 150,
+					"speed": 300,
 					"duration": 0.5,
 				},
 				"cooldown": 4,
@@ -234,10 +292,24 @@ var settings = {
 				"max_damage_given": 1
 			}
 		},
+		"english_cavalry": {
+			"life": 3,
+			"max_speed": 120,
+			"experience_given": 8,
+			"attack":{
+				"trample": {
+					"speed": 180,
+					"duration": 3.0,
+				},
+				"cooldown": 5.0,
+				"min_damage_given": 2,
+				"max_damage_given": 2
+			}
+		},
 		"cannon": {
 			"life": 30,
-			"max_speed": 8,
-			"experience_given": 22,
+			"max_speed": 20,
+			"experience_given": 24,
 			"scale_probability": 0,
 			"attack":{
 				"bullet": {
@@ -251,10 +323,28 @@ var settings = {
 				},
 				"cooldown": 10,
 				"probability": 10,
-				"min_damage_given": 20,
-				"max_damage_given": 20
+				"min_damage_given": 14,
+				"max_damage_given": 14
 			}
-		}
+		},
+		"zapador": {
+			"life": 5,
+			"max_speed": 45,
+			"experience_given": 4,
+			"attack":{
+				"bullet": {
+					"speed": 10,
+					"duration": 0.5,
+					"explotion": {
+						"duration": 1.0,
+						"scale": 60,
+						"particle": "explosion_big"
+					}
+				},
+				"min_damage_given": 10,
+				"max_damage_given": 10
+			}
+		},
 	},
 	"sobres": {
 		"azul": [
@@ -285,9 +375,28 @@ var settings = {
 			{"name": "cebador", "quantity": 20},
 			{"name": "ollas_del_pueblo", "quantity": 20},
 			{"name": "ataque_husares_infernales", "quantity": 20},
-			{"name": "barrilete_cosmico", "quantity": 20}
+			{"name": "barrilete_cosmico", "quantity": 20},
+			{"name": "manuela_pedraza", "quantity": 20}
 		]
 	}
+}
+
+var aSurubiTalks = {
+	"mensaje_inicial": [
+		"Ahi vienen!! __ Corran por sus vidas!!! PANIC",
+		"Estos vienen por el te? __ TE voy a dar!!!",
+		"Invasion? __ Inversion? __ FMI... todo lo mismo __ Seguimos resistiendo."
+	],
+	"tedeum": [
+		"Ya lo dijo Francis... __ HAGAN LIO! PANIC",
+		"Ay diosito santo... __ bajamela del cielo.",
+		"Arranca el genio... __ Ah no... ese era otro. __ Ehm... Si, DIOS AYUDAAAA!"
+	],
+	"sudestada": [
+		"Miau miau miau... __ Miau miaaaaaauuu __ Llueve sobre mojado! PANIC",
+		"MABEEEEELLL PANIC __ Hay que entrar la ropa!!",
+		"Que llueva... Que llueva... __ La vieja esta en la cueva..."
+	]
 }
 
 func _ready():

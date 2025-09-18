@@ -12,6 +12,13 @@ func _ready():
 		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = "Sin sobres"
 		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = true
 	
+	if Global.settings.demo:
+		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = true
+		$Control/MarginContainer/VBoxContainer/AbrirSobre.focus_mode = Control.FOCUS_NONE
+		$Control/MarginContainer/VBoxContainer/ElMazo.disabled = true
+		$Control/MarginContainer/VBoxContainer/ElMazo.focus_mode = Control.FOCUS_NONE
+		
+	
 	load_volumes()
 	load_malon()
 	Engine.time_scale = 1

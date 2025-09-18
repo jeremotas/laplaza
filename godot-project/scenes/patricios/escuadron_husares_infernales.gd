@@ -20,6 +20,7 @@ func create_order(oHusar, endPositionParam, seektime):
 	startPosition = oHusar.global_position
 	#endPosition = startPosition
 	#endPosition.x = startPosition.x + 1000
+	
 	oHusar.go_to(endPositionParam, true)
 	oHusar.set_sound_start(seektime)
 

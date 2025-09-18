@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://0m43jl0bno4f"]
+
+[ext_resource type="Script" uid="uid://cd7d0aubae2sv" path="res://scenes/patricios/sudestada_effect.gd" id="1_t6w5b"]
+[ext_resource type="AudioStream" uid="uid://bquxo7bvc5tt3" path="res://assets/original/sounds/lluvia.mp3" id="2_vijj2"]
+[ext_resource type="AudioStream" uid="uid://wgn3qurqciia" path="res://assets/original/sounds/trueno.mp3" id="3_hgywb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8721g"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_t6w5b"]
+_limits = [0.0, 0.3, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.485123, 0.254306), 0.0, 0.0, 0, 0, Vector2(0.996119, 0.0856373), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_rqanq"]
+curve = SubResource("Curve_t6w5b")
+
+[sub_resource type="Gradient" id="Gradient_vijj2"]
+offsets = PackedFloat32Array(0, 0.820408, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hgywb"]
+gradient = SubResource("Gradient_vijj2")
+
+[sub_resource type="Curve" id="Curve_nkq8j"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7oeiq"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0.011643, 0.137936), 0.0, 0.0, 0, 0, Vector2(0.241915, 15.9817), 0.0, 0.0, 0, 0, Vector2(0.980595, 27.2057), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_brqpn"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ss86k"]
+curve_x = SubResource("Curve_nkq8j")
+curve_y = SubResource("Curve_7oeiq")
+curve_z = SubResource("Curve_brqpn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8721g"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(440, -200, 0)
+emission_shape = 3
+emission_box_extents = Vector3(440, 1, 1)
+gravity = Vector3(0, 3000, 0)
+scale_min = 0.1
+scale_max = 0.3
+scale_over_velocity_curve = SubResource("CurveXYZTexture_ss86k")
+color_initial_ramp = SubResource("GradientTexture1D_hgywb")
+alpha_curve = SubResource("CurveTexture_rqanq")
+
+[node name="SudestadaEffect" type="CanvasLayer"]
+script = ExtResource("1_t6w5b")
+metadata/_edit_vertical_guides_ = [-718.0]
+
+[node name="Oscuridad" type="ColorRect" parent="."]
+offset_right = 1000.0
+offset_bottom = 600.0
+color = Color(0.101961, 0.117647, 0.435294, 0.321569)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_8721g")
+amount = 2000
+lifetime = 0.68
+preprocess = 1.85
+speed_scale = 0.6
+visibility_rect = Rect2(0, 0, 850, 480)
+process_material = SubResource("ParticleProcessMaterial_8721g")
+
+[node name="Rayo" type="ColorRect" parent="."]
+visible = false
+offset_right = 1000.0
+offset_bottom = 600.0
+scale = Vector2(0.996812, 1.00432)
+
+[node name="TimerRayo" type="Timer" parent="."]
+wait_time = 3.2
+
+[node name="SonidoLluvia" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vijj2")
+
+[node name="SonidoTrueno" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hgywb")
+
+[connection signal="timeout" from="TimerRayo" to="." method="_on_timer_rayo_timeout"]
