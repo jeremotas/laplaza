@@ -31,8 +31,10 @@ script = ExtResource("1_fc5ik")
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 850.0
-offset_bottom = 480.0
+offset_left = -34.0
+offset_top = -43.0
+offset_right = 904.0
+offset_bottom = 532.0
 color = Color(0, 0, 0, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]

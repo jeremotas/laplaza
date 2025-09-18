@@ -119,7 +119,6 @@ flat = true
 alignment = 0
 
 [node name="ElMazo" type="Button" parent="Control/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -128,13 +127,13 @@ theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
+disabled = true
 text = "El mazo"
 icon = ExtResource("4_o01gl")
 flat = true
 alignment = 0
 
 [node name="AbrirSobre" type="Button" parent="Control/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -143,6 +142,7 @@ theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
+disabled = true
 text = "Abrir sobre (?)"
 icon = ExtResource("4_o01gl")
 flat = true

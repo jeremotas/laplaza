@@ -6,6 +6,7 @@ var save_data:SaveData
 var mazo:Mazo
 
 var settings = {
+	"demo": true,
 	"game": {
 		"init_level": "level",
 		"player_goal": 600,

@@ -30,11 +30,12 @@ AudioStreamManager="*res://audio_stream_manager.gd"
 
 window/size/viewport_width=850
 window/size/viewport_height=480
+window/size/mode=2
 window/size/always_on_top=true
-window/stretch/mode="viewport"
-window/stretch/scale=0.5
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=2
+window/vsync/vsync_mode=0
 
 [dotnet]
 
@@ -124,3 +125,4 @@ textures/lossless_compression/force_png=true
 textures/default_filters/use_nearest_mipmap_filter=true
 textures/default_filters/anisotropic_filtering_level=0
 anti_aliasing/screen_space_roughness_limiter/enabled=false
+2d/snap/snap_2d_transforms_to_pixel=true

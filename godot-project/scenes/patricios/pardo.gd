@@ -19,7 +19,9 @@ func assign_goal(oGoal):
 	oGoalAssigned = oGoal
 	
 func _process(delta):
-	tamboreo = malon_sticked()
+	malon_sticked()
+	if life == 0: tamboreo = false
+	else: tamboreo = true
 	tamborear()
 	super(delta)
 	

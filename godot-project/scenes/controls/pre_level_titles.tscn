@@ -73,19 +73,20 @@ one_shot = true
 autostart = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_top = 5.0
-offset_right = 640.0
-offset_bottom = 477.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -85.0
+offset_top = -27.0
+offset_right = 915.0
+offset_bottom = 508.0
 texture = ExtResource("2_74axt")
 expand_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 custom_minimum_size = Vector2(10, 10)
-offset_right = 641.0
-offset_bottom = 483.0
+offset_left = -74.0
+offset_top = -32.0
+offset_right = 898.0
+offset_bottom = 501.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0, 0, 0, 1)
@@ -96,10 +97,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = 105.0
-offset_right = 631.0
-offset_bottom = 406.0
+offset_left = 129.0
+offset_top = 87.0
+offset_right = 754.0
+offset_bottom = 388.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_8xxh0")
@@ -111,7 +112,7 @@ text_overrun_behavior = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_cs5f5")
+&"": SubResource("AnimationLibrary_cs5f5")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -119,10 +120,10 @@ stream = ExtResource("3_5rxsg")
 autoplay = true
 
 [node name="Leyenda" type="Label" parent="."]
-offset_left = 466.0
-offset_top = 446.0
-offset_right = 620.0
-offset_bottom = 470.0
+offset_left = 678.0
+offset_top = 442.0
+offset_right = 832.0
+offset_bottom = 466.0
 theme = ExtResource("2_8xxh0")
 theme_override_colors/font_color = Color(1, 1, 1, 0.8)
 theme_override_font_sizes/font_size = 18

@@ -31,13 +31,15 @@ script = ExtResource("1_ynmaj")
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 850.0
-offset_bottom = 480.0
+offset_left = -137.0
+offset_top = -137.0
+offset_right = 1062.0
+offset_bottom = 609.0
 color = Color(0, 0, 0, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(422, 230)
+position = Vector2(445, 237)
 scale = Vector2(0.268555, 0.268555)
 texture = ExtResource("2_m6qbq")
 
