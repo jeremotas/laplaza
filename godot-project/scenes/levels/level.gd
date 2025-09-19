@@ -568,3 +568,8 @@ func block_spawners_value(bValue):
 	$EnemySpawnerT12.blocked = bValue
 	$EnemySpawnerT13.blocked = bValue
 	
+func play_background_music(bPlay):
+	if !bPlay:
+		$BackgroundMusic.set_stream_paused(true)
+	else:
+		$BackgroundMusic.set_stream_paused(false)

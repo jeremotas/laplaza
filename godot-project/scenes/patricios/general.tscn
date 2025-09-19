@@ -8,9 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="3_nklhm"]
 [ext_resource type="AudioStream" uid="uid://cyp28dqo4lc11" path="res://assets/created/sounds/dolor.mp3" id="5_nv6gl"]
 [ext_resource type="AudioStream" uid="uid://3kns6iv7ithe" path="res://assets/original/sounds/horse_general.mp3" id="6_ma0wk"]
-[ext_resource type="AudioStream" uid="uid://c3hry3gid365a" path="res://assets/original/sounds/relato_victorhugo.mp3" id="8_bclty"]
 [ext_resource type="Script" uid="uid://c27lia7mqdinw" path="res://scenes/patricios/RelatoVictorHugo.gd" id="9_77b6d"]
 [ext_resource type="Script" uid="uid://4o1mmvt8akm5" path="res://scenes/patricios/AimPoint.gd" id="9_fawym"]
+[ext_resource type="AudioStream" uid="uid://kfnx55ttl5u5" path="res://assets/created/sounds/relato_futbol.mp3" id="9_fy51t"]
 [ext_resource type="Texture2D" uid="uid://b7aq2y4jsk31f" path="res://assets/created/aimer.png" id="10_3juy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f72y"]
@@ -759,7 +759,7 @@ material = SubResource("ShaderMaterial_o3k6s")
 position = Vector2(0, -11.1111)
 sprite_frames = SubResource("SpriteFrames_clm41")
 animation = &"walk"
-frame = 3
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -819,7 +819,7 @@ autoplay = true
 bus = &"Efectos"
 
 [node name="RelatoVictorHugo" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_bclty")
+stream = ExtResource("9_fy51t")
 bus = &"Efectos"
 script = ExtResource("9_77b6d")
 
