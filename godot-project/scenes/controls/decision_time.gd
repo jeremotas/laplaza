@@ -46,6 +46,7 @@ const aPreDecisionSounds = {
 func init():
 	#tween.custom_step(0.1)
 	#tween_animate.custom_step(0.1)
+	
 	pass
 
 func _ready():
@@ -54,7 +55,7 @@ func _ready():
 func _process(delta):
 	handle_input()
 	# Animacion de cartas
-	animate_cards_calculation(delta)
+	#animate_cards_calculation(delta)
 	
 func handle_input():
 	if visible == true and ready_for_input:
