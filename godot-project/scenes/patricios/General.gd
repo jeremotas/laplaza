@@ -99,6 +99,7 @@ func attack():
 func init_barrilete_cosmico():
 	barrilete_cosmico = true
 	get_parent().ActualTimeScale = 0.2
+	get_parent().play_background_music(false)
 	Engine.time_scale = 0.2
 	#min_damage_given = Global.settings.patricios.general.barrilete_cosmico.min_damage_given
 	#max_damage_given = Global.settings.patricios.general.barrilete_cosmico.max_damage_given
@@ -147,6 +148,7 @@ func end_barrilete_cosmico():
 	$RelatoVictorHugo.stop()
 	#get_parent().start_music()
 	Engine.time_scale = 1
+	get_parent().play_background_music(true)
 	AnimationCalculation(0)
 	pass
 	
