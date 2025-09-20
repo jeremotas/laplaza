@@ -6,6 +6,7 @@ var bullet = preload("res://scenes/common/bullet.tscn")
 #var barrilete_cosmico = false
 var barrileteTimer = null
 @export var agua_hirviendo_power = 0
+@export var show_life_bar = true
 var max_life = 0
 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
@@ -28,6 +29,8 @@ func _init():
 
 func ready():
 	input_accepted = false	
+	if not show_life_bar:
+		$LifeProgress.visible = false
 	
 func _process(delta):
 	last_direction_message()

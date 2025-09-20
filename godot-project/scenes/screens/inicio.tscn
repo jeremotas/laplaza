@@ -210,10 +210,6 @@ stream = ExtResource("5_eyd00")
 autoplay = true
 bus = &"Musica"
 
-[node name="General" parent="." instance=ExtResource("6_nliy4")]
-position = Vector2(122, 459)
-input_accepted = false
-
 [node name="UnitSpawner" parent="." instance=ExtResource("7_pjvl7")]
 position = Vector2(-38, 474)
 probabilitySpawnOnTimer = 0.0
@@ -222,6 +218,11 @@ respawn_seconds = 1.0
 
 [node name="PosicionGeneral" type="Marker2D" parent="."]
 position = Vector2(66, 475)
+
+[node name="General" parent="." instance=ExtResource("6_nliy4")]
+position = Vector2(163, 455)
+show_life_bar = false
+input_accepted = false
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ElMazo" to="." method="_on_mejoras_pressed"]

@@ -21,6 +21,7 @@ func _ready():
 	
 	load_volumes()
 	load_malon()
+	
 	Engine.time_scale = 1
 	get_tree().paused = false
 	
@@ -56,7 +57,6 @@ func load_volumes():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-
 
 func _on_comenzar_pressed():
 	#get_tree().change_scene_to_file("res://scenes/levels/" + Global.settings.game.init_level + ".tscn")
