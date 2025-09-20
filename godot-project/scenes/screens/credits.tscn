@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d0xadi7h20eop" path="res://scenes/screens/credits.gd" id="1_3jpn6"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_cimw1"]
+[ext_resource type="Texture2D" uid="uid://dhq17wke0y17t" path="res://assets/ui/inicio_logo_small.png" id="3_3qmcs"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="4_snkym"]
-[ext_resource type="Texture2D" uid="uid://cp7wkcbvm3eiu" path="res://assets/original/backgrounds/lafuriadelastrenzas_credits.png" id="5_2lfd0"]
 [ext_resource type="PackedScene" uid="uid://doo77a1vfcsws" path="res://scenes/screens/inicio.tscn" id="5_h3cep"]
 
 [node name="credits" type="Control"]
@@ -16,7 +16,7 @@ grow_vertical = 2
 theme = ExtResource("1_cimw1")
 script = ExtResource("1_3jpn6")
 creditsFile = "res://scenes/screens/lafuriadelastrenzas-CREDITS.txt"
-titleImage = ExtResource("5_2lfd0")
+titleImage = ExtResource("3_3qmcs")
 titlesColor = Color(0.921569, 0.678431, 0.427451, 1)
 musicPlaylist = Array[AudioStream]([ExtResource("4_snkym")])
 loopPlaylist = true

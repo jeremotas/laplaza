@@ -385,7 +385,8 @@ var aSurubiTalks = {
 	"mensaje_inicial": [
 		"Ahi vienen!! __ Corran por sus vidas!!! PANIC",
 		"Estos vienen por el te? __ TE voy a dar!!!",
-		"Invasion? __ Inversion? __ FMI... todo lo mismo __ Seguimos resistiendo."
+		"Invasion? __ Inversion? __ FMI... todo lo mismo __ Seguimos resistiendo.",
+		"Eleccion o releccion? __ para mi es la misma __ #@#@$#@#@ PANIC"
 	],
 	"tedeum": [
 		"Ya lo dijo Francis... __ HAGAN LIO! PANIC",
