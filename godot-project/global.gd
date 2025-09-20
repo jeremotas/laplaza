@@ -144,10 +144,10 @@ var settings = {
 		},
 		"cebador": {
 			"life": 1,
-			"max_speed": 140,
+			"max_speed": 120,
 			"attack":{
-				"cooldown": 10,
-				"life_given": 1,
+				"cooldown": 30,
+				"life_given": 2,
 				"min_damage_given": 0,
 				"max_damage_given": 0
 			},
@@ -163,7 +163,7 @@ var settings = {
 			"attack":{
 				"bullet": {
 					"speed": 200,
-					"duration": 2.0,
+					"duration": 1.0,
 				},
 				"cooldown": 3,
 				"min_damage_given": 2,
@@ -234,7 +234,7 @@ var settings = {
 		"soldado": {
 			"life": 2,
 			"max_speed": 50,
-			"experience_given": 1,
+			"experience_given": 2,
 			"attack":{
 				"bullet": {
 					"speed": 200,

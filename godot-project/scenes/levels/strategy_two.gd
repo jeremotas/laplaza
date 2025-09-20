@@ -49,7 +49,7 @@ var aFirstWaves = [
 	},
 	{
 		"duration": 60,
-		"max_alive": 20,
+		"max_alive": 10,
 		"name": "El ataque veloz",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
@@ -62,7 +62,7 @@ var aFirstWaves = [
 	},
 	{
 		"duration": 60,
-		"max_alive": 20,
+		"max_alive": 15,
 		"name": "El ataque duro",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},

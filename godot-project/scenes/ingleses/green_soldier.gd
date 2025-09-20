@@ -32,8 +32,8 @@ func _process(delta):
 func drop_the_reward(experience_given_value):
 	drop_reward = false
 	var l = lagrima.instantiate()
-	l.modulate = Color(1,1,0,1)
-	l.scale = Vector2(1.5,1.5)
+	l.modulate = Color(1,0,1,1)
+	#l.scale = Vector2(1.5,1.5)
 	l.experience_given = experience_given_value
 	l.global_position = global_position
 	get_parent().add_child(l)
