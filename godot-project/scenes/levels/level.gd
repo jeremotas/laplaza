@@ -92,6 +92,9 @@ func _input(event):
 	
 func prepare_initial_conditions():
 	#print(JSON.stringify(malon))
+	Global.settings.boosters.ingleses = 0.0
+	Global.settings.boosters.patricios = 0.0
+	Global.settings.boosters.tamboreo = 0.0
 	if "initial_conditions" in Global.settings.game:
 		if "units_arrived" in Global.settings.game.initial_conditions: $EnemyGoal.UnitsArrived = Global.settings.game.initial_conditions.units_arrived
 		if "life" in Global.settings.game.initial_conditions: $General.life = Global.settings.game.initial_conditions.life
@@ -276,6 +279,7 @@ func decision_time_end(decision):
 	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)
 	elif decision == "sudestada": init_sudestada()
+	elif decision == "tedeum": init_tedeum()
 	elif decision == "ollas_del_pueblo": $General.activate_agua_hirviendo_level_up()
 	elif decision == "manuela_pedraza": $General.call_manuela_pedraza()
 	elif decision == "defensa_de_obligado": init_defensa_de_obligado()

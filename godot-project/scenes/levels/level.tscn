@@ -389,26 +389,8 @@ faction = "ingleses"
 
 [node name="General" parent="." instance=ExtResource("5_cfpx1")]
 position = Vector2(294, 892)
-agua_hirviendo_power = 0
-max_speed = 200
-speed = 0
-acceleration = 1200
 life = 20
-coolDownAttackTime = 1.0
-min_damage_given = 1
-max_damage_given = 1
 input_accepted = false
-attack_block_movement = false
-show_progress_bar = false
-bullet_speed = 150
-bullet_lifetime = 1
-invincible = false
-last_input = Vector2(0, 0)
-flipped = false
-iAttackProbability = 100
-gunsound_type = "mosquete"
-just_idle = false
-aim_calculated = true
 
 [node name="Camera2D" type="Camera2D" parent="General"]
 position = Vector2(1.11111, -1.11111)
