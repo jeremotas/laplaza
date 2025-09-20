@@ -1,43 +1,43 @@
 [gd_scene load_steps=13 format=3 uid="uid://dsetxn36ecr8n"]
 
 [ext_resource type="Script" uid="uid://bbhgja8blu6o4" path="res://scenes/controls/surubi_con_ataques_de_panico.gd" id="1_nwj23"]
-[ext_resource type="Texture2D" uid="uid://dfuxpg388i6fh" path="res://assets/created/surubi.png" id="1_y270i"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_ca5bl"]
+[ext_resource type="Texture2D" uid="uid://5dqh7g5y4ot2" path="res://assets/created/surubiconfondo.png" id="2_vkq4b"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_osuor"]
-atlas = ExtResource("1_y270i")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_upl4n"]
+atlas = ExtResource("2_vkq4b")
+region = Rect2(0, 0, 86, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ietfm"]
-atlas = ExtResource("1_y270i")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_avj0a"]
+atlas = ExtResource("2_vkq4b")
+region = Rect2(86, 0, 86, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1s42c"]
-atlas = ExtResource("1_y270i")
-region = Rect2(128, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjylc"]
+atlas = ExtResource("2_vkq4b")
+region = Rect2(172, 0, 86, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jcha3"]
-atlas = ExtResource("1_y270i")
-region = Rect2(192, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_05b3l"]
+atlas = ExtResource("2_vkq4b")
+region = Rect2(258, 0, 86, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hmdrt"]
-atlas = ExtResource("1_y270i")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm1hs"]
+atlas = ExtResource("2_vkq4b")
+region = Rect2(0, 0, 86, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pgyrx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_osuor")
+"texture": SubResource("AtlasTexture_upl4n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ietfm")
+"texture": SubResource("AtlasTexture_avj0a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1s42c")
+"texture": SubResource("AtlasTexture_qjylc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jcha3")
+"texture": SubResource("AtlasTexture_05b3l")
 }],
 "loop": true,
 "name": &"attack",
@@ -45,7 +45,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hmdrt")
+"texture": SubResource("AtlasTexture_tm1hs")
 }],
 "loop": true,
 "name": &"idle",
@@ -120,7 +120,7 @@ script = ExtResource("1_nwj23")
 [node name="Surubi" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_pgyrx")
-animation = &"attack"
+animation = &"idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Surubi")
