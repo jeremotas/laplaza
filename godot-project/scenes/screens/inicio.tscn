@@ -220,6 +220,7 @@ respawn_seconds = 1.0
 position = Vector2(66, 475)
 
 [node name="General" parent="." instance=ExtResource("6_nliy4")]
+visible = false
 position = Vector2(163, 455)
 show_life_bar = false
 input_accepted = false

@@ -383,20 +383,20 @@ var settings = {
 
 var aSurubiTalks = {
 	"mensaje_inicial": [
-		"Ahi vienen!! __ Corran por sus vidas!!! PANIC",
-		"Estos vienen por el te? __ TE voy a dar!!!",
-		"Invasion? __ Inversion? __ FMI... todo lo mismo __ Seguimos resistiendo.",
-		"Eleccion o releccion? __ para mi es la misma __ #@#@$#@#@ PANIC"
+		"Ahí vienen!! __ Corran por sus vidas!!! PANIC",
+		"Estos vienen por el té? __ TE voy a dar!!! PANIC",
+		"Invasión? __ Inversión? __ FMI... TODO LO MISMO PANIC __ Seguimos resistiendo.",
+		"Elección o relección? __ para mí es la misma... __ #@#@$#@#@ PANIC"
 	],
 	"tedeum": [
-		"Ya lo dijo Francis... __ HAGAN LIO! PANIC",
-		"Ay diosito santo... __ bajamela del cielo.",
-		"Arranca el genio... __ Ah no... ese era otro. __ Ehm... Si, DIOS AYUDAAAA!"
+		"Ya lo dijo Francis... __ HAGAN LÍO! PANIC",
+		"Ay, diosito santo... __ bajamela del cielo.",
+		"Arranca el genio... __ Ah, no... ese era otro. __ Ehm... Sí, DIOS, AYUDAAAA!"
 	],
 	"sudestada": [
-		"Miau miau miau... __ Miau miaaaaaauuu __ Llueve sobre mojado! PANIC",
+		"Miau, miau, miau... __ Miau, miaaaaaauuu __ Llueve sobre mojado! PANIC",
 		"MABEEEEELLL PANIC __ Hay que entrar la ropa!!",
-		"Que llueva... Que llueva... __ La vieja esta en la cueva..."
+		"Que llueva... Que llueva... __ La vieja está en la cueva..."
 	]
 }
 

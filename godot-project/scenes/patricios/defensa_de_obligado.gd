@@ -23,14 +23,18 @@ func process():
 
 func armar():
 	life = max_life
+	set_collision_layer_value(3, true)
 	set_collision_layer_value(2, true)
+	set_collision_layer_value(1, true)
 	$AnimatedSprite2D.show()
 	$AnimatedSprite2D.play("aparecer")
 	$CollisionShape2D.disabled = false
 	#sonido de cadenas pendiente.
 
 func desarmar():
+	set_collision_layer_value(3, false)
 	set_collision_layer_value(2, false)
+	set_collision_layer_value(1, false)
 	$CollisionShape2D.disabled = true
 	$AnimatedSprite2D.hide()
 	$AnimatedSprite2D.stop()
