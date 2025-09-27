@@ -77,8 +77,11 @@ func first_move_general():
 	Global.emit_signal("surubi_message", "mensaje_inicial")
 	await get_tree().create_timer(1).timeout
 	$General.input_accepted = true
+	hide_tutorial()
 	
-	
+func hide_tutorial():
+	var tween = create_tween()
+	tween.tween_property($Tutorial, "modulate:a", 0.0, 0.5)
 	
 	
 func add_spawn_zone(zone):

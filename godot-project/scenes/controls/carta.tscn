@@ -95,6 +95,7 @@ expand_mode = 4
 stretch_mode = 5
 
 [node name="Letra" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 7.0
 offset_top = 6.0
@@ -112,6 +113,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LetraInvertida" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 74.0
 offset_top = 129.0
