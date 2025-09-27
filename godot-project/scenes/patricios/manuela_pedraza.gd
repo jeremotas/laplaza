@@ -9,6 +9,9 @@ func _ready():
 	$CoolDownKillTimer.wait_time = coolDownAttackTime
 	$DeathTimer.wait_time = deathTime
 	$DeathTimer.start()
+	var c = modulate
+	c.a = 1.0
+	modulate = c
 
 func _init():
 	invincible = true
@@ -80,5 +83,9 @@ func _on_cool_down_kill_timer_timeout() -> void:
 	canKill = true
 
 func _on_death_timer_timeout() -> void:
+	canKill = false
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 1.0)
+	await get_tree().create_timer(1.0).timeout
 	invincible = false
 	life = 0
