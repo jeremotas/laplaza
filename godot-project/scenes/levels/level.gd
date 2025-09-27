@@ -68,16 +68,19 @@ func _ready():
 	Engine.time_scale = 1
 
 func first_move_general():
+	
 	$General.input_accepted = false
-	var go_position = $EnemyGoal.global_position
+	var go_position = $EnemyGoal.global_position	
 	go_position.y -= 450
 	$General.go_to(go_position, true)
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(1.0).timeout
+	Global.emit_signal("surubi_message", "tutorial")
+	await get_tree().create_timer(1.5).timeout
 	zooming = "up"
 	Global.emit_signal("surubi_message", "mensaje_inicial")
 	await get_tree().create_timer(1).timeout
 	$General.input_accepted = true
-	hide_tutorial()
+	# hide_tutorial()
 	
 func hide_tutorial():
 	var tween = create_tween()

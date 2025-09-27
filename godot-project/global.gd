@@ -397,6 +397,9 @@ var aSurubiTalks = {
 		"Miau, miau, miau... __ Miau, miaaaaaauuu __ Llueve sobre mojado! PANIC",
 		"MABEEEEELLL PANIC __ Hay que entrar la ropa!!",
 		"Que llueva... Que llueva... __ La vieja está en la cueva..."
+	],
+	"tutorial": [
+		"¡Defende esa bandera! __ Liniers dispara solo... __ ¡Movete!"
 	]
 }
 

@@ -575,6 +575,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_82wvu")
 
 [node name="Tutorial" type="Node2D" parent="."]
+visible = false
 
 [node name="defende_la_bandera" type="Label" parent="Tutorial"]
 offset_left = 181.0
