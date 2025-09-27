@@ -50,7 +50,7 @@ func drop_the_reward(experience_given_value):
 
 func attack():
 	attack_objective = {"global_position": destination, "faction": "patricios", "velocity": 0}
-	if hasToAttack and attack_objective.global_position != Vector2.ZERO and $VisibleOnScreenNotifier2D.is_on_screen():
+	if hasToAttack and attack_objective.global_position != Vector2.ZERO and $VisibleOnScreenNotifier2D.is_on_screen() and not blocked_attack:
 		var b = bullet.instantiate()
 		b.global_position = $WeaponPoint.global_position
 		b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()

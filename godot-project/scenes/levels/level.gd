@@ -531,8 +531,13 @@ func init_jijiji():
 	block_spawners_value(true)	
 	var aUnidades = get_tree().get_nodes_in_group("faccion_ingleses")
 	for oUnidad in aUnidades:
+		oUnidad.max_speed = 0
+		oUnidad.blocked_attack = true
+	await get_tree().create_timer(10.0).timeout
+	aUnidades = get_tree().get_nodes_in_group("faccion_ingleses")
+	for oUnidad in aUnidades:
 		oUnidad.life = 0
-	await get_tree().create_timer(12.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	$Crowd.hide()
 	$General.input_accepted = true
 	$BackgroundMusic.play()

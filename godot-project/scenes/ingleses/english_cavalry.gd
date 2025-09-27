@@ -53,7 +53,7 @@ func drop_the_reward(experience_given_value):
 	get_parent().add_child(l)
 
 func attack():
-	if oEnemyToFollow:
+	if oEnemyToFollow and not blocked_attack:
 		destination  = oEnemyToFollow.global_position
 		attack_objective = {"global_position": destination, "faction": "patricios", "velocity": 0}
 		if not inCoolDownAttack:

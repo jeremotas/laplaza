@@ -22,6 +22,7 @@ class_name Character
 @export var gunsound_type = 'mosquete'
 @export var just_idle = false
 @export var aim_calculated = true
+@export var blocked_attack = false
 
 var barrilete_cosmico = false
 var last_general_direction = Vector2.ZERO
@@ -152,7 +153,7 @@ func idle():
 
 func CombatCalculation(_delta):
 	if life > 0:
-		if aim_calculated and not inCoolDownAttack and $CombatArea.has_overlapping_bodies():
+		if aim_calculated and not inCoolDownAttack and $CombatArea.has_overlapping_bodies() and not blocked_attack:
 			var aBodies = $CombatArea.get_overlapping_bodies()
 			if aBodies.size() > 0:
 				if not inCoolDownAttack:

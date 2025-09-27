@@ -42,7 +42,7 @@ func drop_the_reward(experience_given_value):
 
 func explode():
 	$AnimatedSprite2D.material.set_shader_parameter("width",0.0)
-	if not exploded:
+	if not exploded and not blocked_attack:
 		attack_objective = {"global_position": destination, "faction": "patricios", "velocity": 0}
 		life = 0		
 		exploded = true
