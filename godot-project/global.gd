@@ -247,7 +247,7 @@ var settings = {
 			}
 		},
 		"royal_marine": {
-			"life": 4,
+			"life": 5,
 			"max_speed": 60,
 			"experience_given": 6,
 			"attack":{
@@ -262,8 +262,8 @@ var settings = {
 			}
 		},
 		"highlander": {
-			"life": 5,
-			"max_speed": 30,
+			"life": 8,
+			"max_speed": 40,
 			"experience_given": 4,
 			"scale_probability": 100,
 			"attack":{
@@ -278,7 +278,7 @@ var settings = {
 			}
 		},
 		"green_soldier": {
-			"life": 2,
+			"life": 1,
 			"max_speed": 90,
 			"experience_given": 4,
 			"attack":{
@@ -293,8 +293,8 @@ var settings = {
 			}
 		},
 		"english_cavalry": {
-			"life": 3,
-			"max_speed": 120,
+			"life": 4,
+			"max_speed": 110,
 			"experience_given": 8,
 			"attack":{
 				"trample": {
@@ -308,7 +308,7 @@ var settings = {
 		},
 		"cannon": {
 			"life": 30,
-			"max_speed": 20,
+			"max_speed": 30,
 			"experience_given": 24,
 			"scale_probability": 0,
 			"attack":{
@@ -321,7 +321,7 @@ var settings = {
 						"particle": "explosion"
 					}
 				},
-				"cooldown": 10,
+				"cooldown": 8,
 				"probability": 10,
 				"min_damage_given": 14,
 				"max_damage_given": 14
