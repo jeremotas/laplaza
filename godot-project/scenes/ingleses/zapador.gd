@@ -36,12 +36,13 @@ func drop_the_reward(experience_given_value):
 	drop_reward = false
 	var l = lagrima.instantiate()
 	l.experience_given = experience_given_value
+	l.modulate = Color(1,0,1,1)
 	l.global_position = global_position
 	get_parent().add_child(l)
 
 func explode():
 	$AnimatedSprite2D.material.set_shader_parameter("width",0.0)
-	if not exploded:
+	if not exploded and not blocked_attack:
 		attack_objective = {"global_position": destination, "faction": "patricios", "velocity": 0}
 		life = 0		
 		exploded = true

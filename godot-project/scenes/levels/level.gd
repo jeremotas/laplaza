@@ -68,17 +68,23 @@ func _ready():
 	Engine.time_scale = 1
 
 func first_move_general():
+	
 	$General.input_accepted = false
-	var go_position = $EnemyGoal.global_position
+	var go_position = $EnemyGoal.global_position	
 	go_position.y -= 450
 	$General.go_to(go_position, true)
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(1.0).timeout
+	Global.emit_signal("surubi_message", "tutorial")
+	await get_tree().create_timer(1.5).timeout
 	zooming = "up"
 	Global.emit_signal("surubi_message", "mensaje_inicial")
 	await get_tree().create_timer(1).timeout
 	$General.input_accepted = true
+	# hide_tutorial()
 	
-	
+func hide_tutorial():
+	var tween = create_tween()
+	tween.tween_property($Tutorial, "modulate:a", 0.0, 0.5)
 	
 	
 func add_spawn_zone(zone):
@@ -92,6 +98,9 @@ func _input(event):
 	
 func prepare_initial_conditions():
 	#print(JSON.stringify(malon))
+	Global.settings.boosters.ingleses = 0.0
+	Global.settings.boosters.patricios = 0.0
+	Global.settings.boosters.tamboreo = 0.0
 	if "initial_conditions" in Global.settings.game:
 		if "units_arrived" in Global.settings.game.initial_conditions: $EnemyGoal.UnitsArrived = Global.settings.game.initial_conditions.units_arrived
 		if "life" in Global.settings.game.initial_conditions: $General.life = Global.settings.game.initial_conditions.life
@@ -276,6 +285,7 @@ func decision_time_end(decision):
 	elif decision == "barrilete_cosmico": barrilete_cosmico()
 	elif decision == "upgrade_life": increase_life(10)
 	elif decision == "sudestada": init_sudestada()
+	elif decision == "tedeum": init_tedeum()
 	elif decision == "ollas_del_pueblo": $General.activate_agua_hirviendo_level_up()
 	elif decision == "manuela_pedraza": $General.call_manuela_pedraza()
 	elif decision == "defensa_de_obligado": init_defensa_de_obligado()
@@ -527,8 +537,13 @@ func init_jijiji():
 	block_spawners_value(true)	
 	var aUnidades = get_tree().get_nodes_in_group("faccion_ingleses")
 	for oUnidad in aUnidades:
+		oUnidad.max_speed = 0
+		oUnidad.blocked_attack = true
+	await get_tree().create_timer(10.0).timeout
+	aUnidades = get_tree().get_nodes_in_group("faccion_ingleses")
+	for oUnidad in aUnidades:
 		oUnidad.life = 0
-	await get_tree().create_timer(12.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	$Crowd.hide()
 	$General.input_accepted = true
 	$BackgroundMusic.play()

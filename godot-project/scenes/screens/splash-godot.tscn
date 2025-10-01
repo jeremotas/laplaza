@@ -39,7 +39,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(445, 237)
+position = Vector2(425, 237)
 scale = Vector2(0.268555, 0.268555)
 texture = ExtResource("2_m6qbq")
 

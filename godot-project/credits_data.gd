@@ -5,6 +5,7 @@ var credits = "
 
 
 [Productor]
+Rodrigo Diaz
 Esteban Sandoval
 
 [Director de arte]
@@ -20,6 +21,7 @@ Gastón Ariel Loza
 [Diseñadores de juego]
 Alejandra Soledad Zarate
 Gastón Ariel Loza
+Esteban Sandoval
 
 [Programadores]
 Jeremías Cavallero

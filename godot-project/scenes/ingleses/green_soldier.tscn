@@ -494,13 +494,10 @@ frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ge3yl")
+&"": SubResource("AnimationLibrary_ge3yl")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ge3yl")
-}
 tree_root = SubResource("AnimationNodeStateMachine_aqu7x")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/die = false

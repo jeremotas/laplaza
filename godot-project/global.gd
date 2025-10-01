@@ -144,10 +144,10 @@ var settings = {
 		},
 		"cebador": {
 			"life": 1,
-			"max_speed": 140,
+			"max_speed": 120,
 			"attack":{
-				"cooldown": 10,
-				"life_given": 1,
+				"cooldown": 30,
+				"life_given": 2,
 				"min_damage_given": 0,
 				"max_damage_given": 0
 			},
@@ -163,7 +163,7 @@ var settings = {
 			"attack":{
 				"bullet": {
 					"speed": 200,
-					"duration": 2.0,
+					"duration": 1.0,
 				},
 				"cooldown": 3,
 				"min_damage_given": 2,
@@ -234,7 +234,7 @@ var settings = {
 		"soldado": {
 			"life": 2,
 			"max_speed": 50,
-			"experience_given": 1,
+			"experience_given": 2,
 			"attack":{
 				"bullet": {
 					"speed": 200,
@@ -247,7 +247,7 @@ var settings = {
 			}
 		},
 		"royal_marine": {
-			"life": 4,
+			"life": 5,
 			"max_speed": 60,
 			"experience_given": 6,
 			"attack":{
@@ -262,8 +262,8 @@ var settings = {
 			}
 		},
 		"highlander": {
-			"life": 5,
-			"max_speed": 30,
+			"life": 8,
+			"max_speed": 40,
 			"experience_given": 4,
 			"scale_probability": 100,
 			"attack":{
@@ -278,7 +278,7 @@ var settings = {
 			}
 		},
 		"green_soldier": {
-			"life": 2,
+			"life": 1,
 			"max_speed": 90,
 			"experience_given": 4,
 			"attack":{
@@ -293,8 +293,8 @@ var settings = {
 			}
 		},
 		"english_cavalry": {
-			"life": 3,
-			"max_speed": 120,
+			"life": 4,
+			"max_speed": 110,
 			"experience_given": 8,
 			"attack":{
 				"trample": {
@@ -308,7 +308,7 @@ var settings = {
 		},
 		"cannon": {
 			"life": 30,
-			"max_speed": 20,
+			"max_speed": 30,
 			"experience_given": 24,
 			"scale_probability": 0,
 			"attack":{
@@ -321,7 +321,7 @@ var settings = {
 						"particle": "explosion"
 					}
 				},
-				"cooldown": 10,
+				"cooldown": 8,
 				"probability": 10,
 				"min_damage_given": 14,
 				"max_damage_given": 14
@@ -383,19 +383,23 @@ var settings = {
 
 var aSurubiTalks = {
 	"mensaje_inicial": [
-		"Ahi vienen!! __ Corran por sus vidas!!! PANIC",
-		"Estos vienen por el te? __ TE voy a dar!!!",
-		"Invasion? __ Inversion? __ FMI... todo lo mismo __ Seguimos resistiendo."
+		"Ahí vienen!! __ Corran por sus vidas!!! PANIC",
+		"Estos vienen por el té? __ TE voy a dar!!! PANIC",
+		"Invasión? __ Inversión? __ FMI... TODO LO MISMO PANIC __ Seguimos resistiendo.",
+		"Elección o relección? __ para mí es la misma... __ #@#@$#@#@ PANIC"
 	],
 	"tedeum": [
-		"Ya lo dijo Francis... __ HAGAN LIO! PANIC",
-		"Ay diosito santo... __ bajamela del cielo.",
-		"Arranca el genio... __ Ah no... ese era otro. __ Ehm... Si, DIOS AYUDAAAA!"
+		"Ya lo dijo Francis... __ HAGAN LÍO! PANIC",
+		"Ay, diosito santo... __ bajamela del cielo.",
+		"Arranca el genio... __ Ah, no... ese era otro. __ Ehm... Sí, DIOS, AYUDAAAA!"
 	],
 	"sudestada": [
-		"Miau miau miau... __ Miau miaaaaaauuu __ Llueve sobre mojado! PANIC",
+		"Miau, miau, miau... __ Miau, miaaaaaauuu __ Llueve sobre mojado! PANIC",
 		"MABEEEEELLL PANIC __ Hay que entrar la ropa!!",
-		"Que llueva... Que llueva... __ La vieja esta en la cueva..."
+		"Que llueva... Que llueva... __ La vieja está en la cueva..."
+	],
+	"tutorial": [
+		"¡Defende esa bandera! __ Liniers dispara solo... __ ¡Movete!"
 	]
 }
 

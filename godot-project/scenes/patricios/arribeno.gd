@@ -26,20 +26,25 @@ func _process(delta):
 	super(delta)
 
 func attack():
-	if not inCoolDownAttack:
+	if not inCoolDownAttack and life > 0:
 		inCoolDownAttack = true
 		coolDownTimer.start()
 		#if  last_general_direction.x < 0:
 			#b1.global_position.x = $WeaponPoint.global_position.x - ($WeaponPoint.position.x  * 2)
 			
-		var spread_angle = deg_to_rad(10) # separación entre balas
+		var aspread_angle = [
+			deg_to_rad(-50),
+			deg_to_rad(-12.5),
+			deg_to_rad(12.5),
+			deg_to_rad(50)
+		] # separación entre balas
 		var base_angle = last_general_direction.angle()
 
-		for i in range(-2, 3): # genera 5 balas
+		for i in range(0, 4): # genera 4 balas
 			var bullet_instance = bullet.instantiate()
 			bullet_instance.global_position = $WeaponPoint.global_position
 			
-			var angle = base_angle + (i * spread_angle)
+			var angle = base_angle + (aspread_angle[i])
 			bullet_instance.direction = Vector2.RIGHT.rotated(angle) # dirección ajustada
 			
 			# Configuración general

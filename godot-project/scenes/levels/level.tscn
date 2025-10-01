@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://doeqrttpttyvl"]
+[gd_scene load_steps=27 format=3 uid="uid://doeqrttpttyvl"]
 
 [ext_resource type="Script" uid="uid://dhqlnijvhr2yc" path="res://scenes/levels/level.gd" id="1_4e1oj"]
 [ext_resource type="Texture2D" uid="uid://divu38pun5cej" path="res://assets/created/tilesets/tilesetmud64exp.png" id="2_udve2"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ui641fbylwgm" path="res://assets/created/Altos arriba.png" id="16_1bp38"]
 [ext_resource type="Texture2D" uid="uid://dfx6iu5kl57m0" path="res://assets/created/Recova x2.png" id="17_82wvu"]
 [ext_resource type="PackedScene" uid="uid://byg3mgxsopxkh" path="res://scenes/patricios/tedeum_effect.tscn" id="18_qhnmj"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="20_lp2ca"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgl40"]
 resource_name = "terreno"
@@ -389,26 +390,8 @@ faction = "ingleses"
 
 [node name="General" parent="." instance=ExtResource("5_cfpx1")]
 position = Vector2(294, 892)
-agua_hirviendo_power = 0
-max_speed = 200
-speed = 0
-acceleration = 1200
 life = 20
-coolDownAttackTime = 1.0
-min_damage_given = 1
-max_damage_given = 1
 input_accepted = false
-attack_block_movement = false
-show_progress_bar = false
-bullet_speed = 150
-bullet_lifetime = 1
-invincible = false
-last_input = Vector2(0, 0)
-flipped = false
-iAttackProbability = 100
-gunsound_type = "mosquete"
-just_idle = false
-aim_calculated = true
 
 [node name="Camera2D" type="Camera2D" parent="General"]
 position = Vector2(1.11111, -1.11111)
@@ -590,6 +573,48 @@ z_index = 20
 position = Vector2(289, 791)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_82wvu")
+
+[node name="Tutorial" type="Node2D" parent="."]
+visible = false
+
+[node name="defende_la_bandera" type="Label" parent="Tutorial"]
+offset_left = 181.0
+offset_top = 519.0
+offset_right = 401.0
+offset_bottom = 550.0
+theme = ExtResource("20_lp2ca")
+theme_override_colors/font_color = Color(0.38, 0.245987, 0.2052, 0.87451)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/font_size = 18
+text = "Defende esta bandera."
+horizontal_alignment = 1
+
+[node name="liniers_dispara_solo" type="Label" parent="Tutorial"]
+offset_left = -34.0
+offset_top = 459.0
+offset_right = 186.0
+offset_bottom = 490.0
+theme = ExtResource("20_lp2ca")
+theme_override_colors/font_color = Color(0.38, 0.245987, 0.2052, 0.87451)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/font_size = 18
+text = "Liniers dispara solo."
+horizontal_alignment = 1
+
+[node name="liniers_dispara_solo2" type="Label" parent="Tutorial"]
+offset_left = 360.0
+offset_top = 456.0
+offset_right = 606.0
+offset_bottom = 487.0
+theme = ExtResource("20_lp2ca")
+theme_override_colors/font_color = Color(0.38, 0.245987, 0.2052, 0.87451)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/font_size = 18
+text = "¡Aguanta 10 minutos!"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

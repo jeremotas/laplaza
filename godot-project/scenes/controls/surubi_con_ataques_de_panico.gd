@@ -4,6 +4,8 @@ var messageTimer = null
 var rng = RandomNumberGenerator.new()
 var aMessagesToRead = []
 var bTalking = false
+@onready var mensaje = $PanelMensaje/Mensaje
+@onready var containermensaje = $PanelMensaje
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -33,14 +35,14 @@ func message_show(sMessage):
 		sMessage = sMessage.replace("PANIC","")
 		bPanic = true
 	
-	$Mensaje.text = sMessage
+	mensaje.text = sMessage
 	if bPanic:
 		$AnimationPlayer.play("attack")
 	else: 
 		$AnimationPlayer.play("idle")
 	
 	$Surubi.show()	
-	$Mensaje.show()
+	containermensaje.show()
 	
 	messageTimer = Timer.new()
 	add_child(messageTimer)
@@ -55,5 +57,5 @@ func end_surubi_message():
 	bTalking = false
 	if aMessagesToRead.size() == 0:
 		$Surubi.hide()
-		$Mensaje.hide()
+		containermensaje.hide()
 		
