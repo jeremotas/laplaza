@@ -64,6 +64,8 @@ func life_status():
 	if life > max_life:
 		life = max_life
 	
+func set_aimpoint_visibility(bVal):
+	$AimPoint.visible = bVal
 	
 func activate_agua_hirviendo_level_up():
 	agua_hirviendo_power += 1

@@ -140,6 +140,11 @@ func _process(delta):
 	else:
 		zoom_general(delta)
 	#print(command)
+	if malon[2].quantity > 0 or malon[3].quantity > 0:
+		$General.set_aimpoint_visibility(true)
+	else:
+		$General.set_aimpoint_visibility(false)
+	
 	if command == "d10s":
 		barrilete_cosmico()
 		command = ""
