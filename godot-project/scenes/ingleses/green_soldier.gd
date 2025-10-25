@@ -10,6 +10,8 @@ var iAttacksInitialRotation = 0
 var bShuffleAngles = true
 var aAttackAngles = [0.0]
 var iAttacksMade = 0
+var sAttackObjective = "destino"
+var oEnemyToFollow = null
 
 func _init():
 	unit_type = "green_soldier"
@@ -26,13 +28,21 @@ func _init():
 	
 	bShuffleAngles = Global.settings.ingleses.green_soldier.attack.shuffle_angles
 	aAttackAngles  = Global.settings.ingleses.green_soldier.attack.angles
+	sAttackObjective = Global.settings.ingleses.green_soldier.attack.objective
+	
 	drop_reward = true
 	init()
 	
 func _ready():
+	set_enemy_to_follow()
 	if bShuffleAngles:
 		aAttackAngles.shuffle()
 	super()
+
+func set_enemy_to_follow():
+	var aEnemyToFollow = get_tree().get_nodes_in_group("general_group")
+	if aEnemyToFollow.size() == 1:
+		oEnemyToFollow = aEnemyToFollow[0]
 
 func _process(delta):
 	attack()
@@ -49,7 +59,11 @@ func drop_the_reward(experience_given_value):
 	get_parent().add_child(l)
 
 func attack():
-	attack_objective = {"global_position": destination, "faction": "patricios", "velocity": 0}
+	var attack_position = destination
+	if sAttackObjective == 'General':
+		attack_position = oEnemyToFollow.global_position
+	
+	attack_objective = {"global_position": attack_position, "faction": "patricios", "velocity": 0}
 	if hasToAttack and attack_objective.global_position != Vector2.ZERO and $VisibleOnScreenNotifier2D.is_on_screen() and not blocked_attack:
 		var b = bullet.instantiate()
 		b.global_position = $WeaponPoint.global_position

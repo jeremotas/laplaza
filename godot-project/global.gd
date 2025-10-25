@@ -245,7 +245,8 @@ var settings = {
 				"min_damage_given": 1,
 				"max_damage_given": 1,
 				"shuffle_angles": true,
-				"angles": [30.0, 0.0, -30.0, 0.0]
+				"angles": [30.0, 0.0, -30.0, 0.0],
+				"objective": "General"
 			}
 		},
 		"royal_marine": {
@@ -278,7 +279,8 @@ var settings = {
 				"min_damage_given": 1,
 				"max_damage_given": 1,
 				"shuffle_angles": false,
-				"angles": [ 0.0, 90.0, 180.0, 270.0]
+				"angles": [ 0.0, 90.0, 180.0, 270.0],
+				"objective": "General"
 			}
 		},
 		"green_soldier": {
@@ -295,7 +297,8 @@ var settings = {
 				"min_damage_given": 1,
 				"max_damage_given": 1,
 				"shuffle_angles": true,
-				"angles": [30.0, 15.0, 0.0, -15.0, -30.0]
+				"angles": [30.0, 15.0, 0.0, -15.0, -30.0],
+				"objective": "Plaza"
 			}
 		},
 		"english_cavalry": {
