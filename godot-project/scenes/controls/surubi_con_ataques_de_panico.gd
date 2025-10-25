@@ -47,7 +47,7 @@ func message_show(sMessage):
 	messageTimer = Timer.new()
 	add_child(messageTimer)
 	messageTimer.autostart = true
-	messageTimer.wait_time = 2
+	messageTimer.wait_time = 1
 	messageTimer.one_shot = true
 	messageTimer.timeout.connect(end_surubi_message)
 	messageTimer.start()
@@ -58,4 +58,3 @@ func end_surubi_message():
 	if aMessagesToRead.size() == 0:
 		$Surubi.hide()
 		containermensaje.hide()
-		

@@ -47,6 +47,6 @@ libraries = {
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 0)
-offset_right = 850.0
-offset_bottom = 476.0
+offset_right = 860.0
+offset_bottom = 480.0
 color = Color(0, 0, 0, 1)

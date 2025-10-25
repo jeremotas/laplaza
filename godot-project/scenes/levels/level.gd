@@ -74,8 +74,10 @@ func first_move_general():
 	go_position.y -= 450
 	$General.go_to(go_position, true)
 	await get_tree().create_timer(1.0).timeout
+	$HUD.set_highlight_surubi_visible(true)
 	Global.emit_signal("surubi_message", "tutorial")
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(3.0).timeout
+	$HUD.set_highlight_surubi_visible(false)
 	zooming = "up"
 	Global.emit_signal("surubi_message", "mensaje_inicial")
 	await get_tree().create_timer(1).timeout

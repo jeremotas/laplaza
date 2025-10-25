@@ -5,6 +5,7 @@ extends Character
 var bullet = preload("res://scenes/common/bullet.tscn") 
 var lagrima = preload("res://scenes/common/lagrima.tscn") 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
+var oEnemyToFollow = null
 
 func _init():
 	unit_type = "ingles"
@@ -31,6 +32,7 @@ func random_scale():
 			experience_given = ceil(experience_given * fScale)
 	
 func _ready():
+	set_enemy_to_follow()
 	super()
 
 func _process(delta):
@@ -46,9 +48,15 @@ func drop_the_reward(experience_given_value):
 	l.experience_given = experience_given_value
 	l.global_position = global_position
 	get_parent().add_child(l)
+	
+func set_enemy_to_follow():
+	var aEnemyToFollow = get_tree().get_nodes_in_group("general_group")
+	if aEnemyToFollow.size() == 1:
+		oEnemyToFollow = aEnemyToFollow[0]
 
 func attack():
-	attack_objective = {"global_position": destination, "faction": "patricios", "velocity": 0}
+	
+	attack_objective = {"global_position": oEnemyToFollow.global_position, "faction": "patricios", "velocity": 0}
 	if hasToAttack and attack_objective.global_position != Vector2.ZERO and $VisibleOnScreenNotifier2D.is_on_screen() and not blocked_attack:
 		var b = bullet.instantiate()
 		b.global_position = $WeaponPoint.global_position

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://uk3j7rh2076l"]
+[gd_scene load_steps=17 format=3 uid="uid://uk3j7rh2076l"]
 
 [ext_resource type="Script" uid="uid://b81eqko65w61p" path="res://scenes/controls/hud.gd" id="1_b1w0e"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_7ne2n"]
@@ -60,6 +60,9 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 corner_detail = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dhras"]
+specular_color = Color(0.11, 0.11, 0.11, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_b1w0e")
@@ -215,5 +218,20 @@ text = "Nivel "
 horizontal_alignment = 2
 
 [node name="SurubiConAtaquesDePanico" parent="Control" instance=ExtResource("8_wnlbb")]
+z_index = 12
+z_as_relative = false
 position = Vector2(772, 410)
 scale = Vector2(0.992393, 1.0071)
+
+[node name="HighlightSurubi" type="TextureRect" parent="Control"]
+visible = false
+modulate = Color(0, 0, 0, 0.6)
+z_index = 11
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_dhras")

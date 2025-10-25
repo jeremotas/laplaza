@@ -243,7 +243,9 @@ var settings = {
 				"probability": 20,
 				"cooldown": 2,
 				"min_damage_given": 1,
-				"max_damage_given": 1
+				"max_damage_given": 1,
+				"shuffle_angles": true,
+				"angles": [30.0, 0.0, -30.0, 0.0]
 			}
 		},
 		"royal_marine": {
@@ -274,7 +276,9 @@ var settings = {
 				"cooldown": 4,
 				"probability": 10,
 				"min_damage_given": 1,
-				"max_damage_given": 1
+				"max_damage_given": 1,
+				"shuffle_angles": false,
+				"angles": [ 0.0, 90.0, 180.0, 270.0]
 			}
 		},
 		"green_soldier": {
@@ -289,7 +293,9 @@ var settings = {
 				"cooldown": 4,
 				"probability": 20,
 				"min_damage_given": 1,
-				"max_damage_given": 1
+				"max_damage_given": 1,
+				"shuffle_angles": true,
+				"angles": [30.0, 15.0, 0.0, -15.0, -30.0]
 			}
 		},
 		"english_cavalry": {

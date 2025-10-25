@@ -6,6 +6,11 @@ var bullet = preload("res://scenes/common/bullet.tscn")
 var lagrima = preload("res://scenes/common/lagrima.tscn") 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
 
+var iAttacksInitialRotation = 0
+var bShuffleAngles = true
+var aAttackAngles = [0.0]
+var iAttacksMade = 0
+
 func _init():
 	unit_type = "green_soldier"
 	
@@ -18,10 +23,15 @@ func _init():
 	bullet_lifetime = Global.settings.ingleses.green_soldier.attack.bullet.duration
 	coolDownAttackTime = Global.settings.ingleses.green_soldier.attack.cooldown
 	iAttackProbability = Global.settings.ingleses.green_soldier.attack.probability
+	
+	bShuffleAngles = Global.settings.ingleses.green_soldier.attack.shuffle_angles
+	aAttackAngles  = Global.settings.ingleses.green_soldier.attack.angles
 	drop_reward = true
 	init()
 	
 func _ready():
+	if bShuffleAngles:
+		aAttackAngles.shuffle()
 	super()
 
 func _process(delta):
@@ -44,8 +54,12 @@ func attack():
 		var b = bullet.instantiate()
 		b.global_position = $WeaponPoint.global_position
 		b.direction = (attack_objective.global_position - $WeaponPoint.global_position).normalized()
-		var fDistortion = rng.randf_range(-0.1, 0.1)
-		b.direction.x += fDistortion
+		
+		var iDistortionAngle = (iAttacksMade) % aAttackAngles.size()
+		var fAngle = aAttackAngles[iDistortionAngle]
+		var fDistortionAngle = deg_to_rad(fAngle)
+		b.direction = b.direction.rotated(fDistortionAngle)
+		
 		b.objective_faction = attack_objective.faction
 		b.min_damage = min_damage_given
 		b.max_damage = max_damage_given
@@ -56,6 +70,7 @@ func attack():
 		b.set_color(Color(1, 1, 0.2))
 		get_parent().add_child(b)
 		
+		iAttacksMade +=1
 		#$WeaponSound.play()
 		attack_sound(GUNSHOT)
 		

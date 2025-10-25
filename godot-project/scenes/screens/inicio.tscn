@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://doo77a1vfcsws"]
+[gd_scene load_steps=17 format=3 uid="uid://doo77a1vfcsws"]
 
 [ext_resource type="Script" uid="uid://0f578gr86ei5" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="2_77qr6"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="6_ajg8l"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="6_nliy4"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="7_pjvl7"]
+[ext_resource type="Texture2D" uid="uid://cr3ay6bhy83oi" path="res://assets/mkt/poder_alien.png" id="15_hgluf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a13kk"]
 texture = ExtResource("6_ajg8l")
@@ -228,6 +229,17 @@ input_accepted = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.01
 autostart = true
+
+[node name="LogoDemo" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 693.0
+offset_top = 342.0
+offset_right = 902.71
+offset_bottom = 467.0
+texture = ExtResource("15_hgluf")
+expand_mode = 3
+stretch_mode = 4
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ElMazo" to="." method="_on_mejoras_pressed"]

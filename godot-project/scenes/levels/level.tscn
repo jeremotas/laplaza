@@ -613,7 +613,7 @@ theme_override_colors/font_color = Color(0.38, 0.245987, 0.2052, 0.87451)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 theme_override_font_sizes/font_size = 18
-text = "¡Aguanta 10 minutos!"
+text = "¡Movete!"
 horizontal_alignment = 1
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]

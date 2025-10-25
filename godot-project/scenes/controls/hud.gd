@@ -91,6 +91,8 @@ func change(TheGameStats):
 	change_plaza_indicator(TheGameStats.plaza, TheGameStats.max_plaza)
 	
 func surubi_message_call(sMessageType):
+	if sMessageType == 'tutorial':
+		set_highlight_surubi_visible(true)
 	$Control/SurubiConAtaquesDePanico.message(sMessageType)
 
 # Called when the node enters the scene tree for the first time.
@@ -98,7 +100,8 @@ func _ready():
 	Global.surubi_message.connect(surubi_message_call)
 	pass
 	
-
+func set_highlight_surubi_visible(bVal):
+	$Control/HighlightSurubi.visible = bVal
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
