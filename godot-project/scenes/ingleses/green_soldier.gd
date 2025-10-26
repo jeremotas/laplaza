@@ -60,7 +60,7 @@ func drop_the_reward(experience_given_value):
 
 func attack():
 	var attack_position = destination
-	if sAttackObjective == 'General':
+	if sAttackObjective == 'General' and oEnemyToFollow != null:
 		attack_position = oEnemyToFollow.global_position
 	
 	attack_objective = {"global_position": attack_position, "faction": "patricios", "velocity": 0}
