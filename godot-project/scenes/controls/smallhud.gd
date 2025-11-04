@@ -62,7 +62,7 @@ func change_life_indicator(value, max_value, invincible):
 	if invincible:
 		life_progress.modulate = 'ffff00CC'
 	if life_progress.value <= Global.settings.game.player_warning_life:
-		life_progress.modulate = 'ff0000CC'
+		life_progress.modulate = 'ff0000ff'
 	
 	#if invincible:
 	#	life_progress.modulate = Color('#b7b700')
@@ -77,7 +77,7 @@ func change_plaza_indicator(value, max_value):
 		if tweenPlaza:
 			tweenPlaza.kill()
 		tweenPlaza = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-		tweenPlaza.tween_property(plaza_progress, "value", iLevelPlazaValueTo, 0.25)
+		tweenPlaza.tween_property(plaza_progress, "value", iLevelPlazaValueTo, 0.5)
 	else: 
 		plaza_progress.value = max_value - value
 	plaza_progress.max_value = max_value
