@@ -10,7 +10,7 @@ const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
 var enemy_strategy 
 var eventTimer = null
 # Variables de control de UI
-@onready var HUD = $HUD
+@onready var HUD = $SmallHUD
 @onready var pause_menu = $PauseMenu
 var paused = false	
 
@@ -74,10 +74,10 @@ func first_move_general():
 	go_position.y -= 450
 	$General.go_to(go_position, true)
 	await get_tree().create_timer(1.0).timeout
-	$HUD.set_highlight_surubi_visible(true)
+	HUD.set_highlight_surubi_visible(true)
 	Global.emit_signal("surubi_message", "tutorial")
 	await get_tree().create_timer(3.0).timeout
-	$HUD.set_highlight_surubi_visible(false)
+	HUD.set_highlight_surubi_visible(false)
 	zooming = "up"
 	Global.emit_signal("surubi_message", "mensaje_inicial")
 	await get_tree().create_timer(1).timeout
@@ -151,7 +151,7 @@ func _process(delta):
 		barrilete_cosmico()
 		command = ""
 	elif command == "hoodie":
-		$HUD.visible = not $HUD.visible
+		HUD.visible = not HUD.visible
 		command = ""
 	elif command == "jaime":
 		decision_time_start()

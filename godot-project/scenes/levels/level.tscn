@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://0m43jl0bno4f" path="res://scenes/patricios/sudestada_effect.tscn" id="7_b8j7q"]
 [ext_resource type="PackedScene" uid="uid://cmwawnb5jnpxw" path="res://scenes/patricios/crowd.tscn" id="7_jyre1"]
 [ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="7_sexjv"]
-[ext_resource type="PackedScene" uid="uid://uk3j7rh2076l" path="res://scenes/controls/hud.tscn" id="8_fyc0u"]
 [ext_resource type="PackedScene" uid="uid://u6pw5bj6d6pt" path="res://scenes/controls/pause_menu.tscn" id="10_3l2by"]
 [ext_resource type="PackedScene" uid="uid://duronouk3fu1p" path="res://scenes/controls/decision_time.tscn" id="11_oed3o"]
 [ext_resource type="PackedScene" uid="uid://er2xr7bd3ipm" path="res://scenes/controls/speechbubble.tscn" id="12_xs82a"]
@@ -19,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ui641fbylwgm" path="res://assets/created/Altos arriba.png" id="16_1bp38"]
 [ext_resource type="Texture2D" uid="uid://dfx6iu5kl57m0" path="res://assets/created/Recova x2.png" id="17_82wvu"]
 [ext_resource type="PackedScene" uid="uid://byg3mgxsopxkh" path="res://scenes/patricios/tedeum_effect.tscn" id="18_qhnmj"]
+[ext_resource type="PackedScene" uid="uid://cis7xckqdu0as" path="res://scenes/controls/smallhud.tscn" id="20_4ab0e"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="20_lp2ca"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgl40"]
@@ -423,7 +423,7 @@ bus = &"Musica"
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="HUD" parent="." instance=ExtResource("8_fyc0u")]
+[node name="SmallHUD" parent="." instance=ExtResource("20_4ab0e")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_3l2by")]
 visible = false

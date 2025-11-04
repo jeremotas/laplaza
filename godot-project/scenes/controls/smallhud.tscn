@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://cis7xckqdu0as"]
+
+[ext_resource type="Script" uid="uid://dtvt1s1s4qa0c" path="res://scenes/controls/smallhud.gd" id="1_5jxbc"]
+[ext_resource type="Texture2D" uid="uid://cyi8pw50prc3t" path="res://assets/created/ui/hud/barra salud avatar vacia.png" id="2_sr0fh"]
+[ext_resource type="Texture2D" uid="uid://b4618gh6n45w3" path="res://assets/created/ui/hud/barra sola sin borde salud avatar llena.png" id="3_3d3fv"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_g2j30"]
+[ext_resource type="Texture2D" uid="uid://dlw2vjwk167qr" path="res://assets/created/ui/hud/barra salud bandera vacia.png" id="4_5jxbc"]
+[ext_resource type="Texture2D" uid="uid://rjie7cu808op" path="res://assets/created/ui/hud/barra salud sin borde bandera llena.png" id="5_5jxbc"]
+[ext_resource type="Texture2D" uid="uid://dahvlkbgirr1v" path="res://assets/created/ui/hud/experiencia vacia circulo.png" id="6_g2j30"]
+[ext_resource type="Texture2D" uid="uid://bdhadgoyaokks" path="res://assets/created/ui/hud/experiencia circulo.png" id="7_gfubb"]
+[ext_resource type="PackedScene" uid="uid://dsetxn36ecr8n" path="res://scenes/controls/surubi_con_ataques_de_panico.tscn" id="8_xpdsu"]
+[ext_resource type="Texture2D" uid="uid://dmpjs1vvaenhh" path="res://assets/created/ui/hud/experiencia llena.png" id="8_ylfqa"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dhras"]
+specular_color = Color(0.11, 0.11, 0.11, 1)
+
+[node name="SmallHUD" type="CanvasLayer"]
+script = ExtResource("1_5jxbc")
+metadata/_edit_vertical_guides_ = [78.0]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="LifeProgressBar" type="TextureProgressBar" parent="Control/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 412.0
+offset_right = 209.0
+offset_bottom = 431.0
+value = 50.0
+stretch_margin_right = 14
+texture_under = ExtResource("2_sr0fh")
+texture_over = ExtResource("2_sr0fh")
+texture_progress = ExtResource("3_3d3fv")
+
+[node name="PlazaProgressBar" type="TextureProgressBar" parent="Control/MarginContainer/VBoxContainer/Panel"]
+offset_left = 56.0
+offset_top = 434.0
+offset_right = 223.0
+offset_bottom = 453.0
+value = 50.0
+texture_under = ExtResource("4_5jxbc")
+texture_over = ExtResource("4_5jxbc")
+texture_progress = ExtResource("5_5jxbc")
+
+[node name="LevelProgressBar" type="TextureProgressBar" parent="Control/MarginContainer/VBoxContainer/Panel"]
+offset_left = -1.0
+offset_top = 399.0
+offset_right = 152.0
+offset_bottom = 465.0
+value = 50.0
+fill_mode = 4
+stretch_margin_right = 14
+texture_under = ExtResource("6_g2j30")
+texture_over = ExtResource("7_gfubb")
+texture_progress = ExtResource("8_ylfqa")
+texture_progress_offset = Vector2(0, 6)
+
+[node name="Nivel" type="Label" parent="Control/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+offset_left = 21.0
+offset_top = 399.0
+offset_right = 40.0
+offset_bottom = 419.0
+theme = ExtResource("3_g2j30")
+theme_override_font_sizes/font_size = 15
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="Control/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+offset_left = -8.0
+offset_top = 420.0
+offset_right = 68.0
+offset_bottom = 464.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_g2j30")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="SurubiConAtaquesDePanico" parent="Control" instance=ExtResource("8_xpdsu")]
+z_index = 12
+z_as_relative = false
+position = Vector2(772, 410)
+scale = Vector2(0.992393, 1.0071)
+
+[node name="HighlightSurubi" type="TextureRect" parent="Control"]
+visible = false
+modulate = Color(0, 0, 0, 0.6)
+z_index = 11
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_dhras")
