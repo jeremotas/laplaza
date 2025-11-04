@@ -17,7 +17,7 @@ var iLevelPlazaValueTo = null
 
 func ready():
 	plaza_progress.modulate = 'ffffffCC'
-	life_progress.modulate = '4d9c4eCC'
+	#life_progress.modulate = '4d9c4eCC'
 	
 
 func change_time(iSecondsTotal):
@@ -58,7 +58,7 @@ func change_life_indicator(value, max_value, invincible):
 	life_progress.max_value = max_value
 	
 	
-	#life_progress.modulate = '4d9c4eCC'
+	life_progress.modulate = 'ffffffcc'
 	if invincible:
 		life_progress.modulate = 'ffff00CC'
 	if life_progress.value <= Global.settings.game.player_warning_life:
