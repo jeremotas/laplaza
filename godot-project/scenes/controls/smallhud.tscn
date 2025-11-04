@@ -48,9 +48,9 @@ size_flags_vertical = 8
 
 [node name="LifeProgressBar" type="TextureProgressBar" parent="Control/MarginContainer/VBoxContainer/Panel"]
 layout_mode = 0
-offset_left = 56.0
+offset_left = 55.0
 offset_top = 413.0
-offset_right = 209.0
+offset_right = 208.0
 offset_bottom = 432.0
 step = 0.01
 value = 50.0
@@ -61,9 +61,9 @@ texture_progress = ExtResource("3_3d3fv")
 
 [node name="PlazaProgressBar" type="TextureProgressBar" parent="Control/MarginContainer/VBoxContainer/Panel"]
 layout_mode = 0
-offset_left = 56.0
+offset_left = 55.0
 offset_top = 435.0
-offset_right = 223.0
+offset_right = 222.0
 offset_bottom = 454.0
 step = 0.01
 value = 50.0
