@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_g2j30"]
 [ext_resource type="Texture2D" uid="uid://dlw2vjwk167qr" path="res://assets/created/ui/hud/barra salud bandera vacia.png" id="4_5jxbc"]
 [ext_resource type="Texture2D" uid="uid://rjie7cu808op" path="res://assets/created/ui/hud/barra salud sin borde bandera llena.png" id="5_5jxbc"]
-[ext_resource type="Texture2D" uid="uid://dahvlkbgirr1v" path="res://assets/created/ui/hud/experiencia vacia circulo.png" id="6_g2j30"]
+[ext_resource type="Texture2D" uid="uid://b2ccudnitxnh6" path="res://assets/created/ui/hud/experiencia vacia circulo opaco.png" id="6_g2j30"]
 [ext_resource type="Texture2D" uid="uid://bdhadgoyaokks" path="res://assets/created/ui/hud/experiencia circulo.png" id="7_gfubb"]
 [ext_resource type="PackedScene" uid="uid://dsetxn36ecr8n" path="res://scenes/controls/surubi_con_ataques_de_panico.tscn" id="8_xpdsu"]
 [ext_resource type="Texture2D" uid="uid://dmpjs1vvaenhh" path="res://assets/created/ui/hud/experiencia llena.png" id="8_ylfqa"]
@@ -49,9 +49,9 @@ size_flags_vertical = 8
 [node name="LifeProgressBar" type="TextureProgressBar" parent="Control/MarginContainer/VBoxContainer/Panel"]
 layout_mode = 0
 offset_left = 55.0
-offset_top = 413.0
+offset_top = 411.0
 offset_right = 208.0
-offset_bottom = 432.0
+offset_bottom = 430.0
 step = 0.01
 value = 50.0
 stretch_margin_right = 14
@@ -62,9 +62,9 @@ texture_progress = ExtResource("3_3d3fv")
 [node name="PlazaProgressBar" type="TextureProgressBar" parent="Control/MarginContainer/VBoxContainer/Panel"]
 layout_mode = 0
 offset_left = 55.0
-offset_top = 435.0
+offset_top = 433.0
 offset_right = 222.0
-offset_bottom = 454.0
+offset_bottom = 452.0
 step = 0.01
 value = 50.0
 texture_under = ExtResource("4_5jxbc")
@@ -78,7 +78,6 @@ offset_top = 399.0
 offset_right = 152.0
 offset_bottom = 465.0
 step = 0.01
-value = 100.0
 fill_mode = 4
 stretch_margin_right = 14
 texture_under = ExtResource("6_g2j30")
