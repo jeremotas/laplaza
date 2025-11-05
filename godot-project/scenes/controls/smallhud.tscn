@@ -116,7 +116,7 @@ horizontal_alignment = 1
 [node name="SurubiConAtaquesDePanico" parent="Control" instance=ExtResource("8_xpdsu")]
 z_index = 12
 z_as_relative = false
-position = Vector2(772, 410)
+position = Vector2(770, 426)
 scale = Vector2(0.992393, 1.0071)
 
 [node name="HighlightSurubi" type="TextureRect" parent="Control"]
