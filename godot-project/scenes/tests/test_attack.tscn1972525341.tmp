@@ -21,10 +21,10 @@ aim_calculated = false
 [node name="UnitSpawner" parent="." instance=ExtResource("5_cjnvb")]
 position = Vector2(588, 204)
 zone = "uno"
-probabilitySpawnOnTimer = 0.0
+probabilitySpawnOnTimer = 100.0
 unitScene = "res://scenes/ingleses/flagger.tscn"
 faction = "ingleses"
-respawn_seconds = 4.0
+respawn_seconds = 8.0
 max_alive = 10
 controlled_max_alive = true
 

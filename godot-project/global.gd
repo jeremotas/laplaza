@@ -301,6 +301,24 @@ var settings = {
 				"objective": "Plaza"
 			}
 		},
+		"flagger": {
+			"life": 8,
+			"max_speed": 90,
+			"experience_given": 4,
+			"attack":{
+				"bullet": {
+					"speed": 300,
+					"duration": 0.5,
+				},
+				"cooldown": 4,
+				"probability": 20,
+				"min_damage_given": 1,
+				"max_damage_given": 1,
+				"shuffle_angles": true,
+				"angles": [30.0, 15.0, 0.0, -15.0, -30.0],
+				"objective": "Plaza"
+			}
+		},
 		"english_cavalry": {
 			"life": 4,
 			"max_speed": 110,

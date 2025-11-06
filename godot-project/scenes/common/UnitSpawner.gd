@@ -10,6 +10,8 @@ var entity = null
 @export var controlled_max_alive = false
 @export var blocked = false
 
+@export var oOtherParams = {}
+
 
 var queue = []
 
@@ -31,7 +33,8 @@ func _ready():
 		spawn_new_call(probabilitySpawnOnTimer)
 	
 	
-		
+func set_other_parameters(oOtherParamsVal):
+	oOtherParams = oOtherParamsVal
 		
 func set_unit_type(mUnitType):
 	aChanceUnitType = []
@@ -84,11 +87,17 @@ func spawn_new_call(probability_generation):
 		
 		soldado.global_position = start_position
 		soldado.add_to_faction(faction)
+		soldado = assign_other_params(soldado)
 		if soldado.has_method("assign_goal"):
 			soldado.assign_goal(oGoalToAssign)
 		get_parent().add_child.call_deferred(soldado)
 		#add_child(soldado)
-		
+
+func assign_other_params(soldado):
+	if soldado.has_method("set_guards") and "guards" in oOtherParams:
+		soldado.set_guards(oOtherParams.guards.unit_type, oOtherParams.guards.quantity)
+	return soldado
+	
 func get_possible_spawns():
 	var aPossibleSpawns = []
 	
