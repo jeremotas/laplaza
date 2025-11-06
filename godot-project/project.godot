@@ -30,7 +30,6 @@ AudioStreamManager="*res://audio_stream_manager.gd"
 
 window/size/viewport_width=850
 window/size/viewport_height=480
-window/size/mode=3
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"

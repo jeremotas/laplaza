@@ -441,6 +441,9 @@ func prepare_enemy_spawns():
 				unitSpawn.set_unit_type(strategy[zone].unit_type)
 				unitSpawn.controlled_max_alive = true 
 				unitSpawn.max_alive = strategy.max_alive
+				if "guards" in strategy:
+					unitSpawn.set_other_parameters({"guards": strategy.guards})	
+				
 
 func _on_timer_timeout():
 	# Control para el reloj del juego

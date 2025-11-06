@@ -5,7 +5,31 @@ var iMaxFirstWave = 180
 var iMaxSecondWave = 360
 var iMaxThirdWave = 540
 
+# Posibles unidades
+# ingles
+# green_soldier
+# highlander
+# english_cavalry
+# royal_marine
+# zapador
+# abanderado (pendiente)
+# cannon
+
+
 var aStarters = [
+	{
+		"duration": 10,
+		"max_alive": 1,
+		"name": "La banderola",
+		"add_descanso": true,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 10, "probability": 0},
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 0},
+		"arriba_centro": {"unit_type": "flagger", "seconds": 2, "probability":30, "guards": {"unit_type":"green_soldier", "quantity": 4}},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 2, "probability": 0},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+	},
 	{
 		"duration": 10,
 		"max_alive": 5,
