@@ -46,13 +46,13 @@ func get_escolta_instance():
 	var escolta_t = null
 	if sEntityEscort == "highlander":
 		escolta_t = escolta_highlander.instantiate()
-		#$AnimatedFlag.modulate = Color("#0000FFFF")
+		$AnimatedFlag.modulate = Color("#0000FFFF")
 	elif sEntityEscort == "green_soldier":
 		escolta_t = escolta_greensoldier.instantiate()
-		#$AnimatedFlag.modulate = Color("#00FFFFFF")
+		$AnimatedFlag.modulate = Color("#00FFFFFF")
 	else:
 		escolta_t = escolta_ingles.instantiate()
-		#$AnimatedFlag.modulate = Color("#00FF00FF")
+		$AnimatedFlag.modulate = Color("#00FF00FF")
 	
 	return escolta_t
 	

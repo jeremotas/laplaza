@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_vnkbo"]
 [ext_resource type="Texture2D" uid="uid://ww4a8r07g30e" path="res://assets/created/abanderado_ing64x48.png" id="3_ducg2"]
 [ext_resource type="AudioStream" uid="uid://b08urcc14wbfu" path="res://assets/original/sounds/gunshot2.mp3" id="4_g7qaa"]
-[ext_resource type="Texture2D" uid="uid://cvsi3pnrgeotm" path="res://assets/created/bandera_santaelena64x48.png" id="5_vnkbo"]
+[ext_resource type="Texture2D" uid="uid://ccq20h8aa0mio" path="res://assets/created/bandera_santaelena_64x48.png" id="5_vnkbo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vnkbo"]
 atlas = ExtResource("3_ducg2")
@@ -747,8 +747,7 @@ theme_override_font_sizes/font_size = 8
 position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
-animation = &"idle"
-frame = 3
+animation = &"die"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -12, -5, 12, 4, 12, 6, -13)
@@ -799,8 +798,7 @@ z_index = 4
 z_as_relative = false
 position = Vector2(1, 3)
 sprite_frames = SubResource("SpriteFrames_txp73")
-animation = &"idle"
-frame = 3
+animation = &"die"
 
 [node name="TimerSpawnEscorts" type="Timer" parent="."]
 wait_time = 0.1
