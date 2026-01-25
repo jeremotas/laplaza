@@ -458,12 +458,18 @@ func _on_timer_timeout():
 	elif iSecondsPassed == 480:
 		carpinchos_run_call()
 
-func _on_reward(faction, experience_given):
+func _on_reward(sType, iValue):
 	# Sumador de experiencia
-	if faction != $General.faction:
-		TheGameStats.add_experience(experience_given)
+	if sType == 'ingleses':
+		TheGameStats.add_experience(iValue)
 		create_sound_experience()
-	
+	elif sType == 'bandera_inglesa':
+		$EnemyGoal.discount_units_arrived(iValue)
+		create_sound_discount_from_flag()
+
+func create_sound_discount_from_flag():
+	pass
+
 func create_sound_experience():
 	#var SoundPlayer = AudioStreamPlayer2D.new()
 	#self.add_child(SoundPlayer)

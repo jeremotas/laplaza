@@ -13,7 +13,11 @@ func _process(_delta):
 	$Status.text = str(UnitsArrived) + " / " + str(NeededUnits)
 	$Status.show()
 	
-	
+
+func discount_units_arrived(iValue):
+	UnitsArrived -= iValue
+	if UnitsArrived < 0: 
+		UnitsArrived = 0
 
 func set_needed_units(iValue):
 	NeededUnits = iValue

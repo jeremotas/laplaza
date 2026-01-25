@@ -4,7 +4,7 @@ var ActualTimeScale = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$UnitSpawner.set_other_parameters({"guards":{"unit_type": "green_soldier", "quantity": 2}})
+	$UnitSpawner.set_other_parameters({"guards":{"unit_type": "green_soldier", "quantity": 1}})
 	$General.add_to_group('general_group')
 	$Arribeno.assign_goal($General)
 	$Arribeno.add_to_group('faccion_patricios')

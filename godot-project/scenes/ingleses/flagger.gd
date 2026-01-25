@@ -78,6 +78,7 @@ func drop_the_reward(experience_given_value):
 	drop_reward = false
 	var l = lagrima.instantiate()
 	l.experience_given = experience_given_value
+	l.faction = 'bandera_inglesa'
 	l.global_position = global_position
 	get_parent().add_child(l)
 

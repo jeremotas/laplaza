@@ -16,14 +16,12 @@ func _ready():
 	if experience_given > 1:
 		scale = scale * ( 1.0 + experience_given / 8.0)
 
-
 func collected():
 	if not reward_emited:		
 		reward_emited = true
 		reward.emit(faction, experience_given)
 		visible = false
 		queue_free()
-
 
 func _physics_process(delta):	
 	if not followUnit == null:
