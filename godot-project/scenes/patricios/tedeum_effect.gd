@@ -6,6 +6,8 @@ var rng = RandomNumberGenerator.new()
 @onready var sfx = $SonidoTedeum              # Audio
 @onready var anim = $AnimationPlayer                   # AnimationPlayer (si lo tenés)
 
+const TEDEUMSTINGER = preload("res://assets/created/sounds/tedeum/tedeum.mp3")
+
 #func _ready():
 #	await get_tree().create_timer(1.0).timeout
 	#start()
@@ -24,11 +26,14 @@ func start():
 	# Estado inicial: transparente y escala normal
 	tedeum_node.modulate.a = 0.0
 	tedeum_node.scale = Vector2.ONE
-
+	
 	# Tweens: bajar 300px en Y y subir alfa a 1 durante 2s
 	var tw = create_tween()
 	tw.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
+	
+	var stream = TEDEUMSTINGER
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	
 	var y0 = tedeum_node.position.y
 	tw.tween_property(tedeum_node, "position:y", y0 + 250.0, 2.0)
 	tw.parallel().tween_property(tedeum_node, "modulate:a", 1.0, 2.0)

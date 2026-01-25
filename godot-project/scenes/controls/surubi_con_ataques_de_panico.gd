@@ -6,6 +6,21 @@ var aMessagesToRead = []
 var bTalking = false
 @onready var mensaje = $PanelMensaje/Mensaje
 @onready var containermensaje = $PanelMensaje
+
+var aSoundSurubiPanic = [
+	preload("res://assets/original/sounds/surubi/surubi_corto_loco-001.mp3"),
+	preload("res://assets/original/sounds/surubi/surubi_corto_loco-002.mp3"),
+	preload("res://assets/original/sounds/surubi/surubi_corto_loco-003.mp3"),
+]
+
+var aSoundSurubi = [
+	preload("res://assets/original/sounds/surubi/surubi_corto_tranqui-001.mp3"),
+	preload("res://assets/original/sounds/surubi/surubi_corto_tranqui-002.mp3"),
+	preload("res://assets/original/sounds/surubi/surubi_corto_tranqui-003.mp3"),
+	preload("res://assets/original/sounds/surubi/surubi_corto_tranqui-004.mp3"),
+	preload("res://assets/original/sounds/surubi/surubi_corto_tranqui-005.mp3"),
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -52,6 +67,18 @@ func message_show(sMessage):
 	messageTimer.timeout.connect(end_surubi_message)
 	messageTimer.start()
 	bTalking = true
+	var stream = pick_sound_surubi_talking(bPanic)
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+
+func pick_sound_surubi_talking(bPanic):
+	var oStream = null
+	if bPanic:
+		var iSelectedSound = rng.randi_range(0, aSoundSurubiPanic.size() - 1)
+		oStream = aSoundSurubiPanic[iSelectedSound]
+	else:
+		var iSelectedSound = rng.randi_range(0, aSoundSurubi.size() - 1)
+		oStream = aSoundSurubi[iSelectedSound]
+	return oStream
 
 func end_surubi_message():
 	bTalking = false

@@ -8,8 +8,10 @@ var barrileteTimer = null
 @export var agua_hirviendo_power = 0
 @export var show_life_bar = true
 var max_life = 0
+var bSoundDeath = false
 
 const GUNSHOT = preload("res://assets/original/sounds/gunshot2.mp3")
+const MUERTE = preload("res://assets/original/sounds/muerteacaballo.mp3")
 var manuela_caller = preload("res://scenes/patricios/manuela_pedraza.tscn")
 
 func _init():
@@ -63,6 +65,11 @@ func life_status():
 	
 	if life > max_life:
 		life = max_life
+		
+	if life == 0 and !bSoundDeath:
+		var stream = MUERTE
+		AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+		bSoundDeath = true
 	
 func set_aimpoint_visibility(bVal):
 	$AimPoint.visible = bVal
@@ -208,9 +215,9 @@ func _on_agua_hirviendo_timer_timeout():
 		b.max_damage = Global.settings.patricios.general.agua_hirviendo.max_damage_given
 		b.speed = Global.settings.patricios.general.agua_hirviendo.bullet.speed
 		b.bullet_lifetime = Global.settings.patricios.general.agua_hirviendo.bullet.duration
-		b.prepare_explotion(2, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.duration, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.scale, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.particle, false)
+		b.prepare_explotion(2, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.duration, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.scale, Global.settings.patricios.general.agua_hirviendo.bullet.explotion.particle, true)
 		b.set_collision_mask_bullet(2)
-		b.set_sprite("res://assets/created/ollami_32.png", 0.99, 4)
+		b.set_sprite("res://assets/created/ollami_32.png", 0.9999, 1.0)
 		b.set_color(Color(1, 1, 1))
 		get_parent().add_child(b)
 

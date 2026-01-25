@@ -21,12 +21,18 @@ var bullet_rotation_factor = 0
 @export var explotion_particle = ""
 @export var explotion_sound = true
 
-var aExplosionSounds = [
+const aExplosionSounds = [
 	preload("res://assets/original/sounds/granadas/granada_01.mp3"),
 	preload("res://assets/original/sounds/granadas/granada_02.mp3"),
 	preload("res://assets/original/sounds/granadas/granada_03.mp3")
 ]
 
+const aExplosionWaterSounds = [
+	preload("res://assets/created/sounds/ollas/ollaA.mp3"),
+	preload("res://assets/created/sounds/ollas/ollaB.mp3"),
+	preload("res://assets/created/sounds/ollas/ollaD.mp3"),
+	preload("res://assets/created/sounds/ollas/ollaE.mp3"),
+]
 
 
 
@@ -129,7 +135,7 @@ func create_explotion():
 			$explosion_agua.emitting = true
 			$explosion_agua.scale = Vector2(2,2)
 			if explotion_sound:
-				create_sound_explotion()
+				create_sound_explotion_water()
 		if explotion_particle == "boleadora":
 			$boleadora.visible = true
 			$boleadora.emitting = true
@@ -146,12 +152,12 @@ func create_sound_explotion():
 	var rng = RandomNumberGenerator.new()
 	var iGunshotKey = rng.randi_range(0, aExplosionSounds.size()-1)
 	var stream = aExplosionSounds[iGunshotKey]
-	#var SoundPlayer = AudioStreamPlayer2D.new()
-	#self.add_child(SoundPlayer)
-	#SoundPlayer.stream = stream
-	#SoundPlayer.bus = &"Efectos"
-	#SoundPlayer.connect("finished", SoundPlayer.queue_free)
-	#SoundPlayer.play()
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+
+func create_sound_explotion_water():
+	var rng = RandomNumberGenerator.new()
+	var iGunshotKey = rng.randi_range(0, aExplosionWaterSounds.size()-1)
+	var stream = aExplosionWaterSounds[iGunshotKey]
 	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
 
 func _on_visible_on_screen_enabler_2d_screen_entered():

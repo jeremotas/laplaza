@@ -13,7 +13,7 @@ func _ready():
 	$UnitSpawner.probabilitySpawnOnTimer = 100.0
 	await get_tree().create_timer(2.0).timeout
 	$EnemyGoal.defensa_de_obligado()
-	
+	$General.life = 1
 
 func mini_shake():
 	pass

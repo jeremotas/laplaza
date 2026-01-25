@@ -4,6 +4,7 @@ extends Character
 @export var iMaxEvaluationDistanceBodies = 15
 var deathTime = 20.0
 var canKill = true
+const MANUELASTINGER = preload("res://assets/created/sounds/manuela/manuelaA.mp3")
 
 func _ready():
 	$CoolDownKillTimer.wait_time = coolDownAttackTime
@@ -12,6 +13,8 @@ func _ready():
 	var c = modulate
 	c.a = 1.0
 	modulate = c
+	var stream = MANUELASTINGER
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
 
 func _init():
 	invincible = true
