@@ -14,6 +14,7 @@ var iMoveOnSelection = 15
 @onready var oTitulo = $Titulo
 @onready var letra = $Letra
 @onready var letra_invertida = $LetraInvertida
+@export var card_move_on_focus = true
 var original_position = null
 
 const rsSonidoCarta = preload("res://assets/created/cartas/resaltarcarta.wav")
@@ -62,7 +63,7 @@ func _ready():
 	$Titulo.text = sTitulo
 	$Letra.text = sLetra
 	$LetraInvertida.text = sLetraInvertida
-	#$Letra.modulate = sLetraColor
+	$Leyenda.text = sLeyenda.replace(" __ ", "\n")
 	#$LetraInvertida.modulate = sLetraColor
 
 func _process(_delta):
@@ -116,13 +117,19 @@ func _on_pressed():
 
 
 func _on_focus_entered():
-	card_up()
+	if card_move_on_focus: 
+		card_up()
+	else:
+		mark_card()
 	var sLeyendaT = sLeyenda.replace(" __ ", "\n")
 	get_parent().change_leyenda(sLeyendaT)
 	
 
 func _on_focus_exited():
-	card_down()
+	if card_move_on_focus:
+		card_down()
+	else:
+		unmark_card()
 
 func _on_mouse_entered():
 	#card_up()
@@ -167,3 +174,11 @@ func card_flip(fSec = 0.0):
 	else:
 		$AnimationPlayer.play_backwards("card_flip")
 	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": null, "pitch": null})
+
+func mark_card():
+	$VisualMarker.visible = true
+	pass
+
+func unmark_card():
+	$VisualMarker.visible = false
+	pass

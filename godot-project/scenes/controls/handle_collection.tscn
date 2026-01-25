@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://6rdv3lwlpp2i"]
+
+[ext_resource type="Script" uid="uid://bdfkxs4olictq" path="res://scenes/controls/handle_collection.gd" id="1_8hgpo"]
+[ext_resource type="Texture2D" uid="uid://cemwt7jvyjpqh" path="res://assets/created/ui/setup_mazo_fondo.jpg" id="2_246f7"]
+[ext_resource type="Shader" uid="uid://56yjmw2atlid" path="res://shaders/blur.gdshader" id="3_y783v"]
+[ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="4_yrpmc"]
+[ext_resource type="Script" uid="uid://c5uvnpo05a5xy" path="res://scenes/controls/CartasContainer.gd" id="5_0dp8d"]
+[ext_resource type="Script" uid="uid://dkdtgnwv65dan" path="res://scenes/controls/grid_container.gd" id="5_246f7"]
+[ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="6_nxs2w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]
+shader = ExtResource("3_y783v")
+shader_parameter/amount = 1.229
+
+[node name="HandleCollection" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8hgpo")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.14813
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_246f7")
+expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_ddyt5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 49.0
+offset_right = 850.0
+offset_bottom = 80.0
+theme = ExtResource("4_yrpmc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 10
+text = "Coleccion y preparacion"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 850.0
+offset_bottom = 71.0
+theme = ExtResource("4_yrpmc")
+theme_override_colors/font_color = Color(1, 0.878431, 0.0941176, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "El Mazo"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+vertical_scroll_mode = 4
+
+[node name="GridContainer" type="GridContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+script = ExtResource("5_246f7")
+
+[node name="CartasContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_0dp8d")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.1
+autostart = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_nxs2w")
+autoplay = true
+bus = &"Musica"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+transparent_bg = true
+title = "Destruir carta"
+initial_position = 1
+size = Vector2i(360, 100)
+unresizable = true
+borderless = true
+always_on_top = true
+transparent = true
+content_scale_stretch = 1
+theme = ExtResource("4_yrpmc")
+ok_button_text = "Destruir"
+dialog_text = "¿Seguro querés destruir la carta?"
+cancel_button_text = "Cancelar"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+transparent_bg = true
+title = "Pocas cartas"
+initial_position = 1
+size = Vector2i(309, 120)
+unresizable = true
+borderless = true
+always_on_top = true
+transparent = true
+theme = ExtResource("4_yrpmc")
+dialog_text = "Debe haber mínimo 20 cartas para destruir una."
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
