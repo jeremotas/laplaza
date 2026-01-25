@@ -614,3 +614,7 @@ func play_background_music(bPlay):
 		$BackgroundMusic.set_stream_paused(true)
 	else:
 		$BackgroundMusic.set_stream_paused(false)
+
+func restart_background_music():
+	$BackgroundMusic.stop()
+	$BackgroundMusic.play()

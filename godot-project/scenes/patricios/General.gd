@@ -160,7 +160,7 @@ func end_barrilete_cosmico():
 	$RelatoVictorHugo.stop()
 	#get_parent().start_music()
 	Engine.time_scale = 1
-	get_parent().play_background_music(true)
+	get_parent().restart_background_music()
 	AnimationCalculation(0)
 	pass
 	
