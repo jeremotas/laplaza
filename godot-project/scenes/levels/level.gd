@@ -6,6 +6,14 @@ var TheGameStats : GameStats # Estadisticas del juego (control de experiencia y 
 var last_level = 0 # Marca para control del ultimo nivel accedido
 var player_max_life = 20 # Maxima vida del jugador principal
 
+const aSoundMate = [
+	preload("res://assets/created/sounds/mate/mate01.mp3"),
+	preload("res://assets/created/sounds/mate/mate02.mp3"),
+	preload("res://assets/created/sounds/mate/mate03.mp3"),
+	preload("res://assets/created/sounds/mate/mate04.mp3"),
+	preload("res://assets/created/sounds/mate/mate05.mp3"),
+]
+
 const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
 var enemy_strategy 
 var eventTimer = null
@@ -160,7 +168,7 @@ func _process(delta):
 		ataque_husares_infernales()
 		command = ""
 	elif command == "matienzo":
-		increase_life(30)
+		increase_life(10)
 		command = ""
 	elif command == "roger":
 		$General.activate_agua_hirviendo_level_up()
@@ -276,6 +284,8 @@ func decision_time_start():
 	#$decision_time.draw_hand()
 	
 func increase_life(increase):
+	var stream = $General.random_pick_one(aSoundMate)
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
 	$General.life += increase
 	$General.life = mini($General.life, Global.settings.game.player_max_life)
 

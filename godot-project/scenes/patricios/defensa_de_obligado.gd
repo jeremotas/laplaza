@@ -6,6 +6,8 @@ var max_life = 0
 var faction = "patricios"
 var invincible = false
 var rng 
+const CADENASSTINGER = preload("res://assets/created/sounds/cadenas/cadenas.mp3")
+
 
 func _init():
 	rng = RandomNumberGenerator.new()
@@ -29,6 +31,8 @@ func armar():
 	$AnimatedSprite2D.show()
 	$AnimatedSprite2D.play("aparecer")
 	$CollisionShape2D.disabled = false
+	var stream = CADENASSTINGER
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
 	#sonido de cadenas pendiente.
 
 func desarmar():

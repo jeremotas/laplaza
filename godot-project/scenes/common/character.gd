@@ -465,3 +465,7 @@ func calculate_added_booster():
 func invincible_effect():
 	if has_node('InvincibleEffect'):
 		$InvincibleEffect.visible = invincible
+
+func random_pick_one(aData):
+	var iSelected = rng.randi_range(0, aData.size() - 1)
+	return aData[iSelected]

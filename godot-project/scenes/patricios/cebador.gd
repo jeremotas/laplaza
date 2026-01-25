@@ -4,7 +4,6 @@ extends Character
 @export var life_given = 1
 var general_in_mate_area = false 
 #var bullet = preload("res://scenes/common/bullet.tscn")
-const MATE = preload("res://assets/original/sounds/gunshot2.mp3")
 
 func _init():
 	unit_type = "cebador"
@@ -33,6 +32,7 @@ func attack():
 			
 func cebar_mate():
 	if oGoalAssigned.max_life > oGoalAssigned.life:
+		
 		oGoalAssigned.life += life_given
 		if oGoalAssigned.life > oGoalAssigned.max_life:
 			oGoalAssigned.life = oGoalAssigned.max_life
