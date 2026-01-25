@@ -15,6 +15,9 @@ func _ready():
 		reward.connect(get_parent()._on_reward)
 	if experience_given > 1:
 		scale = scale * ( 1.0 + experience_given / 8.0)
+	if faction == "bandera_inglesa":
+		$AnimatedSprite2D.play("bandera_inglesa")
+		scale = Vector2(3.0, 3.0)
 
 func collected():
 	if not reward_emited:		

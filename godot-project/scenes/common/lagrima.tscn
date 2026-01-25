@@ -1,9 +1,46 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg5auaekhaeo2"]
+[gd_scene load_steps=26 format=3 uid="uid://cg5auaekhaeo2"]
 
 [ext_resource type="Texture2D" uid="uid://dk6f23a6qvia2" path="res://assets/created/lagrima.png" id="1_8n0u8"]
+[ext_resource type="Texture2D" uid="uid://ccq20h8aa0mio" path="res://assets/created/bandera_santaelena_64x48.png" id="2_alxqx"]
 [ext_resource type="Script" uid="uid://b1xtqbn1p73se" path="res://scenes/common/lagrima.gd" id="2_bi0if"]
 [ext_resource type="Texture2D" uid="uid://lnaduafwvsmv" path="res://assets/created/lagrima_spritesheet.png" id="2_yjn8p"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="4_edgp1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6v81"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(0, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8cnk"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(64, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ey35t"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(128, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnurw"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(192, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a58v"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(256, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g850b"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(320, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acna6"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(384, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rw8m"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(448, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxgxn"]
+atlas = ExtResource("2_alxqx")
+region = Rect2(512, 48, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_erp2m"]
 atlas = ExtResource("2_yjn8p")
@@ -43,6 +80,38 @@ region = Rect2(168, 0, 21, 38)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rsnuh"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6v81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8cnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ey35t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnurw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a58v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g850b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acna6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rw8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxgxn")
+}],
+"loop": true,
+"name": &"bandera_inglesa",
+"speed": 9.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_erp2m")
@@ -89,9 +158,8 @@ script = ExtResource("2_bi0if")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_rsnuh")
+animation = &"bandera_inglesa"
 autoplay = "default"
-frame = 8
-frame_progress = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

@@ -114,5 +114,4 @@ func _on_timer_spawn_escorts_timeout() -> void:
 		escolta_instance.add_to_faction(faction)
 		if escolta_instance.has_method("assign_goal"):
 			escolta_instance.assign_goal(oGoalAssigned)
-		print("ahi va...")
 		get_parent().add_child(escolta_instance)	
