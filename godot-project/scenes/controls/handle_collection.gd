@@ -107,7 +107,7 @@ func draw_hand() -> void:
 		#aCards = contenedor_cartas.get_children()
 	contenedor_cartas.get_children()[0].grab_focus()
 	contenedor_cartas.ready_for_input = true
-	$Control/Label.text = str(contenedor_cartas.get_children().size()) + " cartas"
+	#$Control/Label.text = str(contenedor_cartas.get_children().size()) + " cartas"
 	visible = true
 	
 	
