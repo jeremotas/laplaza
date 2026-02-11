@@ -21,6 +21,21 @@ class_name SaveData extends Resource
 	{"name": "upgrade_life", "quantity": 5} 	
 ]
 
+@export var selected_cards_for_playing = [
+	# Unidades
+	{"name": "granadero", "quantity": 5},
+	{"name": "correntino", "quantity": 0},
+	{"name": "arribeno", "quantity": 3},
+	{"name": "moreno", "quantity": 0},
+	{"name": "cebador", "quantity": 0},
+	# Eventos
+	{"name": "ataque_husares_infernales", "quantity": 0},
+	{"name": "barrilete_cosmico", "quantity": 0}, 
+	# Trucos
+	{"name": "ollas_del_pueblo", "quantity": 0},
+	{"name": "upgrade_life", "quantity": 5} 	
+]
+
 @export var reboot_cards = [
 	# Unidades
 	{"name": "granadero", "quantity": 5},
