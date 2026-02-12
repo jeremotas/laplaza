@@ -71,7 +71,7 @@ func _ready():
 	$General.add_to_group('todos_patricios')
 	enemy_strategy = enemy_strategy_container.new().create_strategy()
 	prepare_initial_conditions()
-	prepare_enemy_spawns()
+	#prepare_enemy_spawns()
 	Global.mazo.mezclar()
 	first_move_general()
 	get_tree().paused = false
@@ -442,8 +442,10 @@ func prepare_enemy_spawns():
 		
 		if strategy.name == last_strategy: return 
 		#print(iSecondsPassed," segundos ", strategy.name)
-		AudioStreamManager.play({"stream": oNewOleadaSound, "volume": null, "pitch": null})
-		$WaveTitle.speech(strategy.name)
+		
+		if strategy.name != '':
+			$WaveTitle.speech(strategy.name)
+			AudioStreamManager.play({"stream": oNewOleadaSound, "volume": null, "pitch": null})
 		
 		last_strategy = strategy.name
 		for zone in spawn_zones:
@@ -464,7 +466,7 @@ func _on_timer_timeout():
 	print("Ingleses en juego: ", get_tree().get_nodes_in_group("faccion_ingleses").size())
 	iSecondsPassed += 1
 	HUD.change_time(max(Global.settings.game.player_goal - iSecondsPassed, 0))
-	if iSecondsPassed - Global.settings.game.initial_conditions.time == 1:
+	if iSecondsPassed - Global.settings.game.initial_conditions.time == 1 and iSecondsPassed > 1:
 		prepare_enemy_spawns()
 		
 	if iSecondsPassed == 120:

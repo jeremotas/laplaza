@@ -9,7 +9,7 @@ var settings = {
 	"demo": true,
 	"game": {
 		"init_level": "level",
-		"player_goal": 600,
+		"player_goal": 608,
 		"enemy_goal": 30,
 		"player_max_life": 15,
 		"player_warning_life": 3,
@@ -416,7 +416,7 @@ var aSurubiTalks = {
 		"Elección o relección? __ para mí es la misma... __ #@#@$#@#@ PANIC"
 	],
 	"tedeum": [
-		"Ya lo dijo Francis... __ HAGAN LÍO! PANIC",
+		"Ya lo dijo Francisco... __ HAGAN LÍO! PANIC",
 		"Ay, diosito santo... __ bajamela del cielo.",
 		"Arranca el genio... __ Ah, no... ese era otro. __ Ehm... Sí, DIOS, AYUDAAAA!"
 	],
@@ -431,6 +431,9 @@ var aSurubiTalks = {
 	],
 	"tutorial": [
 		"¡Defende esa bandera! __ Liniers dispara solo... __ ¡Movete!"
+	],
+	"nueva_oleada": [
+		
 	]
 }
 
