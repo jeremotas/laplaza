@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://ceqwcbehglm8u"]
 
 [ext_resource type="Script" uid="uid://b6nxyqe5w85pp" path="res://scenes/screens/nuevo_sobre.gd" id="1_mncm1"]
-[ext_resource type="Texture2D" uid="uid://6tlrm0h6w4mi" path="res://assets/created/fondodepagina_A.jpg" id="1_noa8o"]
 [ext_resource type="PackedScene" uid="uid://cw6herwyo4jk7" path="res://scenes/controls/sobre.tscn" id="2_fstwy"]
+[ext_resource type="Texture2D" uid="uid://woyhgcpb7ooq" path="res://assets/created/fondos/LFDLT_fondo_3.png" id="2_t6isf"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_3h7yh"]
 [ext_resource type="AudioStream" uid="uid://bf8yam0vtx3ld" path="res://assets/created/cartas/tick.mp3" id="5_3sa32"]
 [ext_resource type="Texture2D" uid="uid://buggmkyyr31vk" path="res://assets/created/cartas/flecha.png" id="6_7v8l5"]
@@ -72,13 +72,12 @@ script = ExtResource("1_mncm1")
 metadata/_edit_horizontal_guides_ = [170.0]
 
 [node name="Fondo" type="TextureRect" parent="."]
-self_modulate = Color(0.117647, 0.117647, 0.117647, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_noa8o")
+texture = ExtResource("2_t6isf")
 
 [node name="Label" type="Label" parent="."]
 offset_top = 1.0
@@ -134,7 +133,8 @@ libraries = {
 [node name="flash" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 3
-offset_right = 850.0
+offset_left = 5.0
+offset_right = 855.0
 offset_bottom = 482.0
 
 [node name="init" type="Timer" parent="."]

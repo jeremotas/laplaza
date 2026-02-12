@@ -2,7 +2,7 @@ extends CanvasLayer
 var oCarta = preload("res://scenes/controls/carta.tscn")
 var rng = RandomNumberGenerator.new()
 
-@export var card_offset_x: float = 0.0
+@export var card_offset_x: float = 10.0
 @export var rot_max_t: float = 5.0
 @export var rot_max: float
 @export var anim_offset_y: float = 0.1

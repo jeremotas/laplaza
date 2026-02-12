@@ -14,6 +14,8 @@ const aSoundMate = [
 	preload("res://assets/created/sounds/mate/mate05.mp3"),
 ]
 
+const oNewOleadaSound = preload("res://assets/created/sounds/oleadas/nuevaoleadaSINpercu.mp3")
+
 const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
 var enemy_strategy 
 var eventTimer = null
@@ -440,7 +442,9 @@ func prepare_enemy_spawns():
 		
 		if strategy.name == last_strategy: return 
 		#print(iSecondsPassed," segundos ", strategy.name)
+		AudioStreamManager.play({"stream": oNewOleadaSound, "volume": null, "pitch": null})
 		$WaveTitle.speech(strategy.name)
+		
 		last_strategy = strategy.name
 		for zone in spawn_zones:
 			
@@ -565,10 +569,11 @@ func init_jijiji():
 	for oUnidad in aUnidades:
 		oUnidad.max_speed = 0
 		oUnidad.blocked_attack = true
-	await get_tree().create_timer(10.0).timeout
-	aUnidades = get_tree().get_nodes_in_group("faccion_ingleses")
-	for oUnidad in aUnidades:
+		oUnidad.drop_reward = false
 		oUnidad.life = 0
+	await get_tree().create_timer(3.0).timeout
+	Global.emit_signal("surubi_message", "patriciosolari")
+	await get_tree().create_timer(7.0).timeout
 	await get_tree().create_timer(2.0).timeout
 	$Crowd.hide()
 	$General.input_accepted = true

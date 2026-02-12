@@ -425,6 +425,10 @@ var aSurubiTalks = {
 		"MABEEEEELLL PANIC __ Hay que entrar la ropa!!",
 		"Que llueva... Que llueva... __ La vieja está en la cueva..."
 	],
+	"patriciosolari": [
+		"No nos daba la guita __ para poner ESA canción __ Aguante lo redo! PANIC",
+		"O pogo mais grande __ DU MUNDU __ Bolinho da ricota! PANIC",
+	],
 	"tutorial": [
 		"¡Defende esa bandera! __ Liniers dispara solo... __ ¡Movete!"
 	]

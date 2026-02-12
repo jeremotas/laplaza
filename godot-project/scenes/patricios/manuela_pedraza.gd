@@ -5,6 +5,7 @@ extends Character
 var deathTime = 20.0
 var canKill = true
 const MANUELASTINGER = preload("res://assets/created/sounds/manuela/manuelaA.mp3")
+const MANUELASTINGEROUT = preload("res://assets/created/sounds/manuela/manuelasalida.mp3")
 
 func _ready():
 	$CoolDownKillTimer.wait_time = coolDownAttackTime
@@ -87,8 +88,10 @@ func _on_cool_down_kill_timer_timeout() -> void:
 
 func _on_death_timer_timeout() -> void:
 	canKill = false
+	var stream = MANUELASTINGEROUT
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 1.0)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.2).timeout
 	invincible = false
 	life = 0

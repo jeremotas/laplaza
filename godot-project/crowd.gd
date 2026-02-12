@@ -32,11 +32,11 @@ func kill_all():
 
 func _on_timer_timeout() -> void:
 	await get_tree().create_timer(0.5).timeout
-	rayo()
+	#rayo()
 	$PatricioSolari.show()
 	$Cancion.play()
 	await get_tree().create_timer(10.8).timeout
-	rayo()
+	#rayo()
 	$PatricioSolari.hide()
 	$Cancion.stop()
 	kill_all()

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://catbkynjjletc" path="res://crowd.gd" id="1_vod0q"]
 [ext_resource type="Texture2D" uid="uid://c5p8tpduququo" path="res://assets/created/rockers/patricio_solari.png" id="2_vod0q"]
 [ext_resource type="AudioStream" uid="uid://wgn3qurqciia" path="res://assets/original/sounds/trueno.mp3" id="3_6v4nl"]
-[ext_resource type="AudioStream" uid="uid://5vcotke3apes" path="res://assets/original/Music/intro_jijiji.mp3" id="4_xn1wg"]
+[ext_resource type="AudioStream" uid="uid://2y27yteunink" path="res://assets/created/sounds/patriciosolari/solaripublico.mp3" id="4_xn1wg"]
 
 [node name="Crowd" type="CanvasLayer"]
 script = ExtResource("1_vod0q")

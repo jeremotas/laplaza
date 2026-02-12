@@ -1,6 +1,6 @@
 extends Control
 
-
+const adentro = preload("res://assets/created/sounds/adentro.mp3")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Control/MarginContainer/VBoxContainer/Comenzar.grab_focus()
@@ -59,6 +59,7 @@ func _process(_delta):
 	pass
 
 func _on_comenzar_pressed():
+	AudioStreamManager.play({"stream": adentro, "volume": null, "pitch": null})
 	#get_tree().change_scene_to_file("res://scenes/levels/" + Global.settings.game.init_level + ".tscn")
 	get_tree().change_scene_to_file("res://scenes/controls/pre_level_titles.tscn")
 	
