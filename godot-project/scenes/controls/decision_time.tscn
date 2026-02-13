@@ -31,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.297093, 0.297093, 0.297093, 1)
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
@@ -76,7 +77,7 @@ horizontal_alignment = 1
 position = Vector2(800, 529)
 
 [node name="PosicionMano" type="Marker2D" parent="Control"]
-position = Vector2(425, 185)
+position = Vector2(425, 220)
 
 [node name="ChangeLevel" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, -8)

@@ -8,7 +8,7 @@ var rng = RandomNumberGenerator.new()
 @export var anim_offset_y: float = 0.1
 @export var time_multiplier: float = 1.0
 @export var fWaitHandTime : float = 0.25
-@export var fScaleSelected : float = 1.25
+@export var fScaleSelected : float = 1.0
 
 @export var nivel = 1
 
@@ -101,7 +101,7 @@ func draw_hand() -> void:
 	
 		# Animate pos
 		tween.parallel().tween_property(oCardInstance, "position", final_pos, 0.5 + (i * 0.05))
-		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
+		#tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
 	
 	for i in range(number):
 		aCards[i].card_flip(float(i) * 0.01)
