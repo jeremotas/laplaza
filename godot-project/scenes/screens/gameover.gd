@@ -12,6 +12,12 @@ func _ready():
 	$MarginContainer2/VBoxContainer/Panel/Reiniciar.grab_focus()
 	if $Personajes/General:
 		$Personajes/General.celebration()
+		
+	var aButtons = [
+		$MarginContainer2/VBoxContainer/Panel/Reiniciar,
+		$MarginContainer2/VBoxContainer/Panel/Salir
+	]
+	Global.prepare_buttons_menu(aButtons)
 
 func _on_reiniciar_pressed():
 	get_tree().change_scene_to_file("res://scenes/levels/" + Global.settings.game.init_level + ".tscn")
