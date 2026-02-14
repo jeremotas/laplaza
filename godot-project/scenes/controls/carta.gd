@@ -64,6 +64,7 @@ func _ready():
 	$Letra.text = sLetra
 	$LetraInvertida.text = sLetraInvertida
 	$Leyenda.text = sLeyenda.replace(" __ ", "\n")
+	$VisualMarker.visible =  false
 	#$LetraInvertida.modulate = sLetraColor
 
 func _process(_delta):

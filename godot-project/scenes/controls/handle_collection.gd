@@ -8,7 +8,7 @@ var rng = RandomNumberGenerator.new()
 @export var anim_offset_y: float = 0.1
 @export var time_multiplier: float = 1.0
 @export var fWaitHandTime : float = 0.25
-@export var fScaleSelected : float = 1.25
+@export var fScaleSelected : float = 1.0
 
 var sDecisionTomada
 var iDecisionTomadaPosicion 
