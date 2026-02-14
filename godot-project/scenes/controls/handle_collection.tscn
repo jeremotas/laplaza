@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6rdv3lwlpp2i"]
+[gd_scene load_steps=11 format=3 uid="uid://6rdv3lwlpp2i"]
 
 [ext_resource type="Script" uid="uid://bdfkxs4olictq" path="res://scenes/controls/handle_collection.gd" id="1_8hgpo"]
 [ext_resource type="Texture2D" uid="uid://ds8n6q7lkpbln" path="res://assets/created/fondos/LFDLT_fondo_DECKBUILDER_.png" id="2_246f7"]
@@ -6,11 +6,18 @@
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="4_yrpmc"]
 [ext_resource type="Script" uid="uid://c5uvnpo05a5xy" path="res://scenes/controls/CartasContainer.gd" id="5_0dp8d"]
 [ext_resource type="Script" uid="uid://dkdtgnwv65dan" path="res://scenes/controls/grid_container.gd" id="5_246f7"]
+[ext_resource type="Script" uid="uid://bh8w1cae2geiu" path="res://scenes/controls/scroll_container_handle_collection.gd" id="5_y783v"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="6_nxs2w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]
 shader = ExtResource("3_y783v")
 shader_parameter/amount = 1.229
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y783v"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 50.0
 
 [node name="HandleCollection" type="Control"]
 process_mode = 2
@@ -75,16 +82,20 @@ offset_left = 5.0
 offset_top = 45.0
 offset_right = 565.0
 offset_bottom = -5.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y783v")
 follow_focus = true
-vertical_scroll_mode = 4
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+script = ExtResource("5_y783v")
 
 [node name="GridContainer" type="GridContainer" parent="Control/ScrollContainer"]
+show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 5
+theme_override_constants/v_separation = 40
+columns = 4
 script = ExtResource("5_246f7")
 
 [node name="CartasContainer" type="Control" parent="."]
@@ -106,21 +117,6 @@ stream = ExtResource("6_nxs2w")
 autoplay = true
 bus = &"Musica"
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-transparent_bg = true
-title = "Destruir carta"
-initial_position = 1
-size = Vector2i(360, 100)
-unresizable = true
-borderless = true
-always_on_top = true
-transparent = true
-content_scale_stretch = 1
-theme = ExtResource("4_yrpmc")
-ok_button_text = "Destruir"
-dialog_text = "¿Seguro querés destruir la carta?"
-cancel_button_text = "Cancelar"
-
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 transparent_bg = true
 title = "Pocas cartas"
@@ -134,5 +130,3 @@ theme = ExtResource("4_yrpmc")
 dialog_text = "Debe haber mínimo 20 cartas para destruir una."
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
-[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

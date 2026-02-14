@@ -31,6 +31,11 @@ const rsSelectedTextureUnidad = preload("res://assets/created/cartas/carta_unida
 const rsSelectedTextureEvento = preload("res://assets/created/cartas/carta_evento.png")
 const rsSelectedTextureTruco = preload("res://assets/created/cartas/carta_truco.png")
 
+const rsTextureChipNormal = preload("res://assets/created/cartas/contador_general.png")
+const rsTextureChipUnidad = preload("res://assets/created/cartas/contador_azul.png")
+const rsTextureChipEvento = preload("res://assets/created/cartas/contador_rojo.png")
+const rsTextureChipTruco = preload("res://assets/created/cartas/contador_verde.png")
+
 const aImagenes = {
 	"granadero": preload("res://assets/created/cartas/imagen/patricio_retrato_32.png"),
 	"moreno": preload("res://assets/created/cartas/imagen/moreno_retrato_32.png"),
@@ -85,10 +90,12 @@ func prepare(oCartaValues):
 	sLetraInvertida = oCartaValues.numero
 
 func prepare_textures():
+	var texture_chip = rsTextureChipNormal
 	if sTipo == "unidad":
 		texture_normal = rsNormalTextureUnidad
 		texture_hover = rsSelectedTextureUnidad
 		texture_focused = rsSelectedTextureUnidad
+		texture_chip = rsTextureChipUnidad
 		sLetra = "1"
 		sLetraInvertida = "1"
 		#sLetraColor = "#298DF8"
@@ -96,18 +103,21 @@ func prepare_textures():
 		texture_normal = rsNormalTextureEvento
 		texture_hover = rsSelectedTextureEvento
 		texture_focused = rsSelectedTextureEvento	
+		texture_chip = rsTextureChipEvento
 		sLetra = "1"
 		sLetraInvertida = "1"
 	elif sTipo == "truco":
 		texture_normal = rsNormalTextureTruco
 		texture_hover = rsSelectedTextureTruco
 		texture_focused = rsSelectedTextureTruco
+		texture_chip = rsTextureChipTruco
 		sLetra = "1"
 		sLetraInvertida = "1"
 		
 	if aImagenes[sDecisionTimeMessage]:
 		$Frente.texture = aImagenes[sDecisionTimeMessage]
-	pass
+	
+	$ChipBackground.texture = texture_chip
 
 func set_move_on_selection(iValue):
 	iMoveOnSelection = iValue
@@ -187,3 +197,8 @@ func mark_card():
 func unmark_card():
 	$VisualMarker.visible = false
 	pass
+	
+func set_chip_counter(iNumber):
+	$ChipBackground/Label.text = str(iNumber)
+	$ChipBackground.visible = true
+	

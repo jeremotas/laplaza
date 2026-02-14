@@ -441,6 +441,7 @@ func _ready():
 	save_data = SaveData.load_or_create()
 	mazo = Mazo.crear(save_data.original_cards)
 
+# SONIDOS DEL MENU. 
 
 const aMenuSonidos = [
 	preload("res://assets/created/menu/mover/menuseleccion01.mp3"),

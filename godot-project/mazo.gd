@@ -3,6 +3,24 @@ var iMinCards = 10
 var aCards = []
 var aCardsDescarte = []
 var aCardsOriginal = []
+var aCardsDictionary = {
+	"granadero":0,
+	"correntino":0,
+	"arribeno":0,
+	"moreno":0,
+	"cebador":0,
+	"mignon":0,
+	"pardo":0,
+	"upgrade_life":0,
+	"ollas_del_pueblo":0,
+	"barrilete_cosmico":0,
+	"ataque_husares_infernales":0,
+	"manuela_pedraza":0,
+	"sudestada":0,
+	"tedeum":0,
+	"defensa_de_obligado":0,
+	"patricio_solari":0,
+}
 
 static func crear(aOriginalCards = []):
 	var oMazo = Mazo.new()
@@ -16,33 +34,12 @@ static func crear(aOriginalCards = []):
 func generar_mazo(aOriginalCards):
 	for oCard in aOriginalCards:
 		crear_cartas(oCard.name, oCard.quantity)
-
-func rellenar_mazo_test():
-	crear_cartas("granadero", 4)
-	crear_cartas("correntino", 2)
-	crear_cartas("arribeno", 2)
-	crear_cartas("moreno", 2)
-	crear_cartas("cebador", 1)
-	crear_cartas("mignon", 2)
-	crear_cartas("pardo", 2)
-	crear_cartas("upgrade_life", 3)
-	crear_cartas("ollas_del_pueblo", 2)
-	crear_cartas("barrilete_cosmico", 1)
-	crear_cartas("ataque_husares_infernales", 1)
-	crear_cartas("manuela_pedraza", 1)
-	crear_cartas("sudestada", 1)
-	crear_cartas("tedeum", 1)
-	crear_cartas("defensa_de_obligado", 1)
-	crear_cartas("patricio_solari", 1)
-	
-	#crear_cartas("granadero", 5)
-	#crear_cartas("arribeno", 3)
-	#crear_cartas("upgrade_life", 3)
 	
 func crear_cartas(sDecisionMessage, iCantidad):
 	for i in range(iCantidad):
 		var oCard = crear_carta(sDecisionMessage)
 		aCards.push_back(oCard)
+		aCardsDictionary[sDecisionMessage] += 1
 		
 func crear_carta(sDecisionMessage):
 	var oCard = null
@@ -100,3 +97,40 @@ func tomar_carta():
 		var oNewCard = str_to_var(var_to_str(oCard))
 		aCardsDescarte.push_back(oNewCard)
 	return oCard
+
+func quitar_carta(sDecisionMessage):
+	if aCardsDictionary[sDecisionMessage] > 0:
+		for oCard in aCards:
+			var oSelectedCard = aCards.pop_front()
+			if not oSelectedCard.decision_time_message == sDecisionMessage:
+				aCards.push_back(oSelectedCard)
+			else:
+				break
+		aCardsDictionary[sDecisionMessage] -= 1
+	
+func cantidad_cartas(sDecisionMessage):
+	return aCardsDictionary[sDecisionMessage]
+
+func get_diccionario_de_cartas():
+	return aCardsDictionary
+	
+	
+	
+# Funciones de testing
+func rellenar_mazo_test():
+	crear_cartas("granadero", 4)
+	crear_cartas("correntino", 2)
+	crear_cartas("arribeno", 2)
+	crear_cartas("moreno", 2)
+	crear_cartas("cebador", 1)
+	crear_cartas("mignon", 2)
+	crear_cartas("pardo", 2)
+	crear_cartas("upgrade_life", 3)
+	crear_cartas("ollas_del_pueblo", 2)
+	crear_cartas("barrilete_cosmico", 1)
+	crear_cartas("ataque_husares_infernales", 1)
+	crear_cartas("manuela_pedraza", 1)
+	crear_cartas("sudestada", 1)
+	crear_cartas("tedeum", 1)
+	crear_cartas("defensa_de_obligado", 1)
+	crear_cartas("patricio_solari", 1)
