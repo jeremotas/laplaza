@@ -1,6 +1,19 @@
 extends CanvasLayer
 var bMazoTest = false
 func _ready():
+	var aButtons = [
+		$MarginContainer/VBoxContainer/ReiniciarMazo,
+		$MarginContainer/VBoxContainer/ReiniciarMazoATest,
+		$MarginContainer/VBoxContainer/efectos_mixer2,
+		$MarginContainer/VBoxContainer/music_mixer,
+		$MarginContainer/VBoxContainer/master_mixer,
+		$MarginContainer/VBoxContainer2/Menu
+		
+		
+	]
+	Global.prepare_buttons_menu(aButtons)
+	
+	
 	$MarginContainer/VBoxContainer2/Menu.grab_focus()
 
 func _on_menu_pressed():

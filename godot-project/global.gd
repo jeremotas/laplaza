@@ -440,3 +440,49 @@ var aSurubiTalks = {
 func _ready():
 	save_data = SaveData.load_or_create()
 	mazo = Mazo.crear(save_data.original_cards)
+
+
+const aMenuSonidos = [
+	preload("res://assets/created/menu/mover/menuseleccion01.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion02.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion03.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion04.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion05.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion06.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion07.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion08.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion09.mp3"),
+	preload("res://assets/created/menu/mover/menuseleccion10.mp3")
+]
+
+const oMenuAceptar = preload("res://assets/created/menu/seleccion/menuconfirmar.mp3")
+const oMenuSalir = preload("res://assets/created/menu/seleccion/salirdeljuego.mp3")
+const oMenuRetroceder = preload("res://assets/created/menu/seleccion/menuretroceder.mp3")
+var iCounterMovesButtons = 1
+
+func prepare_buttons_menu(aButtons):
+	for	oButton in aButtons:
+		oButton.focus_entered.connect(_on_button_focus)
+		if "pressed" in oButton:
+			if oButton.name in ["Salir"]:
+				oButton.pressed.connect(_on_exit_pressed)
+			elif oButton.name in ["Continuar", "Menu"]:
+				oButton.pressed.connect(_on_volver_pressed)
+			else:
+				oButton.pressed.connect(_on_button_pressed)
+
+func _on_button_focus():
+	var stream = aMenuSonidos[iCounterMovesButtons]
+	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	iCounterMovesButtons += 1
+	if iCounterMovesButtons >= aMenuSonidos.size():
+		iCounterMovesButtons = 1
+
+func _on_button_pressed():
+	AudioStreamManager.play({"stream": oMenuAceptar, "volume": null, "pitch": null})
+
+func _on_exit_pressed():
+	AudioStreamManager.play({"stream": oMenuSalir, "volume": null, "pitch": null})
+
+func _on_volver_pressed():
+	AudioStreamManager.play({"stream": oMenuRetroceder, "volume": null, "pitch": null})

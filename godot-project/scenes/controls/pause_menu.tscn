@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://u6pw5bj6d6pt"]
+[gd_scene load_steps=8 format=3 uid="uid://u6pw5bj6d6pt"]
 
 [ext_resource type="Script" uid="uid://djvngkw87o8bu" path="res://scenes/controls/pause_menu.gd" id="1_wwgda"]
 [ext_resource type="Shader" uid="uid://56yjmw2atlid" path="res://shaders/blur.gdshader" id="2_76fdo"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_mqs88"]
 [ext_resource type="PackedScene" uid="uid://ne0jrytbfn5y" path="res://scenes/controls/volume_mixer.tscn" id="4_c50jk"]
 [ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="5_qmgl8"]
+[ext_resource type="AudioStream" uid="uid://bhifjrvh1b6lj" path="res://assets/created/menu/musica/pausaconpercu.mp3" id="6_sqfbq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dtvlx"]
 shader = ExtResource("2_76fdo")
@@ -18,11 +19,14 @@ script = ExtResource("1_wwgda")
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_dtvlx")
-offset_right = 850.0
-offset_bottom = 480.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Dark" type="ColorRect" parent="."]
-modulate = Color(0, 0, 0, 0.498039)
+modulate = Color(0, 0, 0, 0.784314)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,7 +93,7 @@ icon = ExtResource("5_qmgl8")
 flat = true
 alignment = 0
 
-[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Salir" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_mqs88")
 text = "Menu principal"
@@ -97,6 +101,9 @@ icon = ExtResource("5_qmgl8")
 flat = true
 alignment = 0
 
+[node name="PauseMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_sqfbq")
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Salir" to="." method="_on_menu_pressed"]

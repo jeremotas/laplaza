@@ -140,6 +140,7 @@ func _on_mouse_exited():
 	pass
 
 func card_up():
+	
 	if not get_parent().ready_for_input:
 		return
 	if original_position == null:
@@ -149,6 +150,7 @@ func card_up():
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	var final_pos = original_position
 	final_pos.y += -iMoveOnSelection
+	$VisualMarker.visible = true
 	tween.parallel().tween_property(self, "global_position", final_pos, 0.25)
 	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": null, "pitch": null})
 	#global_position.y = original_position.y - iMoveOnSelection
@@ -163,7 +165,9 @@ func card_down():
 		tween.kill()
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	var final_pos = original_position
+	$VisualMarker.visible = false
 	tween.parallel().tween_property(self, "global_position", final_pos, 0.25)
+	
 	#global_position.y = original_position.y
 	
 func card_flip(fSec = 0.0):

@@ -1,6 +1,7 @@
 extends Control
 
 const adentro = preload("res://assets/created/sounds/adentro.mp3")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Control/MarginContainer/VBoxContainer/Comenzar.grab_focus()
@@ -17,13 +18,24 @@ func _ready():
 		$Control/MarginContainer/VBoxContainer/AbrirSobre.focus_mode = Control.FOCUS_NONE
 		$Control/MarginContainer/VBoxContainer/ElMazo.disabled = true
 		$Control/MarginContainer/VBoxContainer/ElMazo.focus_mode = Control.FOCUS_NONE
-		
+	var aButtons = [
+		$Control/MarginContainer/VBoxContainer/Comenzar,
+		$Control/MarginContainer/VBoxContainer/ElMazo,
+		$Control/MarginContainer/VBoxContainer/AbrirSobre,
+		$Control/MarginContainer/VBoxContainer/Opciones,
+		$Control/MarginContainer/VBoxContainer/Creditos,
+		$Control/MarginContainer/VBoxContainer/Salir
+	]
+	Global.prepare_buttons_menu(aButtons)
+	
 	
 	load_volumes()
 	load_malon()
-	
+	Global.iCounterMovesButtons = 1
 	Engine.time_scale = 1
 	get_tree().paused = false
+
+
 	
 func load_malon():
 	$UnitSpawner.set_goal($PosicionGeneral)
@@ -66,6 +78,8 @@ func _on_comenzar_pressed():
 
 
 func _on_salir_pressed():
+	get_viewport().gui_disable_input = true
+	await get_tree().create_timer(2.4).timeout
 	get_tree().quit()
 
 
