@@ -385,7 +385,7 @@ respawn_seconds = 10.0
 controlled_max_alive = true
 
 [node name="EnemyGoal" parent="." instance=ExtResource("4_nncdj")]
-position = Vector2(310, 504)
+position = Vector2(307, 505)
 faction = "ingleses"
 
 [node name="General" parent="." instance=ExtResource("5_cfpx1")]
