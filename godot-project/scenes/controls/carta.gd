@@ -65,10 +65,11 @@ func init():
 func _ready():
 	global_position.x = 850 - 84
 	global_position.y = 480
-	$Titulo.text = sTitulo
+	TranslationServer.set_locale(Global.language)
+	$Titulo.text = tr(sTitulo)
 	$Letra.text = sLetra
 	$LetraInvertida.text = sLetraInvertida
-	$Leyenda.text = sLeyenda.replace(" __ ", "\n")
+	$Leyenda.text = tr(sLeyenda)
 	$VisualMarker.visible =  false
 	#$LetraInvertida.modulate = sLetraColor
 
@@ -132,8 +133,8 @@ func _on_focus_entered():
 		card_up()
 	else:
 		mark_card()
-	var sLeyendaT = sLeyenda.replace(" __ ", "\n")
-	get_parent().change_leyenda(sLeyendaT)
+	#var sLeyendaT = sLeyenda.replace(" __ ", "\n")
+	#get_parent().change_leyenda(sLeyendaT)
 	
 
 func _on_focus_exited():

@@ -61,7 +61,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_pfgda")
 theme_override_font_sizes/font_size = 68
-text = "CONQUERED"
+text = "_CONQUERED_"
 horizontal_alignment = 1
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
@@ -101,9 +101,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_pfgda")
 theme_override_font_sizes/font_size = 18
-text = "¿Vas a dejar que esto quede así? Agregá La Furia de Las Trenzas a tu lista de deseos en Steam para vengarte de los ingleses. 
-El Diego lo haría.
-Buscanos en Steam o scanneá este QR con tu celular."
+text = "_GAMEOVER_SEGUINOS_EN_STEAM_LEYENDA_"
 autowrap_mode = 2
 
 [node name="Wishlist" type="TextureButton" parent="Panel/CenterContainer/HBoxContainer"]
@@ -142,7 +140,7 @@ offset_bottom = 43.0
 size_flags_vertical = 8
 theme = ExtResource("2_pfgda")
 theme_override_font_sizes/font_size = 24
-text = "Seguinos en Steam"
+text = "_SEGUINOS_EN_STEAM_"
 icon = ExtResource("7_8vk33")
 flat = true
 alignment = 0
@@ -156,7 +154,7 @@ offset_bottom = 40.0
 size_flags_vertical = 8
 theme = ExtResource("2_pfgda")
 theme_override_font_sizes/font_size = 24
-text = "Reintentar"
+text = "_REINTENTAR_"
 icon = ExtResource("7_8vk33")
 flat = true
 alignment = 0
@@ -169,7 +167,7 @@ offset_right = 253.0
 offset_bottom = 71.0
 size_flags_vertical = 8
 theme = ExtResource("2_pfgda")
-text = "Menú principal"
+text = "_MENU_PRINCIPAL_"
 icon = ExtResource("7_8vk33")
 flat = true
 alignment = 0
@@ -294,8 +292,7 @@ theme = ExtResource("2_pfgda")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -6
 theme_override_font_sizes/font_size = 16
-text = "¡!!Ganaste un 
-sobrecito!!"
+text = "_GAMEOVER_GANASTE_SOBRE_"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Wishlist" to="." method="_on_wishlist_pressed"]

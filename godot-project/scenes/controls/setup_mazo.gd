@@ -33,12 +33,13 @@ func init():
 	pass
 
 func _ready():
+	TranslationServer.set_locale(Global.language)
 	rot_max = deg_to_rad(rot_max_t)
 	get_tree().paused = true
 	contenedor_cartas.global_position = $Control/PosicionMano.global_position
 	card_offset_x = (100 - 500 / Global.mazo.size()) * -1
 	draw_hand()
-	$Control/Label.text = str(aCards.size()) + " cartas"
+	$Control/Label.text = str(aCards.size()) + " " + tr("_CARTAS_")
 
 func _process(delta):
 	pass
@@ -210,7 +211,7 @@ func _on_visibility_changed():
 		tween.tween_property($Control, "modulate:a", 1, 0.5)
 		await tween.finished
 		draw_hand()
-		$Control/Label.text = str(aCards.size()) + " cartas"
+		$Control/Label.text = str(aCards.size()) + " " + tr("_CARTAS_")
 		
 func decision_elegida(sDecisionTomadaCarta, iPosicion):
 	if aCards.size() < 20:
@@ -246,7 +247,7 @@ func destroy_selected_card():
 	await undraw_cards(iDecisionTomadaPosicion)
 	Global.mazo = Mazo.crear(aCardsMazo)
 	draw_hand()
-	$Control/Label.text = str(aCards.size()) + " cartas"
+	$Control/Label.text = str(aCards.size()) + " " + tr("_CARTAS_")
 	
 	
 	

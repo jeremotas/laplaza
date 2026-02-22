@@ -4,13 +4,15 @@ const adentro = preload("res://assets/created/sounds/adentro.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.language = Global.save_data.language
+	TranslationServer.set_locale(Global.language)
 	$Control/MarginContainer/VBoxContainer/Comenzar.grab_focus()
 	$Control/MarginContainer/HBoxContainer/CantidadLagrimas.text = str(Global.save_data.lagrimas_acumuladas)
 	if Global.save_data.cantidad_sobres_pendientes() > 0:
-		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = "Abrir sobres (" +  str(Global.save_data.cantidad_sobres_pendientes()) + ")"
+		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = tr("_ABRIR_SOBRES_") % str(Global.save_data.cantidad_sobres_pendientes()) 
 		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = false
 	else:
-		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = "Sin sobres"
+		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = "_SIN_SOBRES_"
 		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = true
 	
 	if Global.settings.demo:
@@ -26,6 +28,7 @@ func _ready():
 		$Control/MarginContainer/VBoxContainer/Creditos,
 		$Control/MarginContainer/VBoxContainer/Salir
 	]
+	
 	Global.prepare_buttons_menu(aButtons)
 	
 	

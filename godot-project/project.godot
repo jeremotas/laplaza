@@ -102,6 +102,10 @@ pause={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://texts/LFDLT - Localization - data.es.translation", "res://texts/LFDLT - Localization - data.en.translation", "res://texts/LFDLT - Localization - data.fr.translation", "res://texts/LFDLT - Localization - data.jp.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Compatriotas"

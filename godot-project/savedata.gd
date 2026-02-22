@@ -53,6 +53,7 @@ class_name SaveData extends Resource
 
 
 @export var sobres_pendientes = {"azul": 0, "rojo": 0, "verde": 0}
+@export var language = "es"
 
 const SAVE_PATH:String = "user://la_furia_de_las_trenzas.tres"
 

@@ -4,6 +4,7 @@ signal surubi_message(label)
 
 var save_data:SaveData
 var mazo:Mazo
+var language = "es"
 
 var settings = {
 	"demo": true,
@@ -410,27 +411,28 @@ var settings = {
 
 var aSurubiTalks = {
 	"mensaje_inicial": [
-		"Ahí vienen!! __ Corran por sus vidas!!! PANIC",
-		"Estos vienen por el té? __ TE voy a dar!!! PANIC",
-		"Invasión? __ Inversión? __ FMI... TODO LO MISMO PANIC __ Seguimos resistiendo.",
-		"Elección o relección? __ para mí es la misma... __ #@#@$#@#@ PANIC"
+		"_SURUBI_MENSAJE_INICIAL_1_",
+		"_SURUBI_MENSAJE_INICIAL_2_",
+		"_SURUBI_MENSAJE_INICIAL_3_",
+		"_SURUBI_MENSAJE_INICIAL_4_",
 	],
 	"tedeum": [
-		"Ya lo dijo Francisco... __ HAGAN LÍO! PANIC",
-		"Ay, diosito santo... __ bajamela del cielo.",
-		"Arranca el genio... __ Ah, no... ese era otro. __ Ehm... Sí, DIOS, AYUDAAAA!"
+		"_SURUBI_TEDEUM_1_",
+		"_SURUBI_TEDEUM_2_",
+		"_SURUBI_TEDEUM_3_",
 	],
 	"sudestada": [
-		"Miau, miau, miau... __ Miau, miaaaaaauuu __ Llueve sobre mojado! PANIC",
-		"MABEEEEELLL PANIC __ Hay que entrar la ropa!!",
-		"Que llueva... Que llueva... __ La vieja está en la cueva..."
+		"_SURUBI_SUDESTADA_1_",
+		"_SURUBI_SUDESTADA_2_",
+		"_SURUBI_SUDESTADA_3_"
 	],
 	"patriciosolari": [
-		"No nos daba la guita __ para poner ESA canción __ Aguante lo redo! PANIC",
-		"O pogo mais grande __ DU MUNDU __ Bolinho da ricota! PANIC",
+		"_SURUBI_PATRICIO_SOLARI_1_",
+		"_SURUBI_PATRICIO_SOLARI_2_",
+		"_SURUBI_PATRICIO_SOLARI_3_",
 	],
 	"tutorial": [
-		"¡Defende esa bandera! __ Liniers dispara solo... __ ¡Movete!"
+		"_SURUBI_TUTORIAL_1_"
 	],
 	"nueva_oleada": [
 		

@@ -83,10 +83,11 @@ expand_mode = 3
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 custom_minimum_size = Vector2(10, 10)
-offset_left = -103.0
-offset_top = -65.0
-offset_right = 980.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0, 0, 0, 1)

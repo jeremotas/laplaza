@@ -59,7 +59,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("3_mqs88")
 theme_override_font_sizes/font_size = 16
-text = "General"
+text = "_SONIDO_GENERAL_"
 
 [node name="master_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
 layout_mode = 2
@@ -69,7 +69,7 @@ bus_name = "Master"
 layout_mode = 2
 theme = ExtResource("3_mqs88")
 theme_override_font_sizes/font_size = 16
-text = "Musica"
+text = "_SONIDO_MUSICA_"
 
 [node name="music_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
 layout_mode = 2
@@ -79,7 +79,7 @@ bus_name = "Musica"
 layout_mode = 2
 theme = ExtResource("3_mqs88")
 theme_override_font_sizes/font_size = 16
-text = "Efectos"
+text = "_SONIDO_EFECTOS_"
 
 [node name="efectos_mixer2" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
 layout_mode = 2
@@ -88,7 +88,7 @@ bus_name = "Efectos"
 [node name="Continuar" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_mqs88")
-text = "Continuar"
+text = "_CONTINUAR_"
 icon = ExtResource("5_qmgl8")
 flat = true
 alignment = 0
@@ -96,7 +96,7 @@ alignment = 0
 [node name="Salir" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_mqs88")
-text = "Menu principal"
+text = "_MENU_PRINCIPAL_"
 icon = ExtResource("5_qmgl8")
 flat = true
 alignment = 0

@@ -26,7 +26,7 @@ func _ready():
 		sSobreType = "rojo"
 	Global.save_data.save()	
 	$Sobre.type(sSobreType)
-	pass
+	TranslationServer.set_locale(Global.language)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

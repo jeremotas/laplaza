@@ -70,7 +70,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 33
-text = "El Mazo"
+text = "_EL_MAZO_"
 horizontal_alignment = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
@@ -127,6 +127,6 @@ borderless = true
 always_on_top = true
 transparent = true
 theme = ExtResource("4_yrpmc")
-dialog_text = "Debe haber mínimo 20 cartas para destruir una."
+dialog_text = "_AVISO_CARTAS_MINIMAS_"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

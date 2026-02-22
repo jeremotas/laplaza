@@ -63,7 +63,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 68
-text = "¡VICTORIA!"
+text = "_VICTORIA_"
 horizontal_alignment = 1
 
 [node name="Victoria" type="AudioStreamPlayer2D" parent="."]
@@ -106,7 +106,7 @@ offset_bottom = 43.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 24
-text = "Seguinos en Steam"
+text = "_SEGUINOS_EN_STEAM_"
 icon = ExtResource("6_g4nh7")
 flat = true
 alignment = 0
@@ -119,7 +119,7 @@ offset_bottom = 44.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 24
-text = "Volver a jugar"
+text = "_REINICIAR_"
 icon = ExtResource("6_g4nh7")
 flat = true
 alignment = 0
@@ -132,7 +132,7 @@ offset_right = 251.0
 offset_bottom = 82.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
-text = "Menú principal"
+text = "_MENU_PRINCIPAL_"
 icon = ExtResource("6_g4nh7")
 flat = true
 alignment = 0
@@ -169,8 +169,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 18
-text = "Sos el defensor que la patria necesita.  Agregá La Furia de Las Trenzas a tu lista de deseos en Steam para seguir masacrando ingleses. El Diego lo haría.
-Buscanos en Steam o scanneá este QR con tu celular."
+text = "_SEGUINOS_EN_STEAM_LEYENDA_"
 autowrap_mode = 2
 
 [node name="Wishlist" type="TextureButton" parent="Panel/CenterContainer/HBoxContainer"]
@@ -184,6 +183,7 @@ stretch_mode = 5
 
 [node name="General" parent="Personajes" instance=ExtResource("8_v20am")]
 position = Vector2(324, 454)
+show_life_bar = false
 input_accepted = false
 
 [node name="Arribeno" parent="Personajes" instance=ExtResource("9_57pto")]
@@ -361,8 +361,7 @@ theme = ExtResource("3_blw1a")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -6
 theme_override_font_sizes/font_size = 16
-text = "¡!!Ganaste un 
-sobrecito!!"
+text = "_GANASTE_SOBRE_"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Wishlist" to="." method="_on_steam_pressed"]
