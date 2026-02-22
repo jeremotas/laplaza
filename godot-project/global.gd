@@ -247,7 +247,7 @@ var settings = {
 				"max_damage_given": 1,
 				"shuffle_angles": true,
 				"angles": [30.0, 0.0, -30.0, 0.0],
-				"objective": "General"
+				"objective": "Plaza"
 			}
 		},
 		"royal_marine": {
@@ -281,7 +281,7 @@ var settings = {
 				"max_damage_given": 1,
 				"shuffle_angles": false,
 				"angles": [ 0.0, 90.0, 180.0, 270.0],
-				"objective": "General"
+				"objective": "Plaza"
 			}
 		},
 		"green_soldier": {
@@ -476,16 +476,16 @@ func prepare_buttons_menu(aButtons):
 
 func _on_button_focus():
 	var stream = aMenuSonidos[iCounterMovesButtons]
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("menu_movimiento"), "pitch": AVS.get_rpitch("menu_movimiento")})
 	iCounterMovesButtons += 1
 	if iCounterMovesButtons >= aMenuSonidos.size():
 		iCounterMovesButtons = 1
 
 func _on_button_pressed():
-	AudioStreamManager.play({"stream": oMenuAceptar, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": oMenuAceptar, "volume": AVS.get_db("menu_aceptar"), "pitch": AVS.get_rpitch("menu_aceptar")})
 
 func _on_exit_pressed():
-	AudioStreamManager.play({"stream": oMenuSalir, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": oMenuSalir, "volume": AVS.get_db("menu_salir"), "pitch": AVS.get_rpitch("menu_salir")})
 
 func _on_volver_pressed():
-	AudioStreamManager.play({"stream": oMenuRetroceder, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": oMenuRetroceder, "volume": AVS.get_db("menu_retroceder"), "pitch": AVS.get_rpitch("menu_retroceder")})

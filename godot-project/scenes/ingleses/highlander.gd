@@ -95,7 +95,7 @@ func attack():
 		get_parent().add_child(b)
 		iAttacksMade += 1
 		#$WeaponSound.play()
-		attack_sound(GUNSHOT)
+		attack_sound(GUNSHOT, AVS.get_db("attack_highlander"), AVS.get_rpitch("attack_highlander"))
 		
 		
 	hasToAttack = false

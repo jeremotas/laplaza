@@ -25,6 +25,7 @@ Global="*res://global.gd"
 SceneTransition="*res://scenes/controls/scene_transition.tscn"
 CreditsData="*res://credits_data.gd"
 AudioStreamManager="*res://audio_stream_manager.gd"
+AVS="*res://audio_volume_setttings.gd"
 
 [display]
 

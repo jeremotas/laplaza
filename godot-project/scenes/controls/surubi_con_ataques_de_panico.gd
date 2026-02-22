@@ -68,7 +68,7 @@ func message_show(sMessage):
 	messageTimer.start()
 	bTalking = true
 	var stream = pick_sound_surubi_talking(bPanic)
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("surubi"), "pitch": AVS.get_rpitch("surubi")})
 
 func pick_sound_surubi_talking(bPanic):
 	var oStream = null

@@ -19,6 +19,8 @@ func _init():
 	bullet_lifetime = Global.settings.patricios.husares_infernales.attack.bullet.duration
 	coolDownAttackTime = Global.settings.patricios.husares_infernales.attack.cooldown
 	rng = RandomNumberGenerator.new()
+	if AVS.get_db("husares_infernales_walk") != null:
+		$WalkSound.volume_db = AVS.get_db("husares_infernales_walk")
 	init()
 	
 func set_sound_start(seektime):

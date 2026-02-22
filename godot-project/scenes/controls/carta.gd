@@ -71,6 +71,7 @@ func _ready():
 	$LetraInvertida.text = sLetraInvertida
 	$Leyenda.text = tr(sLeyenda)
 	$VisualMarker.visible =  false
+	$ChipBackground.hide()
 	#$LetraInvertida.modulate = sLetraColor
 
 func _process(_delta):
@@ -164,7 +165,7 @@ func card_up():
 	final_pos.y += -iMoveOnSelection
 	$VisualMarker.visible = true
 	tween.parallel().tween_property(self, "global_position", final_pos, 0.25)
-	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": AVS.get_db("card_up"), "pitch": AVS.get_rpitch("card_up")})
 	#global_position.y = original_position.y - iMoveOnSelection
 	
 	
@@ -189,7 +190,7 @@ func card_flip(fSec = 0.0):
 		$AnimationPlayer.play("card_flip")
 	else:
 		$AnimationPlayer.play_backwards("card_flip")
-	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": rsSonidoCarta, "volume": AVS.get_db("card_flip"), "pitch": AVS.get_rpitch("card_flip")})
 
 func mark_card():
 	$VisualMarker.visible = true

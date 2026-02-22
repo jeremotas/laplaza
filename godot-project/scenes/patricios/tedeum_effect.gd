@@ -32,7 +32,7 @@ func start():
 	tw.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	
 	var stream = TEDEUMSTINGER
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("tedeum_stinger"), "pitch": AVS.get_rpitch("tedeum_stinger")})
 	
 	var y0 = tedeum_node.position.y
 	tw.tween_property(tedeum_node, "position:y", y0 + 250.0, 2.0)

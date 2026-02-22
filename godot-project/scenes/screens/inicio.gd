@@ -74,7 +74,7 @@ func _process(_delta):
 	pass
 
 func _on_comenzar_pressed():
-	AudioStreamManager.play({"stream": adentro, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": adentro, "volume": AVS.get_db("adentro_inicio_juego"), "pitch": AVS.get_rpitch("adentro_inicio_juego")})
 	#get_tree().change_scene_to_file("res://scenes/levels/" + Global.settings.game.init_level + ".tscn")
 	get_tree().change_scene_to_file("res://scenes/controls/pre_level_titles.tscn")
 	

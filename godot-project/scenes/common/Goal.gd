@@ -6,6 +6,10 @@ extends Node2D
 var rigning = false
 
 func _ready():
+	if AVS.get_db("aviso_ingles_en_zona") != null:
+		$Bell.volume_db = AVS.get_db("aviso_ingles_en_zona")
+	if AVS.get_db("entra_ingles_al_mastil") != null:
+		$Entra.volume_db = AVS.get_db("entra_ingles_al_mastil")
 	pass
 
 func _process(_delta):

@@ -48,7 +48,7 @@ func attack():
 			b.set_color(Color(1, 1, 1))
 			get_parent().add_child(b)
 			
-			attack_sound(GUNSHOT)
+			attack_sound(GUNSHOT, AVS.get_db(\"attack_patricio\"), AVS.get_rpitch(\"attack_patricio\"))
 		#$WeaponSound.play()
 		
 		attack_objective = null
@@ -563,7 +563,6 @@ theme_override_font_sizes/font_size = 8
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fkns3")

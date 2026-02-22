@@ -7,6 +7,7 @@ var faction = "patricios"
 var invincible = false
 var rng 
 const CADENASSTINGER = preload("res://assets/created/sounds/cadenas/cadenas.mp3")
+const CADENASROTAS = preload("res://assets/created/sounds/cadenas/cadenasrotas.mp3")
 
 
 func _init():
@@ -32,7 +33,7 @@ func armar():
 	$AnimatedSprite2D.play("aparecer")
 	$CollisionShape2D.disabled = false
 	var stream = CADENASSTINGER
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("cadenas_stinger"), "pitch": AVS.get_rpitch("cadenas_stinger")})
 	#sonido de cadenas pendiente.
 
 func desarmar():
@@ -42,6 +43,8 @@ func desarmar():
 	$CollisionShape2D.disabled = true
 	$AnimatedSprite2D.hide()
 	$AnimatedSprite2D.stop()
+	var stream = CADENASROTAS
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("cadenas_stinger_out"), "pitch": AVS.get_rpitch("cadenas_stinger_out")})
 	
 func hurt():
 	$AnimatedSprite2D.play("hurt")

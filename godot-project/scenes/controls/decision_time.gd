@@ -51,6 +51,8 @@ func init():
 
 func _ready():
 	rot_max = deg_to_rad(rot_max_t)
+	if AVS.get_db("decision_de_carta_tomada"):
+		$ChangeLevel.volume_db = AVS.get_db("decision_de_carta_tomada")
 
 func _process(delta):
 	handle_input()
@@ -189,7 +191,7 @@ func change_leyenda(sLeyenda):
 func _on_visibility_changed():
 	if visible:
 		var stream = get_init_audio()
-		AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+		AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("inicio_jugar_mano"), "pitch": AVS.get_rpitch("inicio_jugar_mano")})
 		
 		ready_for_input = false
 		tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
@@ -199,6 +201,7 @@ func _on_visibility_changed():
 		
 func decision_elegida(sDecisionTomada, iSelectedCard):
 	ready_for_input = false
+	
 	$ChangeLevel.play()
 	await undraw_cards(iSelectedCard)
 	get_parent().decision_time_end(sDecisionTomada)

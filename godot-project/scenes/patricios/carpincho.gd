@@ -18,6 +18,10 @@ func _init():
 	bullet_lifetime = 0
 	coolDownAttackTime = 1
 	rng = RandomNumberGenerator.new()
+	
+	if AVS.get_db("carpinchos_walk") != null:
+		$WalkSound.volume_db = AVS.get_db("carpinchos_walk")
+	
 	init()
 	
 func set_sound_start(seektime):

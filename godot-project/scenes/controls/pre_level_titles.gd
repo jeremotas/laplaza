@@ -21,6 +21,8 @@ func _ready():
 		iSelectedMessage = rng.randi_range(0, aMessages.size() - 1)
 	var sSelectedMessage = tr(aMessages[iSelectedMessage])
 	prepare_titles(sSelectedMessage)
+	if AVS.get_db("pre_level_titles_background_sound"):
+		$AudioStreamPlayer2D.volume_db = AVS.get_db("pre_level_titles_background_sound")
 	Engine.time_scale = 1
 
 func prepare_titles(sMessage):
