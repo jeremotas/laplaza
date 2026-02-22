@@ -79,17 +79,19 @@ func _process(_delta):
 	pass
 
 func prepare(oCartaValues):
+	TranslationServer.set_locale(Global.language)
 	sTipo = oCartaValues.tipo
 	sDecisionTimeMessage = oCartaValues.decision_time_message
 	iCantidad = oCartaValues.cantidad
-	sTitulo = oCartaValues.titulo
+	sTitulo = tr(oCartaValues.titulo)
 	iPosicionEnMano = oCartaValues.posicion_en_mano
-	sLeyenda = oCartaValues.leyenda
+	sLeyenda = tr(oCartaValues.leyenda)
 	# Preparo texturas del boton
 	prepare_textures()
 	# Preparo los textos
 	sLetra = oCartaValues.numero
 	sLetraInvertida = oCartaValues.numero
+	
 
 func prepare_textures():
 	var texture_chip = rsTextureChipNormal
