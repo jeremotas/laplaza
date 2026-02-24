@@ -5,7 +5,7 @@ extends Node
 const dbs = {
 	# Interfaz
 		# Sonidos del menu.
-		"menu_movimiento": null,
+		"menu_movimiento": -4.0,
 		"menu_salir": null,
 		"menu_retroceder": null,
 		"adentro_inicio_juego": null,
@@ -31,7 +31,7 @@ const dbs = {
 	"attack_arribeno": null, 
 	"attack_correntino": null, 
 	
-	"mate_del_cebador": null, # Elije uno entre 4 chupadas de mate
+	"mate_del_cebador": 4.0, # Elije uno entre 4 chupadas de mate
 	
 	"explotion": null, # moreno y zapador
 	"explotion_water": null, # ollas del pueblo
@@ -43,7 +43,7 @@ const dbs = {
 	"entra_ingles_al_mastil": null, # no acepta pitch, si hace falta lo armamos.
 	
 	# Otros sonidos
-	"surubi": null,
+	"surubi": -12.0,
 	"carpinchos_walk": null,
 	"lagrima_tomada": 10.0,
 	
@@ -52,12 +52,12 @@ const dbs = {
 	"tedeum_stinger": null,
 	"manuela_stinger": null,
 	"manuela_stinger_out": null,
-	"cadenas_stinger": null,
+	"cadenas_stinger": -6.0,
 	"cadenas_stinger_out": null,
 	"husares_infernales_walk": null,
 	"sudestada_lluvia": null,
 	"sudestada_trueno": null,
-	"relato_victor_hugo": null,
+	"relato_victor_hugo": 6.0,
 	
 }
 
