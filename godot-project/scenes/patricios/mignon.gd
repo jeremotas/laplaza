@@ -41,7 +41,7 @@ func attack():
 			b.set_color(Color(0.7, 0.7, 0.7))
 			get_parent().add_child(b)
 			
-			attack_sound(GUNSHOT)
+			attack_sound(GUNSHOT, AVS.get_db("attack_mignon"), AVS.get_rpitch("attack_mignon"))
 		#$WeaponSound.play()
 		
 		attack_objective = null

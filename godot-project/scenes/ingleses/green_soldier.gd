@@ -86,7 +86,7 @@ func attack():
 		
 		iAttacksMade +=1
 		#$WeaponSound.play()
-		attack_sound(GUNSHOT)
+		attack_sound(GUNSHOT, AVS.get_db("attack_green_soldier"), AVS.get_rpitch("attack_green_soldier"))
 		
 		
 	hasToAttack = false

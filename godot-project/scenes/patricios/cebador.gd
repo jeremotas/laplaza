@@ -5,6 +5,14 @@ extends Character
 var general_in_mate_area = false 
 #var bullet = preload("res://scenes/common/bullet.tscn")
 
+const aSoundMate = [
+	preload("res://assets/created/sounds/mate/mate01.mp3"),
+	preload("res://assets/created/sounds/mate/mate02.mp3"),
+	preload("res://assets/created/sounds/mate/mate03.mp3"),
+	preload("res://assets/created/sounds/mate/mate04.mp3"),
+	preload("res://assets/created/sounds/mate/mate05.mp3"),
+]
+
 func _init():
 	unit_type = "cebador"
 	life_given = Global.settings.patricios.cebador.attack.life_given
@@ -32,10 +40,12 @@ func attack():
 			
 func cebar_mate():
 	if oGoalAssigned.max_life > oGoalAssigned.life:
-		
 		oGoalAssigned.life += life_given
 		if oGoalAssigned.life > oGoalAssigned.max_life:
 			oGoalAssigned.life = oGoalAssigned.max_life
+			
+	var stream = random_pick_one(aSoundMate)
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("mate_del_cebador"), "pitch": AVS.get_rpitch("mate_del_cebador")})
 
 
 func _on_mate_area_body_entered(body: Node2D) -> void:

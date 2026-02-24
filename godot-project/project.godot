@@ -13,7 +13,7 @@ config_version=5
 config/name="La furia de las trenzas"
 config/version="0.1"
 run/main_scene="res://scenes/screens/splash-godot.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
@@ -25,6 +25,7 @@ Global="*res://global.gd"
 SceneTransition="*res://scenes/controls/scene_transition.tscn"
 CreditsData="*res://credits_data.gd"
 AudioStreamManager="*res://audio_stream_manager.gd"
+AVS="*res://audio_volume_setttings.gd"
 
 [display]
 
@@ -101,6 +102,10 @@ pause={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://texts/LFDLT - Localization - data.es.translation", "res://texts/LFDLT - Localization - data.en.translation", "res://texts/LFDLT - Localization - data.fr.translation", "res://texts/LFDLT - Localization - data.jp.translation")
 
 [layer_names]
 

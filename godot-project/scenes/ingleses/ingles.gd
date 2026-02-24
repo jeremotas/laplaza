@@ -82,6 +82,6 @@ func attack():
 		b.set_color(Color(1, 1, 0.2))
 		get_parent().add_child(b)
 
-		attack_sound(GUNSHOT)
+		attack_sound(GUNSHOT, AVS.get_db("attack_ingles_normal"), AVS.get_rpitch("attack_ingles_normal"))
 		iAttacksMade += 1
 	hasToAttack = false

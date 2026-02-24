@@ -514,7 +514,8 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_ksat4")
 sprite_frames = SubResource("SpriteFrames_afxcp")
-animation = &"die"
+animation = &"idle"
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 active = false

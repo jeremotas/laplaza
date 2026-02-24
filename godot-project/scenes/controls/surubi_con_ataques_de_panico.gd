@@ -23,7 +23,7 @@ var aSoundSurubi = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	TranslationServer.set_locale(Global.language)
 	pass # Replace with function body.
 
 
@@ -37,7 +37,7 @@ func message(sMessageType):
 	var aPossibleMessages = Global.aSurubiTalks.get(sMessageType)
 	# pick one
 	var iSelectedMessageKey = rng.randi_range(0, aPossibleMessages.size() - 1)
-	var sMessageSelected = aPossibleMessages[iSelectedMessageKey]
+	var sMessageSelected = tr(aPossibleMessages[iSelectedMessageKey])
 	var aMessages = sMessageSelected.split("__")
 	for sMessage in aMessages:
 		aMessagesToRead.push_back(sMessage)
@@ -68,7 +68,7 @@ func message_show(sMessage):
 	messageTimer.start()
 	bTalking = true
 	var stream = pick_sound_surubi_talking(bPanic)
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("surubi"), "pitch": AVS.get_rpitch("surubi")})
 
 func pick_sound_surubi_talking(bPanic):
 	var oStream = null

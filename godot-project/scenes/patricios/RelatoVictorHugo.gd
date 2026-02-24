@@ -2,6 +2,10 @@ extends AudioStreamPlayer2D
 
 var pauseposition
 
+func ready():
+	if AVS.get_db("relato_victor_hugo"):
+		volume_db = AVS.get_db("relato_victor_hugo")
+
 func pause():
 	#pauseposition = get_playback_position();
 	#playing = false;

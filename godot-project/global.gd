@@ -4,9 +4,10 @@ signal surubi_message(label)
 
 var save_data:SaveData
 var mazo:Mazo
+var language = "es"
 
 var settings = {
-	"demo": true,
+	"demo": false,
 	"game": {
 		"init_level": "level",
 		"player_goal": 608,
@@ -246,7 +247,7 @@ var settings = {
 				"max_damage_given": 1,
 				"shuffle_angles": true,
 				"angles": [30.0, 0.0, -30.0, 0.0],
-				"objective": "General"
+				"objective": "Plaza"
 			}
 		},
 		"royal_marine": {
@@ -280,7 +281,7 @@ var settings = {
 				"max_damage_given": 1,
 				"shuffle_angles": false,
 				"angles": [ 0.0, 90.0, 180.0, 270.0],
-				"objective": "General"
+				"objective": "Plaza"
 			}
 		},
 		"green_soldier": {
@@ -410,27 +411,28 @@ var settings = {
 
 var aSurubiTalks = {
 	"mensaje_inicial": [
-		"Ahí vienen!! __ Corran por sus vidas!!! PANIC",
-		"Estos vienen por el té? __ TE voy a dar!!! PANIC",
-		"Invasión? __ Inversión? __ FMI... TODO LO MISMO PANIC __ Seguimos resistiendo.",
-		"Elección o relección? __ para mí es la misma... __ #@#@$#@#@ PANIC"
+		"_SURUBI_MENSAJE_INICIAL_1_",
+		"_SURUBI_MENSAJE_INICIAL_2_",
+		"_SURUBI_MENSAJE_INICIAL_3_",
+		"_SURUBI_MENSAJE_INICIAL_4_",
 	],
 	"tedeum": [
-		"Ya lo dijo Francisco... __ HAGAN LÍO! PANIC",
-		"Ay, diosito santo... __ bajamela del cielo.",
-		"Arranca el genio... __ Ah, no... ese era otro. __ Ehm... Sí, DIOS, AYUDAAAA!"
+		"_SURUBI_TEDEUM_1_",
+		"_SURUBI_TEDEUM_2_",
+		"_SURUBI_TEDEUM_3_",
 	],
 	"sudestada": [
-		"Miau, miau, miau... __ Miau, miaaaaaauuu __ Llueve sobre mojado! PANIC",
-		"MABEEEEELLL PANIC __ Hay que entrar la ropa!!",
-		"Que llueva... Que llueva... __ La vieja está en la cueva..."
+		"_SURUBI_SUDESTADA_1_",
+		"_SURUBI_SUDESTADA_2_",
+		"_SURUBI_SUDESTADA_3_"
 	],
 	"patriciosolari": [
-		"No nos daba la guita __ para poner ESA canción __ Aguante lo redo! PANIC",
-		"O pogo mais grande __ DU MUNDU __ Bolinho da ricota! PANIC",
+		"_SURUBI_PATRICIO_SOLARI_1_",
+		"_SURUBI_PATRICIO_SOLARI_2_",
+		"_SURUBI_PATRICIO_SOLARI_3_",
 	],
 	"tutorial": [
-		"¡Defende esa bandera! __ Liniers dispara solo... __ ¡Movete!"
+		"_SURUBI_TUTORIAL_1_"
 	],
 	"nueva_oleada": [
 		
@@ -441,6 +443,7 @@ func _ready():
 	save_data = SaveData.load_or_create()
 	mazo = Mazo.crear(save_data.original_cards)
 
+# SONIDOS DEL MENU. 
 
 const aMenuSonidos = [
 	preload("res://assets/created/menu/mover/menuseleccion01.mp3"),
@@ -473,16 +476,16 @@ func prepare_buttons_menu(aButtons):
 
 func _on_button_focus():
 	var stream = aMenuSonidos[iCounterMovesButtons]
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("menu_movimiento"), "pitch": AVS.get_rpitch("menu_movimiento")})
 	iCounterMovesButtons += 1
 	if iCounterMovesButtons >= aMenuSonidos.size():
 		iCounterMovesButtons = 1
 
 func _on_button_pressed():
-	AudioStreamManager.play({"stream": oMenuAceptar, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": oMenuAceptar, "volume": AVS.get_db("menu_aceptar"), "pitch": AVS.get_rpitch("menu_aceptar")})
 
 func _on_exit_pressed():
-	AudioStreamManager.play({"stream": oMenuSalir, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": oMenuSalir, "volume": AVS.get_db("menu_salir"), "pitch": AVS.get_rpitch("menu_salir")})
 
 func _on_volver_pressed():
-	AudioStreamManager.play({"stream": oMenuRetroceder, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": oMenuRetroceder, "volume": AVS.get_db("menu_retroceder"), "pitch": AVS.get_rpitch("menu_retroceder")})

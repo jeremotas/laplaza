@@ -474,6 +474,28 @@ fill_to = Vector2(0.765873, 0.25)
 [node name="Mignon" type="CharacterBody2D"]
 collision_mask = 7
 script = ExtResource("1_cstxw")
+faction = null
+max_speed = null
+speed = null
+acceleration = null
+life = null
+coolDownAttackTime = null
+min_damage_given = null
+max_damage_given = null
+unit_type = null
+input_accepted = null
+attack_block_movement = null
+show_progress_bar = null
+bullet_speed = null
+bullet_lifetime = null
+invincible = null
+last_input = null
+flipped = null
+iAttackProbability = null
+gunsound_type = null
+just_idle = null
+aim_calculated = null
+blocked_attack = null
 
 [node name="ComLabel" type="Label" parent="."]
 z_index = 3
@@ -502,7 +524,7 @@ theme_override_font_sizes/font_size = 8
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhaxh")
 animation = &"idle"
-frame = 1
+frame = 3
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fkns3")

@@ -79,7 +79,7 @@ func attack():
 		get_parent().add_child(b)
 		
 		#$WeaponSound.play()
-		attack_sound(GUNSHOT)
+		attack_sound(GUNSHOT, AVS.get_db("attack_cannon"), AVS.get_rpitch("attack_cannon"))
 		
 		
 	hasToAttack = false

@@ -411,14 +411,14 @@ func communication(message):
 func set_last_general_direction(oDirection):
 	last_general_direction = oDirection
 	
-func attack_sound(stream):
+func attack_sound(stream, db, rpitch):
 	var aGunSounds = aGunshotsSounds
 	if gunsound_type == "escopeta": 
 		aGunSounds = aEscopetaSounds
 	var iGunshotKey = rng.randi_range(0, aGunSounds.size()-1)
 	stream = aGunSounds[iGunshotKey]
 	
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": db, "pitch": rpitch})
 	
 func malon_sticked():
 	if just_idle: return 

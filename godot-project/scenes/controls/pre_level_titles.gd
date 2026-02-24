@@ -13,13 +13,16 @@ var aMessagesInstance = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#print("READY")
+	TranslationServer.set_locale(Global.language)
 	var rng = RandomNumberGenerator.new()
 	var iSelectedMessage = 1
 	var aMessages = oTexts.new().get_messages()
 	if Global.save_data.lagrimas_acumuladas >= 1000:
 		iSelectedMessage = rng.randi_range(0, aMessages.size() - 1)
-	var sSelectedMessage = aMessages[iSelectedMessage]
+	var sSelectedMessage = tr(aMessages[iSelectedMessage])
 	prepare_titles(sSelectedMessage)
+	if AVS.get_db("pre_level_titles_background_sound"):
+		$AudioStreamPlayer2D.volume_db = AVS.get_db("pre_level_titles_background_sound")
 	Engine.time_scale = 1
 
 func prepare_titles(sMessage):

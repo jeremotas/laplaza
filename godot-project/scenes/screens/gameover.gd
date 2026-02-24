@@ -2,6 +2,7 @@ extends Node
 var tween : Tween
 
 func _ready():
+	TranslationServer.set_locale(Global.language)
 	if name == 'Victoria':
 		dar_recompensa_sobre("rojo")
 	elif Global.save_data.lagrimas_ultima_run > 1200:

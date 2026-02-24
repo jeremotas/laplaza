@@ -68,7 +68,7 @@ func life_status():
 		
 	if life == 0 and !bSoundDeath:
 		var stream = MUERTE
-		AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+		AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("muerte_del_general"), "pitch": AVS.get_rpitch("muerte_del_general")})
 		bSoundDeath = true
 	
 func set_aimpoint_visibility(bVal):
@@ -103,7 +103,7 @@ func attack():
 			
 			if not barrilete_cosmico:
 				get_parent().add_child(b)
-				attack_sound(GUNSHOT)
+				attack_sound(GUNSHOT, AVS.get_db("attack_general"), AVS.get_rpitch("attack_general"))
 		
 		attack_objective = null
 	pass	

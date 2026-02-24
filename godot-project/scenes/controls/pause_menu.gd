@@ -10,6 +10,7 @@ func _ready():
 		$MarginContainer/VBoxContainer/Continuar,
 		$MarginContainer/VBoxContainer/Salir
 	]
+	TranslationServer.set_locale(Global.language)
 	Global.prepare_buttons_menu(aButtons)
 	#$PauseMusic.play()
 	#play_pause_music(false)

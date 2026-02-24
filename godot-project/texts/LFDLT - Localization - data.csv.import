@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cpuimcycpv00f"
+
+[deps]
+
+files=["res://texts/LFDLT - Localization - data.es.translation", "res://texts/LFDLT - Localization - data.en.translation", "res://texts/LFDLT - Localization - data.fr.translation", "res://texts/LFDLT - Localization - data.jp.translation"]
+
+source_file="res://texts/LFDLT - Localization - data.csv"
+dest_files=["res://texts/LFDLT - Localization - data.es.translation", "res://texts/LFDLT - Localization - data.en.translation", "res://texts/LFDLT - Localization - data.fr.translation", "res://texts/LFDLT - Localization - data.jp.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -55,7 +55,7 @@ layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Opciones"
+text = "_OPCIONES_"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -68,7 +68,7 @@ size_flags_vertical = 4
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
-text = "General"
+text = "_SONIDO_GENERAL_"
 
 [node name="master_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
 layout_mode = 2
@@ -78,7 +78,7 @@ bus_name = "Master"
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
-text = "Musica"
+text = "_SONIDO_MUSICA_"
 
 [node name="music_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
 layout_mode = 2
@@ -88,7 +88,7 @@ bus_name = "Musica"
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
-text = "Efectos"
+text = "_SONIDO_EFECTOS_"
 
 [node name="efectos_mixer2" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
 layout_mode = 2
@@ -99,13 +99,22 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
+[node name="Language" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_01m0e")
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 18
+text = "_LANGUAGE_NAME_"
+icon = ExtResource("5_2klqf")
+flat = true
+
 [node name="ReiniciarMazo" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_colors/font_color = Color(1, 0.966667, 0, 1)
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 18
-text = "Destruir Mazo"
+text = "_DESTRUIR_MAZO_"
 icon = ExtResource("5_2klqf")
 flat = true
 
@@ -115,7 +124,7 @@ theme = ExtResource("1_01m0e")
 theme_override_colors/font_color = Color(0.983333, 1, 0, 1)
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 18
-text = "Mazo de testing"
+text = "_MAZO_DE_TESTING_"
 icon = ExtResource("5_2klqf")
 flat = true
 
@@ -128,7 +137,7 @@ layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 24
-text = "Menu principal"
+text = "_MENU_PRINCIPAL_"
 icon = ExtResource("5_2klqf")
 flat = true
 
@@ -144,7 +153,7 @@ bus = &"Musica"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 transparent_bg = true
-title = "Destruir Mazo"
+title = "_DESTRUIR_MAZO_"
 initial_position = 2
 size = Vector2i(360, 154)
 unresizable = true
@@ -155,12 +164,11 @@ max_size = Vector2i(400, 400)
 content_scale_stretch = 1
 theme = ExtResource("1_01m0e")
 ok_button_text = "Destruir"
-dialog_text = "¿Seguro querés destruir 
-el mazo completo y 
-reiniciar el progreso?"
+dialog_text = "_SEGURO_DESTRUIR_MAZO_"
 dialog_autowrap = true
 cancel_button_text = "Cancelar"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Language" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ReiniciarMazo" to="." method="_on_reiniciar_mazo_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ReiniciarMazoATest" to="." method="_on_reiniciar_mazo_a_test_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Menu" to="." method="_on_menu_pressed"]

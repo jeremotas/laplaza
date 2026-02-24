@@ -35,7 +35,7 @@ func _process(_delta):
 	if not queue.size() == 0 and not available.size() == 0:
 		var oStream = queue.pop_front()
 		available[0].stream = oStream.stream
-		if not oStream.volume == null and oStream.volume > 0.0:
+		if not oStream.volume == null and oStream.volume != 0.0:
 			available[0].volume_db = oStream.volume
 		else: 
 			available[0].volume_db = 0.0

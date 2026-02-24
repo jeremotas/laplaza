@@ -15,7 +15,7 @@ func _ready():
 	c.a = 1.0
 	modulate = c
 	var stream = MANUELASTINGER
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("manuela_stinger"), "pitch": AVS.get_rpitch("manuela_stinger")})
 
 func _init():
 	invincible = true
@@ -89,7 +89,7 @@ func _on_cool_down_kill_timer_timeout() -> void:
 func _on_death_timer_timeout() -> void:
 	canKill = false
 	var stream = MANUELASTINGEROUT
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("manuela_stinger_out"), "pitch": AVS.get_rpitch("manuela_stinger_out")})
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 1.0)
 	await get_tree().create_timer(1.2).timeout

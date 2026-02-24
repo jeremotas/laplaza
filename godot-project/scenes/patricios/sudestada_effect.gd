@@ -4,6 +4,11 @@ var rng = RandomNumberGenerator.new()
 
 func start():
 	change_rayo_timer()
+	if AVS.get_db("sudestada_lluvia"):
+		$SonidoLluvia.volume_db = AVS.get_db("sudestada_lluvia")
+	if AVS.get_db("sudestada_trueno"):
+		$SonidoTrueno.volume_db = AVS.get_db("sudestada_trueno")
+	
 	$TimerRayo.start()
 	$SonidoLluvia.play()
 	Global.emit_signal("surubi_message", "sudestada")

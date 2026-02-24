@@ -57,7 +57,7 @@ func attack():
 			bullet_instance.set_collision_mask_bullet(2)
 			get_parent().add_child(bullet_instance)	
 			
-			attack_sound(GUNSHOT)
+			attack_sound(GUNSHOT, AVS.get_db("attack_arribeno"), AVS.get_rpitch("attack_arribeno"))
 		#$WeaponSound.play()
 		
 		#attack_objective = null

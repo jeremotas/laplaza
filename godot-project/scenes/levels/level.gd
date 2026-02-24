@@ -14,7 +14,7 @@ const aSoundMate = [
 	preload("res://assets/created/sounds/mate/mate05.mp3"),
 ]
 
-const oNewOleadaSound = preload("res://assets/created/sounds/oleadas/nuevaoleadaSINpercu.mp3")
+const oNewOleadaSound = preload("res://assets/created/sounds/oleadas/nuevaoleadaSOLOpercu.mp3")
 
 const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
 var enemy_strategy 
@@ -287,7 +287,7 @@ func decision_time_start():
 	
 func increase_life(increase):
 	var stream = $General.random_pick_one(aSoundMate)
-	AudioStreamManager.play({"stream": stream, "volume": null, "pitch": null})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("carta_mate"), "pitch": AVS.get_rpitch("carta_mate")})
 	$General.life += increase
 	$General.life = mini($General.life, Global.settings.game.player_max_life)
 
@@ -445,7 +445,7 @@ func prepare_enemy_spawns():
 		
 		if strategy.name != '':
 			$WaveTitle.speech(strategy.name)
-			AudioStreamManager.play({"stream": oNewOleadaSound, "volume": null, "pitch": null})
+			AudioStreamManager.play({"stream": oNewOleadaSound, "volume": AVS.get_db("nueva_oleada"), "pitch": AVS.get_rpitch("nueva_oleada")})
 		
 		last_strategy = strategy.name
 		for zone in spawn_zones:
@@ -496,7 +496,7 @@ func create_sound_experience():
 	#SoundPlayer.pitch_scale = 1 + rng.randf_range(-0.2, 0.2)
 	#SoundPlayer.connect("finished", SoundPlayer.queue_free)
 	#SoundPlayer.play()
-	AudioStreamManager.play({"stream": stream, "volume": 10.0, "pitch": 0.2})
+	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("lagrima_tomada"), "pitch":AVS.get_rpitch("lagrima_tomada")})
 
 func _on_timer_command_timeout():
 	command = ""
