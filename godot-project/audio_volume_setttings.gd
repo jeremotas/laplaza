@@ -28,7 +28,7 @@ const dbs = {
 	"attack_patricio": null,
 	"attack_mignon": null,
 	"attack_general": null, # Ataque de liniers
-	"attack_arribeno": -2.0, 
+	"attack_arribeno": -3.5, 
 	"attack_correntino": null, 
 	
 	"mate_del_cebador": 2.8, # Elije uno entre 4 chupadas de mate
