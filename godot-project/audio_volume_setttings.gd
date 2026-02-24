@@ -31,33 +31,33 @@ const dbs = {
 	"attack_arribeno": null, 
 	"attack_correntino": null, 
 	
-	"mate_del_cebador": 4.0, # Elije uno entre 4 chupadas de mate
+	"mate_del_cebador": 3.5, # Elije uno entre 4 chupadas de mate
 	
 	"explotion": null, # moreno y zapador
 	"explotion_water": null, # ollas del pueblo
 	
 	# Sonidos en nivel
 	"muerte_del_general": null,
-	"nueva_oleada": null,
+	"nueva_oleada": -2.0,
 	"aviso_ingles_en_zona": null, # no acepta pitch, si hace falta lo armamos.
 	"entra_ingles_al_mastil": null, # no acepta pitch, si hace falta lo armamos.
 	
 	# Otros sonidos
-	"surubi": -12.0,
+	"surubi": -8.0,
 	"carpinchos_walk": null,
 	"lagrima_tomada": 10.0,
 	
 	# Cartas eventuales
 	"carta_mate": null, # Elije uno entre 4 chupadas de mate mismo que el cebador.
 	"tedeum_stinger": null,
-	"manuela_stinger": null,
+	"manuela_stinger": -2.0,
 	"manuela_stinger_out": null,
 	"cadenas_stinger": -6.0,
 	"cadenas_stinger_out": null,
 	"husares_infernales_walk": null,
 	"sudestada_lluvia": null,
-	"sudestada_trueno": null,
-	"relato_victor_hugo": 6.0,
+	"sudestada_trueno": -1.0,
+	"relato_victor_hugo": 10.0,
 	
 }
 
