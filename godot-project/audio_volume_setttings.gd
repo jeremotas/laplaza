@@ -28,17 +28,17 @@ const dbs = {
 	"attack_patricio": null,
 	"attack_mignon": null,
 	"attack_general": null, # Ataque de liniers
-	"attack_arribeno": null, 
+	"attack_arribeno": -2.0, 
 	"attack_correntino": null, 
 	
-	"mate_del_cebador": 3.5, # Elije uno entre 4 chupadas de mate
+	"mate_del_cebador": 2.8, # Elije uno entre 4 chupadas de mate
 	
 	"explotion": null, # moreno y zapador
 	"explotion_water": null, # ollas del pueblo
 	
 	# Sonidos en nivel
 	"muerte_del_general": null,
-	"nueva_oleada": -2.0,
+	"nueva_oleada": -3.5,
 	"aviso_ingles_en_zona": null, # no acepta pitch, si hace falta lo armamos.
 	"entra_ingles_al_mastil": null, # no acepta pitch, si hace falta lo armamos.
 	
