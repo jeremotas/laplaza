@@ -39,14 +39,11 @@ Santiago Yatzky
 
 {FACUNDO TUPAC MARTÍNEZ}
 { - }
+{Intro de bombo legüero}
 {Chacarera de las trenzas}
 {Chacarera de las trenzas (piano)}
-{Intro de bombo legüero}
 {Himno nacional argentino}
-
-{J. THOMSON - T. A. ARNE} 
-{ - }
-{Rule Britannia}
+{Himno nacional argentino (piano)}
 
 
 
@@ -59,10 +56,6 @@ Santiago Yatzky
 
 
 {Universidad Nacional Scalabrini Ortiz}
-
-
-{Victor Hugo Morales}
-{Suno.ai}
 
 
 

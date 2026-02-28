@@ -103,4 +103,4 @@ func _on_abrir_sobre_pressed():
 
 
 func _on_timer_timeout() -> void:
-	$Nubes.mover()
+	$Panel/TextureRect/Nubes.mover()

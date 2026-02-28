@@ -69,6 +69,7 @@ layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_GENERAL_"
+horizontal_alignment = 1
 
 [node name="master_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
 layout_mode = 2
@@ -79,6 +80,7 @@ layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_MUSICA_"
+horizontal_alignment = 1
 
 [node name="music_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
 layout_mode = 2
@@ -89,6 +91,7 @@ layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_EFECTOS_"
+horizontal_alignment = 1
 
 [node name="efectos_mixer2" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
 layout_mode = 2

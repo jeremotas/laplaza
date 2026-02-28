@@ -39,7 +39,7 @@ func _process(_delta):
 			available[0].volume_db = oStream.volume
 		else: 
 			available[0].volume_db = 0.0
-		if not oStream.pitch == null and  oStream.pitch > 0.0:
+		if not oStream.pitch == null and  oStream.pitch > 0.0 and oStream.pitch < 1.0:
 			available[0].pitch_scale = 1.0 + rng.randf_range(-oStream.pitch, oStream.pitch)
 		else: 
 			available[0].pitch_scale = 1.0

@@ -52,10 +52,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -234.5
-offset_top = -15.5
-offset_right = 240.5
-offset_bottom = 71.5
+offset_left = -266.0
+offset_top = -170.5
+offset_right = 272.0
+offset_bottom = -83.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -115,8 +115,10 @@ stretch_mode = 5
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -150.0
-offset_right = 250.0
+offset_left = 304.0
+offset_top = -374.0
+offset_right = 554.0
+offset_bottom = -224.0
 grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
@@ -157,7 +159,6 @@ theme_override_font_sizes/font_size = 24
 text = "_REINTENTAR_"
 icon = ExtResource("7_8vk33")
 flat = true
-alignment = 0
 
 [node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
 layout_mode = 2
@@ -170,7 +171,6 @@ theme = ExtResource("2_pfgda")
 text = "_MENU_PRINCIPAL_"
 icon = ExtResource("7_8vk33")
 flat = true
-alignment = 0
 
 [node name="Personajes" type="Node2D" parent="."]
 

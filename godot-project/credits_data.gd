@@ -37,9 +37,7 @@ Chacarera de las trenzas
 Chacarera de las trenzas (piano)
 Intro de bombo legüero
 Himno nacional Argentino
-
-[Música de referencia]
-Suno.AI
+Himno nacional Argentino (piano)
 
 [Testers casuales]
 Joaquín Cavallero
@@ -60,15 +58,6 @@ Nicolás Benavides Elsner
 
 
 
-[Asesoramiento] 
-Diego Ballestero
-[comercial] 
-
-
-
-
-
-
 
 
 
@@ -82,8 +71,6 @@ Gonzalo Borzino
 Guillermo Crespi
 
 Universidad Nacional Scalabrini Ortiz
-
-Víctor Hugo Morales
 
 
 

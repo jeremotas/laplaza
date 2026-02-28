@@ -7,7 +7,7 @@ var mazo:Mazo
 var language = "es"
 
 var settings = {
-	"demo": false,
+	"demo": true,
 	"game": {
 		"init_level": "level",
 		"player_goal": 608,

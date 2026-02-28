@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://doo77a1vfcsws"]
+[gd_scene load_steps=19 format=3 uid="uid://doo77a1vfcsws"]
 
 [ext_resource type="Script" uid="uid://0f578gr86ei5" path="res://scenes/screens/inicio.gd" id="1_w0xhw"]
 [ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="2_77qr6"]
@@ -11,13 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="4_o01gl"]
 [ext_resource type="AudioStream" uid="uid://dt5yvc1bg8jiy" path="res://assets/created/musica/Bombo Leguero Intro.mp3" id="5_eyd00"]
 [ext_resource type="Texture2D" uid="uid://dpoutmpujiroj" path="res://assets/ui/nube_4.png" id="5_fcnuv"]
-[ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="6_ajg8l"]
 [ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="6_nliy4"]
 [ext_resource type="PackedScene" uid="uid://prplx1wymlg5" path="res://scenes/common/unit_spawner.tscn" id="7_pjvl7"]
+[ext_resource type="Texture2D" uid="uid://cwg5earw7hrik" path="res://assets/ui/LFDLT_FONDO__.png" id="8_hgluf"]
 [ext_resource type="Texture2D" uid="uid://cr3ay6bhy83oi" path="res://assets/mkt/poder_alien.png" id="15_hgluf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a13kk"]
-texture = ExtResource("6_ajg8l")
+texture = ExtResource("8_hgluf")
+
+[sub_resource type="Gradient" id="Gradient_hgluf"]
+offsets = PackedFloat32Array(0, 0.237736, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.501961, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b48q7"]
+gradient = SubResource("Gradient_hgluf")
+width = 850
 
 [node name="Inicio" type="Control"]
 layout_mode = 3
@@ -30,37 +38,9 @@ script = ExtResource("1_w0xhw")
 
 [node name="Logo" type="Sprite2D" parent="."]
 z_index = 4
-position = Vector2(207, 129)
-scale = Vector2(0.35, 0.35)
+position = Vector2(629.109, 142.275)
+scale = Vector2(0.435925, 0.435925)
 texture = ExtResource("2_k1aqo")
-
-[node name="Nubes" type="Node2D" parent="."]
-script = ExtResource("3_lfl5s")
-
-[node name="Nube1" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(98, 96)
-texture = ExtResource("2_77qr6")
-
-[node name="Nube2" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(67, 276)
-texture = ExtResource("3_23lxc")
-
-[node name="Nube3" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(403, 136)
-texture = ExtResource("4_2lfbs")
-
-[node name="Nube4" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(348, 80)
-texture = ExtResource("5_fcnuv")
-
-[node name="Nube5" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(230, 192)
-texture = ExtResource("4_2lfbs")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -71,7 +51,57 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_a13kk")
 
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+z_index = 10
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_b48q7")
+
+[node name="Nubes" type="Node2D" parent="Panel/TextureRect"]
+z_index = 5
+z_as_relative = false
+script = ExtResource("3_lfl5s")
+
+[node name="Nube1" type="Sprite2D" parent="Panel/TextureRect/Nubes"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = 1
+position = Vector2(98, 96)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_77qr6")
+
+[node name="Nube2" type="Sprite2D" parent="Panel/TextureRect/Nubes"]
+z_index = 1
+position = Vector2(67, 276)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_23lxc")
+
+[node name="Nube3" type="Sprite2D" parent="Panel/TextureRect/Nubes"]
+modulate = Color(1, 1, 1, 0.941176)
+z_index = 1
+position = Vector2(403, 210)
+scale = Vector2(-1, 1)
+texture = ExtResource("4_2lfbs")
+
+[node name="Nube4" type="Sprite2D" parent="Panel/TextureRect/Nubes"]
+modulate = Color(1, 1, 1, 0.941176)
+z_index = 1
+position = Vector2(327, 39)
+texture = ExtResource("5_fcnuv")
+
+[node name="Nube5" type="Sprite2D" parent="Panel/TextureRect/Nubes"]
+modulate = Color(1, 1, 1, 0.996078)
+z_index = 1
+position = Vector2(230, 181)
+texture = ExtResource("4_2lfbs")
+
 [node name="Control" type="Control" parent="."]
+z_index = 11
+z_as_relative = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,15 +119,15 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 12
+theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/VBoxContainer"]
@@ -111,22 +141,28 @@ theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 24
 text = "_COMENZAR_"
 icon = ExtResource("4_o01gl")
 flat = true
 alignment = 0
 
+[node name="HSeparator3" type="HSeparator" parent="Control/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 5)
+layout_mode = 2
+
 [node name="ElMazo" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
+theme_override_colors/font_disabled_color = Color(0.380392, 0.380392, 0.380392, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 20
 disabled = true
 text = "_EL_MAZO_"
@@ -137,11 +173,12 @@ alignment = 0
 [node name="AbrirSobre" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
+theme_override_colors/font_disabled_color = Color(0.38, 0.38, 0.38, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 20
 disabled = true
 text = "_ABRIR_SOBRE_"
@@ -155,8 +192,8 @@ theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
 text = "_OPCIONES_"
 icon = ExtResource("4_o01gl")
 flat = true
@@ -168,12 +205,17 @@ theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
 text = "_CREDITOS_"
 icon = ExtResource("4_o01gl")
 flat = true
 alignment = 0
+
+[node name="HSeparator2" type="HSeparator" parent="Control/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 10)
+layout_mode = 2
 
 [node name="Salir" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -181,8 +223,8 @@ theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.866667, 0.411765, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
 text = "_SALIR_"
 icon = ExtResource("4_o01gl")
 flat = true
