@@ -38,6 +38,7 @@ const aExplosionWaterSounds = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	bullet_timer_start()
 	pass # Replace with function body.
 
 func prepare():
@@ -161,6 +162,10 @@ func create_sound_explotion_water():
 	AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("explotion_water"), "pitch": AVS.get_rpitch("explotion_water")})
 
 func _on_visible_on_screen_enabler_2d_screen_entered():
+	#bullet_timer_start()
+	pass
+	
+func bullet_timer_start():
 	# tiempo que esta la bala o proyectil antes de desaparecer
 	bulletTimer = Timer.new()
 	add_child(bulletTimer)
