@@ -105,7 +105,7 @@ func draw_hand() -> void:
 	
 		# Animate pos
 		tween.parallel().tween_property(oCardInstance, "position", final_pos, 0.5 + (i * 0.05))
-		#tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
+		tween.parallel().tween_property(oCardInstance, "rotation", rot_radians, 0.5 + (i * 0.05))
 	
 	for i in range(number):
 		aCards[i].card_flip(float(i) * 0.01)
