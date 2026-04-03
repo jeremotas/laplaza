@@ -53,7 +53,9 @@ func _ready():
 	rot_max = deg_to_rad(rot_max_t)
 	if AVS.get_db("decision_de_carta_tomada"):
 		$ChangeLevel.volume_db = AVS.get_db("decision_de_carta_tomada")
-
+	$Control/MarginContainer/VBoxContainer/TituloPiedra.set_title(tr("_SUBISTE_NIVEL_"))
+	$Control/MarginContainer/VBoxContainer/Label2.text = tr("_QUE_JUGAS_")
+	
 func _process(delta):
 	handle_input()
 	# Animacion de cartas

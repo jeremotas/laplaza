@@ -16,7 +16,7 @@ const aSoundMate = [
 
 const oNewOleadaSound = preload("res://assets/created/sounds/oleadas/nuevaoleadaSOLOpercu.mp3")
 
-const enemy_strategy_container  = preload("res://scenes/levels/strategy_two.gd")
+const enemy_strategy_container  = preload("res://scenes/levels/strategy_demo.gd")
 var enemy_strategy 
 var eventTimer = null
 # Variables de control de UI

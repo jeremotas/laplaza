@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c1flqv4yqiehm" path="res://assets/created/ui/hud/titulo_piedra.png" id="2_cjatb"]
 
 [node name="TituloPiedra" type="Control"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cjatb")

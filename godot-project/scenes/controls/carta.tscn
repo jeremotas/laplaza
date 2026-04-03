@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://466uc7o43p5r" path="res://scenes/controls/carta.gd" id="1_n1qsv"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_aamn2"]
 [ext_resource type="Texture2D" uid="uid://wvkptnk55txa" path="res://assets/created/cartas/carta_back_azul.png" id="4_o28r5"]
-[ext_resource type="Texture2D" uid="uid://cpg02lvp2qv6w" path="res://assets/created/cartas/selector _brillopng.png" id="5_x6lvv"]
 [ext_resource type="Texture2D" uid="uid://gau44d7454lm" path="res://assets/created/cartas/contador_general.png" id="6_4tquw"]
+[ext_resource type="Texture2D" uid="uid://c5b4tg10iqagv" path="res://assets/created/cartas/selector_brillopng.png" id="6_hmwx4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdr5j"]
 shader = ExtResource("1_hmwx4")
@@ -55,7 +55,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ke4j"]
-size = Vector2(99, 133)
+size = Vector2(99, 151)
 
 [node name="Carta" type="TextureButton"]
 material = SubResource("ShaderMaterial_tdr5j")
@@ -181,6 +181,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -6.0
+offset_right = 3.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_o28r5")
@@ -199,14 +203,14 @@ anchor_left = -0.115
 anchor_top = -0.132
 anchor_right = 1.201
 anchor_bottom = 1.162
-offset_left = -11.5
-offset_top = 7.952
-offset_right = -13.1
-offset_bottom = -23.032
+offset_left = -12.5
+offset_top = 8.952
+offset_right = -11.1
+offset_bottom = -27.032
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("5_x6lvv")
+texture = ExtResource("6_hmwx4")
 expand_mode = 3
 stretch_mode = 5
 
@@ -215,7 +219,7 @@ collision_layer = 4096
 collision_mask = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(50.5, 67.5)
+position = Vector2(50.5, 68.5)
 shape = SubResource("RectangleShape2D_1ke4j")
 
 [node name="ChipBackground" type="TextureRect" parent="."]

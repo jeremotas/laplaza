@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://duronouk3fu1p"]
+[gd_scene load_steps=8 format=3 uid="uid://duronouk3fu1p"]
 
 [ext_resource type="Script" uid="uid://bktjtkmolrwng" path="res://scenes/controls/decision_time.gd" id="1_oii2v"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_joe4m"]
+[ext_resource type="Texture2D" uid="uid://bibdu1rmparir" path="res://assets/created/ui/hud/telar_nivel.png" id="2_ngej3"]
 [ext_resource type="Shader" uid="uid://56yjmw2atlid" path="res://shaders/blur.gdshader" id="2_ydeda"]
+[ext_resource type="PackedScene" uid="uid://ddc7cpnvfmm0f" path="res://scenes/common/titulo_piedra.tscn" id="3_suoyc"]
 [ext_resource type="AudioStream" uid="uid://c604v3o3h8hag" path="res://assets/created/sounds/adentro.mp3" id="4_o6mhc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddyt5"]
@@ -23,6 +25,22 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -151.5
+offset_right = 227.0
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ngej3")
+stretch_mode = 3
+
 [node name="ColorRect" type="ColorRect" parent="Control"]
 material = SubResource("ShaderMaterial_ddyt5")
 layout_mode = 1
@@ -35,15 +53,23 @@ color = Color(0.297093, 0.297093, 0.297093, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 100.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_right = 187.0
+offset_bottom = 109.0
 grow_horizontal = 2
+theme_override_constants/margin_top = 72
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 
+[node name="TituloPiedra" parent="Control/MarginContainer/VBoxContainer" instance=ExtResource("3_suoyc")]
+layout_mode = 2
+
 [node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_joe4m")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -51,7 +77,6 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
-text = "¡Subiste de nivel!"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer"]
@@ -62,7 +87,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "¿Qué carta jugas?"
 horizontal_alignment = 1
 
