@@ -36,11 +36,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w0xhw")
 
-[node name="Logo" type="Sprite2D" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_bottom = 200.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+
+[node name="Logo" type="Sprite2D" parent="MarginContainer"]
+visible = false
 z_index = 4
 position = Vector2(629.109, 142.275)
 scale = Vector2(0.435925, 0.435925)
 texture = ExtResource("2_k1aqo")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+z_index = 1
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("2_k1aqo")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
