@@ -10,7 +10,8 @@ func start():
 	$PatricioSolari.hide()
 	$Cancion.stop()
 	$Timer.start()
-	fill_crowd()
+	#fill_crowd()
+	
 	
 
 func fill_crowd():
@@ -32,12 +33,13 @@ func kill_all():
 
 func _on_timer_timeout() -> void:
 	await get_tree().create_timer(0.5).timeout
-	#rayo()
-	$PatricioSolari.show()
+	rayo()
+	#$PatricioSolari.show()
+	$AnimatedSprite2D.play("default")
 	$Cancion.play()
 	await get_tree().create_timer(10.8).timeout
-	#rayo()
-	$PatricioSolari.hide()
+	rayo()
+	#$PatricioSolari.hide()
 	$Cancion.stop()
 	kill_all()
 
