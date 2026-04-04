@@ -463,6 +463,7 @@ func prepare_enemy_spawns():
 
 func _on_timer_timeout():
 	# Control para el reloj del juego
+	assign_delta_spawn_timer()
 	print("Ingleses en juego: ", get_tree().get_nodes_in_group("faccion_ingleses").size())
 	iSecondsPassed += 1
 	HUD.change_time(max(Global.settings.game.player_goal - iSecondsPassed, 0))
@@ -474,6 +475,47 @@ func _on_timer_timeout():
 	elif iSecondsPassed == 480:
 		carpinchos_run_call()
 
+func assign_delta_spawn_timer():
+	# Recorro spawns mezclados y les asigno un epsilon para dar tiempo al conteo del grupo de iniciados.
+	var aSpawns = [
+		$EnemySpawnerL1,
+		$EnemySpawnerL2,
+		$EnemySpawnerL3,
+		$EnemySpawnerL4,
+		$EnemySpawnerL5,
+		$EnemySpawnerL6,
+		$EnemySpawnerL7,
+		$EnemySpawnerL8,
+		$EnemySpawnerT1,
+		$EnemySpawnerT2,
+		$EnemySpawnerT3,
+		$EnemySpawnerT4,
+		$EnemySpawnerT5,
+		$EnemySpawnerT6,
+		$EnemySpawnerT7,
+		$EnemySpawnerT8,
+		$EnemySpawnerT9,
+		$EnemySpawnerT10,
+		$EnemySpawnerT11,
+		$EnemySpawnerT12,
+		$EnemySpawnerT13,
+		$EnemySpawnerD1,
+		$EnemySpawnerD2,
+		$EnemySpawnerD3,
+		$EnemySpawnerD4,
+		$EnemySpawnerD5,
+		$EnemySpawnerD6,
+		$EnemySpawnerD7,
+		$EnemySpawnerD8
+	]
+	
+	var fEpsilon = 0.0025
+	var i = 0
+	aSpawns.shuffle()
+	for oSpawn in aSpawns:
+		oSpawn.delta_spawn = i * fEpsilon
+		i += 1
+	
 func _on_reward(sType, iValue):
 	# Sumador de experiencia
 	if sType == 'ingleses':

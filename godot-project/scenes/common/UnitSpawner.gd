@@ -9,6 +9,7 @@ var entity = null
 @export var max_alive = 0
 @export var controlled_max_alive = false
 @export var blocked = false
+@export var delta_spawn = 0.0
 
 @export var oOtherParams = {}
 
@@ -58,7 +59,7 @@ func spawn_unit(unitSceneAsked):
 
 func set_rewspan_seconds(respawn_seconds_new):
 	respawn_seconds = respawn_seconds_new
-	$TimerDeSpawnUnidades.start(respawn_seconds)
+	$TimerDeSpawnUnidades.start(respawn_seconds + delta_spawn)
 
 func set_goal(oGoal):
 	oGoalToAssign = oGoal
@@ -74,7 +75,7 @@ func load_unit_by_chance():
 
 func spawn_new_call(probability_generation):
 	var value_creation = rng.randf_range(0.0, 100.0)
-	var can_spawn = not controlled_max_alive or max_alive >= get_tree().get_nodes_in_group("faccion_" + faction).size()
+	var can_spawn = not controlled_max_alive or max_alive > get_tree().get_nodes_in_group("faccion_" + faction).size()
 	if can_spawn and not $SpawnArea.has_overlapping_bodies() and value_creation <= probability_generation and not blocked:
 		
 		if aChanceUnitType.size() > 0:
