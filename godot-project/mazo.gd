@@ -60,9 +60,9 @@ func crear_carta(sDecisionMessage):
 	elif sDecisionMessage == "upgrade_life":
 		oCard = {"tipo": "truco", "titulo": "_MATE_", "numero": "1", "decision_time_message": "upgrade_life", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "_MATE_LEYENDA_"}
 	elif sDecisionMessage == "ollas_del_pueblo":
-		oCard = {"tipo": "truco", "titulo": "El pueblo en armas", "numero": "2", "decision_time_message": "ollas_del_pueblo", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "Y un buen dia las cacerolas del pueblo entraron en vigor sobre Buenos Aires... __ (¿Dónde lo vi?)"}
+		oCard = {"tipo": "truco", "titulo": "_PUEBLO_EN_ARMAS_", "numero": "2", "decision_time_message": "ollas_del_pueblo", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "_PUEBLO_EN_ARMAS_LEYENDA_"}
 	elif sDecisionMessage == "barrilete_cosmico":
-		oCard = {"tipo": "evento", "titulo": "Barrilete cosmico", "numero": "1", "decision_time_message": "barrilete_cosmico", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "El general es poseído temporalmente por Pelusa. __ Si hay ingleses, él los gambetea y ellos caen al piso. __ (La enfedrina queda en la sangre del general)"}
+		oCard = {"tipo": "evento", "titulo": "_BARRILETE_COSMICO_", "numero": "1", "decision_time_message": "barrilete_cosmico", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "_BARRILETE_COSMICO_LEYENDA_"}
 	elif sDecisionMessage == "ataque_husares_infernales":
 		oCard = {"tipo": "evento", "titulo": "_HUSARES_INFERNALES_", "numero": "2", "decision_time_message": "ataque_husares_infernales", "cantidad": 1, "posicion_en_mano": 0, "leyenda": "_HUSARES_INFERNALES_LEYENDA_"}
 	elif sDecisionMessage == "manuela_pedraza":
