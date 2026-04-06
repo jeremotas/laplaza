@@ -1,12 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl4b11xl0emiw"]
+[gd_scene load_steps=11 format=3 uid="uid://bl4b11xl0emiw"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_01m0e"]
 [ext_resource type="Script" uid="uid://i0ufj85xgr51" path="res://scenes/controls/opciones.gd" id="1_mqqmh"]
+[ext_resource type="Shader" uid="uid://56yjmw2atlid" path="res://shaders/blur.gdshader" id="2_fbuas"]
 [ext_resource type="Texture2D" uid="uid://bdnrxtf3v26hx" path="res://assets/created/fondos/LFDLT_fondo_4.png" id="2_gqsdl"]
 [ext_resource type="PackedScene" uid="uid://ne0jrytbfn5y" path="res://scenes/controls/volume_mixer.tscn" id="2_og7k0"]
 [ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="5_2klqf"]
+[ext_resource type="PackedScene" uid="uid://ddc7cpnvfmm0f" path="res://scenes/common/titulo_piedra.tscn" id="5_4siix"]
 [ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="5_77hf2"]
 [ext_resource type="AudioStream" uid="uid://c6qrspkklov5" path="res://assets/created/musica/Chacarera de las Trenzas.mp3" id="6_1v8t6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4siix"]
+shader = ExtResource("2_fbuas")
+shader_parameter/amount = 1.229
 
 [node name="Opciones" type="CanvasLayer"]
 script = ExtResource("1_mqqmh")
@@ -30,6 +36,15 @@ grow_vertical = 2
 texture = ExtResource("2_gqsdl")
 expand_mode = 3
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4siix")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.297093, 0.297093, 0.297093, 1)
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 13
 anchor_left = 0.5
@@ -39,7 +54,7 @@ offset_left = -137.0
 offset_right = 137.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 2
 size_flags_vertical = 0
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
@@ -50,13 +65,17 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer3"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer3"]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "_OPCIONES_"
 horizontal_alignment = 1
+
+[node name="TituloPiedra" parent="MarginContainer/VBoxContainer3" instance=ExtResource("5_4siix")]
+layout_mode = 2
+title = "_OPCIONES_"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(250, 0)
