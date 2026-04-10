@@ -68,8 +68,10 @@ func attack():
 	if trampling:
 		var oEnemiesToTrample = $AreaDeAtaque.get_overlapping_bodies()
 		for enemy in oEnemiesToTrample:
-			enemy.TakeDamage(min_damage_given, max_damage_given)
-		
+			if(enemy.has_method('TakeDamage')):
+				enemy.TakeDamage(min_damage_given, max_damage_given)
+			#else:
+				#print("enemigo ", enemy.name)
 
 #func _on_area_de_ataque_body_entered(body: Node2D) -> void:
 #	if trampling:

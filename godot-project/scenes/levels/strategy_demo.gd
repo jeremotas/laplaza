@@ -17,12 +17,12 @@ var iMaxThirdWave = 540
 # cannon
 
 
-var aStarters = [
+var aStarters = [	
 	{
-		"duration": 5,
+		"duration": 6,
 		"max_alive": 10,
 		"name": "El Asalto Escarlata",
-		"add_descanso": true,
+		"add_descanso": false,
 		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 		"arriba_centro": {"unit_type": "ingles", "seconds": 1, "probability":100},
 		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 0},
@@ -46,7 +46,7 @@ var aStarters = [
 	},
 	
 	{
-		"duration": 5,
+		"duration": 6,
 		"max_alive": 15,
 		"name": "Viento Oeste",
 		"add_descanso": false,
@@ -77,10 +77,10 @@ var aFirstWaves = [
 		"duration": 10,
 		"max_alive": 15,
 		"name": "Alta probabilidad de lluvias",
-		"add_descanso": true,
-		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 50},
 		"arriba_centro": {"unit_type": "ingles", "seconds": 1, "probability":100},
-		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 1, "probability": 50},
 		"izquierda_superior": {"unit_type": "ingles", "seconds": 2, "probability": 80},
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 		"derecha_superior": {"unit_type": "ingles", "seconds": 2, "probability": 80},
@@ -88,18 +88,30 @@ var aFirstWaves = [
 	},
 	{
 		"duration": 6,
-		"max_alive": 8,
+		"max_alive": 20,
 		"name": "Los Inmortales Contraatacan",
 		"add_descanso": false,
-		"arriba_izquierda": {"unit_type": "highlander", "seconds": 1, "probability": 60},
+		"arriba_izquierda": {"unit_type": "highlander", "seconds": 1, "probability": 75},
 		"arriba_centro": {"unit_type": "highlander", "seconds": 1, "probability":100},
+		"arriba_derecha": {"unit_type": "highlander", "seconds": 1, "probability": 75},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 2, "probability": 60},
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 2, "probability": 60},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
+	},
+	{
+		"duration": 6,
+		"max_alive": 20,
+		"name": "Bandera de Pirata",
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "highlander", "seconds": 1, "probability": 60},
+		"arriba_centro": {"unit_type": "flagger", "seconds": 6, "probability":100, "guards": {"unit_type":"green_soldier", "quantity": 4}},
 		"arriba_derecha": {"unit_type": "highlander", "seconds": 1, "probability": 60},
 		"izquierda_superior": {"unit_type": "ingles", "seconds": 2, "probability": 40},
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
 		"derecha_superior": {"unit_type": "ingles", "seconds": 2, "probability": 40},
 		"derecha_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
 	},
-	
 	{
 		"duration": 6,
 		"max_alive": 20,
@@ -116,7 +128,7 @@ var aFirstWaves = [
 	{
 		"duration": 6,
 		"max_alive": 20,
-		"name": "Viento Este",
+		"name": "Paso Doble",
 		"add_descanso": false,
 		"arriba_izquierda": {"unit_type": "green_soldier", "seconds": 3, "probability": 20},
 		"arriba_centro": {"unit_type": "green_soldier", "seconds": 2, "probability":50},
@@ -128,18 +140,119 @@ var aFirstWaves = [
 	},
 ]
 var aSecondWaves = [
-	
+	{
+		"duration": 6,
+		"max_alive": 25,
+		"name": "El Imperio Pirata",
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "highlander", "seconds": 3, "probability": 75},
+		"arriba_centro": {"unit_type": "royal_marine", "seconds": 6, "probability":100},
+		"arriba_derecha": {"unit_type": "highlander", "seconds": 3, "probability": 75},
+		"izquierda_superior": {"unit_type": "green_soldier", "seconds": 2, "probability": 75},
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"derecha_superior": {"unit_type": "green_soldier", "seconds": 2, "probability": 75},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+	},
+	{
+		"duration": 6,
+		"max_alive": 25,
+		"name": "Ataque Carmesí",
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "royal_marine", "seconds": 4, "probability": 75},
+		"arriba_centro": {"unit_type": "highlander", "seconds": 2, "probability":100},
+		"arriba_derecha": {"unit_type": "royal_marine", "seconds": 4, "probability": 75},
+		"izquierda_superior": {"unit_type": "green_soldier", "seconds": 2, "probability": 75},
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"derecha_superior": {"unit_type": "green_soldier", "seconds": 2, "probability": 75},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+	},
+	{
+		"duration": 6,
+		"max_alive": 25,
+		"name": "Avance de la Caballería",
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "green_soldier", "seconds": 3, "probability": 75},
+		"arriba_centro": {"unit_type": "english_cavalry", "seconds": 4, "probability":100},
+		"arriba_derecha": {"unit_type": "green_soldier", "seconds": 3, "probability": 75},
+		"izquierda_superior": {"unit_type": "highlander", "seconds": 3, "probability": 75},
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"derecha_superior": {"unit_type": "highlander", "seconds": 3, "probability": 75},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+	},
+	{
+		"duration": 6,
+		"max_alive": 30,
+		"name": "La banderola",
+		"add_descanso": false,
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"izquierda_superior": {"unit_type": "highlander", "seconds": 3, "probability": 30},
+		"arriba_izquierda": {"unit_type": "ingles", "seconds": 2, "probability": 0},
+		"arriba_centro": {"unit_type": "flagger", "seconds": 6, "probability":100, "guards": {"unit_type":"green_soldier", "quantity": 4}},
+		"arriba_derecha": {"unit_type": "ingles", "seconds": 2, "probability": 0},
+		"derecha_superior": {"unit_type": "highlander", "seconds": 3, "probability": 30},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+	},
 ]
 var aThirdWaves = [
-	
+	{
+		"duration": 6,
+		"max_alive": 30,
+		"name": "Ataque de la Caballería",
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "green_soldier", "seconds": 2, "probability": 75},
+		"arriba_centro": {"unit_type": "english_cavalry", "seconds": 3, "probability":100},
+		"arriba_derecha": {"unit_type": "green_soldier", "seconds": 2, "probability": 75},
+		"izquierda_superior": {"unit_type": "ingles", "seconds": 3, "probability": 75},
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"derecha_superior": {"unit_type": "ingles", "seconds": 3, "probability": 75},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+	},
+	{
+		"duration": 6,
+		"max_alive": 30,
+		"name": "Muchos Marines de los mandarines",
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "royal_marine", "seconds": 2, "probability": 75},
+		"arriba_centro": {"unit_type": "royal_marine", "seconds": 3, "probability":100},
+		"arriba_derecha": {"unit_type": "royal_marine", "seconds": 2, "probability": 75},
+		"izquierda_superior": {"unit_type": "green_soldier", "seconds": 3, "probability": 75},
+		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+		"derecha_superior": {"unit_type": "green_soldier", "seconds": 3, "probability": 75},
+		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
+	},
 ]
 
 var aFinale = [
-	
+	{
+		"duration": 6,
+		"max_alive": 30,
+		"name": "Ataque Final",
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "english_cavalry", "seconds": 2, "probability": 75},
+		"arriba_centro": {"unit_type": "zapador", "seconds": 2, "probability":100},
+		"arriba_derecha": {"unit_type": "english_cavalry", "seconds": 2, "probability": 75},
+		"izquierda_superior": {"unit_type": "royal_marine", "seconds": 2, "probability": 75},
+		"izquierda_inferior": {"unit_type": "cannon", "seconds": 3, "probability": 80},
+		"derecha_superior": {"unit_type": "royal_marine", "seconds": 2, "probability": 75},
+		"derecha_inferior": {"unit_type": "cannon", "seconds": 3, "probability": 80},
+	},
+		{
+		"duration": 6,
+		"max_alive": 30,
+		"name": "Todo o Nada",
+		"add_descanso": false,
+		"arriba_izquierda": {"unit_type": "english_cavalry", "seconds": 2, "probability": 75},
+		"arriba_centro": {"unit_type": "zapador", "seconds": 2, "probability":100},
+		"arriba_derecha": {"unit_type": "english_cavalry", "seconds": 2, "probability": 75},
+		"izquierda_superior": {"unit_type": "royal_marine", "seconds": 2, "probability": 75},
+		"izquierda_inferior": {"unit_type": "cannon", "seconds": 3, "probability": 80},
+		"derecha_superior": {"unit_type": "royal_marine", "seconds": 2, "probability": 75},
+		"derecha_inferior": {"unit_type": "cannon", "seconds": 3, "probability": 80},
+	},
 ]
 var aDescansos = [
 	{
-		"duration": 10,
+		"duration": 5,
 		"max_alive": 0,
 		"add_descanso": false,
 		"name": "",
@@ -156,9 +269,9 @@ var aDescansos = [
 func _init():
 
 	iMaxStarters = 60
-	iMaxFirstWave = 1800
-	#iMaxSecondWave = 360
-	#iMaxThirdWave = 540
+	iMaxFirstWave = 180
+	iMaxSecondWave = 360
+	iMaxThirdWave = 540
 
 func get_strategy_card_descanso(iTime):
 	var oDescanso = get_one_from(aDescansos)
@@ -168,10 +281,16 @@ func get_strategy_card(iTime):
 	var oCard = null
 	if iTime < iMaxStarters:
 		oCard = get_one_from(aStarters)
+	elif iTime == iMaxStarters:
+		oCard = get_one_from(aDescansos)
 	elif iTime < iMaxFirstWave:
 		oCard = get_one_from(aFirstWaves)
+	elif iTime == iMaxFirstWave:
+		oCard = get_one_from(aDescansos)
 	elif iTime < iMaxSecondWave:
 		oCard = get_one_from(aSecondWaves)
+	elif iTime == iMaxSecondWave:
+		oCard = get_one_from(aDescansos)
 	elif iTime < iMaxThirdWave:
 		oCard = get_one_from(aThirdWaves)
 	else:
