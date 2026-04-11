@@ -316,6 +316,8 @@ func create_strategy():
 		print("DURACION ", iDuration)
 		print("MAX_TIME ", iTime)
 		
+		
+		
 		var oEnglishStrategy = duplicate_card(oCard)
 		oEnglishStrategy.max_time = iTime
 		created_strategy.push_back(oEnglishStrategy)
