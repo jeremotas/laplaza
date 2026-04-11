@@ -1,10 +1,34 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dbjmv7rcvq2m7"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dbjmv7rcvq2m7"]
 
+[ext_resource type="Texture2D" uid="uid://b6ri0xyfw7cos" path="res://assets/ui/moneda_contador_generico.png" id="1_ntvl7"]
 [ext_resource type="FontFile" uid="uid://dsc05xw83a4dn" path="res://assets/original/fonts/IMFellEnglishSC-Regular.ttf" id="1_t1uo6"]
+[ext_resource type="Texture2D" uid="uid://c5k4w2m0xoaqt" path="res://assets/ui/slider_bn.png" id="2_31cm3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6o0g0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stqi1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6b1m"]
+texture = ExtResource("2_31cm3")
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(5, 0, 102, 11)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgrki"]
+texture = ExtResource("2_31cm3")
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(5, 0, 102, 11)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ntvl7"]
+texture = ExtResource("2_31cm3")
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(5, 0, 102, 11)
+modulate_color = Color(1, 1, 1, 0.431373)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ktj0"]
 
@@ -18,6 +42,13 @@ Button/constants/line_spacing = 0
 Button/constants/outline_size = 4
 Button/styles/focus = SubResource("StyleBoxEmpty_6o0g0")
 Button/styles/hover = SubResource("StyleBoxEmpty_stqi1")
+HSlider/icons/grabber = ExtResource("1_ntvl7")
+HSlider/icons/grabber_disabled = ExtResource("1_ntvl7")
+HSlider/icons/grabber_highlight = ExtResource("1_ntvl7")
+HSlider/icons/tick = ExtResource("1_ntvl7")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_r6b1m")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_tgrki")
+HSlider/styles/slider = SubResource("StyleBoxTexture_ntvl7")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0.466667)

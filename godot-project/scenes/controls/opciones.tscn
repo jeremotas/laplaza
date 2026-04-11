@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bl4b11xl0emiw"]
+[gd_scene load_steps=12 format=3 uid="uid://bl4b11xl0emiw"]
 
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="1_01m0e"]
 [ext_resource type="Script" uid="uid://i0ufj85xgr51" path="res://scenes/controls/opciones.gd" id="1_mqqmh"]
+[ext_resource type="Texture2D" uid="uid://c1m18vrwfpr4a" path="res://assets/ui/fondo_configuracion_opcion.png" id="2_6x7dy"]
 [ext_resource type="Shader" uid="uid://56yjmw2atlid" path="res://shaders/blur.gdshader" id="2_fbuas"]
-[ext_resource type="Texture2D" uid="uid://bdnrxtf3v26hx" path="res://assets/created/fondos/LFDLT_fondo_4.png" id="2_gqsdl"]
 [ext_resource type="PackedScene" uid="uid://ne0jrytbfn5y" path="res://scenes/controls/volume_mixer.tscn" id="2_og7k0"]
+[ext_resource type="Texture2D" uid="uid://brkv4t7qh2m23" path="res://assets/ui/ilustr_configuracion.png" id="3_xkh0j"]
 [ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="5_2klqf"]
 [ext_resource type="PackedScene" uid="uid://ddc7cpnvfmm0f" path="res://scenes/common/titulo_piedra.tscn" id="5_4siix"]
 [ext_resource type="AudioStream" uid="uid://bltvm0xuku4uo" path="res://assets/original/sounds/horses-gallop.mp3" id="5_77hf2"]
@@ -33,10 +34,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_gqsdl")
+texture = ExtResource("2_6x7dy")
+expand_mode = 3
+
+[node name="Caballo" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xkh0j")
 expand_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_4siix")
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,13 +57,9 @@ grow_vertical = 2
 color = Color(0.297093, 0.297093, 0.297093, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -137.0
-offset_right = 137.0
-grow_horizontal = 2
+offset_right = 296.0
 grow_vertical = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
@@ -63,6 +70,7 @@ theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer3"]
@@ -75,45 +83,56 @@ horizontal_alignment = 1
 
 [node name="TituloPiedra" parent="MarginContainer/VBoxContainer3" instance=ExtResource("5_4siix")]
 layout_mode = 2
+size_flags_horizontal = 4
 title = "_OPCIONES_"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="Master" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="GC" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Master" type="Label" parent="MarginContainer/VBoxContainer/GC"]
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_GENERAL_"
-horizontal_alignment = 1
+horizontal_alignment = 2
 
-[node name="master_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
+[node name="master_mixer" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("2_og7k0")]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme = ExtResource("1_01m0e")
 bus_name = "Master"
 
-[node name="Musica" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Musica" type="Label" parent="MarginContainer/VBoxContainer/GC"]
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_MUSICA_"
-horizontal_alignment = 1
+horizontal_alignment = 2
 
-[node name="music_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
+[node name="music_mixer" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("2_og7k0")]
 layout_mode = 2
+theme = ExtResource("1_01m0e")
 bus_name = "Musica"
 
-[node name="Efectos" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Efectos" type="Label" parent="MarginContainer/VBoxContainer/GC"]
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_EFECTOS_"
-horizontal_alignment = 1
+horizontal_alignment = 2
 
-[node name="efectos_mixer2" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_og7k0")]
+[node name="efectos_mixer2" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("2_og7k0")]
 layout_mode = 2
+theme = ExtResource("1_01m0e")
 bus_name = "Efectos"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]

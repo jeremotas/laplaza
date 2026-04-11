@@ -8,25 +8,40 @@ func _ready():
 	var aButtons = [
 		$MarginContainer/VBoxContainer/ReiniciarMazo,
 		$MarginContainer/VBoxContainer/ReiniciarMazoATest,
-		$MarginContainer/VBoxContainer/efectos_mixer2,
-		$MarginContainer/VBoxContainer/music_mixer,
-		$MarginContainer/VBoxContainer/master_mixer,
+		$MarginContainer/VBoxContainer/GC/efectos_mixer2,
+		$MarginContainer/VBoxContainer/GC/music_mixer,
+		$MarginContainer/VBoxContainer/GC/master_mixer,
 		$MarginContainer/VBoxContainer2/Menu,
 		$MarginContainer/VBoxContainer/Language
 	]
 	Global.prepare_buttons_menu(aButtons)
 	iSelectedLanguageIndex = aLanguages.find(Global.language)
 	
+	hslider_to($MarginContainer/VBoxContainer/GC/master_mixer, Color(1,0,0,1))
+	hslider_to($MarginContainer/VBoxContainer/GC/music_mixer, Color(0,1,0,1))
+	hslider_to($MarginContainer/VBoxContainer/GC/efectos_mixer2, Color(0,0,1,1))
+	
+		
+	mover_caballo()
 	$MarginContainer/VBoxContainer2/Menu.grab_focus()
+
+func hslider_to(oSlider, oColor):
+	var sb = oSlider.get_theme_stylebox("grabber_area").duplicate()
+	var sb2 = oSlider.get_theme_stylebox("grabber_area_highlight").duplicate()
+	if sb is StyleBoxTexture:
+		sb.modulate_color = oColor
+		sb2.modulate_color = oColor
+		oSlider.add_theme_stylebox_override("grabber_area", sb)
+		oSlider.add_theme_stylebox_override("grabber_area_highlight", sb2)
 
 func _on_menu_pressed():
 	save_options()
 	get_tree().change_scene_to_file("res://scenes/screens/inicio.tscn")
 	
 func save_options():
-	Global.save_data.master_mixer = $MarginContainer/VBoxContainer/master_mixer.value
-	Global.save_data.music_mixer = $MarginContainer/VBoxContainer/music_mixer.value
-	Global.save_data.efectos_mixer = $MarginContainer/VBoxContainer/efectos_mixer2.value
+	Global.save_data.master_mixer = $MarginContainer/VBoxContainer/GC/master_mixer.value
+	Global.save_data.music_mixer = $MarginContainer/VBoxContainer/GC/music_mixer.value
+	Global.save_data.efectos_mixer = $MarginContainer/VBoxContainer/GC/efectos_mixer2.value
 	Global.save_data.save()
 
 
@@ -75,3 +90,11 @@ func _on_language_pressed() -> void:
 	if iSelectedLanguageIndex >= aLanguages.size():
 		iSelectedLanguageIndex = 0
 	change_language()
+
+
+func mover_caballo():
+	$Caballo.position.x = $Caballo.position.x + 30
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.tween_property($Caballo, "position:x", $Caballo.position.x - 30, 0.15)
