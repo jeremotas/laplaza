@@ -21,7 +21,7 @@ var aStarters = [
 	{
 		"duration": 6,
 		"max_alive": 10,
-		"name": "El Asalto Escarlata",
+		"name": "_EL_ASALTO_ESCARLATA_",
 		"add_descanso": false,
 		"arriba_izquierda": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 		"arriba_centro": {"unit_type": "ingles", "seconds": 1, "probability":100},
@@ -281,16 +281,10 @@ func get_strategy_card(iTime):
 	var oCard = null
 	if iTime < iMaxStarters:
 		oCard = get_one_from(aStarters)
-	elif iTime == iMaxStarters:
-		oCard = get_one_from(aDescansos)
 	elif iTime < iMaxFirstWave:
 		oCard = get_one_from(aFirstWaves)
-	elif iTime == iMaxFirstWave:
-		oCard = get_one_from(aDescansos)
 	elif iTime < iMaxSecondWave:
 		oCard = get_one_from(aSecondWaves)
-	elif iTime == iMaxSecondWave:
-		oCard = get_one_from(aDescansos)
 	elif iTime < iMaxThirdWave:
 		oCard = get_one_from(aThirdWaves)
 	else:
@@ -304,36 +298,56 @@ func get_one_from(aStrategyCards):
 	var oCard = aStrategyCards[iSelectedCard]
 	return oCard 
 
+func salto_oleada(iTime, iStrategyDuration):
+	return nombre_oleada(iTime)!=nombre_oleada(iTime+iStrategyDuration)
+
+func nombre_oleada(iTime):
+	#devuelve nombre de oleada que corresponde al tiempo transcurrido
+	var sNombre_oleada
+	if iTime<iMaxStarters:
+		sNombre_oleada = "Starters"
+	elif iTime< iMaxFirstWave:
+		sNombre_oleada = "FirstWave"
+	elif iTime< iMaxSecondWave:
+		sNombre_oleada = "SecondWave"
+	elif iTime < iMaxThirdWave:
+		sNombre_oleada = "ThirdWave"
+	else:
+		sNombre_oleada = "FinalWave"
+	return sNombre_oleada
+
 func create_strategy():
 	var created_strategy = []
 	var iTime = 0
+	var oCard 
+	var iDuration
+	var oEnglishStrategy
+	var oCardDescanso 
+	var oEnglishStrategyDescanso
+
 	while iTime < iMaxTime: 
 		print("INICIO ITERACION ", iTime)
-		var oCard = get_strategy_card(iTime)
-		var iDuration = oCard.duration
-		iTime += iDuration
-		print("NOMBRE ", oCard.name)
-		print("DURACION ", iDuration)
-		print("MAX_TIME ", iTime)
+		oCard = get_strategy_card(iTime)
 		
-		var oEnglishStrategy = duplicate_card(oCard)
-		oEnglishStrategy.max_time = iTime
-		created_strategy.push_back(oEnglishStrategy)
-		
-		if oCard.add_descanso and iTime < iMaxTime - 120:
-			
-			var oCardDescanso = get_strategy_card_descanso(iTime)
+		if salto_oleada(iTime, oCard.duration):
+			oCardDescanso = get_strategy_card_descanso(iTime)
 			iDuration = oCardDescanso.duration
 			iTime += iDuration
 			print("DESCANSO ", iTime)
 			print("DURACION ", iDuration)
 			print("MAX_TIME ", iTime)
-			var oEnglishStrategyDescanso = duplicate_card(oCardDescanso)
+			oEnglishStrategyDescanso = duplicate_card(oCardDescanso)
 			oEnglishStrategyDescanso.max_time = iTime
 			created_strategy.push_back(oEnglishStrategyDescanso)
-		
+		iDuration = oCard.duration
+		iTime += iDuration
+		print("NOMBRE ", oCard.name)
+		print("DURACION ", iDuration)
+		print("MAX_TIME ", iTime)
+		oEnglishStrategy = duplicate_card(oCard)
+		oEnglishStrategy.max_time = iTime
+		created_strategy.push_back(oEnglishStrategy)
 	print(created_strategy)
-
 	return created_strategy
 
 func duplicate_card(oCard):
