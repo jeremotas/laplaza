@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+var bReadySinPercu = false
 
 # Called when the node enters the scene tree for the first time.
 func ready():
@@ -39,7 +40,7 @@ func _process(_delta):
 func _on_menu_pressed():
 	save_volume()
 	get_tree().change_scene_to_file("res://scenes/screens/inicio.tscn")
-	play_pause_music(false)
+	play_pause_music(false, 1)
 	get_parent().play_background_music(true)
 	
 
@@ -48,13 +49,14 @@ func _on_continuar_pressed():
 	save_volume()
 	get_parent().pauseMenu()
 	get_parent().play_background_music(true)
-	play_pause_music(false)
+	play_pause_music(false, 1)
 
 
 func _on_visibility_changed():
 	if visible:
+		bReadySinPercu = false
 		get_parent().play_background_music(false)
-		play_pause_music(true)
+		play_pause_music(true, 1)
 		$MarginContainer/VBoxContainer/Continuar.grab_focus()
 		prepare_sliders()
 
@@ -65,8 +67,16 @@ func save_volume():
 	Global.save_data.save()
 
 
-func play_pause_music(bPlay):
+func play_pause_music(bPlay, iWhichSong):
 	if !bPlay:
 		$PauseMusic.stop()
+		$PauseMusicPercusion.stop()
+	elif iWhichSong == 2:
+		$PauseMusicPercusion.play()
 	else:
 		$PauseMusic.play()
+
+
+func _on_pause_music_finished() -> void:
+	bReadySinPercu = true
+	play_pause_music(true, 2)
