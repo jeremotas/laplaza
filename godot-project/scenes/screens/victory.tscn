@@ -55,6 +55,7 @@ offset_right = 639.0
 offset_bottom = 109.0
 size_flags_horizontal = 4
 theme = ExtResource("3_blw1a")
+theme_override_colors/font_color = Color(0.0627451, 0.564706, 0.992157, 1)
 theme_override_font_sizes/font_size = 68
 text = "_VICTORIA_"
 horizontal_alignment = 1

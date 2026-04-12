@@ -18,6 +18,17 @@ func _ready():
 		$MarginContainer2/GC/VBoxContainer/Salir
 	]
 	Global.prepare_buttons_menu(aButtons)
+	
+	mini_animations()
+	
+func mini_animations():
+	if $MarginContainer/Escudo:
+		var escudo = $MarginContainer/Escudo
+		escudo.position.y = escudo.position.y + 60
+		var tween = create_tween()
+		tween.set_ease(Tween.EASE_IN_OUT)
+		tween.set_trans(Tween.TRANS_SINE)
+		tween.tween_property(escudo, "position:y", escudo.position.y + 30, 0.35)
 
 func _on_reiniciar_pressed():
 	get_tree().change_scene_to_file("res://scenes/levels/" + Global.settings.game.init_level + ".tscn")

@@ -7,7 +7,7 @@ extends Node
 # [x] Visual de VICTORIA (REI)
 # [x] Visual de DERROTA (REI)
 # [ ] Marca de agua de DEMO (REI - JERE - SOLE)
-# [ ] Implementacion de interfaces (JERE)
+# [x] Implementacion de interfaces (JERE)
 # [x] Balanceo de estrategia (SANDO)
 # [ ] Revision de stats de unidades (SANDO)
 # [ ] Textos y localizacion ingles (SOLE)

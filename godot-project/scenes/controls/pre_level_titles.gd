@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 #@onready var oSpeech = $SpeechBubble
 @onready var oAnimationPlayer = $AnimationPlayer
 @onready var oRichLabel = $MarginContainer/RichTextLabel

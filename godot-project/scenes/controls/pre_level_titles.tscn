@@ -65,13 +65,27 @@ _data = {
 &"title_out": SubResource("Animation_1u1u0")
 }
 
-[node name="PreLevelTitles" type="Node2D"]
+[node name="PreLevelTitles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_cmgtq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(850, 480)
-offset_right = 852.148
-offset_bottom = 480.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
 
 [node name="SpeechTimer" type="Timer" parent="MarginContainer"]
 one_shot = true
@@ -80,8 +94,7 @@ autostart = true
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
 texture = ExtResource("2_74axt")
-expand_mode = 1
-stretch_mode = 4
+expand_mode = 2
 
 [node name="RichTextLabel" type="Label" parent="MarginContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -99,12 +112,18 @@ text_overrun_behavior = 4
 stream = ExtResource("3_5rxsg")
 autoplay = true
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cs5f5")
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_right = 852.0
+offset_bottom = 480.0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Leyenda" type="Label" parent="MarginContainer/MarginContainer"]
+[node name="Leyenda" type="Label" parent="MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -112,10 +131,5 @@ theme = ExtResource("2_8xxh0")
 theme_override_colors/font_color = Color(1, 1, 1, 0.8)
 theme_override_font_sizes/font_size = 18
 text = "_ENTER_PARA_SALTEAR_"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_cs5f5")
-}
 
 [connection signal="timeout" from="MarginContainer/SpeechTimer" to="." method="_on_speech_timer_timeout"]
