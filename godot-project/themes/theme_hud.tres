@@ -10,25 +10,28 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6b1m"]
 texture = ExtResource("2_31cm3")
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
 axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
 region_rect = Rect2(5, 0, 102, 11)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgrki"]
 texture = ExtResource("2_31cm3")
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
 axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
 region_rect = Rect2(5, 0, 102, 11)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ntvl7"]
 texture = ExtResource("2_31cm3")
-expand_margin_top = 6.0
-expand_margin_bottom = 6.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
 axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
 region_rect = Rect2(5, 0, 102, 11)
-modulate_color = Color(1, 1, 1, 0.431373)
+modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ktj0"]
 
