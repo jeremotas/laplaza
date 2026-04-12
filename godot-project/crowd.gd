@@ -36,6 +36,7 @@ func _on_timer_timeout() -> void:
 	rayo()
 	#$PatricioSolari.show()
 	$AnimatedSprite2D.play("default")
+	$AnimatedSprite2D2.play("default")
 	$Cancion.play()
 	await get_tree().create_timer(10.8).timeout
 	rayo()
