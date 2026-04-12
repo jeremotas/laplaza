@@ -2,7 +2,7 @@ extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func ready():
 	var aButtons = [
 		$MarginContainer/VBoxContainer/GC/music_mixer,
 		$MarginContainer/VBoxContainer/GC/master_mixer,
@@ -12,7 +12,10 @@ func _ready():
 	]
 	TranslationServer.set_locale(Global.language)
 	Global.prepare_buttons_menu(aButtons)
+	
+	prepare_sliders()
 		
+func prepare_sliders():
 	hslider_to($MarginContainer/VBoxContainer/GC/master_mixer, Color("FF5B9388"))
 	hslider_to($MarginContainer/VBoxContainer/GC/music_mixer, Color("C7FF5B88"))
 	hslider_to($MarginContainer/VBoxContainer/GC/efectos_mixer2, Color("5BADFF88"))
@@ -22,12 +25,13 @@ func _ready():
 func hslider_to(oSlider, oColor):
 	var sb = oSlider.get_theme_stylebox("grabber_area").duplicate()
 	var sb2 = oSlider.get_theme_stylebox("grabber_area_highlight").duplicate()
-	if sb is StyleBoxTexture:
-		sb.modulate_color = oColor
-		sb2.modulate_color = oColor
+	if sb is StyleBoxFlat:
+		sb.bg_color = oColor.darkened(0.35)
+		sb2.bg_color = oColor
 		oSlider.add_theme_stylebox_override("grabber_area", sb)
 		oSlider.add_theme_stylebox_override("grabber_area_highlight", sb2)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(_delta):
 	pass
 
@@ -52,6 +56,7 @@ func _on_visibility_changed():
 		get_parent().play_background_music(false)
 		play_pause_music(true)
 		$MarginContainer/VBoxContainer/Continuar.grab_focus()
+		prepare_sliders()
 
 func save_volume():
 	Global.save_data.master_mixer = $MarginContainer/VBoxContainer/GC/master_mixer.value

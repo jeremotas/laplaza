@@ -110,6 +110,7 @@ custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("1_01m0e")
+step = 0.075
 bus_name = "Master"
 
 [node name="Musica" type="Label" parent="MarginContainer/VBoxContainer/GC"]
@@ -124,6 +125,7 @@ custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("1_01m0e")
+step = 0.075
 bus_name = "Musica"
 
 [node name="Efectos" type="Label" parent="MarginContainer/VBoxContainer/GC"]
@@ -138,6 +140,7 @@ custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("1_01m0e")
+step = 0.075
 bus_name = "Efectos"
 
 [node name="Idioma" type="Label" parent="MarginContainer/VBoxContainer/GC"]

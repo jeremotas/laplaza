@@ -29,7 +29,7 @@ func hslider_to(oSlider, oColor):
 	var sb = oSlider.get_theme_stylebox("grabber_area").duplicate()
 	var sb2 = oSlider.get_theme_stylebox("grabber_area_highlight").duplicate()
 	if sb is StyleBoxFlat:
-		sb.bg_color = oColor
+		sb.bg_color = oColor.darkened(0.35)
 		sb2.bg_color = oColor
 		oSlider.add_theme_stylebox_override("grabber_area", sb)
 		oSlider.add_theme_stylebox_override("grabber_area_highlight", sb2)

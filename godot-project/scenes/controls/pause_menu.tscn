@@ -102,6 +102,7 @@ custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("3_mqs88")
+step = 0.075
 bus_name = "Master"
 
 [node name="Musica" type="Label" parent="MarginContainer/VBoxContainer/GC"]
@@ -115,6 +116,7 @@ custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("3_mqs88")
+step = 0.075
 bus_name = "Musica"
 
 [node name="Efectos" type="Label" parent="MarginContainer/VBoxContainer/GC"]
@@ -128,6 +130,7 @@ custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("3_mqs88")
+step = 0.075
 bus_name = "Efectos"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
@@ -153,6 +156,7 @@ alignment = 0
 
 [node name="PauseMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_sqfbq")
+bus = &"Musica"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
