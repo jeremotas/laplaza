@@ -39,7 +39,8 @@ func set_enemy_to_follow():
 
 func _process(delta):
 	set_enemy_to_follow()
-	attack()
+	if life > 0: 
+		attack()
 	super(delta)
 	
 
@@ -53,7 +54,7 @@ func drop_the_reward(experience_given_value):
 	get_parent().add_child(l)
 
 func attack():
-	if oEnemyToFollow and not blocked_attack:
+	if oEnemyToFollow and not blocked_attack and life > 0:
 		destination  = oEnemyToFollow.global_position
 		attack_objective = {"global_position": destination, "faction": "patricios", "velocity": 0}
 		if not inCoolDownAttack:
@@ -73,9 +74,9 @@ func attack():
 			#else:
 				#print("enemigo ", enemy.name)
 
-#func _on_area_de_ataque_body_entered(body: Node2D) -> void:
-#	if trampling:
-		#body.TakeDamage(min_damage_given, max_damage_given)
+func _on_area_de_ataque_body_entered(body: Node2D) -> void:
+	if trampling and life > 0 and body.has_method('TakeDamage'):
+		body.TakeDamage(min_damage_given, max_damage_given)
 
 func _on_trample_timer_timeout() -> void:
 	trampling = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dw0atndjaftad"]
+[gd_scene load_steps=60 format=3 uid="uid://dw0atndjaftad"]
 
 [ext_resource type="Script" uid="uid://dhgr6q2qf2ued" path="res://scenes/ingleses/english_cavalry.gd" id="1_3knr2"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="2_8md06"]
@@ -151,7 +151,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8iwg1")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 14.0
 }, {
@@ -290,13 +290,9 @@ advance_condition = &"die"
 advance_mode = 2
 advance_condition = &"die"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6xyr6"]
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d1jqw"]
 states/die/node = SubResource("AnimationNodeAnimation_u3nqx")
-states/die/position = Vector2(673.333, 129.334)
+states/die/position = Vector2(676, 129.334)
 states/hurt/node = SubResource("AnimationNodeAnimation_pky4p")
 states/hurt/position = Vector2(544, 208.296)
 states/idle/node = SubResource("AnimationNodeAnimation_n41af")
@@ -305,11 +301,10 @@ states/shoot/node = SubResource("AnimationNodeAnimation_fav6q")
 states/shoot/position = Vector2(320, 187.111)
 states/walk/node = SubResource("AnimationNodeAnimation_1yw6h")
 states/walk/position = Vector2(556, 60)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_7nslt"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_xgmjv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_w1mak"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_uy6df"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_w6dlf"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_1gnbu"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_5uh1q"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_6nu4m"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_ymea3"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_pwdj1"), "die", "End", SubResource("AnimationNodeStateMachineTransition_6xyr6")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_7nslt"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_xgmjv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_w1mak"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_uy6df"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_w6dlf"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_1gnbu"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_5uh1q"), "hurt", "die", SubResource("AnimationNodeStateMachineTransition_6nu4m"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_ymea3"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_pwdj1")]
 
 [sub_resource type="Animation" id="Animation_sedgb"]
 length = 0.642857
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -498,8 +493,8 @@ theme_override_font_sizes/font_size = 8
 position = Vector2(0.5, 0)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_vhaxh")
-animation = &"idle"
-frame = 2
+animation = &"die"
+frame = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(7, 0)
@@ -553,5 +548,4 @@ shape = SubResource("CircleShape2D_3knr2")
 one_shot = true
 
 [connection signal="body_entered" from="AreaDeAtaque" to="." method="_on_area_de_ataque_body_entered"]
-[connection signal="body_exited" from="AreaDeAtaque" to="." method="_on_area_de_ataque_body_exited"]
 [connection signal="timeout" from="TrampleTimer" to="." method="_on_trample_timer_timeout"]

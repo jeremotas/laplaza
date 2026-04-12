@@ -192,7 +192,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 43
+theme_override_constants/margin_top = 19
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
