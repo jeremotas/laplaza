@@ -72,6 +72,7 @@ func _ready():
 	enemy_strategy = enemy_strategy_container.new().create_strategy()
 	prepare_initial_conditions()
 	#prepare_enemy_spawns()
+	print("MAZO")
 	Global.mazo.mezclar()
 	first_move_general()
 	get_tree().paused = false

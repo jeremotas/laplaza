@@ -86,6 +86,9 @@ func rearmar():
 	aCards = str_to_var(var_to_str(aCardsOriginal))
 	
 func mezclar():
+	print("MAZO")
+	for i in range(0, aCards.size()):
+		print(aCards[i].titulo, ' ==> ', aCards[i].cantidad)
 	aCards.shuffle()
 
 func tomar_carta():
@@ -121,18 +124,18 @@ func get_diccionario_de_cartas():
 # Funciones de testing
 func rellenar_mazo_test():
 	var rng = RandomNumberGenerator.new()
-	var iRandom = rng.randi_range(1,3)
+	var iRandom = rng.randi_range(1,4)
 	if Global.settings.demo:
-		crear_cartas("granadero", 4)
-		crear_cartas("correntino", 2)
-		crear_cartas("arribeno", 2)
-		crear_cartas("moreno", 1)
-		crear_cartas("ataque_husares_infernales", 1)
-		crear_cartas("upgrade_life", 3)
+		crear_cartas("granadero", 6)
+		crear_cartas("correntino", 3)
+		crear_cartas("arribeno", 3)
+		crear_cartas("moreno", 2)
+		crear_cartas("upgrade_life", 4)
 		crear_cartas("ollas_del_pueblo", 1)
 		if iRandom == 1: crear_cartas("patricio_solari", 1)
 		elif iRandom == 2: crear_cartas("defensa_de_obligado", 1)
 		elif iRandom == 3: crear_cartas("sudestada", 1)
+		elif iRandom == 4: crear_cartas("ataque_husares_infernales", 1)
 		
 	else:
 		crear_cartas("granadero", 4)
