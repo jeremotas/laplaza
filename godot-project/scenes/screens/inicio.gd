@@ -6,27 +6,27 @@ const adentro = preload("res://assets/created/sounds/adentro.mp3")
 func _ready():
 	Global.language = Global.save_data.language
 	TranslationServer.set_locale(Global.language)
-	$Control/MarginContainer/VBoxContainer/Comenzar.grab_focus()
+	$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Comenzar.grab_focus()
 	$Control/MarginContainer/HBoxContainer/CantidadLagrimas.text = str(Global.save_data.lagrimas_acumuladas)
 	if Global.save_data.cantidad_sobres_pendientes() > 0:
-		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = tr("_ABRIR_SOBRES_") % str(Global.save_data.cantidad_sobres_pendientes()) 
-		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = false
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre.text = tr("_ABRIR_SOBRES_") % str(Global.save_data.cantidad_sobres_pendientes()) 
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre.disabled = false
 	else:
-		$Control/MarginContainer/VBoxContainer/AbrirSobre.text = "_SIN_SOBRES_"
-		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = true
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre.text = "_SIN_SOBRES_"
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre.disabled = true
 	
 	if Global.settings.demo:
-		$Control/MarginContainer/VBoxContainer/AbrirSobre.disabled = true
-		$Control/MarginContainer/VBoxContainer/AbrirSobre.focus_mode = Control.FOCUS_NONE
-		$Control/MarginContainer/VBoxContainer/ElMazo.disabled = true
-		$Control/MarginContainer/VBoxContainer/ElMazo.focus_mode = Control.FOCUS_NONE
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre.disabled = true
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre.focus_mode = Control.FOCUS_NONE
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/ElMazo.disabled = true
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/ElMazo.focus_mode = Control.FOCUS_NONE
 	var aButtons = [
-		$Control/MarginContainer/VBoxContainer/Comenzar,
-		$Control/MarginContainer/VBoxContainer/ElMazo,
-		$Control/MarginContainer/VBoxContainer/AbrirSobre,
-		$Control/MarginContainer/VBoxContainer/Opciones,
-		$Control/MarginContainer/VBoxContainer/Creditos,
-		$Control/MarginContainer/VBoxContainer/Salir
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Comenzar,
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/ElMazo,
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre,
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Opciones,
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Creditos,
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Salir
 	]
 	
 	Global.prepare_buttons_menu(aButtons)
