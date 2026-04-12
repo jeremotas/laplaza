@@ -29,18 +29,25 @@ func kill_all():
 	var aChildrens = $Crowd.get_children()
 	for oChild in aChildrens:
 		oChild.queue_free()
+		
+func crowd_show():
+	$AnimatedSprite2D.show()
+	$AnimatedSprite2D2.show()
 
+func crowd_hide():
+	$AnimatedSprite2D.hide()
+	$AnimatedSprite2D2.hide()
 
 func _on_timer_timeout() -> void:
 	await get_tree().create_timer(0.5).timeout
 	rayo()
-	#$PatricioSolari.show()
+	crowd_show()
 	$AnimatedSprite2D.play("default")
 	$AnimatedSprite2D2.play("default")
 	$Cancion.play()
 	await get_tree().create_timer(10.8).timeout
 	rayo()
-	#$PatricioSolari.hide()
+	crowd_hide()
 	$Cancion.stop()
 	kill_all()
 

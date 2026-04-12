@@ -253,10 +253,12 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(425, 241)
 sprite_frames = SubResource("SpriteFrames_lppgd")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(1273, 241)
 sprite_frames = SubResource("SpriteFrames_lppgd")
 
