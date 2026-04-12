@@ -12,7 +12,7 @@ func _ready():
 		$MarginContainer/VBoxContainer/GC/music_mixer,
 		$MarginContainer/VBoxContainer/GC/master_mixer,
 		$MarginContainer/VBoxContainer2/Menu,
-		$MarginContainer/VBoxContainer/Language
+		$MarginContainer/VBoxContainer/GC/Language
 	]
 	Global.prepare_buttons_menu(aButtons)
 	iSelectedLanguageIndex = aLanguages.find(Global.language)
@@ -97,4 +97,4 @@ func mover_caballo():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_SINE)
-	tween.tween_property($Caballo, "position:x", $Caballo.position.x - 30, 0.15)
+	tween.tween_property($Caballo, "position:x", $Caballo.position.x - 30, 0.35)

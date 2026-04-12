@@ -1,13 +1,14 @@
 extends Node
 
 # ROADMAP A LA DEMO
-# [ ] Unificar interfaces visuales (REI)
-# [ ] Armado de sliders con texturas (REI)
-# [ ] Visual de VICTORIA (REI)
-# [ ] Visual de DERROTA (REI)
+# [x] Unificar interfaces visuales (REI)
+# [x] Armado de sliders con texturas (REI)
+# [ ] Mejorar texturas de sliders (REI)
+# [x] Visual de VICTORIA (REI)
+# [x] Visual de DERROTA (REI)
 # [ ] Marca de agua de DEMO (REI - JERE - SOLE)
 # [ ] Implementacion de interfaces (JERE)
-# [ ] Balanceo de estrategia (SANDO)
+# [x] Balanceo de estrategia (SANDO)
 # [ ] Revision de stats de unidades (SANDO)
 # [ ] Textos y localizacion ingles (SOLE)
 # [ ] Testeo de DEMO (TODOS)

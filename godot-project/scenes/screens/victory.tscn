@@ -1,46 +1,45 @@
-[gd_scene load_steps=23 format=3 uid="uid://ckkcp0mw2ieet"]
+[gd_scene load_steps=11 format=3 uid="uid://ckkcp0mw2ieet"]
 
 [ext_resource type="Script" uid="uid://cvkm7v5wqpn07" path="res://scenes/screens/gameover.gd" id="1_eouvj"]
-[ext_resource type="Texture2D" uid="uid://cd5xt1td7nsrt" path="res://assets/ui/cielo_2.png" id="2_uluud"]
+[ext_resource type="Texture2D" uid="uid://ce5cuxkg205gs" path="res://assets/created/fondos/fondo_victoria.png" id="2_5vd5c"]
 [ext_resource type="Theme" uid="uid://dbjmv7rcvq2m7" path="res://themes/theme_hud.tres" id="3_blw1a"]
+[ext_resource type="Texture2D" uid="uid://bgfodu4gwkeu1" path="res://assets/created/fondos/escudo_victoria.png" id="3_mcks2"]
 [ext_resource type="AudioStream" uid="uid://0p4to6x8jlkw" path="res://assets/original/Music/Himno Full Final.mp3" id="4_ican8"]
+[ext_resource type="Texture2D" uid="uid://585j5tebj43e" path="res://assets/created/fondos/tapiz_victoria.png" id="4_pp54e"]
 [ext_resource type="AudioStream" uid="uid://cugberv1i8wtf" path="res://assets/original/sounds/crow-cheering.mp3" id="5_5ml8l"]
 [ext_resource type="Texture2D" uid="uid://lcapeyh0vxp5" path="res://assets/ui/MENU_ARROW.png" id="6_g4nh7"]
-[ext_resource type="Texture2D" uid="uid://dacwfwetgnwh8" path="res://assets/mkt/wishlist.png" id="6_ywyuj"]
-[ext_resource type="PackedScene" uid="uid://bc8o4p1i67cbn" path="res://scenes/patricios/general.tscn" id="8_v20am"]
-[ext_resource type="PackedScene" uid="uid://dlnd2el5bqsln" path="res://scenes/patricios/arribeno.tscn" id="9_57pto"]
-[ext_resource type="PackedScene" uid="uid://b8baohebq5bsy" path="res://scenes/patricios/correntino.tscn" id="10_judta"]
-[ext_resource type="PackedScene" uid="uid://c1f2p41bh0kpl" path="res://scenes/patricios/husares_infernales.tscn" id="11_ejd8u"]
-[ext_resource type="PackedScene" uid="uid://qe5x0axdxxo" path="res://scenes/patricios/moreno.tscn" id="12_osj31"]
-[ext_resource type="PackedScene" uid="uid://b6541ctm8c4dc" path="res://scenes/patricios/granadero.tscn" id="13_xvm5x"]
-[ext_resource type="Script" uid="uid://b1mivimj08d8a" path="res://scenes/screens/Nubes.gd" id="14_am84f"]
-[ext_resource type="Texture2D" uid="uid://c63g712yqjuge" path="res://assets/ui/nube_1.png" id="15_px7ib"]
-[ext_resource type="Texture2D" uid="uid://ddqla1qdya8rf" path="res://assets/ui/nube_2.png" id="16_tir3l"]
-[ext_resource type="Texture2D" uid="uid://w7loke78ivvm" path="res://assets/ui/nube_3.png" id="17_j1rm0"]
-[ext_resource type="Texture2D" uid="uid://dpoutmpujiroj" path="res://assets/ui/nube_4.png" id="18_bmvel"]
-[ext_resource type="Texture2D" uid="uid://d4cg7c4prtfmj" path="res://assets/created/papiro_hud_bottom.png" id="19_7ohv1"]
+[ext_resource type="PackedScene" uid="uid://ddc7cpnvfmm0f" path="res://scenes/common/titulo_piedra.tscn" id="10_mwp43"]
 [ext_resource type="PackedScene" uid="uid://cw6herwyo4jk7" path="res://scenes/controls/sobre.tscn" id="20_4ntel"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7m47"]
-bg_color = Color(0, 0, 0, 0.533333)
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aojef"]
-bg_color = Color(0, 0, 0, 0.533333)
 
 [node name="Victoria" type="Node"]
 script = ExtResource("1_eouvj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Fondo" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0048, 0.997826)
-texture = ExtResource("2_uluud")
-expand_mode = 2
+texture = ExtResource("2_5vd5c")
+expand_mode = 5
 stretch_mode = 5
+
+[node name="Escudo" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -145.5
+offset_right = 123.5
+offset_bottom = 145.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_mcks2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 z_index = 10
@@ -58,8 +57,16 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Victoria" type="Label" parent="MarginContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
+texture = ExtResource("4_pp54e")
+
+[node name="Victoria" type="Label" parent="MarginContainer/VBoxContainer2/TextureRect"]
+layout_mode = 2
+offset_left = 222.0
+offset_top = 22.0
+offset_right = 639.0
+offset_bottom = 109.0
 size_flags_horizontal = 4
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 68
@@ -85,6 +92,7 @@ anchor_bottom = 1.0
 offset_top = -150.0
 offset_right = 250.0
 grow_vertical = 0
+theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
 custom_minimum_size = Vector2(250, 0)
@@ -92,17 +100,9 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 10
 
-[node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_y7m47")
-
-[node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
+[node name="Wishlist" type="Button" parent="MarginContainer2/VBoxContainer"]
 visible = false
 layout_mode = 2
-offset_top = 4.0
-offset_right = 250.0
-offset_bottom = 43.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 24
@@ -111,11 +111,8 @@ icon = ExtResource("6_g4nh7")
 flat = true
 alignment = 0
 
-[node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
+[node name="Reiniciar" type="Button" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
-offset_top = 5.0
-offset_right = 250.0
-offset_bottom = 44.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 theme_override_font_sizes/font_size = 24
@@ -124,12 +121,8 @@ icon = ExtResource("6_g4nh7")
 flat = true
 alignment = 0
 
-[node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer/Panel"]
+[node name="Salir" type="Button" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
-offset_left = 1.0
-offset_top = 53.0
-offset_right = 251.0
-offset_bottom = 82.0
 size_flags_vertical = 8
 theme = ExtResource("3_blw1a")
 text = "_MENU_PRINCIPAL_"
@@ -137,233 +130,34 @@ icon = ExtResource("6_g4nh7")
 flat = true
 alignment = 0
 
-[node name="Panel" type="Panel" parent="."]
-visible = false
-z_index = 10
-custom_minimum_size = Vector2(0, 160)
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_aojef")
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -292.0
-offset_top = -66.0
-offset_right = 292.0
-offset_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer"]
-layout_mode = 2
-
-[node name="Wishlist_text" type="Label" parent="Panel/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(480, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("3_blw1a")
-theme_override_font_sizes/font_size = 18
-text = "_SEGUINOS_EN_STEAM_LEYENDA_"
-autowrap_mode = 2
-
-[node name="Wishlist" type="TextureButton" parent="Panel/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-texture_normal = ExtResource("6_ywyuj")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Personajes" type="Node2D" parent="."]
-
-[node name="General" parent="Personajes" instance=ExtResource("8_v20am")]
-position = Vector2(324, 454)
-show_life_bar = false
-input_accepted = false
-
-[node name="Arribeno" parent="Personajes" instance=ExtResource("9_57pto")]
-position = Vector2(356, 462)
-faction = "patricios"
-flipped = true
-just_idle = true
-
-[node name="Arribeno2" parent="Personajes" instance=ExtResource("9_57pto")]
-position = Vector2(557, 462)
-faction = "patricios"
-flipped = true
-just_idle = true
-
-[node name="Arribeno3" parent="Personajes" instance=ExtResource("9_57pto")]
-position = Vector2(485, 462)
-faction = "patricios"
-flipped = true
-just_idle = true
-
-[node name="Arribeno4" parent="Personajes" instance=ExtResource("9_57pto")]
-position = Vector2(621, 462)
-faction = "patricios"
-flipped = true
-just_idle = true
-
-[node name="SoldadoCorrentino" parent="Personajes" instance=ExtResource("10_judta")]
-position = Vector2(383, 461)
-flipped = true
-just_idle = true
-
-[node name="SoldadoCorrentino2" parent="Personajes" instance=ExtResource("10_judta")]
-position = Vector2(415, 461)
-flipped = true
-just_idle = true
-
-[node name="SoldadoCorrentino3" parent="Personajes" instance=ExtResource("10_judta")]
-position = Vector2(455, 461)
-flipped = true
-just_idle = true
-
-[node name="SoldadoCorrentino4" parent="Personajes" instance=ExtResource("10_judta")]
-position = Vector2(519, 461)
-flipped = true
-just_idle = true
-
-[node name="SoldadoCorrentino5" parent="Personajes" instance=ExtResource("10_judta")]
-position = Vector2(583, 461)
-flipped = true
-just_idle = true
-
-[node name="SoldadoCorrentino6" parent="Personajes" instance=ExtResource("10_judta")]
-position = Vector2(623, 461)
-flipped = true
-just_idle = true
-
-[node name="HusarInfernal" parent="Personajes" instance=ExtResource("11_ejd8u")]
-position = Vector2(606, 450)
-flipped = true
-just_idle = true
-
-[node name="HusarInfernal2" parent="Personajes" instance=ExtResource("11_ejd8u")]
-position = Vector2(566, 450)
-flipped = true
-just_idle = true
-
-[node name="Moreno" parent="Personajes" instance=ExtResource("12_osj31")]
-position = Vector2(594, 462)
-flipped = true
-just_idle = true
-
-[node name="Moreno2" parent="Personajes" instance=ExtResource("12_osj31")]
-position = Vector2(562, 462)
-flipped = true
-just_idle = true
-
-[node name="Moreno3" parent="Personajes" instance=ExtResource("12_osj31")]
-position = Vector2(522, 462)
-flipped = true
-just_idle = true
-
-[node name="Moreno4" parent="Personajes" instance=ExtResource("12_osj31")]
-position = Vector2(490, 462)
-flipped = true
-just_idle = true
-
-[node name="Soldado" parent="Personajes" instance=ExtResource("13_xvm5x")]
-position = Vector2(363, 462)
-flipped = true
-just_idle = true
-
-[node name="Soldado2" parent="Personajes" instance=ExtResource("13_xvm5x")]
-position = Vector2(395, 462)
-flipped = true
-just_idle = true
-
-[node name="Soldado3" parent="Personajes" instance=ExtResource("13_xvm5x")]
-position = Vector2(419, 462)
-flipped = true
-just_idle = true
-
-[node name="Soldado4" parent="Personajes" instance=ExtResource("13_xvm5x")]
-position = Vector2(451, 462)
-flipped = true
-just_idle = true
-
-[node name="Soldado5" parent="Personajes" instance=ExtResource("13_xvm5x")]
-position = Vector2(475, 462)
-flipped = true
-just_idle = true
-
-[node name="Soldado6" parent="Personajes" instance=ExtResource("13_xvm5x")]
-position = Vector2(507, 462)
-flipped = true
-just_idle = true
-
-[node name="Nubes" type="Node2D" parent="."]
-script = ExtResource("14_am84f")
-
-[node name="Nube1" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(98, 96)
-texture = ExtResource("15_px7ib")
-
-[node name="Nube2" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(67, 276)
-texture = ExtResource("16_tir3l")
-
-[node name="Nube3" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(403, 136)
-texture = ExtResource("17_j1rm0")
-
-[node name="Nube4" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(348, 80)
-texture = ExtResource("18_bmvel")
-
-[node name="Nube5" type="Sprite2D" parent="Nubes"]
-z_index = 1
-position = Vector2(230, 192)
-texture = ExtResource("17_j1rm0")
-
 [node name="ContenedorSobre" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 850.0
-offset_right = 1092.0
-offset_bottom = 79.0
-
-[node name="Fondo" type="TextureRect" parent="ContenedorSobre"]
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 60.0
-texture = ExtResource("19_7ohv1")
+offset_top = 17.0
+offset_right = 1305.0
+offset_bottom = 96.0
 
 [node name="Sobre" parent="ContenedorSobre" instance=ExtResource("20_4ntel")]
+z_index = 12
+z_as_relative = false
 layout_mode = 1
 anchor_right = 0.12
 anchor_bottom = 0.0
-offset_left = 24.0
-offset_top = -3.0
-offset_right = 132.472
-offset_bottom = 169.987
+offset_left = -112.0
+offset_top = -9.0
+offset_right = -3.52801
+offset_bottom = 163.987
 scale = Vector2(0.4, 0.4)
 
-[node name="Aviso" type="Label" parent="ContenedorSobre"]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 13.0
-offset_right = 167.0
-offset_bottom = 58.0
-theme = ExtResource("3_blw1a")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = -6
-theme_override_font_sizes/font_size = 16
-text = "_GANASTE_SOBRE_"
-horizontal_alignment = 1
+[node name="TituloPiedra" parent="ContenedorSobre" instance=ExtResource("10_mwp43")]
+z_index = 1
+z_as_relative = false
+offset_top = 8.0
+offset_bottom = 48.0
+title = "_GANASTE_SOBRE_"
 
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Wishlist" to="." method="_on_steam_pressed"]
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Reiniciar" to="." method="_on_reiniciar_pressed"]
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Panel/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Wishlist" to="." method="_on_steam_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

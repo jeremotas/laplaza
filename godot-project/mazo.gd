@@ -24,6 +24,8 @@ var aCardsDictionary = {
 
 static func crear(aOriginalCards = []):
 	var oMazo = Mazo.new()
+	if Global.settings.demo:
+		oMazo.rellenar_mazo_test()
 	if aOriginalCards.size() > 0:
 		oMazo.generar_mazo(aOriginalCards)
 	elif oMazo.aCards.size() == 0:
@@ -118,6 +120,8 @@ func get_diccionario_de_cartas():
 	
 # Funciones de testing
 func rellenar_mazo_test():
+	var rng = RandomNumberGenerator.new()
+	var iRandom = rng.randi_range(1,3)
 	if Global.settings.demo:
 		crear_cartas("granadero", 4)
 		crear_cartas("correntino", 2)
@@ -126,7 +130,10 @@ func rellenar_mazo_test():
 		crear_cartas("ataque_husares_infernales", 1)
 		crear_cartas("upgrade_life", 3)
 		crear_cartas("ollas_del_pueblo", 1)
-		crear_cartas("patricio_solari", 1)
+		if iRandom == 1: crear_cartas("patricio_solari", 1)
+		elif iRandom == 2: crear_cartas("defensa_de_obligado", 1)
+		elif iRandom == 3: crear_cartas("sudestada", 1)
+		
 	else:
 		crear_cartas("granadero", 4)
 		crear_cartas("correntino", 2)

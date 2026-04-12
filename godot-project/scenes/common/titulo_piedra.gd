@@ -4,7 +4,7 @@ extends Control
 
 func _ready() -> void:
 	if title != "":
-		$Label.text = tr(title)
+		$Label.text = tr(title.replace("\n", " "))
 
 func set_title(sText):
-	$Label.text = tr(sText)
+	$Label.text = tr(sText.replace("\n", " "))

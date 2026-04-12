@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://u6pw5bj6d6pt"]
+[gd_scene load_steps=11 format=3 uid="uid://u6pw5bj6d6pt"]
 
 [ext_resource type="Script" uid="uid://djvngkw87o8bu" path="res://scenes/controls/pause_menu.gd" id="1_wwgda"]
 [ext_resource type="Shader" uid="uid://56yjmw2atlid" path="res://shaders/blur.gdshader" id="2_76fdo"]
@@ -18,6 +18,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.501961, 0, 0, 0, 0, 0, 0, 0, 0)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vdpsq"]
 gradient = SubResource("Gradient_hgluf")
 width = 850
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqfbq"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 2
@@ -83,35 +85,50 @@ theme_override_constants/margin_bottom = 30
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Master" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="GC" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Master" type="Label" parent="MarginContainer/VBoxContainer/GC"]
 layout_mode = 2
 theme = ExtResource("3_mqs88")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_GENERAL_"
 
-[node name="master_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
+[node name="master_mixer" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("4_c50jk")]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme = ExtResource("3_mqs88")
 bus_name = "Master"
 
-[node name="Musica" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Musica" type="Label" parent="MarginContainer/VBoxContainer/GC"]
 layout_mode = 2
 theme = ExtResource("3_mqs88")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_MUSICA_"
 
-[node name="music_mixer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
+[node name="music_mixer" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("4_c50jk")]
 layout_mode = 2
+theme = ExtResource("3_mqs88")
 bus_name = "Musica"
 
-[node name="Efectos" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Efectos" type="Label" parent="MarginContainer/VBoxContainer/GC"]
 layout_mode = 2
 theme = ExtResource("3_mqs88")
 theme_override_font_sizes/font_size = 16
 text = "_SONIDO_EFECTOS_"
 
-[node name="efectos_mixer2" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_c50jk")]
+[node name="efectos_mixer2" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("4_c50jk")]
 layout_mode = 2
+theme = ExtResource("3_mqs88")
 bus_name = "Efectos"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sqfbq")
 
 [node name="Continuar" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
