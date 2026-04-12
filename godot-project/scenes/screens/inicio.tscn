@@ -301,7 +301,7 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(150, 10)
 layout_mode = 2
 
-[node name="Salir" type="Button" parent="Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer"]
+[node name="SalirOut" type="Button" parent="Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_box0m")
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -372,5 +372,5 @@ stretch_mode = 4
 [connection signal="pressed" from="Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre" to="." method="_on_abrir_sobre_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/SalirOut" to="." method="_on_salir_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

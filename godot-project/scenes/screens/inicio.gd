@@ -26,7 +26,7 @@ func _ready():
 		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/AbrirSobre,
 		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Opciones,
 		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Creditos,
-		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/Salir
+		$Control/MarginContainer/TextureRect/MarginContainer/VBoxContainer/SalirOut
 	]
 	
 	Global.prepare_buttons_menu(aButtons)
@@ -81,8 +81,6 @@ func _on_comenzar_pressed():
 
 
 func _on_salir_pressed():
-	get_viewport().gui_disable_input = true
-	await get_tree().create_timer(2.4).timeout
 	get_tree().quit()
 
 
