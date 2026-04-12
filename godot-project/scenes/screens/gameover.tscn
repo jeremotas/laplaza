@@ -148,3 +148,7 @@ anchor_right = 0.5
 offset_bottom = 40.0
 grow_horizontal = 2
 title = "_GANASTE_SOBRE_DEMO_"
+
+[connection signal="pressed" from="MarginContainer2/GC/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="MarginContainer2/GC/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="MarginContainer2/GC/Wishlist" to="." method="_on_wishlist_pressed"]
