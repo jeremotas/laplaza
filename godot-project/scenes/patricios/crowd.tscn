@@ -247,8 +247,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_ylrnx")
 }
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ylrnx")
+}
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(425, 241)
+sprite_frames = SubResource("SpriteFrames_lppgd")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1273, 241)
 sprite_frames = SubResource("SpriteFrames_lppgd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

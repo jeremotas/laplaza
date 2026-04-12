@@ -16,10 +16,10 @@ func _ready():
 	]
 	Global.prepare_buttons_menu(aButtons)
 	iSelectedLanguageIndex = aLanguages.find(Global.language)
-	
-	hslider_to($MarginContainer/VBoxContainer/GC/master_mixer, Color(1,0,0,1))
-	hslider_to($MarginContainer/VBoxContainer/GC/music_mixer, Color(0,1,0,1))
-	hslider_to($MarginContainer/VBoxContainer/GC/efectos_mixer2, Color(0,0,1,1))
+	# 571f32 44571f 1f3b57
+	hslider_to($MarginContainer/VBoxContainer/GC/master_mixer, Color("FF5B93"))
+	hslider_to($MarginContainer/VBoxContainer/GC/music_mixer, Color("C7FF5B"))
+	hslider_to($MarginContainer/VBoxContainer/GC/efectos_mixer2, Color("5BADFF"))
 	
 		
 	mover_caballo()

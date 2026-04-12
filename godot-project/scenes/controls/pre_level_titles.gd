@@ -1,8 +1,8 @@
-extends Node2D
+extends Control
 #@onready var oSpeech = $SpeechBubble
 @onready var oAnimationPlayer = $AnimationPlayer
-@onready var oRichLabel = $RichTextLabel
-@onready var oSpeechTimer = $SpeechTimer
+@onready var oRichLabel = $MarginContainer/RichTextLabel
+@onready var oSpeechTimer = $MarginContainer/SpeechTimer
 
 const oTexts = preload("res://texts/pre_level_titles_txt.gd")
 

@@ -604,7 +604,7 @@ func init_defensa_de_obligado():
 func init_jijiji():
 	$BackgroundMusic.stop()
 	$General.input_accepted = false
-	$General.life = $General.max_life
+	#$General.life = $General.max_life
 	$General.hide()
 	$Crowd.show()
 	$Crowd.start()
