@@ -98,8 +98,9 @@ theme_override_font_sizes/font_size = 16
 text = "_SONIDO_GENERAL_"
 
 [node name="master_mixer" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("4_c50jk")]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("3_mqs88")
 bus_name = "Master"
 
@@ -110,7 +111,9 @@ theme_override_font_sizes/font_size = 16
 text = "_SONIDO_MUSICA_"
 
 [node name="music_mixer" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("4_c50jk")]
+custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("3_mqs88")
 bus_name = "Musica"
 
@@ -121,7 +124,9 @@ theme_override_font_sizes/font_size = 16
 text = "_SONIDO_EFECTOS_"
 
 [node name="efectos_mixer2" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("4_c50jk")]
+custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("3_mqs88")
 bus_name = "Efectos"
 

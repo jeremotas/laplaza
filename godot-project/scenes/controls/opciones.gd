@@ -16,10 +16,10 @@ func _ready():
 	]
 	Global.prepare_buttons_menu(aButtons)
 	iSelectedLanguageIndex = aLanguages.find(Global.language)
-	# 571f32 44571f 1f3b57
-	hslider_to($MarginContainer/VBoxContainer/GC/master_mixer, Color("FF5B93"))
-	hslider_to($MarginContainer/VBoxContainer/GC/music_mixer, Color("C7FF5B"))
-	hslider_to($MarginContainer/VBoxContainer/GC/efectos_mixer2, Color("5BADFF"))
+	
+	hslider_to($MarginContainer/VBoxContainer/GC/master_mixer, Color("FF5B9388"))
+	hslider_to($MarginContainer/VBoxContainer/GC/music_mixer, Color("C7FF5B88"))
+	hslider_to($MarginContainer/VBoxContainer/GC/efectos_mixer2, Color("5BADFF88"))
 	
 		
 	mover_caballo()
@@ -28,9 +28,9 @@ func _ready():
 func hslider_to(oSlider, oColor):
 	var sb = oSlider.get_theme_stylebox("grabber_area").duplicate()
 	var sb2 = oSlider.get_theme_stylebox("grabber_area_highlight").duplicate()
-	if sb is StyleBoxTexture:
-		sb.modulate_color = oColor
-		sb2.modulate_color = oColor
+	if sb is StyleBoxFlat:
+		sb.bg_color = oColor
+		sb2.bg_color = oColor
 		oSlider.add_theme_stylebox_override("grabber_area", sb)
 		oSlider.add_theme_stylebox_override("grabber_area_highlight", sb2)
 

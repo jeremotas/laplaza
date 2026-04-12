@@ -8,30 +8,30 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stqi1"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6b1m"]
-texture = ExtResource("2_31cm3")
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 2
-region_rect = Rect2(5, 0, 102, 11)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntvl7"]
+bg_color = Color(1, 0.32549, 0.388235, 0.423529)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgrki"]
-texture = ExtResource("2_31cm3")
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 2
-region_rect = Rect2(5, 0, 102, 11)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31cm3"]
+bg_color = Color(1, 0.294118, 0.52549, 0.541176)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ntvl7"]
 texture = ExtResource("2_31cm3")
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
+texture_margin_left = 16.0
+texture_margin_right = 16.0
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 2
-region_rect = Rect2(5, 0, 102, 11)
-modulate_color = Color(1, 1, 1, 0.431373)
+region_rect = Rect2(0, 0, 144, 11)
+modulate_color = Color(0.533333, 0.533333, 0.533333, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ktj0"]
 
@@ -45,12 +45,12 @@ Button/constants/line_spacing = 0
 Button/constants/outline_size = 4
 Button/styles/focus = SubResource("StyleBoxEmpty_6o0g0")
 Button/styles/hover = SubResource("StyleBoxEmpty_stqi1")
+HSlider/constants/grabber_offset = -1
 HSlider/icons/grabber = ExtResource("1_ntvl7")
 HSlider/icons/grabber_disabled = ExtResource("1_ntvl7")
 HSlider/icons/grabber_highlight = ExtResource("1_ntvl7")
-HSlider/icons/tick = ExtResource("1_ntvl7")
-HSlider/styles/grabber_area = SubResource("StyleBoxTexture_r6b1m")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_tgrki")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ntvl7")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_31cm3")
 HSlider/styles/slider = SubResource("StyleBoxTexture_ntvl7")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)

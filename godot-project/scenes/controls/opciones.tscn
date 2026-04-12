@@ -106,8 +106,9 @@ text = "_SONIDO_GENERAL_"
 horizontal_alignment = 2
 
 [node name="master_mixer" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("2_og7k0")]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("1_01m0e")
 bus_name = "Master"
 
@@ -119,7 +120,9 @@ text = "_SONIDO_MUSICA_"
 horizontal_alignment = 2
 
 [node name="music_mixer" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("2_og7k0")]
+custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("1_01m0e")
 bus_name = "Musica"
 
@@ -131,7 +134,9 @@ text = "_SONIDO_EFECTOS_"
 horizontal_alignment = 2
 
 [node name="efectos_mixer2" parent="MarginContainer/VBoxContainer/GC" instance=ExtResource("2_og7k0")]
+custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("1_01m0e")
 bus_name = "Efectos"
 
@@ -157,6 +162,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="ReiniciarMazo" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_colors/font_color = Color(1, 0.966667, 0, 1)
@@ -167,6 +173,7 @@ icon = ExtResource("5_2klqf")
 flat = true
 
 [node name="ReiniciarMazoATest" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_colors/font_color = Color(0.983333, 1, 0, 1)

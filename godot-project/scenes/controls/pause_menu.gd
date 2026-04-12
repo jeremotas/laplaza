@@ -13,9 +13,9 @@ func _ready():
 	TranslationServer.set_locale(Global.language)
 	Global.prepare_buttons_menu(aButtons)
 		
-	hslider_to($MarginContainer/VBoxContainer/GC/master_mixer, Color("FF5B93"))
-	hslider_to($MarginContainer/VBoxContainer/GC/music_mixer, Color("C7FF5B"))
-	hslider_to($MarginContainer/VBoxContainer/GC/efectos_mixer2, Color("5BADFF"))
+	hslider_to($MarginContainer/VBoxContainer/GC/master_mixer, Color("FF5B9388"))
+	hslider_to($MarginContainer/VBoxContainer/GC/music_mixer, Color("C7FF5B88"))
+	hslider_to($MarginContainer/VBoxContainer/GC/efectos_mixer2, Color("5BADFF88"))
 	
 	#$PauseMusic.play()
 	#play_pause_music(false)
