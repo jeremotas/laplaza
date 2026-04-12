@@ -10,13 +10,11 @@ func _ready():
 	elif Global.save_data.lagrimas_ultima_run > 100:
 		dar_recompensa_sobre("azul")
 		
-	$MarginContainer2/VBoxContainer/Panel/Reiniciar.grab_focus()
-	if $Personajes/General:
-		$Personajes/General.celebration()
+	$MarginContainer2/VBoxContainer/Reiniciar.grab_focus()
 		
 	var aButtons = [
-		$MarginContainer2/VBoxContainer/Panel/Reiniciar,
-		$MarginContainer2/VBoxContainer/Panel/Salir
+		$MarginContainer2/VBoxContainer/Reiniciar,
+		$MarginContainer2/VBoxContainer/Salir
 	]
 	Global.prepare_buttons_menu(aButtons)
 

@@ -135,12 +135,14 @@ layout_mode = 2
 theme = ExtResource("1_01m0e")
 bus_name = "Efectos"
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 20)
+[node name="Idioma" type="Label" parent="MarginContainer/VBoxContainer/GC"]
 layout_mode = 2
+theme = ExtResource("1_01m0e")
+theme_override_font_sizes/font_size = 16
+text = "_IDIOMA_"
+horizontal_alignment = 2
 
-[node name="Language" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Language" type="Button" parent="MarginContainer/VBoxContainer/GC"]
 layout_mode = 2
 theme = ExtResource("1_01m0e")
 theme_override_constants/h_separation = 0
@@ -148,6 +150,11 @@ theme_override_font_sizes/font_size = 18
 text = "_LANGUAGE_NAME_"
 icon = ExtResource("5_2klqf")
 flat = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="ReiniciarMazo" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -209,7 +216,7 @@ dialog_text = "_SEGURO_DESTRUIR_MAZO_"
 dialog_autowrap = true
 cancel_button_text = "Cancelar"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Language" to="." method="_on_language_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GC/Language" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ReiniciarMazo" to="." method="_on_reiniciar_mazo_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ReiniciarMazoATest" to="." method="_on_reiniciar_mazo_a_test_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Menu" to="." method="_on_menu_pressed"]
