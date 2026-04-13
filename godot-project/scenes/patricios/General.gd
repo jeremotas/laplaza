@@ -68,7 +68,7 @@ func life_status():
 		
 	if life == 0 and !bSoundDeath:
 		var stream = MUERTE
-		AudioStreamManager.play({"stream": stream, "volume": AVS.get_db("muerte_del_general"), "pitch": AVS.get_rpitch("muerte_del_general")})
+		AudioStreamManager.play_priority({"stream": stream, "volume": AVS.get_db("muerte_del_general"), "pitch": AVS.get_rpitch("muerte_del_general")})
 		bSoundDeath = true
 	
 func set_aimpoint_visibility(bVal):
