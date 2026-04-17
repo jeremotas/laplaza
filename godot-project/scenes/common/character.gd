@@ -316,6 +316,7 @@ func StatusCalculation(_delta):
 		status.moving = false
 		status.attacking = false
 		#("Death", faction)
+		on_death()
 		
 		deathTimer = Timer.new()
 		add_child(deathTimer)
@@ -469,3 +470,18 @@ func invincible_effect():
 func random_pick_one(aData):
 	var iSelected = rng.randi_range(0, aData.size() - 1)
 	return aData[iSelected]
+
+func on_death():
+	collision_layer = 0
+	collision_mask = 0
+	
+	if has_node("CollisionShape2D"):
+		$CollisionShape2D.disabled = true
+	
+	if has_node("CombatArea"):
+		$CombatArea.monitoring = false
+		$CombatArea.monitorable = false
+	
+	velocity = Vector2.ZERO
+	status.moving = false
+	status.attacking = false
