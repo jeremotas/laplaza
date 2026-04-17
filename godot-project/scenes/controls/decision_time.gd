@@ -202,11 +202,11 @@ func _on_visibility_changed():
 		draw_hand()
 		
 func decision_elegida(sDecisionTomada, iSelectedCard):
-	ready_for_input = false
-	
-	$ChangeLevel.play()
-	await undraw_cards(iSelectedCard)
-	get_parent().decision_time_end(sDecisionTomada)
+	if ready_for_input:
+		ready_for_input = false
+		$ChangeLevel.play()
+		await undraw_cards(iSelectedCard)
+		get_parent().decision_time_end(sDecisionTomada)
 	
 
 func get_init_audio():

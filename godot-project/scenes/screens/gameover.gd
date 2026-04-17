@@ -15,7 +15,7 @@ func _ready():
 	var aButtons = [
 		$MarginContainer2/GC/Wishlist,
 		$MarginContainer2/GC/VBoxContainer/Reiniciar,
-		$MarginContainer2/GC/VBoxContainer/Salir
+		$MarginContainer2/GC/VBoxContainer/SalirJuego
 	]
 	Global.prepare_buttons_menu(aButtons)
 	

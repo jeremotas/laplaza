@@ -182,6 +182,9 @@ func _process(delta):
 	elif command == "iddqd" and not $General.barrilete_cosmico:
 		$General.invincible = not $General.invincible
 		command = ""
+	elif command == "muerte":
+		$General.life = 0
+		command = ""
 	elif command == "idkfa":
 		malon[0].quantity += 3 # Correntino
 		malon[1].quantity += 2 # Granadero
