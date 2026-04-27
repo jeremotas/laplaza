@@ -233,7 +233,7 @@ var settings = {
 	},
 	"ingleses": {
 		"soldado": {
-			"life": 2,
+			"life": 4,
 			"max_speed": 50,
 			"experience_given": 2,
 			"attack":{
@@ -285,7 +285,7 @@ var settings = {
 			}
 		},
 		"green_soldier": {
-			"life": 1,
+			"life": 2,
 			"max_speed": 90,
 			"experience_given": 4,
 			"attack":{
@@ -321,7 +321,7 @@ var settings = {
 			}
 		},
 		"english_cavalry": {
-			"life": 4,
+			"life": 10,
 			"max_speed": 110,
 			"experience_given": 8,
 			"attack":{
