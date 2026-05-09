@@ -10,7 +10,7 @@ var settings = {
 	"demo": true,
 	"game": {
 		"init_level": "level",
-		"player_goal": 608,
+		"player_goal": 605,
 		"enemy_goal": 30,
 		"player_max_life": 15,
 		"player_warning_life": 3,
@@ -32,7 +32,7 @@ var settings = {
 			"time": 0,
 		},
 		"initial_cards": {
-			"granadero": 5,
+			"granadero": 4,
 			"moreno": 1,
 			"arribeno": 1,
 			"correntino": 1,
@@ -72,8 +72,8 @@ var settings = {
 			"max_speed": 150,
 			"attack":{
 				"bullet": {
-					"speed": 400,
-					"duration": 1,
+					"speed": 450,
+					"duration": 0.80,
 				},
 				"cooldown": 1,
 				"min_damage_given": 2,
@@ -82,7 +82,7 @@ var settings = {
 			"agua_hirviendo": {
 				"min_damage_given": 2,
 				"max_damage_given": 2,
-				"cooldown": 5,
+				"cooldown": 4,
 				"time_reduce_step": 2,
 				"bullet": {
 					"speed":400,
@@ -117,8 +117,8 @@ var settings = {
 			"max_speed": 140,
 			"attack":{
 				"bullet": {
-					"speed": 400,
-					"duration": 1.0,
+					"speed": 450,
+					"duration": 0.80,
 				},
 				"cooldown": 1,
 				"min_damage_given": 2,
@@ -138,7 +138,7 @@ var settings = {
 						"particle": "explosion"
 					}
 				},
-				"cooldown": 4,
+				"cooldown": 3,
 				"min_damage_given": 2,
 				"max_damage_given": 2
 			},
@@ -156,17 +156,17 @@ var settings = {
 		"pardo": {
 			"life": 2,
 			"max_speed": 140,
-			"speed_increase": 60,
+			"speed_increase": 50,
 		},
 		"arribeno": {
-			"life": 8,
+			"life": 5,
 			"max_speed": 140,
 			"attack":{
 				"bullet": {
 					"speed": 200,
 					"duration": 1.0,
 				},
-				"cooldown": 3,
+				"cooldown": 2,
 				"min_damage_given": 2,
 				"max_damage_given": 2
 			},
@@ -176,17 +176,17 @@ var settings = {
 			"max_speed": 140,
 			"attack":{
 				"bullet": {
-					"speed": 600,
+					"speed": 650,
 					"duration": 2.0,
 				},
 				"cooldown": 3,
-				"min_damage_given": 4,
-				"max_damage_given": 4
+				"min_damage_given": 5,
+				"max_damage_given": 5
 			},
 		},
 		"manuela_pedraza": {
 			"life": 999999,
-			"max_speed": 150,
+			"max_speed": 180,
 			"death_time": 15.0, 
 			"attack":{
 				"cooldown": 0.15,
@@ -212,10 +212,10 @@ var settings = {
 			"max_speed": 140,
 			"attack":{
 				"bullet": {
-					"speed": 400,
-					"duration": 1.5,
+					"speed": 350,
+					"duration": 1,
 				},
-				"cooldown": 2.0,
+				"cooldown": 1.0,
 				"min_damage_given": 1,
 				"max_damage_given": 1
 			},
@@ -233,8 +233,8 @@ var settings = {
 	},
 	"ingleses": {
 		"soldado": {
-			"life": 4,
-			"max_speed": 50,
+			"life": 2,
+			"max_speed": 40,
 			"experience_given": 2,
 			"attack":{
 				"bullet": {
@@ -252,7 +252,7 @@ var settings = {
 		},
 		"royal_marine": {
 			"life": 5,
-			"max_speed": 60,
+			"max_speed": 55,
 			"experience_given": 6,
 			"attack":{
 				"bullet": {
@@ -267,7 +267,7 @@ var settings = {
 		},
 		"highlander": {
 			"life": 8,
-			"max_speed": 40,
+			"max_speed": 30,
 			"experience_given": 4,
 			"scale_probability": 100,
 			"attack":{
@@ -287,11 +287,11 @@ var settings = {
 		"green_soldier": {
 			"life": 2,
 			"max_speed": 90,
-			"experience_given": 4,
+			"experience_given": 2,
 			"attack":{
 				"bullet": {
 					"speed": 300,
-					"duration": 0.5,
+					"duration": 0.01,
 				},
 				"cooldown": 4,
 				"probability": 20,

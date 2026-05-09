@@ -1,9 +1,9 @@
 extends Node;
 var iMaxTime = 600
-var iMaxStarters = 30
+var iMaxStarters = 60
 var iMaxFirstWave = 180
 var iMaxSecondWave = 360
-var iMaxThirdWave = 540
+var iMaxThirdWave = 480
 
 # Posibles unidades
 # ingles
@@ -12,14 +12,14 @@ var iMaxThirdWave = 540
 # english_cavalry
 # royal_marine
 # zapador
-# abanderado (pendiente)
+# flagger
 # cannon
 
 
 var aStarters = [
 	{
 		"duration": 10,
-		"max_alive": 1,
+		"max_alive": 2,
 		"name": "La banderola",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
@@ -32,7 +32,7 @@ var aStarters = [
 	},
 	{
 		"duration": 10,
-		"max_alive": 5,
+		"max_alive": 10,
 		"name": "La avanzada",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
@@ -45,7 +45,7 @@ var aStarters = [
 	},
 	{
 		"duration": 15,
-		"max_alive": 10,
+		"max_alive": 12,
 		"name": "El flanqueo",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 2, "probability": 40},
@@ -60,7 +60,7 @@ var aStarters = [
 var aFirstWaves = [
 	{
 		"duration": 60,
-		"max_alive": 20,
+		"max_alive": 25,
 		"name": "El ataque",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
@@ -73,7 +73,7 @@ var aFirstWaves = [
 	},
 	{
 		"duration": 60,
-		"max_alive": 10,
+		"max_alive": 12,
 		"name": "El ataque veloz",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
@@ -127,7 +127,7 @@ var aFirstWaves = [
 var aSecondWaves = [
 	{
 		"duration": 60,
-		"max_alive": 20,
+		"max_alive": 50,
 		"name": "El ataque",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
@@ -140,7 +140,7 @@ var aSecondWaves = [
 	},
 	{
 		"duration": 60,
-		"max_alive": 20,
+		"max_alive": 50,
 		"name": "El ataque veloz",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
@@ -153,7 +153,7 @@ var aSecondWaves = [
 	},
 	{
 		"duration": 60,
-		"max_alive": 20,
+		"max_alive": 40,
 		"name": "El ataque duro",
 		"add_descanso": true,
 		"izquierda_inferior": {"unit_type": "ingles", "seconds": 12, "probability": 0},
@@ -434,10 +434,10 @@ var aDescansos = [
 ]
 
 func _init():
-	iMaxStarters = 30
+	iMaxStarters = 60
 	iMaxFirstWave = 180
 	iMaxSecondWave = 360
-	iMaxThirdWave = 540
+	iMaxThirdWave = 480
 
 func get_strategy_card_descanso(iTime):
 	var oDescanso = get_one_from(aDescansos)
