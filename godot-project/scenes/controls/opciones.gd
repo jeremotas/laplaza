@@ -1,6 +1,6 @@
 extends CanvasLayer
 var bMazoTest = false
-var aLanguages = ["es", "en"]
+var aLanguages = ["es", "en", "hi"]
 var iSelectedLanguageIndex = -1
 
 func _ready():

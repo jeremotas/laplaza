@@ -1,112 +1,112 @@
-String,es,en,fr,jp
-_LANGUAGE_NAME_,Español,English,,
-_COMENZAR_,Jugar demo,Start,,
-_EL_MAZO_,Mazo,Deck,,
-_ABRIR_SOBRES_,Abrir sobres (%s),Open booster packs (%s),,
-_SIN_SOBRES_,Sin sobres,No booster packs,,
-_OPCIONES_,Opciones,Options,,
-_CREDITOS_,Créditos,Credits,,
-_SALIR_,Salir,Exit,,
-_CONTINUAR_,Continuar,Continue,,
-_SONIDO_GENERAL_,General,Master,,
-_SONIDO_MUSICA_,Música,Music,,
-_SONIDO_EFECTOS_,Efectos,FX,,
-_DESTRUIR_MAZO_,Destruir Mazo,Destroy deck,,
-_SEGURO_DESTRUIR_MAZO_,¿Seguro querés destruir\nel mazo completo\ny reiniciar el progreso?,¿Are you sure \nyou want to destroy the deck \nand reset your progress?,,
-_MAZO_DE_TESTING_,Mazo de testing,Test deck,,
-_MENU_PRINCIPAL_,Menú principal,Main menu,,
-_ABRIENDO_SOBRE_,Abriendo,Opening,,
-_EL_SOBRE_,El sobrecito,Booster pack,,
-_AGREGAR_AL_MAZO_,Agregar al mazo,Add to deck,,
-_DESCARTAR_CARTA_NUEVA_,Descartar,Drop card,,
-_PRE_TITLE_1_,Hace mucho mucho tiempo...\nEn una galaxia muy muy lejana...\n\n¡Ah no!\n¡Pará!\nEse es otro imperio malvado...\n\nBuenos Aires\nAño 1807\n\nLos ingleses atacan por última vez.\nLiniers y los patricios\ndefienden la plaza.,"A long time ago...\nIn a galaxy far, far away...\nWait..\nThat's another evil empire.\n\nBuenos Aires, 1807\n\nEnglish army attacks for the last time.\nLiniers and the Patricios\nDefend the square",,
-_PRE_TITLE_2_,Y pensar que años después\nTodos bailariamos al ritmo de...\n\nEL MENEAITO\n\n¡Ahí!\n¡Ahí!\n¡Ahí!,There's a funny joke here\n  in the Spanish version of this game.\n You wouldn't get it.,,
-_PRE_TITLE_3_,"Bueno...\nAcá vamos de nuevo.\nVos, Liniers y la plaza.\n\n¡¡Ya detén a esos malditos ingleses!!","Well...\nHere we go again.\nYou, Liniers, and the Plaza\n\n Just stop those damned Brits!",,
-_PRE_TITLE_4_,Ehm...\n\nEsto se va a poner feo.,Ehm...\n\nThis is gonna get ugly.,,
-_PRE_TITLE_5_,A ver si en esta run\nte esforzas un poquito más\nque te faltaba un toque...,Let's see\n if you make an effort\n this time.,,
-_PRE_TITLE_6_,Mirá que este juego no es difícil.\nAguantá 10 minutos\nsin que entren los ingleses.\n\n¿Ta?,This shouldn't be so hard.\nResist for 10 minutes\nwithout the Brits getting it.\n\nGet it?,,
-_PRE_TITLE_7_,¿Ya probaste con un yogur?,,,
-_PRE_TITLE_8_,"Si soltás el celu un rato,\nlo ganas al toque roque papurri!",Still not winning?\n I blame phones.,,
-_PRE_TITLE_9_,Y todo el mundo haciendo..\n¡Palmas!\n¡Palmas!\n¡Palmas!,,,
-_PRE_TITLE_10_,¿Qué vamos a hacer?\nA gederr...\n\nDigo...\nDefender la plaza.\nDefender la plaza.¿SI?,,,
-_PRE_TITLE_11_,"Dos de jamon,\nuna de humita,\ndos de humita,\nuna de jamon..",,,
-_PRE_TITLE_12_,Che patriciooooos....\nLa ***** de su madre...\nA ver si ponen huevo\nQue no matan a nadieeeee!!!,,,
-_PATRICIO_,Patricio,Patricio,,
-_PATRICIO_LEYENDA_,"El bien ponderado patricio que ataca con precisión al enemigo.\nTarda en recargar, sino seria un escándalo.","Your basic infantry who strikes with precision.\nSlow to load, otherwise he'd be broken.",,
-_CORRENTINO_,Correntino,Correntino,,
-_CORRENTINO_LEYENDA_,"Tira de lejos cual cazador de ñandú.\nCamina lento, pero si pega... pega.\nEso si, le pegan una y adiós.","Sharpshooter from the northeast/n. Walks slowly, hits hard. /n Glass cannon, tho.",,
-_ARRIBENO_,Arribeño,Arribeño,,
-_ARRIBENO_LEYENDA_,¿Tenés escopeta? \nTengo escopeta. \nAgarrate fuerte que los de Arriba van con perdigones de plomo.,¿Have gun? Will travel. /nhe Arribeño will mow enemies down/n with his blunderbuss.,,
-_MORENO_,Moreno,Moreno,,
-_MORENO_LEYENDA_,Fiel y aguantador como pocos. \nLanza granadas hacia donde diga el general. \n ,"¿Surprised? Strong and brave, \n the Moreno will thow grenades\n  at whatever the General\n  is pointing to.\n ",,
-_CEBADOR_,Cebador,Cebador,,
-_CEBADOR_LEYENDA_,"No es el aguatero, es el cebador de mates. \nTe mantiene con vida en esos momentos. \nAmargo, el mate. Bueno, el tambien.","He brews mate, /n keeping the General alive,/n in tough times. /n Strong and bitter.",,
-_MIGNON_,Miñon,Miñón,,
-_MIGNON_LEYENDA_,"No es la palomita de Ginobili, pero... \nCon este doblete les pasamos factura!",,,
-_PARDO_,Pardo,Pardo,,
-_PARDO_LEYENDA_,Al compás del tamboril! \nUna dosis de adrenalina permanente.,,,
-_MATE_,Matecito,Mate,,
-_MATE_LEYENDA_,"El general se toma unos verdes y recupera la vida. \nEso si, me dijeron que lo toma amargo.",The general sips his green brew and recovers life./n Best drunk bitter,,
-_HUSARES_INFERNALES_,Husares infernales,Infernal Hussars,,
-_HUSARES_INFERNALES_LEYENDA_,Estos jinetes desataran un infierno de balas sobre los ingleses. \n(¡Ojo! Pasan una vez y chau pinola),"They will unleash Hell on Earth/n Beware, their charge is a one and done.",,
-_MANUELA_,Manuela,Manuela,,
-_MANUELA_LEYENDA_,A sablazos morirán los ingleses \n¡Lo que pueden las mujeres despechadas!,They really shouldn't have/n messed with her husband,,
-_SUDESTADA_,Sudestada,Sudestada,,
-_SUDESTADA_LEYENDA_,"Viento del sur, lluvia permanente.\nLentitos los ingleses en el barro...",Strong wind from the south. /n Permanent rain /n The English will feel right at home /n in the mud.,,
-_TEDEUM_,Te Deum de la Catedral,Cathedral Te Deum,,
-_TEDEUM_LEYENDA_,Vamos a decir que la iglesia nos dio una mano... \nAh no! Eso era pelusa.,We pray to the heavens /n to ask for a Hand of God.,,
-_DEFENDA_DE_OBLIGADO_,Defensa de Obligado,Defense of Obligado,,
-_DEFENDA_DE_OBLIGADO_LEYENDA_,Sin cadenas sobre los pies... \nPero si protegiendo la plaza!,No chains around our necks.../n but protecting the Plaza instead!,,
-_PATRICIO_SOLARI_,Patricio Solari,Patricio Solari,,
-_PATRICIO_SOLARI_LEYENDA_,Se viene el pogo mas grande del mundo! \nY los ingleses no van a entender que les paso.,Biggest mosh in the world \nAnd the Brits won't know what hit them.,,
-_PUEBLO_EN_ARMAS_,El pueblo en armas,A people in arms,,
-_PUEBLO_EN_ARMAS_LEYENDA_,Y un buen dia las cacerolas del pueblo entraron en vigor sobre Buenos Aires... \n (¿Dónde lo vi?),People's pots and pans thundered for justice... \n (Where did I see this elsewhere?) ,,
-_BARRILETE_COSMICO_,Barrilete cosmico,Cosmic Kite,,
-_BARRILETE_COSMICO_LEYENDA_,"El general es poseído temporalmente por Pelusa. \n Si hay ingleses, él los gambetea y ellos caen al piso. \n (La enfedrina queda en la sangre del general)",,,
-_CARTAS_,Cartas,Cards,,
-_AVISO_CARTAS_MINIMAS_,Debe haber mínimo 20 cartas para destruir una.,There must be at least 20 cards in order to destroy one.,,
-_VICTORIA_,¡VICTORIA!,VICTORY!,,
-_SEGUINOS_EN_STEAM_,Seguinos en Steam,Follow us on Steam,,
-_REINICIAR_,Volver a jugar,Replay,,
-_SEGUINOS_EN_STEAM_LEYENDA_,Sos el defensor que la patria necesita.  Agregá La Furia de Las Trenzas a tu lista de deseos en Steam para seguir masacrando ingleses. El Diego lo haría.\nBuscanos en Steam o scanneá este QR con tu celular.,,,
-_GANASTE_SOBRE_,¡!!Ganaste un \nsobrecito!!,You've erned/n a Booster Pack!,,
-_CONQUERED_,CONQUERED,CONQUERED,,
-_GAMEOVER_SEGUINOS_EN_STEAM_LEYENDA_,¿Vas a dejar que esto quede así? Agregá La Furia de Las Trenzas a tu lista de deseos en Steam para vengarte de los ingleses. \nEl Diego lo haría.\nBuscanos en Steam o scanneá este QR con tu celular.,,,
-_REINTENTAR_,Reintentar,Retry,,
-_GAMEOVER_GANASTE_SOBRE_,Igual te damos \nun sobrecito...,You still get \a booster pack.,,
-_SURUBI_MENSAJE_INICIAL_1_,Ahí vienen!! __ Corran por sus vidas!!! PANIC,The British are coming!! __ Run for your lives!!! PANIC,,
-_SURUBI_MENSAJE_INICIAL_2_,Estos vienen por el té? __ TE voy a dar!!! PANIC,,,
-_SURUBI_MENSAJE_INICIAL_3_,Invasión? __ FMI __ TODO LO MISMO PANIC __ Seguimos resistiendo.,,,
-_SURUBI_MENSAJE_INICIAL_4_,Elección o relección? __ para mí es la misma... __ #@#@$#@#@ PANIC,,,
-_SURUBI_TEDEUM_1_,Ya lo dijo Francisco... __ HAGAN LÍO! PANIC,,,
-_SURUBI_TEDEUM_2_,"Ay, diosito santo... __ bajamela del cielo.",,,
-_SURUBI_TEDEUM_3_,"Arranca el genio... __ Ah, no... ese era otro. __ Ehm...__ Sí, DIOS, AYUDAAAA! PANIC",,,
-_SURUBI_SUDESTADA_1_,"Miau, miau, miau... __ Miau, miaaaaaauuu __ Llueve sobre mojado! PANIC",,,
-_SURUBI_SUDESTADA_2_,MABEEEEELLL PANIC __ Hay que entrar la ropa!!,,,
-_SURUBI_SUDESTADA_3_,Se sigue inundando ¿No? __ Odio los gatos y gatitos. PANIC,,,
-_SURUBI_PATRICIO_SOLARI_1_,No nos daba la guita __ para poner ESA canción __ Aguante lo redo! PANIC,We cannot afford __ the song we want to __ so this is TUPAC! PANIC,,
-_SURUBI_PATRICIO_SOLARI_2_,O pogo mais grande __ DU MUNDU __ Bolinho da ricota! PANIC,Indio Solari Olavarria 2017__ just Google it.PANIC,,
-_SURUBI_PATRICIO_SOLARI_3_,JAJAJA__ JEJEJE__ piiiiiiii PANIC__ JOJOJO__JUJUJU,You cannot be serious!,,
-_SURUBI_TUTORIAL_1_,¡Defende esa bandera! __ Liniers dispara solo... __ ¡Movete!,Protect that flag! __ Liniers shoots by himself... __ Get moving!,,
-_SUBISTE_NIVEL_,¡Subiste de nivel!,Level up!,,
-_QUE_JUGAS_,¿Qué carta jugás che?,Which card do you pick?,,
-_PAUSA_,Pausa,Pause,,
-_IDIOMA_,Idioma,Language,,
-_ENTER_PARA_SALTEAR_,Enter para continuar...,Press enter to continue...,,
-_GANASTE_SOBRE_DEMO_,"Ganaste cartas, pero esto es una demo (muack).","You win cards, but this is a demo.",,
-_EL_ASALTO_ESCARLATA_,El asalto escarlata,Scarlet Johanson,,
-_LA_MARCHA_DE_LOS_INMORTALES_,La Marcha de los Inmortales,The march of the inmortals,,
-_VIENTO_OESTE_,Viento Oeste,West wind,,
-_VIENTO_ESTE_,Viento Este,This wind,,
-_ALTA_PROBABILIDAD_DE_LLUVIAS_,Alta probabilidad de lluvias,It's raining men...,,
-_LOS_INMORTALES_CONTRAATACAN_,Los Inmortales Contraatacan,Inmortals strikes back,,
-_BANDERA_DE_PIRATA_,Bandera de Pirata,Our flag,,
-_PASO_DOBLE_,Paso Doble,Double steps,,
-_EL_IMPERIO_PIRATA_,El Imperio Pirata,The pirate imperium,,
-_ATAQUE_CARMESI_,Ataque Carmesí,Red red attack,,
-_AVANCE_DE_LA_CABALLERIA_,Avance de la Caballería,Front horses,,
-_LA_BANDEROLA_,La banderola,The bad flag,,
-_EL_ATAQUE_DE_LA_CABALLERIA_,El Ataque de la Caballería,Cavalry awakes,,
-_MUCHOS_MARINES_DE_LOS_MANDARINES_,Muchos Marines de los mandarines,Lots of marines of mandarins,,
-_ATAQUE_FINAL_,Ataque Final,Final attack,,
-_TODO_O_NADA_,Todo o Nada,All in,,
+﻿String,es,en,fr,jp,hi
+_LANGUAGE_NAME_,Español,English,,,हिन्दी
+_COMENZAR_,Jugar demo,Start,,,डेमो खेलें
+_EL_MAZO_,Mazo,Deck,,,डेक
+_ABRIR_SOBRES_,Abrir sobres (%s),Open booster packs (%s),,,बूस्टर पैक खोलें (%s)
+_SIN_SOBRES_,Sin sobres,No booster packs,,,कोई बूस्टर पैक नहीं
+_OPCIONES_,Opciones,Options,,,विकल्प
+_CREDITOS_,Créditos,Credits,,,क्रेडिट्स
+_SALIR_,Salir,Exit,,,बाहर निकलें
+_CONTINUAR_,Continuar,Continue,,,जारी रखें
+_SONIDO_GENERAL_,General,Master,,,मुख्य ध्वनि
+_SONIDO_MUSICA_,Música,Music,,,संगीत
+_SONIDO_EFECTOS_,Efectos,SFX,,,ध्वनि प्रभाव
+_DESTRUIR_MAZO_,Destruir Mazo,Destroy deck,,,डेक नष्ट करें
+_SEGURO_DESTRUIR_MAZO_,¿Seguro querés destruir\nel mazo completo\ny reiniciar el progreso?,¿Are you sure \nyou want to destroy the deck \nand reset your progress?,,,क्या आप सच में\nपूरा डेक नष्ट करना\nऔर अपनी प्रगति रीसेट करना चाहते हैं?
+_MAZO_DE_TESTING_,Mazo de testing,Testing deck,,,टेस्टिंग डेक
+_MENU_PRINCIPAL_,Menú principal,Main menu,,,मुख्य मेनू
+_ABRIENDO_SOBRE_,Abriendo,Opening,,,खोला जा रहा है
+_EL_SOBRE_,El sobrecito,Booster pack,,,बूस्टर पैक
+_AGREGAR_AL_MAZO_,Agregar al mazo,Add to deck,,,डेक में जोड़ें
+_DESCARTAR_CARTA_NUEVA_,Descartar,Drop card,,,कार्ड छोड़ें
+_PRE_TITLE_1_,Hace mucho mucho tiempo...\nEn una galaxia muy muy lejana...\n\n¡Ah no! ¡Pará!\nEse es otro imperio malvado...\n\nBuenos Aires\nAño 1807\n\nLos ingleses atacan por última vez.\nLiniers y los patricios\ndefienden la plaza.,"A long time ago...\nIn a galaxy far, far away...\nWait..\nThat's another evil empire!\n\nBuenos Aires, 1807\n\nEnglish army attacks for the last time.\nLiniers and the Patricios\nDefend the square",,,"बहुत समय पहले...\nएक बहुत, बहुत दूर की आकाशगंगा में...\nरुको...\nवह तो दूसरा दुष्ट साम्राज्य था!\n\nब्यूनस आयर्स, 1807\n\nअंग्रेज़ी सेना आखिरी बार हमला करती है।\nलिनियर्स और पैट्रीसियोस\nचौक की रक्षा करते हैं"
+_PRE_TITLE_2_,Y pensar que años después\nTodos bailariamos al ritmo de...\n\nEL MENEAITO\n\n¡Ahí!\n¡Ahí!\n¡Ahí!,There's a funny joke here\n  in the Spanish version of this game.\n You wouldn't get it.,,,यहाँ इस गेम के स्पैनिश संस्करण में\nएक मजेदार चुटकुला है।\nतुम्हें समझ नहीं आएगा।
+_PRE_TITLE_3_,"Bueno...\nAcá vamos de nuevo.\nVos, Liniers y la plaza.\n\n¡¡Ya detén a esos malditos ingleses!!","Well...\nHere we go again.\nYou, Liniers, and the Plaza\n\n Just stop those damned Brits!",,,"अच्छा...\nफिर से शुरू करते हैं।\nतुम, लिनियर्स और प्लाज़ा\n\nबस उन कमबख़्त अंग्रेज़ों को रोक दो!"
+_PRE_TITLE_4_,Ehm...\n\nEsto se va a poner feo.,Ehm...\n\nThis is gonna get ugly.,,,अह्म...\n\nअब मामला बिगड़ने वाला है।
+_PRE_TITLE_5_,A ver si en esta run\nte esforzas un poquito más\nque te faltaba un toque...,Let's see\n if you make an effort\n this time.,,,देखते हैं\nइस बार तुम थोड़ी\nमेहनत करते हो या नहीं।
+_PRE_TITLE_6_,Mirá que este juego no es difícil.\nAguantá 10 minutos\nsin que entren los ingleses.\n\n¿Ta?,This shouldn't be so hard.\nResist for 10 minutes\nwithout the Brits getting it.\n\nGot it?,,,यह इतना मुश्किल नहीं होना चाहिए।\n10 मिनट तक डटे रहो\nताकि ब्रिट्स अंदर न घुसें।\n\nसमझे?
+_PRE_TITLE_7_,"Habia un truquito para ganar.\nAlgo de unos tiros...\nQue se yo, tengo la cabeza en Marte",There's gotta be a way to cheat\nSomething about gunning Mars\nIDK Frigging Annoying,,,"जीतने का कोई न कोई चीट तरीका होगा।\nकुछ गोलियों वाली बात...\nपता नहीं, मेरा दिमाग मंगल पर है।"
+_PRE_TITLE_8_,"Si soltás el celu un rato,\nlo ganas al toque roque papurri!",Still not winning?\n Just get off those damned phones!,,,अभी भी नहीं जीत रहे?\nबस उन धत् फोन से थोड़ा दूर हो जाओ!
+_PRE_TITLE_9_,Y todo el mundo haciendo..\n¡Palmas!\n¡Palmas!\n¡Palmas!,If ye had a chance ta shoot the english\nWoodja?,,,अगर तुम्हें अंग्रेज़ों पर गोली चलाने का मौका मिले\nतो चलाओगे?
+_PRE_TITLE_10_,¿Qué vamos a hacer?\nA gederr...\n\nDigo...\nDefender la plaza.\nDefender la plaza.¿SI?,We don't do tea and buiscuits\nShow them the strength of alfajores and mate!,,,हम चाय और बिस्किट नहीं खाते।\nउन्हें अल्फाहोरेस और माते की ताकत दिखाओ!
+_PRE_TITLE_11_,"Dos de jamon,\nuna de humita,\ndos de humita,\nuna de jamon..",Plenty of big irons here\nUse them well\nKick these invaders out from our town!,,,यहाँ बहुत सारी बड़ी बंदूकें हैं।\nइनका अच्छी तरह इस्तेमाल करो।\nइन आक्रमणकारियों को हमारे शहर से निकाल बाहर करो!
+_PRE_TITLE_12_,Che patriciooooos....\nLa ***** de su madre...\nA ver si ponen huevo\nQue no matan a nadieeeee!!!,D-fence! D-fence! D-fence!,,,र-क्षा! र-क्षा! र-क्षा!
+_PATRICIO_,Patricio,Patricio,,,पैट्रीसियो
+_PATRICIO_LEYENDA_,"El bien ponderado patricio que ataca con precisión al enemigo.\nTarda en recargar, sino seria un escándalo.","Your basic infantry who strikes with precision.\nSlow to load, otherwise he'd be broken.",,,"तुम्हारा बुनियादी पैदल सैनिक, जो सटीक वार करता है।\nरीलोड करने में धीमा है, वरना बहुत ज़्यादा ताकतवर हो जाता।"
+_CORRENTINO_,Correntino,Correntino,,,कोर्रेंटीनो
+_CORRENTINO_LEYENDA_,"Tira de lejos cual cazador de ñandú.\nCamina lento, pero si pega... pega.\nEso si, le pegan una y adiós.","Sharpshooter from the northeast.\nWalks slowly, hits hard.\nGlass cannon, though.",,,"उत्तर-पूर्व का निशानेबाज़।\nधीरे चलता है, जोर से मारता है।\nहाँ, काँच की तोप जैसा है।"
+_ARRIBENO_,Arribeño,Arribeño,,,अर्रीबेञो
+_ARRIBENO_LEYENDA_,¿Tenés escopeta? \nTengo escopeta. \nAgarrate fuerte que los de Arriba van con perdigones de plomo.,¿Have gun? Will travel. \nThe Arribeño will mow enemies down\n with his blunderbuss.,,,बंदूक है? तो सफर है। \nअर्रीबेञो अपनी ब्लंडरबस से\nदुश्मनों को साफ कर देगा।
+_MORENO_,Moreno,Moreno,,,मोरेनो
+_MORENO_LEYENDA_,Fiel y aguantador como pocos. \nLanza granadas hacia donde diga el general. \n ,"¿Surprised? Tough and brave, \nthe Moreno will thow grenades\nat whatever the General\nis pointing to.",,,"हैरान हो? मजबूत और बहादुर, \nमोरेनो वहीं ग्रेनेड फेंकेगा\nजहाँ जनरल इशारा करेगा।"
+_CEBADOR_,Cebador,Cebador,,,सेबादोर
+_CEBADOR_LEYENDA_,"No es el aguatero, es el cebador de mates. \nTe mantiene con vida en esos momentos. \nAmargo, el mate. Bueno, el tambien.","He brews mate, \nkeeping the General alive,\nin tough times. \nStrong and bitter.",,,"वह माते बनाता है, \nमुश्किल घड़ियों में\nजनरल को जिंदा रखता है। \nकड़क और कड़वा।"
+_MIGNON_,Miñon,Miñón,,,मिन्यों
+_MIGNON_LEYENDA_,"No es la palomita de Ginobili, pero... \nCon este doblete les pasamos factura!",Double up on the shoot 'em up!\nNot the best at taking hits\nbut it's a 2x1 sale!,,,"शूट-एम-अप को डबल करो!\nमार खाने में सबसे अच्छा नहीं,\nलेकिन यह 2x1 ऑफर है!"
+_PARDO_,Pardo,Pardo,,,पार्दो
+_PARDO_LEYENDA_,Al compás del tamboril! \nUna dosis de adrenalina permanente.,Keep the rythim up! \nMakes everyone walk\nin double time.,,,लय बनाए रखो! \nसबको दोगुनी रफ्तार से\nचलने पर मजबूर करता है।
+_MATE_,Matecito,Mate,,,माते
+_MATE_LEYENDA_,"El general se toma unos verdes y recupera la vida. \nEso si, me dijeron que lo toma amargo.",The general sips his green brew and recovers life.\nBitter is better.,,,जनरल अपनी हरी चुस्की लेता है और जीवन वापस पाता है।\nकड़वा ही बेहतर है।
+_HUSARES_INFERNALES_,Husares infernales,Infernal Hussars,,,नारकीय हुसार
+_HUSARES_INFERNALES_LEYENDA_,Estos jinetes desataran un infierno de balas sobre los ingleses. \n(¡Ojo! Pasan una vez y chau pinola),"They will unleash Hell on Earth\n Careful, their charge is a one and done.",,,"वे धरती पर नर्क बरसा देंगे।\nसावधान, उनकी चार्ज बस एक बार की है।"
+_MANUELA_,Manuela,Manuela,,,मैनुएला
+_MANUELA_LEYENDA_,A sablazos morirán los ingleses \n¡Lo que pueden las mujeres despechadas!,They really shouldn't have\n messed with her husband,,,उन्हें सच में\nउसके पति से पंगा नहीं लेना चाहिए था।
+_SUDESTADA_,Sudestada,Sudestada,,,सुदेस्तादा
+_SUDESTADA_LEYENDA_,"Viento del sur, lluvia constante.\nLentitos los ingleses en el barro...",Strong wind from the south. \nConstant rain \nThe English should feel right at home \nstuck in the mud.,,,दक्षिण से तेज हवा। \nलगातार बारिश। \nकीचड़ में फँसे अंग्रेज़ों को\nघर जैसा लगेगा।
+_TEDEUM_,Te Deum de la Catedral,Cathedral Te Deum,,,कैथेड्रल ते देउम
+_TEDEUM_LEYENDA_,Vamos a decir que la iglesia nos dio una mano... \n¡Ah no! ¡Eso fue el pelusa!,We pray to the heavens \n to ask for a Hand of God.,,,हम आसमान से प्रार्थना करते हैं\nताकि भगवान का हाथ मदद करे।
+_DEFENDA_DE_OBLIGADO_,Defensa de Obligado,Defense of Obligado,,,ओब्लिगादो की रक्षा
+_DEFENDA_DE_OBLIGADO_LEYENDA_,Sin cadenas sobre los pies... \nPero si protegiendo la plaza!,No chains around our necks...\nbut protecting the Plaza instead!,,,हमारी गर्दन में जंजीरें नहीं...\nबल्कि प्लाज़ा की रक्षा!
+_PATRICIO_SOLARI_,Patricio Solari,Patricio Solari,,,पैट्रीसियो सोलारी
+_PATRICIO_SOLARI_LEYENDA_,Se viene el pogo mas grande del mundo! \nY los ingleses no van a entender que les paso.,Biggest mosh pit in the world \nAnd the Brits won't know what hit them.,,,दुनिया का सबसे बड़ा मॉश पिट।\nऔर ब्रिट्स को पता भी नहीं चलेगा कि क्या हुआ।
+_PUEBLO_EN_ARMAS_,El pueblo en armas,A people in arms,,,हथियारबंद जनता
+_PUEBLO_EN_ARMAS_LEYENDA_,Y un buen dia las cacerolas del pueblo entraron en vigor sobre Buenos Aires... ,People's pots and pans thundered for justice!,,,न्याय के लिए जनता के बर्तन और कड़ाहियाँ गरज उठीं!
+_BARRILETE_COSMICO_,Barrilete cosmico,Cosmic Kite,,,कॉस्मिक काइट
+_BARRILETE_COSMICO_LEYENDA_,"El general es poseído temporalmente por Pelusa. \n Si hay ingleses, él los gambetea y ellos caen al piso.",Be possesed by the person that would humilliate the english on the pitch \nDribble around em till their ankles break!,,,उस व्यक्ति की आत्मा से घिर जाओ\nजो मैदान पर अंग्रेज़ों को शर्मिंदा करता।\nउन्हें ड्रिबल करके गिरा दो!
+_CARTAS_,Cartas,Cards,,,कार्ड
+_AVISO_CARTAS_MINIMAS_,Debe haber mínimo 20 cartas para destruir una.,There must be at least 20 cards in order to destroy one.,,,एक कार्ड नष्ट करने के लिए कम से कम 20 कार्ड होने चाहिए।
+_VICTORIA_,¡VICTORIA!,VICTORY!,,,विजय!
+_SEGUINOS_EN_STEAM_,Seguinos en Steam,Follow us on Steam,,,Steam पर हमें फ़ॉलो करें
+_REINICIAR_,Volver a jugar,Replay,,,फिर से खेलें
+_SEGUINOS_EN_STEAM_LEYENDA_,Sos el defensor que la patria necesita.  Agregá La Furia de Las Trenzas a tu lista de deseos en Steam para seguir masacrando ingleses. El Diego lo haría.\nBuscanos en Steam o scanneá este QR con tu celular.,You're the defender this nation needs. Add La Furia de las Trenzas to your wishlist on Steam to keep slaughtering the british. El Diego would do it. \nLook us up on Steam or scan this QR code ,,,तुम वही रक्षक हो जिसकी इस राष्ट्र को जरूरत है। अंग्रेज़ों का संहार जारी रखने के लिए La Furia de las Trenzas को अपनी Steam विशलिस्ट में जोड़ो। एल डिएगो ऐसा करता।\nहमें Steam पर खोजो या यह QR कोड स्कैन करो।
+_GANASTE_SOBRE_,¡!!Ganaste un \nsobrecito!!,You've earned\na Booster Pack!,,,तुमने\nबूस्टर पैक जीता!
+_CONQUERED_,CONQUERED,CONQUERED \n(brittish accent),,,जीत लिया गया\n(ब्रिटिश लहजे में)
+_GAMEOVER_SEGUINOS_EN_STEAM_LEYENDA_,¿Vas a dejar que esto quede así? Agregá La Furia de Las Trenzas a tu lista de deseos en Steam para vengarte de los ingleses. El Diego lo haría.\nBuscanos en Steam o scanneá este QR con tu celular.,You're gonna leave it as this? Add La Furia de las Trenzas to your wishlist on Steam to get revenge on the british. El Diego would do it. \n Look us up on Steam or scan this QR code ,,,क्या तुम इसे ऐसे ही छोड़ दोगे? अंग्रेज़ों से बदला लेने के लिए La Furia de las Trenzas को अपनी Steam विशलिस्ट में जोड़ो। एल डिएगो ऐसा करता।\nहमें Steam पर खोजो या यह QR कोड स्कैन करो।
+_REINTENTAR_,Reintentar,Retry,,,फिर कोशिश करें
+_GAMEOVER_GANASTE_SOBRE_,Igual te damos \nun sobrecito...,You still get \na booster pack.,,,फिर भी तुम्हें\nएक बूस्टर पैक मिलता है।
+_SURUBI_MENSAJE_INICIAL_1_,Ahí vienen!! __ Corran por sus vidas!!! PANIC,The British are coming!! __ The British are coming!!! PANIC,,,ब्रिटिश आ रहे हैं!! __ ब्रिटिश आ रहे हैं!!! PANIC
+_SURUBI_MENSAJE_INICIAL_2_,Estos vienen por el té? __ TE voy a dar!!! PANIC,Do we have any tea left?__ Throw it into the river!!! PANIC,,,क्या हमारे पास चाय बची है?__ उसे नदी में फेंक दो!!! PANIC
+_SURUBI_MENSAJE_INICIAL_3_,Invasión? __ FMI __ TODO LO MISMO PANIC,Invasion?__IMF?__It's all the same!!! PANIC,,,आक्रमण?__IMF?__सब एक ही बात है!!! PANIC
+_SURUBI_MENSAJE_INICIAL_4_,¿Qué hacen acá?__ Yankilandia queda pal otro lado!!! PANIC,Why are they even here? /nAustralia is THAT way!!! PANIC,,,ये यहाँ कर क्या रहे हैं? /nऑस्ट्रेलिया तो उस तरफ है!!! PANIC
+_SURUBI_TEDEUM_1_,Ya lo dijo Francisco... __ HAGAN LÍO! PANIC,Like the pope said...__Make some noise! PANIC,,,जैसा पोप ने कहा था...__शोर मचाओ! PANIC
+_SURUBI_TEDEUM_2_,"Ay, diosito santo... __ bajamela del cielo.","Oh lord, dear lord!__HELP ME LORD PANIC",,,"हे प्रभु, प्यारे प्रभु!__मेरी मदद करो प्रभु PANIC"
+_SURUBI_TEDEUM_3_,"Arranca el genio... __ Ah, no... ese era otro. __ Ehm...__ Sí, DIOS, AYUDAAAA! PANIC",SMITE 'EM PANIC,,,इन्हें राख कर दो PANIC
+_SURUBI_SUDESTADA_1_,"Miau, miau, miau... __ Miau, miaaaaaauuu __ Llueve sobre mojado! PANIC",A flood now? /nLET ME AT 'EM! PANIC,,,अब बाढ़ भी? /nमुझे इन पर टूट पड़ने दो! PANIC
+_SURUBI_SUDESTADA_2_,MABEEEEELLL PANIC __ Hay que entrar la ropa!!,I LEFT MY LAUNDRY OUT!!! PANIC,,,मैंने कपड़े बाहर छोड़ दिए!!! PANIC
+_SURUBI_SUDESTADA_3_,Se sigue inundando ¿No? __ Odio los gatos y gatitos. PANIC,It's still flooding isn't it? /nCats always lying to me PANIC,,,"अभी भी बाढ़ आ रही है, है ना? /nबिल्लियाँ हमेशा मुझसे झूठ बोलती हैं PANIC"
+_SURUBI_PATRICIO_SOLARI_1_,No nos daba la guita __ para poner ESA canción __ Aguante lo redo! PANIC,We cannot afford __ the song we want to __ so this is TUPAC! PANIC,,,हम अपनी पसंद का गाना __ खरीद नहीं सकते __ तो यह TUPAC है! PANIC
+_SURUBI_PATRICIO_SOLARI_2_,O pogo mais grande __ DU MUNDU __ Bolinho da ricota! PANIC,O pogo mais grande __ DU MUNDU __ Bolinho da ricota! PANIC,,,O pogo mais grande __ DU MUNDU __ Bolinho da ricota! PANIC
+_SURUBI_PATRICIO_SOLARI_3_,JAJAJA__ JEJEJE__ piiiiiiii PANIC__ JOJOJO__JUJUJU,Indio Solari Olavarria 2017__ just Google it.PANIC,,,इंदियो सोलारी ओलावरिया 2017__ बस Google कर लो।PANIC
+_SURUBI_TUTORIAL_1_,¡Defende esa bandera! __ Liniers dispara solo... __ ¡Movete!,Protect that flag! __ Liniers shoots by himself... __ Get moving!,,,"उस झंडे की रक्षा करो! __ लिनियर्स खुद गोली चलाता है... __ चलो, हिलो!"
+_SUBISTE_NIVEL_,¡Subiste de nivel!,Level up!,,,लेवल अप!
+_QUE_JUGAS_,¿Qué carta jugás che?,Which card do you pick?,,,कौन सा कार्ड चुनोगे?
+_PAUSA_,Pausa,Pause,,,विराम
+_IDIOMA_,Idioma,Language,,,भाषा
+_ENTER_PARA_SALTEAR_,Enter para continuar...,Press enter to continue...,,,जारी रखने के लिए Enter दबाएँ...
+_GANASTE_SOBRE_DEMO_,"Ganaste cartas, pero esto es una demo (muack).","You won cards, but this is a demo.",,,"तुमने कार्ड जीते, लेकिन यह एक डेमो है।"
+_EL_ASALTO_ESCARLATA_,El asalto escarlata,Scarlet Attackson,,,स्कारलेट अटैकसन
+_LA_MARCHA_DE_LOS_INMORTALES_,La Marcha de los Inmortales,The march of the immortals,,,अमर योद्धाओं की मार्च
+_VIENTO_OESTE_,Viento Oeste,West wind,,,पश्चिमी हवा
+_VIENTO_ESTE_,Viento Este,East wind,,,पूर्वी हवा
+_ALTA_PROBABILIDAD_DE_LLUVIAS_,Alta probabilidad de lluvias,It's raining lead...,,,सीसे की बारिश हो रही है...
+_LOS_INMORTALES_CONTRAATACAN_,Los Inmortales Contraatacan,Immortals strikes back,,,अमर योद्धा पलटवार करते हैं
+_BANDERA_DE_PIRATA_,Bandera de Pirata,Our flag,,,हमारा झंडा
+_PASO_DOBLE_,Paso Doble,On the double,,,दोगुनी चाल
+_EL_IMPERIO_PIRATA_,El Imperio Pirata,The pirate imperium,,,समुद्री डाकू साम्राज्य
+_ATAQUE_CARMESI_,Ataque Carmesí,Red red attack,,,लाल लाल हमला
+_AVANCE_DE_LA_CABALLERIA_,Avance de la Caballería,Cavalry front,,,घुड़सवार मोर्चा
+_LA_BANDEROLA_,La banderola,The bad flag,,,खराब झंडा
+_EL_ATAQUE_DE_LA_CABALLERIA_,El Ataque de la Caballería,Cavalry charge,,,घुड़सवार हमला
+_MUCHOS_MARINES_DE_LOS_MANDARINES_,Muchos Marines de los mandarines,Lots of mandarin Marines,,,बहुत सारे मैंडरिन मरीन
+_ATAQUE_FINAL_,Ataque Final,Final attack,,,अंतिम हमला
+_TODO_O_NADA_,Todo o Nada,All in,,,सब कुछ दांव पर
