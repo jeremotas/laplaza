@@ -448,7 +448,7 @@ func prepare_enemy_spawns():
 		#print(iSecondsPassed," segundos ", strategy.name)
 		
 		if strategy.name != '':
-			$WaveTitle.speech(strategy.name)
+			# $WaveTitle.speech(strategy.name)
 			AudioStreamManager.play({"stream": oNewOleadaSound, "volume": AVS.get_db("nueva_oleada"), "pitch": AVS.get_rpitch("nueva_oleada")})
 		
 		last_strategy = strategy.name
