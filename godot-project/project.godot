@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="La furia de las trenzas"
+config/description="La furia de las trenzas"
 config/version="0.9"
 run/main_scene="res://scenes/screens/splash-godot.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="uid://b7mt2uuoifsdh"
-config/windows_native_icon="res://assets/iconodelcliente_100px.ico"
+config/icon="uid://cikff00v0cqxe"
+config/windows_native_icon="res://assets/icono_juego.ico"
 
 [autoload]
 
