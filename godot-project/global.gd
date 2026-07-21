@@ -294,7 +294,7 @@ var settings = {
 					"duration": 0.01,
 				},
 				"cooldown": 4,
-				"probability": 20,
+				"probability": 0,
 				"min_damage_given": 1,
 				"max_damage_given": 1,
 				"shuffle_angles": true,

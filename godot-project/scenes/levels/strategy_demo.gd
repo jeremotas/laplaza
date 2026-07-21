@@ -99,7 +99,7 @@ var aFirstWaves = [
 		"derecha_superior": {"unit_type": "ingles", "seconds": 2, "probability": 60},
 		"derecha_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
 	},
-	{
+	#{
 		#"duration": 6,
 		#"max_alive": 30,
 		#"name": "_BANDERA_DE_PIRATA_",
@@ -111,7 +111,7 @@ var aFirstWaves = [
 		#"izquierda_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
 		#"derecha_superior": {"unit_type": "ingles", "seconds": 2, "probability": 40},
 		#"derecha_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
-	},
+	#},
 	{
 		"duration": 6,
 		"max_alive": 20,
@@ -153,7 +153,7 @@ var aSecondWaves = [
 		"derecha_superior": {"unit_type": "ingles", "seconds": 2, "probability": 0},
 		"derecha_inferior": {"unit_type": "ingles", "seconds": 1, "probability": 0},
 	},
-	{
+	#{
 		#"duration": 6,
 		#"max_alive": 50,
 		#"name": "_BANDERA_DE_PIRATA_",
@@ -165,7 +165,7 @@ var aSecondWaves = [
 		#"izquierda_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
 		#"derecha_superior": {"unit_type": "ingles", "seconds": 2, "probability": 40},
 		#"derecha_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 50},
-	},
+	#},
 	{
 		"duration": 6,
 		"max_alive": 40,
@@ -407,7 +407,7 @@ func create_strategy():
 	while iTime < iMaxTime: 
 		print("INICIO ITERACION ", iTime)
 		oCard = get_strategy_card(iTime)
-		
+		print(oCard)
 		if salto_oleada(iTime, oCard.duration):
 			oCardDescanso = get_strategy_card_descanso(iTime)
 			iDuration = oCardDescanso.duration
