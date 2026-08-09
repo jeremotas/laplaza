@@ -33,20 +33,6 @@ var aStarters = [
 	},
 	{
 		"duration": 6,
-		"max_alive": 10,
-		"name": "_MARCHA_DE_LOS_HIGHLANDER_",
-		"add_descanso": false,
-		"arriba_izquierda": {"unit_type": "highlander", "seconds": 1, "probability": 60},
-		"arriba_centro": {"unit_type": "highlander", "seconds": 1, "probability":100},
-		"arriba_derecha": {"unit_type": "highlander", "seconds": 1, "probability": 60},
-		"izquierda_superior": {"unit_type": "ingles", "seconds": 2, "probability": 0},
-		"izquierda_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 0},
-		"derecha_superior": {"unit_type": "ingles", "seconds": 2, "probability": 0},
-		"derecha_inferior": {"unit_type": "ingles", "seconds": 3, "probability": 0},
-	},
-	
-	{
-		"duration": 6,
 		"max_alive": 15,
 		"name": "_VIENTO_OESTE_",
 		"add_descanso": false,
